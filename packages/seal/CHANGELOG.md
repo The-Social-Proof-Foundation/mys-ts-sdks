@@ -1,5 +1,12 @@
 # @mysten/seal
 
+## 0.4.6
+
+### Patch Changes
+
+- 6f6b6a6: Require mysClient in SessionKey constructor
+- 6f6b6a6: Add optional API key to seal client
+
 ## 0.4.5
 
 ### Patch Changes
