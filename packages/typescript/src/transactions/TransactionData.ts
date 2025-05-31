@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { toBase58 } from '@mysten/bcs';
+import { toBase58 } from '@mysocial/bcs';
 import type { InferInput } from 'valibot';
 import { parse } from 'valibot';
 

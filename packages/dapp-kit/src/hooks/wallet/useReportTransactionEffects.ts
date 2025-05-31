@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { toBase64 } from '@mysten/sui/utils';
-import type { SuiReportTransactionEffectsInput } from '@mysten/wallet-standard';
+import { toBase64 } from '@mysocial/sui/utils';
+import type { SuiReportTransactionEffectsInput } from '@mysocial/wallet-standard';
 import type { UseMutationOptions, UseMutationResult } from '@tanstack/react-query';
 import { useMutation } from '@tanstack/react-query';
 

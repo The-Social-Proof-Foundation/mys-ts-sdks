@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { act, renderHook, waitFor } from '@testing-library/react';
@@ -8,7 +9,7 @@ import { useConnectWallet, useCurrentWallet } from '../../src/index.js';
 import { createMockAccount } from '../mocks/mockAccount.js';
 import { suiFeatures } from '../mocks/mockFeatures.js';
 import { createWalletProviderContextWrapper, registerMockWallet } from '../test-utils.js';
-import { promiseWithResolvers } from '@mysten/utils';
+import { promiseWithResolvers } from '@mysocial/utils';
 
 describe('useAutoConnectWallet', () => {
 	test('returns "disabled" when the auto-connect functionality is disabled', async () => {

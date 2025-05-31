@@ -14,8 +14,8 @@ hooks.
 currently active network.
 
 ```tsx
-import { createNetworkConfig, SuiClientProvider, WalletProvider } from '@mysten/dapp-kit';
-import { getFullnodeUrl } from '@mysten/sui/client';
+import { createNetworkConfig, SuiClientProvider, WalletProvider } from '@mysocial/dapp-kit';
+import { getFullnodeUrl } from '@mysocial/sui/client';
 
 // Config options for the networks you want to connect to
 const { networkConfig } = createNetworkConfig({
@@ -50,8 +50,8 @@ function App() {
 The following example demonstrates a `SuiClientProvider` used as a controlled component.
 
 ```tsx
-import { createNetworkConfig, SuiClientProvider } from '@mysten/dapp-kit';
-import { getFullnodeUrl } from '@mysten/sui/client';
+import { createNetworkConfig, SuiClientProvider } from '@mysocial/dapp-kit';
+import { getFullnodeUrl } from '@mysocial/sui/client';
 import { useState } from 'react';
 
 // Config options for the networks you want to connect to
@@ -82,8 +82,8 @@ function App() {
 The following example demonstrates how to create a custom `SuiClient`.
 
 ```tsx
-import { SuiClientProvider } from '@mysten/dapp-kit';
-import { getFullnodeUrl, SuiClient, SuiHTTPTransport } from '@mysten/sui/client';
+import { SuiClientProvider } from '@mysocial/dapp-kit';
+import { getFullnodeUrl, SuiClient, SuiHTTPTransport } from '@mysocial/sui/client';
 
 // Config options for the networks you want to connect to
 const networks = {
@@ -121,7 +121,7 @@ To use the `SuiClient` from the provider, import the `useSuiClient` function fro
 `@mysten/dapp-kit` module.
 
 ```tsx
-import { useSuiClient } from '@mysten/dapp-kit';
+import { useSuiClient } from '@mysocial/dapp-kit';
 
 function MyComponent() {
 	const client = useSuiClient();
@@ -165,8 +165,8 @@ to get the variables defined in your configuration.
 - `useNetworkVariable` returns a specific variable from the network configuration
 
 ```tsx
-import { createNetworkConfig, SuiClientProvider, WalletProvider } from '@mysten/dapp-kit';
-import { getFullnodeUrl } from '@mysten/sui/client';
+import { createNetworkConfig, SuiClientProvider, WalletProvider } from '@mysocial/dapp-kit';
+import { getFullnodeUrl } from '@mysocial/sui/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 // Config options for the networks you want to connect to

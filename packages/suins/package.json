@@ -1,6 +1,6 @@
 {
-	"name": "@mysten/suins",
-	"author": "Mysten Labs <build@mystenlabs.com>",
+	"name": "@mysocial/suins",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"description": "SuiNS SDK",
 	"version": "0.7.17",
 	"license": "Apache-2.0",

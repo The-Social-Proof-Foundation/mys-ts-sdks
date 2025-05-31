@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/sui/bcs';
+import { bcs } from '@mysocial/sui/bcs';
 export function Scalar() {
 	return bcs.struct('Scalar', {
 		dummy_field: bcs.bool(),

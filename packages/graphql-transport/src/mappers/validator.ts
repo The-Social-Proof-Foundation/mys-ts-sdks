@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiValidatorSummary } from '@mysten/sui/client';
+import type { SuiValidatorSummary } from '@mysocial/sui/client';
 
 import type { Rpc_Validator_FieldsFragment } from '../generated/queries.js';
 

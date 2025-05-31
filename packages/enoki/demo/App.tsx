@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import {
@@ -8,8 +9,8 @@ import {
 	useSignAndExecuteTransaction,
 	useSuiClientContext,
 	useWallets,
-} from '@mysten/dapp-kit';
-import { Transaction } from '@mysten/sui/transactions';
+} from '@mysocial/dapp-kit';
+import { Transaction } from '@mysocial/sui/transactions';
 import { useState } from 'react';
 
 import { isEnokiWallet } from '../src/wallet/index.js';

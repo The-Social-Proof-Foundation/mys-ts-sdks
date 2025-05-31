@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type {
@@ -9,18 +10,18 @@ import type {
 	SuiObjectDataFilter,
 	SuiObjectDataOptions,
 	SuiObjectResponse,
-} from '@mysten/sui/client';
+} from '@mysocial/sui/client';
 import {
 	fromBase64,
 	normalizeStructTag,
 	normalizeSuiAddress,
 	parseStructTag,
-} from '@mysten/sui/utils';
+} from '@mysocial/sui/utils';
 
 import { KioskType } from './bcs.js';
 import type { Kiosk, KioskData, KioskListing, TransferPolicyCap } from './types/index.js';
 import { TRANSFER_POLICY_CAP_TYPE } from './types/index.js';
-import { chunk } from '@mysten/utils';
+import { chunk } from '@mysocial/utils';
 
 const DEFAULT_QUERY_LIMIT = 50;
 

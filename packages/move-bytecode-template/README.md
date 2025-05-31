@@ -51,7 +51,7 @@ module 0x0::template {
 To update the identifiers, you can use the `update_identifiers` function.
 
 ```ts
-import { fromHex, update_identifiers } from '@mysten/move-bytecode-template';
+import { fromHex, update_identifiers } from '@mysocial/move-bytecode-template';
 
 let bytecode = /* ... */;
 let updated = update_identifiers(bytecode, {
@@ -67,8 +67,8 @@ you need to supply new value as BCS bytes, existing value as BCS, and the type o
 string: `U8`, `U16` ... `U256`, `Address`, `Vector(U8)` and so on).
 
 ```ts
-import { bcs } from '@mysten/bcs';
-import * as template from '@mysten/move-bytecode-template';
+import { bcs } from '@mysocial/bcs';
+import * as template from '@mysocial/move-bytecode-template';
 
 // please, manually scan the existing values, this operation is very sensitive
 console.log(template.get_constants(bytecode));
@@ -111,7 +111,7 @@ latter should be made available in static / public assets as a Web application. 
 to be performed via a URL, and once completed, other functions become available.
 
 ```ts
-import init, initSync, * as template from '@mysten/move-bytecode-template';
+import init, initSync, * as template from '@mysocial/move-bytecode-template';
 
 await init('path/to/move_binary_format_bg.wasm');
 // alternatively initSync(...);
@@ -128,8 +128,8 @@ console.assert(json == bytes, '(de)serialization failed!');
 To use this package with Vite, you need to import the source file and the wasm binary.
 
 ```ts
-import init, * as template from '@mysten/move-bytecode-template';
-import url from '@mysten/move-bytecode-template/move_bytecode_template_bg.wasm?url';
+import init, * as template from '@mysocial/move-bytecode-template';
+import url from '@mysocial/move-bytecode-template/move_bytecode_template_bg.wasm?url';
 ```
 
 Later, you can initialize the package with the URL.

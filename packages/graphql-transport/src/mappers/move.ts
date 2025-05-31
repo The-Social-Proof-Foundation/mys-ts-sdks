@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type {
@@ -10,8 +11,8 @@ import type {
 	SuiMoveNormalizedModule,
 	SuiMoveNormalizedStruct,
 	SuiMoveNormalizedType,
-} from '@mysten/sui/client';
-import { normalizeSuiAddress, parseStructTag } from '@mysten/sui/utils';
+} from '@mysocial/sui/client';
+import { normalizeSuiAddress, parseStructTag } from '@mysocial/sui/utils';
 
 import type {
 	Rpc_Move_Enum_FieldsFragment,
@@ -273,7 +274,7 @@ export function moveDataToRpcContent(data: MoveData, layout: MoveTypeLayout): Mo
 			result[name] = moveDataToRpcContent(item.value, itemLayout);
 		});
 
-		// https://github.com/MystenLabs/sui/blob/5849f6845a3ab9fdb4c17523994adad461478a4c/crates/sui-json-rpc-types/src/sui_move.rs#L481
+		// https://github.com/The-Social-Proof-Foundation/mys-core/blob/5849f6845a3ab9fdb4c17523994adad461478a4c/crates/sui-json-rpc-types/src/sui_move.rs#L481
 		const tag = parseStructTag(layout.struct.type);
 		const structName = `${toShortTypeString(tag.address)}::${tag.module}::${tag.name}`;
 

@@ -1,10 +1,10 @@
 {
-	"name": "@mysten/walrus",
+	"name": "@mysocial/walrus",
 	"version": "0.1.1",
 	"private": false,
 	"description": "Walrus SDK",
 	"license": "Apache-2.0",
-	"author": "Mysten Labs <build@mystenlabs.com>",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"type": "commonjs",
 	"main": "./dist/cjs/index.js",
 	"module": "./dist/esm/index.js",

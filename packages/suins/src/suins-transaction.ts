@@ -1,13 +1,14 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/sui/bcs';
+import { bcs } from '@mysocial/sui/bcs';
 import type {
 	Transaction,
 	TransactionObjectArgument,
 	TransactionObjectInput,
-} from '@mysten/sui/transactions';
-import { isValidSuiNSName, normalizeSuiNSName, SUI_CLOCK_OBJECT_ID } from '@mysten/sui/utils';
+} from '@mysocial/sui/transactions';
+import { isValidSuiNSName, normalizeSuiNSName, SUI_CLOCK_OBJECT_ID } from '@mysocial/sui/utils';
 
 import { ALLOWED_METADATA, MAX_U64 } from './constants.js';
 import { isNestedSubName, isSubName, zeroCoin } from './helpers.js';

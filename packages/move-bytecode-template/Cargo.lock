@@ -169,7 +169,7 @@ dependencies = [
 [[package]]
 name = "enum-compat-util"
 version = "0.1.0"
-source = "git+https://github.com/MystenLabs/sui#cb7ae89dc3f2b572ccc12af724ba73e1bbb328df"
+source = "git+https://github.com/The-Social-Proof-Foundation/mys-core#cb7ae89dc3f2b572ccc12af724ba73e1bbb328df"
 dependencies = [
  "serde_yaml",
 ]
@@ -369,7 +369,7 @@ checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203488bbd0e2fe85fcb74566d"
 [[package]]
 name = "move-binary-format"
 version = "0.0.3"
-source = "git+https://github.com/MystenLabs/sui#cb7ae89dc3f2b572ccc12af724ba73e1bbb328df"
+source = "git+https://github.com/The-Social-Proof-Foundation/mys-core#cb7ae89dc3f2b572ccc12af724ba73e1bbb328df"
 dependencies = [
  "anyhow",
  "enum-compat-util",
@@ -397,7 +397,7 @@ dependencies = [
 [[package]]
 name = "move-core-types"
 version = "0.0.4"
-source = "git+https://github.com/MystenLabs/sui#cb7ae89dc3f2b572ccc12af724ba73e1bbb328df"
+source = "git+https://github.com/The-Social-Proof-Foundation/mys-core#cb7ae89dc3f2b572ccc12af724ba73e1bbb328df"
 dependencies = [
  "anyhow",
  "bcs",
@@ -421,7 +421,7 @@ dependencies = [
 [[package]]
 name = "move-proc-macros"
 version = "0.1.0"
-source = "git+https://github.com/MystenLabs/sui#cb7ae89dc3f2b572ccc12af724ba73e1bbb328df"
+source = "git+https://github.com/The-Social-Proof-Foundation/mys-core#cb7ae89dc3f2b572ccc12af724ba73e1bbb328df"
 dependencies = [
  "enum-compat-util",
  "quote",

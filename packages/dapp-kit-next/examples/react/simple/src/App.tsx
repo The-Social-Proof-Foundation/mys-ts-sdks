@@ -1,9 +1,10 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { useStore } from '@nanostores/react';
-import { createDAppKit } from '@mysten/dapp-kit-next';
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
+import { createDAppKit } from '@mysocial/dapp-kit-next';
+import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
 
 const dAppKit = createDAppKit({
 	networks: ['mainnet', 'testnet'],

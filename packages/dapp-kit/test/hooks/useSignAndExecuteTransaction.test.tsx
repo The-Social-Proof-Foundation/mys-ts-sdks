@@ -1,9 +1,10 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/sui/bcs';
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
-import { Transaction } from '@mysten/sui/transactions';
+import { bcs } from '@mysocial/sui/bcs';
+import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { Transaction } from '@mysocial/sui/transactions';
 import { act, renderHook, waitFor } from '@testing-library/react';
 import { expect, type Mock } from 'vitest';
 
@@ -14,7 +15,7 @@ import {
 import { useConnectWallet, useSignAndExecuteTransaction } from '../../src/index.js';
 import { suiFeatures } from '../mocks/mockFeatures.js';
 import { createWalletProviderContextWrapper, registerMockWallet } from '../test-utils.js';
-import { toBase58 } from '@mysten/utils';
+import { toBase58 } from '@mysocial/utils';
 
 describe('useSignAndExecuteTransaction', () => {
 	test('throws an error when trying to sign and execute a transaction without a wallet connection', async () => {

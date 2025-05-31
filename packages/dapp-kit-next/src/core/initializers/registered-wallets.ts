@@ -1,12 +1,13 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { getWallets, StandardEvents } from '@mysten/wallet-standard';
+import { getWallets, StandardEvents } from '@mysocial/wallet-standard';
 import { onMount } from 'nanostores';
 import type { DAppKitStores } from '../store.js';
 
 import { getOrCreateUiWalletForStandardWallet_DO_NOT_USE_OR_YOU_WILL_BE_FIRED as getOrCreateUiWalletForStandardWallet } from '@wallet-standard/ui-registry';
-import type { StandardEventsFeature, Wallet, WalletWithFeatures } from '@mysten/wallet-standard';
+import type { StandardEventsFeature, Wallet, WalletWithFeatures } from '@mysocial/wallet-standard';
 
 /**
  * Handles updating the store in response to wallets being added, removed, and their properties changing.

@@ -1,6 +1,6 @@
 {
-	"name": "@mysten/create-dapp",
-	"author": "Mysten Labs <build@mystenlabs.com>",
+	"name": "@mysocial/create-dapp",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"description": "A CLI for creating new Sui dApps",
 	"homepage": "https://sdk.mystenlabs.com",
 	"version": "0.4.7",
@@ -29,7 +29,7 @@
 		"lint:fix": "pnpm run eslint:fix && pnpm run prettier:fix"
 	},
 	"bugs": {
-		"url": "https://github.com/MystenLabs/ts-sdks/issues/new"
+		"url": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks/issues/new"
 	},
 	"publishConfig": {
 		"access": "public"

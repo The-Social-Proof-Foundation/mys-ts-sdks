@@ -32,8 +32,8 @@ npm install @mysten/sui
 Then update all imports to use the new package name:
 
 ```diff
-- import { SuiClient } from '@mysten/sui.js'
-+ import { SuiClient } from '@mysten/sui'
+- import { SuiClient } from '@mysocial/sui.js'
++ import { SuiClient } from '@mysocial/sui'
 ```
 
 ### `@mysten/sui/transactions`
@@ -135,8 +135,8 @@ the bcs library, or use one of the provided helper methods.
 The `Transactions` export has been renamed to `Commands` and some of the options have been renamed:
 
 ```diff
-- import { Transactions } from '@mysten/sui/transactions'
-+ import { Commands } from '@mysten/sui/transactions'
+- import { Transactions } from '@mysocial/sui/transactions'
++ import { Commands } from '@mysocial/sui/transactions'
 
  tx.makeMoveVec({
    type: '0x123::foo:Bar'
@@ -190,7 +190,7 @@ The correct way to get Typescript types for the exported BCS types is to use the
 helper:
 
 ```ts
-import { bcs } from '@mysten/sui/bcs';
+import { bcs } from '@mysocial/sui/bcs';
 
 function callArg(arg: typeof bcs.CallArg.$inferType) {
 	// ...
@@ -207,8 +207,8 @@ helpers have been removed.
 The `publicKeyFromSuiBytes` has been moved to `@mysten/sui/verify`
 
 ```diff
-- import { publicKeyFromSuiBytes } from '@mysten/sui/multisig'
-+ import { publicKeyFromSuiBytes } from '@mysten/sui/verify'
+- import { publicKeyFromSuiBytes } from '@mysocial/sui/multisig'
++ import { publicKeyFromSuiBytes } from '@mysocial/sui/verify'
 ```
 
 ## /verify
@@ -219,11 +219,11 @@ The methods for verifying signatures have been renamed
 - import {
 -   verifyTransactionBlock
 -   verifyPersonalMessage
-- } from '@mysten/sui/verify'
+- } from '@mysocial/sui/verify'
 + import {
 +   verifyTransactionSignature
 +   verifyPersonalMessageSignature
-+ } from '@mysten/sui/verify'
++ } from '@mysocial/sui/verify'
 ```
 
 ## /cryptography
@@ -414,8 +414,8 @@ and all methods that previously accepted a `transactionBlock` option now accept 
 instead instead.
 
 ```diff
-- import { getSentTransactionBlocksWithLinks, ZkSendLinkBuilder } from '@mysten/zksend'
-+ import { getSentTransactionsWithLinks, ZkSendLinkBuilder } from '@mysten/zksend'
+- import { getSentTransactionBlocksWithLinks, ZkSendLinkBuilder } from '@mysocial/zksend'
++ import { getSentTransactionsWithLinks, ZkSendLinkBuilder } from '@mysocial/zksend'
 
   const tx = new Transaction();
   const link = new ZkSendLinkBuilder({
@@ -450,7 +450,7 @@ broadly adopted by dapps.
 either the new or old wallet-standard methods: `signTransaction` and `signAndExecuteTransaction`.
 
 ```ts
-import { signAndExecuteTransaction, signTransaction } from '@mysten/wallet-standard';
+import { signAndExecuteTransaction, signTransaction } from '@mysocial/wallet-standard';
 
 const { signature, bytes } = await signTransaction(wallet, { transaction });
 const { digest, effects } = await signAndExecuteTransaction(wallet, { transaction });

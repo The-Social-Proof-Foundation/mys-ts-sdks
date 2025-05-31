@@ -31,7 +31,7 @@ The AWS KMS Signer allows you to leverage AWS's Key Management Service to sign S
 ### Usage
 
 ```typescript
-import { AwsKmsSigner } from '@mysten/signers/aws';
+import { AwsKmsSigner } from '@mysocial/signers/aws';
 
 const prepareSigner = async () => {
 	const { AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION, AWS_KMS_KEY_ID } = process.env;
@@ -81,7 +81,7 @@ const signer = await AwsKmsSigner.fromKeyId('your-kms-key-id', {
 ```
 
 Returns
-**[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[AwsKmsSigner](https://github.com/MystenLabs/ts-sdks/blob/main/packages/signers/src/aws/aws-kms-signer.ts)>**
+**[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[AwsKmsSigner](https://github.com/The-Social-Proof-Foundation/mys-ts-sdks/blob/main/packages/signers/src/aws/aws-kms-signer.ts)>**
 An instance of AwsKmsSigner.
 
 **Notice**: AWS Signer requires Node >=20 due to dependency on `crypto`
@@ -172,10 +172,10 @@ cryptographic operations.
 
 ```typescript
 import Transport from '@ledgerhq/hw-transport-node-hid';
-import SuiLedgerClient from '@mysten/ledgerjs-hw-app-sui';
-import { LedgerSigner } from '@mysten/signers/ledger';
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
-import { Transaction } from '@mysten/sui/transactions';
+import SuiLedgerClient from '@mysocial/ledgerjs-hw-app-sui';
+import { LedgerSigner } from '@mysocial/signers/ledger';
+import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { Transaction } from '@mysocial/sui/transactions';
 
 const transport = await Transport.open(undefined);
 const ledgerClient = new SuiLedgerClient(transport);

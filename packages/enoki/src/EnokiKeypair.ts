@@ -1,10 +1,11 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SignatureWithBytes } from '@mysten/sui/cryptography';
-import { Signer } from '@mysten/sui/cryptography';
-import type { ZkLoginSignatureInputs } from '@mysten/sui/zklogin';
-import { getZkLoginSignature, ZkLoginPublicIdentifier } from '@mysten/sui/zklogin';
+import type { SignatureWithBytes } from '@mysocial/sui/cryptography';
+import { Signer } from '@mysocial/sui/cryptography';
+import type { ZkLoginSignatureInputs } from '@mysocial/sui/zklogin';
+import { getZkLoginSignature, ZkLoginPublicIdentifier } from '@mysocial/sui/zklogin';
 
 export class EnokiPublicKey extends ZkLoginPublicIdentifier {}
 

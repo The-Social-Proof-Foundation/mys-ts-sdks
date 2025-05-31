@@ -1,14 +1,15 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
-import type { CoinStruct } from '@mysten/sui/client';
-import { decodeSuiPrivateKey } from '@mysten/sui/cryptography';
-import type { Keypair, Signer } from '@mysten/sui/cryptography';
-import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';
-import type { TransactionObjectArgument, TransactionObjectInput } from '@mysten/sui/transactions';
-import { Transaction } from '@mysten/sui/transactions';
-import { normalizeStructTag, normalizeSuiAddress, SUI_TYPE_ARG, toBase64 } from '@mysten/sui/utils';
+import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import type { CoinStruct } from '@mysocial/sui/client';
+import { decodeSuiPrivateKey } from '@mysocial/sui/cryptography';
+import type { Keypair, Signer } from '@mysocial/sui/cryptography';
+import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
+import type { TransactionObjectArgument, TransactionObjectInput } from '@mysocial/sui/transactions';
+import { Transaction } from '@mysocial/sui/transactions';
+import { normalizeStructTag, normalizeSuiAddress, SUI_TYPE_ARG, toBase64 } from '@mysocial/sui/utils';
 
 import type { ZkBagContractOptions } from './zk-bag.js';
 import { getContractIds, ZkBag } from './zk-bag.js';

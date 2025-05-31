@@ -1,16 +1,17 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type SuiLedgerClient from '@mysten/ledgerjs-hw-app-sui';
-import type { SuiClient } from '@mysten/sui/client';
-import type { SignatureWithBytes } from '@mysten/sui/cryptography';
-import { messageWithIntent, Signer, toSerializedSignature } from '@mysten/sui/cryptography';
-import { Ed25519PublicKey } from '@mysten/sui/keypairs/ed25519';
-import { Transaction } from '@mysten/sui/transactions';
-import { toBase64 } from '@mysten/sui/utils';
+import type SuiLedgerClient from '@mysocial/ledgerjs-hw-app-sui';
+import type { SuiClient } from '@mysocial/sui/client';
+import type { SignatureWithBytes } from '@mysocial/sui/cryptography';
+import { messageWithIntent, Signer, toSerializedSignature } from '@mysocial/sui/cryptography';
+import { Ed25519PublicKey } from '@mysocial/sui/keypairs/ed25519';
+import { Transaction } from '@mysocial/sui/transactions';
+import { toBase64 } from '@mysocial/sui/utils';
 
 import { SuiMoveObject } from './bcs.js';
-import { bcs } from '@mysten/sui/bcs';
+import { bcs } from '@mysocial/sui/bcs';
 
 /**
  * Configuration options for initializing the LedgerSigner.

@@ -1,10 +1,11 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
-import { decodeSuiPrivateKey } from '@mysten/sui/cryptography';
-import type { Keypair } from '@mysten/sui/cryptography';
-import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';
-import type { Transaction } from '@mysten/sui/transactions';
+import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { decodeSuiPrivateKey } from '@mysocial/sui/cryptography';
+import type { Keypair } from '@mysocial/sui/cryptography';
+import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
+import type { Transaction } from '@mysocial/sui/transactions';
 
 import { DeepBookClient } from '../src/index.js'; // Adjust path according to new structure
 import type { BalanceManager } from '../src/types/index.js';

@@ -16,7 +16,7 @@ npm i @mysten/bcs
 ## Quickstart
 
 ```ts
-import { bcs, fromHex, toHex } from '@mysten/bcs';
+import { bcs, fromHex, toHex } from '@mysocial/bcs';
 
 // define UID as a 32-byte array, then add a transform to/from hex strings
 const UID = bcs.fixedArray(32, bcs.u8()).transform({
@@ -69,7 +69,7 @@ following table lists the primitive types available:
 | `bytes(size)`         | `Uint8Array` | `Iterable<number>`           | Fixed length bytes                                                          |
 
 ```ts
-import { bcs } from '@mysten/bcs';
+import { bcs } from '@mysocial/bcs';
 
 // Integers
 const u8 = bcs.u8().serialize(100).toBytes();
@@ -108,7 +108,7 @@ For most use-cases you'll want to combine primitive types into more complex type
 | `map(K, V)`            | A map of keys of type `K` to values of type `V`       |
 
 ```ts
-import { bcs } from '@mysten/bcs';
+import { bcs } from '@mysocial/bcs';
 
 // Vectors
 const intList = bcs.vector(bcs.u8()).serialize([1, 2, 3, 4, 5]).toBytes();
@@ -192,7 +192,7 @@ To define a generic struct or an enum, you can define a generic typescript funct
 
 ```ts
 // Example: Generics
-import { bcs, BcsType } from '@mysten/bcs';
+import { bcs, BcsType } from '@mysocial/bcs';
 
 // The T typescript generic is a placeholder for the typescript type of the generic value
 // The T argument will be the bcs type passed in when creating a concrete instance of the Container type
@@ -242,7 +242,7 @@ represent an address as a hex string, but the BCS serialization format for addre
 array. To handle this, you can use the `transform` API to map between the two formats:
 
 ```ts
-import { bcs, toHex } from '@mysten/bcs';
+import { bcs, toHex } from '@mysocial/bcs';
 
 const Address = bcs.bytes(32).transform({
 	// To change the input type, you need to provide a type definition for the input
@@ -308,7 +308,7 @@ preserves type information for the serialized bytes, and can be used to get raw 
 formats.
 
 ```ts
-import { bcs, fromBase58, fromBase64, fromHex } from '@mysten/bcs';
+import { bcs, fromBase58, fromBase64, fromHex } from '@mysocial/bcs';
 
 const serializedString = bcs.string().serialize('this is a string');
 
@@ -341,7 +341,7 @@ You can infer these types in one of 2 ways, either using the `$inferType` and `$
 properties on a `BcsType`, or using the `InferBcsType` and `InferBcsInput` type helpers.
 
 ```ts
-import { bcs, type InferBcsType, type InferBcsInput } from '@mysten/bcs';
+import { bcs, type InferBcsType, type InferBcsInput } from '@mysocial/bcs';
 
 const MyStruct = bcs.struct('MyStruct', {
 	id: bcs.u64(),

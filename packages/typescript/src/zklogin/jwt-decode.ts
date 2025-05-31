@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 /** Copied from https://github.com/auth0/jwt-decode/blob/3d372e9875ff673228a9f2d9df74e84690842a9c/lib/index.ts */

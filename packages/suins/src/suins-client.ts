@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import type { SuiClient } from '@mysten/sui/client';
-import type { Transaction } from '@mysten/sui/transactions';
-import { isValidSuiNSName, normalizeSuiNSName } from '@mysten/sui/utils';
+import type { SuiClient } from '@mysocial/sui/client';
+import type { Transaction } from '@mysocial/sui/transactions';
+import { isValidSuiNSName, normalizeSuiNSName } from '@mysocial/sui/utils';
 
 import { mainPackage } from './constants.js';
 import {

@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiClient } from '@mysten/sui/client';
-import { fromBase64, isValidSuiAddress } from '@mysten/sui/utils';
+import type { SuiClient } from '@mysocial/sui/client';
+import { fromBase64, isValidSuiAddress } from '@mysocial/sui/utils';
 
 import '../bcs.js';
 

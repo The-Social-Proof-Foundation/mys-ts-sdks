@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { BcsType } from '@mysten/bcs';
+import type { BcsType } from '@mysocial/bcs';
 
 import { bcs } from '../bcs/index.js';
 import type { SuiMoveNormalizedType } from '../client/index.js';

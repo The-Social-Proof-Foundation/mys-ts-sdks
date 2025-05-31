@@ -1,12 +1,13 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type {
 	PaginatedObjectsResponse,
 	SuiObjectData,
 	SuiObjectDataOptions,
-} from '@mysten/sui/client';
-import type { TransactionArgument } from '@mysten/sui/transactions';
+} from '@mysocial/sui/client';
+import type { TransactionArgument } from '@mysocial/sui/transactions';
 
 import type { ObjectArgument } from './index.js';
 

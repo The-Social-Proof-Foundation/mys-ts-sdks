@@ -1,11 +1,12 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type { Argument } from './data/internal.js';
 
 import type { ClientWithCoreApi } from '../experimental/index.js';
 import type { TransactionDataBuilder } from './TransactionData.js';
-import type { BcsType } from '@mysten/bcs';
+import type { BcsType } from '@mysocial/bcs';
 import { Inputs } from './Inputs.js';
 import { bcs } from '../bcs/index.js';
 

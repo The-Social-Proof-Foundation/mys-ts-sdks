@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type {
@@ -7,8 +8,8 @@ import type {
 	SuiClient,
 	SuiObjectData,
 	SuiObjectResponse,
-} from '@mysten/sui/client';
-import { isValidSuiAddress } from '@mysten/sui/utils';
+} from '@mysocial/sui/client';
+import { isValidSuiAddress } from '@mysocial/sui/utils';
 
 import type {
 	FetchKioskOptions,

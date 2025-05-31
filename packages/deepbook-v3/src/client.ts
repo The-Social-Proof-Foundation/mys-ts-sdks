@@ -1,9 +1,10 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { bcs } from '@mysten/sui/bcs';
-import type { SuiClient } from '@mysten/sui/client';
-import { Transaction } from '@mysten/sui/transactions';
-import { normalizeSuiAddress } from '@mysten/sui/utils';
+import { bcs } from '@mysocial/sui/bcs';
+import type { SuiClient } from '@mysocial/sui/client';
+import { Transaction } from '@mysocial/sui/transactions';
+import { normalizeSuiAddress } from '@mysocial/sui/utils';
 
 import { BalanceManagerContract } from './transactions/balanceManager.js';
 import { DeepBookContract } from './transactions/deepbook.js';

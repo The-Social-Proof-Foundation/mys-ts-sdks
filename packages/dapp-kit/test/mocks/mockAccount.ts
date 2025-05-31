@@ -1,9 +1,10 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';
-import type { WalletAccount } from '@mysten/wallet-standard';
-import { ReadonlyWalletAccount } from '@mysten/wallet-standard';
+import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
+import type { WalletAccount } from '@mysocial/wallet-standard';
+import { ReadonlyWalletAccount } from '@mysocial/wallet-standard';
 
 export function createMockAccount(accountOverrides: Partial<WalletAccount> = {}) {
 	const keypair = new Ed25519Keypair();

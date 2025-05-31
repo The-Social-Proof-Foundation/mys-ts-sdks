@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { readonlyType } from 'nanostores';
@@ -11,7 +12,7 @@ import { syncStateToStorage } from './initializers/sync-state-to-storage.js';
 import { manageWalletConnection } from './initializers/manage-connection.js';
 import type { Networks } from '../utils/networks.js';
 import type { CreateDAppKitOptions } from './types.js';
-import type { Experimental_BaseClient } from '@mysten/sui/experimental';
+import type { Experimental_BaseClient } from '@mysocial/sui/experimental';
 import { switchNetworkCreator } from './actions/switch-network.js';
 import { connectWalletCreator } from './actions/connect-wallet.js';
 import { disconnectWalletCreator } from './actions/disconnect-wallet.js';

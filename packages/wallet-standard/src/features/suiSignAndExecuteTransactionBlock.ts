@@ -1,11 +1,12 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type {
 	ExecuteTransactionRequestType,
 	SuiTransactionBlockResponse,
 	SuiTransactionBlockResponseOptions,
-} from '@mysten/sui/client';
+} from '@mysocial/sui/client';
 
 import type { SuiSignTransactionBlockInput } from './suiSignTransactionBlock.js';
 

@@ -1,9 +1,9 @@
 {
-	"name": "@mysten/zksend",
+	"name": "@mysocial/zksend",
 	"version": "0.13.5",
 	"description": "TODO: Write Description",
 	"license": "Apache-2.0",
-	"author": "Mysten Labs <build@mystenlabs.com>",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"type": "commonjs",
 	"main": "./dist/cjs/index.js",
 	"module": "./dist/esm/index.js",

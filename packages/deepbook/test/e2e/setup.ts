@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import path from 'path';
@@ -7,11 +8,11 @@ import type {
 	SuiObjectChangeCreated,
 	SuiObjectChangePublished,
 	SuiTransactionBlockResponse,
-} from '@mysten/sui/client';
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
-import { FaucetRateLimitError, getFaucetHost, requestSuiFromFaucetV2 } from '@mysten/sui/faucet';
-import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';
-import { Transaction } from '@mysten/sui/transactions';
+} from '@mysocial/sui/client';
+import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { FaucetRateLimitError, getFaucetHost, requestSuiFromFaucetV2 } from '@mysocial/sui/faucet';
+import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
+import { Transaction } from '@mysocial/sui/transactions';
 import type { ContainerRuntimeClient } from 'testcontainers';
 import { getContainerRuntimeClient } from 'testcontainers';
 import { retry } from 'ts-retry-promise';

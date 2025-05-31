@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { Experimental_CoreClient } from '../core.js';
@@ -24,7 +25,7 @@ import {
 	ZkLoginIntentScope,
 } from '../../graphql/generated/queries.js';
 import { ObjectError } from '../errors.js';
-import { fromBase64, toBase64 } from '@mysten/utils';
+import { fromBase64, toBase64 } from '@mysocial/utils';
 import { normalizeStructTag, normalizeSuiAddress } from '../../utils/sui-types.js';
 import { deriveDynamicFieldID } from '../../utils/dynamic-fields.js';
 import { parseTransactionBcs, parseTransactionEffectsBcs } from './utils.js';

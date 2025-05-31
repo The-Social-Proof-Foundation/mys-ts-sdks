@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromHex, toHex } from '@mysten/bcs';
-import { bcs } from '@mysten/sui/bcs';
+import { fromHex, toHex } from '@mysocial/bcs';
+import { bcs } from '@mysocial/sui/bcs';
 
 export const IBEEncryptions = bcs.enum('IBEEncryptions', {
 	BonehFranklinBLS12381: bcs.struct('BonehFranklinBLS12381', {

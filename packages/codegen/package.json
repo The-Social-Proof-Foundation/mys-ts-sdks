@@ -1,10 +1,10 @@
 {
 	"private": true,
-	"name": "@mysten/codegen",
+	"name": "@mysocial/codegen",
 	"version": "0.0.0",
 	"description": "typescript codegen for sui move",
 	"license": "Apache-2.0",
-	"author": "Mysten Labs <build@mystenlabs.com>",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"sideEffects": false,
 	"type": "commonjs",
 	"main": "./dist/cjs/index.js",

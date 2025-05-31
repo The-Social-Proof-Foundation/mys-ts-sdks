@@ -1,11 +1,12 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 import { existsSync, mkdirSync, writeFileSync } from 'fs';
 import { readFile } from 'fs/promises';
 import { dirname, extname, isAbsolute, join } from 'path';
 import { parseArgs } from 'util';
-import type { NamedPackagesPluginCache } from '@mysten/sui/src/transactions';
-import { isValidNamedPackage } from '@mysten/sui/utils';
+import type { NamedPackagesPluginCache } from '@mysocial/sui/src/transactions';
+import { isValidNamedPackage } from '@mysocial/sui/utils';
 import { prompt } from 'enquirer';
 import { glob } from 'glob';
 import { format } from 'prettier';

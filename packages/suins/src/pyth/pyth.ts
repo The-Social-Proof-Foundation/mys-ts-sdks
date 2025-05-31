@@ -1,11 +1,12 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/sui/bcs';
-import type { SuiClient } from '@mysten/sui/client';
-import type { Transaction } from '@mysten/sui/transactions';
-import { coinWithBalance } from '@mysten/sui/transactions';
-import { fromBase64, fromHex, parseStructTag } from '@mysten/sui/utils';
+import { bcs } from '@mysocial/sui/bcs';
+import type { SuiClient } from '@mysocial/sui/client';
+import type { Transaction } from '@mysocial/sui/transactions';
+import { coinWithBalance } from '@mysocial/sui/transactions';
+import { fromBase64, fromHex, parseStructTag } from '@mysocial/sui/utils';
 
 import type { HexString } from './PriceServiceConnection.js';
 import { PriceServiceConnection } from './PriceServiceConnection.js';

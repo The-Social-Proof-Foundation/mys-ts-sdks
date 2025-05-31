@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { WalletWithRequiredFeatures } from '@mysten/wallet-standard';
+import type { WalletWithRequiredFeatures } from '@mysocial/wallet-standard';
 
 import { getWalletUniqueIdentifier } from '../../../utils/walletUtils.js';
 import { SuiIcon } from '../../icons/SuiIcon.js';

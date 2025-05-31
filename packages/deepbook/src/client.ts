@@ -1,18 +1,19 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/sui/bcs';
-import type { OrderArguments, PaginatedEvents, PaginationArguments } from '@mysten/sui/client';
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
-import type { Argument, TransactionObjectInput, TransactionResult } from '@mysten/sui/transactions';
-import { Transaction } from '@mysten/sui/transactions';
+import { bcs } from '@mysocial/sui/bcs';
+import type { OrderArguments, PaginatedEvents, PaginationArguments } from '@mysocial/sui/client';
+import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import type { Argument, TransactionObjectInput, TransactionResult } from '@mysocial/sui/transactions';
+import { Transaction } from '@mysocial/sui/transactions';
 import {
 	normalizeStructTag,
 	normalizeSuiAddress,
 	normalizeSuiObjectId,
 	parseStructTag,
 	SUI_CLOCK_OBJECT_ID,
-} from '@mysten/sui/utils';
+} from '@mysocial/sui/utils';
 
 import { BcsOrder } from './types/bcs.js';
 import type {

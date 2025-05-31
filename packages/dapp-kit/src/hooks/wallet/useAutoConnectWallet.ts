@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { useQuery } from '@tanstack/react-query';
@@ -25,7 +26,7 @@ export function useAutoConnectWallet(): 'disabled' | 'idle' | 'attempted' {
 
 	const { data, isError } = useQuery({
 		queryKey: [
-			'@mysten/dapp-kit',
+			'@mysocial/dapp-kit',
 			'autoconnect',
 			{
 				isConnected,

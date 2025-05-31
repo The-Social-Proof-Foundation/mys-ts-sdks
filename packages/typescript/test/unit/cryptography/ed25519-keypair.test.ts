@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64, toBase58 } from '@mysten/bcs';
+import { fromBase64, toBase58 } from '@mysocial/bcs';
 import { ed25519 } from '@noble/curves/ed25519';
 import { describe, expect, it } from 'vitest';
 
@@ -13,7 +14,7 @@ import { verifyPersonalMessageSignature, verifyTransactionSignature } from '../.
 const VALID_SECRET_KEY = 'mdqVWeFekT7pqy5T49+tV12jO0m+ESW7ki4zSU9JiCg=';
 const PRIVATE_KEY_SIZE = 32;
 
-// Test case generated against rust keytool cli. See https://github.com/MystenLabs/sui/blob/edd2cd31e0b05d336b1b03b6e79a67d8dd00d06b/crates/sui/src/unit_tests/keytool_tests.rs#L165
+// Test case generated against rust keytool cli. See https://github.com/The-Social-Proof-Foundation/mys-core/blob/edd2cd31e0b05d336b1b03b6e79a67d8dd00d06b/crates/sui/src/unit_tests/keytool_tests.rs#L165
 const TEST_CASES = [
 	[
 		'film crazy soon outside stand loop subway crumble thrive popular green nuclear struggle pistol arm wife phrase warfare march wheat nephew ask sunny firm',

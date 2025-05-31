@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
-import { Transaction } from '@mysten/sui/transactions';
+import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { Transaction } from '@mysocial/sui/transactions';
 
 import { SuinsClient } from '../src/suins-client.js';
 import { SuinsTransaction } from '../src/suins-transaction.js';

@@ -1,16 +1,17 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64, toBase58 } from '@mysten/bcs';
+import { fromBase64, toBase58 } from '@mysocial/bcs';
 import type {
 	MoveValue,
 	ProtocolConfigValue,
 	SuiArgument,
 	SuiClient,
 	SuiMoveNormalizedModule,
-} from '@mysten/sui/client';
-import { Transaction } from '@mysten/sui/transactions';
-import { normalizeStructTag, normalizeSuiAddress, parseStructTag } from '@mysten/sui/utils';
+} from '@mysocial/sui/client';
+import { Transaction } from '@mysocial/sui/transactions';
+import { normalizeStructTag, normalizeSuiAddress, parseStructTag } from '@mysocial/sui/utils';
 
 import type {
 	ObjectFilter,

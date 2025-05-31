@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/sui/bcs';
-import type { BcsType } from '@mysten/sui/bcs';
+import { bcs } from '@mysocial/sui/bcs';
+import type { BcsType } from '@mysocial/sui/bcs';
 
 export function Referent<T0 extends BcsType<any>>(...typeParameters: [T0]) {
 	return bcs.struct('Referent', {

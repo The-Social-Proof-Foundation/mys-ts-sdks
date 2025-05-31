@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiWalletFeatures, WalletWithRequiredFeatures } from '@mysten/wallet-standard';
-import { SLUSH_WALLET_NAME } from '@mysten/slush-wallet';
+import type { SuiWalletFeatures, WalletWithRequiredFeatures } from '@mysocial/wallet-standard';
+import { SLUSH_WALLET_NAME } from '@mysocial/slush-wallet';
 
 import { createInMemoryStore } from '../utils/stateStorage.js';
 

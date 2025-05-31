@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { toBase58 } from '@mysten/bcs';
+import { toBase58 } from '@mysocial/bcs';
 import { describe, expect, it } from 'vitest';
 
 import { Inputs, Transaction } from '../../../src/transactions';

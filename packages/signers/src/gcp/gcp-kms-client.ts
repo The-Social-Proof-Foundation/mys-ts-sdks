@@ -1,11 +1,12 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 import { KeyManagementServiceClient } from '@google-cloud/kms';
-import type { PublicKey, SignatureFlag } from '@mysten/sui/cryptography';
-import { SIGNATURE_FLAG_TO_SCHEME, Signer } from '@mysten/sui/cryptography';
-import { Secp256k1PublicKey } from '@mysten/sui/keypairs/secp256k1';
-import { Secp256r1PublicKey } from '@mysten/sui/keypairs/secp256r1';
-import { fromBase64 } from '@mysten/sui/utils';
+import type { PublicKey, SignatureFlag } from '@mysocial/sui/cryptography';
+import { SIGNATURE_FLAG_TO_SCHEME, Signer } from '@mysocial/sui/cryptography';
+import { Secp256k1PublicKey } from '@mysocial/sui/keypairs/secp256k1';
+import { Secp256r1PublicKey } from '@mysocial/sui/keypairs/secp256r1';
+import { fromBase64 } from '@mysocial/sui/utils';
 
 import { getConcatenatedSignature, publicKeyFromDER } from '../utils/utils.js';
 

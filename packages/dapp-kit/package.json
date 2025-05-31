@@ -1,6 +1,6 @@
 {
-	"name": "@mysten/dapp-kit",
-	"author": "Mysten Labs <build@mystenlabs.com>",
+	"name": "@mysocial/dapp-kit",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"description": "A collection of React hooks and components for interacting with the Sui blockchain and wallets.",
 	"homepage": "https://sdk.mystenlabs.com/typescript",
 	"version": "0.16.5",
@@ -42,7 +42,7 @@
 		"lint:fix": "pnpm run eslint:fix && pnpm run prettier:fix"
 	},
 	"bugs": {
-		"url": "https://github.com/MystenLabs/ts-sdks/issues/new"
+		"url": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks/issues/new"
 	},
 	"publishConfig": {
 		"access": "public"

@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiClient } from '@mysten/sui/client';
-import type { StandardEventsListeners } from '@mysten/wallet-standard';
+import type { SuiClient } from '@mysocial/sui/client';
+import type { StandardEventsListeners } from '@mysocial/wallet-standard';
 
 import type { EnokiClientConfig } from '../EnokiClient/index.js';
 import type { AuthProvider, EnokiNetwork } from '../EnokiClient/type.js';

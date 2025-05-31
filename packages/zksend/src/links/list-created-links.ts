@@ -1,11 +1,12 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/sui/bcs';
-import type { SuiClient } from '@mysten/sui/client';
-import { SuiGraphQLClient } from '@mysten/sui/graphql';
-import { graphql } from '@mysten/sui/graphql/schemas/latest';
-import { fromBase64, normalizeSuiAddress } from '@mysten/sui/utils';
+import { bcs } from '@mysocial/sui/bcs';
+import type { SuiClient } from '@mysocial/sui/client';
+import { SuiGraphQLClient } from '@mysocial/sui/graphql';
+import { graphql } from '@mysocial/sui/graphql/schemas/latest';
+import { fromBase64, normalizeSuiAddress } from '@mysocial/sui/utils';
 
 import { ZkSendLink } from './claim.js';
 import type { ZkBagContractOptions } from './zk-bag.js';

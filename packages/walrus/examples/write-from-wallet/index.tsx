@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { useCurrentAccount, useSignAndExecuteTransaction } from '@mysten/dapp-kit';
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
+import { useCurrentAccount, useSignAndExecuteTransaction } from '@mysocial/dapp-kit';
+import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
 
 import { WalrusClient } from '../../src/client.js';
 

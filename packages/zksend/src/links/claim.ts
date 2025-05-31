@@ -1,18 +1,19 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/sui/bcs';
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
+import { bcs } from '@mysocial/sui/bcs';
+import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
 import type {
 	CoinStruct,
 	SuiObjectData,
 	SuiTransaction,
 	SuiTransactionBlockResponse,
-} from '@mysten/sui/client';
-import type { Keypair } from '@mysten/sui/cryptography';
-import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';
-import type { TransactionObjectArgument } from '@mysten/sui/transactions';
-import { Transaction } from '@mysten/sui/transactions';
+} from '@mysocial/sui/client';
+import type { Keypair } from '@mysocial/sui/cryptography';
+import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
+import type { TransactionObjectArgument } from '@mysocial/sui/transactions';
+import { Transaction } from '@mysocial/sui/transactions';
 import {
 	fromBase64,
 	normalizeStructTag,
@@ -21,7 +22,7 @@ import {
 	parseStructTag,
 	SUI_TYPE_ARG,
 	toBase64,
-} from '@mysten/sui/utils';
+} from '@mysocial/sui/utils';
 
 import type { ZkSendLinkBuilderOptions } from './builder.js';
 import { ZkSendLinkBuilder } from './builder.js';

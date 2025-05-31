@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { normalizeSuiAddress } from '@mysten/sui/utils';
+import { normalizeSuiAddress } from '@mysocial/sui/utils';
 
 import type { DeserializedModule, TypeSignature } from './types.js';
 

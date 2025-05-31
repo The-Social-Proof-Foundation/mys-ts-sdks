@@ -1,14 +1,15 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { InferBcsType } from '@mysten/bcs';
-import { bcs } from '@mysten/bcs';
-import { SuiClient } from '@mysten/sui/client';
-import type { Signer } from '@mysten/sui/cryptography';
-import type { ClientCache, ClientWithExtensions } from '@mysten/sui/experimental';
-import type { TransactionObjectArgument, TransactionResult } from '@mysten/sui/transactions';
-import { coinWithBalance, Transaction } from '@mysten/sui/transactions';
-import { normalizeStructTag, parseStructTag } from '@mysten/sui/utils';
+import type { InferBcsType } from '@mysocial/bcs';
+import { bcs } from '@mysocial/bcs';
+import { SuiClient } from '@mysocial/sui/client';
+import type { Signer } from '@mysocial/sui/cryptography';
+import type { ClientCache, ClientWithExtensions } from '@mysocial/sui/experimental';
+import type { TransactionObjectArgument, TransactionResult } from '@mysocial/sui/transactions';
+import { coinWithBalance, Transaction } from '@mysocial/sui/transactions';
+import { normalizeStructTag, parseStructTag } from '@mysocial/sui/utils';
 
 import {
 	MAINNET_WALRUS_PACKAGE_CONFIG,
@@ -84,7 +85,7 @@ import {
 import { SuiObjectDataLoader } from './utils/object-loader.js';
 import { shuffle, weightedShuffle } from './utils/randomness.js';
 import { getWasmBindings } from './wasm.js';
-import { chunk } from '@mysten/utils';
+import { chunk } from '@mysocial/utils';
 
 export class WalrusClient {
 	#storageNodeClient: StorageNodeClient;
@@ -128,7 +129,7 @@ export class WalrusClient {
 
 		this.#storageNodeClient = new StorageNodeClient(config.storageNodeClientOptions);
 		this.#objectLoader = new SuiObjectDataLoader(this.#suiClient);
-		this.#cache = this.#suiClient.cache.scope('@mysten/walrus');
+		this.#cache = this.#suiClient.cache.scope('@mysocial/walrus');
 	}
 
 	static experimental_asClientExtension({

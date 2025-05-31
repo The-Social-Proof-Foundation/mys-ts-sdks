@@ -1,19 +1,20 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type { DAppKitStores } from '../store.js';
 import { task } from 'nanostores';
 import type { UiWallet, UiWalletAccount } from '@wallet-standard/ui';
-import type { StandardConnectInput } from '@mysten/wallet-standard';
-import type { StandardConnectFeature } from '@mysten/wallet-standard';
-import { StandardConnect } from '@mysten/wallet-standard';
+import type { StandardConnectInput } from '@mysocial/wallet-standard';
+import type { StandardConnectFeature } from '@mysocial/wallet-standard';
+import { StandardConnect } from '@mysocial/wallet-standard';
 import { getWalletFeature, uiWalletAccountBelongsToUiWallet } from '@wallet-standard/ui';
 import {
 	getOrCreateUiWalletAccountForStandardWalletAccount_DO_NOT_USE_OR_YOU_WILL_BE_FIRED as getOrCreateUiWalletAccountForStandardWalletAccount,
 	getWalletForHandle_DO_NOT_USE_OR_YOU_WILL_BE_FIRED as getWalletForHandle,
 } from '@wallet-standard/ui-registry';
 import { WalletAccountNotFoundError, WalletNoAccountsConnectedError } from '../../utils/errors.js';
-import type { Experimental_SuiClientTypes } from '@mysten/sui/experimental';
+import type { Experimental_SuiClientTypes } from '@mysocial/sui/experimental';
 import { getChain } from '../../utils/networks.js';
 
 export type ConnectWalletArgs = {

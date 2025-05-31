@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Transaction } from '@mysten/sui/transactions';
+import type { Transaction } from '@mysocial/sui/transactions';
 import type { IdentifierString, WalletAccount } from '@wallet-standard/core';
 
 /** Name of the feature. */

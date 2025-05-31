@@ -1,11 +1,12 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { safeParse } from 'valibot';
 import type { JsonData, RequestDataType, RequestType } from './requests.js';
 import type { ResponseTypes } from './responses.js';
 import { Response } from './responses.js';
-import { promiseWithResolvers } from '@mysten/utils';
+import { promiseWithResolvers } from '@mysocial/utils';
 import { getClientMetadata } from './utils.js';
 
 type DappPostMessageChannelOptions = {

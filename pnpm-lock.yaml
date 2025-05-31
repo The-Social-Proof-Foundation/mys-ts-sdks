@@ -97,14 +97,14 @@ importers:
 
   packages/bcs:
     dependencies:
-      '@mysten/utils':
+      '@mysocial/utils':
         specifier: workspace:*
         version: link:../utils
       '@scure/base':
         specifier: ^1.2.4
         version: 1.2.4
     devDependencies:
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@size-limit/preset-small-lib':
@@ -150,13 +150,13 @@ importers:
 
   packages/codegen:
     dependencies:
-      '@mysten/bcs':
+      '@mysocial/bcs':
         specifier: workspace:*
         version: link:../bcs
-      '@mysten/move-bytecode-template':
+      '@mysocial/move-bytecode-template':
         specifier: workspace:*
         version: link:../move-bytecode-template
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
       '@stricli/auto-complete':
@@ -172,7 +172,7 @@ importers:
         specifier: ^5.8.2
         version: 5.8.2
     devDependencies:
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       vitest:
@@ -181,10 +181,10 @@ importers:
 
   packages/create-dapp:
     dependencies:
-      '@mysten/dapp-kit':
+      '@mysocial/dapp-kit':
         specifier: workspace:*
         version: link:../dapp-kit
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
       '@types/node':
@@ -194,7 +194,7 @@ importers:
         specifier: ^2.4.1
         version: 2.4.1
     devDependencies:
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       typescript:
@@ -203,10 +203,10 @@ importers:
 
   packages/create-dapp/templates/react-client-dapp:
     dependencies:
-      '@mysten/dapp-kit':
+      '@mysocial/dapp-kit':
         specifier: workspace:*
         version: link:../../../dapp-kit
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../../../typescript
       '@radix-ui/colors':
@@ -264,10 +264,10 @@ importers:
 
   packages/create-dapp/templates/react-e2e-counter:
     dependencies:
-      '@mysten/dapp-kit':
+      '@mysocial/dapp-kit':
         specifier: workspace:*
         version: link:../../../dapp-kit
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../../../typescript
       '@radix-ui/colors':
@@ -328,16 +328,16 @@ importers:
 
   packages/dapp-kit:
     dependencies:
-      '@mysten/slush-wallet':
+      '@mysocial/slush-wallet':
         specifier: workspace:*
         version: link:../slush-wallet
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
-      '@mysten/utils':
+      '@mysocial/utils':
         specifier: workspace:*
         version: link:../utils
-      '@mysten/wallet-standard':
+      '@mysocial/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
       '@radix-ui/react-dialog':
@@ -365,7 +365,7 @@ importers:
         specifier: ^4.5.4
         version: 4.5.5(@types/react@18.3.18)(react@18.3.1)
     devDependencies:
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@size-limit/preset-small-lib':
@@ -428,16 +428,16 @@ importers:
       '@lit/task':
         specifier: ^1.0.2
         version: 1.0.2
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
-      '@mysten/utils':
+      '@mysocial/utils':
         specifier: workspace:*
         version: link:../utils
-      '@mysten/wallet-standard':
+      '@mysocial/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
-      '@mysten/zksend':
+      '@mysocial/zksend':
         specifier: workspace:*
         version: link:../zksend
       '@nanostores/lit':
@@ -459,7 +459,7 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
     devDependencies:
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@storybook/addon-essentials':
@@ -483,7 +483,7 @@ importers:
 
   packages/dapp-kit-next/examples/react/simple:
     dependencies:
-      '@mysten/dapp-kit-next':
+      '@mysocial/dapp-kit-next':
         specifier: workspace:*
         version: link:../../..
       '@nanostores/react':
@@ -517,11 +517,11 @@ importers:
 
   packages/deepbook:
     dependencies:
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
     devDependencies:
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/node':
@@ -551,14 +551,14 @@ importers:
 
   packages/deepbook-v3:
     dependencies:
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
     devDependencies:
       '@iarna/toml':
         specifier: ^2.2.5
         version: 2.2.5
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/node':
@@ -588,58 +588,58 @@ importers:
 
   packages/docs:
     dependencies:
-      '@mysten/bcs':
+      '@mysocial/bcs':
         specifier: workspace:*
         version: link:../bcs
-      '@mysten/dapp-kit':
+      '@mysocial/dapp-kit':
         specifier: workspace:*
         version: link:../dapp-kit
-      '@mysten/dapp-kit-next':
+      '@mysocial/dapp-kit-next':
         specifier: workspace:*
         version: link:../dapp-kit-next
-      '@mysten/deepbook':
+      '@mysocial/deepbook':
         specifier: workspace:*
         version: link:../deepbook
-      '@mysten/deepbook-v3':
+      '@mysocial/deepbook-v3':
         specifier: workspace:*
         version: link:../deepbook-v3
-      '@mysten/enoki':
+      '@mysocial/enoki':
         specifier: workspace:*
         version: link:../enoki
-      '@mysten/enoki-connect':
+      '@mysocial/enoki-connect':
         specifier: workspace:*
         version: link:../enoki-connect
-      '@mysten/graphql-transport':
+      '@mysocial/graphql-transport':
         specifier: workspace:*
         version: link:../graphql-transport
-      '@mysten/kiosk':
+      '@mysocial/kiosk':
         specifier: workspace:*
         version: link:../kiosk
-      '@mysten/seal':
+      '@mysocial/seal':
         specifier: workspace:*
         version: link:../seal
-      '@mysten/signers':
+      '@mysocial/signers':
         specifier: workspace:*
         version: link:../signers
-      '@mysten/slush-wallet':
+      '@mysocial/slush-wallet':
         specifier: workspace:*
         version: link:../slush-wallet
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
-      '@mysten/suins':
+      '@mysocial/suins':
         specifier: workspace:*
         version: link:../suins
-      '@mysten/utils':
+      '@mysocial/utils':
         specifier: workspace:*
         version: link:../utils
-      '@mysten/wallet-standard':
+      '@mysocial/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
-      '@mysten/walrus':
+      '@mysocial/walrus':
         specifier: workspace:*
         version: link:../walrus
-      '@mysten/zksend':
+      '@mysocial/zksend':
         specifier: workspace:*
         version: link:../zksend
       '@tanstack/react-query':
@@ -721,13 +721,13 @@ importers:
 
   packages/enoki:
     dependencies:
-      '@mysten/signers':
+      '@mysocial/signers':
         specifier: workspace:*
         version: link:../signers
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
-      '@mysten/wallet-standard':
+      '@mysocial/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
       '@nanostores/react':
@@ -743,10 +743,10 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
     devDependencies:
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
-      '@mysten/dapp-kit':
+      '@mysocial/dapp-kit':
         specifier: workspace:*
         version: link:../dapp-kit
       '@tanstack/react-query':
@@ -779,20 +779,20 @@ importers:
 
   packages/enoki-connect:
     dependencies:
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
-      '@mysten/wallet-standard':
+      '@mysocial/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
-      '@mysten/window-wallet-core':
+      '@mysocial/window-wallet-core':
         specifier: workspace:^
         version: link:../window-wallet-core
       mitt:
         specifier: ^3.0.1
         version: 3.0.1
     devDependencies:
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/node':
@@ -807,13 +807,13 @@ importers:
 
   packages/enoki-connect/demo-dapp:
     dependencies:
-      '@mysten/dapp-kit':
+      '@mysocial/dapp-kit':
         specifier: workspace:*
         version: link:../../dapp-kit
-      '@mysten/enoki-connect':
+      '@mysocial/enoki-connect':
         specifier: workspace:*
         version: link:..
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../../typescript
       '@radix-ui/colors':
@@ -874,10 +874,10 @@ importers:
       '@graphql-typed-document-node/core':
         specifier: ^3.2.0
         version: 3.2.0(graphql@16.10.0)
-      '@mysten/bcs':
+      '@mysocial/bcs':
         specifier: workspace:*
         version: link:../bcs
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
       graphql:
@@ -902,7 +902,7 @@ importers:
       '@graphql-codegen/typescript-operations':
         specifier: ^4.6.0
         version: 4.6.0(graphql@16.10.0)
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@parcel/watcher':
@@ -926,14 +926,14 @@ importers:
 
   packages/kiosk:
     dependencies:
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
-      '@mysten/utils':
+      '@mysocial/utils':
         specifier: workspace:*
         version: link:../utils
     devDependencies:
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       cross-env:
@@ -970,7 +970,7 @@ importers:
       '@ledgerhq/hw-transport-mocker':
         specifier: ^6.29.0
         version: 6.29.4
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@size-limit/preset-small-lib':
@@ -991,10 +991,10 @@ importers:
 
   packages/move-bytecode-template:
     devDependencies:
-      '@mysten/bcs':
+      '@mysocial/bcs':
         specifier: workspace:*
         version: link:../bcs
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       typescript:
@@ -1009,7 +1009,7 @@ importers:
 
   packages/mvr-static:
     dependencies:
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
       '@types/node':
@@ -1025,7 +1025,7 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
     devDependencies:
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       typescript:
@@ -1037,10 +1037,10 @@ importers:
 
   packages/seal:
     dependencies:
-      '@mysten/bcs':
+      '@mysocial/bcs':
         specifier: workspace:*
         version: link:../bcs
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
       '@noble/curves':
@@ -1056,7 +1056,7 @@ importers:
       '@hey-api/openapi-ts':
         specifier: ^0.66.1
         version: 0.66.1(typescript@5.8.2)
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/node':
@@ -1074,10 +1074,10 @@ importers:
       '@google-cloud/kms':
         specifier: ^4.5.0
         version: 4.5.0
-      '@mysten/ledgerjs-hw-app-sui':
+      '@mysocial/ledgerjs-hw-app-sui':
         specifier: workspace:*
         version: link:../ledgerjs-hw-app-sui
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
       '@noble/curves':
@@ -1090,7 +1090,7 @@ importers:
         specifier: ^8.0.2
         version: 8.0.2
     devDependencies:
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/node':
@@ -1108,16 +1108,16 @@ importers:
 
   packages/slush-wallet:
     dependencies:
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
-      '@mysten/utils':
+      '@mysocial/utils':
         specifier: workspace:*
         version: link:../utils
-      '@mysten/wallet-standard':
+      '@mysocial/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
-      '@mysten/window-wallet-core':
+      '@mysocial/window-wallet-core':
         specifier: workspace:*
         version: link:../window-wallet-core
       mitt:
@@ -1127,7 +1127,7 @@ importers:
         specifier: ^0.36.0
         version: 0.36.0
     devDependencies:
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/node':
@@ -1142,7 +1142,7 @@ importers:
 
   packages/suins:
     dependencies:
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
       axios:
@@ -1152,7 +1152,7 @@ importers:
         specifier: ^3.9.1
         version: 3.9.1
     devDependencies:
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/tmp':
@@ -1176,10 +1176,10 @@ importers:
       '@graphql-typed-document-node/core':
         specifier: ^3.2.0
         version: 3.2.0(graphql@16.10.0)
-      '@mysten/bcs':
+      '@mysocial/bcs':
         specifier: workspace:*
         version: link:../bcs
-      '@mysten/utils':
+      '@mysocial/utils':
         specifier: workspace:*
         version: link:../utils
       '@noble/curves':
@@ -1234,7 +1234,7 @@ importers:
       '@iarna/toml':
         specifier: ^2.2.5
         version: 2.2.5
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:^
         version: link:../build-scripts
       '@parcel/watcher':
@@ -1289,7 +1289,7 @@ importers:
         specifier: ^1.2.4
         version: 1.2.4
     devDependencies:
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       typescript:
@@ -1301,14 +1301,14 @@ importers:
 
   packages/wallet-standard:
     dependencies:
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
       '@wallet-standard/core':
         specifier: 1.1.0
         version: 1.1.0
     devDependencies:
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       typescript:
@@ -1320,16 +1320,16 @@ importers:
 
   packages/walrus:
     dependencies:
-      '@mysten/bcs':
+      '@mysocial/bcs':
         specifier: workspace:*
         version: link:../bcs
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
-      '@mysten/utils':
+      '@mysocial/utils':
         specifier: workspace:*
         version: link:../utils
-      '@mysten/walrus-wasm':
+      '@mysocial/walrus-wasm':
         specifier: workspace:*
         version: link:../walrus-wasm
       dataloader:
@@ -1339,10 +1339,10 @@ importers:
       '@hono/node-server':
         specifier: ^1.14.0
         version: 1.14.0(hono@4.7.5)
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
-      '@mysten/dapp-kit':
+      '@mysocial/dapp-kit':
         specifier: workspace:*
         version: link:../dapp-kit
       '@types/node':
@@ -1377,7 +1377,7 @@ importers:
 
   packages/window-wallet-core:
     dependencies:
-      '@mysten/utils':
+      '@mysocial/utils':
         specifier: workspace:*
         version: link:../utils
       jose:
@@ -1387,7 +1387,7 @@ importers:
         specifier: ^0.36.0
         version: 0.36.0
     devDependencies:
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       typescript:
@@ -1399,16 +1399,16 @@ importers:
 
   packages/zksend:
     dependencies:
-      '@mysten/sui':
+      '@mysocial/sui':
         specifier: workspace:*
         version: link:../typescript
-      '@mysten/utils':
+      '@mysocial/utils':
         specifier: workspace:*
         version: link:../utils
-      '@mysten/wallet-standard':
+      '@mysocial/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
-      '@mysten/window-wallet-core':
+      '@mysocial/window-wallet-core':
         specifier: workspace:*
         version: link:../window-wallet-core
       mitt:
@@ -1421,7 +1421,7 @@ importers:
         specifier: ^0.36.0
         version: 0.36.0
     devDependencies:
-      '@mysten/build-scripts':
+      '@mysocial/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/node':

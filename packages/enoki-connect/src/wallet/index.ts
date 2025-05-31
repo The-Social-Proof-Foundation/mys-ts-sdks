@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64, toBase64 } from '@mysten/sui/utils';
+import { fromBase64, toBase64 } from '@mysocial/sui/utils';
 import type {
 	IdentifierString,
 	StandardConnectFeature,
@@ -21,17 +22,17 @@ import type {
 	SuiSignTransactionMethod,
 	Wallet,
 	WalletIcon,
-} from '@mysten/wallet-standard';
+} from '@mysocial/wallet-standard';
 import {
 	getWallets,
 	ReadonlyWalletAccount,
 	SUI_DEVNET_CHAIN,
 	SUI_MAINNET_CHAIN,
 	SUI_TESTNET_CHAIN,
-} from '@mysten/wallet-standard';
+} from '@mysocial/wallet-standard';
 import type { Emitter } from 'mitt';
 import mitt from 'mitt';
-import { DappPostMessageChannel, decodeJwtSession } from '@mysten/window-wallet-core';
+import { DappPostMessageChannel, decodeJwtSession } from '@mysocial/window-wallet-core';
 
 export type SupportedNetwork = 'mainnet' | 'testnet' | 'devnet';
 

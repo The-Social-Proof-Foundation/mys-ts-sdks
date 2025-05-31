@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type { UiWallet, UiWalletAccount } from '@wallet-standard/ui';
@@ -6,8 +7,8 @@ import { atom, computed, map } from 'nanostores';
 import { getChain } from '../utils/networks.js';
 import type { Networks } from '../utils/networks.js';
 import { getAssociatedWalletOrThrow, requiredWalletFeatures } from '../utils/wallets.js';
-import { publicKeyFromSuiBytes } from '@mysten/sui/verify';
-import type { Experimental_BaseClient } from '@mysten/sui/experimental';
+import { publicKeyFromSuiBytes } from '@mysocial/sui/verify';
+import type { Experimental_BaseClient } from '@mysocial/sui/experimental';
 
 type WalletConnection =
 	| {

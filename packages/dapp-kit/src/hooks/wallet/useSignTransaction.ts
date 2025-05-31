@@ -1,9 +1,10 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Transaction } from '@mysten/sui/transactions';
-import { signTransaction } from '@mysten/wallet-standard';
-import type { SignedTransaction, SuiSignTransactionInput } from '@mysten/wallet-standard';
+import type { Transaction } from '@mysocial/sui/transactions';
+import { signTransaction } from '@mysocial/wallet-standard';
+import type { SignedTransaction, SuiSignTransactionInput } from '@mysocial/wallet-standard';
 import type { UseMutationOptions, UseMutationResult } from '@tanstack/react-query';
 import { useMutation } from '@tanstack/react-query';
 

@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { parse } from 'valibot';
@@ -13,7 +14,7 @@ import {
 	normalizedTypeToMoveTypeSignature,
 } from '../../transactions/serializer.js';
 import type { TransactionDataBuilder } from '../../transactions/TransactionData.js';
-import { chunk } from '@mysten/utils';
+import { chunk } from '@mysocial/utils';
 import type { SuiClient } from '../../client/index.js';
 import type { BuildTransactionOptions } from '../../transactions/index.js';
 

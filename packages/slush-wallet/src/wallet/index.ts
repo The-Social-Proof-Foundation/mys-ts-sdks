@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64, toBase64 } from '@mysten/sui/utils';
+import { fromBase64, toBase64 } from '@mysocial/sui/utils';
 import type {
 	StandardConnectFeature,
 	StandardConnectMethod,
@@ -21,13 +22,13 @@ import type {
 	SuiSignTransactionMethod,
 	Wallet,
 	WalletIcon,
-} from '@mysten/wallet-standard';
-import { getWallets, ReadonlyWalletAccount, SUI_CHAINS } from '@mysten/wallet-standard';
+} from '@mysocial/wallet-standard';
+import { getWallets, ReadonlyWalletAccount, SUI_CHAINS } from '@mysocial/wallet-standard';
 import type { Emitter } from 'mitt';
 import mitt from 'mitt';
 import type { InferOutput } from 'valibot';
 import { boolean, object, parse, string } from 'valibot';
-import { DappPostMessageChannel, decodeJwtSession } from '@mysten/window-wallet-core';
+import { DappPostMessageChannel, decodeJwtSession } from '@mysocial/window-wallet-core';
 
 const DEFAULT_SLUSH_ORIGIN = 'https://my.slush.app';
 

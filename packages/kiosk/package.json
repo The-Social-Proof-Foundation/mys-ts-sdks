@@ -1,6 +1,6 @@
 {
-	"name": "@mysten/kiosk",
-	"author": "Mysten Labs <build@mystenlabs.com>",
+	"name": "@mysocial/kiosk",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"description": "Sui Kiosk library",
 	"version": "0.12.7",
 	"license": "Apache-2.0",

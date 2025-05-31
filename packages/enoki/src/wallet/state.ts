@@ -1,10 +1,11 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { ExportedWebCryptoKeypair } from '@mysten/signers/webcrypto';
-import { WebCryptoSigner } from '@mysten/signers/webcrypto';
-import { decodeJwt } from '@mysten/sui/zklogin';
-import type { ZkLoginSignatureInputs } from '@mysten/sui/zklogin';
+import type { ExportedWebCryptoKeypair } from '@mysocial/signers/webcrypto';
+import { WebCryptoSigner } from '@mysocial/signers/webcrypto';
+import { decodeJwt } from '@mysocial/sui/zklogin';
+import type { ZkLoginSignatureInputs } from '@mysocial/sui/zklogin';
 import type { UseStore } from 'idb-keyval';
 import { clear, createStore, get, set } from 'idb-keyval';
 import type { WritableAtom } from 'nanostores';

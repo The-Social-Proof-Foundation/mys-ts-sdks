@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { PublicKey } from '@mysten/sui/cryptography';
-import type { ZkLoginSignatureInputs } from '@mysten/sui/zklogin';
+import type { PublicKey } from '@mysocial/sui/cryptography';
+import type { ZkLoginSignatureInputs } from '@mysocial/sui/zklogin';
 
 export type AuthProvider = 'google' | 'facebook' | 'twitch';
 export type EnokiNetwork = 'mainnet' | 'testnet' | 'devnet';

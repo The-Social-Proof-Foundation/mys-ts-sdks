@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 
@@ -16,7 +17,7 @@ export const baseOptions: BaseLayoutProps = {
 	links: [
 		{
 			text: 'GitHub',
-			url: 'https://github.com/MystenLabs/ts-sdks',
+			url: 'https://github.com/The-Social-Proof-Foundation/mys-ts-sdks',
 		},
 		{
 			text: 'Discord',

@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64, toBase58 } from '@mysten/bcs';
-import { bcs } from '@mysten/sui/bcs';
+import { fromBase64, toBase58 } from '@mysocial/bcs';
+import { bcs } from '@mysocial/sui/bcs';
 import type {
 	SuiArgument,
 	SuiCallArg,
@@ -12,8 +13,8 @@ import type {
 	SuiTransactionBlockKind,
 	SuiTransactionBlockResponse,
 	SuiTransactionBlockResponseOptions,
-} from '@mysten/sui/client';
-import { normalizeSuiAddress } from '@mysten/sui/utils';
+} from '@mysocial/sui/client';
+import { normalizeSuiAddress } from '@mysocial/sui/utils';
 
 import type { Rpc_Transaction_FieldsFragment } from '../generated/queries.js';
 import { toShortTypeString } from './util.js';

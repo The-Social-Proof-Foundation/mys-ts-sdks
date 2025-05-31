@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { ClientWithExtensions, Experimental_CoreClient } from '@mysten/sui/experimental';
+import type { ClientWithExtensions, Experimental_CoreClient } from '@mysocial/sui/experimental';
 
 export type KeyCacheKey = `${string}:${string}`;
 export type SealCompatibleClient = ClientWithExtensions<{

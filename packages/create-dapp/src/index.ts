@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 /* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable no-restricted-globals */
@@ -96,8 +97,8 @@ async function collectFiles(template: string, dAppName: string) {
 				if (entry === 'package.json') {
 					const json = JSON.parse(content.toString());
 					json.name = dAppName;
-					json.dependencies['@mysten/sui'] = dependencies['@mysten/sui'];
-					json.dependencies['@mysten/dapp-kit'] = dependencies['@mysten/dapp-kit'];
+					json.dependencies['@mysocial/sui'] = dependencies['@mysocial/sui'];
+					json.dependencies['@mysocial/dapp-kit'] = dependencies['@mysocial/dapp-kit'];
 
 					content = Buffer.from(JSON.stringify(json, null, 2));
 				}

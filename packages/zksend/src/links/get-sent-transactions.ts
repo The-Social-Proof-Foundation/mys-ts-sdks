@@ -1,9 +1,10 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiTransactionBlockResponseOptions } from '@mysten/sui/client';
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
-import { normalizeSuiAddress } from '@mysten/sui/utils';
+import type { SuiTransactionBlockResponseOptions } from '@mysocial/sui/client';
+import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { normalizeSuiAddress } from '@mysocial/sui/utils';
 
 import { ZkSendLink } from './claim.js';
 import { getContractIds } from './zk-bag.js';

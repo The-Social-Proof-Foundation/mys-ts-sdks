@@ -1,9 +1,10 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { ObjectOwner, SuiObjectChange, SuiTransactionBlockResponse } from '@mysten/sui/client';
-import type { Transaction } from '@mysten/sui/transactions';
-import { normalizeStructTag, normalizeSuiAddress, parseStructTag } from '@mysten/sui/utils';
+import type { ObjectOwner, SuiObjectChange, SuiTransactionBlockResponse } from '@mysocial/sui/client';
+import type { Transaction } from '@mysocial/sui/transactions';
+import { normalizeStructTag, normalizeSuiAddress, parseStructTag } from '@mysocial/sui/utils';
 
 // eslint-disable-next-line import/no-cycle
 

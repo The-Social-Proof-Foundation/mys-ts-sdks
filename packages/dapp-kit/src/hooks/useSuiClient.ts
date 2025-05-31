@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiClient } from '@mysten/sui/client';
+import type { SuiClient } from '@mysocial/sui/client';
 import { useContext } from 'react';
 
 import { SuiClientContext } from '../components/SuiClientProvider.js';

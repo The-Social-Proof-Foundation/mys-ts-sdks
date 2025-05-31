@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { coinWithBalance } from '@mysten/sui/transactions';
-import type { Transaction } from '@mysten/sui/transactions';
-import { SUI_CLOCK_OBJECT_ID } from '@mysten/sui/utils';
+import { coinWithBalance } from '@mysocial/sui/transactions';
+import type { Transaction } from '@mysocial/sui/transactions';
+import { SUI_CLOCK_OBJECT_ID } from '@mysocial/sui/utils';
 
 import { OrderType, SelfMatchingOptions } from '../types/index.js';
 import type {

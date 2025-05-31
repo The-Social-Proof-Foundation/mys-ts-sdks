@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 /* eslint-disable @typescript-eslint/ban-types */
 
-import type { Simplify, UnionToIntersection } from '@mysten/utils';
+import type { Simplify, UnionToIntersection } from '@mysocial/utils';
 import { ClientCache } from './cache.js';
 import type { Experimental_CoreClient } from './core.js';
 import type {

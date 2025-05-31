@@ -1,9 +1,10 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
-import type { IdentifierRecord, ReadonlyWalletAccount } from '@mysten/wallet-standard';
-import { getWallets } from '@mysten/wallet-standard';
+import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import type { IdentifierRecord, ReadonlyWalletAccount } from '@mysocial/wallet-standard';
+import { getWallets } from '@mysocial/wallet-standard';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { ComponentProps } from 'react';
 

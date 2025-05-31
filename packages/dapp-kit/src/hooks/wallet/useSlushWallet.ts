@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { registerSlushWallet } from '@mysten/slush-wallet';
+import { registerSlushWallet } from '@mysocial/slush-wallet';
 import { useLayoutEffect } from 'react';
 
 export interface SlushWalletConfig {

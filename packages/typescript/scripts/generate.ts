@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import * as fs from 'node:fs/promises';
@@ -29,6 +30,7 @@ if (!res.ok) {
 const openRpcSpec: OpenRpcSpec = JSON.parse(await res.text());
 export const LICENSE_HEADER = `
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 /**

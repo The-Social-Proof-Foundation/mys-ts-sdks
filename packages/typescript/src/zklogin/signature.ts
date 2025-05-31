@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64, toBase64 } from '@mysten/bcs';
+import { fromBase64, toBase64 } from '@mysocial/bcs';
 
 import { SIGNATURE_SCHEME_TO_FLAG } from '../cryptography/signature-scheme.js';
 import type { ZkLoginSignature } from './bcs.js';

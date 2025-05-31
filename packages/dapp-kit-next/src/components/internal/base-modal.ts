@@ -1,9 +1,10 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { LitElement } from 'lit';
 import { property, query } from 'lit/decorators.js';
-import { promiseWithResolvers } from '@mysten/utils';
+import { promiseWithResolvers } from '@mysocial/utils';
 
 export class BaseModal extends LitElement {
 	#isOpen = false;

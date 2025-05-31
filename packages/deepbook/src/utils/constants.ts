@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { normalizeStructTag, SUI_TYPE_ARG } from '@mysten/sui/utils';
+import { normalizeStructTag, SUI_TYPE_ARG } from '@mysocial/sui/utils';
 
 export const PACKAGE_ID = '0xdee9';
 

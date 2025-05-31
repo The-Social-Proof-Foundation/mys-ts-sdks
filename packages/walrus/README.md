@@ -12,8 +12,8 @@ To use the walrus SDK you will need to create an instance of the SuiClient from 
 and an instance of the walrus SDK.
 
 ```ts
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
-import { WalrusClient } from '@mysten/walrus';
+import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { WalrusClient } from '@mysocial/walrus';
 
 const suiClient = new SuiClient({
 	url: getFullnodeUrl('testnet'),
@@ -110,7 +110,7 @@ For a complete overview of the available methods on the `WalrusClient` you can r
 ### Examples
 
 There are a number of simple
-[examples you can reference](https://github.com/MystenLabs/ts-sdks/tree/main/packages/walrus/examples)
+[examples you can reference](https://github.com/The-Social-Proof-Foundation/mys-ts-sdks/tree/main/packages/walrus/examples)
 in the `ts-sdks` repo that show things like building simple aggregators and publishers with the
 walrus SDK
 
@@ -124,7 +124,7 @@ that result from this situation will extend the `RetryableWalrusClientError` cla
 You can check for these errors, and reset the client before retrying:
 
 ```ts
-import { RetryableWalrusClientError } from '@mysten/walrus';
+import { RetryableWalrusClientError } from '@mysocial/walrus';
 
 if (error instanceof RetryableWalrusClientError) {
 	walrusClient.reset();
@@ -209,7 +209,7 @@ In vite you can get the url for the wasm bindings by importing the wasm file wit
 and then passed into the walrus client:
 
 ```ts
-import walrusWasmUrl from '@mysten/walrus-wasm/web/walrus_wasm_bg.wasm?url';
+import walrusWasmUrl from '@mysocial/walrus-wasm/web/walrus_wasm_bg.wasm?url';
 
 const walrusClient = new WalrusClient({
 	network: 'testnet',
@@ -235,7 +235,7 @@ walrus packages:
 ```ts
 // next.config.ts
 const nextConfig: NextConfig = {
-	serverExternalPackages: ['@mysten/walrus', '@mysten/walrus-wasm'],
+	serverExternalPackages: ['@mysocial/walrus', '@mysocial/walrus-wasm'],
 };
 ```
 

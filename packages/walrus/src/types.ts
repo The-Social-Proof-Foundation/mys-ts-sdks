@@ -1,10 +1,11 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiClient } from '@mysten/sui/client';
-import type { Signer } from '@mysten/sui/cryptography';
-import type { ClientWithExtensions } from '@mysten/sui/experimental';
-import type { TransactionObjectArgument } from '@mysten/sui/transactions';
+import type { SuiClient } from '@mysocial/sui/client';
+import type { Signer } from '@mysocial/sui/cryptography';
+import type { ClientWithExtensions } from '@mysocial/sui/experimental';
+import type { TransactionObjectArgument } from '@mysocial/sui/transactions';
 
 import type { StorageNodeInfo } from './contracts/storage_node.js';
 import type { RequestOptions, StorageNodeClientOptions } from './storage-node/client.js';

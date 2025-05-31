@@ -1,6 +1,6 @@
-import { bcs, BcsType, TypeTag, TypeTagSerializer } from '@mysten/sui/bcs';
-import { normalizeSuiAddress } from '@mysten/sui/utils';
-import { TransactionArgument, isArgument } from '@mysten/sui/transactions';
+import { bcs, BcsType, TypeTag, TypeTagSerializer } from '@mysocial/sui/bcs';
+import { normalizeSuiAddress } from '@mysocial/sui/utils';
+import { TransactionArgument, isArgument } from '@mysocial/sui/transactions';
 
 const MOVE_STDLIB_ADDRESS = normalizeSuiAddress('0x1');
 const SUI_FRAMEWORK_ADDRESS = normalizeSuiAddress('0x2');

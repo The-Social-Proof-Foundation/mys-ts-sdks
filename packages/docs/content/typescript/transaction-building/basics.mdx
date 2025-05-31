@@ -6,7 +6,7 @@ This example starts by constructing a transaction to send SUI. To construct tran
 `Transaction` class and construct it:
 
 ```tsx
-import { Transaction } from '@mysten/sui/transactions';
+import { Transaction } from '@mysocial/sui/transactions';
 
 const tx = new Transaction();
 ```
@@ -147,7 +147,7 @@ tx.pure as a function with a type argument, or serialize the value before passin
 using the bcs sdk:
 
 ```ts
-import { bcs } from '@mysten/sui/bcs';
+import { bcs } from '@mysocial/sui/bcs';
 
 tx.moveCall({
 	target: '0x2::foo::bar',

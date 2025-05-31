@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromHex, toBase64 } from '@mysten/bcs';
+import { fromHex, toBase64 } from '@mysocial/bcs';
 import { beforeAll, describe, expect, it } from 'vitest';
 
 import { bcs } from '../../src/bcs';

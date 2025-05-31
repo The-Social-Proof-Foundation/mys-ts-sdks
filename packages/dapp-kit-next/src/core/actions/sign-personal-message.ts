@@ -1,12 +1,13 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type { DAppKitStores } from '../store.js';
-import { SuiSignPersonalMessage } from '@mysten/wallet-standard';
+import { SuiSignPersonalMessage } from '@mysocial/wallet-standard';
 import type {
 	SuiSignPersonalMessageFeature,
 	SuiSignPersonalMessageInput,
-} from '@mysten/wallet-standard';
+} from '@mysocial/wallet-standard';
 import { getWalletAccountForUiWalletAccount_DO_NOT_USE_OR_YOU_WILL_BE_FIRED as getWalletAccountForUiWalletAccount } from '@wallet-standard/ui-registry';
 import { WalletNotConnectedError } from '../../utils/errors.js';
 import { getChain } from '../../utils/networks.js';

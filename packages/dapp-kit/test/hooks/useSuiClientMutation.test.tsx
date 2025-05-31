@@ -1,6 +1,7 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
+import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
 import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { useSuiClientMutation } from '../../src/hooks/useSuiClientMutation.js';

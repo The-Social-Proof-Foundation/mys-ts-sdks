@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { ResolvedNameServiceNames } from '@mysten/sui/client';
+import type { ResolvedNameServiceNames } from '@mysocial/sui/client';
 import type { UseQueryOptions, UseQueryResult } from '@tanstack/react-query';
 
 import { useSuiClientQuery } from './useSuiClientQuery.js';

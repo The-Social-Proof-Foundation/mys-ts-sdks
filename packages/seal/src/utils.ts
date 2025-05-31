@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromHex, toHex } from '@mysten/bcs';
-import { isValidSuiObjectId } from '@mysten/sui/utils';
+import { fromHex, toHex } from '@mysocial/bcs';
+import { isValidSuiObjectId } from '@mysocial/sui/utils';
 
 import { UserError } from './error.js';
 

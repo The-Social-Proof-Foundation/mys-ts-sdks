@@ -21,6 +21,6 @@ find . -type f \( -name "*.ts" -o -name "*.tsx" -o -name "*.js" -o -name "*.jsx"
 
 # Special cases for package names
 find . -name "package.json" -exec sed -i '' \
-  -e 's/"name": "@mysten\/sui"/"name": "@mysocial\/mys"/g' \
-  -e 's/"name": "@mysten\/ts-sdks"/"name": "@mysocial\/ts-sdks"/g' \
+  -e 's/"name": "@mysocial\/sui"/"name": "@mysocial\/mys"/g' \
+  -e 's/"name": "@mysocial\/ts-sdks"/"name": "@mysocial\/ts-sdks"/g' \
   -e 's/@mysten\/ledgerjs-hw-app-sui/@mysocial\/ledgerjs-hw-app-mys/g' {} \;

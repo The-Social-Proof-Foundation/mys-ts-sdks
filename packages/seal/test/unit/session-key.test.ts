@@ -1,10 +1,11 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { describe, expect, it } from 'vitest';
 import { SessionKey } from '../../src/session-key';
-import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';
-import { SuiGraphQLClient } from '@mysten/sui/graphql';
+import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
+import { SuiGraphQLClient } from '@mysocial/sui/graphql';
 import { UserError } from '../../src/error';
 
 describe('Session key tests', () => {

@@ -1,19 +1,20 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { toBase64 } from '@mysten/bcs';
-import { bcs } from '@mysten/sui/bcs';
-import type { Signer } from '@mysten/sui/cryptography';
-import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';
-import { isValidSuiAddress, isValidSuiObjectId } from '@mysten/sui/utils';
-import { verifyPersonalMessageSignature } from '@mysten/sui/verify';
+import { toBase64 } from '@mysocial/bcs';
+import { bcs } from '@mysocial/sui/bcs';
+import type { Signer } from '@mysocial/sui/cryptography';
+import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
+import { isValidSuiAddress, isValidSuiObjectId } from '@mysocial/sui/utils';
+import { verifyPersonalMessageSignature } from '@mysocial/sui/verify';
 import { generateSecretKey, toPublicKey, toVerificationKey } from './elgamal.js';
 import {
 	ExpiredSessionKeyError,
 	InvalidPersonalMessageSignatureError,
 	UserError,
 } from './error.js';
-import type { ZkLoginCompatibleClient } from '@mysten/sui/zklogin';
+import type { ZkLoginCompatibleClient } from '@mysocial/sui/zklogin';
 
 export const RequestFormat = bcs.struct('RequestFormat', {
 	ptb: bcs.vector(bcs.U8),

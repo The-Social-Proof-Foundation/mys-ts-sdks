@@ -1,11 +1,12 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64, fromHex, toBase64 } from '@mysten/bcs';
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
-import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';
-import { SuiGraphQLClient } from '@mysten/sui/graphql';
-import { Transaction } from '@mysten/sui/transactions';
+import { fromBase64, fromHex, toBase64 } from '@mysocial/bcs';
+import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
+import { SuiGraphQLClient } from '@mysocial/sui/graphql';
+import { Transaction } from '@mysocial/sui/transactions';
 import { beforeAll, describe, expect, it, vi } from 'vitest';
 
 import { SealClient } from '../../src';

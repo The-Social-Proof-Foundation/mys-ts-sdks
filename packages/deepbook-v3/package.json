@@ -1,6 +1,6 @@
 {
-	"name": "@mysten/deepbook-v3",
-	"author": "Mysten Labs <build@mystenlabs.com>",
+	"name": "@mysocial/deepbook-v3",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"description": "Sui Deepbook SDK",
 	"version": "0.14.12",
 	"license": "Apache-2.0",

@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/sui/bcs';
-import type { Transaction } from '@mysten/sui/transactions';
+import { bcs } from '@mysocial/sui/bcs';
+import type { Transaction } from '@mysocial/sui/transactions';
 
 import * as balance from './deps/0x0000000000000000000000000000000000000000000000000000000000000002/balance.js';
 import { normalizeMoveArguments } from './utils/index.js';

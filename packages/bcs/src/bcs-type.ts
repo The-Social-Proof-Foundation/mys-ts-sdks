@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase58, fromBase64, toBase58, toBase64, fromHex, toHex } from '@mysten/utils';
+import { fromBase58, fromBase64, toBase58, toBase64, fromHex, toHex } from '@mysocial/utils';
 import { BcsReader } from './reader.js';
 import { ulebEncode } from './uleb.js';
 import type { BcsWriterOptions } from './writer.js';
@@ -101,7 +102,7 @@ export class BcsType<T, Input = T> {
 	}
 }
 
-const SERIALIZED_BCS_BRAND = Symbol.for('@mysten/serialized-bcs') as never;
+const SERIALIZED_BCS_BRAND = Symbol.for('@mysocial/serialized-bcs') as never;
 export function isSerializedBcs(obj: unknown): obj is SerializedBcs<unknown> {
 	return !!obj && typeof obj === 'object' && (obj as any)[SERIALIZED_BCS_BRAND] === true;
 }

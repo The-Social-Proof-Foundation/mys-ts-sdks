@@ -1,9 +1,10 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { mkdir, readdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { normalizeSuiAddress } from '@mysten/sui/utils';
+import { normalizeSuiAddress } from '@mysocial/sui/utils';
 import { MoveModuleBuilder } from './move-module-builder.js';
 
 export async function generatePackage({

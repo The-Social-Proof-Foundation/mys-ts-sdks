@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 'use client';
@@ -18,14 +19,14 @@ import {
 	useSwitchAccount,
 	useWallets,
 	WalletProvider,
-} from '@mysten/dapp-kit';
-import { getFullnodeUrl } from '@mysten/sui/client';
-import { Transaction } from '@mysten/sui/transactions';
+} from '@mysocial/dapp-kit';
+import { getFullnodeUrl } from '@mysocial/sui/client';
+import { Transaction } from '@mysocial/sui/transactions';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { ComponentProps } from 'react';
 import { useState } from 'react';
 
-import '@mysten/dapp-kit/dist/index.css';
+import '@mysocial/dapp-kit/dist/index.css';
 
 export const UseWalletsExample = withProviders(() => {
 	const wallets = useWallets();

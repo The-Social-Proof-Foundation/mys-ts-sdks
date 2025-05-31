@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/sui/bcs';
+import { bcs } from '@mysocial/sui/bcs';
 import * as vec_set from './vec_set.js';
 import * as type_name from '../0x0000000000000000000000000000000000000000000000000000000000000001/type_name.js';
 import * as object from './object.js';

@@ -1,10 +1,11 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/sui/bcs';
-import type { TransactionArgument } from '@mysten/sui/transactions';
-import { Transaction } from '@mysten/sui/transactions';
-import { normalizeSuiAddress } from '@mysten/sui/utils';
+import { bcs } from '@mysocial/sui/bcs';
+import type { TransactionArgument } from '@mysocial/sui/transactions';
+import { Transaction } from '@mysocial/sui/transactions';
+import { normalizeSuiAddress } from '@mysocial/sui/utils';
 
 import type { RuleResolvingParams } from '../../types/index.js';
 import { lock } from '../kiosk.js';

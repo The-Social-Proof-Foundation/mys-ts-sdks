@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Experimental_SuiClientTypes } from '@mysten/sui/experimental';
-import type { IdentifierString } from '@mysten/wallet-standard';
+import type { Experimental_SuiClientTypes } from '@mysocial/sui/experimental';
+import type { IdentifierString } from '@mysocial/wallet-standard';
 
 type NonEmptyArray<T> = readonly [T, ...T[]] | readonly [...T[], T] | readonly [T, ...T[], T];
 

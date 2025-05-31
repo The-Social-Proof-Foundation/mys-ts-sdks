@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 export { formatAddress, formatDigest } from './format.js';
@@ -24,7 +25,7 @@ export {
 	toBase64,
 	fromBase58,
 	toBase58,
-} from '@mysten/bcs';
+} from '@mysocial/bcs';
 export { isValidSuiNSName, normalizeSuiNSName } from './suins.js';
 
 export {

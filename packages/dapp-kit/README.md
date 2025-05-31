@@ -34,8 +34,8 @@ providers. The props available on the providers are covered in more detail in th
 pages.
 
 ```tsx
-import { createNetworkConfig, SuiClientProvider, WalletProvider } from '@mysten/dapp-kit';
-import { getFullnodeUrl, type SuiClientOptions } from '@mysten/sui/client';
+import { createNetworkConfig, SuiClientProvider, WalletProvider } from '@mysocial/dapp-kit';
+import { getFullnodeUrl, type SuiClientOptions } from '@mysocial/sui/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 // Config options for the networks you want to connect to
@@ -70,7 +70,7 @@ dApp as shown below. For more information regarding customization options, check
 documentation pages for the components and [themes](https://sdk.mystenlabs.com/dapp-kit/themes).
 
 ```tsx
-import '@mysten/dapp-kit/dist/index.css';
+import '@mysocial/dapp-kit/dist/index.css';
 ```
 
 ## Using hooks to make RPC calls
@@ -81,7 +81,7 @@ these query hooks can be used, check out the
 [react-query docs](https://tanstack.com/query/latest/docs/react/overview).
 
 ```tsx
-import { useSuiClientQuery } from '@mysten/dapp-kit';
+import { useSuiClientQuery } from '@mysocial/dapp-kit';
 
 function MyComponent() {
 	const { data, isPending, error, refetch } = useSuiClientQuery('getOwnedObjects', {

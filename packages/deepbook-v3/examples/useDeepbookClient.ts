@@ -1,6 +1,7 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { Transaction } from '@mysten/sui/transactions';
+import { Transaction } from '@mysocial/sui/transactions';
 import { config } from 'dotenv';
 
 import { DeepBookMarketMaker } from './deepbookMarketMaker.js';

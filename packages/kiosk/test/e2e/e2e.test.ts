@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { Transaction } from '@mysten/sui/transactions';
-import { normalizeSuiAddress } from '@mysten/sui/utils';
+import { Transaction } from '@mysocial/sui/transactions';
+import { normalizeSuiAddress } from '@mysocial/sui/utils';
 import { beforeAll, describe, expect, it } from 'vitest';
 
 import {

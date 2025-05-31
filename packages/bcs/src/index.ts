@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 /*
@@ -11,7 +12,7 @@
  * @property {BcsReader}
  */
 
-import { toBase58, fromBase58, toBase64, fromBase64, toHex, fromHex } from '@mysten/utils';
+import { toBase58, fromBase58, toBase64, fromBase64, toHex, fromHex } from '@mysocial/utils';
 import type { BcsTypeOptions } from './bcs-type.js';
 import { BcsType, isSerializedBcs, SerializedBcs } from './bcs-type.js';
 import { bcs } from './bcs.js';

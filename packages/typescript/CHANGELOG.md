@@ -217,8 +217,8 @@
   true for backwards compatibility:
 
   ```diff
-  - import { computeZkLoginAddress, jwtToAddress } from '@mysten/zklogin';
-  + import { computeZkLoginAddress, jwtToAddress } from '@mysten/sui/zklogin';
+  - import { computeZkLoginAddress, jwtToAddress } from '@mysocial/zklogin';
+  + import { computeZkLoginAddress, jwtToAddress } from '@mysocial/sui/zklogin';
 
     const address = jwtToAddress(
      jwtAsString,
@@ -610,7 +610,7 @@
   SuiHTTPTransport (eg, using the `ws` package)
 
   ```typescript
-  import { getFullnodeUrl, SuiClient, SuiHTTPTransport } from '@mysten/sui.js/client';
+  import { getFullnodeUrl, SuiClient, SuiHTTPTransport } from '@mysocial/sui.js/client';
   import { WebSocket } from 'ws';
 
   new SuiClient({
@@ -815,7 +815,7 @@
   to be available in this release (with deprecation warnings). With the large number of deprecations
   there may be functionality that should be moved into the new modular version of the SDK. If you
   find there are features that were deprecated without a suitable replacement, we have created a
-  [Github Discussion thread](https://github.com/MystenLabs/sui/discussions/13150) to track those
+  [Github Discussion thread](https://github.com/The-Social-Proof-Foundation/mys-core/discussions/13150) to track those
   use-cases.
 
   #### Migrating imports
@@ -832,8 +832,8 @@
   provider.
 
   ```diff
-  - import { JsonRpcProvider, devnetConnection } from '@mysten/sui.js';
-  + import { SuiClient, getFullnodeUrl } from '@mysten/sui.js/client';
+  - import { JsonRpcProvider, devnetConnection } from '@mysocial/sui.js';
+  + import { SuiClient, getFullnodeUrl } from '@mysocial/sui.js/client';
 
   - const provider = new JsonRpcProvider(localnetConnection);
   + const client = new SuiClient({ url: getFullnodeUrl('localnet')});
@@ -851,10 +851,10 @@
   -    RawSigner,
   -    TransactionBlock,
   -    localnetConnection,
-  - } from '@mysten/sui.js';
-  + import { Ed25519Keypair } from '@mysten/sui.js/keypairs/ed25519';
-  + import { SuiClient, getFullnodeUrl } from '@mysten/sui.js/client';
-  + import { TransactionBlock } from '@mysten/sui.js/transactions';
+  - } from '@mysocial/sui.js';
+  + import { Ed25519Keypair } from '@mysocial/sui.js/keypairs/ed25519';
+  + import { SuiClient, getFullnodeUrl } from '@mysocial/sui.js/client';
+  + import { TransactionBlock } from '@mysocial/sui.js/transactions';
 
     const keypair = new Ed25519Keypair()
   - const provider = new JsonRpcProvider(localnetConnection);
@@ -875,9 +875,9 @@
   use a method `@mysten/sui.js/faucet` to make these requests
 
   ```diff
-  - import { JsonRpcProvider, devnetConnection } from '@mysten/sui.js';
+  - import { JsonRpcProvider, devnetConnection } from '@mysocial/sui.js';
   - const provider = new JsonRpcProvider(devnetConnection);
-  + import { requestSuiFromFaucetV0, getFaucetHost } from '@mysten/sui.js/faucet';
+  + import { requestSuiFromFaucetV0, getFaucetHost } from '@mysocial/sui.js/faucet';
 
   - await provider.requestSuiFromFaucet(
   -  '<YOUR SUI ADDRESS>'

@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { execSync } from 'child_process';
@@ -111,6 +112,7 @@ async function addSchemaVersion(versionName: string, schema: string) {
 		resolve(filePath, `../../../schemas/${versionName}/index.ts`),
 		`
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { initGraphQLTada } from 'gql.tada';

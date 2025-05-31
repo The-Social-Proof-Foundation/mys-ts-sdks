@@ -1,12 +1,13 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { SuiClientProvider, WalletProvider } from '@mysten/dapp-kit';
+import { SuiClientProvider, WalletProvider } from '@mysocial/dapp-kit';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import '@mysten/dapp-kit/dist/index.css';
+import '@mysocial/dapp-kit/dist/index.css';
 
 import { getFullnodeUrl } from '../../typescript/src/client/network.ts';
 import { App } from './App.tsx';

@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type { TypedDocumentNode } from '@graphql-typed-document-node/core';
@@ -6,8 +7,8 @@ import type {
 	SuiTransport,
 	SuiTransportRequestOptions,
 	SuiTransportSubscribeOptions,
-} from '@mysten/sui/client';
-import { SuiHTTPTransport } from '@mysten/sui/client';
+} from '@mysocial/sui/client';
+import { SuiHTTPTransport } from '@mysocial/sui/client';
 import type { DocumentNode } from 'graphql';
 import { print } from 'graphql';
 

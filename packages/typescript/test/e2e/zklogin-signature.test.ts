@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64 } from '@mysten/bcs';
+import { fromBase64 } from '@mysocial/bcs';
 import { describe, expect, it, test } from 'vitest';
 
 import { SuiGraphQLClient } from '../../src/graphql';

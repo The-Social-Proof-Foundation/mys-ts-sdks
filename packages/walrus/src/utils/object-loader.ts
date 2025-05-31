@@ -1,15 +1,16 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { BcsType } from '@mysten/bcs';
-import { pureBcsSchemaFromTypeName } from '@mysten/sui/bcs';
-import type { PureTypeName, ShapeFromPureTypeName } from '@mysten/sui/bcs';
-import type { SuiObjectData } from '@mysten/sui/client';
+import type { BcsType } from '@mysocial/bcs';
+import { pureBcsSchemaFromTypeName } from '@mysocial/sui/bcs';
+import type { PureTypeName, ShapeFromPureTypeName } from '@mysocial/sui/bcs';
+import type { SuiObjectData } from '@mysocial/sui/client';
 import type {
 	Experimental_BaseClient,
 	Experimental_SuiClientTypes,
-} from '@mysten/sui/experimental';
-import { deriveDynamicFieldID } from '@mysten/sui/utils';
+} from '@mysocial/sui/experimental';
+import { deriveDynamicFieldID } from '@mysocial/sui/utils';
 import DataLoader from 'dataloader';
 
 import { Field } from '../contracts/deps/0x0000000000000000000000000000000000000000000000000000000000000002/dynamic_field.js';

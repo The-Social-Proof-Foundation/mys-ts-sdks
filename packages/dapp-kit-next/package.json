@@ -1,6 +1,6 @@
 {
-	"name": "@mysten/dapp-kit-next",
-	"author": "Mysten Labs <build@mystenlabs.com>",
+	"name": "@mysocial/dapp-kit-next",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"description": "Framework-agnostic toolkit for building decentralized applications on Sui.",
 	"homepage": "https://sdk.mystenlabs.com/typescript",
 	"version": "0.0.1",
@@ -37,7 +37,7 @@
 		"build-storybook": "storybook build"
 	},
 	"bugs": {
-		"url": "https://github.com/MystenLabs/ts-sdks/issues/new"
+		"url": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks/issues/new"
 	},
 	"publishConfig": {
 		"access": "public"

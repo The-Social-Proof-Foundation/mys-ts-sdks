@@ -35,7 +35,7 @@ Once you have your static file, you can use it in your project by importing it a
 `NamedPackagesPlugin` in your project.
 
 ```ts
-import { NamedPackagesPlugin } from '@mysten/sui/src/transactions';
+import { NamedPackagesPlugin } from '@mysocial/sui/src/transactions';
 
 import { getMvrCache } from './mvr.ts';
 

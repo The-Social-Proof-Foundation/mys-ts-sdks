@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { formatAddress } from '@mysten/sui/utils';
-import type { WalletAccount } from '@mysten/wallet-standard';
+import { formatAddress } from '@mysocial/sui/utils';
+import type { WalletAccount } from '@mysocial/wallet-standard';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import clsx from 'clsx';
 

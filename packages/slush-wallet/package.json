@@ -1,9 +1,9 @@
 {
-	"name": "@mysten/slush-wallet",
+	"name": "@mysocial/slush-wallet",
 	"version": "0.1.5",
 	"description": "Wallet adapter for Slush web wallet",
 	"license": "Apache-2.0",
-	"author": "Mysten Labs <build@mystenlabs.com>",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"type": "commonjs",
 	"main": "./dist/cjs/index.js",
 	"module": "./dist/esm/index.js",

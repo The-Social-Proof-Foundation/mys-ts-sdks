@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import type { PublicKey, SignatureFlag } from '@mysten/sui/cryptography';
-import { SIGNATURE_FLAG_TO_SCHEME, Signer } from '@mysten/sui/cryptography';
-import { fromBase64, toBase64 } from '@mysten/sui/utils';
+import type { PublicKey, SignatureFlag } from '@mysocial/sui/cryptography';
+import { SIGNATURE_FLAG_TO_SCHEME, Signer } from '@mysocial/sui/cryptography';
+import { fromBase64, toBase64 } from '@mysocial/sui/utils';
 
 import { getConcatenatedSignature } from '../utils/utils.js';
 import type { AwsClientOptions } from './aws-client.js';

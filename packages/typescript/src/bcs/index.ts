@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/bcs';
+import { bcs } from '@mysocial/bcs';
 
 import {
 	Address,
@@ -41,7 +42,7 @@ import { TransactionEffects } from './effects.js';
 export type { TypeTag } from './types.js';
 
 export { TypeTagSerializer } from './type-tag-serializer.js';
-export { BcsType, type BcsTypeOptions } from '@mysten/bcs';
+export { BcsType, type BcsTypeOptions } from '@mysocial/bcs';
 
 const suiBcs = {
 	...bcs,

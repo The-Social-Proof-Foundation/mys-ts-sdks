@@ -1,11 +1,12 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
-import { getFaucetHost, requestSuiFromFaucetV2 } from '@mysten/sui/faucet';
-import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';
-import { coinWithBalance, Transaction } from '@mysten/sui/transactions';
-import { MIST_PER_SUI, parseStructTag } from '@mysten/sui/utils';
+import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { getFaucetHost, requestSuiFromFaucetV2 } from '@mysocial/sui/faucet';
+import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
+import { coinWithBalance, Transaction } from '@mysocial/sui/transactions';
+import { MIST_PER_SUI, parseStructTag } from '@mysocial/sui/utils';
 
 import { TESTNET_WALRUS_PACKAGE_CONFIG } from '../src/index.js';
 

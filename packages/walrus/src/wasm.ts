@@ -1,12 +1,13 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64 } from '@mysten/bcs';
+import { fromBase64 } from '@mysocial/bcs';
 import init, {
 	BlobEncoder,
 	bls12381_min_pk_aggregate,
 	bls12381_min_pk_verify,
-} from '@mysten/walrus-wasm';
+} from '@mysocial/walrus-wasm';
 
 import type { StorageConfirmation } from './storage-node/types.js';
 import type { EncodingType } from './types.js';

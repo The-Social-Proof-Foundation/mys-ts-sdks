@@ -1,10 +1,11 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiClient } from '@mysten/sui/client';
-import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';
-import { Transaction } from '@mysten/sui/transactions';
-import { toBase64 } from '@mysten/sui/utils';
+import type { SuiClient } from '@mysocial/sui/client';
+import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
+import { Transaction } from '@mysocial/sui/transactions';
+import { toBase64 } from '@mysocial/sui/utils';
 import type {
 	StandardConnectFeature,
 	StandardConnectMethod,
@@ -17,8 +18,8 @@ import type {
 	SuiSignTransactionBlockMethod,
 	SuiSignTransactionMethod,
 	Wallet,
-} from '@mysten/wallet-standard';
-import { getWallets, ReadonlyWalletAccount, SUI_CHAINS } from '@mysten/wallet-standard';
+} from '@mysocial/wallet-standard';
+import { getWallets, ReadonlyWalletAccount, SUI_CHAINS } from '@mysocial/wallet-standard';
 import { useEffect } from 'react';
 
 import { useSuiClient } from '../useSuiClient.js';

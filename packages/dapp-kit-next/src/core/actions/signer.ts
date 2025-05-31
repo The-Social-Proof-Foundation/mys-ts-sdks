@@ -1,11 +1,12 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type {
 	SuiSignAndExecuteTransactionInput,
 	SuiSignTransactionInput,
-} from '@mysten/wallet-standard';
-import type { Transaction } from '@mysten/sui/transactions';
+} from '@mysocial/wallet-standard';
+import type { Transaction } from '@mysocial/sui/transactions';
 
 type SignTransactionArgs = {
 	transaction: Transaction | string;

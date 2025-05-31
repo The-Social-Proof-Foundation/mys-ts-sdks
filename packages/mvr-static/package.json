@@ -1,6 +1,6 @@
 {
-	"name": "@mysten/mvr-static",
-	"author": "Mysten Labs <build@mystenlabs.com>",
+	"name": "@mysocial/mvr-static",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"description": "The static generation tool for Move Registry (mvr)",
 	"homepage": "https://sdk.mystenlabs.com",
 	"version": "0.1.12",

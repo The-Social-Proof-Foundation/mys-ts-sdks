@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { getFullnodeUrl, isSuiClient, SuiClient } from '@mysten/sui/client';
-import type { SuiClientOptions } from '@mysten/sui/client';
+import { getFullnodeUrl, isSuiClient, SuiClient } from '@mysocial/sui/client';
+import type { SuiClientOptions } from '@mysocial/sui/client';
 import { createContext, useMemo, useState } from 'react';
 
 import type { NetworkConfig } from '../hooks/networkConfig.js';

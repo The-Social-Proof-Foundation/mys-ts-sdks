@@ -1,9 +1,9 @@
 {
-	"name": "@mysten/enoki-connect",
+	"name": "@mysocial/enoki-connect",
 	"version": "0.0.7",
 	"description": "Enoki Connect Wallet-Standard implementation",
 	"license": "Apache-2.0",
-	"author": "Mysten Labs <build@mystenlabs.com>",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"type": "commonjs",
 	"main": "./dist/cjs/index.js",
 	"module": "./dist/esm/index.js",
