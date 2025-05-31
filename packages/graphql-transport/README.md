@@ -1,4 +1,4 @@
-# `@mysten/graphql-transport`
+# `@socialproof/graphql-transport`
 
 This package provides a `MysTransport` that enables `MysClient` to make requests using the RPC 2.0
 (GraphQL) API instead of the JSON RPC API.
@@ -6,7 +6,7 @@ This package provides a `MysTransport` that enables `MysClient` to make requests
 ## Install
 
 ```bash
-npm install --save @mysten/graphql-transport
+npm install --save @socialproof/graphql-transport
 ```
 
 ## Setup

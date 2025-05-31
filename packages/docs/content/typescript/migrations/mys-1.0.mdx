@@ -14,19 +14,19 @@ highlights:
 - [New Transaction Intents to simplify common transaction patterns](../transaction-building/intents)
 - [A new Plugin system for Extending Transaction Building](../plugins)
 
-The majority of changes in this release are in the `@mysten/sui` package, but the changes to API
+The majority of changes in this release are in the `@socialproof/sui` package, but the changes to API
 require some breaking changes across all the Typescript SDKs. You can find migration guides for all
 affected packages below:
 
-## Changes to `@mysten/sui`
+## Changes to `@socialproof/sui`
 
-As part of the 1.0 release the `@mysten/sui.js` package has been renamed to `@mysten/sui`
+As part of the 1.0 release the `@socialproof/sui.js` package has been renamed to `@socialproof/sui`
 
 To upgrade to the new version, uninstall the old package and install the new one:
 
 ```sh npm2yarn
-npm uninstall @mysten/sui.js
-npm install @mysten/sui
+npm uninstall @socialproof/sui.js
+npm install @socialproof/sui
 ```
 
 Then update all imports to use the new package name:
@@ -36,7 +36,7 @@ Then update all imports to use the new package name:
 + import { SuiClient } from '@socialproof/sui'
 ```
 
-### `@mysten/sui/transactions`
+### `@socialproof/sui/transactions`
 
 The largest changes in the 1.0 release are all centered around how Transactions are built and
 executed. This includes are complete rewrite of the internal representation of transactions, as well
@@ -175,7 +175,7 @@ have been updated to return the new format
 
 The `getPureSerializationType` utility function has been removed.
 
-## `@mysten/sui/bcs`
+## `@socialproof/sui/bcs`
 
 ### Bcs Types
 
@@ -204,7 +204,7 @@ helpers have been removed.
 
 ## /multisig
 
-The `publicKeyFromSuiBytes` has been moved to `@mysten/sui/verify`
+The `publicKeyFromSuiBytes` has been moved to `@socialproof/sui/verify`
 
 ```diff
 - import { publicKeyFromSuiBytes } from '@socialproof/sui/multisig'
@@ -239,7 +239,7 @@ For some keypair implementations, the `signPersonalMessage` method incorrectly r
 encoded version of the signed message. All `signPersonalMessage` implementations now correctly
 return the unwrapped bytes of the message that was signed
 
-# @mysten/bcs
+# @socialproof/bcs
 
 ## The Registry
 
@@ -263,7 +263,7 @@ easier to parse BCS data from various string encodings.
 
 ## Generics
 
-We previously deprecated the `generic` helper exported from `@mysten/bcs`. This helper has now been
+We previously deprecated the `generic` helper exported from `@socialproof/bcs`. This helper has now been
 entirely removed.
 
 ## Enums
@@ -293,7 +293,7 @@ if (parsed.Variant0 !== undefined) {
 }
 ```
 
-# @mysten/kiosk
+# @socialproof/kiosk
 
 The options passed to `KioskTransaction` and `TransferPolicyTransaction` have been updated to
 replace `transactionBlock` with `transaction`.
@@ -314,7 +314,7 @@ than the `transactionBlock`.
 + resolveRuleFunction({ transaction }) => { ... }
 ```
 
-# @mysten/enoki
+# @socialproof/enoki
 
 The Enoki SDK has been updated to replace TransactionBlock terminology with Transaction throughout
 the API:
@@ -407,7 +407,7 @@ This change decouples the `useSignAndExecuteTransaction` hook from a specific RP
 implementation, and will enable migration to GraphQL without additional breaking changes in this
 hook.
 
-# @mysten/zksend
+# @socialproof/zksend
 
 The `getSentTransactionBlocksWithLinks` method has been renamed to `getSentTransactionsWithLinks`,
 and all methods that previously accepted a `transactionBlock` option now accept a `transaction`
@@ -428,7 +428,7 @@ instead instead.
   });
 ```
 
-# @mysten/wallet-standard
+# @socialproof/wallet-standard
 
 ### New wallet-standard features
 

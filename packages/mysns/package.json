@@ -2,7 +2,7 @@
 	"name": "@socialproof/mysns",
 	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"description": "MysNS SDK",
-	"version": "0.7.17",
+	"version": "0.0.1",
 	"license": "Apache-2.0",
 	"private": false,
 	"type": "commonjs",

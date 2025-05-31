@@ -1,4 +1,4 @@
-# @mysten/create-dapp
+# @socialproof/create-dapp
 
 ## 0.4.7
 
@@ -6,7 +6,7 @@
 
 - Updated dependencies [ec519fc]
   - @socialproof/mys@1.30.1
-  - @mysten/dapp-kit@0.16.5
+  - @socialproof/dapp-kit@0.16.5
 
 ## 0.4.6
 
@@ -20,20 +20,20 @@
 - Updated dependencies [2456052]
 - Updated dependencies [2456052]
   - @socialproof/mys@1.30.0
-  - @mysten/dapp-kit@0.16.4
+  - @socialproof/dapp-kit@0.16.4
 
 ## 0.4.5
 
 ### Patch Changes
 
-- @mysten/dapp-kit@0.16.3
+- @socialproof/dapp-kit@0.16.3
 
 ## 0.4.4
 
 ### Patch Changes
 
 - @socialproof/mys@1.29.1
-- @mysten/dapp-kit@0.16.2
+- @socialproof/dapp-kit@0.16.2
 
 ## 0.4.3
 
@@ -43,7 +43,7 @@
 - Updated dependencies [eb91fba]
 - Updated dependencies [19a8045]
   - @socialproof/mys@1.29.0
-  - @mysten/dapp-kit@0.16.1
+  - @socialproof/dapp-kit@0.16.1
 
 ## 0.4.2
 
@@ -52,7 +52,7 @@
 - Updated dependencies [9a94aea]
 - Updated dependencies [c5adcb8]
   - @socialproof/mys@1.28.2
-  - @mysten/dapp-kit@0.16.0
+  - @socialproof/dapp-kit@0.16.0
 
 ## 0.4.1
 
@@ -60,7 +60,7 @@
 
 - Updated dependencies [3cd4e53]
   - @socialproof/mys@1.28.1
-  - @mysten/dapp-kit@0.15.7
+  - @socialproof/dapp-kit@0.15.7
 
 ## 0.4.0
 
@@ -73,13 +73,13 @@
 
 - Updated dependencies [2705dc8]
   - @socialproof/mys@1.28.0
-  - @mysten/dapp-kit@0.15.6
+  - @socialproof/dapp-kit@0.15.6
 
 ## 0.3.60
 
 ### Patch Changes
 
-- @mysten/dapp-kit@0.15.5
+- @socialproof/dapp-kit@0.15.5
 
 ## 0.3.59
 
@@ -87,7 +87,7 @@
 
 - Updated dependencies [5cea435]
   - @socialproof/mys@1.27.1
-  - @mysten/dapp-kit@0.15.4
+  - @socialproof/dapp-kit@0.15.4
 
 ## 0.3.58
 
@@ -96,7 +96,7 @@
 - Updated dependencies [4d13ef8]
 - Updated dependencies [4d13ef8]
   - @socialproof/mys@1.27.0
-  - @mysten/dapp-kit@0.15.3
+  - @socialproof/dapp-kit@0.15.3
 
 ## 0.3.57
 
@@ -105,7 +105,7 @@
 - 7ba32a4: update dependencies
 - Updated dependencies [7ba32a4]
   - @socialproof/mys@1.26.1
-  - @mysten/dapp-kit@0.15.2
+  - @socialproof/dapp-kit@0.15.2
 
 ## 0.3.56
 
@@ -113,7 +113,7 @@
 
 - Updated dependencies [906dd14]
   - @socialproof/mys@1.26.0
-  - @mysten/dapp-kit@0.15.1
+  - @socialproof/dapp-kit@0.15.1
 
 ## 0.3.55
 
@@ -122,7 +122,7 @@
 - Updated dependencies [68a9ecd]
 - Updated dependencies [e8b5d04]
 - Updated dependencies [132e67d]
-  - @mysten/dapp-kit@0.15.0
+  - @socialproof/dapp-kit@0.15.0
   - @socialproof/mys@1.25.0
 
 ## 0.3.54
@@ -131,7 +131,7 @@
 
 - Updated dependencies [cf3d12d]
   - @socialproof/mys@1.24.0
-  - @mysten/dapp-kit@0.14.53
+  - @socialproof/dapp-kit@0.14.53
 
 ## 0.3.53
 
@@ -140,7 +140,7 @@
 - Updated dependencies [8baac61]
 - Updated dependencies [8baac61]
   - @socialproof/mys@1.23.0
-  - @mysten/dapp-kit@0.14.52
+  - @socialproof/dapp-kit@0.14.52
 
 ## 0.3.52
 
@@ -148,21 +148,21 @@
 
 - Updated dependencies [03975f4]
   - @socialproof/mys@1.22.0
-  - @mysten/dapp-kit@0.14.51
+  - @socialproof/dapp-kit@0.14.51
 
 ## 0.3.51
 
 ### Patch Changes
 
 - @socialproof/mys@1.21.2
-- @mysten/dapp-kit@0.14.50
+- @socialproof/dapp-kit@0.14.50
 
 ## 0.3.50
 
 ### Patch Changes
 
 - @socialproof/mys@1.21.1
-- @mysten/dapp-kit@0.14.49
+- @socialproof/dapp-kit@0.14.49
 
 ## 0.3.49
 
@@ -171,7 +171,7 @@
 - Updated dependencies [3d8a0d9]
 - Updated dependencies [20a5aaa]
   - @socialproof/mys@1.21.0
-  - @mysten/dapp-kit@0.14.48
+  - @socialproof/dapp-kit@0.14.48
 
 ## 0.3.48
 
@@ -179,7 +179,7 @@
 
 - Updated dependencies [827a200]
   - @socialproof/mys@1.20.0
-  - @mysten/dapp-kit@0.14.47
+  - @socialproof/dapp-kit@0.14.47
 
 ## 0.3.47
 
@@ -188,7 +188,7 @@
 - Updated dependencies [c39f32f]
 - Updated dependencies [539168a]
   - @socialproof/mys@1.19.0
-  - @mysten/dapp-kit@0.14.46
+  - @socialproof/dapp-kit@0.14.46
 
 ## 0.3.46
 
@@ -196,7 +196,7 @@
 
 - 7abd243: Update repo links
 - Updated dependencies [7abd243]
-  - @mysten/dapp-kit@0.14.45
+  - @socialproof/dapp-kit@0.14.45
   - @socialproof/mys@1.18.1
 
 ## 0.3.45
@@ -211,7 +211,7 @@
 - Updated dependencies [85bd9e4]
 - Updated dependencies [a872b97]
   - @socialproof/mys@1.18.0
-  - @mysten/dapp-kit@0.14.44
+  - @socialproof/dapp-kit@0.14.44
 
 ## 0.3.44
 
@@ -219,7 +219,7 @@
 
 - Updated dependencies [20af12d]
   - @socialproof/mys@1.17.0
-  - @mysten/dapp-kit@0.14.43
+  - @socialproof/dapp-kit@0.14.43
 
 ## 0.3.43
 
@@ -227,14 +227,14 @@
 
 - Updated dependencies [100207f]
   - @socialproof/mys@1.16.2
-  - @mysten/dapp-kit@0.14.42
+  - @socialproof/dapp-kit@0.14.42
 
 ## 0.3.42
 
 ### Patch Changes
 
 - @socialproof/mys@1.16.1
-- @mysten/dapp-kit@0.14.41
+- @socialproof/dapp-kit@0.14.41
 
 ## 0.3.41
 
@@ -243,14 +243,14 @@
 - Updated dependencies [ec2dc7f]
 - Updated dependencies [ec2dc7f]
   - @socialproof/mys@1.16.0
-  - @mysten/dapp-kit@0.14.40
+  - @socialproof/dapp-kit@0.14.40
 
 ## 0.3.40
 
 ### Patch Changes
 
 - @socialproof/mys@1.15.1
-- @mysten/dapp-kit@0.14.39
+- @socialproof/dapp-kit@0.14.39
 
 ## 0.3.39
 
@@ -258,27 +258,27 @@
 
 - Updated dependencies [6460e45]
   - @socialproof/mys@1.15.0
-  - @mysten/dapp-kit@0.14.38
+  - @socialproof/dapp-kit@0.14.38
 
 ## 0.3.38
 
 ### Patch Changes
 
-- @mysten/dapp-kit@0.14.37
+- @socialproof/dapp-kit@0.14.37
 
 ## 0.3.37
 
 ### Patch Changes
 
 - Updated dependencies [67d4620]
-  - @mysten/dapp-kit@0.14.36
+  - @socialproof/dapp-kit@0.14.36
 
 ## 0.3.36
 
 ### Patch Changes
 
 - Updated dependencies [6f44f4b]
-  - @mysten/dapp-kit@0.14.35
+  - @socialproof/dapp-kit@0.14.35
 
 ## 0.3.35
 
@@ -287,19 +287,19 @@
 - Updated dependencies [938fb6e]
 - Updated dependencies [ec919a0]
   - @socialproof/mys@1.14.4
-  - @mysten/dapp-kit@0.14.34
+  - @socialproof/dapp-kit@0.14.34
 
 ## 0.3.34
 
 ### Patch Changes
 
-- @mysten/dapp-kit@0.14.33
+- @socialproof/dapp-kit@0.14.33
 
 ## 0.3.33
 
 ### Patch Changes
 
-- @mysten/dapp-kit@0.14.32
+- @socialproof/dapp-kit@0.14.32
 
 ## 0.3.32
 
@@ -307,7 +307,7 @@
 
 - Updated dependencies [d5a23d7]
   - @socialproof/mys@1.14.3
-  - @mysten/dapp-kit@0.14.31
+  - @socialproof/dapp-kit@0.14.31
 
 ## 0.3.31
 
@@ -315,7 +315,7 @@
 
 - Updated dependencies [e7bc63e]
   - @socialproof/mys@1.14.2
-  - @mysten/dapp-kit@0.14.30
+  - @socialproof/dapp-kit@0.14.30
 
 ## 0.3.30
 
@@ -329,7 +329,7 @@
 
 - Updated dependencies [69ef100]
   - @socialproof/mys@1.14.1
-  - @mysten/dapp-kit@0.14.29
+  - @socialproof/dapp-kit@0.14.29
 
 ## 0.3.28
 
@@ -337,7 +337,7 @@
 
 - Updated dependencies [c24814b]
   - @socialproof/mys@1.14.0
-  - @mysten/dapp-kit@0.14.28
+  - @socialproof/dapp-kit@0.14.28
 
 ## 0.3.27
 
@@ -345,13 +345,13 @@
 
 - Updated dependencies [477d2a4]
   - @socialproof/mys@1.13.0
-  - @mysten/dapp-kit@0.14.27
+  - @socialproof/dapp-kit@0.14.27
 
 ## 0.3.26
 
 ### Patch Changes
 
-- @mysten/dapp-kit@0.14.26
+- @socialproof/dapp-kit@0.14.26
 
 ## 0.3.25
 
@@ -360,7 +360,7 @@
 - Updated dependencies [5436a90]
 - Updated dependencies [5436a90]
   - @socialproof/mys@1.12.0
-  - @mysten/dapp-kit@0.14.25
+  - @socialproof/dapp-kit@0.14.25
 
 ## 0.3.24
 
@@ -369,14 +369,14 @@
 - Updated dependencies [489f421]
 - Updated dependencies [489f421]
   - @socialproof/mys@1.11.0
-  - @mysten/dapp-kit@0.14.24
+  - @socialproof/dapp-kit@0.14.24
 
 ## 0.3.23
 
 ### Patch Changes
 
 - Updated dependencies [640b757]
-  - @mysten/dapp-kit@0.14.23
+  - @socialproof/dapp-kit@0.14.23
 
 ## 0.3.22
 
@@ -384,13 +384,13 @@
 
 - Updated dependencies [830b8d8]
   - @socialproof/mys@1.10.0
-  - @mysten/dapp-kit@0.14.22
+  - @socialproof/dapp-kit@0.14.22
 
 ## 0.3.21
 
 ### Patch Changes
 
-- @mysten/dapp-kit@0.14.21
+- @socialproof/dapp-kit@0.14.21
 
 ## 0.3.20
 
@@ -399,13 +399,13 @@
 - Updated dependencies [2c96b06]
 - Updated dependencies [1fd22cc]
   - @socialproof/mys@1.9.0
-  - @mysten/dapp-kit@0.14.20
+  - @socialproof/dapp-kit@0.14.20
 
 ## 0.3.19
 
 ### Patch Changes
 
-- @mysten/dapp-kit@0.14.19
+- @socialproof/dapp-kit@0.14.19
 
 ## 0.3.18
 
@@ -414,7 +414,7 @@
 - Updated dependencies [569511a]
 - Updated dependencies [012aefe]
   - @socialproof/mys@1.8.0
-  - @mysten/dapp-kit@0.14.18
+  - @socialproof/dapp-kit@0.14.18
 
 ## 0.3.17
 
@@ -426,7 +426,7 @@
 - Updated dependencies [4019dd7]
 - Updated dependencies [00a974d]
   - @socialproof/mys@1.7.0
-  - @mysten/dapp-kit@0.14.17
+  - @socialproof/dapp-kit@0.14.17
 
 ## 0.3.16
 
@@ -434,7 +434,7 @@
 
 - Updated dependencies [a3e32fe]
   - @socialproof/mys@1.6.0
-  - @mysten/dapp-kit@0.14.16
+  - @socialproof/dapp-kit@0.14.16
 
 ## 0.3.15
 
@@ -443,7 +443,7 @@
 - Updated dependencies [0851b31]
 - Updated dependencies [f37b3c2]
   - @socialproof/mys@1.5.0
-  - @mysten/dapp-kit@0.14.15
+  - @socialproof/dapp-kit@0.14.15
 
 ## 0.3.14
 
@@ -451,7 +451,7 @@
 
 - Updated dependencies [4419234]
   - @socialproof/mys@1.4.0
-  - @mysten/dapp-kit@0.14.14
+  - @socialproof/dapp-kit@0.14.14
 
 ## 0.3.13
 
@@ -459,7 +459,7 @@
 
 - Updated dependencies [a45f461]
   - @socialproof/mys@1.3.1
-  - @mysten/dapp-kit@0.14.13
+  - @socialproof/dapp-kit@0.14.13
 
 ## 0.3.12
 
@@ -473,7 +473,7 @@
 - Updated dependencies [0f27a97]
 - Updated dependencies [beed646]
   - @socialproof/mys@1.3.0
-  - @mysten/dapp-kit@0.14.12
+  - @socialproof/dapp-kit@0.14.12
 
 ## 0.3.11
 
@@ -483,7 +483,7 @@
 - Updated dependencies [45877014d1]
 - Updated dependencies [87d6f75403]
   - @socialproof/mys@1.2.1
-  - @mysten/dapp-kit@0.14.11
+  - @socialproof/dapp-kit@0.14.11
 
 ## 0.3.10
 
@@ -491,13 +491,13 @@
 
 - Updated dependencies [fef99d377f]
   - @socialproof/mys@1.2.0
-  - @mysten/dapp-kit@0.14.10
+  - @socialproof/dapp-kit@0.14.10
 
 ## 0.3.9
 
 ### Patch Changes
 
-- @mysten/dapp-kit@0.14.9
+- @socialproof/dapp-kit@0.14.9
 
 ## 0.3.8
 
@@ -505,7 +505,7 @@
 
 - Updated dependencies [0dfff33b95]
   - @socialproof/mys@1.1.2
-  - @mysten/dapp-kit@0.14.8
+  - @socialproof/dapp-kit@0.14.8
 
 ## 0.3.7
 
@@ -513,7 +513,7 @@
 
 - Updated dependencies [101f1ff4b8]
   - @socialproof/mys@1.1.1
-  - @mysten/dapp-kit@0.14.7
+  - @socialproof/dapp-kit@0.14.7
 
 ## 0.3.6
 
@@ -521,7 +521,7 @@
 
 - Updated dependencies [bae8f9683c]
   - @socialproof/mys@1.1.0
-  - @mysten/dapp-kit@0.14.6
+  - @socialproof/dapp-kit@0.14.6
 
 ## 0.3.5
 
@@ -529,7 +529,7 @@
 
 - Updated dependencies [369b924343]
   - @socialproof/mys@1.0.5
-  - @mysten/dapp-kit@0.14.5
+  - @socialproof/dapp-kit@0.14.5
 
 ## 0.3.4
 
@@ -537,7 +537,7 @@
 
 - Updated dependencies [f1e828f557]
   - @socialproof/mys@1.0.4
-  - @mysten/dapp-kit@0.14.4
+  - @socialproof/dapp-kit@0.14.4
 
 ## 0.3.3
 
@@ -545,7 +545,7 @@
 
 - Updated dependencies [1f20580841]
   - @socialproof/mys@1.0.3
-  - @mysten/dapp-kit@0.14.3
+  - @socialproof/dapp-kit@0.14.3
 
 ## 0.3.2
 
@@ -553,7 +553,7 @@
 
 - Updated dependencies [f0a839f874]
   - @socialproof/mys@1.0.2
-  - @mysten/dapp-kit@0.14.2
+  - @socialproof/dapp-kit@0.14.2
 
 ## 0.3.1
 
@@ -561,7 +561,7 @@
 
 - Updated dependencies [6fc6235984]
   - @socialproof/mys@1.0.1
-  - @mysten/dapp-kit@0.14.1
+  - @socialproof/dapp-kit@0.14.1
 
 ## 0.3.0
 
@@ -577,28 +577,28 @@
 - Updated dependencies [ebdfe7cf21]
 - Updated dependencies [a92b03de42]
   - @socialproof/mys@1.0.0
-  - @mysten/dapp-kit@0.14.0
+  - @socialproof/dapp-kit@0.14.0
 
 ## 0.2.20
 
 ### Patch Changes
 
 - Updated dependencies [3f8b08dedc]
-  - @mysten/dapp-kit@0.13.2
+  - @socialproof/dapp-kit@0.13.2
 
 ## 0.2.19
 
 ### Patch Changes
 
 - Updated dependencies [2da78f77a3]
-  - @mysten/dapp-kit@0.13.1
+  - @socialproof/dapp-kit@0.13.1
 
 ## 0.2.18
 
 ### Patch Changes
 
 - Updated dependencies [807262f394]
-  - @mysten/dapp-kit@0.13.0
+  - @socialproof/dapp-kit@0.13.0
 
 ## 0.2.17
 
@@ -606,7 +606,7 @@
 
 - Updated dependencies [99b112178c]
   - @socialproof/mys.js@0.54.1
-  - @mysten/dapp-kit@0.12.15
+  - @socialproof/dapp-kit@0.12.15
 
 ## 0.2.16
 
@@ -615,7 +615,7 @@
 - Updated dependencies [b7f673dbd9]
 - Updated dependencies [123b42c75c]
   - @socialproof/mys.js@0.54.0
-  - @mysten/dapp-kit@0.12.14
+  - @socialproof/dapp-kit@0.12.14
 
 ## 0.2.15
 
@@ -623,19 +623,19 @@
 
 - Updated dependencies [774bfb41a8]
   - @socialproof/mys.js@0.53.0
-  - @mysten/dapp-kit@0.12.13
+  - @socialproof/dapp-kit@0.12.13
 
 ## 0.2.14
 
 ### Patch Changes
 
-- @mysten/dapp-kit@0.12.12
+- @socialproof/dapp-kit@0.12.12
 
 ## 0.2.13
 
 ### Patch Changes
 
-- @mysten/dapp-kit@0.12.11
+- @socialproof/dapp-kit@0.12.11
 
 ## 0.2.12
 
@@ -643,13 +643,13 @@
 
 - Updated dependencies [929db4976a]
   - @socialproof/mys.js@0.52.0
-  - @mysten/dapp-kit@0.12.10
+  - @socialproof/dapp-kit@0.12.10
 
 ## 0.2.11
 
 ### Patch Changes
 
-- @mysten/dapp-kit@0.12.9
+- @socialproof/dapp-kit@0.12.9
 
 ## 0.2.10
 
@@ -657,7 +657,7 @@
 
 - Updated dependencies [b4ecdb5860]
   - @socialproof/mys.js@0.51.2
-  - @mysten/dapp-kit@0.12.8
+  - @socialproof/dapp-kit@0.12.8
 
 ## 0.2.9
 
@@ -665,25 +665,25 @@
 
 - Updated dependencies [6984dd1e38]
   - @socialproof/mys.js@0.51.1
-  - @mysten/dapp-kit@0.12.7
+  - @socialproof/dapp-kit@0.12.7
 
 ## 0.2.8
 
 ### Patch Changes
 
-- @mysten/dapp-kit@0.12.6
+- @socialproof/dapp-kit@0.12.6
 
 ## 0.2.7
 
 ### Patch Changes
 
-- @mysten/dapp-kit@0.12.5
+- @socialproof/dapp-kit@0.12.5
 
 ## 0.2.6
 
 ### Patch Changes
 
-- @mysten/dapp-kit@0.12.4
+- @socialproof/dapp-kit@0.12.4
 
 ## 0.2.5
 
@@ -691,7 +691,7 @@
 
 - Updated dependencies [0cafa94027]
   - @socialproof/mys.js@0.51.0
-  - @mysten/dapp-kit@0.12.3
+  - @socialproof/dapp-kit@0.12.3
 
 ## 0.2.4
 
@@ -700,13 +700,13 @@
 - 4830361fa4: Updated typescript version
 - Updated dependencies [4830361fa4]
   - @socialproof/mys.js@0.50.1
-  - @mysten/dapp-kit@0.12.2
+  - @socialproof/dapp-kit@0.12.2
 
 ## 0.2.3
 
 ### Patch Changes
 
-- @mysten/dapp-kit@0.12.1
+- @socialproof/dapp-kit@0.12.1
 
 ## 0.2.2
 
@@ -721,7 +721,7 @@
 - Updated dependencies [a34f1cb67d]
 - Updated dependencies [220a766d86]
   - @socialproof/mys.js@0.50.0
-  - @mysten/dapp-kit@0.12.0
+  - @socialproof/dapp-kit@0.12.0
 
 ## 0.2.1
 
@@ -730,7 +730,7 @@
 - 9ac0a4ec01: Add extensions to all sdk import paths
 - Updated dependencies [9ac0a4ec01]
   - @socialproof/mys.js@0.49.1
-  - @mysten/dapp-kit@0.11.1
+  - @socialproof/dapp-kit@0.11.1
 
 ## 0.2.0
 
@@ -742,7 +742,7 @@
 
 - Updated dependencies [9ba167b0af]
 - Updated dependencies [e5f9e3ba21]
-  - @mysten/dapp-kit@0.11.0
+  - @socialproof/dapp-kit@0.11.0
   - @socialproof/mys.js@0.49.0
 
 ## 0.1.8
@@ -754,7 +754,7 @@
 - Updated dependencies [165ad6b21d]
 - Updated dependencies [dd362ec1d6]
 - Updated dependencies [d55db38647]
-  - @mysten/dapp-kit@0.10.3
+  - @socialproof/dapp-kit@0.10.3
   - @socialproof/mys.js@0.48.1
 
 ## 0.1.7
@@ -764,7 +764,7 @@
 - Updated dependencies [2ae1a6a108]
 - Updated dependencies [b30fecbbca]
 - Updated dependencies [cdcfa76c43]
-  - @mysten/dapp-kit@0.10.2
+  - @socialproof/dapp-kit@0.10.2
   - @socialproof/mys.js@0.48.0
 
 ## 0.1.6
@@ -772,14 +772,14 @@
 ### Patch Changes
 
 - Updated dependencies [367779ea2]
-  - @mysten/dapp-kit@0.10.1
+  - @socialproof/dapp-kit@0.10.1
 
 ## 0.1.5
 
 ### Patch Changes
 
 - Updated dependencies [47b137d03]
-  - @mysten/dapp-kit@0.10.0
+  - @socialproof/dapp-kit@0.10.0
 
 ## 0.1.4
 
@@ -790,7 +790,7 @@
 - Updated dependencies [0259aec82]
 - Updated dependencies [64d45ba27]
   - @socialproof/mys.js@0.47.0
-  - @mysten/dapp-kit@0.9.1
+  - @socialproof/dapp-kit@0.9.1
 
 ## 0.1.3
 
@@ -798,7 +798,7 @@
 
 - Updated dependencies [c5d4db238]
 - Updated dependencies [652bcdd92]
-  - @mysten/dapp-kit@0.9.0
+  - @socialproof/dapp-kit@0.9.0
   - @socialproof/mys.js@0.46.1
 
 ## 0.1.2
@@ -812,7 +812,7 @@
 - Updated dependencies [093554a0d]
 - Updated dependencies [3718a230b]
   - @socialproof/mys.js@0.46.0
-  - @mysten/dapp-kit@0.8.0
+  - @socialproof/dapp-kit@0.8.0
 
 ## 0.1.1
 
@@ -821,7 +821,7 @@
 - Updated dependencies [b359868e3]
 - Updated dependencies [5d7055365]
 - Updated dependencies [30b47b758]
-  - @mysten/dapp-kit@0.7.0
+  - @socialproof/dapp-kit@0.7.0
   - @socialproof/mys.js@0.45.1
 
 ## 0.1.0
@@ -837,7 +837,7 @@
 - Updated dependencies [09c103002]
 - Updated dependencies [e0578094b]
 - Updated dependencies [b9afb5567]
-  - @mysten/dapp-kit@0.6.0
+  - @socialproof/dapp-kit@0.6.0
   - @socialproof/mys.js@0.45.0
 
 ## 0.0.5
@@ -845,14 +845,14 @@
 ### Patch Changes
 
 - Updated dependencies [ade244c3d]
-  - @mysten/dapp-kit@0.5.0
+  - @socialproof/dapp-kit@0.5.0
 
 ## 0.0.4
 
 ### Patch Changes
 
 - Updated dependencies [b7c304696]
-  - @mysten/dapp-kit@0.4.0
+  - @socialproof/dapp-kit@0.4.0
 
 ## 0.0.3
 
@@ -876,5 +876,5 @@
 - Updated dependencies [11cf4e68b]
 - Updated dependencies [0c5cdc049]
 - Updated dependencies [c7e12c928]
-  - @mysten/dapp-kit@0.3.0
+  - @socialproof/dapp-kit@0.3.0
   - @socialproof/mys.js@0.44.0

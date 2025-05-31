@@ -1,4 +1,4 @@
-# @mysten/kiosk
+# @socialproof/kiosk
 
 ## 0.12.7
 

@@ -1,6 +1,6 @@
 {
 	"name": "@socialproof/wallet-standard",
-	"version": "0.15.2",
+	"version": "0.0.1",
 	"description": "A myste of standard utilities for implementing wallets based on the Wallet Standard.",
 	"license": "Apache-2.0",
 	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",

@@ -1,4 +1,4 @@
-# @mysten/graphql-transport
+# @socialproof/graphql-transport
 
 ## 0.2.57
 
@@ -24,7 +24,7 @@
 ### Patch Changes
 
 - Updated dependencies [7e1c525]
-  - @mysten/bcs@1.6.1
+  - @socialproof/bcs@1.6.1
   - @socialproof/mys@1.29.1
 
 ## 0.2.54
@@ -80,7 +80,7 @@
 - Updated dependencies [7ba32a4]
 - Updated dependencies [c3a788c]
   - @socialproof/mys@1.26.1
-  - @mysten/bcs@1.6.0
+  - @socialproof/bcs@1.6.0
 
 ## 0.2.47
 
@@ -117,14 +117,14 @@
 
 - Updated dependencies [03975f4]
   - @socialproof/mys@1.22.0
-  - @mysten/bcs@1.5.0
+  - @socialproof/bcs@1.5.0
 
 ## 0.2.42
 
 ### Patch Changes
 
 - Updated dependencies [95b1ea5]
-  - @mysten/bcs@1.4.0
+  - @socialproof/bcs@1.4.0
   - @socialproof/mys@1.21.2
 
 ## 0.2.41
@@ -132,7 +132,7 @@
 ### Patch Changes
 
 - Updated dependencies [10e2724]
-  - @mysten/bcs@1.3.0
+  - @socialproof/bcs@1.3.0
   - @socialproof/mys@1.21.1
 
 ## 0.2.40
@@ -164,7 +164,7 @@
 
 - 7abd243: Update repo links
 - Updated dependencies [7abd243]
-  - @mysten/bcs@1.2.1
+  - @socialproof/bcs@1.2.1
   - @socialproof/mys@1.18.1
 
 ## 0.2.36
@@ -200,7 +200,7 @@
 ### Patch Changes
 
 - Updated dependencies [ad24b95]
-  - @mysten/bcs@1.2.0
+  - @socialproof/bcs@1.2.0
   - @socialproof/mys@1.16.1
 
 ## 0.2.32
@@ -216,7 +216,7 @@
 ### Patch Changes
 
 - Updated dependencies [1dd7713]
-  - @mysten/bcs@1.1.1
+  - @socialproof/bcs@1.1.1
   - @socialproof/mys@1.15.1
 
 ## 0.2.30
@@ -300,7 +300,7 @@
 - Updated dependencies [489f421]
 - Updated dependencies [489f421]
   - @socialproof/mys@1.11.0
-  - @mysten/bcs@1.1.0
+  - @socialproof/bcs@1.1.0
 
 ## 0.2.19
 
@@ -350,7 +350,7 @@
 - Updated dependencies [f37b3c2]
 - Updated dependencies [f37b3c2]
   - @socialproof/mys@1.5.0
-  - @mysten/bcs@1.0.4
+  - @socialproof/bcs@1.0.4
 
 ## 0.2.13
 
@@ -378,7 +378,7 @@
 - Updated dependencies [0f27a97]
 - Updated dependencies [beed646]
   - @socialproof/mys@1.3.0
-  - @mysten/bcs@1.0.3
+  - @socialproof/bcs@1.0.3
 
 ## 0.2.10
 
@@ -423,7 +423,7 @@
 
 - Updated dependencies [369b924343]
 - Updated dependencies [369b924343]
-  - @mysten/bcs@1.0.2
+  - @socialproof/bcs@1.0.2
   - @socialproof/mys@1.0.5
 
 ## 0.2.4
@@ -433,7 +433,7 @@
 - Updated dependencies [f1e828f557]
 - Updated dependencies [f1e828f557]
   - @socialproof/mys@1.0.4
-  - @mysten/bcs@1.0.1
+  - @socialproof/bcs@1.0.1
 
 ## 0.2.3
 
@@ -470,7 +470,7 @@
 - Updated dependencies [ebdfe7cf21]
 - Updated dependencies [a92b03de42]
   - @socialproof/mys@1.0.0
-  - @mysten/bcs@1.0.0
+  - @socialproof/bcs@1.0.0
 
 ## 0.1.0
 
@@ -534,4 +534,4 @@
 
 - Updated dependencies [4830361fa4]
   - @socialproof/mys.js@0.50.1
-  - @mysten/bcs@0.11.1
+  - @socialproof/bcs@0.11.1

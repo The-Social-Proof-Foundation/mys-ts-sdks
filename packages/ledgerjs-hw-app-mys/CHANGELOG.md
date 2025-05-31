@@ -1,4 +1,4 @@
-# @mysten/ledgerjs-hw-app-mys
+# @socialproof/ledgerjs-hw-app-mys
 
 ## 0.5.0
 

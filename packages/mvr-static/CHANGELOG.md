@@ -1,4 +1,4 @@
-# @mysten/mvr-static
+# @socialproof/mvr-static
 
 ## 0.1.12
 

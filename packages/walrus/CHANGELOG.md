@@ -1,4 +1,4 @@
-# @mysten/walrus
+# @socialproof/walrus
 
 ## 0.1.1
 
@@ -30,7 +30,7 @@
 ### Patch Changes
 
 - Updated dependencies [7e1c525]
-  - @mysten/bcs@1.6.1
+  - @socialproof/bcs@1.6.1
   - @socialproof/mys@1.29.1
 
 ## 0.0.20
@@ -71,7 +71,7 @@
 
 - 981a39d: Add separate esm entrypoint
 - Updated dependencies [981a39d]
-  - @mysten/walrus-wasm@0.0.6
+  - @socialproof/walrus-wasm@0.0.6
 
 ## 0.0.15
 
@@ -96,7 +96,7 @@
 
 - 4389b36: Add support for customizing wasm url
 - Updated dependencies [4389b36]
-  - @mysten/walrus-wasm@0.0.5
+  - @socialproof/walrus-wasm@0.0.5
 
 ## 0.0.12
 
@@ -125,14 +125,14 @@
 - Updated dependencies [7ba32a4]
 - Updated dependencies [c3a788c]
   - @socialproof/mys@1.26.1
-  - @mysten/bcs@1.6.0
+  - @socialproof/bcs@1.6.0
 
 ## 0.0.8
 
 ### Patch Changes
 
 - Updated dependencies [3e9bb8d]
-  - @mysten/walrus-wasm@0.0.4
+  - @socialproof/walrus-wasm@0.0.4
 
 ## 0.0.7
 
@@ -140,7 +140,7 @@
 
 - ea2ce74: Add missing wasm bindings
 - Updated dependencies [ea2ce74]
-  - @mysten/walrus-wasm@0.0.3
+  - @socialproof/walrus-wasm@0.0.3
 
 ## 0.0.6
 
@@ -148,7 +148,7 @@
 
 - 7d6e114: Fix walrus wasm bindings not working in bundled client applications
 - Updated dependencies [7d6e114]
-  - @mysten/walrus-wasm@0.0.2
+  - @socialproof/walrus-wasm@0.0.2
 
 ## 0.0.5
 
@@ -185,4 +185,4 @@
 - Updated dependencies [cf3d12d]
 - Updated dependencies [f81d84d]
   - @socialproof/mys@1.24.0
-  - @mysten/walrus-wasm@0.0.1
+  - @socialproof/walrus-wasm@0.0.1

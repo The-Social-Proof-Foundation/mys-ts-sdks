@@ -1,4 +1,4 @@
-# @mysten/enoki
+# @socialproof/enoki
 
 ## 0.6.13
 
@@ -6,8 +6,8 @@
 
 - Updated dependencies [ec519fc]
   - @socialproof/mys@1.30.1
-  - @mysten/signers@0.2.10
-  - @mysten/wallet-standard@0.15.2
+  - @socialproof/signers@0.2.10
+  - @socialproof/wallet-standard@0.15.2
 
 ## 0.6.12
 
@@ -20,30 +20,30 @@
 - Updated dependencies [2456052]
 - Updated dependencies [2456052]
   - @socialproof/mys@1.30.0
-  - @mysten/signers@0.2.9
-  - @mysten/wallet-standard@0.15.1
+  - @socialproof/signers@0.2.9
+  - @socialproof/wallet-standard@0.15.1
 
 ## 0.6.11
 
 ### Patch Changes
 
 - Updated dependencies [afbbb80]
-  - @mysten/wallet-standard@0.15.0
+  - @socialproof/wallet-standard@0.15.0
 
 ## 0.6.10
 
 ### Patch Changes
 
 - @socialproof/mys@1.29.1
-- @mysten/signers@0.2.8
-- @mysten/wallet-standard@0.14.9
+- @socialproof/signers@0.2.8
+- @socialproof/wallet-standard@0.14.9
 
 ## 0.6.9
 
 ### Patch Changes
 
 - Updated dependencies [8356318]
-  - @mysten/signers@0.2.7
+  - @socialproof/signers@0.2.7
 
 ## 0.6.8
 
@@ -53,8 +53,8 @@
 - Updated dependencies [eb91fba]
 - Updated dependencies [19a8045]
   - @socialproof/mys@1.29.0
-  - @mysten/signers@0.2.6
-  - @mysten/wallet-standard@0.14.8
+  - @socialproof/signers@0.2.6
+  - @socialproof/wallet-standard@0.14.8
 
 ## 0.6.7
 
@@ -62,8 +62,8 @@
 
 - Updated dependencies [9a94aea]
   - @socialproof/mys@1.28.2
-  - @mysten/signers@0.2.5
-  - @mysten/wallet-standard@0.14.7
+  - @socialproof/signers@0.2.5
+  - @socialproof/wallet-standard@0.14.7
 
 ## 0.6.6
 
@@ -71,8 +71,8 @@
 
 - Updated dependencies [3cd4e53]
   - @socialproof/mys@1.28.1
-  - @mysten/signers@0.2.4
-  - @mysten/wallet-standard@0.14.6
+  - @socialproof/signers@0.2.4
+  - @socialproof/wallet-standard@0.14.6
 
 ## 0.6.5
 
@@ -80,8 +80,8 @@
 
 - Updated dependencies [2705dc8]
   - @socialproof/mys@1.28.0
-  - @mysten/signers@0.2.3
-  - @mysten/wallet-standard@0.14.5
+  - @socialproof/signers@0.2.3
+  - @socialproof/wallet-standard@0.14.5
 
 ## 0.6.4
 
@@ -90,8 +90,8 @@
 - 20568cd: Fix the public key not being stored in IndexedDB for `EnokiFlow` and Enoki wallets
 - Updated dependencies [5cea435]
   - @socialproof/mys@1.27.1
-  - @mysten/signers@0.2.2
-  - @mysten/wallet-standard@0.14.4
+  - @socialproof/signers@0.2.2
+  - @socialproof/wallet-standard@0.14.4
 
 ## 0.6.3
 
@@ -100,8 +100,8 @@
 - Updated dependencies [4d13ef8]
 - Updated dependencies [4d13ef8]
   - @socialproof/mys@1.27.0
-  - @mysten/signers@0.2.1
-  - @mysten/wallet-standard@0.14.3
+  - @socialproof/signers@0.2.1
+  - @socialproof/wallet-standard@0.14.3
 
 ## 0.6.2
 
@@ -111,8 +111,8 @@
 - 4d7f04c: Add new EnokiClient methods
 - Updated dependencies [156ae13]
 - Updated dependencies [7ba32a4]
-  - @mysten/signers@0.2.0
-  - @mysten/wallet-standard@0.14.2
+  - @socialproof/signers@0.2.0
+  - @socialproof/wallet-standard@0.14.2
   - @socialproof/mys@1.26.1
 
 ## 0.6.1
@@ -121,8 +121,8 @@
 
 - Updated dependencies [906dd14]
   - @socialproof/mys@1.26.0
-  - @mysten/signers@0.1.17
-  - @mysten/wallet-standard@0.14.1
+  - @socialproof/signers@0.1.17
+  - @socialproof/wallet-standard@0.14.1
 
 ## 0.6.0
 
@@ -136,9 +136,9 @@
 - 132e67d: Clear the ephemeral keypair from IDB for the experimental web crypto signer
 - Updated dependencies [68a9ecd]
 - Updated dependencies [e8b5d04]
-  - @mysten/wallet-standard@0.14.0
+  - @socialproof/wallet-standard@0.14.0
   - @socialproof/mys@1.25.0
-  - @mysten/signers@0.1.16
+  - @socialproof/signers@0.1.16
 
 ## 0.5.3
 
@@ -146,7 +146,7 @@
 
 - 850369a: Add experimental support for WebCrypto signer
 - Updated dependencies [850369a]
-  - @mysten/signers@0.1.15
+  - @socialproof/signers@0.1.15
 
 ## 0.5.2
 
@@ -256,14 +256,14 @@
 
 ### Patch Changes
 
-- 69ee5cc: remove @mysten/zklogin dependency
+- 69ee5cc: remove @socialproof/zklogin dependency
 
 ## 0.4.15
 
 ### Patch Changes
 
 - @socialproof/mys@1.16.1
-- @mysten/zklogin@0.8.1
+- @socialproof/zklogin@0.8.1
 
 ## 0.4.14
 
@@ -272,14 +272,14 @@
 - Updated dependencies [ec2dc7f]
 - Updated dependencies [ec2dc7f]
   - @socialproof/mys@1.16.0
-  - @mysten/zklogin@0.8.0
+  - @socialproof/zklogin@0.8.0
 
 ## 0.4.13
 
 ### Patch Changes
 
 - @socialproof/mys@1.15.1
-- @mysten/zklogin@0.7.30
+- @socialproof/zklogin@0.7.30
 
 ## 0.4.12
 
@@ -287,7 +287,7 @@
 
 - Updated dependencies [6460e45]
   - @socialproof/mys@1.15.0
-  - @mysten/zklogin@0.7.29
+  - @socialproof/zklogin@0.7.29
 
 ## 0.4.11
 
@@ -295,7 +295,7 @@
 
 - Updated dependencies [938fb6e]
   - @socialproof/mys@1.14.4
-  - @mysten/zklogin@0.7.28
+  - @socialproof/zklogin@0.7.28
 
 ## 0.4.10
 
@@ -303,7 +303,7 @@
 
 - Updated dependencies [d5a23d7]
   - @socialproof/mys@1.14.3
-  - @mysten/zklogin@0.7.27
+  - @socialproof/zklogin@0.7.27
 
 ## 0.4.9
 
@@ -311,7 +311,7 @@
 
 - Updated dependencies [e7bc63e]
   - @socialproof/mys@1.14.2
-  - @mysten/zklogin@0.7.26
+  - @socialproof/zklogin@0.7.26
 
 ## 0.4.8
 
@@ -319,7 +319,7 @@
 
 - Updated dependencies [69ef100]
   - @socialproof/mys@1.14.1
-  - @mysten/zklogin@0.7.25
+  - @socialproof/zklogin@0.7.25
 
 ## 0.4.7
 
@@ -327,7 +327,7 @@
 
 - Updated dependencies [c24814b]
   - @socialproof/mys@1.14.0
-  - @mysten/zklogin@0.7.24
+  - @socialproof/zklogin@0.7.24
 
 ## 0.4.6
 
@@ -335,7 +335,7 @@
 
 - Updated dependencies [477d2a4]
   - @socialproof/mys@1.13.0
-  - @mysten/zklogin@0.7.23
+  - @socialproof/zklogin@0.7.23
 
 ## 0.4.5
 
@@ -344,7 +344,7 @@
 - Updated dependencies [5436a90]
 - Updated dependencies [5436a90]
   - @socialproof/mys@1.12.0
-  - @mysten/zklogin@0.7.22
+  - @socialproof/zklogin@0.7.22
 
 ## 0.4.4
 
@@ -353,7 +353,7 @@
 - Updated dependencies [489f421]
 - Updated dependencies [489f421]
   - @socialproof/mys@1.11.0
-  - @mysten/zklogin@0.7.21
+  - @socialproof/zklogin@0.7.21
 
 ## 0.4.3
 
@@ -361,7 +361,7 @@
 
 - Updated dependencies [830b8d8]
   - @socialproof/mys@1.10.0
-  - @mysten/zklogin@0.7.20
+  - @socialproof/zklogin@0.7.20
 
 ## 0.4.2
 
@@ -370,7 +370,7 @@
 - Updated dependencies [2c96b06]
 - Updated dependencies [1fd22cc]
   - @socialproof/mys@1.9.0
-  - @mysten/zklogin@0.7.19
+  - @socialproof/zklogin@0.7.19
 
 ## 0.4.1
 
@@ -378,7 +378,7 @@
 
 - Updated dependencies [569511a]
   - @socialproof/mys@1.8.0
-  - @mysten/zklogin@0.7.18
+  - @socialproof/zklogin@0.7.18
 
 ## 0.4.0
 
@@ -396,7 +396,7 @@
 - Updated dependencies [4019dd7]
 - Updated dependencies [00a974d]
   - @socialproof/mys@1.7.0
-  - @mysten/zklogin@0.7.17
+  - @socialproof/zklogin@0.7.17
 
 ## 0.3.16
 
@@ -404,14 +404,14 @@
 
 - Updated dependencies [a3e32fe]
   - @socialproof/mys@1.6.0
-  - @mysten/zklogin@0.7.16
+  - @socialproof/zklogin@0.7.16
 
 ## 0.3.15
 
 ### Patch Changes
 
 - Updated dependencies [6f79ed9]
-  - @mysten/zklogin@0.7.15
+  - @socialproof/zklogin@0.7.15
 
 ## 0.3.14
 
@@ -420,7 +420,7 @@
 - Updated dependencies [0851b31]
 - Updated dependencies [f37b3c2]
   - @socialproof/mys@1.5.0
-  - @mysten/zklogin@0.7.14
+  - @socialproof/zklogin@0.7.14
 
 ## 0.3.13
 
@@ -428,7 +428,7 @@
 
 - Updated dependencies [4419234]
   - @socialproof/mys@1.4.0
-  - @mysten/zklogin@0.7.13
+  - @socialproof/zklogin@0.7.13
 
 ## 0.3.12
 
@@ -436,7 +436,7 @@
 
 - Updated dependencies [a45f461]
   - @socialproof/mys@1.3.1
-  - @mysten/zklogin@0.7.12
+  - @socialproof/zklogin@0.7.12
 
 ## 0.3.11
 
@@ -450,7 +450,7 @@
 - Updated dependencies [0f27a97]
 - Updated dependencies [beed646]
   - @socialproof/mys@1.3.0
-  - @mysten/zklogin@0.7.11
+  - @socialproof/zklogin@0.7.11
 
 ## 0.3.10
 
@@ -460,7 +460,7 @@
 - Updated dependencies [45877014d1]
 - Updated dependencies [87d6f75403]
   - @socialproof/mys@1.2.1
-  - @mysten/zklogin@0.7.10
+  - @socialproof/zklogin@0.7.10
 
 ## 0.3.9
 
@@ -468,7 +468,7 @@
 
 - Updated dependencies [fef99d377f]
   - @socialproof/mys@1.2.0
-  - @mysten/zklogin@0.7.9
+  - @socialproof/zklogin@0.7.9
 
 ## 0.3.8
 
@@ -476,7 +476,7 @@
 
 - Updated dependencies [0dfff33b95]
   - @socialproof/mys@1.1.2
-  - @mysten/zklogin@0.7.8
+  - @socialproof/zklogin@0.7.8
 
 ## 0.3.7
 
@@ -484,7 +484,7 @@
 
 - Updated dependencies [101f1ff4b8]
   - @socialproof/mys@1.1.1
-  - @mysten/zklogin@0.7.7
+  - @socialproof/zklogin@0.7.7
 
 ## 0.3.6
 
@@ -492,7 +492,7 @@
 
 - Updated dependencies [bae8f9683c]
   - @socialproof/mys@1.1.0
-  - @mysten/zklogin@0.7.6
+  - @socialproof/zklogin@0.7.6
 
 ## 0.3.5
 
@@ -500,7 +500,7 @@
 
 - Updated dependencies [369b924343]
   - @socialproof/mys@1.0.5
-  - @mysten/zklogin@0.7.5
+  - @socialproof/zklogin@0.7.5
 
 ## 0.3.4
 
@@ -508,7 +508,7 @@
 
 - Updated dependencies [f1e828f557]
   - @socialproof/mys@1.0.4
-  - @mysten/zklogin@0.7.4
+  - @socialproof/zklogin@0.7.4
 
 ## 0.3.3
 
@@ -516,7 +516,7 @@
 
 - Updated dependencies [1f20580841]
   - @socialproof/mys@1.0.3
-  - @mysten/zklogin@0.7.3
+  - @socialproof/zklogin@0.7.3
 
 ## 0.3.2
 
@@ -524,7 +524,7 @@
 
 - Updated dependencies [f0a839f874]
   - @socialproof/mys@1.0.2
-  - @mysten/zklogin@0.7.2
+  - @socialproof/zklogin@0.7.2
 
 ## 0.3.1
 
@@ -532,7 +532,7 @@
 
 - Updated dependencies [6fc6235984]
   - @socialproof/mys@1.0.1
-  - @mysten/zklogin@0.7.1
+  - @socialproof/zklogin@0.7.1
 
 ## 0.3.0
 
@@ -548,7 +548,7 @@
 - Updated dependencies [ebdfe7cf21]
 - Updated dependencies [a92b03de42]
   - @socialproof/mys@1.0.0
-  - @mysten/zklogin@0.7.0
+  - @socialproof/zklogin@0.7.0
 
 ## 0.2.8
 
@@ -562,7 +562,7 @@
 
 - Updated dependencies [99b112178c]
   - @socialproof/mys.js@0.54.1
-  - @mysten/zklogin@0.6.3
+  - @socialproof/zklogin@0.6.3
 
 ## 0.2.6
 
@@ -571,7 +571,7 @@
 - Updated dependencies [b7f673dbd9]
 - Updated dependencies [123b42c75c]
   - @socialproof/mys.js@0.54.0
-  - @mysten/zklogin@0.6.2
+  - @socialproof/zklogin@0.6.2
 
 ## 0.2.5
 
@@ -579,14 +579,14 @@
 
 - Updated dependencies [774bfb41a8]
   - @socialproof/mys.js@0.53.0
-  - @mysten/zklogin@0.6.1
+  - @socialproof/zklogin@0.6.1
 
 ## 0.2.4
 
 ### Patch Changes
 
 - Updated dependencies [e279098cff]
-  - @mysten/zklogin@0.6.0
+  - @socialproof/zklogin@0.6.0
 
 ## 0.2.3
 
@@ -596,7 +596,7 @@
 - 9a1406a396: Add missing network param to enokiflow
 - Updated dependencies [929db4976a]
   - @socialproof/mys.js@0.52.0
-  - @mysten/zklogin@0.5.3
+  - @socialproof/zklogin@0.5.3
 
 ## 0.2.2
 
@@ -604,7 +604,7 @@
 
 - Updated dependencies [b4ecdb5860]
   - @socialproof/mys.js@0.51.2
-  - @mysten/zklogin@0.5.2
+  - @socialproof/zklogin@0.5.2
 
 ## 0.2.1
 
@@ -612,7 +612,7 @@
 
 - Updated dependencies [6984dd1e38]
   - @socialproof/mys.js@0.51.1
-  - @mysten/zklogin@0.5.1
+  - @socialproof/zklogin@0.5.1
 
 ## 0.2.0
 
@@ -628,7 +628,7 @@
 - Updated dependencies [0cafa94027]
 - Updated dependencies [3a84c3ab21]
   - @socialproof/mys.js@0.51.0
-  - @mysten/zklogin@0.5.0
+  - @socialproof/zklogin@0.5.0
 
 ## 0.1.3
 
@@ -637,7 +637,7 @@
 - 4830361fa4: Updated typescript version
 - Updated dependencies [4830361fa4]
   - @socialproof/mys.js@0.50.1
-  - @mysten/zklogin@0.4.3
+  - @socialproof/zklogin@0.4.3
 
 ## 0.1.2
 
@@ -652,7 +652,7 @@
 - Updated dependencies [a34f1cb67d]
 - Updated dependencies [220a766d86]
   - @socialproof/mys.js@0.50.0
-  - @mysten/zklogin@0.4.2
+  - @socialproof/zklogin@0.4.2
 
 ## 0.1.1
 
@@ -660,7 +660,7 @@
 
 - Updated dependencies [9ac0a4ec01]
   - @socialproof/mys.js@0.49.1
-  - @mysten/zklogin@0.4.1
+  - @socialproof/zklogin@0.4.1
 
 ## 0.1.0
 
@@ -672,7 +672,7 @@
 
 - Updated dependencies [e5f9e3ba21]
   - @socialproof/mys.js@0.49.0
-  - @mysten/zklogin@0.4.0
+  - @socialproof/zklogin@0.4.0
 
 ## 0.0.8
 
@@ -680,7 +680,7 @@
 
 - Updated dependencies [dd362ec1d6]
   - @socialproof/mys.js@0.48.1
-  - @mysten/zklogin@0.3.10
+  - @socialproof/zklogin@0.3.10
 
 ## 0.0.7
 
@@ -689,7 +689,7 @@
 - dd485449a7: Update to new two-step API
 - Updated dependencies [cdcfa76c43]
   - @socialproof/mys.js@0.48.0
-  - @mysten/zklogin@0.3.9
+  - @socialproof/zklogin@0.3.9
 
 ## 0.0.6
 
@@ -702,7 +702,7 @@
 ### Patch Changes
 
 - Updated dependencies [0e3d0dfae]
-  - @mysten/zklogin@0.3.8
+  - @socialproof/zklogin@0.3.8
 
 ## 0.0.4
 
@@ -727,4 +727,4 @@
 - Updated dependencies [0259aec82]
 - Updated dependencies [64d45ba27]
   - @socialproof/mys.js@0.47.0
-  - @mysten/zklogin@0.3.7
+  - @socialproof/zklogin@0.3.7

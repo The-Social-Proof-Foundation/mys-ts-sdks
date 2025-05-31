@@ -11,7 +11,7 @@ the `NamedPackagesPlugin` (exported from `@socialproof/mys`) in your project.
 You can generate your static file by running the following command:
 
 ```bash
-pnpm dlx @mysten/mvr-static
+pnpm dlx @socialproof/mvr-static
 ```
 
 Available options:

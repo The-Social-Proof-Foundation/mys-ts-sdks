@@ -1,4 +1,4 @@
-# @mysten/seal
+# @socialproof/seal
 
 ## 0.4.6
 
@@ -39,7 +39,7 @@
 ### Patch Changes
 
 - Updated dependencies [7e1c525]
-  - @mysten/bcs@1.6.1
+  - @socialproof/bcs@1.6.1
   - @socialproof/mys@1.29.1
 
 ## 0.4.1
@@ -108,7 +108,7 @@
 - Updated dependencies [7ba32a4]
 - Updated dependencies [c3a788c]
   - @socialproof/mys@1.26.1
-  - @mysten/bcs@1.6.0
+  - @socialproof/bcs@1.6.0
 
 ## 0.3.3
 
@@ -150,5 +150,5 @@
 ### Patch Changes
 
 - Updated dependencies [95b1ea5]
-  - @mysten/bcs@1.4.0
+  - @socialproof/bcs@1.4.0
   - @socialproof/mys@1.21.2

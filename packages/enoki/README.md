@@ -1,1 +1,1 @@
-# `@mysten/enoki`
+# `@socialproof/enoki`

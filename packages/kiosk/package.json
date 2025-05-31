@@ -2,7 +2,7 @@
 	"name": "@socialproof/kiosk",
 	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"description": "Mys Kiosk library",
-	"version": "0.12.7",
+	"version": "0.0.1",
 	"license": "Apache-2.0",
 	"type": "commonjs",
 	"main": "./dist/cjs/index.js",

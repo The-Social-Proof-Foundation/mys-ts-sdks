@@ -1,6 +1,6 @@
 {
 	"name": "@socialproof/graphql-transport",
-	"version": "0.2.57",
+	"version": "0.0.1",
 	"description": "A GraphQL transport to allow MysClient to work with RPC 2.0",
 	"license": "Apache-2.0",
 	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",

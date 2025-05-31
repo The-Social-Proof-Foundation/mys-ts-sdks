@@ -1,4 +1,4 @@
-# @mysten/wallet-standard
+# @socialproof/wallet-standard
 
 ## 0.15.2
 

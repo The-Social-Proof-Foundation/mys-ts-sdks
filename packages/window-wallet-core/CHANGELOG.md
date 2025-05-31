@@ -1,4 +1,4 @@
-# @mysten/window-wallet-core
+# @socialproof/window-wallet-core
 
 ## 0.0.3
 

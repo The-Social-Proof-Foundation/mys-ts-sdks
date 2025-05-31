@@ -1,4 +1,4 @@
-# @mysten/zksend
+# @socialproof/zksend
 
 ## 0.13.5
 
@@ -6,7 +6,7 @@
 
 - Updated dependencies [ec519fc]
   - @socialproof/mys@1.30.1
-  - @mysten/wallet-standard@0.15.2
+  - @socialproof/wallet-standard@0.15.2
 
 ## 0.13.4
 
@@ -21,15 +21,15 @@
 - Updated dependencies [2456052]
 - Updated dependencies [2456052]
   - @socialproof/mys@1.30.0
-  - @mysten/window-wallet-core@0.0.3
-  - @mysten/wallet-standard@0.15.1
+  - @socialproof/window-wallet-core@0.0.3
+  - @socialproof/wallet-standard@0.15.1
 
 ## 0.13.3
 
 ### Patch Changes
 
 - Updated dependencies [afbbb80]
-  - @mysten/wallet-standard@0.15.0
+  - @socialproof/wallet-standard@0.15.0
 
 ## 0.13.2
 
@@ -42,7 +42,7 @@
 ### Patch Changes
 
 - @socialproof/mys@1.29.1
-- @mysten/wallet-standard@0.14.9
+- @socialproof/wallet-standard@0.14.9
 
 ## 0.13.0
 
@@ -58,7 +58,7 @@
 - Updated dependencies [eb91fba]
 - Updated dependencies [19a8045]
   - @socialproof/mys@1.29.0
-  - @mysten/wallet-standard@0.14.8
+  - @socialproof/wallet-standard@0.14.8
 
 ## 0.12.28
 
@@ -66,7 +66,7 @@
 
 - Updated dependencies [9a94aea]
   - @socialproof/mys@1.28.2
-  - @mysten/wallet-standard@0.14.7
+  - @socialproof/wallet-standard@0.14.7
 
 ## 0.12.27
 
@@ -74,7 +74,7 @@
 
 - Updated dependencies [3cd4e53]
   - @socialproof/mys@1.28.1
-  - @mysten/wallet-standard@0.14.6
+  - @socialproof/wallet-standard@0.14.6
 
 ## 0.12.26
 
@@ -84,8 +84,8 @@
 - Updated dependencies [2705dc8]
 - Updated dependencies [3eb8990]
   - @socialproof/mys@1.28.0
-  - @mysten/window-wallet-core@0.0.2
-  - @mysten/wallet-standard@0.14.5
+  - @socialproof/window-wallet-core@0.0.2
+  - @socialproof/wallet-standard@0.14.5
 
 ## 0.12.25
 
@@ -100,7 +100,7 @@
 - 9cacba9: Add experimental adapter package
 - Updated dependencies [5cea435]
   - @socialproof/mys@1.27.1
-  - @mysten/wallet-standard@0.14.4
+  - @socialproof/wallet-standard@0.14.4
 
 ## 0.12.23
 
@@ -109,7 +109,7 @@
 - Updated dependencies [4d13ef8]
 - Updated dependencies [4d13ef8]
   - @socialproof/mys@1.27.0
-  - @mysten/wallet-standard@0.14.3
+  - @socialproof/wallet-standard@0.14.3
 
 ## 0.12.22
 
@@ -117,7 +117,7 @@
 
 - 7ba32a4: update dependencies
 - Updated dependencies [7ba32a4]
-  - @mysten/wallet-standard@0.14.2
+  - @socialproof/wallet-standard@0.14.2
   - @socialproof/mys@1.26.1
 
 ## 0.12.21
@@ -127,7 +127,7 @@
 - 2e4740b: Mark link redirect as deprecated.
 - Updated dependencies [906dd14]
   - @socialproof/mys@1.26.0
-  - @mysten/wallet-standard@0.14.1
+  - @socialproof/wallet-standard@0.14.1
 
 ## 0.12.20
 
@@ -136,7 +136,7 @@
 - 68a9ecd: Fix the chain and feature list for the wallet standard interface
 - Updated dependencies [68a9ecd]
 - Updated dependencies [e8b5d04]
-  - @mysten/wallet-standard@0.14.0
+  - @socialproof/wallet-standard@0.14.0
   - @socialproof/mys@1.25.0
 
 ## 0.12.19
@@ -145,7 +145,7 @@
 
 - Updated dependencies [cf3d12d]
   - @socialproof/mys@1.24.0
-  - @mysten/wallet-standard@0.13.29
+  - @socialproof/wallet-standard@0.13.29
 
 ## 0.12.18
 
@@ -154,7 +154,7 @@
 - Updated dependencies [8baac61]
 - Updated dependencies [8baac61]
   - @socialproof/mys@1.23.0
-  - @mysten/wallet-standard@0.13.28
+  - @socialproof/wallet-standard@0.13.28
 
 ## 0.12.17
 
@@ -162,21 +162,21 @@
 
 - Updated dependencies [03975f4]
   - @socialproof/mys@1.22.0
-  - @mysten/wallet-standard@0.13.27
+  - @socialproof/wallet-standard@0.13.27
 
 ## 0.12.16
 
 ### Patch Changes
 
 - @socialproof/mys@1.21.2
-- @mysten/wallet-standard@0.13.26
+- @socialproof/wallet-standard@0.13.26
 
 ## 0.12.15
 
 ### Patch Changes
 
 - @socialproof/mys@1.21.1
-- @mysten/wallet-standard@0.13.25
+- @socialproof/wallet-standard@0.13.25
 
 ## 0.12.14
 
@@ -185,7 +185,7 @@
 - Updated dependencies [3d8a0d9]
 - Updated dependencies [20a5aaa]
   - @socialproof/mys@1.21.0
-  - @mysten/wallet-standard@0.13.24
+  - @socialproof/wallet-standard@0.13.24
 
 ## 0.12.13
 
@@ -193,7 +193,7 @@
 
 - Updated dependencies [827a200]
   - @socialproof/mys@1.20.0
-  - @mysten/wallet-standard@0.13.23
+  - @socialproof/wallet-standard@0.13.23
 
 ## 0.12.12
 
@@ -202,7 +202,7 @@
 - Updated dependencies [c39f32f]
 - Updated dependencies [539168a]
   - @socialproof/mys@1.19.0
-  - @mysten/wallet-standard@0.13.22
+  - @socialproof/wallet-standard@0.13.22
 
 ## 0.12.11
 
@@ -211,7 +211,7 @@
 - 7abd243: Update repo links
 - Updated dependencies [7abd243]
   - @socialproof/mys@1.18.1
-  - @mysten/wallet-standard@0.13.21
+  - @socialproof/wallet-standard@0.13.21
 
 ## 0.12.10
 
@@ -226,7 +226,7 @@
 - Updated dependencies [85bd9e4]
 - Updated dependencies [a872b97]
   - @socialproof/mys@1.18.0
-  - @mysten/wallet-standard@0.13.20
+  - @socialproof/wallet-standard@0.13.20
 
 ## 0.12.9
 
@@ -234,7 +234,7 @@
 
 - Updated dependencies [20af12d]
   - @socialproof/mys@1.17.0
-  - @mysten/wallet-standard@0.13.19
+  - @socialproof/wallet-standard@0.13.19
 
 ## 0.12.8
 
@@ -242,14 +242,14 @@
 
 - Updated dependencies [100207f]
   - @socialproof/mys@1.16.2
-  - @mysten/wallet-standard@0.13.18
+  - @socialproof/wallet-standard@0.13.18
 
 ## 0.12.7
 
 ### Patch Changes
 
 - @socialproof/mys@1.16.1
-- @mysten/wallet-standard@0.13.17
+- @socialproof/wallet-standard@0.13.17
 
 ## 0.12.6
 
@@ -258,14 +258,14 @@
 - Updated dependencies [ec2dc7f]
 - Updated dependencies [ec2dc7f]
   - @socialproof/mys@1.16.0
-  - @mysten/wallet-standard@0.13.16
+  - @socialproof/wallet-standard@0.13.16
 
 ## 0.12.5
 
 ### Patch Changes
 
 - @socialproof/mys@1.15.1
-- @mysten/wallet-standard@0.13.15
+- @socialproof/wallet-standard@0.13.15
 
 ## 0.12.4
 
@@ -273,7 +273,7 @@
 
 - Updated dependencies [6460e45]
   - @socialproof/mys@1.15.0
-  - @mysten/wallet-standard@0.13.14
+  - @socialproof/wallet-standard@0.13.14
 
 ## 0.12.3
 
@@ -289,7 +289,7 @@
 - 4bac808: Fix bcs parsing of createLinks query after GraphQL api change
 - Updated dependencies [938fb6e]
   - @socialproof/mys@1.14.4
-  - @mysten/wallet-standard@0.13.13
+  - @socialproof/wallet-standard@0.13.13
 
 ## 0.12.1
 
@@ -311,7 +311,7 @@
 
 - Updated dependencies [d5a23d7]
   - @socialproof/mys@1.14.3
-  - @mysten/wallet-standard@0.13.12
+  - @socialproof/wallet-standard@0.13.12
 
 ## 0.11.11
 
@@ -319,7 +319,7 @@
 
 - Updated dependencies [e7bc63e]
   - @socialproof/mys@1.14.2
-  - @mysten/wallet-standard@0.13.11
+  - @socialproof/wallet-standard@0.13.11
 
 ## 0.11.10
 
@@ -327,7 +327,7 @@
 
 - Updated dependencies [69ef100]
   - @socialproof/mys@1.14.1
-  - @mysten/wallet-standard@0.13.10
+  - @socialproof/wallet-standard@0.13.10
 
 ## 0.11.9
 
@@ -335,7 +335,7 @@
 
 - Updated dependencies [c24814b]
   - @socialproof/mys@1.14.0
-  - @mysten/wallet-standard@0.13.9
+  - @socialproof/wallet-standard@0.13.9
 
 ## 0.11.8
 
@@ -343,7 +343,7 @@
 
 - Updated dependencies [477d2a4]
   - @socialproof/mys@1.13.0
-  - @mysten/wallet-standard@0.13.8
+  - @socialproof/wallet-standard@0.13.8
 
 ## 0.11.7
 
@@ -359,7 +359,7 @@
 - Updated dependencies [5436a90]
 - Updated dependencies [5436a90]
   - @socialproof/mys@1.12.0
-  - @mysten/wallet-standard@0.13.7
+  - @socialproof/wallet-standard@0.13.7
 
 ## 0.11.5
 
@@ -368,7 +368,7 @@
 - Updated dependencies [489f421]
 - Updated dependencies [489f421]
   - @socialproof/mys@1.11.0
-  - @mysten/wallet-standard@0.13.6
+  - @socialproof/wallet-standard@0.13.6
 
 ## 0.11.4
 
@@ -376,7 +376,7 @@
 
 - Updated dependencies [830b8d8]
   - @socialproof/mys@1.10.0
-  - @mysten/wallet-standard@0.13.5
+  - @socialproof/wallet-standard@0.13.5
 
 ## 0.11.3
 
@@ -391,7 +391,7 @@
 - Updated dependencies [2c96b06]
 - Updated dependencies [1fd22cc]
   - @socialproof/mys@1.9.0
-  - @mysten/wallet-standard@0.13.4
+  - @socialproof/wallet-standard@0.13.4
 
 ## 0.11.1
 
@@ -409,7 +409,7 @@
 
 - Updated dependencies [569511a]
   - @socialproof/mys@1.8.0
-  - @mysten/wallet-standard@0.13.3
+  - @socialproof/wallet-standard@0.13.3
 
 ## 0.10.6
 
@@ -421,7 +421,7 @@
 - Updated dependencies [4019dd7]
 - Updated dependencies [00a974d]
   - @socialproof/mys@1.7.0
-  - @mysten/wallet-standard@0.13.2
+  - @socialproof/wallet-standard@0.13.2
 
 ## 0.10.5
 
@@ -429,7 +429,7 @@
 
 - Updated dependencies [a3e32fe]
   - @socialproof/mys@1.6.0
-  - @mysten/wallet-standard@0.13.1
+  - @socialproof/wallet-standard@0.13.1
 
 ## 0.10.4
 
@@ -437,7 +437,7 @@
 
 - Updated dependencies [0851b31]
 - Updated dependencies [f37b3c2]
-  - @mysten/wallet-standard@0.13.0
+  - @socialproof/wallet-standard@0.13.0
   - @socialproof/mys@1.5.0
 
 ## 0.10.3
@@ -446,7 +446,7 @@
 
 - Updated dependencies [4419234]
   - @socialproof/mys@1.4.0
-  - @mysten/wallet-standard@0.12.14
+  - @socialproof/wallet-standard@0.12.14
 
 ## 0.10.2
 
@@ -454,7 +454,7 @@
 
 - Updated dependencies [a45f461]
   - @socialproof/mys@1.3.1
-  - @mysten/wallet-standard@0.12.13
+  - @socialproof/wallet-standard@0.12.13
 
 ## 0.10.1
 
@@ -468,7 +468,7 @@
 - Updated dependencies [0f27a97]
 - Updated dependencies [beed646]
   - @socialproof/mys@1.3.0
-  - @mysten/wallet-standard@0.12.12
+  - @socialproof/wallet-standard@0.12.12
 
 ## 0.10.0
 
@@ -482,7 +482,7 @@
 - Updated dependencies [45877014d1]
 - Updated dependencies [87d6f75403]
   - @socialproof/mys@1.2.1
-  - @mysten/wallet-standard@0.12.11
+  - @socialproof/wallet-standard@0.12.11
 
 ## 0.9.10
 
@@ -490,14 +490,14 @@
 
 - Updated dependencies [fef99d377f]
   - @socialproof/mys@1.2.0
-  - @mysten/wallet-standard@0.12.10
+  - @socialproof/wallet-standard@0.12.10
 
 ## 0.9.9
 
 ### Patch Changes
 
 - Updated dependencies [805ff4d4c2]
-  - @mysten/wallet-standard@0.12.9
+  - @socialproof/wallet-standard@0.12.9
 
 ## 0.9.8
 
@@ -505,7 +505,7 @@
 
 - Updated dependencies [0dfff33b95]
   - @socialproof/mys@1.1.2
-  - @mysten/wallet-standard@0.12.8
+  - @socialproof/wallet-standard@0.12.8
 
 ## 0.9.7
 
@@ -513,7 +513,7 @@
 
 - Updated dependencies [101f1ff4b8]
   - @socialproof/mys@1.1.1
-  - @mysten/wallet-standard@0.12.7
+  - @socialproof/wallet-standard@0.12.7
 
 ## 0.9.6
 
@@ -521,7 +521,7 @@
 
 - Updated dependencies [bae8f9683c]
   - @socialproof/mys@1.1.0
-  - @mysten/wallet-standard@0.12.6
+  - @socialproof/wallet-standard@0.12.6
 
 ## 0.9.5
 
@@ -529,7 +529,7 @@
 
 - Updated dependencies [369b924343]
   - @socialproof/mys@1.0.5
-  - @mysten/wallet-standard@0.12.5
+  - @socialproof/wallet-standard@0.12.5
 
 ## 0.9.4
 
@@ -538,7 +538,7 @@
 - 8e0e8eb643: fix connect issue
 - Updated dependencies [f1e828f557]
   - @socialproof/mys@1.0.4
-  - @mysten/wallet-standard@0.12.4
+  - @socialproof/wallet-standard@0.12.4
 
 ## 0.9.3
 
@@ -546,7 +546,7 @@
 
 - Updated dependencies [1f20580841]
   - @socialproof/mys@1.0.3
-  - @mysten/wallet-standard@0.12.3
+  - @socialproof/wallet-standard@0.12.3
 
 ## 0.9.2
 
@@ -554,7 +554,7 @@
 
 - Updated dependencies [f0a839f874]
   - @socialproof/mys@1.0.2
-  - @mysten/wallet-standard@0.12.2
+  - @socialproof/wallet-standard@0.12.2
 
 ## 0.9.1
 
@@ -562,7 +562,7 @@
 
 - Updated dependencies [6fc6235984]
   - @socialproof/mys@1.0.1
-  - @mysten/wallet-standard@0.12.1
+  - @socialproof/wallet-standard@0.12.1
 
 ## 0.9.0
 
@@ -579,7 +579,7 @@
 - Updated dependencies [ebdfe7cf21]
 - Updated dependencies [a92b03de42]
   - @socialproof/mys@1.0.0
-  - @mysten/wallet-standard@0.12.0
+  - @socialproof/wallet-standard@0.12.0
 
 ## 0.8.2
 
@@ -605,7 +605,7 @@
 
 - Updated dependencies [99b112178c]
   - @socialproof/mys.js@0.54.1
-  - @mysten/wallet-standard@0.11.6
+  - @socialproof/wallet-standard@0.11.6
 
 ## 0.7.1
 
@@ -616,7 +616,7 @@
 - Updated dependencies [b7f673dbd9]
 - Updated dependencies [123b42c75c]
   - @socialproof/mys.js@0.54.0
-  - @mysten/wallet-standard@0.11.5
+  - @socialproof/wallet-standard@0.11.5
 
 ## 0.7.0
 
@@ -628,7 +628,7 @@
 
 - Updated dependencies [774bfb41a8]
   - @socialproof/mys.js@0.53.0
-  - @mysten/wallet-standard@0.11.4
+  - @socialproof/wallet-standard@0.11.4
 
 ## 0.6.0
 
@@ -653,7 +653,7 @@
 
 - Updated dependencies [929db4976a]
   - @socialproof/mys.js@0.52.0
-  - @mysten/wallet-standard@0.11.3
+  - @socialproof/wallet-standard@0.11.3
 
 ## 0.4.3
 
@@ -668,7 +668,7 @@
 
 - Updated dependencies [b4ecdb5860]
   - @socialproof/mys.js@0.51.2
-  - @mysten/wallet-standard@0.11.2
+  - @socialproof/wallet-standard@0.11.2
 
 ## 0.4.1
 
@@ -676,7 +676,7 @@
 
 - Updated dependencies [6984dd1e38]
   - @socialproof/mys.js@0.51.1
-  - @mysten/wallet-standard@0.11.1
+  - @socialproof/wallet-standard@0.11.1
 
 ## 0.4.0
 
@@ -708,7 +708,7 @@
 - Updated dependencies [0cafa94027]
 - Updated dependencies [437f0ca2ef]
   - @socialproof/mys.js@0.51.0
-  - @mysten/wallet-standard@0.11.0
+  - @socialproof/wallet-standard@0.11.0
 
 ## 0.2.2
 
@@ -718,7 +718,7 @@
 - 4fd676671b: Fix issue with overwriting balances when adding multiple balances for the same
   unnormalized coinType"
 - Updated dependencies [4830361fa4]
-  - @mysten/wallet-standard@0.10.3
+  - @socialproof/wallet-standard@0.10.3
   - @socialproof/mys.js@0.50.1
 
 ## 0.2.1
@@ -763,14 +763,14 @@
 - Updated dependencies [a34f1cb67d]
 - Updated dependencies [220a766d86]
   - @socialproof/mys.js@0.50.0
-  - @mysten/wallet-standard@0.10.2
+  - @socialproof/wallet-standard@0.10.2
 
 ## 0.1.1
 
 ### Patch Changes
 
 - Updated dependencies [9ac0a4ec01]
-  - @mysten/wallet-standard@0.10.1
+  - @socialproof/wallet-standard@0.10.1
 
 ## 0.1.0
 
@@ -781,7 +781,7 @@
 ### Patch Changes
 
 - Updated dependencies [e5f9e3ba21]
-  - @mysten/wallet-standard@0.10.0
+  - @socialproof/wallet-standard@0.10.0
 
 ## 0.0.3
 
@@ -789,10 +789,10 @@
 
 - Updated dependencies [dd362ec1d6]
 - Updated dependencies [165ad6b21d]
-  - @mysten/wallet-standard@0.9.0
+  - @socialproof/wallet-standard@0.9.0
 
 ## 0.0.2
 
 ### Patch Changes
 
-- @mysten/wallet-standard@0.8.11
+- @socialproof/wallet-standard@0.8.11

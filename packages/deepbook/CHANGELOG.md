@@ -1,4 +1,4 @@
-# @mysten/deepbook
+# @socialproof/deepbook
 
 ## 0.8.55
 

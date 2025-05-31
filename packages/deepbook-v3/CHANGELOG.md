@@ -1,4 +1,4 @@
-# @mysten/deepbook-v3
+# @socialproof/deepbook-v3
 
 ## 0.14.12
 

@@ -1,4 +1,4 @@
-# @mysten/walrus-wasm
+# @socialproof/walrus-wasm
 
 ## 0.0.6
 

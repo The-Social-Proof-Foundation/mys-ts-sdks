@@ -6,11 +6,11 @@ available in both Browser and NodeJS environments in a type-safe way.`
 
 ## Install
 
-To install, add the [`@mysten/bcs`](https://www.npmjs.com/package/@mysten/bcs) package to your
+To install, add the [`@socialproof/bcs`](https://www.npmjs.com/package/@socialproof/bcs) package to your
 project:
 
 ```sh npm2yarn
-npm i @mysten/bcs
+npm i @socialproof/bcs
 ```
 
 ## Quickstart
@@ -50,7 +50,7 @@ To be able to serialize the data and later deserialize it, a schema has to be cr
 built-in primitives, such as `string` or `u64`). There are no type hints in the serialized bytes on
 what they mean, so the schema used for decoding must match the schema used to encode the data.
 
-The `@mysten/bcs` library can be used to define schemas that can serialize and deserialize BCS
+The `@socialproof/bcs` library can be used to define schemas that can serialize and deserialize BCS
 encoded data, and can infer the correct TypeScript for the schema from the definitions themselves
 rather than having to define them manually.
 

@@ -1,1 +1,1 @@
-# `@mysten/zksend`
+# `@socialproof/zksend`

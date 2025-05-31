@@ -1,6 +1,6 @@
 {
 	"name": "@socialproof/signers",
-	"version": "0.2.10",
+	"version": "0.0.1",
 	"description": "A collection of signers for various providers",
 	"license": "Apache-2.0",
 	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",

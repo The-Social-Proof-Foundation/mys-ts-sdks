@@ -1,4 +1,4 @@
-# @mysten/signers
+# @socialproof/signers
 
 ## 0.2.10
 
@@ -88,7 +88,7 @@
 - Updated dependencies [7ba32a4]
 - Updated dependencies [156ae13]
 - Updated dependencies [156ae13]
-  - @mysten/ledgerjs-hw-app-mys@0.5.0
+  - @socialproof/ledgerjs-hw-app-mys@0.5.0
   - @socialproof/mys@1.26.1
 
 ## 0.1.17
@@ -221,8 +221,8 @@
 
 ### Minor Changes
 
-- 2349920: Introduces GCP KMS signer at `@mysten/signers/gcp`
-- e0885ca: renamed package to @mysten/signers and inlines aws4fetch
+- 2349920: Introduces GCP KMS signer at `@socialproof/signers/gcp`
+- e0885ca: renamed package to @socialproof/signers and inlines aws4fetch
 
 ### Patch Changes
 
@@ -287,6 +287,6 @@
 
 ### Patch Changes
 
-- b3f3925: Introduces @mysten/kms which initially exposes a Mys AWS KMS signer
+- b3f3925: Introduces @socialproof/kms which initially exposes a Mys AWS KMS signer
 - Updated dependencies [c24814b]
   - @socialproof/mys@1.14.0

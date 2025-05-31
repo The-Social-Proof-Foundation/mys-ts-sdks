@@ -24,7 +24,7 @@ See https://sdk.mysocial.network/typescript for full documentation
 To use the Mys dApp Kit in your project, run the following command in your project root:
 
 ```sh npm2yarn
-npm i --save @mysten/dapp-kit @socialproof/mys @tanstack/react-query
+npm i --save @socialproof/dapp-kit @socialproof/mys @tanstack/react-query
 ```
 
 ## Setting up providers

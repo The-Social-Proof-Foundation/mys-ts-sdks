@@ -112,7 +112,7 @@ export class SerializedBcs<T, Input = T> {
 	#bytes: Uint8Array;
 
 	// Used to brand SerializedBcs so that they can be identified, even between multiple copies
-	// of the @mysten/bcs package are installed
+	// of the @socialproof/bcs package are installed
 	get [SERIALIZED_BCS_BRAND]() {
 		return true;
 	}

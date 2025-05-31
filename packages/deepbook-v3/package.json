@@ -2,7 +2,7 @@
 	"name": "@socialproof/deepbook-v3",
 	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"description": "Mys Deepbook SDK",
-	"version": "0.14.12",
+	"version": "0.0.1",
 	"license": "Apache-2.0",
 	"type": "commonjs",
 	"main": "./dist/cjs/index.js",

@@ -1,9 +1,9 @@
-# `@mysten/walrus`
+# `@socialproof/walrus`
 
 ## Installation
 
 ```bash
-npm install --save @mysten/walrus @socialproof/mys
+npm install --save @socialproof/walrus @socialproof/mys
 ```
 
 ## Setup
@@ -225,7 +225,7 @@ the wasm bindings, or load them from a CDN:
 const walrusClient = new WalrusClient({
 	network: 'testnet',
 	mysClient,
-	wasmUrl: 'https://unpkg.com/@mysten/walrus-wasm@latest/web/walrus_wasm_bg.wasm',
+	wasmUrl: 'https://unpkg.com/@socialproof/walrus-wasm@latest/web/walrus_wasm_bg.wasm',
 });
 ```
 
