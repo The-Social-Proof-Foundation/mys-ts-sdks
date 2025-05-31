@@ -1,0 +1,3 @@
+dist
+tests/move/*/build
+CHANGELOG.md

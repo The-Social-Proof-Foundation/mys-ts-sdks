@@ -1,0 +1,51 @@
+{
+	"name": "@mysten/mvr-static",
+	"author": "Mysten Labs <build@mystenlabs.com>",
+	"description": "The static generation tool for Move Registry (mvr)",
+	"homepage": "https://sdk.mystenlabs.com",
+	"version": "0.1.12",
+	"license": "Apache-2.0",
+	"files": [
+		"CHANGELOG.md",
+		"LICENSE",
+		"README.md",
+		"dist",
+		"src"
+	],
+	"type": "commonjs",
+	"main": "./dist/cjs/index.js",
+	"module": "./dist/esm/index.js",
+	"types": "./dist/cjs/index.d.ts",
+	"scripts": {
+		"clean": "rm -rf tsconfig.tsbuildinfo ./dist",
+		"build": "tsc --build",
+		"prepublishOnly": "pnpm turbo build",
+		"prettier:check": "prettier -c --ignore-unknown .",
+		"prettier:fix": "prettier -w --ignore-unknown .",
+		"eslint:check": "eslint --max-warnings=0 .",
+		"eslint:fix": "pnpm run eslint:check --fix",
+		"lint": "pnpm run eslint:check && pnpm run prettier:check",
+		"lint:fix": "pnpm run eslint:fix && pnpm run prettier:fix",
+		"test": "vitest run"
+	},
+	"bugs": {
+		"url": "https://github.com/MystenLabs/mvr/issues/new"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"devDependencies": {
+		"@mysten/build-scripts": "workspace:*",
+		"typescript": "^5.8.2",
+		"vitest": "^3.1.1"
+	},
+	"dependencies": {
+		"@mysten/sui": "workspace:*",
+		"@types/node": "^22.13.17",
+		"enquirer": "^2.4.1",
+		"glob": "^11.0.1",
+		"prettier": "^3.5.3"
+	},
+	"sideEffects": false,
+	"bin": "./bin/parser.js"
+}

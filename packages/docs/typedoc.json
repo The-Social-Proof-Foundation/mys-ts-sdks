@@ -1,0 +1,27 @@
+{
+	"entryPoints": [
+		"../bcs",
+		"../dapp-kit",
+		"../deepbook",
+		"../deepbook-v3",
+		"../enoki",
+		"../enoki-connect",
+		"../graphql-transport",
+		"../kiosk",
+		"../seal",
+		"../signers",
+		"../slush-wallet",
+		"../suins",
+		"../typescript",
+		"../utils",
+		"../wallet-standard",
+		"../walrus",
+		"../zksend"
+	],
+	"excludeInternal": true,
+	"excludePrivate": true,
+	"intentionallyNotExported": [],
+	"out": "public/typedoc",
+	"entryPointStrategy": "packages",
+	"plugin": ["typedoc-plugin-mermaid"]
+}
