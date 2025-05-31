@@ -7,8 +7,8 @@ import { atom, computed, map } from 'nanostores';
 import { getChain } from '../utils/networks.js';
 import type { Networks } from '../utils/networks.js';
 import { getAssociatedWalletOrThrow, requiredWalletFeatures } from '../utils/wallets.js';
-import { publicKeyFromSuiBytes } from '@mysocial/sui/verify';
-import type { Experimental_BaseClient } from '@mysocial/sui/experimental';
+import { publicKeyFromMysBytes } from '@mysocial/mys/verify';
+import type { Experimental_BaseClient } from '@mysocial/mys/experimental';
 
 type WalletConnection =
 	| {
@@ -63,7 +63,7 @@ export function createStores<TNetworks extends Networks>({
 		$baseConnection,
 		$publicKey: computed($baseConnection, ({ currentAccount }) =>
 			currentAccount
-				? publicKeyFromSuiBytes(new Uint8Array(currentAccount.publicKey), {
+				? publicKeyFromMysBytes(new Uint8Array(currentAccount.publicKey), {
 						address: currentAccount.address,
 					})
 				: null,

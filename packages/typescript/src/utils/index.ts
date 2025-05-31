@@ -4,15 +4,15 @@
 
 export { formatAddress, formatDigest } from './format.js';
 export {
-	isValidSuiAddress,
-	isValidSuiObjectId,
+	isValidMysAddress,
+	isValidMysObjectId,
 	isValidTransactionDigest,
 	normalizeStructTag,
-	normalizeSuiAddress,
-	normalizeSuiObjectId,
+	normalizeMysAddress,
+	normalizeMysObjectId,
 	parseStructTag,
-	SUI_ADDRESS_LENGTH,
-} from './sui-types.js';
+	MYS_ADDRESS_LENGTH,
+} from './mys-types.js';
 
 export {
 	fromB64,
@@ -26,18 +26,18 @@ export {
 	fromBase58,
 	toBase58,
 } from '@mysocial/bcs';
-export { isValidSuiNSName, normalizeSuiNSName } from './suins.js';
+export { isValidMysNSName, normalizeMysNSName } from './mysns.js';
 
 export {
-	SUI_DECIMALS,
-	MIST_PER_SUI,
+	MYS_DECIMALS,
+	MIST_PER_MYS,
 	MOVE_STDLIB_ADDRESS,
-	SUI_FRAMEWORK_ADDRESS,
-	SUI_SYSTEM_ADDRESS,
-	SUI_CLOCK_OBJECT_ID,
-	SUI_SYSTEM_MODULE_NAME,
-	SUI_TYPE_ARG,
-	SUI_SYSTEM_STATE_OBJECT_ID,
+	MYS_FRAMEWORK_ADDRESS,
+	MYS_SYSTEM_ADDRESS,
+	MYS_CLOCK_OBJECT_ID,
+	MYS_SYSTEM_MODULE_NAME,
+	MYS_TYPE_ARG,
+	MYS_SYSTEM_STATE_OBJECT_ID,
 } from './constants.js';
 
 export { isValidNamedPackage, isValidNamedType } from './move-registry.js';

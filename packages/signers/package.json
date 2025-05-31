@@ -50,14 +50,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/mystenlabs/ts-sdks.git"
+		"url": "git+https://github.com/The-Social-Proof-Foundation/mys-ts-sdks.git"
 	},
 	"bugs": {
-		"url": "https://github.com/mystenlabs/ts-sdks/issues"
+		"url": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks/issues"
 	},
-	"homepage": "https://github.com/mystenlabs/ts-sdks#readme",
+	"homepage": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks#readme",
 	"devDependencies": {
-		"@mysten/build-scripts": "workspace:*",
+		"@mysocial/build-scripts": "workspace:*",
 		"@types/node": "^22.13.17",
 		"dotenv": "^16.4.5",
 		"typescript": "^5.8.2",
@@ -65,8 +65,8 @@
 	},
 	"dependencies": {
 		"@google-cloud/kms": "^4.5.0",
-		"@mysten/ledgerjs-hw-app-sui": "workspace:*",
-		"@mysten/sui": "workspace:*",
+		"@mysocial/ledgerjs-hw-app-mys": "workspace:*",
+		"@mysocial/mys": "workspace:*",
 		"@noble/curves": "^1.8.1",
 		"@noble/hashes": "^1.7.1",
 		"asn1-ts": "^8.0.2"

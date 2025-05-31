@@ -7,9 +7,9 @@ import { fromBase64, isSerializedBcs } from '@mysocial/bcs';
 import type { InferInput } from 'valibot';
 import { is, parse } from 'valibot';
 
-import type { SuiClient } from '../client/index.js';
+import type { MysClient } from '../client/index.js';
 import type { SignatureWithBytes, Signer } from '../cryptography/index.js';
-import { normalizeSuiAddress } from '../utils/sui-types.js';
+import { normalizeMysAddress } from '../utils/mys-types.js';
 import type { TransactionArgument } from './Commands.js';
 import { Commands } from './Commands.js';
 import type { CallArg, Command } from './data/internal.js';
@@ -376,7 +376,7 @@ export class Transaction {
 						typeof value === 'string'
 							? {
 									$kind: 'UnresolvedObject',
-									UnresolvedObject: { objectId: normalizeSuiAddress(value) },
+									UnresolvedObject: { objectId: normalizeMysAddress(value) },
 								}
 							: value,
 					);
@@ -678,7 +678,7 @@ export class Transaction {
 	/** Derive transaction digest */
 	async getDigest(
 		options: {
-			client?: SuiClient;
+			client?: MysClient;
 		} = {},
 	): Promise<string> {
 		await this.#prepareBuild(options);

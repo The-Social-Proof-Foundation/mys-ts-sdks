@@ -7,13 +7,13 @@ import { readFile } from 'fs/promises';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
-const result = execSync(`git ls-remote -h git@github.com:MystenLabs/sui.git`)
+const result = execSync(`git ls-remote -h git@github.com:MystenLabs/mys.git`)
 	.toString()
 	.trim()
 	.split('\n')
 	.map((ref) => {
 		const branch = ref.trim().split('refs/heads/')[1];
-		const match = branch?.match(/^releases\/sui-graphql-rpc-v([\d.]+)-release$/);
+		const match = branch?.match(/^releases\/mys-graphql-rpc-v([\d.]+)-release$/);
 
 		if (!match) {
 			return null;
@@ -30,7 +30,7 @@ const result = execSync(`git ls-remote -h git@github.com:MystenLabs/sui.git`)
 					minor,
 					patch,
 					branch,
-					schema: `https://raw.githubusercontent.com/MystenLabs/sui/${branch}/crates/sui-graphql-rpc/schema/current_progress_schema.graphql`,
+					schema: `https://raw.githubusercontent.com/MystenLabs/mys/${branch}/crates/mys-graphql-rpc/schema/current_progress_schema.graphql`,
 				}
 			: null;
 	})
@@ -51,7 +51,7 @@ for (const { minorVersion, schema } of releasesByVersion.values()) {
 
 await addSchemaVersion(
 	'latest',
-	'https://raw.githubusercontent.com/MystenLabs/sui/refs/heads/mainnet/crates/sui-graphql-rpc/schema.graphql',
+	'https://raw.githubusercontent.com/MystenLabs/mys/refs/heads/mainnet/crates/mys-graphql-rpc/schema.graphql',
 );
 
 await addExportsToPackageJson([...releasesByVersion.keys(), 'latest']);

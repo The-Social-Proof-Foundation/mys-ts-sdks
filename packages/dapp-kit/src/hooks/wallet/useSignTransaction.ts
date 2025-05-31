@@ -2,9 +2,9 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Transaction } from '@mysocial/sui/transactions';
+import type { Transaction } from '@mysocial/mys/transactions';
 import { signTransaction } from '@mysocial/wallet-standard';
-import type { SignedTransaction, SuiSignTransactionInput } from '@mysocial/wallet-standard';
+import type { SignedTransaction, MysSignTransactionInput } from '@mysocial/wallet-standard';
 import type { UseMutationOptions, UseMutationResult } from '@tanstack/react-query';
 import { useMutation } from '@tanstack/react-query';
 
@@ -15,13 +15,13 @@ import {
 	WalletNotConnectedError,
 } from '../../errors/walletErrors.js';
 import type { PartialBy } from '../../types/utilityTypes.js';
-import { useSuiClientContext } from '../useSuiClient.js';
+import { useMysClientContext } from '../useMysClient.js';
 import { useCurrentAccount } from './useCurrentAccount.js';
 import { useCurrentWallet } from './useCurrentWallet.js';
 import { useReportTransactionEffects } from './useReportTransactionEffects.js';
 
 type UseSignTransactionArgs = PartialBy<
-	Omit<SuiSignTransactionInput, 'transaction'>,
+	Omit<MysSignTransactionInput, 'transaction'>,
 	'account' | 'chain'
 > & {
 	transaction: Transaction | string;
@@ -60,7 +60,7 @@ export function useSignTransaction({
 > {
 	const { currentWallet } = useCurrentWallet();
 	const currentAccount = useCurrentAccount();
-	const { client, network } = useSuiClientContext();
+	const { client, network } = useMysClientContext();
 
 	const { mutate: reportTransactionEffects } = useReportTransactionEffects();
 
@@ -79,15 +79,15 @@ export function useSignTransaction({
 			}
 
 			if (
-				!currentWallet.features['sui:signTransaction'] &&
-				!currentWallet.features['sui:signTransactionBlock']
+				!currentWallet.features['mys:signTransaction'] &&
+				!currentWallet.features['mys:signTransactionBlock']
 			) {
 				throw new WalletFeatureNotSupportedError(
 					"This wallet doesn't support the `signTransaction` feature.",
 				);
 			}
 
-			const chain = signTransactionArgs.chain ?? `sui:${network}`;
+			const chain = signTransactionArgs.chain ?? `mys:${network}`;
 			const { bytes, signature } = await signTransaction(currentWallet, {
 				...signTransactionArgs,
 				transaction: {

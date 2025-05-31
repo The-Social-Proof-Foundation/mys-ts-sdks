@@ -10,50 +10,50 @@ import type {
 	WalletWithFeatures,
 } from '@wallet-standard/core';
 
-import type { SuiReportTransactionEffectsFeature } from './suiReportTransactionEffects.js';
-import type { SuiSignAndExecuteTransactionFeature } from './suiSignAndExecuteTransaction.js';
-import type { SuiSignAndExecuteTransactionBlockFeature } from './suiSignAndExecuteTransactionBlock.js';
-import type { SuiSignMessageFeature } from './suiSignMessage.js';
-import type { SuiSignPersonalMessageFeature } from './suiSignPersonalMessage.js';
-import type { SuiSignTransactionFeature } from './suiSignTransaction.js';
-import type { SuiSignTransactionBlockFeature } from './suiSignTransactionBlock.js';
+import type { MysReportTransactionEffectsFeature } from './mysReportTransactionEffects.js';
+import type { MysSignAndExecuteTransactionFeature } from './mysSignAndExecuteTransaction.js';
+import type { MysSignAndExecuteTransactionBlockFeature } from './mysSignAndExecuteTransactionBlock.js';
+import type { MysSignMessageFeature } from './mysSignMessage.js';
+import type { MysSignPersonalMessageFeature } from './mysSignPersonalMessage.js';
+import type { MysSignTransactionFeature } from './mysSignTransaction.js';
+import type { MysSignTransactionBlockFeature } from './mysSignTransactionBlock.js';
 
 /**
- * Wallet Standard features that are unique to Sui, and that all Sui wallets are expected to implement.
+ * Wallet Standard features that are unique to Mys, and that all Mys wallets are expected to implement.
  */
-export type SuiFeatures = Partial<SuiSignTransactionBlockFeature> &
-	Partial<SuiSignAndExecuteTransactionBlockFeature> &
-	SuiSignPersonalMessageFeature &
-	SuiSignAndExecuteTransactionFeature &
-	SuiSignTransactionFeature &
+export type MysFeatures = Partial<MysSignTransactionBlockFeature> &
+	Partial<MysSignAndExecuteTransactionBlockFeature> &
+	MysSignPersonalMessageFeature &
+	MysSignAndExecuteTransactionFeature &
+	MysSignTransactionFeature &
 	// This deprecated feature should be removed once wallets update to the new method:
-	Partial<SuiSignMessageFeature> &
-	Partial<SuiReportTransactionEffectsFeature>;
+	Partial<MysSignMessageFeature> &
+	Partial<MysReportTransactionEffectsFeature>;
 
-export type SuiWalletFeatures = StandardConnectFeature &
+export type MysWalletFeatures = StandardConnectFeature &
 	StandardEventsFeature &
-	SuiFeatures &
+	MysFeatures &
 	// Disconnect is an optional feature:
 	Partial<StandardDisconnectFeature>;
 
-export type WalletWithSuiFeatures = WalletWithFeatures<SuiWalletFeatures>;
+export type WalletWithMysFeatures = WalletWithFeatures<MysWalletFeatures>;
 
 /**
- * Represents a wallet with the absolute minimum feature set required to function in the Sui ecosystem.
+ * Represents a wallet with the absolute minimum feature set required to function in the Mys ecosystem.
  */
 export type WalletWithRequiredFeatures = WalletWithFeatures<
 	MinimallyRequiredFeatures &
-		Partial<SuiFeatures> &
+		Partial<MysFeatures> &
 		Partial<StandardDisconnectFeature> &
 		IdentifierRecord<unknown>
 >;
 
 export type MinimallyRequiredFeatures = StandardConnectFeature & StandardEventsFeature;
 
-export * from './suiSignMessage.js';
-export * from './suiSignTransactionBlock.js';
-export * from './suiSignTransaction.js';
-export * from './suiSignAndExecuteTransactionBlock.js';
-export * from './suiSignAndExecuteTransaction.js';
-export * from './suiSignPersonalMessage.js';
-export * from './suiReportTransactionEffects.js';
+export * from './mysSignMessage.js';
+export * from './mysSignTransactionBlock.js';
+export * from './mysSignTransaction.js';
+export * from './mysSignAndExecuteTransactionBlock.js';
+export * from './mysSignAndExecuteTransaction.js';
+export * from './mysSignPersonalMessage.js';
+export * from './mysReportTransactionEffects.js';

@@ -2,26 +2,26 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs, TypeTagSerializer } from '@mysocial/sui/bcs';
-import type { ObjectOwner } from '@mysocial/sui/client';
+import { bcs, TypeTagSerializer } from '@mysocial/mys/bcs';
+import type { ObjectOwner } from '@mysocial/mys/client';
 import {
 	fromBase64,
 	normalizeStructTag,
-	normalizeSuiAddress,
+	normalizeMysAddress,
 	parseStructTag,
-} from '@mysocial/sui/utils';
+} from '@mysocial/mys/utils';
 
-const SUI_FRAMEWORK_ADDRESS = normalizeSuiAddress('0x2');
-const SUI_SYSTEM_ADDRESS = normalizeSuiAddress('0x3');
+const MYS_FRAMEWORK_ADDRESS = normalizeMysAddress('0x2');
+const MYS_SYSTEM_ADDRESS = normalizeMysAddress('0x3');
 
 const MoveObjectType = bcs.enum('MoveObjectType', {
 	Other: bcs.StructTag,
 	GasCoin: null,
-	StakedSui: null,
+	StakedMys: null,
 	Coin: bcs.TypeTag,
 });
 
-export const SuiMoveObject = bcs.struct('SuiMoveObject', {
+export const MysMoveObject = bcs.struct('MysMoveObject', {
 	data: bcs.enum('Data', {
 		MoveObject: bcs.struct('MoveObject', {
 			type: MoveObjectType.transform({
@@ -29,26 +29,26 @@ export const SuiMoveObject = bcs.struct('SuiMoveObject', {
 					const structTag = parseStructTag(objectType);
 
 					if (
-						structTag.address === SUI_FRAMEWORK_ADDRESS &&
+						structTag.address === MYS_FRAMEWORK_ADDRESS &&
 						structTag.module === 'coin' &&
 						structTag.name === 'Coin' &&
 						typeof structTag.typeParams[0] === 'object'
 					) {
 						const innerStructTag = structTag.typeParams[0];
 						if (
-							innerStructTag.address === SUI_FRAMEWORK_ADDRESS &&
-							innerStructTag.module === 'sui' &&
-							innerStructTag.name === 'SUI'
+							innerStructTag.address === MYS_FRAMEWORK_ADDRESS &&
+							innerStructTag.module === 'mys' &&
+							innerStructTag.name === 'MYS'
 						) {
 							return { GasCoin: true, $kind: 'GasCoin' };
 						}
 						return { Coin: normalizeStructTag(innerStructTag), $kind: 'Coin' };
 					} else if (
-						structTag.address === SUI_SYSTEM_ADDRESS &&
+						structTag.address === MYS_SYSTEM_ADDRESS &&
 						structTag.module === 'staking_pool' &&
-						structTag.name === 'StakedSui'
+						structTag.name === 'StakedMys'
 					) {
-						return { StakedSui: true, $kind: 'StakedSui' };
+						return { StakedMys: true, $kind: 'StakedMys' };
 					}
 					return {
 						Other: {

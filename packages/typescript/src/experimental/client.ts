@@ -8,21 +8,21 @@ import { ClientCache } from './cache.js';
 import type { Experimental_CoreClient } from './core.js';
 import type {
 	ClientWithExtensions,
-	Experimental_SuiClientTypes,
-	SuiClientRegistration,
+	Experimental_MysClientTypes,
+	MysClientRegistration,
 } from './types.js';
 
 export abstract class Experimental_BaseClient {
-	network: Experimental_SuiClientTypes.Network;
+	network: Experimental_MysClientTypes.Network;
 	cache = new ClientCache();
 
-	constructor({ network }: Experimental_SuiClientTypes.SuiClientOptions) {
+	constructor({ network }: Experimental_MysClientTypes.MysClientOptions) {
 		this.network = network;
 	}
 
 	abstract core: Experimental_CoreClient;
 
-	$extend<const Registrations extends SuiClientRegistration<this>[]>(
+	$extend<const Registrations extends MysClientRegistration<this>[]>(
 		...registrations: Registrations
 	) {
 		return Object.create(
@@ -40,7 +40,7 @@ export abstract class Experimental_BaseClient {
 			Simplify<
 				UnionToIntersection<
 					{
-						[K in keyof Registrations]: Registrations[K] extends SuiClientRegistration<
+						[K in keyof Registrations]: Registrations[K] extends MysClientRegistration<
 							this,
 							infer Name extends string,
 							infer Extension

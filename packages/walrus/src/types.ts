@@ -2,10 +2,10 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiClient } from '@mysocial/sui/client';
-import type { Signer } from '@mysocial/sui/cryptography';
-import type { ClientWithExtensions } from '@mysocial/sui/experimental';
-import type { TransactionObjectArgument } from '@mysocial/sui/transactions';
+import type { MysClient } from '@mysocial/mys/client';
+import type { Signer } from '@mysocial/mys/cryptography';
+import type { ClientWithExtensions } from '@mysocial/mys/experimental';
+import type { TransactionObjectArgument } from '@mysocial/mys/transactions';
 
 import type { StorageNodeInfo } from './contracts/storage_node.js';
 import type { RequestOptions, StorageNodeClientOptions } from './storage-node/client.js';
@@ -18,7 +18,7 @@ import type {
 import type { BlobMetadata, EncodingType } from './utils/bcs.js';
 
 /**
- * Configuration for the Walrus package on sui
+ * Configuration for the Walrus package on mys
  *
  * This is used to configure the Walrus package to use a specific package ID, system object ID, staking pool ID, and WAL package ID.
  */
@@ -31,16 +31,16 @@ export interface WalrusPackageConfig {
 	exchangeIds?: string[];
 }
 
-type SuiClientOrRpcUrl =
+type MysClientOrRpcUrl =
 	| {
-			suiClient: ClientWithExtensions<{
-				jsonRpc: SuiClient;
+			mysClient: ClientWithExtensions<{
+				jsonRpc: MysClient;
 			}>;
-			suiRpcUrl?: never;
+			mysRpcUrl?: never;
 	  }
 	| {
-			suiRpcUrl: string;
-			suiClient?: never;
+			mysRpcUrl: string;
+			mysClient?: never;
 	  };
 
 type WalrusNetworkOrPackageConfig =
@@ -61,11 +61,11 @@ interface BaseWalrusClientConfig {
 /**
  * Configuration for the Walrus client.
  *
- * This is used to configure the Walrus client to use a specific storage node client options, network, and Sui client or RPC URL.
+ * This is used to configure the Walrus client to use a specific storage node client options, network, and Mys client or RPC URL.
  */
 export type WalrusClientConfig = BaseWalrusClientConfig &
 	WalrusNetworkOrPackageConfig &
-	SuiClientOrRpcUrl;
+	MysClientOrRpcUrl;
 
 export type WalrusClientExtensionOptions = BaseWalrusClientConfig & {
 	packageConfig?: WalrusPackageConfig;

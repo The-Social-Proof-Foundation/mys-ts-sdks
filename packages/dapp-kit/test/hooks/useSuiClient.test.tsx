@@ -1,24 +1,24 @@
 // Copyright (c) Mysten Labs, Inc.
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
 import { renderHook } from '@testing-library/react';
 
-import { useSuiClient } from '../../src/index.js';
-import { createSuiClientContextWrapper } from '../test-utils.js';
+import { useMysClient } from '../../src/index.js';
+import { createMysClientContextWrapper } from '../test-utils.js';
 
-describe('useSuiClient', () => {
-	test('throws without a SuiClientContext', () => {
-		expect(() => renderHook(() => useSuiClient())).toThrowError(
-			'Could not find SuiClientContext. Ensure that you have set up the SuiClientProvider',
+describe('useMysClient', () => {
+	test('throws without a MysClientContext', () => {
+		expect(() => renderHook(() => useMysClient())).toThrowError(
+			'Could not find MysClientContext. Ensure that you have set up the MysClientProvider',
 		);
 	});
 
-	test('returns a SuiClient', () => {
-		const suiClient = new SuiClient({ url: getFullnodeUrl('localnet') });
-		const wrapper = createSuiClientContextWrapper(suiClient);
-		const { result } = renderHook(() => useSuiClient(), { wrapper });
+	test('returns a MysClient', () => {
+		const mysClient = new MysClient({ url: getFullnodeUrl('localnet') });
+		const wrapper = createMysClientContextWrapper(mysClient);
+		const { result } = renderHook(() => useMysClient(), { wrapper });
 
-		expect(result.current).toBe(suiClient);
+		expect(result.current).toBe(mysClient);
 	});
 });

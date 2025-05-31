@@ -10,7 +10,7 @@ import {
 	WalletNotConnectedError,
 } from '../../src/errors/walletErrors.js';
 import { useConnectWallet, useSignPersonalMessage } from '../../src/index.js';
-import { signMessageFeature, suiFeatures } from '../mocks/mockFeatures.js';
+import { signMessageFeature, mysFeatures } from '../mocks/mockFeatures.js';
 import { createWalletProviderContextWrapper, registerMockWallet } from '../test-utils.js';
 
 describe('useSignPersonalMessage', () => {
@@ -50,7 +50,7 @@ describe('useSignPersonalMessage', () => {
 		act(() => unregister());
 	});
 
-	test('falls back to the `sui:signMessage` feature with a wallet that lacks support for `sui:signPersonalMessage`.', async () => {
+	test('falls back to the `mys:signMessage` feature with a wallet that lacks support for `mys:signPersonalMessage`.', async () => {
 		const { unregister, mockWallet } = registerMockWallet({
 			walletName: 'Mock Wallet 1',
 			features: signMessageFeature,
@@ -68,7 +68,7 @@ describe('useSignPersonalMessage', () => {
 		result.current.connectWallet.mutate({ wallet: mockWallet });
 		await waitFor(() => expect(result.current.connectWallet.isSuccess).toBe(true));
 
-		const mockSignMessageFeature = mockWallet.features['sui:signMessage'];
+		const mockSignMessageFeature = mockWallet.features['mys:signMessage'];
 		const signMessageMock = mockSignMessageFeature!.signMessage as Mock;
 
 		signMessageMock.mockReturnValueOnce({ messageBytes: 'abc', signature: '123' });
@@ -89,7 +89,7 @@ describe('useSignPersonalMessage', () => {
 	test('signing a personal message from the currently connected account works successfully', async () => {
 		const { unregister, mockWallet } = registerMockWallet({
 			walletName: 'Mock Wallet 1',
-			features: suiFeatures,
+			features: mysFeatures,
 		});
 
 		const wrapper = createWalletProviderContextWrapper();
@@ -105,20 +105,20 @@ describe('useSignPersonalMessage', () => {
 
 		await waitFor(() => expect(result.current.connectWallet.isSuccess).toBe(true));
 
-		const signPersonalMessageFeature = mockWallet.features['sui:signPersonalMessage'];
+		const signPersonalMessageFeature = mockWallet.features['mys:signPersonalMessage'];
 		const signPersonalMessageMock = signPersonalMessageFeature!.signPersonalMessage as Mock;
 
 		signPersonalMessageMock.mockReturnValueOnce({ bytes: 'abc', signature: '123' });
 
 		const message = new Uint8Array().fill(123);
-		result.current.signPersonalMessage.mutate({ message, chain: 'sui:testnet' });
+		result.current.signPersonalMessage.mutate({ message, chain: 'mys:testnet' });
 
 		await waitFor(() => expect(result.current.signPersonalMessage.isSuccess).toBe(true));
 
 		expect(signPersonalMessageMock).toHaveBeenCalledWith({
 			message,
 			account: mockWallet.accounts[0],
-			chain: `sui:testnet`,
+			chain: `mys:testnet`,
 		});
 
 		expect(result.current.signPersonalMessage.data).toStrictEqual({
@@ -132,7 +132,7 @@ describe('useSignPersonalMessage', () => {
 	test('defaults the `chain` to the active network', async () => {
 		const { unregister, mockWallet } = registerMockWallet({
 			walletName: 'Mock Wallet 1',
-			features: suiFeatures,
+			features: mysFeatures,
 		});
 
 		const wrapper = createWalletProviderContextWrapper();
@@ -148,7 +148,7 @@ describe('useSignPersonalMessage', () => {
 
 		await waitFor(() => expect(result.current.connectWallet.isSuccess).toBe(true));
 
-		const signPersonalMessageFeature = mockWallet.features['sui:signPersonalMessage'];
+		const signPersonalMessageFeature = mockWallet.features['mys:signPersonalMessage'];
 		const signPersonalMessageMock = signPersonalMessageFeature!.signPersonalMessage as Mock;
 
 		signPersonalMessageMock.mockReturnValueOnce({ bytes: 'abc', signature: '123' });
@@ -161,7 +161,7 @@ describe('useSignPersonalMessage', () => {
 		expect(signPersonalMessageMock).toHaveBeenCalledWith({
 			message,
 			account: mockWallet.accounts[0],
-			chain: 'sui:test',
+			chain: 'mys:test',
 		});
 
 		expect(result.current.signPersonalMessage.data).toStrictEqual({

@@ -6,12 +6,12 @@ import { fromBase64, toBase58 } from '@mysocial/bcs';
 import type {
 	MoveValue,
 	ProtocolConfigValue,
-	SuiArgument,
-	SuiClient,
-	SuiMoveNormalizedModule,
-} from '@mysocial/sui/client';
-import { Transaction } from '@mysocial/sui/transactions';
-import { normalizeStructTag, normalizeSuiAddress, parseStructTag } from '@mysocial/sui/utils';
+	MysArgument,
+	MysClient,
+	MysMoveNormalizedModule,
+} from '@mysocial/mys/client';
+import { Transaction } from '@mysocial/mys/transactions';
+import { normalizeStructTag, normalizeMysAddress, parseStructTag } from '@mysocial/mys/utils';
 
 import type {
 	ObjectFilter,
@@ -36,7 +36,7 @@ import {
 	GetDynamicFieldObjectDocument,
 	GetDynamicFieldsDocument,
 	GetLatestCheckpointSequenceNumberDocument,
-	GetLatestSuiSystemStateDocument,
+	GetLatestMysSystemStateDocument,
 	GetMoveFunctionArgTypesDocument,
 	GetNormalizedMoveFunctionDocument,
 	GetNormalizedMoveModuleDocument,
@@ -79,7 +79,7 @@ import { mapGraphQLStakeToRpcStake } from './mappers/stakes.js';
 import { mapGraphQLTransactionBlockToRpcTransactionBlock } from './mappers/transaction-block.js';
 import { isNumericString, toShortTypeString } from './mappers/util.js';
 import { mapGraphQlValidatorToRpcValidator } from './mappers/validator.js';
-import type { SuiClientGraphQLTransport } from './transport.js';
+import type { MysClientGraphQLTransport } from './transport.js';
 
 interface ResponseTypes {
 	getRpcApiVersion: {
@@ -88,11 +88,11 @@ interface ResponseTypes {
 }
 
 export const RPC_METHODS: {
-	[K in keyof SuiClient as SuiClient[K] extends (...args: any[]) => Promise<any>
+	[K in keyof MysClient as MysClient[K] extends (...args: any[]) => Promise<any>
 		? K
-		: never]?: SuiClient[K] extends (...args: any[]) => infer R
+		: never]?: MysClient[K] extends (...args: any[]) => infer R
 		? (
-				transport: SuiClientGraphQLTransport,
+				transport: MysClientGraphQLTransport,
 				inputs: any[],
 			) => K extends keyof ResponseTypes ? Promise<ResponseTypes[K]> : R
 		: never;
@@ -109,7 +109,7 @@ export const RPC_METHODS: {
 
 		return {
 			info: {
-				version: res.headers.get('x-sui-rpc-version') ?? undefined,
+				version: res.headers.get('x-mys-rpc-version') ?? undefined,
 			},
 		};
 	},
@@ -320,7 +320,7 @@ export const RPC_METHODS: {
 		}
 
 		const address = toShortTypeString(movePackage.address);
-		const modules: Record<string, SuiMoveNormalizedModule> = {};
+		const modules: Record<string, MysMoveNormalizedModule> = {};
 
 		for (const moveModule of movePackage.modules?.nodes ?? []) {
 			let hasMoreFriends = moveModule.friends?.pageInfo.hasNextPage ?? false;
@@ -428,7 +428,7 @@ export const RPC_METHODS: {
 			afterEnums = page.enums?.pageInfo.endCursor;
 		}
 
-		return mapNormalizedMoveModule(moveModule, normalizeSuiAddress(pkg));
+		return mapNormalizedMoveModule(moveModule, normalizeMysAddress(pkg));
 	},
 	async getNormalizedMoveStruct(transport, [pkg, module, struct]) {
 		const moveStruct = await transport.graphqlQuery(
@@ -743,28 +743,28 @@ export const RPC_METHODS: {
 					owner,
 				},
 			},
-			(data) => data.address?.stakedSuis?.nodes,
+			(data) => data.address?.stakedMyss?.nodes,
 		);
 
 		return mapGraphQLStakeToRpcStake(stakes);
 	},
-	async getStakesByIds(transport, [stakedSuiIds]) {
+	async getStakesByIds(transport, [stakedMysIds]) {
 		const stakes = await transport.graphqlQuery(
 			{
 				query: GetStakesByIdsDocument,
 				variables: {
-					ids: stakedSuiIds,
+					ids: stakedMysIds,
 				},
 			},
-			(data) => data.objects?.nodes.map((node) => node?.asMoveObject?.asStakedSui!).filter(Boolean),
+			(data) => data.objects?.nodes.map((node) => node?.asMoveObject?.asStakedMys!).filter(Boolean),
 		);
 
 		return mapGraphQLStakeToRpcStake(stakes);
 	},
-	async getLatestSuiSystemState(transport) {
+	async getLatestMysSystemState(transport) {
 		const systemState = await transport.graphqlQuery(
 			{
-				query: GetLatestSuiSystemStateDocument,
+				query: GetLatestMysSystemStateDocument,
 			},
 			(data) => data.epoch,
 		);
@@ -950,7 +950,7 @@ export const RPC_METHODS: {
 			events: result.events!,
 			results: results?.map((result) => ({
 				mutableReferenceOutputs: result.mutatedReferences?.map(
-					(ref): [SuiArgument, number[], string] => [
+					(ref): [MysArgument, number[], string] => [
 						ref.input.__typename === 'GasCoin'
 							? 'GasCoin'
 							: ref.input.__typename === 'Input'
@@ -1415,10 +1415,10 @@ export const RPC_METHODS: {
 			},
 		});
 
-		return data.resolveSuinsAddress?.address ?? null;
+		return data.resolveMysnsAddress?.address ?? null;
 	},
 	async resolveNameServiceNames(transport, [address, cursor, limit]) {
-		const suinsRegistrations = await transport.graphqlQuery(
+		const mysnsRegistrations = await transport.graphqlQuery(
 			{
 				query: ResolveNameServiceNamesDocument,
 				variables: {
@@ -1427,13 +1427,13 @@ export const RPC_METHODS: {
 					limit,
 				},
 			},
-			(data) => data.address?.suinsRegistrations,
+			(data) => data.address?.mysnsRegistrations,
 		);
 
 		return {
-			hasNextPage: suinsRegistrations.pageInfo.hasNextPage,
-			nextCursor: suinsRegistrations.pageInfo.endCursor ?? null,
-			data: suinsRegistrations?.nodes.map((node) => node.domain) ?? [],
+			hasNextPage: mysnsRegistrations.pageInfo.hasNextPage,
+			nextCursor: mysnsRegistrations.pageInfo.endCursor ?? null,
+			data: mysnsRegistrations?.nodes.map((node) => node.domain) ?? [],
 		};
 	},
 };
@@ -1451,7 +1451,7 @@ export class UnsupportedMethodError extends Error {
 }
 
 async function paginateTransactionBlockLists(
-	transport: SuiClientGraphQLTransport,
+	transport: MysClientGraphQLTransport,
 	transactionBlock: Rpc_Transaction_FieldsFragment,
 ) {
 	let hasMoreEvents = transactionBlock.effects?.events?.pageInfo.hasNextPage ?? false;
@@ -1492,7 +1492,7 @@ async function paginateTransactionBlockLists(
 }
 
 async function paginateCheckpointLists(
-	transport: SuiClientGraphQLTransport,
+	transport: MysClientGraphQLTransport,
 	checkpoint: Rpc_Checkpoint_FieldsFragment,
 ) {
 	let hasNextPage = checkpoint.transactionBlocks.pageInfo.hasNextPage;

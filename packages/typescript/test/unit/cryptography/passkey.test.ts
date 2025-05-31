@@ -69,7 +69,7 @@ class MockPasskeySigner implements PasskeyProvider {
 					JSON.stringify({
 						type: 'webauthn.create',
 						challenge: '',
-						origin: 'https://www.sui.io',
+						origin: 'https://www.mysocial.network',
 						crossOrigin: false,
 					}),
 				)
@@ -111,13 +111,13 @@ class MockPasskeySigner implements PasskeyProvider {
 			? JSON.stringify({
 					type: 'webauthn.create', // Wrong type for clientDataJson.
 					challenge: Buffer.from(challenge).toString('base64'),
-					origin: 'https://www.sui.io',
+					origin: 'https://www.mysocial.network',
 					crossOrigin: false,
 				})
 			: JSON.stringify({
 					type: 'webauthn.get',
 					challenge: Buffer.from(challenge).toString('base64'),
-					origin: 'https://www.sui.io',
+					origin: 'https://www.mysocial.network',
 					crossOrigin: false,
 				});
 
@@ -155,11 +155,11 @@ class MockPasskeySigner implements PasskeyProvider {
 }
 
 describe('passkey signer E2E testing', () => {
-	it('should retrieve the correct sui address', async () => {
+	it('should retrieve the correct mys address', async () => {
 		const mockProvider = new MockPasskeySigner();
 		const signer = await PasskeyKeypair.getPasskeyInstance(mockProvider);
 		const publicKey = signer.getPublicKey();
-		expect(publicKey.toSuiAddress()).toEqual(
+		expect(publicKey.toMysAddress()).toEqual(
 			'0x05d52348e3e3a785e1e458ebe74d71e21dd4db2ba3088484cab22eca5a07da02',
 		);
 	});
@@ -197,7 +197,7 @@ describe('passkey signer E2E testing', () => {
 		const clientDataJSON = {
 			type: 'webauthn.get',
 			challenge: Buffer.from(digest).toString('base64'),
-			origin: 'https://www.sui.io',
+			origin: 'https://www.mysocial.network',
 			crossOrigin: false,
 		};
 		expect(parsed.clientDataJson).toEqual(JSON.stringify(clientDataJSON));
@@ -225,7 +225,7 @@ describe('passkey signer E2E testing', () => {
 		const clientDataJSON = {
 			type: 'webauthn.get',
 			challenge: Buffer.from(digest).toString('base64'),
-			origin: 'https://www.sui.io',
+			origin: 'https://www.mysocial.network',
 			crossOrigin: false,
 		};
 		const clientDataJSONString = JSON.stringify(clientDataJSON);
@@ -305,7 +305,7 @@ describe('passkey signer E2E testing', () => {
 	});
 
 	it('should verify a transaction from rust implementation', async () => {
-		// generated test vector from `test_passkey_authenticator` in crates/sui-types/src/unit_tests/passkey_authenticator_test.rs
+		// generated test vector from `test_passkey_authenticator` in crates/mys-types/src/unit_tests/passkey_authenticator_test.rs
 		const sig = fromBase64(
 			'BiVYDmenOnqS+thmz5m5SrZnWaKXZLVxgh+rri6LHXs25B0AAAAAgwF7InR5cGUiOiJ3ZWJhdXRobi5nZXQiLCJjaGFsbGVuZ2UiOiJ4NkszMGNvSGlGMF9iczVVVjNzOEVfcGNPNkhMZ0xBb1A3ZE1uU0U5eERNIiwib3JpZ2luIjoiaHR0cHM6Ly93d3cuc3VpLmlvIiwiY3Jvc3NPcmlnaW4iOmZhbHNlfWICAJqKTgco/tSNg4BuVg/f3x+I8NLYN6QqvxHahKNe0PIhBe3EuhfZf8OL4hReW8acT1TVwmPMcnv4SWiAHaX2dAKBYTKkrLK2zLcfP/hD1aiAn/E0L3XLC4epejnzGRhTuA==',
 		);
@@ -320,7 +320,7 @@ describe('passkey signer E2E testing', () => {
 	});
 
 	it('should verify a transaction from a real passkey output', async () => {
-		// generated test vector from a real iphone passkey output from broswer app: https://github.com/joyqvq/sui-webauthn-poc
+		// generated test vector from a real iphone passkey output from broswer app: https://github.com/joyqvq/mys-webauthn-poc
 		const sig = fromBase64(
 			'BiVJlg3liA6MaHQ0Fw9kdmBbj+SuuaKGMseZXPO6gx2XYx0AAAAAhgF7InR5cGUiOiJ3ZWJhdXRobi5nZXQiLCJjaGFsbGVuZ2UiOiJZRG9vQ2RGRnRLLVJBZ3JzaUZqM1hpU1VPQ2pzWXJPWnRGcHVISGhvNDhZIiwib3JpZ2luIjoiaHR0cDovL2xvY2FsaG9zdDo1MTczIiwiY3Jvc3NPcmlnaW4iOmZhbHNlfWIChCx2fLGV+dwNRbTqfCvii70DMj1HiHij5oR9KjZmFMpGQJz3l0ZsNpi0zGQtw81Hj+X+CSshhkcteCzVOJlpKAN2ZM3l9Wxn5TYJFdHc9VphEGzoyTTOfUjpZ7fQV2gt6A==',
 		);
@@ -345,7 +345,7 @@ describe('passkey signer E2E testing', () => {
 		});
 
 		const signer = await PasskeyKeypair.getPasskeyInstance(mockProvider);
-		const address = signer.getPublicKey().toSuiAddress();
+		const address = signer.getPublicKey().toMysAddress();
 
 		const testMessage = new TextEncoder().encode('Hello world!');
 		const possiblePks = await PasskeyKeypair.signAndRecover(mockProvider, testMessage);
@@ -357,6 +357,6 @@ describe('passkey signer E2E testing', () => {
 		const signer2 = new PasskeyKeypair(commonPk.toRawBytes(), mockProvider);
 
 		// the address from recovered pk is the same as the one constructed from the same mock provider
-		expect(signer2.getPublicKey().toSuiAddress()).toEqual(address);
+		expect(signer2.getPublicKey().toMysAddress()).toEqual(address);
 	});
 });

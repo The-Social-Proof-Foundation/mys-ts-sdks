@@ -1,11 +1,11 @@
 import {
   useCurrentAccount,
   useSignAndExecuteTransaction,
-  useSuiClient,
-  useSuiClientQuery,
-} from "@mysten/dapp-kit";
-import type { SuiObjectData } from "@mysten/sui/client";
-import { Transaction } from "@mysten/sui/transactions";
+  useMysClient,
+  useMysClientQuery,
+} from "@mysocial/dapp-kit";
+import type { MysObjectData } from "@mysocial/mys/client";
+import { Transaction } from "@mysocial/mys/transactions";
 import { Button, Flex, Heading, Text } from "@radix-ui/themes";
 import { useNetworkVariable } from "./networkConfig";
 import { useState } from "react";
@@ -13,10 +13,10 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 export function Counter({ id }: { id: string }) {
   const counterPackageId = useNetworkVariable("counterPackageId");
-  const suiClient = useSuiClient();
+  const mysClient = useMysClient();
   const currentAccount = useCurrentAccount();
   const { mutate: signAndExecute } = useSignAndExecuteTransaction();
-  const { data, isPending, error, refetch } = useSuiClientQuery("getObject", {
+  const { data, isPending, error, refetch } = useMysClientQuery("getObject", {
     id,
     options: {
       showContent: true,
@@ -49,7 +49,7 @@ export function Counter({ id }: { id: string }) {
       },
       {
         onSuccess: (tx) => {
-          suiClient.waitForTransaction({ digest: tx.digest }).then(async () => {
+          mysClient.waitForTransaction({ digest: tx.digest }).then(async () => {
             await refetch();
             setWaitingForTxn("");
           });
@@ -97,7 +97,7 @@ export function Counter({ id }: { id: string }) {
     </>
   );
 }
-function getCounterFields(data: SuiObjectData) {
+function getCounterFields(data: MysObjectData) {
   if (data.content?.dataType !== "moveObject") {
     return null;
   }

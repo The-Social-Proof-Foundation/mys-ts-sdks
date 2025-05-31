@@ -13,7 +13,7 @@ export type SharedObjectRef = {
 	mutable: boolean;
 };
 
-export type SuiObjectRef = {
+export type MysObjectRef = {
 	/** Base64 string representing the object digest */
 	objectId: string;
 	/** Object version */
@@ -26,9 +26,9 @@ export type SuiObjectRef = {
  * An object argument.
  */
 export type ObjectArg =
-	| { ImmOrOwnedObject: SuiObjectRef }
+	| { ImmOrOwnedObject: MysObjectRef }
 	| { SharedObject: SharedObjectRef }
-	| { Receiving: SuiObjectRef };
+	| { Receiving: MysObjectRef };
 
 export type ObjectCallArg = {
 	Object: ObjectArg;
@@ -79,7 +79,7 @@ export type StructTag = {
 };
 
 /**
- * Sui TypeTag object. A decoupled `0x...::module::Type<???>` parameter.
+ * Mys TypeTag object. A decoupled `0x...::module::Type<???>` parameter.
  */
 export type TypeTag =
 	| { bool: null | true }
@@ -100,7 +100,7 @@ export type TypeTag =
  * The GasData to be used in the transaction.
  */
 export type GasData = {
-	payment: SuiObjectRef[];
+	payment: MysObjectRef[];
 	owner: string; // Gas Object's owner
 	price: number;
 	budget: number;

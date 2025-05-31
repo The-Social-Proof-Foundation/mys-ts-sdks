@@ -7,11 +7,11 @@
 import {
 	ConnectButton,
 	ConnectModal,
-	SuiClientProvider,
+	MysClientProvider,
 	useCurrentAccount,
 	WalletProvider,
 } from '@mysocial/dapp-kit';
-import { getFullnodeUrl } from '@mysocial/sui/client';
+import { getFullnodeUrl } from '@mysocial/mys/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useState } from 'react';
 
@@ -57,7 +57,7 @@ function withProviders(Component: React.FunctionComponent<object>) {
 	return () => {
 		return (
 			<QueryClientProvider client={queryClient}>
-				<SuiClientProvider networks={networks}>
+				<MysClientProvider networks={networks}>
 					<WalletProvider
 						slushWallet={{
 							name: 'dApp Kit Docs',
@@ -65,7 +65,7 @@ function withProviders(Component: React.FunctionComponent<object>) {
 					>
 						<Component />
 					</WalletProvider>
-				</SuiClientProvider>
+				</MysClientProvider>
 			</QueryClientProvider>
 		);
 	};

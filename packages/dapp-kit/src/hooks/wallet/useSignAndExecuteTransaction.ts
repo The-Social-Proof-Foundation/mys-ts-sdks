@@ -2,11 +2,11 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Transaction } from '@mysocial/sui/transactions';
-import { toBase64 } from '@mysocial/sui/utils';
+import type { Transaction } from '@mysocial/mys/transactions';
+import { toBase64 } from '@mysocial/mys/utils';
 import type {
-	SuiSignAndExecuteTransactionInput,
-	SuiSignAndExecuteTransactionOutput,
+	MysSignAndExecuteTransactionInput,
+	MysSignAndExecuteTransactionOutput,
 } from '@mysocial/wallet-standard';
 import { signTransaction } from '@mysocial/wallet-standard';
 import type { UseMutationOptions, UseMutationResult } from '@tanstack/react-query';
@@ -19,19 +19,19 @@ import {
 	WalletNotConnectedError,
 } from '../../errors/walletErrors.js';
 import type { PartialBy } from '../../types/utilityTypes.js';
-import { useSuiClientContext } from '../useSuiClient.js';
+import { useMysClientContext } from '../useMysClient.js';
 import { useCurrentAccount } from './useCurrentAccount.js';
 import { useCurrentWallet } from './useCurrentWallet.js';
 import { useReportTransactionEffects } from './useReportTransactionEffects.js';
 
 type UseSignAndExecuteTransactionArgs = PartialBy<
-	Omit<SuiSignAndExecuteTransactionInput, 'transaction'>,
+	Omit<MysSignAndExecuteTransactionInput, 'transaction'>,
 	'account' | 'chain'
 > & {
 	transaction: Transaction | string;
 };
 
-type UseSignAndExecuteTransactionResult = SuiSignAndExecuteTransactionOutput;
+type UseSignAndExecuteTransactionResult = MysSignAndExecuteTransactionOutput;
 
 type UseSignAndExecuteTransactionError =
 	| WalletFeatureNotSupportedError
@@ -78,7 +78,7 @@ export function useSignAndExecuteTransaction<
 > {
 	const { currentWallet, supportedIntents } = useCurrentWallet();
 	const currentAccount = useCurrentAccount();
-	const { client, network } = useSuiClientContext();
+	const { client, network } = useMysClientContext();
 	const { mutate: reportTransactionEffects } = useReportTransactionEffects();
 
 	const executeTransaction: ({
@@ -122,15 +122,15 @@ export function useSignAndExecuteTransaction<
 			}
 
 			if (
-				!currentWallet.features['sui:signTransaction'] &&
-				!currentWallet.features['sui:signTransactionBlock']
+				!currentWallet.features['mys:signTransaction'] &&
+				!currentWallet.features['mys:signTransactionBlock']
 			) {
 				throw new WalletFeatureNotSupportedError(
 					"This wallet doesn't support the `signTransaction` feature.",
 				);
 			}
 
-			const chain = signTransactionArgs.chain ?? `sui:${network}`;
+			const chain = signTransactionArgs.chain ?? `mys:${network}`;
 			const { signature, bytes } = await signTransaction(currentWallet, {
 				...signTransactionArgs,
 				transaction: {

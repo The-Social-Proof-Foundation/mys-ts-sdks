@@ -2,7 +2,7 @@
 	"name": "@mysocial/build-scripts",
 	"private": true,
 	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
-	"description": "Build scripts for @mysten packages",
+	"description": "Build scripts for @mysocial packages",
 	"version": "0.0.0",
 	"license": "Apache-2.0",
 	"engines": {

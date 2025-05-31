@@ -1,0 +1,64 @@
+{
+	"name": "@mysocial/mysns",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
+	"description": "MysNS SDK",
+	"version": "0.7.17",
+	"license": "Apache-2.0",
+	"private": false,
+	"type": "commonjs",
+	"main": "./dist/cjs/index.js",
+	"module": "./dist/esm/index.js",
+	"types": "./dist/cjs/index.d.ts",
+	"keywords": [
+		"Mys",
+		"mysns",
+		"mysten"
+	],
+	"exports": {
+		".": {
+			"import": "./dist/esm/index.js",
+			"require": "./dist/cjs/index.js"
+		}
+	},
+	"sideEffects": false,
+	"files": [
+		"CHANGELOG.md",
+		"dist",
+		"src"
+	],
+	"scripts": {
+		"clean": "rm -rf tsconfig.tsbuildinfo ./dist",
+		"build": "build-package",
+		"prepublishOnly": "pnpm turbo build",
+		"prettier:check": "prettier -c --ignore-unknown .",
+		"prettier:fix": "prettier -w --ignore-unknown .",
+		"eslint:check": "eslint --max-warnings=0 .",
+		"eslint:fix": "pnpm run eslint:check --fix",
+		"lint": "pnpm run eslint:check && pnpm run prettier:check",
+		"lint:fix": "pnpm run eslint:fix && pnpm run prettier:fix",
+		"test:e2e": "vitest run"
+	},
+	"engines": {
+		"node": ">=16"
+	},
+	"dependencies": {
+		"@mysocial/mys": "workspace:*",
+		"axios": "^1.8.4",
+		"axios-retry": "^3.9.1"
+	},
+	"devDependencies": {
+		"@mysocial/build-scripts": "workspace:*",
+		"@types/tmp": "^0.2.6",
+		"ts-retry-promise": "^0.8.1",
+		"typescript": "^5.8.2",
+		"vite": "^6.2.5",
+		"vitest": "^3.1.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mystenlabs/mysns-contracts.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mystenlabs/mysns-contracts/issues"
+	}
+}

@@ -17,7 +17,7 @@ export function getRegisteredWallets<AdditionalFeatures extends Wallet['features
 	const walletsApi = getWallets();
 	const wallets = walletsApi.get();
 
-	const suiWallets = wallets.filter(
+	const mysWallets = wallets.filter(
 		(wallet): wallet is WalletWithFeatures<MinimallyRequiredFeatures & AdditionalFeatures> =>
 			isWalletWithRequiredFeatureSet(wallet) && (!walletFilter || walletFilter(wallet)),
 	);
@@ -25,11 +25,11 @@ export function getRegisteredWallets<AdditionalFeatures extends Wallet['features
 	return [
 		// Preferred wallets, in order:
 		...(preferredWallets
-			.map((name) => suiWallets.find((wallet) => wallet.name === name))
+			.map((name) => mysWallets.find((wallet) => wallet.name === name))
 			.filter(Boolean) as WalletWithFeatures<MinimallyRequiredFeatures & AdditionalFeatures>[]),
 
 		// Wallets in default order:
-		...suiWallets.filter((wallet) => !preferredWallets.includes(wallet.name)),
+		...mysWallets.filter((wallet) => !preferredWallets.includes(wallet.name)),
 	];
 }
 

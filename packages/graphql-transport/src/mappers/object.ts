@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiObjectResponse } from '@mysocial/sui/client';
+import type { MysObjectResponse } from '@mysocial/mys/client';
 
 import type {
 	MoveValue,
@@ -17,7 +17,7 @@ import { toShortTypeString } from './util.js';
 export function mapGraphQLObjectToRpcObject(
 	object: Rpc_Object_FieldsFragment,
 	options: { showBcs?: boolean | null } = {},
-): NonNullable<SuiObjectResponse['data']> {
+): NonNullable<MysObjectResponse['data']> {
 	return {
 		bcs: options?.showBcs
 			? {
@@ -55,7 +55,7 @@ export function mapGraphQLObjectToRpcObject(
 export function mapGraphQLMoveObjectToRpcObject(
 	object: Rpc_Move_Object_FieldsFragment,
 	options: { showBcs?: boolean | null } = {},
-): NonNullable<SuiObjectResponse['data']> {
+): NonNullable<MysObjectResponse['data']> {
 	return {
 		bcs: options?.showBcs
 			? {

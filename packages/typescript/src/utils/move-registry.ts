@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { isValidSuiNSName } from './suins.js';
+import { isValidMysNSName } from './mysns.js';
 
 /** The pattern to find an optionally versioned name */
 const NAME_PATTERN = /^([a-z0-9]+(?:-[a-z0-9]+)*)$/;
@@ -22,8 +22,8 @@ export const isValidNamedPackage = (name: string): boolean => {
 
 	// If the version exists, it must be a number.
 	if (version !== undefined && !VERSION_REGEX.test(version)) return false;
-	// Check if the org is a valid SuiNS name.
-	if (!isValidSuiNSName(org)) return false;
+	// Check if the org is a valid MysNS name.
+	if (!isValidMysNSName(org)) return false;
 
 	// Check if the app is a valid name.
 	return NAME_PATTERN.test(app) && app.length < MAX_APP_SIZE;

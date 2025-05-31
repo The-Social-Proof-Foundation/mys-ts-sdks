@@ -46,7 +46,7 @@ async function main() {
 
 				name: 'dAppName',
 				message: 'What is the name of your dApp? (this will be used as the directory name)',
-				initial: 'my-first-sui-dapp',
+				initial: 'my-first-mys-dapp',
 			},
 		].filter((question) => !args[question.name as 'template']),
 	);
@@ -97,7 +97,7 @@ async function collectFiles(template: string, dAppName: string) {
 				if (entry === 'package.json') {
 					const json = JSON.parse(content.toString());
 					json.name = dAppName;
-					json.dependencies['@mysocial/sui'] = dependencies['@mysocial/sui'];
+					json.dependencies['@mysocial/mys'] = dependencies['@mysocial/mys'];
 					json.dependencies['@mysocial/dapp-kit'] = dependencies['@mysocial/dapp-kit'];
 
 					content = Buffer.from(JSON.stringify(json, null, 2));

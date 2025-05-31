@@ -2,11 +2,11 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 import { KeyManagementServiceClient } from '@google-cloud/kms';
-import type { PublicKey, SignatureFlag } from '@mysocial/sui/cryptography';
-import { SIGNATURE_FLAG_TO_SCHEME, Signer } from '@mysocial/sui/cryptography';
-import { Secp256k1PublicKey } from '@mysocial/sui/keypairs/secp256k1';
-import { Secp256r1PublicKey } from '@mysocial/sui/keypairs/secp256r1';
-import { fromBase64 } from '@mysocial/sui/utils';
+import type { PublicKey, SignatureFlag } from '@mysocial/mys/cryptography';
+import { SIGNATURE_FLAG_TO_SCHEME, Signer } from '@mysocial/mys/cryptography';
+import { Secp256k1PublicKey } from '@mysocial/mys/keypairs/secp256k1';
+import { Secp256r1PublicKey } from '@mysocial/mys/keypairs/secp256r1';
+import { fromBase64 } from '@mysocial/mys/utils';
 
 import { getConcatenatedSignature, publicKeyFromDER } from '../utils/utils.js';
 
@@ -23,7 +23,7 @@ export interface GcpKmsSignerOptions {
 }
 
 /**
- * GCP KMS Signer integrates GCP Key Management Service (KMS) with the Sui blockchain
+ * GCP KMS Signer integrates GCP Key Management Service (KMS) with the Mys blockchain
  * to provide signing capabilities using GCP-managed cryptographic keys.
  */
 export class GcpKmsSigner extends Signer {

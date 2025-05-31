@@ -4,30 +4,30 @@
 
 import { is } from 'valibot';
 
-import type { SuiMoveNormalizedType } from '../client/index.js';
-import { normalizeSuiAddress } from '../utils/sui-types.js';
+import type { MysMoveNormalizedType } from '../client/index.js';
+import { normalizeMysAddress } from '../utils/mys-types.js';
 import { Argument } from './data/internal.js';
 import type { CallArg } from './data/internal.js';
 
 export function extractMutableReference(
-	normalizedType: SuiMoveNormalizedType,
-): SuiMoveNormalizedType | undefined {
+	normalizedType: MysMoveNormalizedType,
+): MysMoveNormalizedType | undefined {
 	return typeof normalizedType === 'object' && 'MutableReference' in normalizedType
 		? normalizedType.MutableReference
 		: undefined;
 }
 
 export function extractReference(
-	normalizedType: SuiMoveNormalizedType,
-): SuiMoveNormalizedType | undefined {
+	normalizedType: MysMoveNormalizedType,
+): MysMoveNormalizedType | undefined {
 	return typeof normalizedType === 'object' && 'Reference' in normalizedType
 		? normalizedType.Reference
 		: undefined;
 }
 
 export function extractStructTag(
-	normalizedType: SuiMoveNormalizedType,
-): Extract<SuiMoveNormalizedType, { Struct: unknown }> | undefined {
+	normalizedType: MysMoveNormalizedType,
+): Extract<MysMoveNormalizedType, { Struct: unknown }> | undefined {
 	if (typeof normalizedType === 'object' && 'Struct' in normalizedType) {
 		return normalizedType;
 	}
@@ -47,23 +47,23 @@ export function extractStructTag(
 
 export function getIdFromCallArg(arg: string | CallArg) {
 	if (typeof arg === 'string') {
-		return normalizeSuiAddress(arg);
+		return normalizeMysAddress(arg);
 	}
 
 	if (arg.Object) {
 		if (arg.Object.ImmOrOwnedObject) {
-			return normalizeSuiAddress(arg.Object.ImmOrOwnedObject.objectId);
+			return normalizeMysAddress(arg.Object.ImmOrOwnedObject.objectId);
 		}
 
 		if (arg.Object.Receiving) {
-			return normalizeSuiAddress(arg.Object.Receiving.objectId);
+			return normalizeMysAddress(arg.Object.Receiving.objectId);
 		}
 
-		return normalizeSuiAddress(arg.Object.SharedObject.objectId);
+		return normalizeMysAddress(arg.Object.SharedObject.objectId);
 	}
 
 	if (arg.UnresolvedObject) {
-		return normalizeSuiAddress(arg.UnresolvedObject.objectId);
+		return normalizeMysAddress(arg.UnresolvedObject.objectId);
 	}
 
 	return undefined;

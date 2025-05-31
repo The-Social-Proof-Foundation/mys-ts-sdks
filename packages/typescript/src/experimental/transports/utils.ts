@@ -4,11 +4,11 @@
 
 import { bcs } from '../../bcs/index.js';
 import { TransactionDataBuilder } from '../../transactions/index.js';
-import type { Experimental_SuiClientTypes } from '../types.js';
+import type { Experimental_MysClientTypes } from '../types.js';
 
 export function parseTransactionBcs(
 	bytes: Uint8Array,
-): Experimental_SuiClientTypes.TransactionResponse['transaction'] {
+): Experimental_MysClientTypes.TransactionResponse['transaction'] {
 	return {
 		...TransactionDataBuilder.fromBytes(bytes).snapshot(),
 		bcs: bytes,
@@ -17,7 +17,7 @@ export function parseTransactionBcs(
 
 export function parseTransactionEffectsBcs(
 	effects: Uint8Array,
-): Experimental_SuiClientTypes.TransactionEffects {
+): Experimental_MysClientTypes.TransactionEffects {
 	const parsed = bcs.TransactionEffects.parse(effects);
 
 	switch (parsed.$kind) {
@@ -35,7 +35,7 @@ export function parseTransactionEffectsBcs(
 function parseTransactionEffectsV1(_: {
 	bytes: Uint8Array;
 	effects: NonNullable<(typeof bcs.TransactionEffects.$inferType)['V1']>;
-}): Experimental_SuiClientTypes.TransactionEffects {
+}): Experimental_MysClientTypes.TransactionEffects {
 	throw new Error('V1 effects are not supported yet');
 }
 
@@ -45,9 +45,9 @@ function parseTransactionEffectsV2({
 }: {
 	bytes: Uint8Array;
 	effects: NonNullable<(typeof bcs.TransactionEffects.$inferType)['V2']>;
-}): Experimental_SuiClientTypes.TransactionEffects {
+}): Experimental_MysClientTypes.TransactionEffects {
 	const changedObjects = effects.changedObjects.map(
-		([id, change]): Experimental_SuiClientTypes.ChangedObject => {
+		([id, change]): Experimental_MysClientTypes.ChangedObject => {
 			return {
 				id,
 				inputState: change.inputState.$kind === 'Exist' ? 'Exists' : 'DoesNotExist',
@@ -96,7 +96,7 @@ function parseTransactionEffectsV2({
 		lamportVersion: effects.lamportVersion,
 		changedObjects,
 		unchangedSharedObjects: effects.unchangedSharedObjects.map(
-			([objectId, object]): Experimental_SuiClientTypes.UnchangedSharedObject => {
+			([objectId, object]): Experimental_MysClientTypes.UnchangedSharedObject => {
 				return {
 					kind: object.$kind,
 					objectId: objectId,

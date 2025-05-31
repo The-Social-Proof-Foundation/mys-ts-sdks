@@ -4,7 +4,7 @@
 
 import { describe, expect, it } from 'vitest';
 
-import { normalizeStructTag, parseStructTag } from '../../../src/utils/sui-types.js';
+import { normalizeStructTag, parseStructTag } from '../../../src/utils/mys-types.js';
 
 describe('parseStructTag', () => {
 	it('parses struct tags correctly', () => {
@@ -60,7 +60,7 @@ describe('parseStructTag', () => {
       }
     `);
 
-		expect(parseStructTag('@mvr/demo::foo::bar<inner.mvr.sui/demo::baz::qux, bool>'))
+		expect(parseStructTag('@mvr/demo::foo::bar<inner.mvr.mys/demo::baz::qux, bool>'))
 			.toMatchInlineSnapshot(`
       {
         "address": "@mvr/demo",
@@ -68,7 +68,7 @@ describe('parseStructTag', () => {
         "name": "bar",
         "typeParams": [
           {
-            "address": "inner.mvr.sui/demo",
+            "address": "inner.mvr.mys/demo",
             "module": "baz",
             "name": "qux",
             "typeParams": [],
@@ -93,9 +93,9 @@ describe('normalizeStructTag', () => {
 
 	it('normalizes named package addresses', () => {
 		const checks = [
-			'@mvr/demo::foo::bar<inner.mvr.sui/demo::baz::qux,bool>',
+			'@mvr/demo::foo::bar<inner.mvr.mys/demo::baz::qux,bool>',
 			'@mvr/demo::foo::bar',
-			'@mvr/demo::foo::bar<inner.mvr.sui/demo::baz::Qux,bool,inner@mvr/demo::foo::Nested<u64,bool>>',
+			'@mvr/demo::foo::bar<inner.mvr.mys/demo::baz::Qux,bool,inner@mvr/demo::foo::Nested<u64,bool>>',
 		];
 
 		for (const check of checks) expect(normalizeStructTag(parseStructTag(check))).toEqual(check);

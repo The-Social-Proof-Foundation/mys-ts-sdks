@@ -5,10 +5,10 @@
 import EventEmitter from 'node:events';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { SuiHTTPTransport } from '../../../src/client';
+import { MysHTTPTransport } from '../../../src/client';
 import { PACKAGE_VERSION, TARGETED_RPC_VERSION } from '../../../src/version';
 
-describe('SuiHTTPTransport', () => {
+describe('MysHTTPTransport', () => {
 	describe('rpc requests', () => {
 		const mockResult = { data: 123 };
 		let requestId = 0;
@@ -31,7 +31,7 @@ describe('SuiHTTPTransport', () => {
 			);
 		});
 
-		const transport = new SuiHTTPTransport({
+		const transport = new MysHTTPTransport({
 			url: 'http://localhost:4000',
 			rpc: {
 				url: 'http://localhost:4000',
@@ -114,7 +114,7 @@ describe('SuiHTTPTransport', () => {
 		});
 
 		it('Creates a subscription', async () => {
-			const transport = new SuiHTTPTransport({
+			const transport = new MysHTTPTransport({
 				url: 'http://localhost:4000',
 				WebSocketConstructor: MockWebSocketConstructor,
 			});
@@ -182,7 +182,7 @@ describe('SuiHTTPTransport', () => {
 		});
 
 		it('Should reconnect on close', async () => {
-			const transport = new SuiHTTPTransport({
+			const transport = new MysHTTPTransport({
 				url: 'http://localhost:4000',
 				WebSocketConstructor: MockWebSocketConstructor,
 				websocket: {

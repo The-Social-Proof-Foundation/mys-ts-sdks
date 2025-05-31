@@ -1,7 +1,7 @@
 {
 	"name": "@mysocial/dapp-kit",
 	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
-	"description": "A collection of React hooks and components for interacting with the Sui blockchain and wallets.",
+	"description": "A collection of React hooks and components for interacting with the Mys blockchain and wallets.",
 	"homepage": "https://sdk.mystenlabs.com/typescript",
 	"version": "0.16.5",
 	"license": "Apache-2.0",
@@ -58,7 +58,7 @@
 		}
 	],
 	"devDependencies": {
-		"@mysten/build-scripts": "workspace:*",
+		"@mysocial/build-scripts": "workspace:*",
 		"@size-limit/preset-small-lib": "^11.2.0",
 		"@tanstack/react-query": "^5.71.3",
 		"@testing-library/dom": "^10.3.1",
@@ -78,10 +78,10 @@
 		"vitest": "^3.1.1"
 	},
 	"dependencies": {
-		"@mysten/slush-wallet": "workspace:*",
-		"@mysten/sui": "workspace:*",
-		"@mysten/utils": "workspace:*",
-		"@mysten/wallet-standard": "workspace:*",
+		"@mysocial/slush-wallet": "workspace:*",
+		"@mysocial/mys": "workspace:*",
+		"@mysocial/utils": "workspace:*",
+		"@mysocial/wallet-standard": "workspace:*",
 		"@radix-ui/react-dialog": "^1.1.6",
 		"@radix-ui/react-dropdown-menu": "^2.1.6",
 		"@radix-ui/react-slot": "^1.1.2",

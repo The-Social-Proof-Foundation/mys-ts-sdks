@@ -1,5 +1,5 @@
-import { getFullnodeUrl } from "@mysten/sui/client";
-import { createNetworkConfig } from "@mysten/dapp-kit";
+import { getFullnodeUrl } from "@mysocial/mys/client";
+import { createNetworkConfig } from "@mysocial/dapp-kit";
 
 const { networkConfig, useNetworkVariable, useNetworkVariables } =
   createNetworkConfig({

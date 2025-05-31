@@ -4,8 +4,8 @@
 
 import type { ExportedWebCryptoKeypair } from '@mysocial/signers/webcrypto';
 import { WebCryptoSigner } from '@mysocial/signers/webcrypto';
-import { decodeJwt } from '@mysocial/sui/zklogin';
-import type { ZkLoginSignatureInputs } from '@mysocial/sui/zklogin';
+import { decodeJwt } from '@mysocial/mys/zklogin';
+import type { ZkLoginSignatureInputs } from '@mysocial/mys/zklogin';
 import type { UseStore } from 'idb-keyval';
 import { clear, createStore, get, set } from 'idb-keyval';
 import type { WritableAtom } from 'nanostores';

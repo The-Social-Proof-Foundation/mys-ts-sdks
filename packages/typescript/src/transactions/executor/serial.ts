@@ -5,7 +5,7 @@
 import { toBase64 } from '@mysocial/bcs';
 
 import type { bcs } from '../../bcs/index.js';
-import type { SuiClient, SuiTransactionBlockResponseOptions } from '../../client/index.js';
+import type { MysClient, MysTransactionBlockResponseOptions } from '../../client/index.js';
 import type { Signer } from '../../cryptography/keypair.js';
 import type { ObjectCacheOptions } from '../ObjectCache.js';
 import { isTransaction, Transaction } from '../Transaction.js';
@@ -23,7 +23,7 @@ export class SerialTransactionExecutor {
 		defaultGasBudget = 50_000_000n,
 		...options
 	}: Omit<ObjectCacheOptions, 'address'> & {
-		client: SuiClient;
+		client: MysClient;
 		signer: Signer;
 		/** The gasBudget to use if the transaction has not defined it's own gasBudget, defaults to `50_000_000n` */
 		defaultGasBudget?: bigint;
@@ -71,7 +71,7 @@ export class SerialTransactionExecutor {
 		}
 
 		copy.setGasBudgetIfNotSet(this.#defaultGasBudget);
-		copy.setSenderIfNotSet(this.#signer.toSuiAddress());
+		copy.setSenderIfNotSet(this.#signer.toMysAddress());
 
 		return this.#cache.buildTransaction({ transaction: copy });
 	};
@@ -86,7 +86,7 @@ export class SerialTransactionExecutor {
 
 	executeTransaction(
 		transaction: Transaction | Uint8Array,
-		options?: SuiTransactionBlockResponseOptions,
+		options?: MysTransactionBlockResponseOptions,
 		additionalSignatures: string[] = [],
 	) {
 		return this.#queue.runTask(async () => {

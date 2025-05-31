@@ -2,13 +2,13 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { PublicKey, SignatureScheme } from '@mysocial/sui/cryptography';
-import { SIGNATURE_FLAG_TO_SCHEME, Signer } from '@mysocial/sui/cryptography';
+import type { PublicKey, SignatureScheme } from '@mysocial/mys/cryptography';
+import { SIGNATURE_FLAG_TO_SCHEME, Signer } from '@mysocial/mys/cryptography';
 import type { DAppKit } from './core/index.js';
-import type { Transaction } from '@mysocial/sui/transactions';
-import type { Experimental_SuiClientTypes } from '@mysocial/sui/experimental';
-import { parseTransactionBcs, parseTransactionEffectsBcs } from '@mysocial/sui/experimental';
-import { toBase64, fromBase64 } from '@mysocial/sui/utils';
+import type { Transaction } from '@mysocial/mys/transactions';
+import type { Experimental_MysClientTypes } from '@mysocial/mys/experimental';
+import { parseTransactionBcs, parseTransactionEffectsBcs } from '@mysocial/mys/experimental';
+import { toBase64, fromBase64 } from '@mysocial/mys/utils';
 
 export class CurrentAccountSigner extends Signer {
 	dAppKit: DAppKit;
@@ -56,7 +56,7 @@ export class CurrentAccountSigner extends Signer {
 		transaction,
 	}: {
 		transaction: Transaction;
-	}): Promise<Experimental_SuiClientTypes.TransactionResponse> {
+	}): Promise<Experimental_MysClientTypes.TransactionResponse> {
 		const { bytes, signature, digest, effects } = await this.dAppKit.signAndExecuteTransaction({
 			transaction,
 		});

@@ -2,10 +2,10 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/sui/bcs';
-import type { TransactionArgument } from '@mysocial/sui/transactions';
-import { Transaction } from '@mysocial/sui/transactions';
-import { normalizeSuiAddress } from '@mysocial/sui/utils';
+import { bcs } from '@mysocial/mys/bcs';
+import type { TransactionArgument } from '@mysocial/mys/transactions';
+import { Transaction } from '@mysocial/mys/transactions';
+import { normalizeMysAddress } from '@mysocial/mys/utils';
 
 import type { RuleResolvingParams } from '../../types/index.js';
 import { lock } from '../kiosk.js';
@@ -39,7 +39,7 @@ export async function resolveRoyaltyRule(params: RuleResolvingParams) {
 	const policyObj = tx.object(policyId);
 
 	const { results } = await kioskClient.client.devInspectTransactionBlock({
-		sender: tx.getData().sender || normalizeSuiAddress('0x0'),
+		sender: tx.getData().sender || normalizeMysAddress('0x0'),
 		transactionBlock: feeTx,
 	});
 

@@ -14,7 +14,7 @@ const header = `
 const config: CodegenConfig = {
 	overwrite: true,
 	schema:
-		'https://raw.githubusercontent.com/MystenLabs/sui/refs/heads/mainnet/crates/sui-graphql-rpc/schema.graphql',
+		'https://raw.githubusercontent.com/MystenLabs/mys/refs/heads/mainnet/crates/mys-graphql-rpc/schema.graphql',
 	documents: ['src/graphql/queries/*.graphql'],
 	ignoreNoDocuments: true,
 	generates: {

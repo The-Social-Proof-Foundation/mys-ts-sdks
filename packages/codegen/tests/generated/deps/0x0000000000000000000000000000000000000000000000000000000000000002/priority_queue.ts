@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs, type BcsType } from '@mysocial/sui/bcs';
+import { bcs, type BcsType } from '@mysocial/mys/bcs';
 export function PriorityQueue<T0 extends BcsType<any>>(...typeParameters: [T0]) {
 	return bcs.struct('PriorityQueue', {
 		entries: bcs.vector(Entry(typeParameters[0])),

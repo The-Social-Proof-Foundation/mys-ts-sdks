@@ -1,11 +1,11 @@
-# Sui KMS Signers
+# Mys KMS Signers
 
-The Sui KMS Signers package provides a set of tools for securely signing transactions using Key
+The Mys KMS Signers package provides a set of tools for securely signing transactions using Key
 Management Services (KMS) like AWS KMS and GCP KMS.
 
 ## Table of Contents
 
-- [Sui KMS Signers](#sui-kms-signers)
+- [Mys KMS Signers](#mys-kms-signers)
   - [Table of Contents](#table-of-contents)
   - [AWS KMS Signer](#aws-kms-signer)
     - [Usage](#usage)
@@ -26,7 +26,7 @@ Management Services (KMS) like AWS KMS and GCP KMS.
 
 ## AWS KMS Signer
 
-The AWS KMS Signer allows you to leverage AWS's Key Management Service to sign Sui transactions.
+The AWS KMS Signer allows you to leverage AWS's Key Management Service to sign Mys transactions.
 
 ### Usage
 
@@ -88,7 +88,7 @@ An instance of AwsKmsSigner.
 
 ## GCP KMS Signer
 
-The GCP KMS Signer allows you to leverage Google Cloud's Key Management Service to sign Sui
+The GCP KMS Signer allows you to leverage Google Cloud's Key Management Service to sign Mys
 transactions.
 
 ### Usage
@@ -131,9 +131,9 @@ const signer = await GcpKmsSigner.fromOptions({
 	cryptoKeyVersion: 'your-google-key-name-version',
 });
 
-// Retrieve the public key and get the Sui address
+// Retrieve the public key and get the Mys address
 const publicKey = signer.getPublicKey();
-console.log(publicKey.toSuiAddress());
+console.log(publicKey.toMysAddress());
 
 // Define a test message
 const testMessage = 'Hello, GCP KMS Signer!';
@@ -149,7 +149,7 @@ console.log(isValid); // Should print true if the signature is valid
 
 ## Ledger Signer
 
-The Ledger Signer allows you to leverage a Ledger hardware wallet to sign Sui transactions.
+The Ledger Signer allows you to leverage a Ledger hardware wallet to sign Mys transactions.
 
 ### Usage
 
@@ -172,23 +172,23 @@ cryptographic operations.
 
 ```typescript
 import Transport from '@ledgerhq/hw-transport-node-hid';
-import SuiLedgerClient from '@mysocial/ledgerjs-hw-app-sui';
+import MysLedgerClient from '@mysocial/ledgerjs-hw-app-mys';
 import { LedgerSigner } from '@mysocial/signers/ledger';
-import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
-import { Transaction } from '@mysocial/sui/transactions';
+import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { Transaction } from '@mysocial/mys/transactions';
 
 const transport = await Transport.open(undefined);
-const ledgerClient = new SuiLedgerClient(transport);
-const suiClient = new SuiClient({ url: getFullnodeUrl('testnet') });
+const ledgerClient = new MysLedgerClient(transport);
+const mysClient = new MysClient({ url: getFullnodeUrl('testnet') });
 
 const signer = await LedgerSigner.fromDerivationPath(
 	"m/44'/784'/0'/0'/0'",
 	ledgerClient,
-	suiClient,
+	mysClient,
 );
 
-// Log the Sui address:
-console.log(signer.toSuiAddress());
+// Log the Mys address:
+console.log(signer.toMysAddress());
 
 // Define a test transaction:
 const testTransaction = new Transaction();

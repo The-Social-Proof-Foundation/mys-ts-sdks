@@ -1,7 +1,7 @@
 {
 	"name": "@mysocial/create-dapp",
 	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
-	"description": "A CLI for creating new Sui dApps",
+	"description": "A CLI for creating new Mys dApps",
 	"homepage": "https://sdk.mystenlabs.com",
 	"version": "0.4.7",
 	"license": "Apache-2.0",
@@ -35,12 +35,12 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@mysten/build-scripts": "workspace:*",
+		"@mysocial/build-scripts": "workspace:*",
 		"typescript": "^5.8.2"
 	},
 	"dependencies": {
-		"@mysten/dapp-kit": "workspace:*",
-		"@mysten/sui": "workspace:*",
+		"@mysocial/dapp-kit": "workspace:*",
+		"@mysocial/mys": "workspace:*",
 		"@types/node": "^22.13.17",
 		"enquirer": "^2.4.1"
 	},

@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { Transaction } from '@mysocial/sui/transactions';
+import { Transaction } from '@mysocial/mys/transactions';
 import { expect } from 'vitest';
 
 import type { KioskClient, KioskOwnerCap } from '../../src/index.js';

@@ -4,7 +4,7 @@
 
 import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
 
-import { OwnedObjectRef, SuiClient } from '../../src/client';
+import { OwnedObjectRef, MysClient } from '../../src/client';
 import type { Keypair } from '../../src/cryptography';
 import { Transaction } from '../../src/transactions';
 import { setup, TestToolbox } from './utils/setup';
@@ -130,8 +130,8 @@ describe('Transfer to Object', { retry: 3 }, () => {
 	});
 });
 
-async function validateTransaction(client: SuiClient, signer: Keypair, tx: Transaction) {
-	tx.setSenderIfNotSet(signer.getPublicKey().toSuiAddress());
+async function validateTransaction(client: MysClient, signer: Keypair, tx: Transaction) {
+	tx.setSenderIfNotSet(signer.getPublicKey().toMysAddress());
 	const localDigest = await tx.getDigest({ client });
 	const result = await client.signAndExecuteTransaction({
 		signer,

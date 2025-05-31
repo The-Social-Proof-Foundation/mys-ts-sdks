@@ -5,7 +5,7 @@
 ### Patch Changes
 
 - Updated dependencies [ec519fc]
-  - @mysten/sui@1.30.1
+  - @mysocial/mys@1.30.1
 
 ## 0.4.4
 
@@ -19,7 +19,7 @@
 - Updated dependencies [2456052]
 - Updated dependencies [2456052]
 - Updated dependencies [2456052]
-  - @mysten/sui@1.30.0
+  - @mysocial/mys@1.30.0
 
 ## 0.4.3
 
@@ -33,7 +33,7 @@
 
 - Updated dependencies [7e1c525]
   - @mysten/bcs@1.6.1
-  - @mysten/sui@1.29.1
+  - @mysocial/mys@1.29.1
 
 ## 0.4.1
 
@@ -44,7 +44,7 @@
 - Updated dependencies [7d66a32]
 - Updated dependencies [eb91fba]
 - Updated dependencies [19a8045]
-  - @mysten/sui@1.29.0
+  - @mysocial/mys@1.29.0
 
 ## 0.4.0
 
@@ -55,28 +55,28 @@
 ### Patch Changes
 
 - Updated dependencies [9a94aea]
-  - @mysten/sui@1.28.2
+  - @mysocial/mys@1.28.2
 
 ## 0.3.9
 
 ### Patch Changes
 
 - Updated dependencies [3cd4e53]
-  - @mysten/sui@1.28.1
+  - @mysocial/mys@1.28.1
 
 ## 0.3.8
 
 ### Patch Changes
 
 - Updated dependencies [2705dc8]
-  - @mysten/sui@1.28.0
+  - @mysocial/mys@1.28.0
 
 ## 0.3.7
 
 ### Patch Changes
 
 - Updated dependencies [5cea435]
-  - @mysten/sui@1.27.1
+  - @mysocial/mys@1.27.1
 
 ## 0.3.6
 
@@ -85,7 +85,7 @@
 - ad8b845: Increase max session key TTL to 30 min
 - Updated dependencies [4d13ef8]
 - Updated dependencies [4d13ef8]
-  - @mysten/sui@1.27.0
+  - @mysocial/mys@1.27.0
 
 ## 0.3.5
 
@@ -100,7 +100,7 @@
 - 7ba32a4: update dependencies
 - Updated dependencies [7ba32a4]
 - Updated dependencies [c3a788c]
-  - @mysten/sui@1.26.1
+  - @mysocial/mys@1.26.1
   - @mysten/bcs@1.6.0
 
 ## 0.3.3
@@ -108,7 +108,7 @@
 ### Patch Changes
 
 - Updated dependencies [906dd14]
-  - @mysten/sui@1.26.0
+  - @mysocial/mys@1.26.0
 
 ## 0.3.2
 
@@ -144,4 +144,4 @@
 
 - Updated dependencies [95b1ea5]
   - @mysten/bcs@1.4.0
-  - @mysten/sui@1.21.2
+  - @mysocial/mys@1.21.2

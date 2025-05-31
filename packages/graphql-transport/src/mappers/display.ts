@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { DisplayFieldsResponse } from '@mysocial/sui/client';
+import type { DisplayFieldsResponse } from '@mysocial/mys/client';
 
 export function formatDisplay(object: {
 	display?:

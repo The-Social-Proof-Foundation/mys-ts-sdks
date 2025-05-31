@@ -32,23 +32,23 @@ describe('zkLogin address', () => {
 		).toBe('0xbd8b8ed42d90aebc71518385d8a899af14cef8b5a171c380434dd6f5bbfe7bf3');
 	});
 
-	test('computeZkLoginAddressFromSeed matches ZkLoginPublicIdentifier.toSuiAddress() for legacy addresses', () => {
+	test('computeZkLoginAddressFromSeed matches ZkLoginPublicIdentifier.toMysAddress() for legacy addresses', () => {
 		const seed = BigInt(
 			'380704556853533152350240698167704405529973457670972223618755249929828551006',
 		);
 		const iss = 'https://accounts.google.com';
 		expect(computeZkLoginAddressFromSeed(seed, iss)).toEqual(
-			toZkLoginPublicIdentifier(seed, iss, { legacyAddress: true }).toSuiAddress(),
+			toZkLoginPublicIdentifier(seed, iss, { legacyAddress: true }).toMysAddress(),
 		);
 	});
 
-	test('computeZkLoginAddressFromSeed matches ZkLoginPublicIdentifier.toSuiAddress() for non-legacy addresses', () => {
+	test('computeZkLoginAddressFromSeed matches ZkLoginPublicIdentifier.toMysAddress() for non-legacy addresses', () => {
 		const seed = BigInt(
 			'380704556853533152350240698167704405529973457670972223618755249929828551006',
 		);
 		const iss = 'https://accounts.google.com';
 		expect(computeZkLoginAddressFromSeed(seed, iss, false)).toEqual(
-			toZkLoginPublicIdentifier(seed, iss).toSuiAddress(),
+			toZkLoginPublicIdentifier(seed, iss).toMysAddress(),
 		);
 	});
 

@@ -4,13 +4,13 @@
 
 import { useStore } from '@nanostores/react';
 import { createDAppKit } from '@mysocial/dapp-kit-next';
-import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
 
 const dAppKit = createDAppKit({
 	networks: ['mainnet', 'testnet'],
 	defaultNetwork: 'testnet',
 	createClient(network) {
-		return new SuiClient({ network, url: getFullnodeUrl(network) });
+		return new MysClient({ network, url: getFullnodeUrl(network) });
 	},
 });
 

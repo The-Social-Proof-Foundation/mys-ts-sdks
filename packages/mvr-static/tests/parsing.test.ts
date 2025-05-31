@@ -14,11 +14,11 @@ describe.concurrent('Parsing of project files', () => {
 			'@mvr/app::type::Type',
 			'@mvr/app::type::Type2',
 			'@kiosk/core::kiosk::Kiosk',
-			'app.sui/app::t::T',
+			'app.mys/app::t::T',
 			'@mvr/app/2',
 			'@mvr/app',
 			'@kiosk/core',
-			'app.sui/app',
+			'app.mys/app',
 			'@pkg/qwer',
 			// nested directory files
 			'@nested/app::demo::test',

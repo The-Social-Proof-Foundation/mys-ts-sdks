@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { PublicKey } from '@mysocial/sui/cryptography';
-import type { ZkLoginSignatureInputs } from '@mysocial/sui/zklogin';
+import type { PublicKey } from '@mysocial/mys/cryptography';
+import type { ZkLoginSignatureInputs } from '@mysocial/mys/zklogin';
 
 export type AuthProvider = 'google' | 'facebook' | 'twitch';
 export type EnokiNetwork = 'mainnet' | 'testnet' | 'devnet';

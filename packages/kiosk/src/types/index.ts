@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiClient } from '@mysocial/sui/client';
-import type { TransactionObjectArgument } from '@mysocial/sui/transactions';
+import type { MysClient } from '@mysocial/mys/client';
+import type { TransactionObjectArgument } from '@mysocial/mys/transactions';
 
 import type { BaseRulePackageIds } from '../constants.js';
 
@@ -30,7 +30,7 @@ export enum Network {
  * The Client Options for Both KioskClient & TransferPolicyManager.
  */
 export type KioskClientOptions = {
-	client: SuiClient;
+	client: MysClient;
 	network: Network;
 	packageIds?: BaseRulePackageIds;
 };

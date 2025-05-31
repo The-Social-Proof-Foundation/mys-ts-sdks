@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { InferBcsType } from '@mysocial/bcs';
-import type { SuiMoveNormalizedType } from '@mysocial/sui/client';
+import type { MysMoveNormalizedType } from '@mysocial/mys/client';
 
 import type { Committee } from '../contracts/committee.js';
 import type { EncodingType } from '../types.js';
@@ -125,7 +125,7 @@ export function nodesByShardIndex(committee: InferBcsType<ReturnType<typeof Comm
 	return nodesByShardIndex;
 }
 
-export function toTypeString(type: SuiMoveNormalizedType): string {
+export function toTypeString(type: MysMoveNormalizedType): string {
 	if (typeof type === 'string') {
 		switch (type) {
 			case 'Address':

@@ -42,7 +42,7 @@ export function toBigEndianBytes(num: bigint, width: number): Uint8Array {
 }
 
 export function getExtendedEphemeralPublicKey(publicKey: PublicKey) {
-	return publicKey.toSuiPublicKey();
+	return publicKey.toMysPublicKey();
 }
 
 /**

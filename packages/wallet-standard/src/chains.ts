@@ -4,31 +4,31 @@
 
 import type { IdentifierString } from '@wallet-standard/core';
 
-/** Sui Devnet */
-export const SUI_DEVNET_CHAIN = 'sui:devnet';
+/** Mys Devnet */
+export const MYS_DEVNET_CHAIN = 'mys:devnet';
 
-/** Sui Testnet */
-export const SUI_TESTNET_CHAIN = 'sui:testnet';
+/** Mys Testnet */
+export const MYS_TESTNET_CHAIN = 'mys:testnet';
 
-/** Sui Localnet */
-export const SUI_LOCALNET_CHAIN = 'sui:localnet';
+/** Mys Localnet */
+export const MYS_LOCALNET_CHAIN = 'mys:localnet';
 
-/** Sui Mainnet */
-export const SUI_MAINNET_CHAIN = 'sui:mainnet';
+/** Mys Mainnet */
+export const MYS_MAINNET_CHAIN = 'mys:mainnet';
 
-export const SUI_CHAINS = [
-	SUI_DEVNET_CHAIN,
-	SUI_TESTNET_CHAIN,
-	SUI_LOCALNET_CHAIN,
-	SUI_MAINNET_CHAIN,
+export const MYS_CHAINS = [
+	MYS_DEVNET_CHAIN,
+	MYS_TESTNET_CHAIN,
+	MYS_LOCALNET_CHAIN,
+	MYS_MAINNET_CHAIN,
 ] as const;
 
-export type SuiChain = (typeof SUI_CHAINS)[number];
+export type MysChain = (typeof MYS_CHAINS)[number];
 
 /**
- * Utility that returns whether or not a chain identifier is a valid Sui chain.
+ * Utility that returns whether or not a chain identifier is a valid Mys chain.
  * @param chain a chain identifier in the form of `${string}:{$string}`
  */
-export function isSuiChain(chain: IdentifierString): chain is SuiChain {
-	return SUI_CHAINS.includes(chain as SuiChain);
+export function isMysChain(chain: IdentifierString): chain is MysChain {
+	return MYS_CHAINS.includes(chain as MysChain);
 }

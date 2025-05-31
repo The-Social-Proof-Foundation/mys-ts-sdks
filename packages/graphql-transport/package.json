@@ -1,7 +1,7 @@
 {
 	"name": "@mysocial/graphql-transport",
 	"version": "0.2.57",
-	"description": "A GraphQL transport to allow SuiClient to work with RPC 2.0",
+	"description": "A GraphQL transport to allow MysClient to work with RPC 2.0",
 	"license": "Apache-2.0",
 	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"type": "commonjs",
@@ -34,12 +34,12 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/mystenlabs/ts-sdks.git"
+		"url": "git+https://github.com/The-Social-Proof-Foundation/mys-ts-sdks.git"
 	},
 	"bugs": {
-		"url": "https://github.com/mystenlabs/ts-sdks/issues"
+		"url": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks/issues"
 	},
-	"homepage": "https://github.com/mystenlabs/ts-sdks#readme",
+	"homepage": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks#readme",
 	"devDependencies": {
 		"@graphql-codegen/add": "^5.0.3",
 		"@graphql-codegen/cli": "^5.0.5",
@@ -47,7 +47,7 @@
 		"@graphql-codegen/typescript": "4.1.6",
 		"@graphql-codegen/typescript-document-nodes": "4.0.16",
 		"@graphql-codegen/typescript-operations": "^4.6.0",
-		"@mysten/build-scripts": "workspace:*",
+		"@mysocial/build-scripts": "workspace:*",
 		"@parcel/watcher": "^2.5.1",
 		"@types/node": "^22.13.17",
 		"graphql-config": "^5.0.3",
@@ -57,8 +57,8 @@
 	},
 	"dependencies": {
 		"@graphql-typed-document-node/core": "^3.2.0",
-		"@mysten/bcs": "workspace:*",
-		"@mysten/sui": "workspace:*",
+		"@mysocial/bcs": "workspace:*",
+		"@mysocial/mys": "workspace:*",
 		"graphql": "^16.9.0"
 	}
 }

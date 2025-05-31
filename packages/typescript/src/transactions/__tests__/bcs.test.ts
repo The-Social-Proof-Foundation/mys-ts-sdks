@@ -6,7 +6,7 @@ import { toBase58 } from '@mysocial/bcs';
 import { expect, it } from 'vitest';
 
 import { bcs } from '../../bcs/index.js';
-import { normalizeStructTag, normalizeSuiAddress } from '../../utils/sui-types.js';
+import { normalizeStructTag, normalizeMysAddress } from '../../utils/mys-types.js';
 
 // Oooh-weeee we nailed it!
 it('can serialize simplified programmable call struct', () => {
@@ -44,13 +44,13 @@ it('can serialize simplified programmable call struct', () => {
 	expect(result.arguments).toEqual(moveCall.arguments);
 	expect(result.function).toEqual(moveCall.function);
 	expect(result.module).toEqual(moveCall.module);
-	expect(normalizeSuiAddress(result.package)).toEqual(normalizeSuiAddress(moveCall.package));
+	expect(normalizeMysAddress(result.package)).toEqual(normalizeMysAddress(moveCall.package));
 	expect(result.typeArguments[0]).toEqual(moveCall.typeArguments[0]);
 });
 
 function ref(): { objectId: string; version: string; digest: string } {
 	return {
-		objectId: normalizeSuiAddress((Math.random() * 100000).toFixed(0).padEnd(64, '0')),
+		objectId: normalizeMysAddress((Math.random() * 100000).toFixed(0).padEnd(64, '0')),
 		version: String((Math.random() * 10000).toFixed(0)),
 		digest: toBase58(
 			new Uint8Array([
@@ -62,15 +62,15 @@ function ref(): { objectId: string; version: string; digest: string } {
 }
 
 it('can serialize transaction data with a programmable transaction', () => {
-	const sui = normalizeSuiAddress('0x2');
+	const mys = normalizeMysAddress('0x2');
 	const txData = {
 		$kind: 'V1',
 		V1: {
-			sender: normalizeSuiAddress('0xBAD'),
+			sender: normalizeMysAddress('0xBAD'),
 			expiration: { $kind: 'None', None: true },
 			gasData: {
 				payment: [ref()],
-				owner: sui,
+				owner: mys,
 				price: '1',
 				budget: '1000000',
 			},
@@ -122,10 +122,10 @@ it('can serialize transaction data with a programmable transaction', () => {
 						{
 							$kind: 'MoveCall',
 							MoveCall: {
-								package: sui,
+								package: mys,
 								module: 'display',
 								function: 'new',
-								typeArguments: [`${sui}::capy::Capy`],
+								typeArguments: [`${mys}::capy::Capy`],
 								arguments: [
 									// publisher object
 									{
@@ -138,10 +138,10 @@ it('can serialize transaction data with a programmable transaction', () => {
 						{
 							$kind: 'MoveCall',
 							MoveCall: {
-								package: sui,
+								package: mys,
 								module: 'display',
 								function: 'add_multiple',
-								typeArguments: [`${sui}::capy::Capy`],
+								typeArguments: [`${mys}::capy::Capy`],
 								arguments: [
 									// result of the first transaction
 									{
@@ -164,10 +164,10 @@ it('can serialize transaction data with a programmable transaction', () => {
 						{
 							$kind: 'MoveCall',
 							MoveCall: {
-								package: sui,
+								package: mys,
 								module: 'display',
 								function: 'update_version',
-								typeArguments: [`${sui}::capy::Capy`],
+								typeArguments: [`${mys}::capy::Capy`],
 								arguments: [
 									// result of the first transaction again
 									{

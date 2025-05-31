@@ -32,22 +32,22 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/mystenlabs/ts-sdks.git"
+		"url": "git+https://github.com/The-Social-Proof-Foundation/mys-ts-sdks.git"
 	},
 	"bugs": {
-		"url": "https://github.com/mystenlabs/ts-sdks/issues"
+		"url": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks/issues"
 	},
-	"homepage": "https://github.com/mystenlabs/ts-sdks#readme",
+	"homepage": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks#readme",
 	"devDependencies": {
-		"@mysten/build-scripts": "workspace:*",
+		"@mysocial/build-scripts": "workspace:*",
 		"@types/node": "^22.13.17",
 		"typescript": "^5.8.2",
 		"vitest": "^3.1.1"
 	},
 	"dependencies": {
-		"@mysten/sui": "workspace:*",
-		"@mysten/wallet-standard": "workspace:*",
-		"@mysten/window-wallet-core": "workspace:^",
+		"@mysocial/mys": "workspace:*",
+		"@mysocial/wallet-standard": "workspace:*",
+		"@mysocial/window-wallet-core": "workspace:^",
 		"mitt": "^3.0.1"
 	}
 }

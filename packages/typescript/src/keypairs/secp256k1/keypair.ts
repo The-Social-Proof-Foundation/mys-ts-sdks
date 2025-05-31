@@ -8,7 +8,7 @@ import { sha256 } from '@noble/hashes/sha256';
 import { bytesToHex } from '@noble/hashes/utils';
 import { HDKey } from '@scure/bip32';
 
-import { decodeSuiPrivateKey, encodeSuiPrivateKey, Keypair } from '../../cryptography/keypair.js';
+import { decodeMysPrivateKey, encodeMysPrivateKey, Keypair } from '../../cryptography/keypair.js';
 import { isValidBIP32Path, mnemonicToSeed } from '../../cryptography/mnemonics.js';
 import type { PublicKey } from '../../cryptography/publickey.js';
 import type { SignatureScheme } from '../../cryptography/signature-scheme.js';
@@ -80,7 +80,7 @@ export class Secp256k1Keypair extends Keypair {
 		options?: { skipValidation?: boolean },
 	): Secp256k1Keypair {
 		if (typeof secretKey === 'string') {
-			const decoded = decodeSuiPrivateKey(secretKey);
+			const decoded = decodeMysPrivateKey(secretKey);
 
 			if (decoded.schema !== 'Secp256k1') {
 				throw new Error(`Expected a Secp256k1 keypair, got ${decoded.schema}`);
@@ -92,7 +92,7 @@ export class Secp256k1Keypair extends Keypair {
 		const publicKey: Uint8Array = secp256k1.getPublicKey(secretKey, true);
 		if (!options || !options.skipValidation) {
 			const encoder = new TextEncoder();
-			const signData = encoder.encode('sui validation');
+			const signData = encoder.encode('mys validation');
 			const msgHash = bytesToHex(blake2b(signData, { dkLen: 32 }));
 			const signature = secp256k1.sign(msgHash, secretKey);
 			if (!secp256k1.verify(signature, msgHash, publicKey, { lowS: true })) {
@@ -122,7 +122,7 @@ export class Secp256k1Keypair extends Keypair {
 	 * The Bech32 secret key string for this Secp256k1 keypair
 	 */
 	getSecretKey(): string {
-		return encodeSuiPrivateKey(this.keypair.secretKey, this.getKeyScheme());
+		return encodeMysPrivateKey(this.keypair.secretKey, this.getKeyScheme());
 	}
 
 	/**

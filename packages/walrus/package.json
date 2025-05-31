@@ -33,16 +33,16 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/mystenlabs/ts-sdks.git"
+		"url": "git+https://github.com/The-Social-Proof-Foundation/mys-ts-sdks.git"
 	},
 	"bugs": {
-		"url": "https://github.com/mystenlabs/ts-sdks/issues"
+		"url": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks/issues"
 	},
-	"homepage": "https://github.com/mystenlabs/ts-sdks#readme",
+	"homepage": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks#readme",
 	"devDependencies": {
 		"@hono/node-server": "^1.14.0",
-		"@mysten/build-scripts": "workspace:*",
-		"@mysten/dapp-kit": "workspace:*",
+		"@mysocial/build-scripts": "workspace:*",
+		"@mysocial/dapp-kit": "workspace:*",
 		"@types/node": "^22.13.17",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
@@ -54,10 +54,10 @@
 		"vitest": "^3.1.1"
 	},
 	"dependencies": {
-		"@mysten/bcs": "workspace:*",
-		"@mysten/sui": "workspace:*",
-		"@mysten/utils": "workspace:*",
-		"@mysten/walrus-wasm": "workspace:*",
+		"@mysocial/bcs": "workspace:*",
+		"@mysocial/mys": "workspace:*",
+		"@mysocial/utils": "workspace:*",
+		"@mysocial/walrus-wasm": "workspace:*",
 		"dataloader": "^2.2.3"
 	}
 }

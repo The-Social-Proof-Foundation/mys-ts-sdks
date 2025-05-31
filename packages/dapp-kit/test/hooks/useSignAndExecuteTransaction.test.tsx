@@ -2,9 +2,9 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/sui/bcs';
-import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
-import { Transaction } from '@mysocial/sui/transactions';
+import { bcs } from '@mysocial/mys/bcs';
+import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { Transaction } from '@mysocial/mys/transactions';
 import { act, renderHook, waitFor } from '@testing-library/react';
 import { expect, type Mock } from 'vitest';
 
@@ -13,7 +13,7 @@ import {
 	WalletNotConnectedError,
 } from '../../src/errors/walletErrors.js';
 import { useConnectWallet, useSignAndExecuteTransaction } from '../../src/index.js';
-import { suiFeatures } from '../mocks/mockFeatures.js';
+import { mysFeatures } from '../mocks/mockFeatures.js';
 import { createWalletProviderContextWrapper, registerMockWallet } from '../test-utils.js';
 import { toBase58 } from '@mysocial/utils';
 
@@ -22,7 +22,7 @@ describe('useSignAndExecuteTransaction', () => {
 		const wrapper = createWalletProviderContextWrapper();
 		const { result } = renderHook(() => useSignAndExecuteTransaction(), { wrapper });
 
-		result.current.mutate({ transaction: new Transaction(), chain: 'sui:testnet' });
+		result.current.mutate({ transaction: new Transaction(), chain: 'mys:testnet' });
 
 		await waitFor(() => expect(result.current.error).toBeInstanceOf(WalletNotConnectedError));
 	});
@@ -46,7 +46,7 @@ describe('useSignAndExecuteTransaction', () => {
 
 		result.current.useSignAndExecuteTransaction.mutate({
 			transaction: new Transaction(),
-			chain: 'sui:testnet',
+			chain: 'mys:testnet',
 		});
 		await waitFor(() =>
 			expect(result.current.useSignAndExecuteTransaction.error).toBeInstanceOf(
@@ -60,11 +60,11 @@ describe('useSignAndExecuteTransaction', () => {
 	test('signing and executing a transaction from the currently connected account works successfully', async () => {
 		const { unregister, mockWallet } = registerMockWallet({
 			walletName: 'Mock Wallet 1',
-			features: suiFeatures,
+			features: mysFeatures,
 		});
 
-		const suiClient = new SuiClient({ url: getFullnodeUrl('localnet') });
-		const mockSignTransactionFeature = mockWallet.features['sui:signTransaction'];
+		const mysClient = new MysClient({ url: getFullnodeUrl('localnet') });
+		const mockSignTransactionFeature = mockWallet.features['mys:signTransaction'];
 		const signTransaction = mockSignTransactionFeature!.signTransaction as Mock;
 
 		signTransaction.mockReturnValueOnce({
@@ -72,19 +72,19 @@ describe('useSignAndExecuteTransaction', () => {
 			signature: '123',
 		});
 
-		const reportEffectsFeature = mockWallet.features['sui:reportTransactionEffects'];
+		const reportEffectsFeature = mockWallet.features['mys:reportTransactionEffects'];
 		const reportEffects = reportEffectsFeature!.reportTransactionEffects as Mock;
 
 		reportEffects.mockImplementation(async () => {});
 
-		const executeTransaction = vi.spyOn(suiClient, 'executeTransactionBlock');
+		const executeTransaction = vi.spyOn(mysClient, 'executeTransactionBlock');
 
 		executeTransaction.mockResolvedValueOnce({
 			digest: '123',
 			rawEffects: [10, 20, 30],
 		});
 
-		const wrapper = createWalletProviderContextWrapper({}, suiClient);
+		const wrapper = createWalletProviderContextWrapper({}, mysClient);
 		const { result } = renderHook(
 			() => ({
 				connectWallet: useConnectWallet(),
@@ -99,7 +99,7 @@ describe('useSignAndExecuteTransaction', () => {
 
 		result.current.useSignAndExecuteTransaction.mutate({
 			transaction: new Transaction(),
-			chain: 'sui:testnet',
+			chain: 'mys:testnet',
 		});
 
 		await waitFor(() => expect(result.current.useSignAndExecuteTransaction.isSuccess).toBe(true));
@@ -112,14 +112,14 @@ describe('useSignAndExecuteTransaction', () => {
 		});
 		expect(reportEffects).toHaveBeenCalledWith({
 			effects: 'ChQe',
-			chain: 'sui:testnet',
+			chain: 'mys:testnet',
 			account: mockWallet.accounts[0],
 		});
 
 		const call = signTransaction.mock.calls[0];
 
 		expect(call[0].account).toStrictEqual(mockWallet.accounts[0]);
-		expect(call[0].chain).toBe('sui:testnet');
+		expect(call[0].chain).toBe('mys:testnet');
 		expect(await call[0].transaction.toJSON()).toEqual(await new Transaction().toJSON());
 
 		act(() => unregister());
@@ -128,28 +128,28 @@ describe('useSignAndExecuteTransaction', () => {
 	test('defaults the `chain` to the active network', async () => {
 		const { unregister, mockWallet } = registerMockWallet({
 			walletName: 'Mock Wallet 1',
-			features: suiFeatures,
+			features: mysFeatures,
 		});
 
-		const mockSignTransactionFeature = mockWallet.features['sui:signTransaction'];
+		const mockSignTransactionFeature = mockWallet.features['mys:signTransaction'];
 		const signTransaction = mockSignTransactionFeature!.signTransaction as Mock;
 		signTransaction.mockReturnValueOnce({
 			bytes: 'abc',
 			signature: '123',
 		});
 
-		const reportEffectsFeature = mockWallet.features['sui:reportTransactionEffects'];
+		const reportEffectsFeature = mockWallet.features['mys:reportTransactionEffects'];
 		const reportEffects = reportEffectsFeature!.reportTransactionEffects as Mock;
 		reportEffects.mockImplementation(async () => {});
 
-		const suiClient = new SuiClient({ url: getFullnodeUrl('localnet') });
-		const executeTransaction = vi.spyOn(suiClient, 'executeTransactionBlock');
+		const mysClient = new MysClient({ url: getFullnodeUrl('localnet') });
+		const executeTransaction = vi.spyOn(mysClient, 'executeTransactionBlock');
 		executeTransaction.mockResolvedValueOnce({
 			digest: '123',
 			rawEffects: [10, 20, 30],
 		});
 
-		const wrapper = createWalletProviderContextWrapper({}, suiClient);
+		const wrapper = createWalletProviderContextWrapper({}, mysClient);
 		const { result } = renderHook(
 			() => ({
 				connectWallet: useConnectWallet(),
@@ -168,13 +168,13 @@ describe('useSignAndExecuteTransaction', () => {
 		await waitFor(() => expect(result.current.useSignAndExecuteTransaction.isSuccess).toBe(true));
 		expect(reportEffects).toHaveBeenCalledWith({
 			effects: 'ChQe',
-			chain: 'sui:test',
+			chain: 'mys:test',
 			account: mockWallet.accounts[0],
 		});
 
 		expect(signTransaction).toHaveBeenCalledWith({
 			transaction: expect.any(Object),
-			chain: 'sui:test',
+			chain: 'mys:test',
 			account: mockWallet.accounts[0],
 		});
 
@@ -184,11 +184,11 @@ describe('useSignAndExecuteTransaction', () => {
 	test('executing with custom data resolver', async () => {
 		const { unregister, mockWallet } = registerMockWallet({
 			walletName: 'Mock Wallet 1',
-			features: suiFeatures,
+			features: mysFeatures,
 		});
 
-		const suiClient = new SuiClient({ url: getFullnodeUrl('localnet') });
-		const mockSignMessageFeature = mockWallet.features['sui:signTransaction'];
+		const mysClient = new MysClient({ url: getFullnodeUrl('localnet') });
+		const mockSignMessageFeature = mockWallet.features['mys:signTransaction'];
 		const signTransaction = mockSignMessageFeature!.signTransaction as Mock;
 
 		signTransaction.mockReturnValueOnce({
@@ -196,12 +196,12 @@ describe('useSignAndExecuteTransaction', () => {
 			signature: '123',
 		});
 
-		const reportEffectsFeature = mockWallet.features['sui:reportTransactionEffects'];
+		const reportEffectsFeature = mockWallet.features['mys:reportTransactionEffects'];
 		const reportEffects = reportEffectsFeature!.reportTransactionEffects as Mock;
 
 		reportEffects.mockImplementation(async () => {});
 
-		const wrapper = createWalletProviderContextWrapper({}, suiClient);
+		const wrapper = createWalletProviderContextWrapper({}, mysClient);
 
 		const fakeDigest = toBase58(
 			new Uint8Array([
@@ -250,7 +250,7 @@ describe('useSignAndExecuteTransaction', () => {
 
 		await waitFor(() => expect(result.current.connectWallet.isSuccess).toBe(true));
 
-		const signTransactionFeature = mockWallet.features['sui:signTransaction'];
+		const signTransactionFeature = mockWallet.features['mys:signTransaction'];
 		const signTransactionMock = signTransactionFeature!.signTransaction as Mock;
 
 		signTransactionMock.mockReturnValueOnce({
@@ -260,7 +260,7 @@ describe('useSignAndExecuteTransaction', () => {
 
 		result.current.useSignAndExecuteTransaction.mutate({
 			transaction: new Transaction(),
-			chain: 'sui:testnet',
+			chain: 'mys:testnet',
 		});
 
 		await waitFor(() => expect(result.current.useSignAndExecuteTransaction.isSuccess).toBe(true));
@@ -273,14 +273,14 @@ describe('useSignAndExecuteTransaction', () => {
 		expect(result.current.useSignAndExecuteTransaction.data?.custom).toBe(123);
 		expect(reportEffects).toHaveBeenCalledWith({
 			account: mockWallet.accounts[0],
-			chain: 'sui:testnet',
+			chain: 'mys:testnet',
 			effects: effectsBcs,
 		});
 
 		const call = signTransaction.mock.calls[0];
 
 		expect(call[0].account).toStrictEqual(mockWallet.accounts[0]);
-		expect(call[0].chain).toBe('sui:testnet');
+		expect(call[0].chain).toBe('mys:testnet');
 		expect(await call[0].transaction.toJSON()).toEqual(await new Transaction().toJSON());
 
 		act(() => unregister());

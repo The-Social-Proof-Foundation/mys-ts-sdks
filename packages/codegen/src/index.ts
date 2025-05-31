@@ -4,7 +4,7 @@
 
 import { mkdir, readdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { normalizeSuiAddress } from '@mysocial/sui/utils';
+import { normalizeMysAddress } from '@mysocial/mys/utils';
 import { MoveModuleBuilder } from './move-module-builder.js';
 
 export async function generatePackage({
@@ -52,7 +52,7 @@ export async function generatePackage({
 
 			const module = builder.moduleDef.module_handles[builder.moduleDef.self_module_handle_idx];
 			const moduleName = builder.moduleDef.identifiers[module.name];
-			const moduleAddress = normalizeSuiAddress(
+			const moduleAddress = normalizeMysAddress(
 				builder.moduleDef.address_identifiers[module.address],
 			);
 			builder.renderBCSTypes();

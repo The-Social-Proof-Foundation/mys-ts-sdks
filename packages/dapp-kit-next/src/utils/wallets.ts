@@ -5,8 +5,8 @@
 import {
 	StandardConnect,
 	StandardEvents,
-	SuiSignAndExecuteTransaction,
-	SuiSignTransaction,
+	MysSignAndExecuteTransaction,
+	MysSignTransaction,
 	WALLET_STANDARD_ERROR__FEATURES__WALLET_ACCOUNT_CHAIN_UNSUPPORTED,
 	WalletStandardError,
 } from '@mysocial/wallet-standard';
@@ -19,8 +19,8 @@ import { ChainNotSupportedError, DAppKitError, FeatureNotSupportedError } from '
 export const requiredWalletFeatures = [
 	StandardConnect,
 	StandardEvents,
-	SuiSignTransaction,
-	SuiSignAndExecuteTransaction,
+	MysSignTransaction,
+	MysSignAndExecuteTransaction,
 ] as const;
 
 export function getAssociatedWalletOrThrow(account: UiWalletAccount, wallets: UiWallet[]) {

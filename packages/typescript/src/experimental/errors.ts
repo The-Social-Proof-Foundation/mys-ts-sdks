@@ -4,9 +4,9 @@
 
 import type { ObjectResponseError } from '../client/index.js';
 
-export class SuiClientError extends Error {}
+export class MysClientError extends Error {}
 
-export class ObjectError extends SuiClientError {
+export class ObjectError extends MysClientError {
 	code: string;
 
 	constructor(code: string, message: string) {

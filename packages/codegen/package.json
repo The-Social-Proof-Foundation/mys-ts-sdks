@@ -2,7 +2,7 @@
 	"private": true,
 	"name": "@mysocial/codegen",
 	"version": "0.0.0",
-	"description": "typescript codegen for sui move",
+	"description": "typescript codegen for mys move",
 	"license": "Apache-2.0",
 	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"sideEffects": false,
@@ -22,8 +22,8 @@
 		"src"
 	],
 	"bin": {
-		"sui-ts-codegen": "dist/cjs/bin/cli.js",
-		"__sui-ts-codegen_bash_complete": "dist/cjs/bin/bash-complete.js"
+		"mys-ts-codegen": "dist/cjs/bin/cli.js",
+		"__mys-ts-codegen_bash_complete": "dist/cjs/bin/bash-complete.js"
 	},
 	"scripts": {
 		"clean": "rm -rf tsconfig.tsbuildinfo ./dist",
@@ -40,25 +40,25 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/mystenlabs/sui.git"
+		"url": "git+https://github.com/The-Social-Proof-Foundation/mys-core.git"
 	},
 	"keywords": [
 		"move",
 		"codegen",
-		"sui"
+		"mys"
 	],
 	"bugs": {
-		"url": "https://github.com/mystenlabs/sui/issues"
+		"url": "https://github.com/The-Social-Proof-Foundation/mys-core/issues"
 	},
-	"homepage": "https://github.com/mystenlabs/sui#readme",
+	"homepage": "https://github.com/The-Social-Proof-Foundation/mys-core#readme",
 	"devDependencies": {
-		"@mysten/build-scripts": "workspace:*",
+		"@mysocial/build-scripts": "workspace:*",
 		"vitest": "^3.1.1"
 	},
 	"dependencies": {
-		"@mysten/bcs": "workspace:*",
-		"@mysten/move-bytecode-template": "workspace:*",
-		"@mysten/sui": "workspace:*",
+		"@mysocial/bcs": "workspace:*",
+		"@mysocial/move-bytecode-template": "workspace:*",
+		"@mysocial/mys": "workspace:*",
 		"@stricli/auto-complete": "^1.1.2",
 		"@stricli/core": "^1.1.2",
 		"@types/node": "^22.13.17",

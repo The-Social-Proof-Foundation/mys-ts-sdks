@@ -3,20 +3,20 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { serve } from '@hono/node-server';
-import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
 import { Hono } from 'hono';
 
 import { BlobBlockedError, BlobNotCertifiedError, WalrusClient } from '../../src/index.js';
 
 const app = new Hono();
 
-const suiClient = new SuiClient({
+const mysClient = new MysClient({
 	url: getFullnodeUrl('testnet'),
 });
 
 const walrusClient = new WalrusClient({
 	network: 'testnet',
-	suiClient,
+	mysClient,
 });
 
 const cache = new Map<string, Blob>();

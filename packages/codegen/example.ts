@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { Transaction } from '@mysocial/sui/transactions';
+import { Transaction } from '@mysocial/mys/transactions';
 
 import { init as FeedModule } from './tests/generated/feed.js';
 import { init as ManagedObjectModule } from './tests/generated/managed.js';

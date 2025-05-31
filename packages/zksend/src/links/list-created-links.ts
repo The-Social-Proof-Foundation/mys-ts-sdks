@@ -2,18 +2,18 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/sui/bcs';
-import type { SuiClient } from '@mysocial/sui/client';
-import { SuiGraphQLClient } from '@mysocial/sui/graphql';
-import { graphql } from '@mysocial/sui/graphql/schemas/latest';
-import { fromBase64, normalizeSuiAddress } from '@mysocial/sui/utils';
+import { bcs } from '@mysocial/mys/bcs';
+import type { MysClient } from '@mysocial/mys/client';
+import { MysGraphQLClient } from '@mysocial/mys/graphql';
+import { graphql } from '@mysocial/mys/graphql/schemas/latest';
+import { fromBase64, normalizeMysAddress } from '@mysocial/mys/utils';
 
 import { ZkSendLink } from './claim.js';
 import type { ZkBagContractOptions } from './zk-bag.js';
 import { getContractIds } from './zk-bag.js';
 
 const ListCreatedLinksQuery = graphql(`
-	query listCreatedLinks($address: SuiAddress!, $function: String!, $cursor: String) {
+	query listCreatedLinks($address: MysAddress!, $function: String!, $cursor: String) {
 		transactionBlocks(
 			last: 10
 			before: $cursor
@@ -51,18 +51,18 @@ export async function listCreatedLinks({
 	host?: string;
 	path?: string;
 	claimApi?: string;
-	client?: SuiClient;
+	client?: MysClient;
 	fetch?: typeof fetch;
 }) {
-	const gqlClient = new SuiGraphQLClient({
+	const gqlClient = new MysGraphQLClient({
 		url:
 			network === 'testnet'
-				? 'https://sui-testnet.mystenlabs.com/graphql'
-				: 'https://sui-mainnet.mystenlabs.com/graphql',
+				? 'https://mys-testnet.mystenlabs.com/graphql'
+				: 'https://mys-mainnet.mystenlabs.com/graphql',
 		fetch: fetchFn,
 	});
 
-	const packageId = normalizeSuiAddress(contract.packageId);
+	const packageId = normalizeMysAddress(contract.packageId);
 
 	const page = await gqlClient.query({
 		query: ListCreatedLinksQuery,

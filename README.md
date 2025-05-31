@@ -1,6 +1,6 @@
 # MySocial Typescript SDKs
 
-A collection of TypeScript SDKs for interacting with the Sui blockchain ecosystem.
+A collection of TypeScript SDKs for interacting with the Mys blockchain ecosystem.
 
 ## Documentation
 

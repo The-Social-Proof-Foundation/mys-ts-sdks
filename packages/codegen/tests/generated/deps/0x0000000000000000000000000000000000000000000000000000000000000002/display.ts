@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/sui/bcs';
+import { bcs } from '@mysocial/mys/bcs';
 import * as object from './object.js';
 import * as vec_map from './vec_map.js';
 export function Display() {

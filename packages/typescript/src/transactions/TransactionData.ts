@@ -7,7 +7,7 @@ import type { InferInput } from 'valibot';
 import { parse } from 'valibot';
 
 import { bcs } from '../bcs/index.js';
-import { normalizeSuiAddress } from '../utils/sui-types.js';
+import { normalizeMysAddress } from '../utils/mys-types.js';
 import type {
 	Argument,
 	CallArg,
@@ -21,8 +21,8 @@ import type { SerializedTransactionDataV1 } from './data/v1.js';
 import type { SerializedTransactionDataV2 } from './data/v2.js';
 import { hashTypedData } from './hash.js';
 
-function prepareSuiAddress(address: string) {
-	return normalizeSuiAddress(address).replace('0x', '');
+function prepareMysAddress(address: string) {
+	return normalizeMysAddress(address).replace('0x', '');
 }
 
 export class TransactionDataBuilder implements TransactionData {
@@ -174,11 +174,11 @@ export class TransactionDataBuilder implements TransactionData {
 		}
 
 		const transactionData = {
-			sender: prepareSuiAddress(sender),
+			sender: prepareMysAddress(sender),
 			expiration: expiration ? expiration : { None: true },
 			gasData: {
 				payment: gasData.payment,
-				owner: prepareSuiAddress(this.gasData.owner ?? sender),
+				owner: prepareMysAddress(this.gasData.owner ?? sender),
 				price: BigInt(gasData.price),
 				budget: BigInt(gasData.budget),
 			},

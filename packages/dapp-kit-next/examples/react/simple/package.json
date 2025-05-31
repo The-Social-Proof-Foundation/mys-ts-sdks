@@ -9,7 +9,7 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"@mysten/dapp-kit-next": "workspace:*",
+		"@mysocial/dapp-kit-next": "workspace:*",
 		"@nanostores/react": "^1.0.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1"

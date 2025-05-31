@@ -2,45 +2,45 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
-import { getFaucetHost, requestSuiFromFaucetV2 } from '@mysocial/sui/faucet';
-import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
-import { coinWithBalance, Transaction } from '@mysocial/sui/transactions';
-import { MIST_PER_SUI, parseStructTag } from '@mysocial/sui/utils';
+import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { getFaucetHost, requestMysFromFaucetV2 } from '@mysocial/mys/faucet';
+import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
+import { coinWithBalance, Transaction } from '@mysocial/mys/transactions';
+import { MIST_PER_MYS, parseStructTag } from '@mysocial/mys/utils';
 
 import { TESTNET_WALRUS_PACKAGE_CONFIG } from '../src/index.js';
 
 export async function getFundedKeypair() {
-	const suiClient = new SuiClient({
+	const mysClient = new MysClient({
 		url: getFullnodeUrl('testnet'),
 	});
 
 	const keypair = Ed25519Keypair.fromSecretKey(
-		'suiprivkey1qzmcxscyglnl9hnq82crqsuns0q33frkseks5jw0fye3tuh83l7e6ajfhxx',
+		'mysprivkey1qzmcxscyglnl9hnq82crqsuns0q33frkseks5jw0fye3tuh83l7e6ajfhxx',
 	);
-	console.log(keypair.toSuiAddress());
+	console.log(keypair.toMysAddress());
 
-	const balance = await suiClient.getBalance({
-		owner: keypair.toSuiAddress(),
+	const balance = await mysClient.getBalance({
+		owner: keypair.toMysAddress(),
 	});
 
-	if (BigInt(balance.totalBalance) < MIST_PER_SUI) {
-		await requestSuiFromFaucetV2({
+	if (BigInt(balance.totalBalance) < MIST_PER_MYS) {
+		await requestMysFromFaucetV2({
 			host: getFaucetHost('testnet'),
-			recipient: keypair.toSuiAddress(),
+			recipient: keypair.toMysAddress(),
 		});
 	}
 
-	const walBalance = await suiClient.getBalance({
-		owner: keypair.toSuiAddress(),
+	const walBalance = await mysClient.getBalance({
+		owner: keypair.toMysAddress(),
 		coinType: `0x8270feb7375eee355e64fdb69c50abb6b5f9393a722883c1cf45f8e26048810a::wal::WAL`,
 	});
 	console.log('wal balance:', walBalance.totalBalance);
 
-	if (Number(walBalance.totalBalance) < Number(MIST_PER_SUI) / 2) {
+	if (Number(walBalance.totalBalance) < Number(MIST_PER_MYS) / 2) {
 		const tx = new Transaction();
 
-		const exchange = await suiClient.getObject({
+		const exchange = await mysClient.getObject({
 			id: TESTNET_WALRUS_PACKAGE_CONFIG.exchangeIds[0],
 			options: {
 				showType: true,
@@ -56,19 +56,19 @@ export async function getFundedKeypair() {
 			arguments: [
 				tx.object(TESTNET_WALRUS_PACKAGE_CONFIG.exchangeIds[0]),
 				coinWithBalance({
-					balance: MIST_PER_SUI / 2n,
+					balance: MIST_PER_MYS / 2n,
 				}),
 			],
 		});
 
-		tx.transferObjects([wal], keypair.toSuiAddress());
+		tx.transferObjects([wal], keypair.toMysAddress());
 
-		const { digest } = await suiClient.signAndExecuteTransaction({
+		const { digest } = await mysClient.signAndExecuteTransaction({
 			transaction: tx,
 			signer: keypair,
 		});
 
-		const { effects } = await suiClient.waitForTransaction({
+		const { effects } = await mysClient.waitForTransaction({
 			digest,
 			options: {
 				showEffects: true,

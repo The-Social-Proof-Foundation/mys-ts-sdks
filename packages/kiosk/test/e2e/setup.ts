@@ -5,13 +5,13 @@
 import path from 'path';
 import type {
 	DevInspectResults,
-	SuiObjectChangePublished,
-	SuiTransactionBlockResponse,
-} from '@mysocial/sui/client';
-import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
-import { FaucetRateLimitError, getFaucetHost, requestSuiFromFaucetV2 } from '@mysocial/sui/faucet';
-import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
-import { Transaction } from '@mysocial/sui/transactions';
+	MysObjectChangePublished,
+	MysTransactionBlockResponse,
+} from '@mysocial/mys/client';
+import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { FaucetRateLimitError, getFaucetHost, requestMysFromFaucetV2 } from '@mysocial/mys/faucet';
+import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
+import { Transaction } from '@mysocial/mys/transactions';
 import type { ContainerRuntimeClient } from 'testcontainers';
 import { getContainerRuntimeClient } from 'testcontainers';
 import { retry } from 'ts-retry-promise';
@@ -25,36 +25,36 @@ const DEFAULT_FULLNODE_URL = process.env.FULLNODE_URL ?? getFullnodeUrl('localne
 
 export class TestToolbox {
 	keypair: Ed25519Keypair;
-	client: SuiClient;
+	client: MysClient;
 	configPath: string;
 
-	constructor(keypair: Ed25519Keypair, client: SuiClient, configPath: string) {
+	constructor(keypair: Ed25519Keypair, client: MysClient, configPath: string) {
 		this.keypair = keypair;
 		this.client = client;
 		this.configPath = configPath;
 	}
 
 	address() {
-		return this.keypair.getPublicKey().toSuiAddress();
+		return this.keypair.getPublicKey().toMysAddress();
 	}
 
 	public async getActiveValidators() {
-		return (await this.client.getLatestSuiSystemState()).activeValidators;
+		return (await this.client.getLatestMysSystemState()).activeValidators;
 	}
 }
 
-export function getClient(): SuiClient {
-	return new SuiClient({
+export function getClient(): MysClient {
+	return new MysClient({
 		url: DEFAULT_FULLNODE_URL,
 	});
 }
 
-// TODO: expose these testing utils from @mysten/sui
-export async function setupSuiClient() {
+// TODO: expose these testing utils from @mysocial/mys
+export async function setupMysClient() {
 	const keypair = Ed25519Keypair.generate();
-	const address = keypair.getPublicKey().toSuiAddress();
+	const address = keypair.getPublicKey().toMysAddress();
 	const client = getClient();
-	await retry(() => requestSuiFromFaucetV2({ host: DEFAULT_FAUCET_URL, recipient: address }), {
+	await retry(() => requestMysFromFaucetV2({ host: DEFAULT_FAUCET_URL, recipient: address }), {
 		backoff: 'EXPONENTIAL',
 		// overall timeout in 60 seconds
 		timeout: 1000 * 60,
@@ -64,20 +64,20 @@ export async function setupSuiClient() {
 	});
 
 	const configDir = path.join('/test-data', `${Math.random().toString(36).substring(2, 15)}`);
-	await execSuiTools(['mkdir', '-p', configDir]);
+	await execMysTools(['mkdir', '-p', configDir]);
 	const configPath = path.join(configDir, 'client.yaml');
-	await execSuiTools(['sui', 'client', '--yes', '--client.config', configPath]);
+	await execMysTools(['mys', 'client', '--yes', '--client.config', configPath]);
 	return new TestToolbox(keypair, client, configPath);
 }
 
 export async function publishPackage(packageName: string, toolbox?: TestToolbox) {
 	// TODO: We create a unique publish address per publish, but we really could share one for all publishes.
 	if (!toolbox) {
-		toolbox = await setupSuiClient();
+		toolbox = await setupMysClient();
 	}
 
-	const result = await execSuiTools([
-		'sui',
+	const result = await execMysTools([
+		'mys',
 		'move',
 		'--client.config',
 		toolbox.configPath,
@@ -119,7 +119,7 @@ export async function publishPackage(packageName: string, toolbox?: TestToolbox)
 
 	const packageId = ((publishTxn.objectChanges?.filter(
 		(a) => a.type === 'published',
-	) as SuiObjectChangePublished[]) ?? [])[0]?.packageId.replace(/^(0x)(0+)/, '0x') as string;
+	) as MysObjectChangePublished[]) ?? [])[0]?.packageId.replace(/^(0x)(0+)/, '0x') as string;
 
 	expect(packageId).toBeTypeOf('string');
 
@@ -183,7 +183,7 @@ export async function createPersonalKiosk(toolbox: TestToolbox, kioskClient: Kio
 	await executeTransaction(toolbox, tx);
 }
 
-function getCreatedObjectIdByType(res: SuiTransactionBlockResponse, type: string): string {
+function getCreatedObjectIdByType(res: MysTransactionBlockResponse, type: string): string {
 	return res.objectChanges?.filter(
 		(x) => x.type === 'created' && x.objectType.endsWith(type),
 		//@ts-ignore-next-line
@@ -207,7 +207,7 @@ export async function getPublisherObject(toolbox: TestToolbox): Promise<string> 
 export async function executeTransaction(
 	toolbox: TestToolbox,
 	tx: Transaction,
-): Promise<SuiTransactionBlockResponse> {
+): Promise<MysTransactionBlockResponse> {
 	const resp = await toolbox.client.signAndExecuteTransaction({
 		signer: toolbox.keypair,
 		transaction: tx,
@@ -234,13 +234,13 @@ export async function devInspectTransaction(
 	});
 }
 
-const SUI_TOOLS_CONTAINER_ID = inject('suiToolsContainerId');
-export async function execSuiTools(
+const MYS_TOOLS_CONTAINER_ID = inject('mysToolsContainerId');
+export async function execMysTools(
 	command: string[],
 	options?: Parameters<ContainerRuntimeClient['container']['exec']>[2],
 ) {
 	const client = await getContainerRuntimeClient();
-	const container = client.container.getById(SUI_TOOLS_CONTAINER_ID);
+	const container = client.container.getById(MYS_TOOLS_CONTAINER_ID);
 
 	const result = await client.container.exec(container, command, options);
 

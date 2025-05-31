@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { BcsType } from '@mysocial/sui/bcs';
-import { bcs } from '@mysocial/sui/bcs';
+import type { BcsType } from '@mysocial/mys/bcs';
+import { bcs } from '@mysocial/mys/bcs';
 
 const MerkleNode = bcs.enum('MerkleNode', {
 	Empty: null,

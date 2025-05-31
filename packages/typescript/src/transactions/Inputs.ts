@@ -5,7 +5,7 @@
 import { toBase64 } from '@mysocial/bcs';
 import type { SerializedBcs } from '@mysocial/bcs';
 
-import { normalizeSuiAddress } from '../utils/sui-types.js';
+import { normalizeMysAddress } from '../utils/mys-types.js';
 import type { CallArg, ObjectRef } from './data/internal.js';
 
 function Pure(data: Uint8Array | SerializedBcs<any>): Extract<CallArg, { Pure: unknown }> {
@@ -27,7 +27,7 @@ export const Inputs = {
 				ImmOrOwnedObject: {
 					digest,
 					version,
-					objectId: normalizeSuiAddress(objectId),
+					objectId: normalizeMysAddress(objectId),
 				},
 			},
 		};
@@ -48,7 +48,7 @@ export const Inputs = {
 				SharedObject: {
 					mutable,
 					initialSharedVersion,
-					objectId: normalizeSuiAddress(objectId),
+					objectId: normalizeMysAddress(objectId),
 				},
 			},
 		};
@@ -61,7 +61,7 @@ export const Inputs = {
 				Receiving: {
 					digest,
 					version,
-					objectId: normalizeSuiAddress(objectId),
+					objectId: normalizeMysAddress(objectId),
 				},
 			},
 		};

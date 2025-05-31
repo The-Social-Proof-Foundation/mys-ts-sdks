@@ -5,7 +5,7 @@
 ### Patch Changes
 
 - Updated dependencies [ec519fc]
-  - @mysten/sui@1.30.1
+  - @mysocial/mys@1.30.1
   - @mysten/wallet-standard@0.15.2
 
 ## 0.1.4
@@ -21,7 +21,7 @@
 - Updated dependencies [2456052]
 - Updated dependencies [2456052]
 - Updated dependencies [2456052]
-  - @mysten/sui@1.30.0
+  - @mysocial/mys@1.30.0
   - @mysten/window-wallet-core@0.0.3
   - @mysten/wallet-standard@0.15.1
 
@@ -37,7 +37,7 @@
 ### Patch Changes
 
 - 3f87e73: Fix broken message signing for zkLogin accounts in the web version of Slush Wallet
-  - @mysten/sui@1.29.1
+  - @mysocial/mys@1.29.1
   - @mysten/wallet-standard@0.14.9
 
 ## 0.1.1
@@ -47,7 +47,7 @@
 - Updated dependencies [7d66a32]
 - Updated dependencies [eb91fba]
 - Updated dependencies [19a8045]
-  - @mysten/sui@1.29.0
+  - @mysocial/mys@1.29.0
   - @mysten/wallet-standard@0.14.8
 
 ## 0.1.0
@@ -60,7 +60,7 @@
 
 - 91624e0: stop setting transaction sender
 - Updated dependencies [9a94aea]
-  - @mysten/sui@1.28.2
+  - @mysocial/mys@1.28.2
   - @mysten/wallet-standard@0.14.7
 
 ## 0.0.3
@@ -68,5 +68,5 @@
 ### Patch Changes
 
 - Updated dependencies [3cd4e53]
-  - @mysten/sui@1.28.1
+  - @mysocial/mys@1.28.1
   - @mysten/wallet-standard@0.14.6

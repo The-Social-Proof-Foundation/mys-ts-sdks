@@ -6,7 +6,7 @@
 import type { SerializedTransactionDataV2, TransactionPlugin } from '../transactions/index.js';
 import type { Experimental_BaseClient } from './client.js';
 
-export type SuiClientRegistration<
+export type MysClientRegistration<
 	T extends Experimental_BaseClient = Experimental_BaseClient,
 	Name extends string = string,
 	Extension = unknown,
@@ -33,10 +33,10 @@ export type ClientWithExtensions<
 	Base extends Experimental_BaseClient = Experimental_BaseClient,
 > = Base & T;
 
-export namespace Experimental_SuiClientTypes {
+export namespace Experimental_MysClientTypes {
 	export type Network = 'mainnet' | 'testnet' | 'devnet' | 'localnet' | (string & {});
 
-	export interface SuiClientOptions {
+	export interface MysClientOptions {
 		network: Network;
 	}
 
@@ -347,7 +347,7 @@ export namespace Experimental_SuiClientTypes {
 		  }
 		| {
 				success: false;
-				// TODO: this should probably be typed better: https://github.com/bmwill/sui/blob/646a2c819346dc140cc649eb9fea368fb14f96e5/crates/sui-rpc-api/proto/sui/rpc/v2beta/execution_status.proto#L22
+				// TODO: this should probably be typed better: https://github.com/bmwill/mys/blob/646a2c819346dc140cc649eb9fea368fb14f96e5/crates/mys-rpc-api/proto/mys/rpc/v2beta/execution_status.proto#L22
 				error: string;
 		  };
 

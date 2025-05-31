@@ -12,9 +12,9 @@ import { flatten } from './utils.js';
 /**
  * The domain separation tag for the hash-to-group function.
  */
-const DST: Uint8Array = new TextEncoder().encode('SUI-SEAL-IBE-BLS12381-00');
-const KDF_DST = new TextEncoder().encode('SUI-SEAL-IBE-BLS12381-H2-00');
-const DERIVE_KEY_DST = new TextEncoder().encode('SUI-SEAL-IBE-BLS12381-H3-00');
+const DST: Uint8Array = new TextEncoder().encode('MYS-SEAL-IBE-BLS12381-00');
+const KDF_DST = new TextEncoder().encode('MYS-SEAL-IBE-BLS12381-H2-00');
+const DERIVE_KEY_DST = new TextEncoder().encode('MYS-SEAL-IBE-BLS12381-H3-00');
 
 /**
  * Hash an id to a G1Element.

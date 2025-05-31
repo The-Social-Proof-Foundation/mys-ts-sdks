@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { Transaction } from '@mysocial/sui/transactions';
-import { normalizeSuiAddress } from '@mysocial/sui/utils';
+import { Transaction } from '@mysocial/mys/transactions';
+import { normalizeMysAddress } from '@mysocial/mys/utils';
 import { beforeAll, describe, expect, it } from 'vitest';
 
 import {
@@ -29,7 +29,7 @@ import {
 	mintVillain,
 	publishExtensionsPackage,
 	publishHeroPackage,
-	setupSuiClient,
+	setupMysClient,
 	TestToolbox,
 } from './setup';
 
@@ -48,7 +48,7 @@ describe('Testing Kiosk SDK transaction building & querying e2e', () => {
 	let villainType: string;
 
 	beforeAll(async () => {
-		toolbox = await setupSuiClient();
+		toolbox = await setupMysClient();
 		extensionsPackageId = await publishExtensionsPackage(toolbox);
 		heroPackageId = await publishHeroPackage(toolbox);
 		heroType = `${heroPackageId}::hero::Hero`;
@@ -368,8 +368,8 @@ describe('Testing Kiosk SDK transaction building & querying e2e', () => {
 		});
 
 		expect(kiosk).toHaveProperty('kiosk');
-		expect(normalizeSuiAddress(kiosk.kiosk?.owner || '')).toBe(
-			normalizeSuiAddress(toolbox.address()),
+		expect(normalizeMysAddress(kiosk.kiosk?.owner || '')).toBe(
+			normalizeMysAddress(toolbox.address()),
 		);
 	});
 

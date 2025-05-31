@@ -10,13 +10,13 @@ import type {
 	Wallet,
 	WalletWithRequiredFeatures,
 } from '@mysocial/wallet-standard';
-import { SUI_CHAINS } from '@mysocial/wallet-standard';
+import { MYS_CHAINS } from '@mysocial/wallet-standard';
 import type { Mock } from 'vitest';
 
 export class MockWallet implements Wallet {
 	version = '1.0.0' as const;
 	icon = `data:image/png;base64,` as const;
-	chains = SUI_CHAINS;
+	chains = MYS_CHAINS;
 
 	mocks: {
 		connect: Mock;

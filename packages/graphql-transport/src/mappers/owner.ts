@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { ObjectOwner } from '@mysocial/sui/client';
+import type { ObjectOwner } from '@mysocial/mys/client';
 
 import type { Rpc_Object_FieldsFragment } from '../generated/queries.js';
 

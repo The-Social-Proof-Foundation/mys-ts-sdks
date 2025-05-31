@@ -1,7 +1,7 @@
 # Move Bytecode Template
 
 Move Bytecode Template allows updating a pre-compiled bytecode, so that a standard template could be
-customized and used to publish new modules on Sui directly in the browser. Hence, removing the need
+customized and used to publish new modules on Mys directly in the browser. Hence, removing the need
 for a backend to compile new modules.
 
 This crate builds a WASM binary for the `move-language/move-binary-format` allowing bytecode
@@ -19,14 +19,14 @@ This package is a perfect fit for the following applications:
 ## Example of a Template Module
 
 The following code is a close-copy of the `Coin` example from the
-[Coins and Tokens](https://docs.sui.io/guides/developer/coin).
+[Coins and Tokens](https://docs.mysocial.network/guides/developer/coin).
 
 ```move
 module 0x0::template {
     use std::option;
-    use sui::coin;
-    use sui::transfer;
-    use sui::tx_context::{Self, TxContext};
+    use mys::coin;
+    use mys::transfer;
+    use mys::tx_context::{Self, TxContext};
 
     /// The OTW for the Coin
     struct TEMPLATE has drop {}
@@ -101,7 +101,7 @@ updated = update_constants(
 ```
 
 After updating the bytecode, refer to the
-[Asset Tokenization](https://docs.sui.io/guides/developer/nft/asset-tokenization#closer-view-of-the-template-module)
+[Asset Tokenization](https://docs.mysocial.network/guides/developer/nft/asset-tokenization#closer-view-of-the-template-module)
 guide to deploy the contract.
 
 ## Usage in Web applications

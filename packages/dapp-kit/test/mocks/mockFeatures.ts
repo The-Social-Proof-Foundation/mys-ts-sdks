@@ -2,10 +2,10 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { IdentifierRecord, SuiFeatures, SuiSignMessageFeature } from '@mysocial/wallet-standard';
+import type { IdentifierRecord, MysFeatures, MysSignMessageFeature } from '@mysocial/wallet-standard';
 
-export const signMessageFeature: SuiSignMessageFeature = {
-	'sui:signMessage': {
+export const signMessageFeature: MysSignMessageFeature = {
+	'mys:signMessage': {
 		version: '1.0.0',
 		signMessage: vi.fn(),
 	},
@@ -18,29 +18,29 @@ export const superCoolFeature: IdentifierRecord<unknown> = {
 	},
 };
 
-export const suiFeatures: SuiFeatures = {
+export const mysFeatures: MysFeatures = {
 	...signMessageFeature,
-	'sui:signPersonalMessage': {
+	'mys:signPersonalMessage': {
 		version: '1.1.0',
 		signPersonalMessage: vi.fn(),
 	},
-	'sui:signTransactionBlock': {
+	'mys:signTransactionBlock': {
 		version: '1.0.0',
 		signTransactionBlock: vi.fn(),
 	},
-	'sui:signTransaction': {
+	'mys:signTransaction': {
 		version: '2.0.0',
 		signTransaction: vi.fn(),
 	},
-	'sui:signAndExecuteTransactionBlock': {
+	'mys:signAndExecuteTransactionBlock': {
 		version: '1.0.0',
 		signAndExecuteTransactionBlock: vi.fn(),
 	},
-	'sui:signAndExecuteTransaction': {
+	'mys:signAndExecuteTransaction': {
 		version: '2.0.0',
 		signAndExecuteTransaction: vi.fn(),
 	},
-	'sui:reportTransactionEffects': {
+	'mys:reportTransactionEffects': {
 		version: '1.0.0',
 		reportTransactionEffects: vi.fn(),
 	},

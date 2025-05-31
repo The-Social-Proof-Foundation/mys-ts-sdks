@@ -6,7 +6,7 @@
 
 import {
 	ConnectButton,
-	SuiClientProvider,
+	MysClientProvider,
 	useAccounts,
 	useAutoConnectWallet,
 	useConnectWallet,
@@ -20,8 +20,8 @@ import {
 	useWallets,
 	WalletProvider,
 } from '@mysocial/dapp-kit';
-import { getFullnodeUrl } from '@mysocial/sui/client';
-import { Transaction } from '@mysocial/sui/transactions';
+import { getFullnodeUrl } from '@mysocial/mys/client';
+import { Transaction } from '@mysocial/mys/transactions';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { ComponentProps } from 'react';
 import { useState } from 'react';
@@ -245,7 +245,7 @@ export const UseSignTransactionExample = withProviders(() => {
 								signTransaction(
 									{
 										transaction: new Transaction(),
-										chain: 'sui:devnet',
+										chain: 'mys:devnet',
 									},
 									{
 										onSuccess: (result) => {
@@ -282,7 +282,7 @@ export const UseSignAndExecuteTransactionExample = withProviders(() => {
 								signAndExecuteTransaction(
 									{
 										transaction: new Transaction(),
-										chain: 'sui:devnet',
+										chain: 'mys:devnet',
 									},
 									{
 										onSuccess: (result) => {
@@ -316,11 +316,11 @@ function withProviders(
 	return () => {
 		return (
 			<QueryClientProvider client={queryClient}>
-				<SuiClientProvider networks={networks}>
+				<MysClientProvider networks={networks}>
 					<WalletProvider {...walletProviderProps}>
 						<Component />
 					</WalletProvider>
-				</SuiClientProvider>
+				</MysClientProvider>
 			</QueryClientProvider>
 		);
 	};

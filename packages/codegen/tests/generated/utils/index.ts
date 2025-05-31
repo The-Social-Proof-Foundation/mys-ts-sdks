@@ -1,9 +1,9 @@
-import { bcs, BcsType, TypeTag, TypeTagSerializer } from '@mysocial/sui/bcs';
-import { normalizeSuiAddress } from '@mysocial/sui/utils';
-import { TransactionArgument, isArgument } from '@mysocial/sui/transactions';
+import { bcs, BcsType, TypeTag, TypeTagSerializer } from '@mysocial/mys/bcs';
+import { normalizeMysAddress } from '@mysocial/mys/utils';
+import { TransactionArgument, isArgument } from '@mysocial/mys/transactions';
 
-const MOVE_STDLIB_ADDRESS = normalizeSuiAddress('0x1');
-const SUI_FRAMEWORK_ADDRESS = normalizeSuiAddress('0x2');
+const MOVE_STDLIB_ADDRESS = normalizeMysAddress('0x1');
+const MYS_FRAMEWORK_ADDRESS = normalizeMysAddress('0x2');
 
 export type RawTransactionArgument<T> = T | TransactionArgument;
 
@@ -31,7 +31,7 @@ export function getPureBcsSchema(typeTag: string | TypeTag): BcsType<any> | null
 		return type ? bcs.vector(type) : null;
 	} else if ('struct' in parsedTag) {
 		const structTag = parsedTag.struct;
-		const pkg = normalizeSuiAddress(parsedTag.struct.address);
+		const pkg = normalizeMysAddress(parsedTag.struct.address);
 
 		if (pkg === MOVE_STDLIB_ADDRESS) {
 			if (
@@ -47,7 +47,7 @@ export function getPureBcsSchema(typeTag: string | TypeTag): BcsType<any> | null
 			}
 		}
 
-		if (pkg === SUI_FRAMEWORK_ADDRESS && structTag.module === 'Object' && structTag.name === 'ID') {
+		if (pkg === MYS_FRAMEWORK_ADDRESS && structTag.module === 'Object' && structTag.name === 'ID') {
 			return bcs.Address;
 		}
 	}

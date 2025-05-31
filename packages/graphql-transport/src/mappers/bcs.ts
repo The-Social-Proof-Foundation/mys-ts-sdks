@@ -4,7 +4,7 @@
 
 import { toBase64 } from '@mysocial/bcs';
 import type { BcsType } from '@mysocial/bcs';
-import { bcs } from '@mysocial/sui/bcs';
+import { bcs } from '@mysocial/mys/bcs';
 
 import type { MoveTypeLayout } from './move.js';
 import { toShortTypeString } from './util.js';

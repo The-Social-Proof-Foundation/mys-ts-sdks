@@ -81,7 +81,7 @@ function validate(transactionData: TransactionDataBuilder) {
 export function getClient(options: BuildTransactionOptions) {
 	if (!options.client) {
 		throw new Error(
-			`No sui client passed to Transaction#build, but transaction data was not sufficient to build offline.`,
+			`No mys client passed to Transaction#build, but transaction data was not sufficient to build offline.`,
 		);
 	}
 

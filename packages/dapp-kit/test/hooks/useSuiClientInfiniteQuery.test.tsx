@@ -1,18 +1,18 @@
 // Copyright (c) Mysten Labs, Inc.
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
 import { act, renderHook, waitFor } from '@testing-library/react';
 
-import { useSuiClientInfiniteQuery } from '../../src/hooks/useSuiClientInfiniteQuery.js';
+import { useMysClientInfiniteQuery } from '../../src/hooks/useMysClientInfiniteQuery.js';
 import { createWalletProviderContextWrapper } from '../test-utils.js';
 
-describe('useSuiClientInfiniteQuery', () => {
+describe('useMysClientInfiniteQuery', () => {
 	it('should fetch data', async () => {
-		const suiClient = new SuiClient({ url: getFullnodeUrl('mainnet') });
-		const wrapper = createWalletProviderContextWrapper({}, suiClient);
+		const mysClient = new MysClient({ url: getFullnodeUrl('mainnet') });
+		const wrapper = createWalletProviderContextWrapper({}, mysClient);
 
-		const queryTransactionBlocks = vi.spyOn(suiClient, 'queryTransactionBlocks');
+		const queryTransactionBlocks = vi.spyOn(mysClient, 'queryTransactionBlocks');
 
 		const pages = [
 			{
@@ -31,7 +31,7 @@ describe('useSuiClientInfiniteQuery', () => {
 
 		const { result } = renderHook(
 			() =>
-				useSuiClientInfiniteQuery('queryTransactionBlocks', {
+				useMysClientInfiniteQuery('queryTransactionBlocks', {
 					filter: {
 						FromAddress: '0x123',
 					},

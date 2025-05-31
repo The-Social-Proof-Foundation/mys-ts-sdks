@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { fromHex, toHex } from '@mysocial/bcs';
-import { isValidSuiObjectId } from '@mysocial/sui/utils';
+import { isValidMysObjectId } from '@mysocial/mys/utils';
 
 import { UserError } from './error.js';
 
@@ -25,7 +25,7 @@ export function xorUnchecked(a: Uint8Array, b: Uint8Array): Uint8Array {
  * @returns The full ID.
  */
 export function createFullId(packageId: string, innerId: string): string {
-	if (!isValidSuiObjectId(packageId)) {
+	if (!isValidMysObjectId(packageId)) {
 		throw new UserError(`Invalid package ID ${packageId}`);
 	}
 	const fullId = flatten([fromHex(packageId), fromHex(innerId)]);

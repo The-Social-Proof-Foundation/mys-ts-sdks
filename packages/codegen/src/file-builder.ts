@@ -34,8 +34,8 @@ export class FileBuilder {
 			([name, module]) => parseTS`import * as ${name} from '${modulePath(module)}'`,
 		);
 
-		const header = '// Copyright (c) Mysten Labs, Inc.
-// Copyright (c) The Social Proof Foundation, LLC.\n// SPDX-License-Identifier: Apache-2.0\n\n';
+		const header =
+			'// Copyright (c) Mysten Labs, Inc.\n// Copyright (c) The Social Proof Foundation, LLC.\n// SPDX-License-Identifier: Apache-2.0\n\n';
 
 		return `${header}${printStatements([...importStatements, ...starImportStatements, ...this.statements])}`;
 

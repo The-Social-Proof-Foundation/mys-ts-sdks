@@ -5,14 +5,14 @@ import {
   useCurrentAccount,
   useSignPersonalMessage,
   useSignTransaction,
-} from "@mysten/dapp-kit";
-import { Transaction } from "@mysten/sui/transactions";
+} from "@mysocial/dapp-kit";
+import { Transaction } from "@mysocial/mys/transactions";
 import {
   verifyPersonalMessageSignature,
   verifyTransactionSignature,
-} from "@mysten/sui/verify";
+} from "@mysocial/mys/verify";
 import { Button, Container } from "@radix-ui/themes";
-import { fromBase64 } from "@mysten/sui/utils";
+import { fromBase64 } from "@mysocial/mys/utils";
 
 export function Actions() {
   const account = useCurrentAccount();
@@ -31,7 +31,7 @@ export function Actions() {
           const { signature } = await signMessage.mutateAsync({
             message,
             account,
-            chain: "sui:testnet",
+            chain: "mys:testnet",
           });
           try {
             await verifyPersonalMessageSignature(message, signature, {
@@ -57,7 +57,7 @@ export function Actions() {
           const { signature, bytes } = await signTransaction.mutateAsync({
             transaction,
             account,
-            chain: "sui:testnet",
+            chain: "mys:testnet",
           });
           try {
             await verifyTransactionSignature(fromBase64(bytes), signature, {

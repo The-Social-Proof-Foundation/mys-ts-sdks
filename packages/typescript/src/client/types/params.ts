@@ -8,7 +8,7 @@
  *  ######################################
  *
  * This file is generated from:
- * /crates/sui-open-rpc/spec/openrpc.json
+ * /crates/mys-open-rpc/spec/openrpc.json
  */
 
 import type { Transaction } from '../../transactions/index.js';
@@ -58,7 +58,7 @@ export interface ExecuteTransactionBlockParams {
 	 */
 	signature: string | string[];
 	/** options for specifying the content to be returned */
-	options?: RpcTypes.SuiTransactionBlockResponseOptions | null | undefined;
+	options?: RpcTypes.MysTransactionBlockResponseOptions | null | undefined;
 	/** @deprecated requestType will be ignored by JSON RPC in the future */
 	requestType?: RpcTypes.ExecuteTransactionRequestType | null | undefined;
 	signal?: AbortSignal;
@@ -133,7 +133,7 @@ export interface GetObjectParams {
 	/** the ID of the queried object */
 	id: string;
 	/** options for specifying the content to be returned */
-	options?: RpcTypes.SuiObjectDataOptions | null | undefined;
+	options?: RpcTypes.MysObjectDataOptions | null | undefined;
 	signal?: AbortSignal;
 }
 /**
@@ -157,7 +157,7 @@ export interface GetTransactionBlockParams {
 	/** the digest of the queried transaction */
 	digest: string;
 	/** options for specifying the content to be returned */
-	options?: RpcTypes.SuiTransactionBlockResponseOptions | null | undefined;
+	options?: RpcTypes.MysTransactionBlockResponseOptions | null | undefined;
 	signal?: AbortSignal;
 }
 /** Return the object data for a list of objects */
@@ -165,7 +165,7 @@ export interface MultiGetObjectsParams {
 	/** the IDs of the queried objects */
 	ids: string[];
 	/** options for specifying the content to be returned */
-	options?: RpcTypes.SuiObjectDataOptions | null | undefined;
+	options?: RpcTypes.MysObjectDataOptions | null | undefined;
 	signal?: AbortSignal;
 }
 /**
@@ -176,7 +176,7 @@ export interface MultiGetTransactionBlocksParams {
 	/** A list of transaction digests. */
 	digests: string[];
 	/** config options to control which fields to fetch */
-	options?: RpcTypes.SuiTransactionBlockResponseOptions | null | undefined;
+	options?: RpcTypes.MysTransactionBlockResponseOptions | null | undefined;
 	signal?: AbortSignal;
 }
 /**
@@ -190,7 +190,7 @@ export interface TryGetPastObjectParams {
 	/** the version of the queried object. If None, default to the latest known version */
 	version: number;
 	/** options for specifying the content to be returned */
-	options?: RpcTypes.SuiObjectDataOptions | null | undefined;
+	options?: RpcTypes.MysObjectDataOptions | null | undefined;
 	signal?: AbortSignal;
 }
 /**
@@ -202,7 +202,7 @@ export interface TryMultiGetPastObjectsParams {
 	/** a vector of object and versions to be queried */
 	pastObjects: RpcTypes.GetPastObjectRequest[];
 	/** options for specifying the content to be returned */
-	options?: RpcTypes.SuiObjectDataOptions | null | undefined;
+	options?: RpcTypes.MysObjectDataOptions | null | undefined;
 	signal?: AbortSignal;
 }
 /** Verify a zklogin signature for the given bytes, intent scope and author. */
@@ -222,13 +222,13 @@ export interface VerifyZkLoginSignatureParams {
 }
 /** Return the total coin balance for all coin type, owned by the address owner. */
 export interface GetAllBalancesParams {
-	/** the owner's Sui address */
+	/** the owner's Mys address */
 	owner: string;
 	signal?: AbortSignal;
 }
 /** Return all Coin objects owned by an address. */
 export interface GetAllCoinsParams {
-	/** the owner's Sui address */
+	/** the owner's Mys address */
 	owner: string;
 	/** optional paging cursor */
 	cursor?: string | null | undefined;
@@ -238,11 +238,11 @@ export interface GetAllCoinsParams {
 }
 /** Return the total coin balance for one coin type, owned by the address owner. */
 export interface GetBalanceParams {
-	/** the owner's Sui address */
+	/** the owner's Mys address */
 	owner: string;
 	/**
 	 * optional type names for the coin (e.g., 0x168da5bf1f48dafc111b0a488fa454aca95e0b5e::usdc::USDC),
-	 * default to 0x2::sui::SUI if not specified.
+	 * default to 0x2::mys::MYS if not specified.
 	 */
 	coinType?: string | null | undefined;
 	signal?: AbortSignal;
@@ -259,11 +259,11 @@ export interface GetCoinMetadataParams {
 }
 /** Return all Coin<`coin_type`> objects owned by an address. */
 export interface GetCoinsParams {
-	/** the owner's Sui address */
+	/** the owner's Mys address */
 	owner: string;
 	/**
 	 * optional type name for the coin (e.g., 0x168da5bf1f48dafc111b0a488fa454aca95e0b5e::usdc::USDC),
-	 * default to 0x2::sui::SUI if not specified.
+	 * default to 0x2::mys::MYS if not specified.
 	 */
 	coinType?: string | null | undefined;
 	/** optional paging cursor */
@@ -299,17 +299,17 @@ export interface GetDynamicFieldsParams {
 	limit?: number | null | undefined;
 	signal?: AbortSignal;
 }
-/** Return the latest SUI system state object on-chain. */
-export interface GetLatestSuiSystemStateParams {
+/** Return the latest MYS system state object on-chain. */
+export interface GetLatestMysSystemStateParams {
 	signal?: AbortSignal;
 }
 /**
  * Return the list of objects owned by an address. Note that if the address owns more than
  * `QUERY_MAX_RESULT_LIMIT` objects, the pagination is not accurate, because previous page may have
- * been updated when the next page is fetched. Please use suix_queryObjects if this is a concern.
+ * been updated when the next page is fetched. Please use mysx_queryObjects if this is a concern.
  */
 export type GetOwnedObjectsParams = {
-	/** the owner's Sui address */
+	/** the owner's Mys address */
 	owner: string;
 	/**
 	 * An optional paging cursor. If provided, the query will start from the next item after the specified
@@ -319,7 +319,7 @@ export type GetOwnedObjectsParams = {
 	/** Max number of items returned per page, default to [QUERY_MAX_RESULT_LIMIT] if not specified. */
 	limit?: number | null | undefined;
 	signal?: AbortSignal;
-} & RpcTypes.SuiObjectResponseQuery;
+} & RpcTypes.MysObjectResponseQuery;
 /** Return the reference gas price for the network */
 export interface GetReferenceGasPriceParams {
 	signal?: AbortSignal;
@@ -331,7 +331,7 @@ export interface GetStakesParams {
 }
 /** Return one or more [DelegatedStake]. If a Stake was withdrawn its status will be Unstaked. */
 export interface GetStakesByIdsParams {
-	stakedSuiIds: string[];
+	stakedMysIds: string[];
 	signal?: AbortSignal;
 }
 /** Return total supply for a coin */
@@ -347,10 +347,10 @@ export interface GetValidatorsApyParams {
 /** Return list of events for a specified query criteria. */
 export interface QueryEventsParams {
 	/**
-	 * The event query criteria. See [Event filter](https://docs.sui.io/build/event_api#event-filters)
+	 * The event query criteria. See [Event filter](https://docs.mysocial.network/build/event_api#event-filters)
 	 * documentation for examples.
 	 */
-	query: RpcTypes.SuiEventFilter;
+	query: RpcTypes.MysEventFilter;
 	/** optional paging cursor */
 	cursor?: RpcTypes.EventId | null | undefined;
 	/** maximum number of items per page, default to [QUERY_MAX_RESULT_LIMIT] if not specified. */
@@ -371,7 +371,7 @@ export type QueryTransactionBlocksParams = {
 	/** query result ordering, default to false (ascending order), oldest record first. */
 	order?: 'ascending' | 'descending' | null | undefined;
 	signal?: AbortSignal;
-} & RpcTypes.SuiTransactionBlockResponseQuery;
+} & RpcTypes.MysTransactionBlockResponseQuery;
 /** Return the resolved address given resolver and name */
 export interface ResolveNameServiceAddressParams {
 	/** The name to resolve */
@@ -389,23 +389,23 @@ export interface ResolveNameServiceNamesParams {
 	limit?: number | null | undefined;
 	signal?: AbortSignal;
 }
-/** Subscribe to a stream of Sui event */
+/** Subscribe to a stream of Mys event */
 export interface SubscribeEventParams {
 	/**
 	 * The filter criteria of the event stream. See
-	 * [Event filter](https://docs.sui.io/build/event_api#event-filters) documentation for examples.
+	 * [Event filter](https://docs.mysocial.network/build/event_api#event-filters) documentation for examples.
 	 */
-	filter: RpcTypes.SuiEventFilter;
+	filter: RpcTypes.MysEventFilter;
 	signal?: AbortSignal;
 }
-/** Subscribe to a stream of Sui transaction effects */
+/** Subscribe to a stream of Mys transaction effects */
 export interface SubscribeTransactionParams {
 	filter: RpcTypes.TransactionFilter;
 	signal?: AbortSignal;
 }
 /** Create an unsigned batched transaction. */
 export interface UnsafeBatchTransactionParams {
-	/** the transaction signer's Sui address */
+	/** the transaction signer's Mys address */
 	signer: string;
 	/** list of transaction request parameters */
 	singleTransactionParams: RpcTypes.RPCTransactionRequestParams[];
@@ -417,12 +417,12 @@ export interface UnsafeBatchTransactionParams {
 	/** the gas budget, the transaction will fail if the gas cost exceed the budget */
 	gasBudget: string;
 	/** Whether this is a regular transaction or a Dev Inspect Transaction */
-	txnBuilderMode?: RpcTypes.SuiTransactionBlockBuilderMode | null | undefined;
+	txnBuilderMode?: RpcTypes.MysTransactionBlockBuilderMode | null | undefined;
 	signal?: AbortSignal;
 }
 /** Create an unsigned transaction to merge multiple coins into one coin. */
 export interface UnsafeMergeCoinsParams {
-	/** the transaction signer's Sui address */
+	/** the transaction signer's Mys address */
 	signer: string;
 	/** the coin object to merge into, this coin will remain after the transaction */
 	primaryCoin: string;
@@ -445,7 +445,7 @@ export interface UnsafeMergeCoinsParams {
  * function in the module of a given package.
  */
 export interface UnsafeMoveCallParams {
-	/** the transaction signer's Sui address */
+	/** the transaction signer's Mys address */
 	signer: string;
 	/** the Move package ID, e.g. `0x2` */
 	packageObjectId: string;
@@ -456,7 +456,7 @@ export interface UnsafeMoveCallParams {
 	/** the type arguments of the Move function */
 	typeArguments: string[];
 	/**
-	 * the arguments to be passed into the Move function, in [SuiJson](https://docs.sui.io/build/sui-json)
+	 * the arguments to be passed into the Move function, in [MysJson](https://docs.mysocial.network/build/mys-json)
 	 * format
 	 */
 	arguments: unknown[];
@@ -469,9 +469,9 @@ export interface UnsafeMoveCallParams {
 	gasBudget: string;
 	/**
 	 * Whether this is a Normal transaction or a Dev Inspect Transaction. Default to be
-	 * `SuiTransactionBlockBuilderMode::Commit` when it's None.
+	 * `MysTransactionBlockBuilderMode::Commit` when it's None.
 	 */
-	executionMode?: RpcTypes.SuiTransactionBlockBuilderMode | null | undefined;
+	executionMode?: RpcTypes.MysTransactionBlockBuilderMode | null | undefined;
 	signal?: AbortSignal;
 }
 /**
@@ -481,9 +481,9 @@ export interface UnsafeMoveCallParams {
  * auto-select one.
  */
 export interface UnsafePayParams {
-	/** the transaction signer's Sui address */
+	/** the transaction signer's Mys address */
 	signer: string;
-	/** the Sui coins to be used in this transaction */
+	/** the Mys coins to be used in this transaction */
 	inputCoins: string[];
 	/** the recipients' addresses, the length of this vector must be the same as amounts. */
 	recipients: string[];
@@ -499,16 +499,16 @@ export interface UnsafePayParams {
 	signal?: AbortSignal;
 }
 /**
- * Send all SUI coins to one recipient. This is for SUI coin only and does not require a separate gas
- * coin object. Specifically, what pay_all_sui does are: 1. accumulate all SUI from input coins and
- * deposit all SUI to the first input coin 2. transfer the updated first coin to the recipient and also
+ * Send all MYS coins to one recipient. This is for MYS coin only and does not require a separate gas
+ * coin object. Specifically, what pay_all_mys does are: 1. accumulate all MYS from input coins and
+ * deposit all MYS to the first input coin 2. transfer the updated first coin to the recipient and also
  * use this first coin as gas coin object. 3. the balance of the first input coin after tx is
  * sum(input_coins) - actual_gas_cost. 4. all other input coins other than the first are deleted.
  */
-export interface UnsafePayAllSuiParams {
-	/** the transaction signer's Sui address */
+export interface UnsafePayAllMysParams {
+	/** the transaction signer's Mys address */
 	signer: string;
-	/** the Sui coins to be used in this transaction, including the coin for gas payment. */
+	/** the Mys coins to be used in this transaction, including the coin for gas payment. */
 	inputCoins: string[];
 	/** the recipient address, */
 	recipient: string;
@@ -517,18 +517,18 @@ export interface UnsafePayAllSuiParams {
 	signal?: AbortSignal;
 }
 /**
- * Send SUI coins to a list of addresses, following a list of amounts. This is for SUI coin only and
- * does not require a separate gas coin object. Specifically, what pay_sui does are: 1. debit each
+ * Send MYS coins to a list of addresses, following a list of amounts. This is for MYS coin only and
+ * does not require a separate gas coin object. Specifically, what pay_mys does are: 1. debit each
  * input_coin to create new coin following the order of amounts and assign it to the corresponding
- * recipient. 2. accumulate all residual SUI from input coins left and deposit all SUI to the first
+ * recipient. 2. accumulate all residual MYS from input coins left and deposit all MYS to the first
  * input coin, then use the first input coin as the gas coin object. 3. the balance of the first input
  * coin after tx is sum(input_coins) - sum(amounts) - actual_gas_cost 4. all other input coints other
  * than the first one are deleted.
  */
-export interface UnsafePaySuiParams {
-	/** the transaction signer's Sui address */
+export interface UnsafePayMysParams {
+	/** the transaction signer's Mys address */
 	signer: string;
-	/** the Sui coins to be used in this transaction, including the coin for gas payment. */
+	/** the Mys coins to be used in this transaction, including the coin for gas payment. */
 	inputCoins: string[];
 	/** the recipients' addresses, the length of this vector must be the same as amounts. */
 	recipients: string[];
@@ -540,7 +540,7 @@ export interface UnsafePaySuiParams {
 }
 /** Create an unsigned transaction to publish a Move package. */
 export interface UnsafePublishParams {
-	/** the transaction signer's Sui address */
+	/** the transaction signer's Mys address */
 	sender: string;
 	/** the compiled bytes of a Move package */
 	compiledModules: string[];
@@ -557,13 +557,13 @@ export interface UnsafePublishParams {
 }
 /** Add stake to a validator's staking pool using multiple coins and amount. */
 export interface UnsafeRequestAddStakeParams {
-	/** the transaction signer's Sui address */
+	/** the transaction signer's Mys address */
 	signer: string;
-	/** Coin<SUI> object to stake */
+	/** Coin<MYS> object to stake */
 	coins: string[];
 	/** stake amount */
 	amount?: string | null | undefined;
-	/** the validator's Sui address */
+	/** the validator's Mys address */
 	validator: string;
 	/**
 	 * gas object to be used in this transaction, node will pick one from the signer's possession if not
@@ -576,10 +576,10 @@ export interface UnsafeRequestAddStakeParams {
 }
 /** Withdraw stake from a validator's staking pool. */
 export interface UnsafeRequestWithdrawStakeParams {
-	/** the transaction signer's Sui address */
+	/** the transaction signer's Mys address */
 	signer: string;
-	/** StakedSui object ID */
-	stakedSui: string;
+	/** StakedMys object ID */
+	stakedMys: string;
 	/**
 	 * gas object to be used in this transaction, node will pick one from the signer's possession if not
 	 * provided
@@ -591,7 +591,7 @@ export interface UnsafeRequestWithdrawStakeParams {
 }
 /** Create an unsigned transaction to split a coin object into multiple coins. */
 export interface UnsafeSplitCoinParams {
-	/** the transaction signer's Sui address */
+	/** the transaction signer's Mys address */
 	signer: string;
 	/** the coin object to be spilt */
 	coinObjectId: string;
@@ -608,7 +608,7 @@ export interface UnsafeSplitCoinParams {
 }
 /** Create an unsigned transaction to split a coin object into multiple equal-size coins. */
 export interface UnsafeSplitCoinEqualParams {
-	/** the transaction signer's Sui address */
+	/** the transaction signer's Mys address */
 	signer: string;
 	/** the coin object to be spilt */
 	coinObjectId: string;
@@ -628,7 +628,7 @@ export interface UnsafeSplitCoinEqualParams {
  * must allow public transfers
  */
 export interface UnsafeTransferObjectParams {
-	/** the transaction signer's Sui address */
+	/** the transaction signer's Mys address */
 	signer: string;
 	/** the ID of the object to be transferred */
 	objectId: string;
@@ -639,22 +639,22 @@ export interface UnsafeTransferObjectParams {
 	gas?: string | null | undefined;
 	/** the gas budget, the transaction will fail if the gas cost exceed the budget */
 	gasBudget: string;
-	/** the recipient's Sui address */
+	/** the recipient's Mys address */
 	recipient: string;
 	signal?: AbortSignal;
 }
 /**
- * Create an unsigned transaction to send SUI coin object to a Sui address. The SUI object is also used
+ * Create an unsigned transaction to send MYS coin object to a Mys address. The MYS object is also used
  * as the gas object.
  */
-export interface UnsafeTransferSuiParams {
-	/** the transaction signer's Sui address */
+export interface UnsafeTransferMysParams {
+	/** the transaction signer's Mys address */
 	signer: string;
-	/** the Sui coin object to be used in this transaction */
-	suiObjectId: string;
+	/** the Mys coin object to be used in this transaction */
+	mysObjectId: string;
 	/** the gas budget, the transaction will fail if the gas cost exceed the budget */
 	gasBudget: string;
-	/** the recipient's Sui address */
+	/** the recipient's Mys address */
 	recipient: string;
 	/** the amount to be split out and transferred */
 	amount?: string | null | undefined;

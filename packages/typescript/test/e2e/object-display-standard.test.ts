@@ -4,7 +4,7 @@
 
 import { beforeAll, describe, expect, it } from 'vitest';
 
-import { SuiObjectData } from '../../src/client';
+import { MysObjectData } from '../../src/client';
 import { setup, TestToolbox } from './utils/setup';
 
 describe('Test Object Display Standard', () => {
@@ -24,7 +24,7 @@ describe('Test Object Display Standard', () => {
 				filter: { StructType: `${packageId}::boars::Boar` },
 			})
 		).data;
-		const data = resp[0].data as SuiObjectData;
+		const data = resp[0].data as MysObjectData;
 		const boarId = data.objectId;
 		const display = (
 			await toolbox.client.getObject({

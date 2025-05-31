@@ -7,7 +7,7 @@ import path from 'path';
 import { fromBase64 } from '@mysocial/bcs';
 import { describe, expect, it } from 'vitest';
 
-import { decodeSuiPrivateKey } from '../../src/cryptography';
+import { decodeMysPrivateKey } from '../../src/cryptography';
 import { Ed25519Keypair } from '../../src/keypairs/ed25519';
 import { MultiSigPublicKey } from '../../src/multisig/publickey';
 import { Transaction } from '../../src/transactions';
@@ -17,15 +17,15 @@ import { DEFAULT_RECIPIENT, setupWithFundedAddress } from './utils/setup';
 
 describe('MultiSig with zklogin signature', () => {
 	it('Execute tx with multisig with 1 sig and 1 zkLogin sig combined', async () => {
-		// default ephemeral keypair, address_seed and zklogin inputs defined: https://github.com/The-Social-Proof-Foundation/mys-core/blob/071a2955f7dbb83ee01c35d3a4257926a50a35f5/crates/sui-types/src/unit_tests/zklogin_test_vectors.json
+		// default ephemeral keypair, address_seed and zklogin inputs defined: https://github.com/The-Social-Proof-Foundation/mys-core/blob/071a2955f7dbb83ee01c35d3a4257926a50a35f5/crates/mys-types/src/unit_tests/zklogin_test_vectors.json
 		// set up default zklogin public identifier with address seed consistent with default zklogin proof.
 		const pkZklogin = toZkLoginPublicIdentifier(
 			BigInt('2455937816256448139232531453880118833510874847675649348355284726183344259587'),
 			'https://id.twitch.tv/oauth2',
 		);
 		// set up ephemeral keypair, consistent with default zklogin proof.
-		const parsed = decodeSuiPrivateKey(
-			'suiprivkey1qzdlfxn2qa2lj5uprl8pyhexs02sg2wrhdy7qaq50cqgnffw4c2477kg9h3',
+		const parsed = decodeMysPrivateKey(
+			'mysprivkey1qzdlfxn2qa2lj5uprl8pyhexs02sg2wrhdy7qaq50cqgnffw4c2477kg9h3',
 		);
 		const ephemeralKeypair = Ed25519Keypair.fromSecretKey(parsed.secretKey);
 
@@ -45,7 +45,7 @@ describe('MultiSig with zklogin signature', () => {
 				{ publicKey: pkZklogin, weight: 1 },
 			],
 		});
-		const multisigAddr = multiSigPublicKey.toSuiAddress();
+		const multisigAddr = multiSigPublicKey.toMysAddress();
 		const configPath = path.join(tmpdir(), 'client.yaml');
 		const toolbox = await setupWithFundedAddress(kp, multisigAddr, configPath);
 

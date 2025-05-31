@@ -83,5 +83,5 @@ export interface CustomScalars {
 	MoveTypeLayout: MoveTypeLayout;
 	MoveTypeSignature: MoveTypeSignature;
 	OpenMoveTypeSignature: OpenMoveTypeSignature;
-	SuiAddress: string;
+	MysAddress: string;
 }

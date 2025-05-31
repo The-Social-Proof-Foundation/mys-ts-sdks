@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { fromBase64 } from '@mysocial/bcs';
-import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { GeneralError } from '../../src/error.js';
@@ -15,7 +15,7 @@ import {
 } from '../../src/key-server.js';
 import { Version } from '../../src/utils.js';
 
-// Data for mock response from SuiClient
+// Data for mock response from MysClient
 const pk = fromBase64(
 	'oEC1VIuwQo+6FZiVwHCAy/3HbvAbuIyiztXIWwd4LgmXCh9WhOKg3T0+Mb62y9fqAsSaN5SybG09n/3JnkmEzJgdDXLpM8KvMwkha/cBHp6Cx7aCdogvGLoOp/RadyHb',
 );
@@ -26,8 +26,8 @@ const name = 'mysten-testnet-1';
 
 describe('key-server tests', () => {
 	beforeEach(() => {
-		vi.mock('@mysocial/sui.js', () => ({
-			SuiClient: vi.fn(() => ({
+		vi.mock('@mysocial/mys.js', () => ({
+			MysClient: vi.fn(() => ({
 				getObject: vi.fn().mockResolvedValue({
 					data: {
 						content: {
@@ -62,7 +62,7 @@ describe('key-server tests', () => {
 	it('test retrieveKeyServers (mocked)', async () => {
 		const keyServers = await retrieveKeyServers({
 			objectIds: [id],
-			client: new SuiClient({ url: getFullnodeUrl('testnet') }),
+			client: new MysClient({ url: getFullnodeUrl('testnet') }),
 		});
 		expect(keyServers.length).toEqual(1);
 		expect(keyServers[0].objectId).toEqual(id);
@@ -76,7 +76,7 @@ describe('key-server tests', () => {
 		// Mock fetch with exact response from the real service
 		const keyServers = await retrieveKeyServers({
 			objectIds: [id],
-			client: new SuiClient({ url: getFullnodeUrl('testnet') }),
+			client: new MysClient({ url: getFullnodeUrl('testnet') }),
 		});
 		vi.clearAllMocks();
 		const headers = new Headers();

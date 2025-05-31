@@ -3,25 +3,25 @@
 ## Installation
 
 ```bash
-npm install --save @mysten/walrus @mysten/sui
+npm install --save @mysten/walrus @mysocial/mys
 ```
 
 ## Setup
 
-To use the walrus SDK you will need to create an instance of the SuiClient from the typescript SDK,
+To use the walrus SDK you will need to create an instance of the MysClient from the typescript SDK,
 and an instance of the walrus SDK.
 
 ```ts
-import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
 import { WalrusClient } from '@mysocial/walrus';
 
-const suiClient = new SuiClient({
+const mysClient = new MysClient({
 	url: getFullnodeUrl('testnet'),
 });
 
 const walrusClient = new WalrusClient({
 	network: 'testnet',
-	suiClient,
+	mysClient,
 });
 ```
 
@@ -31,7 +31,7 @@ you to connect to a different network or updated deployment of the walrus contra
 
 ```ts
 const walrusClient = new WalrusClient({
-	suiClient,
+	mysClient,
 	packageConfig: {
 		systemObjectId: '0x98ebc47370603fe81d9e15491b2f1443d619d1dab720d586e429ed233e1255c1',
 		stakingPoolId: '0x20266a17b4f1a216727f3eef5772f8d486a9e3b5e319af80a5b75809c035561d',
@@ -44,7 +44,7 @@ For some environments you may need to customize how data is fetched:
 ```ts
 const walrusClient = new WalrusClient({
 	network: 'testnet',
-	suiClient,
+	mysClient,
 	storageNodeClientOptions: {
 		fetch: (url, options) => {
 			console.log('fetching', url);
@@ -84,7 +84,7 @@ Thw `writeBlob` method can be used to write a blob (as a `Uint8Array`) to walrus
 specify how long the blob should be stored for, and if the blob should be deletable.
 
 You will also need to provide a `signer` instance that signs and pays for the transaction/storage
-fees. The signer's address will need to have sufficient `SUI` to cover the transactions that
+fees. The signer's address will need to have sufficient `MYS` to cover the transactions that
 register the blob, and certify its availability after it's been uploaded. It will also need to own
 sufficient `WAL` to pay to store the blob for the specified number of epochs, as well as the write
 fee for writing the blob.
@@ -156,7 +156,7 @@ failed requests:
 ```ts
 const walrusClient = new WalrusClient({
 	network: 'testnet',
-	suiClient,
+	mysClient,
 	storageNodeClientOptions: {
 		onError: (error) => console.log(error),
 	},
@@ -182,7 +182,7 @@ import { Agent, fetch, setGlobalDispatcher } from 'undici';
 
 const walrusClient = new WalrusClient({
 	network: 'testnet',
-	suiClient,
+	mysClient,
 	storageNodeClientOptions: {
 		timeout: 60_000,
 		fetch: (url, init) => {
@@ -213,7 +213,7 @@ import walrusWasmUrl from '@mysocial/walrus-wasm/web/walrus_wasm_bg.wasm?url';
 
 const walrusClient = new WalrusClient({
 	network: 'testnet',
-	suiClient,
+	mysClient,
 	wasmUrl: walrusWasmUrl,
 });
 ```
@@ -224,7 +224,7 @@ the wasm bindings, or load them from a CDN:
 ```ts
 const walrusClient = new WalrusClient({
 	network: 'testnet',
-	suiClient,
+	mysClient,
 	wasmUrl: 'https://unpkg.com/@mysten/walrus-wasm@latest/web/walrus_wasm_bg.wasm',
 });
 ```

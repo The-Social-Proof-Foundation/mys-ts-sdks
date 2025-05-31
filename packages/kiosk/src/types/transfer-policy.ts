@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { ObjectOwner } from '@mysocial/sui/client';
-import type { Transaction, TransactionObjectArgument } from '@mysocial/sui/transactions';
+import type { ObjectOwner } from '@mysocial/mys/client';
+import type { Transaction, TransactionObjectArgument } from '@mysocial/mys/transactions';
 
 import type { KioskClient } from '../client/kiosk-client.js';
 import type { ObjectArgument } from './index.js';

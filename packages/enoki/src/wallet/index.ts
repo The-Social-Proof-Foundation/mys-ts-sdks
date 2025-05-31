@@ -2,9 +2,9 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiClient } from '@mysocial/sui/client';
-import { Transaction } from '@mysocial/sui/transactions';
-import { fromBase64, toBase64 } from '@mysocial/sui/utils';
+import type { MysClient } from '@mysocial/mys/client';
+import { Transaction } from '@mysocial/mys/transactions';
+import { fromBase64, toBase64 } from '@mysocial/mys/utils';
 import type {
 	IdentifierArray,
 	IdentifierString,
@@ -14,12 +14,12 @@ import type {
 	StandardDisconnectMethod,
 	StandardEventsFeature,
 	StandardEventsOnMethod,
-	SuiSignAndExecuteTransactionFeature,
-	SuiSignAndExecuteTransactionMethod,
-	SuiSignPersonalMessageFeature,
-	SuiSignPersonalMessageMethod,
-	SuiSignTransactionFeature,
-	SuiSignTransactionMethod,
+	MysSignAndExecuteTransactionFeature,
+	MysSignAndExecuteTransactionMethod,
+	MysSignPersonalMessageFeature,
+	MysSignPersonalMessageMethod,
+	MysSignTransactionFeature,
+	MysSignTransactionMethod,
 	Wallet,
 } from '@mysocial/wallet-standard';
 import { getWallets, ReadonlyWalletAccount } from '@mysocial/wallet-standard';
@@ -66,7 +66,7 @@ export class EnokiWallet implements Wallet {
 	}
 
 	get chains() {
-		return [`sui:${this.#flow.network}`] as const;
+		return [`mys:${this.#flow.network}`] as const;
 	}
 
 	get accounts() {
@@ -76,9 +76,9 @@ export class EnokiWallet implements Wallet {
 	get features(): StandardConnectFeature &
 		StandardDisconnectFeature &
 		StandardEventsFeature &
-		SuiSignTransactionFeature &
-		SuiSignAndExecuteTransactionFeature &
-		SuiSignPersonalMessageFeature {
+		MysSignTransactionFeature &
+		MysSignAndExecuteTransactionFeature &
+		MysSignPersonalMessageFeature {
 		return {
 			'standard:connect': {
 				version: '1.0.0',
@@ -92,15 +92,15 @@ export class EnokiWallet implements Wallet {
 				version: '1.0.0',
 				on: this.#on,
 			},
-			'sui:signTransaction': {
+			'mys:signTransaction': {
 				version: '2.0.0',
 				signTransaction: this.#signTransaction,
 			},
-			'sui:signAndExecuteTransaction': {
+			'mys:signAndExecuteTransaction': {
 				version: '2.0.0',
 				signAndExecuteTransaction: this.#signAndExecuteTransaction,
 			},
-			'sui:signPersonalMessage': {
+			'mys:signPersonalMessage': {
 				version: '1.1.0',
 				signPersonalMessage: this.#signPersonalMessage,
 			},
@@ -125,7 +125,7 @@ export class EnokiWallet implements Wallet {
 		clientId: string;
 		redirectUrl?: string;
 		extraParams?: Record<string, string>;
-		client: SuiClient;
+		client: MysClient;
 		windowFeatures?: string | (() => string);
 	}) {
 		this.#accounts = [];
@@ -145,24 +145,24 @@ export class EnokiWallet implements Wallet {
 		this.#setAccount();
 	}
 
-	#signTransaction: SuiSignTransactionMethod = async ({ transaction, chain, account }) => {
+	#signTransaction: MysSignTransactionMethod = async ({ transaction, chain, account }) => {
 		this.#validateChain(chain);
 
 		const parsedTransaction = Transaction.from(await transaction.toJSON());
 		const keypair = await this.#flow.getKeypair();
-		const suiAddress = keypair.toSuiAddress();
+		const mysAddress = keypair.toMysAddress();
 
-		if (suiAddress !== account.address) {
+		if (mysAddress !== account.address) {
 			throw new Error(
-				`The specified account ${account.address} does not match the currently connected Enoki address ${suiAddress}.`,
+				`The specified account ${account.address} does not match the currently connected Enoki address ${mysAddress}.`,
 			);
 		}
 
-		parsedTransaction.setSenderIfNotSet(suiAddress);
+		parsedTransaction.setSenderIfNotSet(mysAddress);
 		return keypair.signTransaction(await parsedTransaction.build({ client: this.#client }));
 	};
 
-	#signAndExecuteTransaction: SuiSignAndExecuteTransactionMethod = async ({
+	#signAndExecuteTransaction: MysSignAndExecuteTransactionMethod = async ({
 		transaction,
 		chain,
 		account,
@@ -184,15 +184,15 @@ export class EnokiWallet implements Wallet {
 		};
 	};
 
-	#signPersonalMessage: SuiSignPersonalMessageMethod = async ({ message, account, chain }) => {
+	#signPersonalMessage: MysSignPersonalMessageMethod = async ({ message, account, chain }) => {
 		this.#validateChain(chain);
 
 		const keypair = await this.#flow.getKeypair();
-		const suiAddress = keypair.toSuiAddress();
+		const mysAddress = keypair.toMysAddress();
 
-		if (suiAddress !== account.address) {
+		if (mysAddress !== account.address) {
 			throw new Error(
-				`The specified account ${account.address} does not match the currently connected Enoki address ${suiAddress}.`,
+				`The specified account ${account.address} does not match the currently connected Enoki address ${mysAddress}.`,
 			);
 		}
 
@@ -287,7 +287,7 @@ export class EnokiWallet implements Wallet {
 	#validateChain(chain?: IdentifierString): asserts chain is (typeof this.chains)[number] {
 		if (!chain || !this.chains.includes(chain as (typeof this.chains)[number])) {
 			throw new Error(
-				`A valid Sui chain identifier was not provided in the request. Please report this issue to the dApp developer. Examples of valid Sui chain identifiers are 'sui:testnet' and 'sui:mainnet'. Consider using the '@mysocial/dapp-kit' package, which provides this value automatically.`,
+				`A valid Mys chain identifier was not provided in the request. Please report this issue to the dApp developer. Examples of valid Mys chain identifiers are 'mys:testnet' and 'mys:mainnet'. Consider using the '@mysocial/dapp-kit' package, which provides this value automatically.`,
 			);
 		}
 	}

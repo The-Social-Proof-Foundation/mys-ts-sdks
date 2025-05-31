@@ -4,7 +4,7 @@
 
 import { splitGenericParameters } from '@mysocial/bcs';
 
-import { normalizeSuiAddress } from '../utils/sui-types.js';
+import { normalizeMysAddress } from '../utils/mys-types.js';
 import type { TypeTag } from './types.js';
 
 const VECTOR_REGEX = /^vector<(.+)>$/;
@@ -41,7 +41,7 @@ export class TypeTagSerializer {
 
 		const structMatch = str.match(STRUCT_REGEX);
 		if (structMatch) {
-			const address = normalizeAddress ? normalizeSuiAddress(structMatch[1]) : structMatch[1];
+			const address = normalizeAddress ? normalizeMysAddress(structMatch[1]) : structMatch[1];
 			return {
 				struct: {
 					address,

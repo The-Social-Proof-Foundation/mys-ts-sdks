@@ -12,7 +12,7 @@ import { syncStateToStorage } from './initializers/sync-state-to-storage.js';
 import { manageWalletConnection } from './initializers/manage-connection.js';
 import type { Networks } from '../utils/networks.js';
 import type { CreateDAppKitOptions } from './types.js';
-import type { Experimental_BaseClient } from '@mysocial/sui/experimental';
+import type { Experimental_BaseClient } from '@mysocial/mys/experimental';
 import { switchNetworkCreator } from './actions/switch-network.js';
 import { connectWalletCreator } from './actions/connect-wallet.js';
 import { disconnectWalletCreator } from './actions/disconnect-wallet.js';
@@ -53,7 +53,7 @@ export function createDAppKitInstance<TNetworks extends Networks>({
 	storageKey = DEFAULT_STORAGE_KEY,
 }: CreateDAppKitOptions<TNetworks>) {
 	if (networks.length === 0) {
-		throw new DAppKitError('You must specify at least one Sui network for your application.');
+		throw new DAppKitError('You must specify at least one Mys network for your application.');
 	}
 
 	const networkConfig = new Map<TNetworks[number], Experimental_BaseClient>();

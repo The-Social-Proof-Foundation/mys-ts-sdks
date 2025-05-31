@@ -20,7 +20,7 @@ import type {
 const packageRoot = path.resolve(import.meta.url.slice(5), '../..');
 
 const res = await fetch(
-	'https://raw.githubusercontent.com/MystenLabs/sui/refs/heads/main/crates/sui-open-rpc/spec/openrpc.json',
+	'https://raw.githubusercontent.com/MystenLabs/mys/refs/heads/main/crates/mys-open-rpc/spec/openrpc.json',
 );
 
 if (!res.ok) {
@@ -39,7 +39,7 @@ export const LICENSE_HEADER = `
  *  ######################################
  *
  * This file is generated from:
- * /crates/sui-open-rpc/spec/openrpc.json
+ * /crates/mys-open-rpc/spec/openrpc.json
  */
 `.trim();
 
@@ -69,30 +69,30 @@ const options: {
 } = {
 	types: {
 		Coin: { alias: 'CoinStruct' },
-		Data: { alias: 'SuiParsedData' },
-		Event: { alias: 'SuiEvent' },
-		EventFilter: { alias: 'SuiEventFilter' },
+		Data: { alias: 'MysParsedData' },
+		Event: { alias: 'MysEvent' },
+		EventFilter: { alias: 'MysEventFilter' },
 		EventID: { alias: 'EventId' },
-		GasData: { alias: 'SuiGasData' },
-		MoveFunctionArgType: { alias: 'SuiMoveFunctionArgType' },
-		ObjectChange: { alias: 'SuiObjectChange' },
-		ObjectData: { alias: 'SuiObjectData' },
-		ObjectDataOptions: { alias: 'SuiObjectDataOptions' },
-		ObjectRef: { alias: 'SuiObjectRef' },
-		ObjectResponseQuery: { alias: 'SuiObjectResponseQuery' },
+		GasData: { alias: 'MysGasData' },
+		MoveFunctionArgType: { alias: 'MysMoveFunctionArgType' },
+		ObjectChange: { alias: 'MysObjectChange' },
+		ObjectData: { alias: 'MysObjectData' },
+		ObjectDataOptions: { alias: 'MysObjectDataOptions' },
+		ObjectRef: { alias: 'MysObjectRef' },
+		ObjectResponseQuery: { alias: 'MysObjectResponseQuery' },
 		Owner: { alias: 'ObjectOwner' },
-		PaginatedSuiObjectResponse: { alias: 'PaginatedObjectsResponse' },
+		PaginatedMysObjectResponse: { alias: 'PaginatedObjectsResponse' },
 		PaginatedTransactionBlockResponse: { alias: 'PaginatedTransactionResponse' },
 		Stake: { alias: 'StakeObject' },
-		SuiCoinMetadata: { alias: 'CoinMetadata' },
-		SuiProgrammableMoveCall: { alias: 'MoveCallSuiTransaction' },
+		MysCoinMetadata: { alias: 'CoinMetadata' },
+		MysProgrammableMoveCall: { alias: 'MoveCallMysTransaction' },
 		Supply: { alias: 'CoinSupply' },
-		TransactionBlock: { alias: 'SuiTransactionBlock' },
+		TransactionBlock: { alias: 'MysTransactionBlock' },
 		TransactionBlockEffects: { alias: 'TransactionEffects' },
-		TransactionBlockKind: { alias: 'SuiTransactionBlockKind' },
-		TransactionBlockResponse: { alias: 'SuiTransactionBlockResponse' },
-		TransactionBlockResponseOptions: { alias: 'SuiTransactionBlockResponseOptions' },
-		TransactionBlockResponseQuery: { alias: 'SuiTransactionBlockResponseQuery' },
+		TransactionBlockKind: { alias: 'MysTransactionBlockKind' },
+		TransactionBlockResponse: { alias: 'MysTransactionBlockResponse' },
+		TransactionBlockResponseOptions: { alias: 'MysTransactionBlockResponseOptions' },
+		TransactionBlockResponseQuery: { alias: 'MysTransactionBlockResponseQuery' },
 		ValidatorApys: { alias: 'ValidatorsApy' },
 		GenericSignature: {
 			typeAlias: 'string',
@@ -102,14 +102,14 @@ const options: {
 		},
 	},
 	methods: {
-		sui_getNormalizedMoveModule: {
+		mys_getNormalizedMoveModule: {
 			params: {
 				module_name: {
 					alias: 'module',
 				},
 			},
 		},
-		sui_getNormalizedMoveFunction: {
+		mys_getNormalizedMoveFunction: {
 			params: {
 				module_name: {
 					alias: 'module',
@@ -119,7 +119,7 @@ const options: {
 				},
 			},
 		},
-		sui_getNormalizedMoveStruct: {
+		mys_getNormalizedMoveStruct: {
 			params: {
 				module_name: {
 					alias: 'module',
@@ -129,7 +129,7 @@ const options: {
 				},
 			},
 		},
-		suix_getOwnedObjects: {
+		mysx_getOwnedObjects: {
 			flattenParams: ['query'],
 			params: {
 				address: {
@@ -137,14 +137,14 @@ const options: {
 				},
 			},
 		},
-		sui_getObject: {
+		mys_getObject: {
 			params: {
 				object_id: {
 					alias: 'id',
 				},
 			},
 		},
-		sui_tryGetPastObject: {
+		mys_tryGetPastObject: {
 			params: {
 				object_id: {
 					alias: 'id',
@@ -154,14 +154,14 @@ const options: {
 				},
 			},
 		},
-		sui_multiGetObjects: {
+		mys_multiGetObjects: {
 			params: {
 				object_ids: {
 					alias: 'ids',
 				},
 			},
 		},
-		suix_queryTransactionBlocks: {
+		mysx_queryTransactionBlocks: {
 			flattenParams: ['query'],
 			params: {
 				descending_order: {
@@ -170,7 +170,7 @@ const options: {
 				},
 			},
 		},
-		sui_executeTransactionBlock: {
+		mys_executeTransactionBlock: {
 			params: {
 				tx_bytes: {
 					alias: 'transactionBlock',
@@ -185,7 +185,7 @@ const options: {
 				},
 			},
 		},
-		suix_queryEvents: {
+		mysx_queryEvents: {
 			params: {
 				descending_order: {
 					alias: 'order',
@@ -193,7 +193,7 @@ const options: {
 				},
 			},
 		},
-		sui_devInspectTransactionBlock: {
+		mys_devInspectTransactionBlock: {
 			params: {
 				sender_address: {
 					alias: 'sender',
@@ -207,7 +207,7 @@ const options: {
 				},
 			},
 		},
-		sui_dryRunTransactionBlock: {
+		mys_dryRunTransactionBlock: {
 			params: {
 				tx_bytes: {
 					alias: 'transactionBlock',
@@ -215,14 +215,14 @@ const options: {
 				},
 			},
 		},
-		suix_getDynamicFields: {
+		mysx_getDynamicFields: {
 			params: {
 				parent_object_id: {
 					alias: 'parentId',
 				},
 			},
 		},
-		suix_getDynamicFieldObject: {
+		mysx_getDynamicFieldObject: {
 			params: {
 				parent_object_id: {
 					alias: 'parentId',
@@ -788,11 +788,11 @@ function normalizeName(name: string) {
 }
 
 export function normalizeMethodName(name: string): string {
-	if (name.startsWith('sui_')) {
+	if (name.startsWith('mys_')) {
 		return normalizeMethodName(name.slice(4));
 	}
 
-	if (name.startsWith('suix_')) {
+	if (name.startsWith('mysx_')) {
 		return normalizeMethodName(name.slice(5));
 	}
 

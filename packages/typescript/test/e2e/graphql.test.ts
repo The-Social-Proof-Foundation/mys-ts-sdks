@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 import { describe, expect, it } from 'vitest';
 
-import { SuiGraphQLClient } from '../../src/graphql';
+import { MysGraphQLClient } from '../../src/graphql';
 import { graphql } from '../../src/graphql/schemas/latest';
 
 const DEFAULT_GRAPHQL_URL = import.meta.env.GRAPHQL_URL ?? 'http://127.0.0.1:9125';
@@ -33,7 +33,7 @@ const queries = {
 	`),
 };
 
-const client = new SuiGraphQLClient({
+const client = new MysGraphQLClient({
 	url: DEFAULT_GRAPHQL_URL,
 	queries,
 });

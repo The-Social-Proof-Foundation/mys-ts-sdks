@@ -8,5 +8,5 @@ export {
 	verifyPersonalMessageSignature,
 	verifyTransactionSignature,
 	publicKeyFromRawBytes,
-	publicKeyFromSuiBytes,
+	publicKeyFromMysBytes,
 } from './verify.js';

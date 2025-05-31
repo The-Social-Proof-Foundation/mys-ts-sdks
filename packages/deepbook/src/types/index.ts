@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { EventId } from '@mysocial/sui/client';
+import type { EventId } from '@mysocial/mys/client';
 
 export * from './bcs.js';
 

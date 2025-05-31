@@ -131,14 +131,14 @@ export function publicKeyFromRawBytes(
 			throw new Error(`Unsupported signature scheme ${signatureScheme}`);
 	}
 
-	if (options.address && publicKey.toSuiAddress() !== options.address) {
+	if (options.address && publicKey.toMysAddress() !== options.address) {
 		throw new Error(`Public key bytes do not match the provided address`);
 	}
 
 	return publicKey;
 }
 
-export function publicKeyFromSuiBytes(
+export function publicKeyFromMysBytes(
 	publicKey: string | Uint8Array,
 	options: { client?: ZkLoginCompatibleClient; address?: string } = {},
 ) {

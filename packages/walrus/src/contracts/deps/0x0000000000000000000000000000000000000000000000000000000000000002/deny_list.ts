@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/sui/bcs';
+import { bcs } from '@mysocial/mys/bcs';
 
 import * as bag from './bag.js';
 import * as object from './object.js';

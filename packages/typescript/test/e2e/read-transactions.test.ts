@@ -4,18 +4,18 @@
 
 import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 
-import { SuiTransactionBlockResponse } from '../../src/client';
+import { MysTransactionBlockResponse } from '../../src/client';
 import { Transaction } from '../../src/transactions';
-import { executePaySuiNTimes, setup, TestToolbox } from './utils/setup';
+import { executePayMysNTimes, setup, TestToolbox } from './utils/setup';
 
 describe('Transaction Reading API', () => {
 	let toolbox: TestToolbox;
-	let transactions: SuiTransactionBlockResponse[];
+	let transactions: MysTransactionBlockResponse[];
 	const NUM_TRANSACTIONS = 10;
 
 	beforeAll(async () => {
 		toolbox = await setup();
-		transactions = await executePaySuiNTimes(toolbox.client, toolbox.keypair, NUM_TRANSACTIONS);
+		transactions = await executePayMysNTimes(toolbox.client, toolbox.keypair, NUM_TRANSACTIONS);
 	});
 
 	it('Get Total Transactions', async () => {

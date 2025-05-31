@@ -7,10 +7,10 @@ import {
 	useConnectWallet,
 	useCurrentAccount,
 	useSignAndExecuteTransaction,
-	useSuiClientContext,
+	useMysClientContext,
 	useWallets,
 } from '@mysocial/dapp-kit';
-import { Transaction } from '@mysocial/sui/transactions';
+import { Transaction } from '@mysocial/mys/transactions';
 import { useState } from 'react';
 
 import { isEnokiWallet } from '../src/wallet/index.js';
@@ -24,7 +24,7 @@ export function App() {
 	const googleWallet = wallets.find((wallet) => wallet.provider === 'google');
 
 	const { mutateAsync: signAndExecute } = useSignAndExecuteTransaction();
-	const { selectNetwork, networks } = useSuiClientContext();
+	const { selectNetwork, networks } = useMysClientContext();
 
 	return (
 		<div>

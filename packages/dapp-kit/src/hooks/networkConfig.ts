@@ -2,11 +2,11 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiClientOptions } from '@mysocial/sui/client';
+import type { MysClientOptions } from '@mysocial/mys/client';
 
-import { useSuiClientContext } from './useSuiClient.js';
+import { useMysClientContext } from './useMysClient.js';
 
-export type NetworkConfig<T extends object = object> = SuiClientOptions & {
+export type NetworkConfig<T extends object = object> = MysClientOptions & {
 	variables?: T;
 };
 
@@ -16,7 +16,7 @@ export function createNetworkConfig<
 	Variables extends object = NonNullable<Config['variables']>,
 >(networkConfig: T) {
 	function useNetworkConfig(): Config {
-		const { config } = useSuiClientContext();
+		const { config } = useMysClientContext();
 
 		if (!config) {
 			throw new Error('No network config found');

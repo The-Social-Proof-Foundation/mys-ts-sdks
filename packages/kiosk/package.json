@@ -1,7 +1,7 @@
 {
 	"name": "@mysocial/kiosk",
 	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
-	"description": "Sui Kiosk library",
+	"description": "Mys Kiosk library",
 	"version": "0.12.7",
 	"license": "Apache-2.0",
 	"type": "commonjs",
@@ -37,11 +37,11 @@
 		"test:e2e": "vitest run e2e"
 	},
 	"dependencies": {
-		"@mysten/sui": "workspace:*",
-		"@mysten/utils": "workspace:*"
+		"@mysocial/mys": "workspace:*",
+		"@mysocial/utils": "workspace:*"
 	},
 	"devDependencies": {
-		"@mysten/build-scripts": "workspace:*",
+		"@mysocial/build-scripts": "workspace:*",
 		"cross-env": "^7.0.3",
 		"tmp": "^0.2.3",
 		"ts-retry-promise": "^0.8.1",

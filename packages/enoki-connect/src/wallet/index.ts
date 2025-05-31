@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64, toBase64 } from '@mysocial/sui/utils';
+import { fromBase64, toBase64 } from '@mysocial/mys/utils';
 import type {
 	IdentifierString,
 	StandardConnectFeature,
@@ -12,23 +12,23 @@ import type {
 	StandardEventsFeature,
 	StandardEventsListeners,
 	StandardEventsOnMethod,
-	SuiSignAndExecuteTransactionFeature,
-	SuiSignAndExecuteTransactionMethod,
-	SuiSignPersonalMessageFeature,
-	SuiSignPersonalMessageMethod,
-	SuiSignTransactionBlockFeature,
-	SuiSignTransactionBlockMethod,
-	SuiSignTransactionFeature,
-	SuiSignTransactionMethod,
+	MysSignAndExecuteTransactionFeature,
+	MysSignAndExecuteTransactionMethod,
+	MysSignPersonalMessageFeature,
+	MysSignPersonalMessageMethod,
+	MysSignTransactionBlockFeature,
+	MysSignTransactionBlockMethod,
+	MysSignTransactionFeature,
+	MysSignTransactionMethod,
 	Wallet,
 	WalletIcon,
 } from '@mysocial/wallet-standard';
 import {
 	getWallets,
 	ReadonlyWalletAccount,
-	SUI_DEVNET_CHAIN,
-	SUI_MAINNET_CHAIN,
-	SUI_TESTNET_CHAIN,
+	MYS_DEVNET_CHAIN,
+	MYS_MAINNET_CHAIN,
+	MYS_TESTNET_CHAIN,
 } from '@mysocial/wallet-standard';
 import type { Emitter } from 'mitt';
 import mitt from 'mitt';
@@ -40,13 +40,13 @@ type WalletEventsMap = {
 	[E in keyof StandardEventsListeners]: Parameters<StandardEventsListeners[E]>[0];
 };
 
-const SUPPORTED_CHAINS = [SUI_MAINNET_CHAIN, SUI_TESTNET_CHAIN, SUI_DEVNET_CHAIN] as const;
+const SUPPORTED_CHAINS = [MYS_MAINNET_CHAIN, MYS_TESTNET_CHAIN, MYS_DEVNET_CHAIN] as const;
 const ACCOUNT_FEATURES = [
-	'sui:signTransaction',
-	'sui:signAndExecuteTransaction',
-	'sui:signPersonalMessage',
-	'sui:signTransactionBlock',
-	'sui:signAndExecuteTransactionBlock',
+	'mys:signTransaction',
+	'mys:signAndExecuteTransaction',
+	'mys:signPersonalMessage',
+	'mys:signTransactionBlock',
+	'mys:signAndExecuteTransactionBlock',
 ] as const;
 
 export class EnokiConnectWallet implements Wallet {
@@ -83,10 +83,10 @@ export class EnokiConnectWallet implements Wallet {
 	get features(): StandardConnectFeature &
 		StandardDisconnectFeature &
 		StandardEventsFeature &
-		SuiSignTransactionBlockFeature &
-		SuiSignTransactionFeature &
-		SuiSignPersonalMessageFeature &
-		SuiSignAndExecuteTransactionFeature {
+		MysSignTransactionBlockFeature &
+		MysSignTransactionFeature &
+		MysSignPersonalMessageFeature &
+		MysSignAndExecuteTransactionFeature {
 		return {
 			'standard:connect': {
 				version: '1.0.0',
@@ -100,19 +100,19 @@ export class EnokiConnectWallet implements Wallet {
 				version: '1.0.0',
 				on: this.#on,
 			},
-			'sui:signTransactionBlock': {
+			'mys:signTransactionBlock': {
 				version: '1.0.0',
 				signTransactionBlock: this.#signTransactionBlock,
 			},
-			'sui:signTransaction': {
+			'mys:signTransaction': {
 				version: '2.0.0',
 				signTransaction: this.#signTransaction,
 			},
-			'sui:signPersonalMessage': {
+			'mys:signPersonalMessage': {
 				version: '1.1.0',
 				signPersonalMessage: this.#signPersonalMessage,
 			},
-			'sui:signAndExecuteTransaction': {
+			'mys:signAndExecuteTransaction': {
 				version: '2.0.0',
 				signAndExecuteTransaction: this.#signAndExecuteTransaction,
 			},
@@ -140,12 +140,12 @@ export class EnokiConnectWallet implements Wallet {
 		this.#walletName = walletName;
 		this.#dappName = dappName;
 		this.#icon = icon;
-		this.#defaultChain = `sui:${network}`;
+		this.#defaultChain = `mys:${network}`;
 		this.#publicAppSlug = publicAppSlug;
 		this.id = `enoki-connect-${publicAppSlug}`;
 	}
 
-	#signTransactionBlock: SuiSignTransactionBlockMethod = async ({
+	#signTransactionBlock: MysSignTransactionBlockMethod = async ({
 		transactionBlock,
 		account,
 		chain,
@@ -165,7 +165,7 @@ export class EnokiConnectWallet implements Wallet {
 		};
 	};
 
-	#signTransaction: SuiSignTransactionMethod = async ({ transaction, account, chain }) => {
+	#signTransaction: MysSignTransactionMethod = async ({ transaction, account, chain }) => {
 		const popup = this.#getNewPopupChannel();
 		const response = await popup.send({
 			type: 'sign-transaction',
@@ -181,7 +181,7 @@ export class EnokiConnectWallet implements Wallet {
 		};
 	};
 
-	#signAndExecuteTransaction: SuiSignAndExecuteTransactionMethod = async ({
+	#signAndExecuteTransaction: MysSignAndExecuteTransactionMethod = async ({
 		transaction,
 		account,
 		chain,
@@ -203,7 +203,7 @@ export class EnokiConnectWallet implements Wallet {
 		};
 	};
 
-	#signPersonalMessage: SuiSignPersonalMessageMethod = async ({ message, account, chain }) => {
+	#signPersonalMessage: MysSignPersonalMessageMethod = async ({ message, account, chain }) => {
 		const popup = this.#getNewPopupChannel();
 		const response = await popup.send({
 			type: 'sign-personal-message',

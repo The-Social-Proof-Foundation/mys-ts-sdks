@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/sui/bcs';
-import { type Transaction } from '@mysocial/sui/transactions';
+import { bcs } from '@mysocial/mys/bcs';
+import { type Transaction } from '@mysocial/mys/transactions';
 import { normalizeMoveArguments, type RawTransactionArgument } from './utils/index.js';
 export function ProofOfPossessionMessage() {
 	return bcs.struct('ProofOfPossessionMessage', {
@@ -11,7 +11,7 @@ export function ProofOfPossessionMessage() {
 		intent_version: bcs.u8(),
 		intent_app: bcs.u8(),
 		epoch: bcs.u32(),
-		sui_address: bcs.Address,
+		mys_address: bcs.Address,
 		bls_key: bcs.vector(bcs.u8()),
 	});
 }

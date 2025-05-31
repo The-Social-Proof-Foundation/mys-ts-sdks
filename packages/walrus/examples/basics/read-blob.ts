@@ -2,11 +2,11 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
 
 import { WalrusClient } from '../../src/client.js';
 
-const client = new SuiClient({
+const client = new MysClient({
 	url: getFullnodeUrl('testnet'),
 	network: 'testnet',
 }).$extend(WalrusClient.experimental_asClientExtension());

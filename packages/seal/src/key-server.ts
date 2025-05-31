@@ -53,7 +53,7 @@ export function getAllowlistedKeyServers(network: 'testnet' | 'mainnet'): string
  * from onchain state containing name, objectId, URL and pk.
  *
  * @param objectIds - The key server object IDs.
- * @param client - The SuiClient to use.
+ * @param client - The MysClient to use.
  * @returns - An array of SealKeyServer.
  */
 export async function retrieveKeyServers({

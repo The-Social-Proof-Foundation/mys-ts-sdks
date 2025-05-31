@@ -12,7 +12,7 @@ import {
 	executeTransaction,
 	setupDeepbookAccount,
 	setupPool,
-	setupSuiClient,
+	setupMysClient,
 	TestToolbox,
 } from './setup';
 
@@ -27,7 +27,7 @@ describe('Interacting with the pool', () => {
 	let accountCapId2: string;
 
 	beforeAll(async () => {
-		toolbox = await setupSuiClient();
+		toolbox = await setupMysClient();
 		pool = await setupPool(toolbox);
 		accountCapId = await setupDeepbookAccount(toolbox);
 		accountCapId2 = await setupDeepbookAccount(toolbox);
@@ -189,10 +189,10 @@ describe('Interacting with the pool', () => {
 		expect(openOrdersAfter.length).toBe(0);
 	});
 
-	it('Test parsing sui coin id', async () => {
+	it('Test parsing mys coin id', async () => {
 		const deepbook = new DeepBookClient(toolbox.client, accountCapId);
 		const resp = await toolbox.client.getCoins({
-			owner: toolbox.keypair.getPublicKey().toSuiAddress(),
+			owner: toolbox.keypair.getPublicKey().toMysAddress(),
 			coinType: pool.baseAsset,
 		});
 		const baseCoin = resp.data[0].coinObjectId;

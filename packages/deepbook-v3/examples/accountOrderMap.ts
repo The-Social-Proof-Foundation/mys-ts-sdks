@@ -1,7 +1,7 @@
 // Copyright (c) Mysten Labs, Inc.
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
 
 import { DeepBookClient } from '../src/index.js'; // Adjust import source accordingly
 
@@ -20,13 +20,13 @@ import { DeepBookClient } from '../src/index.js'; // Adjust import source accord
 	const dbClient = new DeepBookClient({
 		address: '0x0',
 		env: env,
-		client: new SuiClient({
+		client: new MysClient({
 			url: getFullnodeUrl(env),
 		}),
 		balanceManagers: balanceManagers,
 	});
 
-	const pools = ['SUI_USDC', 'DEEP_SUI', 'DEEP_USDC', 'WUSDT_USDC', 'WUSDC_USDC', 'BETH_USDC']; // Update pools as needed
+	const pools = ['MYS_USDC', 'DEEP_MYS', 'DEEP_USDC', 'WUSDT_USDC', 'WUSDC_USDC', 'BETH_USDC']; // Update pools as needed
 	const manager = 'MANAGER_1'; // Update the manager accordingly
 	console.log('Manager:', manager);
 	for (const pool of pools) {

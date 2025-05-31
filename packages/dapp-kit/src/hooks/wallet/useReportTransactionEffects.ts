@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { toBase64 } from '@mysocial/sui/utils';
-import type { SuiReportTransactionEffectsInput } from '@mysocial/wallet-standard';
+import { toBase64 } from '@mysocial/mys/utils';
+import type { MysReportTransactionEffectsInput } from '@mysocial/wallet-standard';
 import type { UseMutationOptions, UseMutationResult } from '@tanstack/react-query';
 import { useMutation } from '@tanstack/react-query';
 
@@ -18,7 +18,7 @@ import { useCurrentAccount } from './useCurrentAccount.js';
 import { useCurrentWallet } from './useCurrentWallet.js';
 
 type UseReportTransactionEffectsArgs = Omit<
-	PartialBy<SuiReportTransactionEffectsInput, 'account' | 'chain'>,
+	PartialBy<MysReportTransactionEffectsInput, 'account' | 'chain'>,
 	'effects'
 > & {
 	effects: string | number[];
@@ -68,7 +68,7 @@ export function useReportTransactionEffects({
 			}
 
 			const reportTransactionEffectsFeature =
-				currentWallet.features['sui:reportTransactionEffects'];
+				currentWallet.features['mys:reportTransactionEffects'];
 
 			if (reportTransactionEffectsFeature) {
 				return await reportTransactionEffectsFeature.reportTransactionEffects({

@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs, type BcsType } from '@mysocial/sui/bcs';
+import { bcs, type BcsType } from '@mysocial/mys/bcs';
 import * as uq64_64 from '../0x0000000000000000000000000000000000000000000000000000000000000001/uq64_64.js';
 export function ApportionmentQueue<T0 extends BcsType<any>>(...typeParameters: [T0]) {
 	return bcs.struct('ApportionmentQueue', {

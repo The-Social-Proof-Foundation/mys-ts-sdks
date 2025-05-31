@@ -3,12 +3,12 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { describe } from 'node:test';
-import { getFullnodeUrl, SuiClient, SuiObjectChange } from '@mysocial/sui/client';
-import { decodeSuiPrivateKey, Keypair } from '@mysocial/sui/cryptography';
-import { getFaucetHost, requestSuiFromFaucetV2 } from '@mysocial/sui/faucet';
-import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
-import { Transaction } from '@mysocial/sui/transactions';
-import { MIST_PER_SUI, toBase64 } from '@mysocial/sui/utils';
+import { getFullnodeUrl, MysClient, MysObjectChange } from '@mysocial/mys/client';
+import { decodeMysPrivateKey, Keypair } from '@mysocial/mys/cryptography';
+import { getFaucetHost, requestMysFromFaucetV2 } from '@mysocial/mys/faucet';
+import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
+import { Transaction } from '@mysocial/mys/transactions';
+import { MIST_PER_MYS, toBase64 } from '@mysocial/mys/utils';
 import { beforeAll, expect, test } from 'vitest';
 
 import {
@@ -23,32 +23,32 @@ export const DEMO_BEAR_CONFIG = {
 	type: '0xab8ed19f16874f9b8b66b0b6e325ee064848b1a7fdcb1c2f0478b17ad8574e65::demo_bear::DemoBear',
 };
 
-const client = new SuiClient({
+const client = new MysClient({
 	url: getFullnodeUrl('testnet'),
 });
 
 // address:  0x8ab2b2a5cfa538db19062b79622abe28f3171c8b8048c5957b01846d57574630
 const keypair = Ed25519Keypair.fromSecretKey(
-	'suiprivkey1qz3v0pjxalg3z3p9p6lp4x84y74g0qt2y2q36amvkgfh9zzmm4q66y6ccdz',
+	'mysprivkey1qz3v0pjxalg3z3p9p6lp4x84y74g0qt2y2q36amvkgfh9zzmm4q66y6ccdz',
 );
 
 // Automatically get gas from testnet is not working reliably, manually request gas via discord,
 // or uncomment the beforeAll and gas function below
 beforeAll(async () => {
 	const balance = await client.getBalance({
-		owner: keypair.toSuiAddress(),
+		owner: keypair.toMysAddress(),
 	});
 
-	if (Number(balance.totalBalance) < Number(MIST_PER_SUI) * 0.02) {
-		await getSuiFromFaucet(keypair);
+	if (Number(balance.totalBalance) < Number(MIST_PER_MYS) * 0.02) {
+		await getMysFromFaucet(keypair);
 	}
 }, 30_000);
 
-async function getSuiFromFaucet(keypair: Keypair) {
+async function getMysFromFaucet(keypair: Keypair) {
 	const faucetHost = getFaucetHost('testnet');
-	await requestSuiFromFaucetV2({
+	await requestMysFromFaucetV2({
 		host: faucetHost,
-		recipient: keypair.toSuiAddress(),
+		recipient: keypair.toMysAddress(),
 	});
 }
 
@@ -57,7 +57,7 @@ describe('Contract links', () => {
 		const link = new ZkSendLinkBuilder({
 			client,
 			network: 'testnet',
-			sender: keypair.toSuiAddress(),
+			sender: keypair.toMysAddress(),
 		});
 
 		const bears = await createBears(3);
@@ -89,12 +89,12 @@ describe('Contract links', () => {
 				[
 				  {
 				    "amount": 100n,
-				    "coinType": "0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI",
+				    "coinType": "0x0000000000000000000000000000000000000000000000000000000000000002::mys::MYS",
 				  },
 				]
 			`);
 
-		const claim = await claimLink.claimAssets(keypair.toSuiAddress());
+		const claim = await claimLink.claimAssets(keypair.toMysAddress());
 
 		const res = await client.waitForTransaction({
 			digest: claim.digest,
@@ -127,7 +127,7 @@ describe('Contract links', () => {
 			keypair: linkKp,
 			client,
 			network: 'testnet',
-			sender: keypair.toSuiAddress(),
+			sender: keypair.toMysAddress(),
 		});
 
 		const bears = await createBears(3);
@@ -152,11 +152,11 @@ describe('Contract links', () => {
 				},
 			],
 		} = await getSentTransactionsWithLinks({
-			address: keypair.toSuiAddress(),
+			address: keypair.toMysAddress(),
 			network: 'testnet',
 		});
 
-		const { url, transaction } = await lostLink.createRegenerateTransaction(keypair.toSuiAddress());
+		const { url, transaction } = await lostLink.createRegenerateTransaction(keypair.toMysAddress());
 
 		const result = await client.signAndExecuteTransaction({
 			transaction,
@@ -178,12 +178,12 @@ describe('Contract links', () => {
 				[
 				  {
 				    "amount": 100n,
-				    "coinType": "0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI",
+				    "coinType": "0x0000000000000000000000000000000000000000000000000000000000000002::mys::MYS",
 				  },
 				]
 			`);
 
-		const claim = await claimLink.claimAssets(keypair.toSuiAddress());
+		const claim = await claimLink.claimAssets(keypair.toMysAddress());
 
 		const res = await client.waitForTransaction({
 			digest: claim.digest,
@@ -215,7 +215,7 @@ describe('Contract links', () => {
 			keypair: linkKp,
 			client,
 			network: 'testnet',
-			sender: keypair.toSuiAddress(),
+			sender: keypair.toMysAddress(),
 		});
 
 		const bears = await createBears(3);
@@ -240,11 +240,11 @@ describe('Contract links', () => {
 				},
 			],
 		} = await getSentTransactionsWithLinks({
-			address: keypair.toSuiAddress(),
+			address: keypair.toMysAddress(),
 			network: 'testnet',
 		});
 
-		const { digest: claimDigest } = await lostLink.claimAssets(keypair.toSuiAddress(), {
+		const { digest: claimDigest } = await lostLink.claimAssets(keypair.toMysAddress(), {
 			reclaim: true,
 			sign: async (tx) => (await keypair.signTransaction(tx)).signature,
 		});
@@ -270,7 +270,7 @@ describe('Contract links', () => {
 			const link = new ZkSendLinkBuilder({
 				client,
 				network: 'testnet',
-				sender: keypair.toSuiAddress(),
+				sender: keypair.toMysAddress(),
 			});
 
 			link.addClaimableMist(100n);
@@ -307,12 +307,12 @@ describe('Contract links', () => {
 					[
 					  {
 					    "amount": 100n,
-					    "coinType": "0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI",
+					    "coinType": "0x0000000000000000000000000000000000000000000000000000000000000002::mys::MYS",
 					  },
 					]
 				`);
 
-			const claim = await claimLink.claimAssets(keypair.toSuiAddress());
+			const claim = await claimLink.claimAssets(keypair.toMysAddress());
 
 			const res = await client.waitForTransaction({
 				digest: claim.digest,
@@ -335,7 +335,7 @@ describe('Non contract links', () => {
 	test('Links with separate gas coin', async () => {
 		const link = new ZkSendLinkBuilder({
 			client,
-			sender: keypair.toSuiAddress(),
+			sender: keypair.toMysAddress(),
 			network: 'testnet',
 			contract: null,
 		});
@@ -367,12 +367,12 @@ describe('Non contract links', () => {
 					[
 					  {
 					    "amount": 100n,
-					    "coinType": "0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI",
+					    "coinType": "0x0000000000000000000000000000000000000000000000000000000000000002::mys::MYS",
 					  },
 					]
 				`);
 
-		const claimTx = await claimLink.claimAssets(new Ed25519Keypair().toSuiAddress());
+		const claimTx = await claimLink.claimAssets(new Ed25519Keypair().toMysAddress());
 
 		const res = await client.waitForTransaction({
 			digest: claimTx.digest,
@@ -403,7 +403,7 @@ describe('Non contract links', () => {
 		const tx = new Transaction();
 
 		const [coin] = tx.splitCoins(tx.gas, [5_000_000]);
-		tx.transferObjects([coin], linkKp.toSuiAddress());
+		tx.transferObjects([coin], linkKp.toMysAddress());
 
 		const { digest } = await client.signAndExecuteTransaction({
 			signer: keypair,
@@ -423,10 +423,10 @@ describe('Non contract links', () => {
 		expect(claimLink.assets?.nfts.length).toEqual(0);
 		expect(claimLink.assets?.balances.length).toEqual(1);
 		expect(claimLink.assets?.balances[0].coinType).toEqual(
-			'0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI',
+			'0x0000000000000000000000000000000000000000000000000000000000000002::mys::MYS',
 		);
 
-		const claimTx = await claimLink.claimAssets(keypair.toSuiAddress());
+		const claimTx = await claimLink.claimAssets(keypair.toMysAddress());
 
 		const res = await client.waitForTransaction({
 			digest: claimTx.digest,
@@ -437,7 +437,7 @@ describe('Non contract links', () => {
 
 		expect(res.balanceChanges?.length).toEqual(2);
 		const link2 = await ZkSendLink.fromUrl(
-			`https://zksend.con/claim#${toBase64(decodeSuiPrivateKey(linkKp.getSecretKey()).secretKey)}`,
+			`https://zksend.con/claim#${toBase64(decodeMysPrivateKey(linkKp.getSecretKey()).secretKey)}`,
 			{
 				network: 'testnet',
 			},
@@ -452,7 +452,7 @@ describe('Non contract links', () => {
 	test('Send to address', async () => {
 		const link = new ZkSendLinkBuilder({
 			client,
-			sender: keypair.toSuiAddress(),
+			sender: keypair.toMysAddress(),
 			network: 'testnet',
 			contract: null,
 		});
@@ -468,7 +468,7 @@ describe('Non contract links', () => {
 		const receiver = new Ed25519Keypair();
 
 		const tx = await link.createSendToAddressTransaction({
-			address: receiver.toSuiAddress(),
+			address: receiver.toMysAddress(),
 		});
 
 		const { digest } = await client.signAndExecuteTransaction({
@@ -481,7 +481,7 @@ describe('Non contract links', () => {
 		});
 
 		const objects = await client.getOwnedObjects({
-			owner: receiver.toSuiAddress(),
+			owner: receiver.toMysAddress(),
 		});
 
 		expect(objects.data.length).toEqual(4);
@@ -491,7 +491,7 @@ describe('Non contract links', () => {
 		const link = new ZkSendLinkBuilder({
 			client,
 			network: 'testnet',
-			sender: keypair.toSuiAddress(),
+			sender: keypair.toMysAddress(),
 		});
 
 		const tx = new Transaction();
@@ -527,12 +527,12 @@ describe('Non contract links', () => {
 				[
 				  {
 				    "amount": 100n,
-				    "coinType": "0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI",
+				    "coinType": "0x0000000000000000000000000000000000000000000000000000000000000002::mys::MYS",
 				  },
 				]
 			`);
 
-		const claim = await claimLink.claimAssets(keypair.toSuiAddress());
+		const claim = await claimLink.claimAssets(keypair.toMysAddress());
 
 		const res = await client.waitForTransaction({
 			digest: claim.digest,
@@ -562,7 +562,7 @@ describe('Non contract links', () => {
 		const link = new ZkSendLinkBuilder({
 			client,
 			network: 'testnet',
-			sender: keypair.toSuiAddress(),
+			sender: keypair.toMysAddress(),
 		});
 
 		const bears = await createBears(3);
@@ -585,16 +585,16 @@ describe('Non contract links', () => {
 
 		const createdLinks = await listCreatedLinks({
 			network: 'testnet',
-			address: keypair.toSuiAddress(),
+			address: keypair.toMysAddress(),
 		});
 
-		expect(createdLinks.links[0]?.link.address).toEqual(link.keypair.toSuiAddress());
+		expect(createdLinks.links[0]?.link.address).toEqual(link.keypair.toMysAddress());
 
 		expect(createdLinks.links[0].claimed).toEqual(false);
 		expect(createdLinks.links[0].assets).toMatchObject({
 			balances: [
 				{
-					coinType: '0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI',
+					coinType: '0x0000000000000000000000000000000000000000000000000000000000000002::mys::MYS',
 					amount: 100n,
 				},
 			],
@@ -615,12 +615,12 @@ describe('Non contract links', () => {
 				[
 				  {
 				    "amount": 100n,
-				    "coinType": "0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI",
+				    "coinType": "0x0000000000000000000000000000000000000000000000000000000000000002::mys::MYS",
 				  },
 				]
 			`);
 
-		const claim = await claimLink.claimAssets(keypair.toSuiAddress());
+		const claim = await claimLink.claimAssets(keypair.toMysAddress());
 
 		const res = await client.waitForTransaction({
 			digest: claim.digest,
@@ -660,7 +660,7 @@ async function createBears(totalBears: number) {
 		bears.push(bear);
 	}
 
-	tx.transferObjects(bears, tx.pure.address(keypair.toSuiAddress()));
+	tx.transferObjects(bears, tx.pure.address(keypair.toMysAddress()));
 
 	const res = await client.signAndExecuteTransaction({
 		transaction: tx,
@@ -676,9 +676,9 @@ async function createBears(totalBears: number) {
 
 	const bearList = res
 		.objectChanges!.filter(
-			(x: SuiObjectChange) => x.type === 'created' && x.objectType.includes(DEMO_BEAR_CONFIG.type),
+			(x: MysObjectChange) => x.type === 'created' && x.objectType.includes(DEMO_BEAR_CONFIG.type),
 		)
-		.map((x: SuiObjectChange) => {
+		.map((x: MysObjectChange) => {
 			if (!('objectId' in x)) throw new Error('invalid data');
 			return {
 				objectId: x.objectId,

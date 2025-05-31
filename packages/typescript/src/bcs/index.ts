@@ -30,7 +30,7 @@ import {
 	SenderSignedTransaction,
 	SharedObjectRef,
 	StructTag,
-	SuiObjectRef,
+	MysObjectRef,
 	TransactionData,
 	TransactionDataV1,
 	TransactionExpiration,
@@ -44,7 +44,7 @@ export type { TypeTag } from './types.js';
 export { TypeTagSerializer } from './type-tag-serializer.js';
 export { BcsType, type BcsTypeOptions } from '@mysocial/bcs';
 
-const suiBcs = {
+const mysBcs = {
 	...bcs,
 	U8: bcs.u8(),
 	U16: bcs.u16(),
@@ -80,7 +80,7 @@ const suiBcs = {
 	SenderSignedTransaction,
 	SharedObjectRef,
 	StructTag,
-	SuiObjectRef,
+	MysObjectRef,
 	TransactionData,
 	TransactionDataV1,
 	TransactionEffects,
@@ -94,4 +94,4 @@ export {
 	type PureTypeName,
 } from './pure.js';
 
-export { suiBcs as bcs };
+export { mysBcs as bcs };

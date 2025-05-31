@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/sui/bcs';
-import type { BcsType } from '@mysocial/sui/bcs';
+import { bcs } from '@mysocial/mys/bcs';
+import type { BcsType } from '@mysocial/mys/bcs';
 
 export function Option<T0 extends BcsType<any>>(...typeParameters: [T0]) {
 	return bcs.struct('Option', {

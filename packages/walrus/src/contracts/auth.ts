@@ -2,9 +2,9 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/sui/bcs';
-import type { BcsType } from '@mysocial/sui/bcs';
-import type { Transaction } from '@mysocial/sui/transactions';
+import { bcs } from '@mysocial/mys/bcs';
+import type { BcsType } from '@mysocial/mys/bcs';
+import type { Transaction } from '@mysocial/mys/transactions';
 
 import { normalizeMoveArguments } from './utils/index.js';
 import type { RawTransactionArgument } from './utils/index.js';

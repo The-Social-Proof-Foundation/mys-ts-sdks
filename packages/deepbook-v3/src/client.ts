@@ -1,10 +1,10 @@
 // Copyright (c) Mysten Labs, Inc.
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { bcs } from '@mysocial/sui/bcs';
-import type { SuiClient } from '@mysocial/sui/client';
-import { Transaction } from '@mysocial/sui/transactions';
-import { normalizeSuiAddress } from '@mysocial/sui/utils';
+import { bcs } from '@mysocial/mys/bcs';
+import type { MysClient } from '@mysocial/mys/client';
+import { Transaction } from '@mysocial/mys/transactions';
+import { normalizeMysAddress } from '@mysocial/mys/utils';
 
 import { BalanceManagerContract } from './transactions/balanceManager.js';
 import { DeepBookContract } from './transactions/deepbook.js';
@@ -19,7 +19,7 @@ import type { CoinMap, PoolMap } from './utils/constants.js';
  * DeepBookClient class for managing DeepBook operations.
  */
 export class DeepBookClient {
-	client: SuiClient;
+	client: MysClient;
 	#config: DeepBookConfig;
 	#address: string;
 	balanceManager: BalanceManagerContract;
@@ -29,7 +29,7 @@ export class DeepBookClient {
 	governance: GovernanceContract;
 
 	/**
-	 * @param {SuiClient} client SuiClient instance
+	 * @param {MysClient} client MysClient instance
 	 * @param {string} address Address of the client
 	 * @param {Environment} env Environment configuration
 	 * @param {Object.<string, BalanceManager>} [balanceManagers] Optional initial BalanceManager map
@@ -46,7 +46,7 @@ export class DeepBookClient {
 		pools,
 		adminCap,
 	}: {
-		client: SuiClient;
+		client: MysClient;
 		address: string;
 		env: Environment;
 		balanceManagers?: { [key: string]: BalanceManager };
@@ -55,7 +55,7 @@ export class DeepBookClient {
 		adminCap?: string;
 	}) {
 		this.client = client;
-		this.#address = normalizeSuiAddress(address);
+		this.#address = normalizeMysAddress(address);
 		this.#config = new DeepBookConfig({
 			address: this.#address,
 			env,
@@ -108,7 +108,7 @@ export class DeepBookClient {
 
 		tx.add(this.deepBook.whitelisted(poolKey));
 		const res = await this.client.devInspectTransactionBlock({
-			sender: normalizeSuiAddress(this.#address),
+			sender: normalizeMysAddress(this.#address),
 			transactionBlock: tx,
 		});
 
@@ -133,7 +133,7 @@ export class DeepBookClient {
 
 		tx.add(this.deepBook.getQuoteQuantityOut(poolKey, baseQuantity));
 		const res = await this.client.devInspectTransactionBlock({
-			sender: normalizeSuiAddress(this.#address),
+			sender: normalizeMysAddress(this.#address),
 			transactionBlock: tx,
 		});
 
@@ -164,7 +164,7 @@ export class DeepBookClient {
 
 		tx.add(this.deepBook.getBaseQuantityOut(poolKey, quoteQuantity));
 		const res = await this.client.devInspectTransactionBlock({
-			sender: normalizeSuiAddress(this.#address),
+			sender: normalizeMysAddress(this.#address),
 			transactionBlock: tx,
 		});
 
@@ -196,7 +196,7 @@ export class DeepBookClient {
 
 		tx.add(this.deepBook.getQuantityOut(poolKey, baseQuantity, quoteQuantity));
 		const res = await this.client.devInspectTransactionBlock({
-			sender: normalizeSuiAddress(this.#address),
+			sender: normalizeMysAddress(this.#address),
 			transactionBlock: tx,
 		});
 
@@ -224,7 +224,7 @@ export class DeepBookClient {
 
 		tx.add(this.deepBook.accountOpenOrders(poolKey, managerKey));
 		const res = await this.client.devInspectTransactionBlock({
-			sender: normalizeSuiAddress(this.#address),
+			sender: normalizeMysAddress(this.#address),
 			transactionBlock: tx,
 		});
 
@@ -247,7 +247,7 @@ export class DeepBookClient {
 
 		tx.add(this.deepBook.getOrder(poolKey, orderId));
 		const res = await this.client.devInspectTransactionBlock({
-			sender: normalizeSuiAddress(this.#address),
+			sender: normalizeMysAddress(this.#address),
 			transactionBlock: tx,
 		});
 
@@ -289,7 +289,7 @@ export class DeepBookClient {
 		const tx = new Transaction();
 		tx.add(this.deepBook.getOrder(poolKey, orderId));
 		const res = await this.client.devInspectTransactionBlock({
-			sender: normalizeSuiAddress(this.#address),
+			sender: normalizeMysAddress(this.#address),
 			transactionBlock: tx,
 		});
 
@@ -357,7 +357,7 @@ export class DeepBookClient {
 
 		tx.add(this.deepBook.getOrders(poolKey, orderIds));
 		const res = await this.client.devInspectTransactionBlock({
-			sender: normalizeSuiAddress(this.#address),
+			sender: normalizeMysAddress(this.#address),
 			transactionBlock: tx,
 		});
 
@@ -406,7 +406,7 @@ export class DeepBookClient {
 
 		tx.add(this.deepBook.getLevel2Range(poolKey, priceLow, priceHigh, isBid));
 		const res = await this.client.devInspectTransactionBlock({
-			sender: normalizeSuiAddress(this.#address),
+			sender: normalizeMysAddress(this.#address),
 			transactionBlock: tx,
 		});
 
@@ -440,7 +440,7 @@ export class DeepBookClient {
 
 		tx.add(this.deepBook.getLevel2TicksFromMid(poolKey, ticks));
 		const res = await this.client.devInspectTransactionBlock({
-			sender: normalizeSuiAddress(this.#address),
+			sender: normalizeMysAddress(this.#address),
 			transactionBlock: tx,
 		});
 
@@ -484,7 +484,7 @@ export class DeepBookClient {
 
 		tx.add(this.deepBook.vaultBalances(poolKey));
 		const res = await this.client.devInspectTransactionBlock({
-			sender: normalizeSuiAddress(this.#address),
+			sender: normalizeMysAddress(this.#address),
 			transactionBlock: tx,
 		});
 
@@ -510,7 +510,7 @@ export class DeepBookClient {
 		tx.add(this.deepBook.getPoolIdByAssets(baseType, quoteType));
 
 		const res = await this.client.devInspectTransactionBlock({
-			sender: normalizeSuiAddress(this.#address),
+			sender: normalizeMysAddress(this.#address),
 			transactionBlock: tx,
 		});
 
@@ -536,7 +536,7 @@ export class DeepBookClient {
 		const quoteCoin = this.#config.getCoin(pool.quoteCoin);
 
 		const res = await this.client.devInspectTransactionBlock({
-			sender: normalizeSuiAddress(this.#address),
+			sender: normalizeMysAddress(this.#address),
 			transactionBlock: tx,
 		});
 
@@ -558,7 +558,7 @@ export class DeepBookClient {
 
 		tx.add(this.deepBook.poolTradeParams(poolKey));
 		const res = await this.client.devInspectTransactionBlock({
-			sender: normalizeSuiAddress(this.#address),
+			sender: normalizeMysAddress(this.#address),
 			transactionBlock: tx,
 		});
 
@@ -588,7 +588,7 @@ export class DeepBookClient {
 
 		tx.add(this.deepBook.poolBookParams(poolKey));
 		const res = await this.client.devInspectTransactionBlock({
-			sender: normalizeSuiAddress(this.#address),
+			sender: normalizeMysAddress(this.#address),
 			transactionBlock: tx,
 		});
 
@@ -617,7 +617,7 @@ export class DeepBookClient {
 
 		tx.add(this.deepBook.account(poolKey, managerKey));
 		const res = await this.client.devInspectTransactionBlock({
-			sender: normalizeSuiAddress(this.#address),
+			sender: normalizeMysAddress(this.#address),
 			transactionBlock: tx,
 		});
 
@@ -694,7 +694,7 @@ export class DeepBookClient {
 
 		tx.add(this.deepBook.lockedBalance(poolKey, balanceManagerKey));
 		const res = await this.client.devInspectTransactionBlock({
-			sender: normalizeSuiAddress(this.#address),
+			sender: normalizeMysAddress(this.#address),
 			transactionBlock: tx,
 		});
 
@@ -724,7 +724,7 @@ export class DeepBookClient {
 		const deepCoin = this.#config.getCoin('DEEP');
 
 		const res = await this.client.devInspectTransactionBlock({
-			sender: normalizeSuiAddress(this.#address),
+			sender: normalizeMysAddress(this.#address),
 			transactionBlock: tx,
 		});
 

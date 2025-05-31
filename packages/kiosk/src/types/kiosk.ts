@@ -4,10 +4,10 @@
 
 import type {
 	PaginatedObjectsResponse,
-	SuiObjectData,
-	SuiObjectDataOptions,
-} from '@mysocial/sui/client';
-import type { TransactionArgument } from '@mysocial/sui/transactions';
+	MysObjectData,
+	MysObjectDataOptions,
+} from '@mysocial/mys/client';
+import type { TransactionArgument } from '@mysocial/mys/transactions';
 
 import type { ObjectArgument } from './index.js';
 
@@ -107,7 +107,7 @@ export type KioskItem = {
 	/** The ID of the kiosk the item is placed in */
 	kioskId: string;
 	/** Optional Kiosk Data */
-	data?: SuiObjectData;
+	data?: MysObjectData;
 };
 
 /** The overview type returned from `getKiosk` */
@@ -153,7 +153,7 @@ export type FetchKioskOptions = {
 	/** Include the objects for the Items in the kiosk. Defaults to `display` only. */
 	withObjects?: boolean;
 	/** Pass the data options for the objects, when fetching, in case you want to query other details. */
-	objectOptions?: SuiObjectDataOptions;
+	objectOptions?: MysObjectDataOptions;
 };
 
 export type OwnedKiosks = {

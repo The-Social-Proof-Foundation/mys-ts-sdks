@@ -14,7 +14,7 @@ import {
 	getWalletForHandle_DO_NOT_USE_OR_YOU_WILL_BE_FIRED as getWalletForHandle,
 } from '@wallet-standard/ui-registry';
 import { WalletAccountNotFoundError, WalletNoAccountsConnectedError } from '../../utils/errors.js';
-import type { Experimental_SuiClientTypes } from '@mysocial/sui/experimental';
+import type { Experimental_MysClientTypes } from '@mysocial/mys/experimental';
 import { getChain } from '../../utils/networks.js';
 
 export type ConnectWalletArgs = {
@@ -30,7 +30,7 @@ export type ConnectWalletArgs = {
 
 export function connectWalletCreator(
 	{ $baseConnection }: DAppKitStores,
-	supportedNetworks: readonly Experimental_SuiClientTypes.Network[],
+	supportedNetworks: readonly Experimental_MysClientTypes.Network[],
 ) {
 	/**
 	 * Prompts the specified wallet to connect and authorize new accounts for the current domain.
@@ -57,11 +57,11 @@ export function connectWalletCreator(
 				const underlyingWallet = getWalletForHandle(wallet);
 				const supportedChains = supportedNetworks.map(getChain);
 
-				const suiAccounts = result.accounts
+				const mysAccounts = result.accounts
 					.filter((account) => account.chains.some((chain) => supportedChains.includes(chain)))
 					.map(getOrCreateUiWalletAccountForStandardWalletAccount.bind(null, underlyingWallet));
 
-				if (!isAlreadyConnected && suiAccounts.length === 0) {
+				if (!isAlreadyConnected && mysAccounts.length === 0) {
 					throw new WalletNoAccountsConnectedError('No accounts were authorized.');
 				}
 
@@ -73,10 +73,10 @@ export function connectWalletCreator(
 
 				$baseConnection.set({
 					status: 'connected',
-					currentAccount: account ?? suiAccounts[0],
+					currentAccount: account ?? mysAccounts[0],
 				});
 
-				return { accounts: suiAccounts };
+				return { accounts: mysAccounts };
 			} catch (error) {
 				$baseConnection.setKey('status', isAlreadyConnected ? 'connected' : 'disconnected');
 				throw error;

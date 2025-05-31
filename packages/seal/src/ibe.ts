@@ -14,7 +14,7 @@ import { xor } from './utils.js';
 /**
  * The domain separation tag for the signing proof of possession.
  */
-export const DST_POP: Uint8Array = new TextEncoder().encode('SUI-SEAL-IBE-BLS12381-POP-00');
+export const DST_POP: Uint8Array = new TextEncoder().encode('MYS-SEAL-IBE-BLS12381-POP-00');
 
 /**
  * The interface for the key servers.

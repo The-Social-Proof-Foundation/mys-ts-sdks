@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/sui/bcs';
+import { bcs } from '@mysocial/mys/bcs';
 import * as object_table from '../0x0000000000000000000000000000000000000000000000000000000000000002/object_table.js';
 import * as extended_field from '../../extended_field.js';
 import * as committee from '../../committee.js';

@@ -51,19 +51,19 @@ export function useConnectWallet({
 				setConnectionStatus('connecting');
 
 				const connectResult = await wallet.features['standard:connect'].connect(connectArgs);
-				const connectedSuiAccounts = connectResult.accounts.filter((account) =>
-					account.chains.some((chain) => chain.split(':')[0] === 'sui'),
+				const connectedMysAccounts = connectResult.accounts.filter((account) =>
+					account.chains.some((chain) => chain.split(':')[0] === 'mys'),
 				);
-				const selectedAccount = getSelectedAccount(connectedSuiAccounts, accountAddress);
+				const selectedAccount = getSelectedAccount(connectedMysAccounts, accountAddress);
 
 				setWalletConnected(
 					wallet,
-					connectedSuiAccounts,
+					connectedMysAccounts,
 					selectedAccount,
 					connectResult.supportedIntents,
 				);
 
-				return { accounts: connectedSuiAccounts };
+				return { accounts: connectedMysAccounts };
 			} catch (error) {
 				setConnectionStatus('disconnected');
 				throw error;

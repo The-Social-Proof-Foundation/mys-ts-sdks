@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { fromHex } from '@mysocial/bcs';
-import { isValidSuiObjectId } from '@mysocial/sui/utils';
+import { isValidMysObjectId } from '@mysocial/mys/utils';
 import { split as externalSplit } from 'shamir-secret-sharing';
 
 import type { IBEEncryptions } from './bcs.js';
@@ -53,7 +53,7 @@ export async function encrypt({
 		threshold === 0 ||
 		keyServers.length > MAX_U8 ||
 		threshold > MAX_U8 ||
-		!isValidSuiObjectId(packageId)
+		!isValidMysObjectId(packageId)
 	) {
 		throw new UserError(
 			`Invalid key servers or threshold ${threshold} for ${keyServers.length} key servers for package ${packageId}`,

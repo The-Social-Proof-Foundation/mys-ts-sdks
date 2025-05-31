@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs, type BcsType } from '@mysocial/sui/bcs';
-import { type Transaction } from '@mysocial/sui/transactions';
+import { bcs, type BcsType } from '@mysocial/mys/bcs';
+import { type Transaction } from '@mysocial/mys/transactions';
 import { normalizeMoveArguments, type RawTransactionArgument } from './utils/index.js';
 export function Authenticated() {
 	return bcs.enum('Authenticated', {

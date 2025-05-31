@@ -2,9 +2,9 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { Secp256k1PublicKey } from '@mysocial/sui/keypairs/secp256k1';
-import { Secp256r1PublicKey } from '@mysocial/sui/keypairs/secp256r1';
-import { fromBase64 } from '@mysocial/sui/utils';
+import { Secp256k1PublicKey } from '@mysocial/mys/keypairs/secp256k1';
+import { Secp256r1PublicKey } from '@mysocial/mys/keypairs/secp256r1';
+import { fromBase64 } from '@mysocial/mys/utils';
 
 import { publicKeyFromDER } from '../utils/utils.js';
 import { AwsClient } from './aws4fetch.js';
