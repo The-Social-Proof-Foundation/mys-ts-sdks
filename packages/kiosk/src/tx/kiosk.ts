@@ -1,12 +1,13 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/sui/bcs';
+import { bcs } from '@socialproof/mys/bcs';
 import type {
 	Transaction,
 	TransactionArgument,
 	TransactionObjectArgument,
-} from '@mysten/sui/transactions';
+} from '@socialproof/mys/transactions';
 
 import type { ObjectArgument } from '../types/index.js';
 import { KIOSK_MODULE, KIOSK_TYPE } from '../types/index.js';
@@ -163,7 +164,7 @@ export function placeAndList(
 }
 
 /**
- * Call the `kiosk::purchase<T>(Kiosk, ID, Coin<SUI>)` function and receive an Item and
+ * Call the `kiosk::purchase<T>(Kiosk, ID, Coin<MYS>)` function and receive an Item and
  * a TransferRequest which needs to be dealt with (via a matching TransferPolicy).
  */
 export function purchase(
@@ -183,7 +184,7 @@ export function purchase(
 }
 
 /**
- * Call the `kiosk::withdraw(Kiosk, KioskOwnerCap, Option<u64>)` function and receive a Coin<SUI>.
+ * Call the `kiosk::withdraw(Kiosk, KioskOwnerCap, Option<u64>)` function and receive a Coin<MYS>.
  * If the amount is null, then the entire balance will be withdrawn.
  */
 export function withdrawFromKiosk(

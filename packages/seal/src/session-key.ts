@@ -1,19 +1,20 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { toBase64 } from '@mysten/bcs';
-import { bcs } from '@mysten/sui/bcs';
-import type { Signer } from '@mysten/sui/cryptography';
-import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';
-import { isValidSuiAddress, isValidSuiObjectId } from '@mysten/sui/utils';
-import { verifyPersonalMessageSignature } from '@mysten/sui/verify';
+import { toBase64 } from '@socialproof/bcs';
+import { bcs } from '@socialproof/mys/bcs';
+import type { Signer } from '@socialproof/mys/cryptography';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import { isValidMysAddress, isValidMysObjectId } from '@socialproof/mys/utils';
+import { verifyPersonalMessageSignature } from '@socialproof/mys/verify';
 import { generateSecretKey, toPublicKey, toVerificationKey } from './elgamal.js';
 import {
 	ExpiredSessionKeyError,
 	InvalidPersonalMessageSignatureError,
 	UserError,
 } from './error.js';
-import type { ZkLoginCompatibleClient } from '@mysten/sui/zklogin';
+import type { ZkLoginCompatibleClient } from '@socialproof/mys/zklogin';
 
 export const RequestFormat = bcs.struct('RequestFormat', {
 	ptb: bcs.vector(bcs.U8),
@@ -46,28 +47,28 @@ export class SessionKey {
 	#sessionKey: Ed25519Keypair;
 	#personalMessageSignature?: string;
 	#signer?: Signer;
-	#suiClient: ZkLoginCompatibleClient;
+	#mysClient: ZkLoginCompatibleClient;
 
 	constructor({
 		address,
 		packageId,
 		ttlMin,
 		signer,
-		suiClient,
+		mysClient,
 	}: {
 		address: string;
 		packageId: string;
 		ttlMin: number;
 		signer?: Signer;
-		suiClient: ZkLoginCompatibleClient;
+		mysClient: ZkLoginCompatibleClient;
 	}) {
-		if (!isValidSuiObjectId(packageId) || !isValidSuiAddress(address)) {
+		if (!isValidMysObjectId(packageId) || !isValidMysAddress(address)) {
 			throw new UserError(`Invalid package ID ${packageId} or address ${address}`);
 		}
 		if (ttlMin > 30 || ttlMin < 1) {
 			throw new UserError(`Invalid TTL ${ttlMin}, must be between 1 and 30`);
 		}
-		if (signer && signer.getPublicKey().toSuiAddress() !== address) {
+		if (signer && signer.getPublicKey().toMysAddress() !== address) {
 			throw new UserError('Signer address does not match session key address');
 		}
 		// TODO: Verify that the given package is the first version of the package.
@@ -78,7 +79,7 @@ export class SessionKey {
 		this.#ttlMin = ttlMin;
 		this.#sessionKey = Ed25519Keypair.generate();
 		this.#signer = signer;
-		this.#suiClient = suiClient;
+		this.#mysClient = mysClient;
 	}
 
 	isExpired(): boolean {
@@ -106,7 +107,7 @@ export class SessionKey {
 			try {
 				await verifyPersonalMessageSignature(this.getPersonalMessage(), personalMessageSignature, {
 					address: this.#address,
-					client: this.#suiClient,
+					client: this.#mysClient,
 				});
 				this.#personalMessageSignature = personalMessageSignature;
 			} catch (e) {
@@ -179,7 +180,7 @@ export class SessionKey {
 	 */
 	static import(
 		data: SessionKeyType,
-		suiClient: ZkLoginCompatibleClient,
+		mysClient: ZkLoginCompatibleClient,
 		signer?: Signer,
 	): SessionKey {
 		const instance = new SessionKey({
@@ -187,7 +188,7 @@ export class SessionKey {
 			packageId: data.packageId,
 			ttlMin: data.ttlMin,
 			signer,
-			suiClient,
+			mysClient,
 		});
 
 		instance.#creationTimeMs = data.creationTimeMs;

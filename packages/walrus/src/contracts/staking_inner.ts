@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/sui/bcs';
-import type { Transaction } from '@mysten/sui/transactions';
+import { bcs } from '@socialproof/mys/bcs';
+import type { Transaction } from '@socialproof/mys/transactions';
 
 import * as committee from './committee.js';
 import * as object_table from './deps/0x0000000000000000000000000000000000000000000000000000000000000002/object_table.js';

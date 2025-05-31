@@ -1,10 +1,11 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 export {
-	requestSuiFromFaucetV0,
-	requestSuiFromFaucetV1,
-	requestSuiFromFaucetV2,
+	requestMysFromFaucetV0,
+	requestMysFromFaucetV1,
+	requestMysFromFaucetV2,
 	getFaucetRequestStatus,
 	getFaucetHost,
 	FaucetRateLimitError,

@@ -1,9 +1,9 @@
 {
-	"name": "@mysten/wallet-standard",
+	"name": "@socialproof/wallet-standard",
 	"version": "0.15.2",
-	"description": "A suite of standard utilities for implementing wallets based on the Wallet Standard.",
+	"description": "A myste of standard utilities for implementing wallets based on the Wallet Standard.",
 	"license": "Apache-2.0",
-	"author": "Mysten Labs <build@mystenlabs.com>",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"type": "commonjs",
 	"main": "./dist/cjs/index.js",
 	"module": "./dist/esm/index.js",
@@ -33,11 +33,11 @@
 		"json-schema": "typescript-json-schema src/types.ts SerializedTransactionDataV2 --required --strictNullChecks > serialized-transaction-data-v2.schema.json && prettier -w serialized-transaction-data-v2.schema.json"
 	},
 	"dependencies": {
-		"@mysten/sui": "workspace:*",
+		"@socialproof/mys": "workspace:*",
 		"@wallet-standard/core": "1.1.0"
 	},
 	"devDependencies": {
-		"@mysten/build-scripts": "workspace:*",
+		"@socialproof/build-scripts": "workspace:*",
 		"typescript": "^5.8.2",
 		"typescript-json-schema": "^0.65.1"
 	}

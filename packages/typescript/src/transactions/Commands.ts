@@ -1,11 +1,12 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { toBase64 } from '@mysten/bcs';
+import { toBase64 } from '@socialproof/bcs';
 import type { InferInput } from 'valibot';
 import { parse } from 'valibot';
 
-import { normalizeSuiObjectId } from '../utils/sui-types.js';
+import { normalizeMysObjectId } from '../utils/mys-types.js';
 import { Argument } from './data/internal.js';
 import type { CallArg, Command } from './data/internal.js';
 import type { AsyncTransactionThunk, Transaction } from './Transaction.js';
@@ -17,7 +18,7 @@ export type TransactionArgument =
 export type TransactionInput = CallArg;
 
 // Keep in sync with constants in
-// crates/sui-framework/packages/sui-framework/sources/package.move
+// crates/mys-framework/packages/mys-framework/sources/package.move
 export enum UpgradePolicy {
 	COMPATIBLE = 0,
 	ADDITIVE = 128,
@@ -111,7 +112,7 @@ export const Commands = {
 				modules: modules.map((module) =>
 					typeof module === 'string' ? module : toBase64(new Uint8Array(module)),
 				),
-				dependencies: dependencies.map((dep) => normalizeSuiObjectId(dep)),
+				dependencies: dependencies.map((dep) => normalizeMysObjectId(dep)),
 			},
 		};
 	},
@@ -132,7 +133,7 @@ export const Commands = {
 				modules: modules.map((module) =>
 					typeof module === 'string' ? module : toBase64(new Uint8Array(module)),
 				),
-				dependencies: dependencies.map((dep) => normalizeSuiObjectId(dep)),
+				dependencies: dependencies.map((dep) => normalizeMysObjectId(dep)),
 				package: packageId,
 				ticket: parse(Argument, ticket),
 			},

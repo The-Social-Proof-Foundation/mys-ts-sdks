@@ -216,7 +216,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -329,7 +329,7 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "defaultSuinsName",
+            "name": "defaultMysnsName",
             "type": {
               "kind": "SCALAR",
               "name": "String"
@@ -394,12 +394,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "stakedSuis",
+            "name": "stakedMyss",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "StakedSuiConnection"
+                "name": "StakedMysConnection"
               }
             },
             "args": [
@@ -435,12 +435,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "suinsRegistrations",
+            "name": "mysnsRegistrations",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "SuinsRegistrationConnection"
+                "name": "MysnsRegistrationConnection"
               }
             },
             "args": [
@@ -1515,7 +1515,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -1655,7 +1655,7 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "defaultSuinsName",
+            "name": "defaultMysnsName",
             "type": {
               "kind": "SCALAR",
               "name": "String"
@@ -1910,12 +1910,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "stakedSuis",
+            "name": "stakedMyss",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "StakedSuiConnection"
+                "name": "StakedMysConnection"
               }
             },
             "args": [
@@ -1972,12 +1972,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "suinsRegistrations",
+            "name": "mysnsRegistrations",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "SuinsRegistrationConnection"
+                "name": "MysnsRegistrationConnection"
               }
             },
             "args": [
@@ -2152,7 +2152,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -2292,7 +2292,7 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "defaultSuinsName",
+            "name": "defaultMysnsName",
             "type": {
               "kind": "SCALAR",
               "name": "String"
@@ -2574,12 +2574,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "stakedSuis",
+            "name": "stakedMyss",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "StakedSuiConnection"
+                "name": "StakedMysConnection"
               }
             },
             "args": [
@@ -2636,12 +2636,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "suinsRegistrations",
+            "name": "mysnsRegistrations",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "SuinsRegistrationConnection"
+                "name": "MysnsRegistrationConnection"
               }
             },
             "args": [
@@ -3960,7 +3960,7 @@ const introspection = {
             "name": "sender",
             "type": {
               "kind": "SCALAR",
-              "name": "SuiAddress"
+              "name": "MysAddress"
             }
           },
           {
@@ -4489,11 +4489,11 @@ const introspection = {
           },
           {
             "kind": "OBJECT",
-            "name": "StakedSui"
+            "name": "StakedMys"
           },
           {
             "kind": "OBJECT",
-            "name": "SuinsRegistration"
+            "name": "MysnsRegistration"
           }
         ]
       },
@@ -4650,11 +4650,11 @@ const introspection = {
           },
           {
             "kind": "OBJECT",
-            "name": "StakedSui"
+            "name": "StakedMys"
           },
           {
             "kind": "OBJECT",
-            "name": "SuinsRegistration"
+            "name": "MysnsRegistration"
           }
         ]
       },
@@ -4668,7 +4668,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -4781,7 +4781,7 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "defaultSuinsName",
+            "name": "defaultMysnsName",
             "type": {
               "kind": "SCALAR",
               "name": "String"
@@ -4846,12 +4846,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "stakedSuis",
+            "name": "stakedMyss",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "StakedSuiConnection"
+                "name": "StakedMysConnection"
               }
             },
             "args": [
@@ -4887,12 +4887,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "suinsRegistrations",
+            "name": "mysnsRegistrations",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "SuinsRegistrationConnection"
+                "name": "MysnsRegistrationConnection"
               }
             },
             "args": [
@@ -4960,11 +4960,11 @@ const introspection = {
           },
           {
             "kind": "OBJECT",
-            "name": "StakedSui"
+            "name": "StakedMys"
           },
           {
             "kind": "OBJECT",
-            "name": "SuinsRegistration"
+            "name": "MysnsRegistration"
           }
         ]
       },
@@ -5021,7 +5021,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -5033,7 +5033,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -5208,7 +5208,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -6273,7 +6273,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -6298,19 +6298,19 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "asStakedSui",
+            "name": "asStakedMys",
             "type": {
               "kind": "OBJECT",
-              "name": "StakedSui"
+              "name": "StakedMys"
             },
             "args": [],
             "isDeprecated": false
           },
           {
-            "name": "asSuinsRegistration",
+            "name": "asMysnsRegistration",
             "type": {
               "kind": "OBJECT",
-              "name": "SuinsRegistration"
+              "name": "MysnsRegistration"
             },
             "args": [],
             "isDeprecated": false
@@ -6440,7 +6440,7 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "defaultSuinsName",
+            "name": "defaultMysnsName",
             "type": {
               "kind": "SCALAR",
               "name": "String"
@@ -6695,12 +6695,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "stakedSuis",
+            "name": "stakedMyss",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "StakedSuiConnection"
+                "name": "StakedMysConnection"
               }
             },
             "args": [
@@ -6757,12 +6757,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "suinsRegistrations",
+            "name": "mysnsRegistrations",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "SuinsRegistrationConnection"
+                "name": "MysnsRegistrationConnection"
               }
             },
             "args": [
@@ -6921,7 +6921,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -7043,7 +7043,7 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "defaultSuinsName",
+            "name": "defaultMysnsName",
             "type": {
               "kind": "SCALAR",
               "name": "String"
@@ -7361,12 +7361,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "stakedSuis",
+            "name": "stakedMyss",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "StakedSuiConnection"
+                "name": "StakedMysConnection"
               }
             },
             "args": [
@@ -7423,12 +7423,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "suinsRegistrations",
+            "name": "mysnsRegistrations",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "SuinsRegistrationConnection"
+                "name": "MysnsRegistrationConnection"
               }
             },
             "args": [
@@ -8026,7 +8026,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -8166,7 +8166,7 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "defaultSuinsName",
+            "name": "defaultMysnsName",
             "type": {
               "kind": "SCALAR",
               "name": "String"
@@ -8409,12 +8409,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "stakedSuis",
+            "name": "stakedMyss",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "StakedSuiConnection"
+                "name": "StakedMysConnection"
               }
             },
             "args": [
@@ -8471,12 +8471,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "suinsRegistrations",
+            "name": "mysnsRegistrations",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "SuinsRegistrationConnection"
+                "name": "MysnsRegistrationConnection"
               }
             },
             "args": [
@@ -8545,7 +8545,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -8777,7 +8777,7 @@ const introspection = {
             "name": "owner",
             "type": {
               "kind": "SCALAR",
-              "name": "SuiAddress"
+              "name": "MysAddress"
             }
           },
           {
@@ -8788,7 +8788,7 @@ const introspection = {
                 "kind": "NON_NULL",
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "SuiAddress"
+                  "name": "MysAddress"
                 }
               }
             }
@@ -8806,7 +8806,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             }
           },
@@ -8873,7 +8873,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             }
           },
@@ -8945,7 +8945,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -8997,7 +8997,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -9128,7 +9128,7 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "defaultSuinsName",
+            "name": "defaultMysnsName",
             "type": {
               "kind": "SCALAR",
               "name": "String"
@@ -9274,12 +9274,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "stakedSuis",
+            "name": "stakedMyss",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "StakedSuiConnection"
+                "name": "StakedMysConnection"
               }
             },
             "args": [
@@ -9315,12 +9315,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "suinsRegistrations",
+            "name": "mysnsRegistrations",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "SuinsRegistrationConnection"
+                "name": "MysnsRegistrationConnection"
               }
             },
             "args": [
@@ -9805,7 +9805,7 @@ const introspection = {
                   "kind": "NON_NULL",
                   "ofType": {
                     "kind": "SCALAR",
-                    "name": "SuiAddress"
+                    "name": "MysAddress"
                   }
                 }
               }
@@ -9870,7 +9870,7 @@ const introspection = {
                   "kind": "NON_NULL",
                   "ofType": {
                     "kind": "SCALAR",
-                    "name": "SuiAddress"
+                    "name": "MysAddress"
                   }
                 }
               }
@@ -10183,7 +10183,7 @@ const introspection = {
                   "kind": "NON_NULL",
                   "ofType": {
                     "kind": "SCALAR",
-                    "name": "SuiAddress"
+                    "name": "MysAddress"
                   }
                 }
               }
@@ -10235,7 +10235,7 @@ const introspection = {
                   "kind": "NON_NULL",
                   "ofType": {
                     "kind": "SCALAR",
-                    "name": "SuiAddress"
+                    "name": "MysAddress"
                   }
                 }
               },
@@ -10310,7 +10310,7 @@ const introspection = {
                   "kind": "NON_NULL",
                   "ofType": {
                     "kind": "SCALAR",
-                    "name": "SuiAddress"
+                    "name": "MysAddress"
                   }
                 }
               },
@@ -10337,7 +10337,7 @@ const introspection = {
                   "kind": "NON_NULL",
                   "ofType": {
                     "kind": "SCALAR",
-                    "name": "SuiAddress"
+                    "name": "MysAddress"
                   }
                 }
               },
@@ -10387,7 +10387,7 @@ const introspection = {
                   "kind": "NON_NULL",
                   "ofType": {
                     "kind": "SCALAR",
-                    "name": "SuiAddress"
+                    "name": "MysAddress"
                   }
                 }
               },
@@ -10498,7 +10498,7 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "resolveSuinsAddress",
+            "name": "resolveMysnsAddress",
             "type": {
               "kind": "OBJECT",
               "name": "Address"
@@ -10666,7 +10666,7 @@ const introspection = {
                   "kind": "NON_NULL",
                   "ofType": {
                     "kind": "SCALAR",
-                    "name": "SuiAddress"
+                    "name": "MysAddress"
                   }
                 }
               },
@@ -10784,7 +10784,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -11160,7 +11160,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -11203,7 +11203,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -11234,7 +11234,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -11277,7 +11277,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -11428,7 +11428,7 @@ const introspection = {
       },
       {
         "kind": "OBJECT",
-        "name": "StakedSui",
+        "name": "StakedMys",
         "fields": [
           {
             "name": "activatedEpoch",
@@ -11445,7 +11445,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -11576,7 +11576,7 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "defaultSuinsName",
+            "name": "defaultMysnsName",
             "type": {
               "kind": "SCALAR",
               "name": "String"
@@ -11779,7 +11779,7 @@ const introspection = {
             "name": "poolId",
             "type": {
               "kind": "SCALAR",
-              "name": "SuiAddress"
+              "name": "MysAddress"
             },
             "args": [],
             "isDeprecated": false
@@ -11879,12 +11879,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "stakedSuis",
+            "name": "stakedMyss",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "StakedSuiConnection"
+                "name": "StakedMysConnection"
               }
             },
             "args": [
@@ -11941,12 +11941,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "suinsRegistrations",
+            "name": "mysnsRegistrations",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "SuinsRegistrationConnection"
+                "name": "MysnsRegistrationConnection"
               }
             },
             "args": [
@@ -12011,7 +12011,7 @@ const introspection = {
       },
       {
         "kind": "OBJECT",
-        "name": "StakedSuiConnection",
+        "name": "StakedMysConnection",
         "fields": [
           {
             "name": "edges",
@@ -12023,7 +12023,7 @@ const introspection = {
                   "kind": "NON_NULL",
                   "ofType": {
                     "kind": "OBJECT",
-                    "name": "StakedSuiEdge"
+                    "name": "StakedMysEdge"
                   }
                 }
               }
@@ -12041,7 +12041,7 @@ const introspection = {
                   "kind": "NON_NULL",
                   "ofType": {
                     "kind": "OBJECT",
-                    "name": "StakedSui"
+                    "name": "StakedMys"
                   }
                 }
               }
@@ -12066,7 +12066,7 @@ const introspection = {
       },
       {
         "kind": "OBJECT",
-        "name": "StakedSuiEdge",
+        "name": "StakedMysEdge",
         "fields": [
           {
             "name": "cursor",
@@ -12086,7 +12086,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "StakedSui"
+                "name": "StakedMys"
               }
             },
             "args": [],
@@ -12142,11 +12142,11 @@ const introspection = {
       },
       {
         "kind": "SCALAR",
-        "name": "SuiAddress"
+        "name": "MysAddress"
       },
       {
         "kind": "OBJECT",
-        "name": "SuinsRegistration",
+        "name": "MysnsRegistration",
         "fields": [
           {
             "name": "address",
@@ -12154,7 +12154,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -12285,7 +12285,7 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "defaultSuinsName",
+            "name": "defaultMysnsName",
             "type": {
               "kind": "SCALAR",
               "name": "String"
@@ -12552,12 +12552,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "stakedSuis",
+            "name": "stakedMyss",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "StakedSuiConnection"
+                "name": "StakedMysConnection"
               }
             },
             "args": [
@@ -12614,12 +12614,12 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "suinsRegistrations",
+            "name": "mysnsRegistrations",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "SuinsRegistrationConnection"
+                "name": "MysnsRegistrationConnection"
               }
             },
             "args": [
@@ -12684,7 +12684,7 @@ const introspection = {
       },
       {
         "kind": "OBJECT",
-        "name": "SuinsRegistrationConnection",
+        "name": "MysnsRegistrationConnection",
         "fields": [
           {
             "name": "edges",
@@ -12696,7 +12696,7 @@ const introspection = {
                   "kind": "NON_NULL",
                   "ofType": {
                     "kind": "OBJECT",
-                    "name": "SuinsRegistrationEdge"
+                    "name": "MysnsRegistrationEdge"
                   }
                 }
               }
@@ -12714,7 +12714,7 @@ const introspection = {
                   "kind": "NON_NULL",
                   "ofType": {
                     "kind": "OBJECT",
-                    "name": "SuinsRegistration"
+                    "name": "MysnsRegistration"
                   }
                 }
               }
@@ -12739,7 +12739,7 @@ const introspection = {
       },
       {
         "kind": "OBJECT",
-        "name": "SuinsRegistrationEdge",
+        "name": "MysnsRegistrationEdge",
         "fields": [
           {
             "name": "cursor",
@@ -12759,7 +12759,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "OBJECT",
-                "name": "SuinsRegistration"
+                "name": "MysnsRegistration"
               }
             },
             "args": [],
@@ -13378,28 +13378,28 @@ const introspection = {
             "name": "affectedAddress",
             "type": {
               "kind": "SCALAR",
-              "name": "SuiAddress"
+              "name": "MysAddress"
             }
           },
           {
             "name": "sentAddress",
             "type": {
               "kind": "SCALAR",
-              "name": "SuiAddress"
+              "name": "MysAddress"
             }
           },
           {
             "name": "inputObject",
             "type": {
               "kind": "SCALAR",
-              "name": "SuiAddress"
+              "name": "MysAddress"
             }
           },
           {
             "name": "changedObject",
             "type": {
               "kind": "SCALAR",
-              "name": "SuiAddress"
+              "name": "MysAddress"
             }
           },
           {
@@ -13582,7 +13582,7 @@ const introspection = {
             "name": "sender",
             "type": {
               "kind": "SCALAR",
-              "name": "SuiAddress"
+              "name": "MysAddress"
             }
           },
           {
@@ -13616,7 +13616,7 @@ const introspection = {
             "name": "gasSponsor",
             "type": {
               "kind": "SCALAR",
-              "name": "SuiAddress"
+              "name": "MysAddress"
             }
           }
         ],
@@ -13669,7 +13669,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -13820,7 +13820,7 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
@@ -13836,7 +13836,7 @@ const introspection = {
                   "kind": "NON_NULL",
                   "ofType": {
                     "kind": "SCALAR",
-                    "name": "SuiAddress"
+                    "name": "MysAddress"
                   }
                 }
               }
@@ -14056,7 +14056,7 @@ const introspection = {
             "isDeprecated": false
           },
           {
-            "name": "pendingTotalSuiWithdraw",
+            "name": "pendingTotalMysWithdraw",
             "type": {
               "kind": "SCALAR",
               "name": "BigInt"
@@ -14156,14 +14156,14 @@ const introspection = {
               "kind": "NON_NULL",
               "ofType": {
                 "kind": "SCALAR",
-                "name": "SuiAddress"
+                "name": "MysAddress"
               }
             },
             "args": [],
             "isDeprecated": false
           },
           {
-            "name": "stakingPoolSuiBalance",
+            "name": "stakingPoolMysBalance",
             "type": {
               "kind": "SCALAR",
               "name": "BigInt"
@@ -14397,7 +14397,7 @@ const introspection = {
             "name": "inactivePoolsId",
             "type": {
               "kind": "SCALAR",
-              "name": "SuiAddress"
+              "name": "MysAddress"
             },
             "args": [],
             "isDeprecated": false
@@ -14415,7 +14415,7 @@ const introspection = {
             "name": "pendingActiveValidatorsId",
             "type": {
               "kind": "SCALAR",
-              "name": "SuiAddress"
+              "name": "MysAddress"
             },
             "args": [],
             "isDeprecated": false
@@ -14448,7 +14448,7 @@ const introspection = {
             "name": "stakingPoolMappingsId",
             "type": {
               "kind": "SCALAR",
-              "name": "SuiAddress"
+              "name": "MysAddress"
             },
             "args": [],
             "isDeprecated": false
@@ -14475,7 +14475,7 @@ const introspection = {
             "name": "validatorCandidatesId",
             "type": {
               "kind": "SCALAR",
-              "name": "SuiAddress"
+              "name": "MysAddress"
             },
             "args": [],
             "isDeprecated": false

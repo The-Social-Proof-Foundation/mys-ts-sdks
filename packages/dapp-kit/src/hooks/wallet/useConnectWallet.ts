@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type {
@@ -6,7 +7,7 @@ import type {
 	StandardConnectOutput,
 	WalletAccount,
 	WalletWithRequiredFeatures,
-} from '@mysten/wallet-standard';
+} from '@socialproof/wallet-standard';
 import type { UseMutationOptions, UseMutationResult } from '@tanstack/react-query';
 import { useMutation } from '@tanstack/react-query';
 
@@ -50,19 +51,19 @@ export function useConnectWallet({
 				setConnectionStatus('connecting');
 
 				const connectResult = await wallet.features['standard:connect'].connect(connectArgs);
-				const connectedSuiAccounts = connectResult.accounts.filter((account) =>
-					account.chains.some((chain) => chain.split(':')[0] === 'sui'),
+				const connectedMysAccounts = connectResult.accounts.filter((account) =>
+					account.chains.some((chain) => chain.split(':')[0] === 'mys'),
 				);
-				const selectedAccount = getSelectedAccount(connectedSuiAccounts, accountAddress);
+				const selectedAccount = getSelectedAccount(connectedMysAccounts, accountAddress);
 
 				setWalletConnected(
 					wallet,
-					connectedSuiAccounts,
+					connectedMysAccounts,
 					selectedAccount,
 					connectResult.supportedIntents,
 				);
 
-				return { accounts: connectedSuiAccounts };
+				return { accounts: connectedMysAccounts };
 			} catch (error) {
 				setConnectionStatus('disconnected');
 				throw error;

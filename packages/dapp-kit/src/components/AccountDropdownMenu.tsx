@@ -1,12 +1,13 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { formatAddress } from '@mysten/sui/utils';
-import type { WalletAccount } from '@mysten/wallet-standard';
+import { formatAddress } from '@socialproof/mys/utils';
+import type { WalletAccount } from '@socialproof/wallet-standard';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import clsx from 'clsx';
 
-import { useResolveSuiNSName } from '../hooks/useResolveSuiNSNames.js';
+import { useResolveMysNSName } from '../hooks/useResolveMysNSNames.js';
 import { useAccounts } from '../hooks/wallet/useAccounts.js';
 import { useDisconnectWallet } from '../hooks/wallet/useDisconnectWallet.js';
 import { useSwitchAccount } from '../hooks/wallet/useSwitchAccount.js';
@@ -24,7 +25,7 @@ type AccountDropdownMenuProps = {
 export function AccountDropdownMenu({ currentAccount }: AccountDropdownMenuProps) {
 	const { mutate: disconnectWallet } = useDisconnectWallet();
 
-	const { data: domain } = useResolveSuiNSName(
+	const { data: domain } = useResolveMysNSName(
 		currentAccount.label ? null : currentAccount.address,
 	);
 	const accounts = useAccounts();
@@ -73,7 +74,7 @@ export function AccountDropdownMenuItem({
 	active?: boolean;
 }) {
 	const { mutate: switchAccount } = useSwitchAccount();
-	const { data: domain } = useResolveSuiNSName(account.label ? null : account.address);
+	const { data: domain } = useResolveMysNSName(account.label ? null : account.address);
 
 	return (
 		<DropdownMenu.Item

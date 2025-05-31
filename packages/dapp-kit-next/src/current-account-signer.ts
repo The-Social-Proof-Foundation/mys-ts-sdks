@@ -1,13 +1,14 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { PublicKey, SignatureScheme } from '@mysten/sui/cryptography';
-import { SIGNATURE_FLAG_TO_SCHEME, Signer } from '@mysten/sui/cryptography';
+import type { PublicKey, SignatureScheme } from '@socialproof/mys/cryptography';
+import { SIGNATURE_FLAG_TO_SCHEME, Signer } from '@socialproof/mys/cryptography';
 import type { DAppKit } from './core/index.js';
-import type { Transaction } from '@mysten/sui/transactions';
-import type { Experimental_SuiClientTypes } from '@mysten/sui/experimental';
-import { parseTransactionBcs, parseTransactionEffectsBcs } from '@mysten/sui/experimental';
-import { toBase64, fromBase64 } from '@mysten/sui/utils';
+import type { Transaction } from '@socialproof/mys/transactions';
+import type { Experimental_MysClientTypes } from '@socialproof/mys/experimental';
+import { parseTransactionBcs, parseTransactionEffectsBcs } from '@socialproof/mys/experimental';
+import { toBase64, fromBase64 } from '@socialproof/mys/utils';
 
 export class CurrentAccountSigner extends Signer {
 	dAppKit: DAppKit;
@@ -55,7 +56,7 @@ export class CurrentAccountSigner extends Signer {
 		transaction,
 	}: {
 		transaction: Transaction;
-	}): Promise<Experimental_SuiClientTypes.TransactionResponse> {
+	}): Promise<Experimental_MysClientTypes.TransactionResponse> {
 		const { bytes, signature, digest, effects } = await this.dAppKit.signAndExecuteTransaction({
 			transaction,
 		});

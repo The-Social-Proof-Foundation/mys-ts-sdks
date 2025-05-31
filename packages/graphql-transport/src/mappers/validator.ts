@@ -1,13 +1,14 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiValidatorSummary } from '@mysten/sui/client';
+import type { MysValidatorSummary } from '@socialproof/mys/client';
 
 import type { Rpc_Validator_FieldsFragment } from '../generated/queries.js';
 
 export function mapGraphQlValidatorToRpcValidator(
 	validator: Rpc_Validator_FieldsFragment,
-): SuiValidatorSummary {
+): MysValidatorSummary {
 	return {
 		commissionRate: validator.commissionRate?.toString()!,
 		description: validator.description!,
@@ -31,7 +32,7 @@ export function mapGraphQlValidatorToRpcValidator(
 		nextEpochWorkerPubkeyBytes: validator.nextEpochCredentials?.workerPubKey,
 		operationCapId: validator.operationCap?.address!,
 		p2pAddress: validator.credentials?.p2PAddress!,
-		pendingTotalSuiWithdraw: validator.pendingTotalSuiWithdraw,
+		pendingTotalMysWithdraw: validator.pendingTotalMysWithdraw,
 		pendingPoolTokenWithdraw: validator.pendingPoolTokenWithdraw,
 		poolTokenBalance: validator.poolTokenBalance,
 		pendingStake: validator.pendingStake,
@@ -42,8 +43,8 @@ export function mapGraphQlValidatorToRpcValidator(
 		rewardsPool: validator.rewardsPool,
 		stakingPoolId: validator.stakingPool?.address!,
 		stakingPoolActivationEpoch: validator.stakingPoolActivationEpoch?.toString(),
-		stakingPoolSuiBalance: validator.stakingPoolSuiBalance,
-		suiAddress: validator.address.address,
+		stakingPoolMysBalance: validator.stakingPoolMysBalance,
+		mysAddress: validator.address.address,
 		votingPower: validator.votingPower?.toString()!,
 		workerAddress: validator.credentials?.workerAddress!,
 		workerPubkeyBytes: validator.credentials?.workerPubKey,

@@ -1,17 +1,18 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 import { renderHook, waitFor } from '@testing-library/react';
 
-import { useSuiClientQuery } from '../../src/hooks/useSuiClientQuery.js';
+import { useMysClientQuery } from '../../src/hooks/useMysClientQuery.js';
 import { createWalletProviderContextWrapper } from '../test-utils.js';
 
-describe('useSuiClientQuery', () => {
+describe('useMysClientQuery', () => {
 	it('should fetch data', async () => {
-		const suiClient = new SuiClient({ url: getFullnodeUrl('mainnet') });
-		const wrapper = createWalletProviderContextWrapper({}, suiClient);
+		const mysClient = new MysClient({ url: getFullnodeUrl('mainnet') });
+		const wrapper = createWalletProviderContextWrapper({}, mysClient);
 
-		const queryTransactionBlocks = vi.spyOn(suiClient, 'queryTransactionBlocks');
+		const queryTransactionBlocks = vi.spyOn(mysClient, 'queryTransactionBlocks');
 
 		queryTransactionBlocks.mockResolvedValueOnce({
 			data: [{ digest: '0x123' }],
@@ -21,7 +22,7 @@ describe('useSuiClientQuery', () => {
 
 		const { result } = renderHook(
 			() =>
-				useSuiClientQuery('queryTransactionBlocks', {
+				useMysClientQuery('queryTransactionBlocks', {
 					filter: {
 						FromAddress: '0x123',
 					},

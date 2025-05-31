@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import type { PublicKey, SignatureFlag } from '@mysten/sui/cryptography';
-import { SIGNATURE_FLAG_TO_SCHEME, Signer } from '@mysten/sui/cryptography';
-import { fromBase64, toBase64 } from '@mysten/sui/utils';
+import type { PublicKey, SignatureFlag } from '@socialproof/mys/cryptography';
+import { SIGNATURE_FLAG_TO_SCHEME, Signer } from '@socialproof/mys/cryptography';
+import { fromBase64, toBase64 } from '@socialproof/mys/utils';
 
 import { getConcatenatedSignature } from '../utils/utils.js';
 import type { AwsClientOptions } from './aws-client.js';
@@ -21,7 +22,7 @@ export interface AwsKmsSignerOptions {
 }
 
 /**
- * Aws KMS Signer integrates AWS Key Management Service (KMS) with the Sui blockchain
+ * Aws KMS Signer integrates AWS Key Management Service (KMS) with the Mys blockchain
  * to provide signing capabilities using AWS-managed cryptographic keys.
  */
 export class AwsKmsSigner extends Signer {

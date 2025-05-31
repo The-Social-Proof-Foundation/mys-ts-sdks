@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64 } from '@mysten/bcs';
+import { fromBase64 } from '@socialproof/bcs';
 import { ed25519 } from '@noble/curves/ed25519';
 
 import {
@@ -58,7 +59,7 @@ export class Ed25519PublicKey extends PublicKey {
 	}
 
 	/**
-	 * Return the Sui address associated with this Ed25519 public key
+	 * Return the Mys address associated with this Ed25519 public key
 	 */
 	flag(): number {
 		return SIGNATURE_SCHEME_TO_FLAG['ED25519'];

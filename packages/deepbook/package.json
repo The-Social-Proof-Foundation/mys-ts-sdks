@@ -1,7 +1,7 @@
 {
-	"name": "@mysten/deepbook",
-	"author": "Mysten Labs <build@mystenlabs.com>",
-	"description": "Sui Deepbook SDK",
+	"name": "@socialproof/deepbook",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
+	"description": "Mys Deepbook SDK",
 	"version": "0.8.55",
 	"license": "Apache-2.0",
 	"type": "commonjs",
@@ -34,10 +34,10 @@
 		"lint:fix": "pnpm run eslint:fix && pnpm run prettier:fix"
 	},
 	"dependencies": {
-		"@mysten/sui": "workspace:*"
+		"@socialproof/mys": "workspace:*"
 	},
 	"devDependencies": {
-		"@mysten/build-scripts": "workspace:*",
+		"@socialproof/build-scripts": "workspace:*",
 		"@types/node": "^22.13.17",
 		"tmp": "^0.2.3",
 		"ts-node": "^10.9.2",

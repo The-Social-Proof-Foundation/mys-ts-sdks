@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { WalletWithFeatures, WalletWithRequiredFeatures } from '@mysten/wallet-standard';
+import type { WalletWithFeatures, WalletWithRequiredFeatures } from '@socialproof/wallet-standard';
 import type { ReactNode } from 'react';
 import { useRef } from 'react';
 import type { StateStorage } from 'zustand/middleware';

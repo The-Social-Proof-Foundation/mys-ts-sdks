@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import {
@@ -6,10 +7,10 @@ import {
 	useConnectWallet,
 	useCurrentAccount,
 	useSignAndExecuteTransaction,
-	useSuiClientContext,
+	useMysClientContext,
 	useWallets,
-} from '@mysten/dapp-kit';
-import { Transaction } from '@mysten/sui/transactions';
+} from '@socialproof/dapp-kit';
+import { Transaction } from '@socialproof/mys/transactions';
 import { useState } from 'react';
 
 import { isEnokiWallet } from '../src/wallet/index.js';
@@ -23,7 +24,7 @@ export function App() {
 	const googleWallet = wallets.find((wallet) => wallet.provider === 'google');
 
 	const { mutateAsync: signAndExecute } = useSignAndExecuteTransaction();
-	const { selectNetwork, networks } = useSuiClientContext();
+	const { selectNetwork, networks } = useMysClientContext();
 
 	return (
 		<div>

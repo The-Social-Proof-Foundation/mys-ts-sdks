@@ -1,14 +1,15 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 import { renderHook, waitFor } from '@testing-library/react';
 
-import { useSuiClientQueries } from '../../src/hooks/useSuiClientQueries.js';
+import { useMysClientQueries } from '../../src/hooks/useMysClientQueries.js';
 import { createWalletProviderContextWrapper } from '../test-utils.js';
 
 const MOCK_GET_All_BALANCE_RESULT_DATA = [
 	{
-		coinType: '0x2::sui::SUI',
+		coinType: '0x2::mys::MYS',
 		coinObjectCount: 1,
 		totalBalance: '100000',
 		lockedBalance: {},
@@ -20,19 +21,19 @@ const MOCK_QUERY_TRANSACTION_BLOCK_RESULT_DATA = {
 	nextCursor: 'page2',
 };
 
-describe('useSuiClientQueries', () => {
-	const suiClient = new SuiClient({ url: getFullnodeUrl('mainnet') });
-	const wrapper = createWalletProviderContextWrapper({}, suiClient);
+describe('useMysClientQueries', () => {
+	const mysClient = new MysClient({ url: getFullnodeUrl('mainnet') });
+	const wrapper = createWalletProviderContextWrapper({}, mysClient);
 	test('should fetch data', async () => {
-		const getAllBalances = vi.spyOn(suiClient, 'getAllBalances');
-		const queryTransactionBlocks = vi.spyOn(suiClient, 'queryTransactionBlocks');
+		const getAllBalances = vi.spyOn(mysClient, 'getAllBalances');
+		const queryTransactionBlocks = vi.spyOn(mysClient, 'queryTransactionBlocks');
 
 		getAllBalances.mockResolvedValueOnce(MOCK_GET_All_BALANCE_RESULT_DATA);
 		queryTransactionBlocks.mockResolvedValueOnce(MOCK_QUERY_TRANSACTION_BLOCK_RESULT_DATA);
 
 		const { result } = renderHook(
 			() =>
-				useSuiClientQueries({
+				useMysClientQueries({
 					queries: [
 						{
 							method: 'getAllBalances',
@@ -86,15 +87,15 @@ describe('useSuiClientQueries', () => {
 		expect(result.current[1].data).toEqual(MOCK_QUERY_TRANSACTION_BLOCK_RESULT_DATA);
 	});
 	test('should fetch data with combine function', async () => {
-		const getAllBalances = vi.spyOn(suiClient, 'getAllBalances');
-		const queryTransactionBlocks = vi.spyOn(suiClient, 'queryTransactionBlocks');
+		const getAllBalances = vi.spyOn(mysClient, 'getAllBalances');
+		const queryTransactionBlocks = vi.spyOn(mysClient, 'queryTransactionBlocks');
 
 		getAllBalances.mockResolvedValueOnce(MOCK_GET_All_BALANCE_RESULT_DATA);
 		queryTransactionBlocks.mockResolvedValueOnce(MOCK_QUERY_TRANSACTION_BLOCK_RESULT_DATA);
 
 		const { result } = renderHook(
 			() =>
-				useSuiClientQueries({
+				useMysClientQueries({
 					queries: [
 						{
 							method: 'getAllBalances',

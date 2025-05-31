@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type { Coin, Pool } from '../types/index.js';
@@ -29,9 +30,9 @@ export const testnetCoins: CoinMap = {
 		type: `0x36dbef866a1d62bf7328989a10fb2f07d769f4ee587c0de4a0a256e57e0a58a8::deep::DEEP`,
 		scalar: 1000000,
 	},
-	SUI: {
+	MYS: {
 		address: `0x0000000000000000000000000000000000000000000000000000000000000002`,
-		type: `0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI`,
+		type: `0x0000000000000000000000000000000000000000000000000000000000000002::mys::MYS`,
 		scalar: 1000000000,
 	},
 	DBUSDC: {
@@ -57,9 +58,9 @@ export const mainnetCoins: CoinMap = {
 		type: `0xdeeb7a4662eec9f2f3def03fb937a663dddaa2e215b8078a284d026b7946c270::deep::DEEP`,
 		scalar: 1000000,
 	},
-	SUI: {
+	MYS: {
 		address: `0x0000000000000000000000000000000000000000000000000000000000000002`,
-		type: `0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI`,
+		type: `0x0000000000000000000000000000000000000000000000000000000000000002::mys::MYS`,
 		scalar: 1000000000,
 	},
 	USDC: {
@@ -136,14 +137,14 @@ export const mainnetCoins: CoinMap = {
 };
 
 export const testnetPools: PoolMap = {
-	DEEP_SUI: {
+	DEEP_MYS: {
 		address: `0x48c95963e9eac37a316b7ae04a0deb761bcdcc2b67912374d6036e7f0e9bae9f`,
 		baseCoin: 'DEEP',
-		quoteCoin: 'SUI',
+		quoteCoin: 'MYS',
 	},
-	SUI_DBUSDC: {
+	MYS_DBUSDC: {
 		address: `0x1c19362ca52b8ffd7a33cee805a67d40f31e6ba303753fd3a4cfdfacea7163a5`,
-		baseCoin: 'SUI',
+		baseCoin: 'MYS',
 		quoteCoin: 'DBUSDC',
 	},
 	DEEP_DBUSDC: {
@@ -161,22 +162,22 @@ export const testnetPools: PoolMap = {
 		baseCoin: 'WAL',
 		quoteCoin: 'DBUSDC',
 	},
-	WAL_SUI: {
+	WAL_MYS: {
 		address: `0x8c1c1b186c4fddab1ebd53e0895a36c1d1b3b9a77cd34e607bef49a38af0150a`,
 		baseCoin: 'WAL',
-		quoteCoin: 'SUI',
+		quoteCoin: 'MYS',
 	},
 };
 
 export const mainnetPools: PoolMap = {
-	DEEP_SUI: {
+	DEEP_MYS: {
 		address: `0xb663828d6217467c8a1838a03793da896cbe745b150ebd57d82f814ca579fc22`,
 		baseCoin: 'DEEP',
-		quoteCoin: 'SUI',
+		quoteCoin: 'MYS',
 	},
-	SUI_USDC: {
+	MYS_USDC: {
 		address: `0xe05dafb5133bcffb8d59f4e12465dc0e9faeaa05e3e342a08fe135800e3e4407`,
-		baseCoin: 'SUI',
+		baseCoin: 'MYS',
 		quoteCoin: 'USDC',
 	},
 	DEEP_USDC: {
@@ -204,19 +205,19 @@ export const mainnetPools: PoolMap = {
 		baseCoin: 'NS',
 		quoteCoin: 'USDC',
 	},
-	NS_SUI: {
+	NS_MYS: {
 		address: `0x27c4fdb3b846aa3ae4a65ef5127a309aa3c1f466671471a806d8912a18b253e8`,
 		baseCoin: 'NS',
-		quoteCoin: 'SUI',
+		quoteCoin: 'MYS',
 	},
-	TYPUS_SUI: {
+	TYPUS_MYS: {
 		address: `0xe8e56f377ab5a261449b92ac42c8ddaacd5671e9fec2179d7933dd1a91200eec`,
 		baseCoin: 'TYPUS',
-		quoteCoin: 'SUI',
+		quoteCoin: 'MYS',
 	},
-	SUI_AUSD: {
+	MYS_AUSD: {
 		address: `0x183df694ebc852a5f90a959f0f563b82ac9691e42357e9a9fe961d71a1b809c8`,
-		baseCoin: 'SUI',
+		baseCoin: 'MYS',
 		quoteCoin: 'AUSD',
 	},
 	AUSD_USDC: {
@@ -224,10 +225,10 @@ export const mainnetPools: PoolMap = {
 		baseCoin: 'AUSD',
 		quoteCoin: 'USDC',
 	},
-	DRF_SUI: {
+	DRF_MYS: {
 		address: `0x126865a0197d6ab44bfd15fd052da6db92fd2eb831ff9663451bbfa1219e2af2`,
 		baseCoin: 'DRF',
-		quoteCoin: 'SUI',
+		quoteCoin: 'MYS',
 	},
 	SEND_USDC: {
 		address: `0x1fe7b99c28ded39774f37327b509d58e2be7fff94899c06d22b407496a6fa990`,
@@ -239,10 +240,10 @@ export const mainnetPools: PoolMap = {
 		baseCoin: 'WAL',
 		quoteCoin: 'USDC',
 	},
-	WAL_SUI: {
+	WAL_MYS: {
 		address: `0x81f5339934c83ea19dd6bcc75c52e83509629a5f71d3257428c2ce47cc94d08b`,
 		baseCoin: 'WAL',
-		quoteCoin: 'SUI',
+		quoteCoin: 'MYS',
 	},
 	XBTC_USDC: {
 		address: `0x20b9a3ec7a02d4f344aa1ebc5774b7b0ccafa9a5d76230662fdc0300bb215307`,

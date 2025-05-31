@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mysten/dapp-kit": "workspace:*",
-    "@mysten/enoki-connect": "workspace:*",
-    "@mysten/sui": "workspace:*",
+    "@socialproof/dapp-kit": "workspace:*",
+    "@socialproof/enoki-connect": "workspace:*",
+    "@socialproof/mys": "workspace:*",
     "@radix-ui/colors": "^3.0.0",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/themes": "^3.1.1",

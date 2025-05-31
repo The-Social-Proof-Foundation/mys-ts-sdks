@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Checkpoint, EndOfEpochData } from '@mysten/sui/client';
+import type { Checkpoint, EndOfEpochData } from '@socialproof/mys/client';
 
 import type { Rpc_Checkpoint_FieldsFragment } from '../generated/queries.js';
 

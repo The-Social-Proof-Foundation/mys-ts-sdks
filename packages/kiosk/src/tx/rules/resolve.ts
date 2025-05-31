@@ -1,10 +1,11 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/sui/bcs';
-import type { TransactionArgument } from '@mysten/sui/transactions';
-import { Transaction } from '@mysten/sui/transactions';
-import { normalizeSuiAddress } from '@mysten/sui/utils';
+import { bcs } from '@socialproof/mys/bcs';
+import type { TransactionArgument } from '@socialproof/mys/transactions';
+import { Transaction } from '@socialproof/mys/transactions';
+import { normalizeMysAddress } from '@socialproof/mys/utils';
 
 import type { RuleResolvingParams } from '../../types/index.js';
 import { lock } from '../kiosk.js';
@@ -38,7 +39,7 @@ export async function resolveRoyaltyRule(params: RuleResolvingParams) {
 	const policyObj = tx.object(policyId);
 
 	const { results } = await kioskClient.client.devInspectTransactionBlock({
-		sender: tx.getData().sender || normalizeSuiAddress('0x0'),
+		sender: tx.getData().sender || normalizeMysAddress('0x0'),
 		transactionBlock: feeTx,
 	});
 

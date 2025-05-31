@@ -14,13 +14,13 @@ find . -type f -name "*sui*" -exec sh -c '
 
 # Replace content in files
 find . -type f \( -name "*.ts" -o -name "*.tsx" -o -name "*.js" -o -name "*.jsx" -o -name "*.json" -o -name "*.md" \) -exec sed -i '' \
-  -e 's/@mysten\/sui/@mysocial\/mys/g' \
+  -e 's/@mysten\/sui/@socialproof\/mys/g' \
   -e 's/Sui/Mys/g' \
   -e 's/sui/mys/g' \
   -e 's/SUI/MYS/g' {} \;
 
 # Special cases for package names
 find . -name "package.json" -exec sed -i '' \
-  -e 's/"name": "@mysten\/sui"/"name": "@mysocial\/mys"/g' \
-  -e 's/"name": "@mysten\/ts-sdks"/"name": "@mysocial\/ts-sdks"/g' \
-  -e 's/@mysten\/ledgerjs-hw-app-sui/@mysocial\/ledgerjs-hw-app-mys/g' {} \;
+  -e 's/"name": "@socialproof\/sui"/"name": "@socialproof\/mys"/g' \
+  -e 's/"name": "@socialproof\/ts-sdks"/"name": "@socialproof\/mys-ts-sdks"/g' \
+  -e 's/@mysten\/ledgerjs-hw-app-sui/@socialproof\/ledgerjs-hw-app-mys/g' {} \;

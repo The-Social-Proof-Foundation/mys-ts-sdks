@@ -1,18 +1,18 @@
-# Sui dApp Kit
+# Mys dApp Kit
 
-The Sui dApp Kit is a set of React components, hooks, and utilities that make it easy to build a
-dApp for the Sui ecosystem. It provides hooks and components for querying data from the Sui
-blockchain, and connecting to Sui wallets.
+The Mys dApp Kit is a set of React components, hooks, and utilities that make it easy to build a
+dApp for the Mys ecosystem. It provides hooks and components for querying data from the Mys
+blockchain, and connecting to Mys wallets.
 
-See https://sdk.mystenlabs.com/typescript for full documentation
+See https://sdk.mysocial.network/typescript for full documentation
 
 ### Core Features
 
-- **Query Hooks:** dApp Kit provides a set of hooks for making rpc calls to the Sui blockchain,
+- **Query Hooks:** dApp Kit provides a set of hooks for making rpc calls to the Mys blockchain,
   making it easy to load any information needed for your dApp.
 - **Automatic Wallet State Management:** dApp Kit removes the complexity of state management related
   to wallet connections. You can focus on building your dApp.
-- **Supports all Sui wallets:** No need to manually define wallets you support. All Sui wallets are
+- **Supports all Mys wallets:** No need to manually define wallets you support. All Mys wallets are
   automatically supported.
 - **Easy to integrate:** dApp Kit provides pre-built React Components that you can drop right into
   your dApp, for easier integration
@@ -21,10 +21,10 @@ See https://sdk.mystenlabs.com/typescript for full documentation
 
 ## Install from NPM
 
-To use the Sui dApp Kit in your project, run the following command in your project root:
+To use the Mys dApp Kit in your project, run the following command in your project root:
 
 ```sh npm2yarn
-npm i --save @mysten/dapp-kit @mysten/sui @tanstack/react-query
+npm i --save @mysten/dapp-kit @socialproof/mys @tanstack/react-query
 ```
 
 ## Setting up providers
@@ -34,8 +34,8 @@ providers. The props available on the providers are covered in more detail in th
 pages.
 
 ```tsx
-import { createNetworkConfig, SuiClientProvider, WalletProvider } from '@mysten/dapp-kit';
-import { getFullnodeUrl, type SuiClientOptions } from '@mysten/sui/client';
+import { createNetworkConfig, MysClientProvider, WalletProvider } from '@socialproof/dapp-kit';
+import { getFullnodeUrl, type MysClientOptions } from '@socialproof/mys/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 // Config options for the networks you want to connect to
@@ -48,11 +48,11 @@ const queryClient = new QueryClient();
 function App() {
 	return (
 		<QueryClientProvider client={queryClient}>
-			<SuiClientProvider networks={networkConfig} defaultNetwork="localnet">
+			<MysClientProvider networks={networkConfig} defaultNetwork="localnet">
 				<WalletProvider>
 					<YourApp />
 				</WalletProvider>
-			</SuiClientProvider>
+			</MysClientProvider>
 		</QueryClientProvider>
 	);
 }
@@ -67,24 +67,24 @@ dApp up and running.
 
 To use our provided UI components, you will need to import the dApp Kit's CSS stylesheet into your
 dApp as shown below. For more information regarding customization options, check out the respective
-documentation pages for the components and [themes](https://sdk.mystenlabs.com/dapp-kit/themes).
+documentation pages for the components and [themes](https://sdk.mysocial.network/dapp-kit/themes).
 
 ```tsx
-import '@mysten/dapp-kit/dist/index.css';
+import '@socialproof/dapp-kit/dist/index.css';
 ```
 
 ## Using hooks to make RPC calls
 
-The dApp Kit provides a set of hooks for making RPC calls to the Sui blockchain. The hooks are thin
+The dApp Kit provides a set of hooks for making RPC calls to the Mys blockchain. The hooks are thin
 wrappers around `useQuery` from `@tanstack/react-query`. For more comprehensive documentation on how
 these query hooks can be used, check out the
 [react-query docs](https://tanstack.com/query/latest/docs/react/overview).
 
 ```tsx
-import { useSuiClientQuery } from '@mysten/dapp-kit';
+import { useMysClientQuery } from '@socialproof/dapp-kit';
 
 function MyComponent() {
-	const { data, isPending, error, refetch } = useSuiClientQuery('getOwnedObjects', {
+	const { data, isPending, error, refetch } = useMysClientQuery('getOwnedObjects', {
 		owner: '0x123',
 	});
 

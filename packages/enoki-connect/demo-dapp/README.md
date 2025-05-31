@@ -1,7 +1,7 @@
 # Demo DApp
 
 This demo dApp provides a basic example of integrating Enoki Connect wallets
-into your Sui application. It demonstrates key wallet integration features
+into your Mys application. It demonstrates key wallet integration features
 including:
 
 - Setting up the WalletProvider to use Enoki Connect wallets

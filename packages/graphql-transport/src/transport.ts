@@ -1,20 +1,21 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type { TypedDocumentNode } from '@graphql-typed-document-node/core';
 import type {
-	SuiTransport,
-	SuiTransportRequestOptions,
-	SuiTransportSubscribeOptions,
-} from '@mysten/sui/client';
-import { SuiHTTPTransport } from '@mysten/sui/client';
+	MysTransport,
+	MysTransportRequestOptions,
+	MysTransportSubscribeOptions,
+} from '@socialproof/mys/client';
+import { MysHTTPTransport } from '@socialproof/mys/client';
 import type { DocumentNode } from 'graphql';
 import { print } from 'graphql';
 
 import { TypedDocumentString } from './generated/queries.js';
 import { RPC_METHODS, UnsupportedMethodError, UnsupportedParamError } from './methods.js';
 
-export interface SuiClientGraphQLTransportOptions {
+export interface MysClientGraphQLTransportOptions {
 	url: string;
 	fallbackFullNodeUrl?: string;
 	fallbackMethods?: (keyof typeof RPC_METHODS)[];
@@ -54,12 +55,12 @@ export type GraphQLResponseErrors = Array<{
 	path?: (string | number)[];
 }>;
 
-export class SuiClientGraphQLTransport implements SuiTransport {
-	#options: SuiClientGraphQLTransportOptions;
-	#fallbackTransport?: SuiTransport;
+export class MysClientGraphQLTransport implements MysTransport {
+	#options: MysClientGraphQLTransportOptions;
+	#fallbackTransport?: MysTransport;
 	#fallbackMethods: (keyof typeof RPC_METHODS)[];
 
-	constructor(options: SuiClientGraphQLTransportOptions) {
+	constructor(options: MysClientGraphQLTransportOptions) {
 		this.#options = options;
 		this.#fallbackMethods = options.fallbackMethods || [
 			'executeTransactionBlock',
@@ -68,7 +69,7 @@ export class SuiClientGraphQLTransport implements SuiTransport {
 		];
 
 		if (options.fallbackFullNodeUrl) {
-			this.#fallbackTransport = new SuiHTTPTransport({
+			this.#fallbackTransport = new MysHTTPTransport({
 				url: options.fallbackFullNodeUrl,
 			});
 		}
@@ -121,14 +122,14 @@ export class SuiClientGraphQLTransport implements SuiTransport {
 		});
 	}
 
-	async request<T = unknown>(input: SuiTransportRequestOptions): Promise<T> {
+	async request<T = unknown>(input: MysTransportRequestOptions): Promise<T> {
 		let clientMethod: keyof typeof RPC_METHODS;
 
 		switch (input.method) {
 			case 'rpc.discover':
 				clientMethod = 'getRpcApiVersion';
 				break;
-			case 'suix_getLatestAddressMetrics':
+			case 'mysx_getLatestAddressMetrics':
 				clientMethod = 'getAddressMetrics';
 				break;
 			default:
@@ -153,7 +154,7 @@ export class SuiClientGraphQLTransport implements SuiTransport {
 	}
 
 	async subscribe<T = unknown>(
-		input: SuiTransportSubscribeOptions<T>,
+		input: MysTransportSubscribeOptions<T>,
 	): Promise<() => Promise<boolean>> {
 		if (!this.#fallbackTransport) {
 			throw new UnsupportedMethodError(input.method);
@@ -162,7 +163,7 @@ export class SuiClientGraphQLTransport implements SuiTransport {
 		return this.#fallbackTransport.subscribe(input);
 	}
 
-	async #unsupportedMethod<T = unknown>(input: SuiTransportRequestOptions): Promise<T> {
+	async #unsupportedMethod<T = unknown>(input: MysTransportRequestOptions): Promise<T> {
 		if (!this.#fallbackTransport) {
 			throw new UnsupportedMethodError(input.method);
 		}

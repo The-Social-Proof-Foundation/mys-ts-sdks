@@ -1,9 +1,10 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { Experimental_CoreClient } from '../core.js';
-import type { Experimental_SuiClientTypes } from '../types.js';
-import type { GraphQLQueryOptions, SuiGraphQLClient } from '../../graphql/client.js';
+import type { Experimental_MysClientTypes } from '../types.js';
+import type { GraphQLQueryOptions, MysGraphQLClient } from '../../graphql/client.js';
 import type {
 	Object_Owner_FieldsFragment,
 	Object_FieldsFragment,
@@ -24,15 +25,15 @@ import {
 	ZkLoginIntentScope,
 } from '../../graphql/generated/queries.js';
 import { ObjectError } from '../errors.js';
-import { fromBase64, toBase64 } from '@mysten/utils';
-import { normalizeStructTag, normalizeSuiAddress } from '../../utils/sui-types.js';
+import { fromBase64, toBase64 } from '@socialproof/utils';
+import { normalizeStructTag, normalizeMysAddress } from '../../utils/mys-types.js';
 import { deriveDynamicFieldID } from '../../utils/dynamic-fields.js';
 import { parseTransactionBcs, parseTransactionEffectsBcs } from './utils.js';
 
 export class GraphQLTransport extends Experimental_CoreClient {
-	#graphqlClient: SuiGraphQLClient;
+	#graphqlClient: MysGraphQLClient;
 
-	constructor(graphqlClient: SuiGraphQLClient) {
+	constructor(graphqlClient: MysGraphQLClient) {
 		super({ network: graphqlClient.network });
 		this.#graphqlClient = graphqlClient;
 	}
@@ -59,8 +60,8 @@ export class GraphQLTransport extends Experimental_CoreClient {
 	}
 
 	async getObjects(
-		options: Experimental_SuiClientTypes.GetObjectsOptions,
-	): Promise<Experimental_SuiClientTypes.GetObjectsResponse> {
+		options: Experimental_MysClientTypes.GetObjectsOptions,
+	): Promise<Experimental_MysClientTypes.GetObjectsResponse> {
 		const objects: Object_FieldsFragment[] = [];
 
 		let hasNextPage = true;
@@ -85,7 +86,7 @@ export class GraphQLTransport extends Experimental_CoreClient {
 
 		return {
 			objects: options.objectIds
-				.map((id) => normalizeSuiAddress(id))
+				.map((id) => normalizeMysAddress(id))
 				.map(
 					(id) =>
 						objects.find((obj) => obj.address === id) ??
@@ -107,8 +108,8 @@ export class GraphQLTransport extends Experimental_CoreClient {
 		};
 	}
 	async getOwnedObjects(
-		options: Experimental_SuiClientTypes.GetOwnedObjectsOptions,
-	): Promise<Experimental_SuiClientTypes.GetOwnedObjectsResponse> {
+		options: Experimental_MysClientTypes.GetOwnedObjectsOptions,
+	): Promise<Experimental_MysClientTypes.GetOwnedObjectsResponse> {
 		const objects = await this.#graphqlQuery(
 			{
 				query: GetOwnedObjectsDocument,
@@ -136,8 +137,8 @@ export class GraphQLTransport extends Experimental_CoreClient {
 		};
 	}
 	async getCoins(
-		options: Experimental_SuiClientTypes.GetCoinsOptions,
-	): Promise<Experimental_SuiClientTypes.GetCoinsResponse> {
+		options: Experimental_MysClientTypes.GetCoinsOptions,
+	): Promise<Experimental_MysClientTypes.GetCoinsResponse> {
 		const coins = await this.#graphqlQuery(
 			{
 				query: GetCoinsDocument,
@@ -167,8 +168,8 @@ export class GraphQLTransport extends Experimental_CoreClient {
 	}
 
 	async getBalance(
-		options: Experimental_SuiClientTypes.GetBalanceOptions,
-	): Promise<Experimental_SuiClientTypes.GetBalanceResponse> {
+		options: Experimental_MysClientTypes.GetBalanceOptions,
+	): Promise<Experimental_MysClientTypes.GetBalanceResponse> {
 		const result = await this.#graphqlQuery(
 			{
 				query: GetBalanceDocument,
@@ -185,8 +186,8 @@ export class GraphQLTransport extends Experimental_CoreClient {
 		};
 	}
 	async getAllBalances(
-		options: Experimental_SuiClientTypes.GetAllBalancesOptions,
-	): Promise<Experimental_SuiClientTypes.GetAllBalancesResponse> {
+		options: Experimental_MysClientTypes.GetAllBalancesOptions,
+	): Promise<Experimental_MysClientTypes.GetAllBalancesResponse> {
 		const balances = await this.#graphqlQuery(
 			{
 				query: GetAllBalancesDocument,
@@ -205,8 +206,8 @@ export class GraphQLTransport extends Experimental_CoreClient {
 		};
 	}
 	async getTransaction(
-		options: Experimental_SuiClientTypes.GetTransactionOptions,
-	): Promise<Experimental_SuiClientTypes.GetTransactionResponse> {
+		options: Experimental_MysClientTypes.GetTransactionOptions,
+	): Promise<Experimental_MysClientTypes.GetTransactionResponse> {
 		const result = await this.#graphqlQuery(
 			{
 				query: GetTransactionBlockDocument,
@@ -220,8 +221,8 @@ export class GraphQLTransport extends Experimental_CoreClient {
 		};
 	}
 	async executeTransaction(
-		options: Experimental_SuiClientTypes.ExecuteTransactionOptions,
-	): Promise<Experimental_SuiClientTypes.ExecuteTransactionResponse> {
+		options: Experimental_MysClientTypes.ExecuteTransactionOptions,
+	): Promise<Experimental_MysClientTypes.ExecuteTransactionResponse> {
 		const result = await this.#graphqlQuery(
 			{
 				query: ExecuteTransactionBlockDocument,
@@ -242,8 +243,8 @@ export class GraphQLTransport extends Experimental_CoreClient {
 		};
 	}
 	async dryRunTransaction(
-		options: Experimental_SuiClientTypes.DryRunTransactionOptions,
-	): Promise<Experimental_SuiClientTypes.DryRunTransactionResponse> {
+		options: Experimental_MysClientTypes.DryRunTransactionOptions,
+	): Promise<Experimental_MysClientTypes.DryRunTransactionResponse> {
 		const result = await this.#graphqlQuery(
 			{
 				query: DryRunTransactionBlockDocument,
@@ -260,7 +261,7 @@ export class GraphQLTransport extends Experimental_CoreClient {
 			transaction: parseTransaction(result.transaction!),
 		};
 	}
-	async getReferenceGasPrice(): Promise<Experimental_SuiClientTypes.GetReferenceGasPriceResponse> {
+	async getReferenceGasPrice(): Promise<Experimental_MysClientTypes.GetReferenceGasPriceResponse> {
 		const result = await this.#graphqlQuery(
 			{
 				query: GetReferenceGasPriceDocument,
@@ -274,8 +275,8 @@ export class GraphQLTransport extends Experimental_CoreClient {
 	}
 
 	async getDynamicFields(
-		options: Experimental_SuiClientTypes.GetDynamicFieldsOptions,
-	): Promise<Experimental_SuiClientTypes.GetDynamicFieldsResponse> {
+		options: Experimental_MysClientTypes.GetDynamicFieldsOptions,
+	): Promise<Experimental_MysClientTypes.GetDynamicFieldsResponse> {
 		const result = await this.#graphqlQuery(
 			{
 				query: GetDynamicFieldsDocument,
@@ -314,8 +315,8 @@ export class GraphQLTransport extends Experimental_CoreClient {
 	}
 
 	async verifyZkLoginSignature(
-		options: Experimental_SuiClientTypes.VerifyZkLoginSignatureOptions,
-	): Promise<Experimental_SuiClientTypes.ZkLoginVerifyResponse> {
+		options: Experimental_MysClientTypes.VerifyZkLoginSignatureOptions,
+	): Promise<Experimental_MysClientTypes.ZkLoginVerifyResponse> {
 		const intentScope =
 			options.intentScope === 'TransactionData'
 				? ZkLoginIntentScope.TransactionData
@@ -371,7 +372,7 @@ class GraphQLResponseError extends Error {
 	}
 }
 
-function mapOwner(owner: Object_Owner_FieldsFragment): Experimental_SuiClientTypes.ObjectOwner {
+function mapOwner(owner: Object_Owner_FieldsFragment): Experimental_MysClientTypes.ObjectOwner {
 	switch (owner.__typename) {
 		case 'AddressOwner':
 			return { $kind: 'AddressOwner', AddressOwner: owner.owner?.asAddress?.address };
@@ -388,7 +389,7 @@ function mapOwner(owner: Object_Owner_FieldsFragment): Experimental_SuiClientTyp
 
 function parseTransaction(
 	transaction: Transaction_FieldsFragment,
-): Experimental_SuiClientTypes.TransactionResponse {
+): Experimental_MysClientTypes.TransactionResponse {
 	const objectTypes: Record<string, string> = {};
 
 	transaction.effects?.unchangedSharedObjects.nodes.forEach((node) => {

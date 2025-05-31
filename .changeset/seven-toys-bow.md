@@ -1,5 +1,5 @@
 ---
-'@mysten/seal': patch
+'@socialproof/seal': patch
 ---
 
 Add optional API key to seal client

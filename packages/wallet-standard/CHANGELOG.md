@@ -5,7 +5,7 @@
 ### Patch Changes
 
 - Updated dependencies [ec519fc]
-  - @mysten/sui@1.30.1
+  - @socialproof/mys@1.30.1
 
 ## 0.15.1
 
@@ -17,7 +17,7 @@
 - Updated dependencies [2456052]
 - Updated dependencies [2456052]
 - Updated dependencies [2456052]
-  - @mysten/sui@1.30.0
+  - @socialproof/mys@1.30.0
 
 ## 0.15.0
 
@@ -29,7 +29,7 @@
 
 ### Patch Changes
 
-- @mysten/sui@1.29.1
+- @socialproof/mys@1.29.1
 
 ## 0.14.8
 
@@ -38,35 +38,35 @@
 - Updated dependencies [7d66a32]
 - Updated dependencies [eb91fba]
 - Updated dependencies [19a8045]
-  - @mysten/sui@1.29.0
+  - @socialproof/mys@1.29.0
 
 ## 0.14.7
 
 ### Patch Changes
 
 - Updated dependencies [9a94aea]
-  - @mysten/sui@1.28.2
+  - @socialproof/mys@1.28.2
 
 ## 0.14.6
 
 ### Patch Changes
 
 - Updated dependencies [3cd4e53]
-  - @mysten/sui@1.28.1
+  - @socialproof/mys@1.28.1
 
 ## 0.14.5
 
 ### Patch Changes
 
 - Updated dependencies [2705dc8]
-  - @mysten/sui@1.28.0
+  - @socialproof/mys@1.28.0
 
 ## 0.14.4
 
 ### Patch Changes
 
 - Updated dependencies [5cea435]
-  - @mysten/sui@1.27.1
+  - @socialproof/mys@1.27.1
 
 ## 0.14.3
 
@@ -74,7 +74,7 @@
 
 - Updated dependencies [4d13ef8]
 - Updated dependencies [4d13ef8]
-  - @mysten/sui@1.27.0
+  - @socialproof/mys@1.27.0
 
 ## 0.14.2
 
@@ -82,14 +82,14 @@
 
 - 7ba32a4: update dependencies
 - Updated dependencies [7ba32a4]
-  - @mysten/sui@1.26.1
+  - @socialproof/mys@1.26.1
 
 ## 0.14.1
 
 ### Patch Changes
 
 - Updated dependencies [906dd14]
-  - @mysten/sui@1.26.0
+  - @socialproof/mys@1.26.0
 
 ## 0.14.0
 
@@ -100,14 +100,14 @@
 ### Patch Changes
 
 - Updated dependencies [e8b5d04]
-  - @mysten/sui@1.25.0
+  - @socialproof/mys@1.25.0
 
 ## 0.13.29
 
 ### Patch Changes
 
 - Updated dependencies [cf3d12d]
-  - @mysten/sui@1.24.0
+  - @socialproof/mys@1.24.0
 
 ## 0.13.28
 
@@ -115,26 +115,26 @@
 
 - Updated dependencies [8baac61]
 - Updated dependencies [8baac61]
-  - @mysten/sui@1.23.0
+  - @socialproof/mys@1.23.0
 
 ## 0.13.27
 
 ### Patch Changes
 
 - Updated dependencies [03975f4]
-  - @mysten/sui@1.22.0
+  - @socialproof/mys@1.22.0
 
 ## 0.13.26
 
 ### Patch Changes
 
-- @mysten/sui@1.21.2
+- @socialproof/mys@1.21.2
 
 ## 0.13.25
 
 ### Patch Changes
 
-- @mysten/sui@1.21.1
+- @socialproof/mys@1.21.1
 
 ## 0.13.24
 
@@ -142,14 +142,14 @@
 
 - Updated dependencies [3d8a0d9]
 - Updated dependencies [20a5aaa]
-  - @mysten/sui@1.21.0
+  - @socialproof/mys@1.21.0
 
 ## 0.13.23
 
 ### Patch Changes
 
 - Updated dependencies [827a200]
-  - @mysten/sui@1.20.0
+  - @socialproof/mys@1.20.0
 
 ## 0.13.22
 
@@ -157,7 +157,7 @@
 
 - Updated dependencies [c39f32f]
 - Updated dependencies [539168a]
-  - @mysten/sui@1.19.0
+  - @socialproof/mys@1.19.0
 
 ## 0.13.21
 
@@ -165,7 +165,7 @@
 
 - 7abd243: Update repo links
 - Updated dependencies [7abd243]
-  - @mysten/sui@1.18.1
+  - @socialproof/mys@1.18.1
 
 ## 0.13.20
 
@@ -178,27 +178,27 @@
 - Updated dependencies [dc0e21e]
 - Updated dependencies [85bd9e4]
 - Updated dependencies [a872b97]
-  - @mysten/sui@1.18.0
+  - @socialproof/mys@1.18.0
 
 ## 0.13.19
 
 ### Patch Changes
 
 - Updated dependencies [20af12d]
-  - @mysten/sui@1.17.0
+  - @socialproof/mys@1.17.0
 
 ## 0.13.18
 
 ### Patch Changes
 
 - Updated dependencies [100207f]
-  - @mysten/sui@1.16.2
+  - @socialproof/mys@1.16.2
 
 ## 0.13.17
 
 ### Patch Changes
 
-- @mysten/sui@1.16.1
+- @socialproof/mys@1.16.1
 
 ## 0.13.16
 
@@ -206,62 +206,62 @@
 
 - Updated dependencies [ec2dc7f]
 - Updated dependencies [ec2dc7f]
-  - @mysten/sui@1.16.0
+  - @socialproof/mys@1.16.0
 
 ## 0.13.15
 
 ### Patch Changes
 
-- @mysten/sui@1.15.1
+- @socialproof/mys@1.15.1
 
 ## 0.13.14
 
 ### Patch Changes
 
 - Updated dependencies [6460e45]
-  - @mysten/sui@1.15.0
+  - @socialproof/mys@1.15.0
 
 ## 0.13.13
 
 ### Patch Changes
 
 - Updated dependencies [938fb6e]
-  - @mysten/sui@1.14.4
+  - @socialproof/mys@1.14.4
 
 ## 0.13.12
 
 ### Patch Changes
 
 - Updated dependencies [d5a23d7]
-  - @mysten/sui@1.14.3
+  - @socialproof/mys@1.14.3
 
 ## 0.13.11
 
 ### Patch Changes
 
 - Updated dependencies [e7bc63e]
-  - @mysten/sui@1.14.2
+  - @socialproof/mys@1.14.2
 
 ## 0.13.10
 
 ### Patch Changes
 
 - Updated dependencies [69ef100]
-  - @mysten/sui@1.14.1
+  - @socialproof/mys@1.14.1
 
 ## 0.13.9
 
 ### Patch Changes
 
 - Updated dependencies [c24814b]
-  - @mysten/sui@1.14.0
+  - @socialproof/mys@1.14.0
 
 ## 0.13.8
 
 ### Patch Changes
 
 - Updated dependencies [477d2a4]
-  - @mysten/sui@1.13.0
+  - @socialproof/mys@1.13.0
 
 ## 0.13.7
 
@@ -269,7 +269,7 @@
 
 - Updated dependencies [5436a90]
 - Updated dependencies [5436a90]
-  - @mysten/sui@1.12.0
+  - @socialproof/mys@1.12.0
 
 ## 0.13.6
 
@@ -277,14 +277,14 @@
 
 - Updated dependencies [489f421]
 - Updated dependencies [489f421]
-  - @mysten/sui@1.11.0
+  - @socialproof/mys@1.11.0
 
 ## 0.13.5
 
 ### Patch Changes
 
 - Updated dependencies [830b8d8]
-  - @mysten/sui@1.10.0
+  - @socialproof/mys@1.10.0
 
 ## 0.13.4
 
@@ -292,14 +292,14 @@
 
 - Updated dependencies [2c96b06]
 - Updated dependencies [1fd22cc]
-  - @mysten/sui@1.9.0
+  - @socialproof/mys@1.9.0
 
 ## 0.13.3
 
 ### Patch Changes
 
 - Updated dependencies [569511a]
-  - @mysten/sui@1.8.0
+  - @socialproof/mys@1.8.0
 
 ## 0.13.2
 
@@ -310,14 +310,14 @@
 - Updated dependencies [4019dd7]
 - Updated dependencies [4019dd7]
 - Updated dependencies [00a974d]
-  - @mysten/sui@1.7.0
+  - @socialproof/mys@1.7.0
 
 ## 0.13.1
 
 ### Patch Changes
 
 - Updated dependencies [a3e32fe]
-  - @mysten/sui@1.6.0
+  - @socialproof/mys@1.6.0
 
 ## 0.13.0
 
@@ -329,21 +329,21 @@
 
 - Updated dependencies [0851b31]
 - Updated dependencies [f37b3c2]
-  - @mysten/sui@1.5.0
+  - @socialproof/mys@1.5.0
 
 ## 0.12.14
 
 ### Patch Changes
 
 - Updated dependencies [4419234]
-  - @mysten/sui@1.4.0
+  - @socialproof/mys@1.4.0
 
 ## 0.12.13
 
 ### Patch Changes
 
 - Updated dependencies [a45f461]
-  - @mysten/sui@1.3.1
+  - @socialproof/mys@1.3.1
 
 ## 0.12.12
 
@@ -356,7 +356,7 @@
 - Updated dependencies [cdedf69]
 - Updated dependencies [0f27a97]
 - Updated dependencies [beed646]
-  - @mysten/sui@1.3.0
+  - @socialproof/mys@1.3.0
 
 ## 0.12.11
 
@@ -365,99 +365,99 @@
 - Updated dependencies [06a900c1ab]
 - Updated dependencies [45877014d1]
 - Updated dependencies [87d6f75403]
-  - @mysten/sui@1.2.1
+  - @socialproof/mys@1.2.1
 
 ## 0.12.10
 
 ### Patch Changes
 
 - Updated dependencies [fef99d377f]
-  - @mysten/sui@1.2.0
+  - @socialproof/mys@1.2.0
 
 ## 0.12.9
 
 ### Patch Changes
 
 - 805ff4d4c2: Fix bug where transaction was passed as both transaction and transactionBlock to
-  sui:signTransactionBlock
+  mys:signTransactionBlock
 
 ## 0.12.8
 
 ### Patch Changes
 
 - Updated dependencies [0dfff33b95]
-  - @mysten/sui@1.1.2
+  - @socialproof/mys@1.1.2
 
 ## 0.12.7
 
 ### Patch Changes
 
 - Updated dependencies [101f1ff4b8]
-  - @mysten/sui@1.1.1
+  - @socialproof/mys@1.1.1
 
 ## 0.12.6
 
 ### Patch Changes
 
 - Updated dependencies [bae8f9683c]
-  - @mysten/sui@1.1.0
+  - @socialproof/mys@1.1.0
 
 ## 0.12.5
 
 ### Patch Changes
 
 - Updated dependencies [369b924343]
-  - @mysten/sui@1.0.5
+  - @socialproof/mys@1.0.5
 
 ## 0.12.4
 
 ### Patch Changes
 
 - Updated dependencies [f1e828f557]
-  - @mysten/sui@1.0.4
+  - @socialproof/mys@1.0.4
 
 ## 0.12.3
 
 ### Patch Changes
 
 - Updated dependencies [1f20580841]
-  - @mysten/sui@1.0.3
+  - @socialproof/mys@1.0.3
 
 ## 0.12.2
 
 ### Patch Changes
 
 - Updated dependencies [f0a839f874]
-  - @mysten/sui@1.0.2
+  - @socialproof/mys@1.0.2
 
 ## 0.12.1
 
 ### Patch Changes
 
 - Updated dependencies [6fc6235984]
-  - @mysten/sui@1.0.1
+  - @socialproof/mys@1.0.1
 
 ## 0.12.0
 
 ### Minor Changes
 
-- a92b03de42: The Typescript SDK has been renamed to `@mysten/sui` and includes many new features
+- a92b03de42: The Typescript SDK has been renamed to `@socialproof/mys` and includes many new features
   and breaking changes. See the
-  [full migration guide](https://sdk.mystenlabs.com/typescript/migrations/sui-1.0) for details on
+  [full migration guide](https://sdk.mysocial.network/typescript/migrations/mys-1.0) for details on
   how to upgrade.
 
 ### Patch Changes
 
 - Updated dependencies [ebdfe7cf21]
 - Updated dependencies [a92b03de42]
-  - @mysten/sui@1.0.0
+  - @socialproof/mys@1.0.0
 
 ## 0.11.6
 
 ### Patch Changes
 
 - Updated dependencies [99b112178c]
-  - @mysten/sui.js@0.54.1
+  - @socialproof/mys.js@0.54.1
 
 ## 0.11.5
 
@@ -465,46 +465,46 @@
 
 - Updated dependencies [b7f673dbd9]
 - Updated dependencies [123b42c75c]
-  - @mysten/sui.js@0.54.0
+  - @socialproof/mys.js@0.54.0
 
 ## 0.11.4
 
 ### Patch Changes
 
 - Updated dependencies [774bfb41a8]
-  - @mysten/sui.js@0.53.0
+  - @socialproof/mys.js@0.53.0
 
 ## 0.11.3
 
 ### Patch Changes
 
 - Updated dependencies [929db4976a]
-  - @mysten/sui.js@0.52.0
+  - @socialproof/mys.js@0.52.0
 
 ## 0.11.2
 
 ### Patch Changes
 
 - Updated dependencies [b4ecdb5860]
-  - @mysten/sui.js@0.51.2
+  - @socialproof/mys.js@0.51.2
 
 ## 0.11.1
 
 ### Patch Changes
 
 - Updated dependencies [6984dd1e38]
-  - @mysten/sui.js@0.51.1
+  - @socialproof/mys.js@0.51.1
 
 ## 0.11.0
 
 ### Minor Changes
 
-- 437f0ca2ef: Add isSuiChain utility which is useful for type-safe dApp interfaces in wallets
+- 437f0ca2ef: Add isMysChain utility which is useful for type-safe dApp interfaces in wallets
 
 ### Patch Changes
 
 - Updated dependencies [0cafa94027]
-  - @mysten/sui.js@0.51.0
+  - @socialproof/mys.js@0.51.0
 
 ## 0.10.3
 
@@ -512,7 +512,7 @@
 
 - 4830361fa4: Updated typescript version
 - Updated dependencies [4830361fa4]
-  - @mysten/sui.js@0.50.1
+  - @socialproof/mys.js@0.50.1
 
 ## 0.10.2
 
@@ -524,7 +524,7 @@
 - Updated dependencies [13e922d9b1]
 - Updated dependencies [a34f1cb67d]
 - Updated dependencies [220a766d86]
-  - @mysten/sui.js@0.50.0
+  - @socialproof/mys.js@0.50.0
 
 ## 0.10.1
 
@@ -532,7 +532,7 @@
 
 - 9ac0a4ec01: Add extensions to all sdk import paths
 - Updated dependencies [9ac0a4ec01]
-  - @mysten/sui.js@0.49.1
+  - @socialproof/mys.js@0.49.1
 
 ## 0.10.0
 
@@ -543,7 +543,7 @@
 ### Patch Changes
 
 - Updated dependencies [e5f9e3ba21]
-  - @mysten/sui.js@0.49.0
+  - @socialproof/mys.js@0.49.0
 
 ## 0.9.0
 
@@ -554,16 +554,16 @@
 
 ### Patch Changes
 
-- dd362ec1d6: Update docs url to sdk.mystenlabs.com
+- dd362ec1d6: Update docs url to sdk.mysocial.network
 - Updated dependencies [dd362ec1d6]
-  - @mysten/sui.js@0.48.1
+  - @socialproof/mys.js@0.48.1
 
 ## 0.8.11
 
 ### Patch Changes
 
 - Updated dependencies [cdcfa76c43]
-  - @mysten/sui.js@0.48.0
+  - @socialproof/mys.js@0.48.0
 
 ## 0.8.10
 
@@ -573,14 +573,14 @@
 - Updated dependencies [9ac7e2f3d]
 - Updated dependencies [0259aec82]
 - Updated dependencies [64d45ba27]
-  - @mysten/sui.js@0.47.0
+  - @socialproof/mys.js@0.47.0
 
 ## 0.8.9
 
 ### Patch Changes
 
 - Updated dependencies [652bcdd92]
-  - @mysten/sui.js@0.46.1
+  - @socialproof/mys.js@0.46.1
 
 ## 0.8.8
 
@@ -591,21 +591,21 @@
 - Updated dependencies [8d1e74e52]
 - Updated dependencies [093554a0d]
 - Updated dependencies [3718a230b]
-  - @mysten/sui.js@0.46.0
+  - @socialproof/mys.js@0.46.0
 
 ## 0.8.7
 
 ### Patch Changes
 
 - Updated dependencies [30b47b758]
-  - @mysten/sui.js@0.45.1
+  - @socialproof/mys.js@0.45.1
 
 ## 0.8.6
 
 ### Patch Changes
 
 - Updated dependencies [b9afb5567]
-  - @mysten/sui.js@0.45.0
+  - @socialproof/mys.js@0.45.0
 
 ## 0.8.5
 
@@ -614,21 +614,21 @@
 - b48289346: Mark packages as being side-effect free.
 - Updated dependencies [b48289346]
 - Updated dependencies [11cf4e68b]
-  - @mysten/sui.js@0.44.0
+  - @socialproof/mys.js@0.44.0
 
 ## 0.8.4
 
 ### Patch Changes
 
 - Updated dependencies [004fb1991]
-  - @mysten/sui.js@0.43.3
+  - @socialproof/mys.js@0.43.3
 
 ## 0.8.3
 
 ### Patch Changes
 
 - Updated dependencies [9b052166d]
-  - @mysten/sui.js@0.43.2
+  - @socialproof/mys.js@0.43.2
 
 ## 0.8.2
 
@@ -636,7 +636,7 @@
 
 - Updated dependencies [faa13ded9]
 - Updated dependencies [c5684bb52]
-  - @mysten/sui.js@0.43.1
+  - @socialproof/mys.js@0.43.1
 
 ## 0.8.1
 
@@ -647,25 +647,25 @@
 - Updated dependencies [e4484852b]
 - Updated dependencies [71e0a3197]
 - Updated dependencies [1bc430161]
-  - @mysten/sui.js@0.43.0
+  - @socialproof/mys.js@0.43.0
 
 ## 0.8.0
 
 ### Minor Changes
 
-- fd8589806: Remove uses of deprecated imports from @mysten/sui.js
+- fd8589806: Remove uses of deprecated imports from @socialproof/mys.js
 - 8b9e5f737: Added new isWalletWithRequiredFeatureSet utility and accompanying type
 
 ### Patch Changes
 
 - Updated dependencies [fd8589806]
-  - @mysten/sui.js@0.42.0
+  - @socialproof/mys.js@0.42.0
 
 ## 0.7.2
 
 ### Patch Changes
 
-- @mysten/sui.js@0.41.2
+- @socialproof/mys.js@0.41.2
 
 ## 0.7.1
 
@@ -673,7 +673,7 @@
 
 - 189e02aba: Fix broken documentation link for the wallet-standard SDK
 - Updated dependencies [24c21e1f0]
-  - @mysten/sui.js@0.41.1
+  - @socialproof/mys.js@0.41.1
 
 ## 0.7.0
 
@@ -685,7 +685,7 @@
 
 - Updated dependencies [ba8e3b857]
 - Updated dependencies [f4b7b3474]
-  - @mysten/sui.js@0.41.0
+  - @socialproof/mys.js@0.41.0
 
 ## 0.6.0
 
@@ -697,14 +697,14 @@
 
 - Updated dependencies [a503cad34]
 - Updated dependencies [8281e3d25]
-  - @mysten/sui.js@0.40.0
+  - @socialproof/mys.js@0.40.0
 
 ## 0.5.14
 
 ### Patch Changes
 
 - Updated dependencies [47ea5ec7c]
-  - @mysten/sui.js@0.39.0
+  - @socialproof/mys.js@0.39.0
 
 ## 0.5.13
 
@@ -721,14 +721,14 @@
 - Updated dependencies [6d41059c7]
 - Updated dependencies [cc6441f46]
 - Updated dependencies [001148443]
-  - @mysten/sui.js@0.38.0
+  - @socialproof/mys.js@0.38.0
 
 ## 0.5.12
 
 ### Patch Changes
 
 - Updated dependencies [34cc7d610]
-  - @mysten/sui.js@0.37.1
+  - @socialproof/mys.js@0.37.1
 
 ## 0.5.11
 
@@ -741,7 +741,7 @@
 - Updated dependencies [a17d3678a]
 - Updated dependencies [2f37537d5]
 - Updated dependencies [00484bcc3]
-  - @mysten/sui.js@0.37.0
+  - @socialproof/mys.js@0.37.0
 
 ## 0.5.10
 
@@ -751,14 +751,14 @@
 - Updated dependencies [1cfb1c9da3]
 - Updated dependencies [1cfb1c9da3]
 - Updated dependencies [fb3bb9118a]
-  - @mysten/sui.js@0.36.0
+  - @socialproof/mys.js@0.36.0
 
 ## 0.5.9
 
 ### Patch Changes
 
 - Updated dependencies [09d77325a9]
-  - @mysten/sui.js@0.35.1
+  - @socialproof/mys.js@0.35.1
 
 ## 0.5.8
 
@@ -772,7 +772,7 @@
 - Updated dependencies [9ce7e051b4]
 - Updated dependencies [9ce7e051b4]
 - Updated dependencies [bb50698551]
-  - @mysten/sui.js@0.35.0
+  - @socialproof/mys.js@0.35.0
 
 ## 0.5.7
 
@@ -781,7 +781,7 @@
 - Updated dependencies [85719ac933]
 - Updated dependencies [c3d9cc87f3]
 - Updated dependencies [02a6063f82]
-  - @mysten/sui.js@0.34.1
+  - @socialproof/mys.js@0.34.1
 
 ## 0.5.6
 
@@ -789,7 +789,7 @@
 
 - Updated dependencies [280821e0ab]
 - Updated dependencies [6a9abe9e38]
-  - @mysten/sui.js@0.34.0
+  - @socialproof/mys.js@0.34.0
 
 ## 0.5.5
 
@@ -803,7 +803,7 @@
 - Updated dependencies [91c63e4f8]
 - Updated dependencies [e61ed2bac]
 - Updated dependencies [5053a8dc8]
-  - @mysten/sui.js@0.33.0
+  - @socialproof/mys.js@0.33.0
 
 ## 0.5.4
 
@@ -818,21 +818,21 @@
 - Updated dependencies [c219e7470]
 - Updated dependencies [4e463c691]
 - Updated dependencies [b4f0bfc76]
-  - @mysten/sui.js@0.32.2
+  - @socialproof/mys.js@0.32.2
 
 ## 0.5.3
 
 ### Patch Changes
 
 - Updated dependencies [3224ffcd0]
-  - @mysten/sui.js@0.32.1
+  - @socialproof/mys.js@0.32.1
 
 ## 0.5.2
 
 ### Patch Changes
 
 - Updated dependencies [9b42d0ada]
-  - @mysten/sui.js@0.32.0
+  - @socialproof/mys.js@0.32.0
 
 ## 0.5.1
 
@@ -843,19 +843,19 @@
 - Updated dependencies [f3c096e3a]
 - Updated dependencies [5a4e3e416]
 - Updated dependencies [27dec39eb]
-  - @mysten/sui.js@0.31.0
+  - @socialproof/mys.js@0.31.0
 
 ## 0.5.0
 
 ### Minor Changes
 
-- 956ec28eb: Change `signMessage` to return message bytes. Add support for sui:signMessage in the
+- 956ec28eb: Change `signMessage` to return message bytes. Add support for mys:signMessage in the
   wallet standard
 - 19b567f21: Unified self- and delegated staking flows. Removed fields from `Validator`
   (`stake_amount`, `pending_stake`, and `pending_withdraw`) and renamed `delegation_staking_pool` to
   `staking_pool`. Additionally removed the `validator_stake` and `delegated_stake` fields in the
   `ValidatorSet` type and replaced them with a `total_stake` field.
-- 5c3b00cde: Add object id to staking pool and pool id to staked sui.
+- 5c3b00cde: Add object id to staking pool and pool id to staked mys.
 - 3d9a04648: Adds `deactivation_epoch` to staking pool object, and adds `inactive_pools` to the
   validator set object.
 - da72e73a9: Change the address of Move package for staking and validator related Move modules.
@@ -865,7 +865,7 @@
   capitalizations/forms) to their equivalent "stake"-based name. Function names, function argument
   names, RPC endpoints, Move functions, and object fields have been updated with this new naming
   convention.
-- c718deef4: wallet-standard: changes sui:signAndExecuteTransaction and sui:signTransaction features
+- c718deef4: wallet-standard: changes mys:signAndExecuteTransaction and mys:signTransaction features
   to support account and chain options wallet-adapter-wallet-standard: change
   signAndExecuteTransaction and signTransaction signatures to support account and chain options
   wallet-adapter-wallet-standard: ensure version compatibility for of the wallet
@@ -874,8 +874,8 @@
   wallet-kit-core: signTransaction and signAndExecuteTransaction methods mirror the ones in standard
   adapter
 - 68e60b02c: Changed where the options and requestType for signAndExecuteTransaction are.
-- dbe73d5a4: Add an optional `contentOptions` field to `SuiSignAndExecuteTransactionOptions` to
-  specify which fields to include in `SuiTransactionBlockResponse` (e.g., transaction, effects,
+- dbe73d5a4: Add an optional `contentOptions` field to `MysSignAndExecuteTransactionOptions` to
+  specify which fields to include in `MysTransactionBlockResponse` (e.g., transaction, effects,
   events, etc). By default, only the transaction digest will be included.
 
 ### Patch Changes
@@ -941,14 +941,14 @@
 - Updated dependencies [9b60bf700]
 - Updated dependencies [64fb649eb]
 - Updated dependencies [a6b0c4e5f]
-  - @mysten/sui.js@0.30.0
+  - @socialproof/mys.js@0.30.0
 
 ## 0.4.3
 
 ### Patch Changes
 
 - Updated dependencies [31bfcae6a]
-  - @mysten/sui.js@0.29.1
+  - @socialproof/mys.js@0.29.1
 
 ## 0.4.2
 
@@ -962,7 +962,7 @@
 - Updated dependencies [4baf554f1]
 - Updated dependencies [aa650aa3b]
 - Updated dependencies [6ff0c785f]
-  - @mysten/sui.js@0.29.0
+  - @socialproof/mys.js@0.29.0
 
 ## 0.4.1
 
@@ -972,13 +972,13 @@
 - Updated dependencies [24bdb66c6]
 - Updated dependencies [a67cc044b]
 - Updated dependencies [a67cc044b]
-  - @mysten/sui.js@0.28.0
+  - @socialproof/mys.js@0.28.0
 
 ## 0.4.0
 
 ### Minor Changes
 
-- 473005d8f: Add protocol_version to CheckpointSummary and SuiSystemObject. Consolidate end-of-epoch
+- 473005d8f: Add protocol_version to CheckpointSummary and MysSystemObject. Consolidate end-of-epoch
   information in CheckpointSummary.
 
 ### Patch Changes
@@ -990,14 +990,14 @@
 - Updated dependencies [629804d26]
 - Updated dependencies [f51c85e85]
 - Updated dependencies [e630f6832]
-  - @mysten/sui.js@0.27.0
+  - @socialproof/mys.js@0.27.0
 
 ## 0.3.1
 
 ### Patch Changes
 
 - Updated dependencies [97c46ca9d]
-  - @mysten/sui.js@0.26.1
+  - @socialproof/mys.js@0.26.1
 
 ## 0.3.0
 
@@ -1008,7 +1008,7 @@
 
 ### Patch Changes
 
-- a8746d4e9: update SuiExecuteTransactionResponse
+- a8746d4e9: update MysExecuteTransactionResponse
 - Updated dependencies [034158656]
 - Updated dependencies [a8746d4e9]
 - Updated dependencies [57fc4dedd]
@@ -1016,7 +1016,7 @@
 - Updated dependencies [e6a71882f]
 - Updated dependencies [21781ba52]
 - Updated dependencies [b3ba6dfbc]
-  - @mysten/sui.js@0.26.0
+  - @socialproof/mys.js@0.26.0
 
 ## 0.2.11
 
@@ -1026,7 +1026,7 @@
 - Updated dependencies [7b4bf43bc]
 - Updated dependencies [72481e759]
 - Updated dependencies [969a88669]
-  - @mysten/sui.js@0.25.0
+  - @socialproof/mys.js@0.25.0
 
 ## 0.2.10
 
@@ -1037,7 +1037,7 @@
 - Updated dependencies [88a687834]
 - Updated dependencies [89091ddab]
 - Updated dependencies [71bee7563]
-  - @mysten/sui.js@0.24.0
+  - @socialproof/mys.js@0.24.0
 
 ## 0.2.9
 
@@ -1052,7 +1052,7 @@
 - Updated dependencies [8474242af]
 - Updated dependencies [01efa8bc6]
 - Updated dependencies [f74181212]
-  - @mysten/sui.js@0.23.0
+  - @socialproof/mys.js@0.23.0
 
 ## 0.2.8
 
@@ -1060,7 +1060,7 @@
 
 - Updated dependencies [a55236e48]
 - Updated dependencies [8ae226dae]
-  - @mysten/sui.js@0.22.0
+  - @socialproof/mys.js@0.22.0
 
 ## 0.2.7
 
@@ -1071,7 +1071,7 @@
 - Updated dependencies [9fbe2714b]
 - Updated dependencies [d2015f815]
 - Updated dependencies [7d0f25b61]
-  - @mysten/sui.js@0.21.0
+  - @socialproof/mys.js@0.21.0
 
 ## 0.2.6
 
@@ -1079,7 +1079,7 @@
 
 - Updated dependencies [f93b59f3a]
 - Updated dependencies [ea71d8216]
-  - @mysten/sui.js@0.20.0
+  - @socialproof/mys.js@0.20.0
 
 ## 0.2.5
 
@@ -1091,7 +1091,7 @@
 - Updated dependencies [b03bfaec2]
 - Updated dependencies [f9be28a42]
 - Updated dependencies [24987df35]
-  - @mysten/sui.js@0.19.0
+  - @socialproof/mys.js@0.19.0
 
 ## 0.2.4
 
@@ -1102,14 +1102,14 @@
 - Updated dependencies [45293b6ff]
 - Updated dependencies [7a67d61e2]
 - Updated dependencies [2a0b8e85d]
-  - @mysten/sui.js@0.18.0
+  - @socialproof/mys.js@0.18.0
 
 ## 0.2.3
 
 ### Patch Changes
 
 - Updated dependencies [623505886]
-  - @mysten/sui.js@0.17.1
+  - @socialproof/mys.js@0.17.1
 
 ## 0.2.2
 
@@ -1118,7 +1118,7 @@
 - Updated dependencies [a9602e533]
 - Updated dependencies [db22728c1]
 - Updated dependencies [3b510d0fc]
-  - @mysten/sui.js@0.17.0
+  - @socialproof/mys.js@0.17.0
 
 ## 0.2.1
 
@@ -1126,7 +1126,7 @@
 
 - Updated dependencies [01989d3d5]
 - Updated dependencies [5e20e6569]
-  - @mysten/sui.js@0.16.0
+  - @socialproof/mys.js@0.16.0
 
 ## 0.2.0
 
@@ -1141,7 +1141,7 @@
 - Updated dependencies [90898d366]
 - Updated dependencies [c27933292]
 - Updated dependencies [c27933292]
-  - @mysten/sui.js@0.15.0
+  - @socialproof/mys.js@0.15.0
 
 ## 0.1.2
 
@@ -1155,7 +1155,7 @@
 - Updated dependencies [e45b188a8]
 - Updated dependencies [2dc594ef7]
 - Updated dependencies [4f0c611ff]
-  - @mysten/sui.js@0.14.0
+  - @socialproof/mys.js@0.14.0
 
 ## 0.1.1
 
@@ -1165,7 +1165,7 @@
 - Updated dependencies [b11b69262]
 - Updated dependencies [b11b69262]
 - Updated dependencies [b11b69262]
-  - @mysten/sui.js@0.13.0
+  - @socialproof/mys.js@0.13.0
 
 ## 0.1.0
 
@@ -1184,4 +1184,4 @@
 - Updated dependencies [4575c0a02]
 - Updated dependencies [e0b173b9e]
 - Updated dependencies [ccf7f148d]
-  - @mysten/sui.js@0.12.0
+  - @socialproof/mys.js@0.12.0

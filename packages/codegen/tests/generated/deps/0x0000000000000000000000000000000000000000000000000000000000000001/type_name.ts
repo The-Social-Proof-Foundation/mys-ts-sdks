@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/sui/bcs';
+import { bcs } from '@socialproof/mys/bcs';
 export function TypeName() {
 	return bcs.struct('TypeName', {
 		name: bcs.string(),

@@ -1,15 +1,16 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import {
 	StandardConnect,
 	StandardEvents,
-	SuiSignAndExecuteTransaction,
-	SuiSignTransaction,
+	MysSignAndExecuteTransaction,
+	MysSignTransaction,
 	WALLET_STANDARD_ERROR__FEATURES__WALLET_ACCOUNT_CHAIN_UNSUPPORTED,
 	WalletStandardError,
-} from '@mysten/wallet-standard';
-import type { Wallet } from '@mysten/wallet-standard';
+} from '@socialproof/wallet-standard';
+import type { Wallet } from '@socialproof/wallet-standard';
 import type { UiWallet, UiWalletAccount } from '@wallet-standard/ui';
 import { getWalletAccountFeature, uiWalletAccountBelongsToUiWallet } from '@wallet-standard/ui';
 import { getWalletForHandle_DO_NOT_USE_OR_YOU_WILL_BE_FIRED as getWalletForHandle } from '@wallet-standard/ui-registry';
@@ -18,8 +19,8 @@ import { ChainNotSupportedError, DAppKitError, FeatureNotSupportedError } from '
 export const requiredWalletFeatures = [
 	StandardConnect,
 	StandardEvents,
-	SuiSignTransaction,
-	SuiSignAndExecuteTransaction,
+	MysSignTransaction,
+	MysSignAndExecuteTransaction,
 ] as const;
 
 export function getAssociatedWalletOrThrow(account: UiWalletAccount, wallets: UiWallet[]) {

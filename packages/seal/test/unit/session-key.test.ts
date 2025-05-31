@@ -1,30 +1,31 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { describe, expect, it } from 'vitest';
 import { SessionKey } from '../../src/session-key';
-import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';
-import { SuiGraphQLClient } from '@mysten/sui/graphql';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import { MysGraphQLClient } from '@socialproof/mys/graphql';
 import { UserError } from '../../src/error';
 
 describe('Session key tests', () => {
 	const TESTNET_PACKAGE_ID = '0x9709d4ee371488c2bc09f508e98e881bd1d5335e0805d7e6a99edd54a7027954';
 	it('import and export session key', async () => {
 		const kp = Ed25519Keypair.generate();
-		const suiClient = new SuiGraphQLClient({ url: 'https://sui-testnet.mystenlabs.com/graphql' });
+		const mysClient = new MysGraphQLClient({ url: 'https://testnet.mysocial.network/graphql' });
 		const sessionKey = new SessionKey({
-			address: kp.getPublicKey().toSuiAddress(),
+			address: kp.getPublicKey().toMysAddress(),
 			packageId: TESTNET_PACKAGE_ID,
 			ttlMin: 1,
-			suiClient,
+			mysClient,
 		});
 		const sig = await kp.signPersonalMessage(sessionKey.getPersonalMessage());
 		await sessionKey.setPersonalMessageSignature(sig.signature);
 
 		const exportedSessionKey = sessionKey.export();
-		const restoredSessionKey = SessionKey.import(exportedSessionKey, suiClient);
+		const restoredSessionKey = SessionKey.import(exportedSessionKey, mysClient);
 
-		expect(restoredSessionKey.getAddress()).toBe(kp.getPublicKey().toSuiAddress());
+		expect(restoredSessionKey.getAddress()).toBe(kp.getPublicKey().toMysAddress());
 		expect(restoredSessionKey.getPackageId()).toBe(TESTNET_PACKAGE_ID);
 		expect(restoredSessionKey.export().sessionKey).toBe(sessionKey.export().sessionKey);
 		expect(restoredSessionKey.getPersonalMessage()).toEqual(sessionKey.getPersonalMessage());
@@ -34,14 +35,14 @@ describe('Session key tests', () => {
 		expect(() =>
 			SessionKey.import(
 				{
-					address: kp.getPublicKey().toSuiAddress(),
+					address: kp.getPublicKey().toMysAddress(),
 					packageId: TESTNET_PACKAGE_ID,
 					ttlMin: 1,
 					sessionKey: sessionKey.export().sessionKey,
 					creationTimeMs: sessionKey.export().creationTimeMs,
 					personalMessageSignature: sig.signature,
 				},
-				suiClient,
+				mysClient,
 				kp2,
 			),
 		).toThrow(UserError);

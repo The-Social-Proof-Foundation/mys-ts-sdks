@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/sui/bcs';
-import type { Transaction } from '@mysten/sui/transactions';
+import { bcs } from '@socialproof/mys/bcs';
+import type { Transaction } from '@socialproof/mys/transactions';
 
 import { normalizeMoveArguments } from './utils/index.js';
 import type { RawTransactionArgument } from './utils/index.js';
@@ -13,7 +14,7 @@ export function ProofOfPossessionMessage() {
 		intent_version: bcs.u8(),
 		intent_app: bcs.u8(),
 		epoch: bcs.u32(),
-		sui_address: bcs.Address,
+		mys_address: bcs.Address,
 		bls_key: bcs.vector(bcs.u8()),
 	});
 }

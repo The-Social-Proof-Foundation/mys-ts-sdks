@@ -1,13 +1,14 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { ExportedWebCryptoKeypair } from '@mysten/signers/webcrypto';
-import { WebCryptoSigner } from '@mysten/signers/webcrypto';
-import { decodeSuiPrivateKey } from '@mysten/sui/cryptography';
-import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';
-import { fromBase64, toBase64 } from '@mysten/sui/utils';
-import { decodeJwt } from '@mysten/sui/zklogin';
-import type { ZkLoginSignatureInputs } from '@mysten/sui/zklogin';
+import type { ExportedWebCryptoKeypair } from '@socialproof/signers/webcrypto';
+import { WebCryptoSigner } from '@socialproof/signers/webcrypto';
+import { decodeMysPrivateKey } from '@socialproof/mys/cryptography';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import { fromBase64, toBase64 } from '@socialproof/mys/utils';
+import { decodeJwt } from '@socialproof/mys/zklogin';
+import type { ZkLoginSignatureInputs } from '@socialproof/mys/zklogin';
 import type { UseStore } from 'idb-keyval';
 import { clear, createStore, get, set } from 'idb-keyval';
 import type { WritableAtom } from 'nanostores';
@@ -203,7 +204,7 @@ export class EnokiFlow {
 			ephemeralKeyPair: this.#useNativeCryptoSigner
 				? '@@native'
 				: toBase64(
-						decodeSuiPrivateKey((ephemeralKeyPair as Ed25519Keypair).getSecretKey()).secretKey,
+						decodeMysPrivateKey((ephemeralKeyPair as Ed25519Keypair).getSecretKey()).secretKey,
 					),
 		});
 

@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiClient } from '@mysten/sui/client';
-import type { StandardEventsListeners } from '@mysten/wallet-standard';
+import type { MysClient } from '@socialproof/mys/client';
+import type { StandardEventsListeners } from '@socialproof/wallet-standard';
 
 import type { EnokiClientConfig } from '../EnokiClient/index.js';
 import type { AuthProvider, EnokiNetwork } from '../EnokiClient/type.js';
@@ -38,9 +39,9 @@ export interface RegisterEnokiWalletsOptions extends EnokiClientConfig {
 	>;
 
 	/**
-	 * The SuiClient instance to use when building and executing transactions.
+	 * The MysClient instance to use when building and executing transactions.
 	 */
-	client: SuiClient;
+	client: MysClient;
 
 	/**
 	 * The network to use when building and executing transactions.

@@ -1,12 +1,13 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { TypeTagSerializer } from '../bcs/type-tag-serializer.js';
 import type { TransactionPlugin } from '../transactions/index.js';
 import { deriveDynamicFieldID } from '../utils/dynamic-fields.js';
-import { normalizeStructTag, parseStructTag, SUI_ADDRESS_LENGTH } from '../utils/sui-types.js';
+import { normalizeStructTag, parseStructTag, MYS_ADDRESS_LENGTH } from '../utils/mys-types.js';
 import { Experimental_BaseClient } from './client.js';
-import type { ClientWithExtensions, Experimental_SuiClientTypes } from './types.js';
+import type { ClientWithExtensions, Experimental_MysClientTypes } from './types.js';
 
 export type ClientWithCoreApi = ClientWithExtensions<{
 	core: Experimental_CoreClient;
@@ -14,17 +15,17 @@ export type ClientWithCoreApi = ClientWithExtensions<{
 
 export abstract class Experimental_CoreClient
 	extends Experimental_BaseClient
-	implements Experimental_SuiClientTypes.TransportMethods
+	implements Experimental_MysClientTypes.TransportMethods
 {
 	core = this;
 
 	abstract getObjects(
-		options: Experimental_SuiClientTypes.GetObjectsOptions,
-	): Promise<Experimental_SuiClientTypes.GetObjectsResponse>;
+		options: Experimental_MysClientTypes.GetObjectsOptions,
+	): Promise<Experimental_MysClientTypes.GetObjectsResponse>;
 
 	async getObject(
-		options: Experimental_SuiClientTypes.GetObjectOptions,
-	): Promise<Experimental_SuiClientTypes.GetObjectResponse> {
+		options: Experimental_MysClientTypes.GetObjectOptions,
+	): Promise<Experimental_MysClientTypes.GetObjectResponse> {
 		const { objectId } = options;
 		const {
 			objects: [result],
@@ -36,46 +37,46 @@ export abstract class Experimental_CoreClient
 	}
 
 	abstract getCoins(
-		options: Experimental_SuiClientTypes.GetCoinsOptions,
-	): Promise<Experimental_SuiClientTypes.GetCoinsResponse>;
+		options: Experimental_MysClientTypes.GetCoinsOptions,
+	): Promise<Experimental_MysClientTypes.GetCoinsResponse>;
 
 	abstract getOwnedObjects(
-		options: Experimental_SuiClientTypes.GetOwnedObjectsOptions,
-	): Promise<Experimental_SuiClientTypes.GetOwnedObjectsResponse>;
+		options: Experimental_MysClientTypes.GetOwnedObjectsOptions,
+	): Promise<Experimental_MysClientTypes.GetOwnedObjectsResponse>;
 
 	abstract getBalance(
-		options: Experimental_SuiClientTypes.GetBalanceOptions,
-	): Promise<Experimental_SuiClientTypes.GetBalanceResponse>;
+		options: Experimental_MysClientTypes.GetBalanceOptions,
+	): Promise<Experimental_MysClientTypes.GetBalanceResponse>;
 
 	abstract getAllBalances(
-		options: Experimental_SuiClientTypes.GetAllBalancesOptions,
-	): Promise<Experimental_SuiClientTypes.GetAllBalancesResponse>;
+		options: Experimental_MysClientTypes.GetAllBalancesOptions,
+	): Promise<Experimental_MysClientTypes.GetAllBalancesResponse>;
 
 	abstract getTransaction(
-		options: Experimental_SuiClientTypes.GetTransactionOptions,
-	): Promise<Experimental_SuiClientTypes.GetTransactionResponse>;
+		options: Experimental_MysClientTypes.GetTransactionOptions,
+	): Promise<Experimental_MysClientTypes.GetTransactionResponse>;
 
 	abstract executeTransaction(
-		options: Experimental_SuiClientTypes.ExecuteTransactionOptions,
-	): Promise<Experimental_SuiClientTypes.ExecuteTransactionResponse>;
+		options: Experimental_MysClientTypes.ExecuteTransactionOptions,
+	): Promise<Experimental_MysClientTypes.ExecuteTransactionResponse>;
 
 	abstract dryRunTransaction(
-		options: Experimental_SuiClientTypes.DryRunTransactionOptions,
-	): Promise<Experimental_SuiClientTypes.DryRunTransactionResponse>;
+		options: Experimental_MysClientTypes.DryRunTransactionOptions,
+	): Promise<Experimental_MysClientTypes.DryRunTransactionResponse>;
 
 	abstract getReferenceGasPrice(
-		options?: Experimental_SuiClientTypes.GetReferenceGasPriceOptions,
-	): Promise<Experimental_SuiClientTypes.GetReferenceGasPriceResponse>;
+		options?: Experimental_MysClientTypes.GetReferenceGasPriceOptions,
+	): Promise<Experimental_MysClientTypes.GetReferenceGasPriceResponse>;
 
 	abstract getDynamicFields(
-		options: Experimental_SuiClientTypes.GetDynamicFieldsOptions,
-	): Promise<Experimental_SuiClientTypes.GetDynamicFieldsResponse>;
+		options: Experimental_MysClientTypes.GetDynamicFieldsOptions,
+	): Promise<Experimental_MysClientTypes.GetDynamicFieldsResponse>;
 
 	abstract resolveTransactionPlugin(): TransactionPlugin;
 
 	async getDynamicField(
-		options: Experimental_SuiClientTypes.GetDynamicFieldOptions,
-	): Promise<Experimental_SuiClientTypes.GetDynamicFieldResponse> {
+		options: Experimental_MysClientTypes.GetDynamicFieldOptions,
+	): Promise<Experimental_MysClientTypes.GetDynamicFieldResponse> {
 		const fieldId = deriveDynamicFieldID(
 			options.parentId,
 			TypeTagSerializer.parseFromStr(options.name.type),
@@ -112,7 +113,7 @@ export abstract class Experimental_CoreClient
 						typeof fieldType.typeParams[1] === 'string'
 							? fieldType.typeParams[1]
 							: normalizeStructTag(fieldType.typeParams[1]),
-					bcs: fieldObject.content.slice(SUI_ADDRESS_LENGTH + options.name.bcs.length),
+					bcs: fieldObject.content.slice(MYS_ADDRESS_LENGTH + options.name.bcs.length),
 				},
 			},
 		};
@@ -127,7 +128,7 @@ export abstract class Experimental_CoreClient
 		signal?: AbortSignal;
 		/** The amount of time to wait for transaction. Defaults to one minute. */
 		timeout?: number;
-	} & Experimental_SuiClientTypes.GetTransactionOptions): Promise<Experimental_SuiClientTypes.GetTransactionResponse> {
+	} & Experimental_MysClientTypes.GetTransactionOptions): Promise<Experimental_MysClientTypes.GetTransactionResponse> {
 		const abortSignal = signal
 			? AbortSignal.any([AbortSignal.timeout(timeout), signal])
 			: AbortSignal.timeout(timeout);

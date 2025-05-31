@@ -1,8 +1,8 @@
 {
-	"name": "@mysten/sui",
-	"author": "Mysten Labs <build@mystenlabs.com>",
-	"description": "Sui TypeScript API(Work in Progress)",
-	"homepage": "https://sdk.mystenlabs.com",
+	"name": "@socialproof/mys",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
+	"description": "Mys TypeScript API(Work in Progress)",
+	"homepage": "https://sdk.mysocial.network",
 	"version": "1.30.1",
 	"license": "Apache-2.0",
 	"sideEffects": false,
@@ -128,7 +128,7 @@
 		"generate-schema": "gql.tada generate-output"
 	},
 	"bugs": {
-		"url": "https://github.com/MystenLabs/ts-sdks/issues/new"
+		"url": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks/issues/new"
 	},
 	"publishConfig": {
 		"access": "public"
@@ -142,7 +142,7 @@
 		"@graphql-codegen/typescript-document-nodes": "4.0.16",
 		"@graphql-codegen/typescript-operations": "^4.6.0",
 		"@iarna/toml": "^2.2.5",
-		"@mysten/build-scripts": "workspace:^",
+		"@socialproof/build-scripts": "workspace:^",
 		"@parcel/watcher": "^2.5.1",
 		"@types/node": "^22.13.17",
 		"@types/tmp": "^0.2.6",
@@ -161,8 +161,8 @@
 	},
 	"dependencies": {
 		"@graphql-typed-document-node/core": "^3.2.0",
-		"@mysten/bcs": "workspace:*",
-		"@mysten/utils": "workspace:*",
+		"@socialproof/bcs": "workspace:*",
+		"@socialproof/utils": "workspace:*",
 		"@noble/curves": "^1.8.1",
 		"@noble/hashes": "^1.7.1",
 		"@scure/base": "^1.2.4",

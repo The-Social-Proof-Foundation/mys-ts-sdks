@@ -1,17 +1,18 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 import { act, renderHook, waitFor } from '@testing-library/react';
 
-import { useSuiClientMutation } from '../../src/hooks/useSuiClientMutation.js';
+import { useMysClientMutation } from '../../src/hooks/useMysClientMutation.js';
 import { createWalletProviderContextWrapper } from '../test-utils.js';
 
-describe('useSuiClientMutation', () => {
+describe('useMysClientMutation', () => {
 	it('should fetch data', async () => {
-		const suiClient = new SuiClient({ url: getFullnodeUrl('mainnet') });
-		const wrapper = createWalletProviderContextWrapper({}, suiClient);
+		const mysClient = new MysClient({ url: getFullnodeUrl('mainnet') });
+		const wrapper = createWalletProviderContextWrapper({}, mysClient);
 
-		const queryTransactionBlocks = vi.spyOn(suiClient, 'queryTransactionBlocks');
+		const queryTransactionBlocks = vi.spyOn(mysClient, 'queryTransactionBlocks');
 
 		queryTransactionBlocks.mockResolvedValueOnce({
 			data: [{ digest: '0x123' }],
@@ -19,7 +20,7 @@ describe('useSuiClientMutation', () => {
 			nextCursor: 'page2',
 		});
 
-		const { result } = renderHook(() => useSuiClientMutation('queryTransactionBlocks'), {
+		const { result } = renderHook(() => useMysClientMutation('queryTransactionBlocks'), {
 			wrapper,
 		});
 

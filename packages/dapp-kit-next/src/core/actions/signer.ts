@@ -1,19 +1,20 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type {
-	SuiSignAndExecuteTransactionInput,
-	SuiSignTransactionInput,
-} from '@mysten/wallet-standard';
-import type { Transaction } from '@mysten/sui/transactions';
+	MysSignAndExecuteTransactionInput,
+	MysSignTransactionInput,
+} from '@socialproof/wallet-standard';
+import type { Transaction } from '@socialproof/mys/transactions';
 
 type SignTransactionArgs = {
 	transaction: Transaction | string;
-} & Omit<SuiSignTransactionInput, 'account' | 'chain' | 'transaction'>;
+} & Omit<MysSignTransactionInput, 'account' | 'chain' | 'transaction'>;
 
 type signAndExecuteTransactionArgs = {
 	transaction: Transaction | string;
-} & Omit<SuiSignAndExecuteTransactionInput, 'account' | 'chain' | 'transaction'>;
+} & Omit<MysSignAndExecuteTransactionInput, 'account' | 'chain' | 'transaction'>;
 
 export function createSignerActions() {
 	return {

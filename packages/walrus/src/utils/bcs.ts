@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { BcsType } from '@mysten/sui/bcs';
-import { bcs } from '@mysten/sui/bcs';
+import type { BcsType } from '@socialproof/mys/bcs';
+import { bcs } from '@socialproof/mys/bcs';
 
 const MerkleNode = bcs.enum('MerkleNode', {
 	Empty: null,

@@ -1,16 +1,17 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type SuiLedgerClient from '@mysten/ledgerjs-hw-app-sui';
-import type { SuiClient } from '@mysten/sui/client';
-import type { SignatureWithBytes } from '@mysten/sui/cryptography';
-import { messageWithIntent, Signer, toSerializedSignature } from '@mysten/sui/cryptography';
-import { Ed25519PublicKey } from '@mysten/sui/keypairs/ed25519';
-import { Transaction } from '@mysten/sui/transactions';
-import { toBase64 } from '@mysten/sui/utils';
+import type MysLedgerClient from '@socialproof/ledgerjs-hw-app-mys';
+import type { MysClient } from '@socialproof/mys/client';
+import type { SignatureWithBytes } from '@socialproof/mys/cryptography';
+import { messageWithIntent, Signer, toSerializedSignature } from '@socialproof/mys/cryptography';
+import { Ed25519PublicKey } from '@socialproof/mys/keypairs/ed25519';
+import { Transaction } from '@socialproof/mys/transactions';
+import { toBase64 } from '@socialproof/mys/utils';
 
-import { SuiMoveObject } from './bcs.js';
-import { bcs } from '@mysten/sui/bcs';
+import { MysMoveObject } from './bcs.js';
+import { bcs } from '@socialproof/mys/bcs';
 
 /**
  * Configuration options for initializing the LedgerSigner.
@@ -18,18 +19,18 @@ import { bcs } from '@mysten/sui/bcs';
 export interface LedgerSignerOptions {
 	publicKey: Ed25519PublicKey;
 	derivationPath: string;
-	ledgerClient: SuiLedgerClient;
-	suiClient: SuiClient;
+	ledgerClient: MysLedgerClient;
+	mysClient: MysClient;
 }
 
 /**
- * Ledger integrates with the Sui blockchain to provide signing capabilities using Ledger devices.
+ * Ledger integrates with the Mys blockchain to provide signing capabilities using Ledger devices.
  */
 export class LedgerSigner extends Signer {
 	#derivationPath: string;
 	#publicKey: Ed25519PublicKey;
-	#ledgerClient: SuiLedgerClient;
-	#suiClient: SuiClient;
+	#ledgerClient: MysLedgerClient;
+	#mysClient: MysClient;
 
 	/**
 	 * Creates an instance of LedgerSigner. It's expected to call the static `fromDerivationPath` method to create an instance.
@@ -38,12 +39,12 @@ export class LedgerSigner extends Signer {
 	 * const signer = await LedgerSigner.fromDerivationPath(derivationPath, options);
 	 * ```
 	 */
-	constructor({ publicKey, derivationPath, ledgerClient, suiClient }: LedgerSignerOptions) {
+	constructor({ publicKey, derivationPath, ledgerClient, mysClient }: LedgerSignerOptions) {
 		super();
 		this.#publicKey = publicKey;
 		this.#derivationPath = derivationPath;
 		this.#ledgerClient = ledgerClient;
-		this.#suiClient = suiClient;
+		this.#mysClient = mysClient;
 	}
 
 	/**
@@ -119,8 +120,8 @@ export class LedgerSigner extends Signer {
 	 */
 	static async fromDerivationPath(
 		derivationPath: string,
-		ledgerClient: SuiLedgerClient,
-		suiClient: SuiClient,
+		ledgerClient: MysLedgerClient,
+		mysClient: MysClient,
 	) {
 		const { publicKey } = await ledgerClient.getPublicKey(derivationPath);
 		if (!publicKey) {
@@ -131,7 +132,7 @@ export class LedgerSigner extends Signer {
 			derivationPath,
 			publicKey: new Ed25519PublicKey(publicKey),
 			ledgerClient,
-			suiClient,
+			mysClient,
 		});
 	}
 
@@ -148,7 +149,7 @@ export class LedgerSigner extends Signer {
 			})
 			.filter((objectId): objectId is string => !!objectId);
 
-		const objects = await this.#suiClient.multiGetObjects({
+		const objects = await this.#mysClient.multiGetObjects({
 			ids: [...gasObjectIds, ...inputObjectIds],
 			options: {
 				showBcs: true,
@@ -160,14 +161,14 @@ export class LedgerSigner extends Signer {
 
 		// NOTE: We should probably get rid of this manual serialization logic in favor of using the
 		// already serialized object bytes from the GraphQL API once there is more mainstream support
-		// for it + we can enforce the transport type on the Sui client.
+		// for it + we can enforce the transport type on the Mys client.
 		const bcsObjects = objects
 			.map((object) => {
 				if (object.error || !object.data || object.data.bcs?.dataType !== 'moveObject') {
 					return null;
 				}
 
-				return SuiMoveObject.serialize({
+				return MysMoveObject.serialize({
 					data: {
 						MoveObject: {
 							type: object.data.bcs.type,

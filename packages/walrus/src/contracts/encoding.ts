@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Transaction } from '@mysten/sui/transactions';
+import type { Transaction } from '@socialproof/mys/transactions';
 
 import { normalizeMoveArguments } from './utils/index.js';
 import type { RawTransactionArgument } from './utils/index.js';

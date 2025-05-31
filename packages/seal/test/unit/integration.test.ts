@@ -1,11 +1,12 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64, fromHex, toBase64 } from '@mysten/bcs';
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
-import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';
-import { SuiGraphQLClient } from '@mysten/sui/graphql';
-import { Transaction } from '@mysten/sui/transactions';
+import { fromBase64, fromHex, toBase64 } from '@socialproof/bcs';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import { MysGraphQLClient } from '@socialproof/mys/graphql';
+import { Transaction } from '@socialproof/mys/transactions';
 import { beforeAll, describe, expect, it, vi } from 'vitest';
 
 import { SealClient } from '../../src';
@@ -31,14 +32,14 @@ import { createFullId } from '../../src/utils';
  * Helper function
  * @param packageId
  * @param moduleName
- * @param suiClient
+ * @param mysClient
  * @param innerId
  * @returns
  */
 async function constructTxBytes(
 	packageId: string,
 	moduleName: string,
-	suiClient: SuiClient,
+	mysClient: MysClient,
 	innerIds: string[],
 ): Promise<Uint8Array> {
 	const tx = new Transaction();
@@ -50,7 +51,7 @@ async function constructTxBytes(
 			arguments: [keyIdArg, objectArg],
 		});
 	}
-	return await tx.build({ client: suiClient, onlyTransactionKind: true });
+	return await tx.build({ client: mysClient, onlyTransactionKind: true });
 }
 
 const pk = fromBase64(
@@ -110,16 +111,16 @@ const MOCK_KEY_SERVERS = new Map([
 ]);
 describe('Integration test', () => {
 	let keypair: Ed25519Keypair;
-	let suiAddress: string;
-	let suiClient: SuiClient;
+	let mysAddress: string;
+	let mysClient: MysClient;
 	let TESTNET_PACKAGE_ID: string;
 	let objectIds: { objectId: string; weight: number; apiKeyName?: string; apiKey?: string }[];
 	beforeAll(async () => {
 		keypair = Ed25519Keypair.fromSecretKey(
-			'suiprivkey1qqgzvw5zc2zmga0uyp4rzcgk42pzzw6387zqhahr82pp95yz0scscffh2d8',
+			'mysprivkey1qqgzvw5zc2zmga0uyp4rzcgk42pzzw6387zqhahr82pp95yz0scscffh2d8',
 		);
-		suiAddress = keypair.getPublicKey().toSuiAddress();
-		suiClient = new SuiClient({ url: getFullnodeUrl('testnet') });
+		mysAddress = keypair.getPublicKey().toMysAddress();
+		mysClient = new MysClient({ url: getFullnodeUrl('testnet') });
 		TESTNET_PACKAGE_ID = '0x9709d4ee371488c2bc09f508e98e881bd1d5335e0805d7e6a99edd54a7027954';
 		// Object ids pointing to ci key servers' urls
 		objectIds = [
@@ -142,7 +143,7 @@ describe('Integration test', () => {
 		const data2 = new Uint8Array([4, 5, 6]);
 
 		const client = new SealClient({
-			suiClient,
+			mysClient,
 			serverConfigs: objectIds,
 			verifyKeyServers: false,
 		});
@@ -154,16 +155,16 @@ describe('Integration test', () => {
 			data,
 		});
 
-		const txBytes = await constructTxBytes(TESTNET_PACKAGE_ID, 'whitelist', suiClient, [
+		const txBytes = await constructTxBytes(TESTNET_PACKAGE_ID, 'whitelist', mysClient, [
 			whitelistId,
 		]);
 
 		const sessionKey = new SessionKey({
-			address: suiAddress,
+			address: mysAddress,
 			packageId: TESTNET_PACKAGE_ID,
 			ttlMin: 10,
 			signer: keypair,
-			suiClient,
+			mysClient,
 		});
 
 		// decrypt the object encrypted to whitelist 1.
@@ -185,7 +186,7 @@ describe('Integration test', () => {
 
 		// construct a ptb that contains two seal_approve
 		// for whitelist 1 and 2.
-		const txBytes2 = await constructTxBytes(TESTNET_PACKAGE_ID, 'whitelist', suiClient, [
+		const txBytes2 = await constructTxBytes(TESTNET_PACKAGE_ID, 'whitelist', mysClient, [
 			whitelistId,
 			whitelistId2,
 		]);
@@ -215,21 +216,21 @@ describe('Integration test', () => {
 		const data = new Uint8Array([1, 2, 3]);
 
 		const client = new SealClient({
-			suiClient,
+			mysClient,
 			serverConfigs: objectIds,
 			verifyKeyServers: false,
 		});
 
-		const txBytes = await constructTxBytes(TESTNET_PACKAGE_ID, 'whitelist', suiClient, [
+		const txBytes = await constructTxBytes(TESTNET_PACKAGE_ID, 'whitelist', mysClient, [
 			whitelistId,
 		]);
 
 		const sessionKey = new SessionKey({
-			address: suiAddress,
+			address: mysAddress,
 			packageId: TESTNET_PACKAGE_ID,
 			ttlMin: 10,
 			signer: keypair,
-			suiClient,
+			mysClient,
 		});
 
 		const derivedKeys = await client.getDerivedKeys({
@@ -266,7 +267,7 @@ describe('Integration test', () => {
 		const whitelistId = '0xaae704d2280f2c3d24fc08972bb31f2ef1f1c968784935434c3296be5bfd9d5b';
 		const data = new Uint8Array([1, 2, 3]);
 
-		const client = suiClient.$extend(
+		const client = mysClient.$extend(
 			SealClient.experimental_asClientExtension({
 				serverConfigs: objectIds,
 				verifyKeyServers: false,
@@ -280,16 +281,16 @@ describe('Integration test', () => {
 			data,
 		});
 
-		const txBytes = await constructTxBytes(TESTNET_PACKAGE_ID, 'whitelist', suiClient, [
+		const txBytes = await constructTxBytes(TESTNET_PACKAGE_ID, 'whitelist', mysClient, [
 			whitelistId,
 		]);
 
 		const sessionKey = new SessionKey({
-			address: suiAddress,
+			address: mysAddress,
 			packageId: TESTNET_PACKAGE_ID,
 			ttlMin: 10,
 			signer: keypair,
-			suiClient,
+			mysClient,
 		});
 		// decrypt the object encrypted to whitelist 1.
 		const decryptedBytes = await client.seal.decrypt({
@@ -318,7 +319,7 @@ describe('Integration test', () => {
 
 		// encrypt using 2 out of 3
 		const clientAllServers = new SealClient({
-			suiClient,
+			mysClient,
 			serverConfigs: objectIds,
 			verifyKeyServers: false,
 		});
@@ -330,21 +331,21 @@ describe('Integration test', () => {
 			data,
 		});
 
-		const txBytes = await constructTxBytes(TESTNET_PACKAGE_ID, 'whitelist', suiClient, [
+		const txBytes = await constructTxBytes(TESTNET_PACKAGE_ID, 'whitelist', mysClient, [
 			whitelistId,
 		]);
 
 		const sessionKey = new SessionKey({
-			address: suiAddress,
+			address: mysAddress,
 			packageId: TESTNET_PACKAGE_ID,
 			ttlMin: 10,
 			signer: keypair,
-			suiClient,
+			mysClient,
 		});
 
 		// client with only 2 servers should suffice
 		const client2Servers = new SealClient({
-			suiClient,
+			mysClient,
 			serverConfigs: objectIds.slice(0, 2),
 			verifyKeyServers: false,
 		});
@@ -359,7 +360,7 @@ describe('Integration test', () => {
 
 		// client with only 1 server should fail
 		const client1Server = new SealClient({
-			suiClient,
+			mysClient,
 			serverConfigs: objectIds.slice(2),
 			verifyKeyServers: false,
 		});
@@ -384,7 +385,7 @@ describe('Integration test', () => {
 			},
 		];
 		const clientDifferentWeight = new SealClient({
-			suiClient,
+			mysClient,
 			serverConfigs: objectIds,
 			verifyKeyServers: false,
 		});
@@ -402,7 +403,7 @@ describe('Integration test', () => {
 		// Setup encrypted object.
 		const whitelistId = '0xaae704d2280f2c3d24fc08972bb31f2ef1f1c968784935434c3296be5bfd9d5b';
 		const client = new SealClient({
-			suiClient,
+			mysClient,
 			serverConfigs: objectIds,
 		});
 		const data = new Uint8Array([1, 2, 3]);
@@ -416,13 +417,13 @@ describe('Integration test', () => {
 
 		const encryptedObject = EncryptedObject.parse(encryptedBytes);
 
-		// Session key with mismatched sui address and personal msg signature fails.
-		const wrongSuiAddress = Ed25519Keypair.generate().getPublicKey().toSuiAddress();
+		// Session key with mismatched mys address and personal msg signature fails.
+		const wrongMysAddress = Ed25519Keypair.generate().getPublicKey().toMysAddress();
 		const sessionKey = new SessionKey({
-			address: wrongSuiAddress,
+			address: wrongMysAddress,
 			packageId: TESTNET_PACKAGE_ID,
 			ttlMin: 10,
-			suiClient: new SuiGraphQLClient({ url: 'https://sui-testnet.mystenlabs.com/graphql' }),
+			mysClient: new MysGraphQLClient({ url: 'https://testnet.mysocial.network/graphql' }),
 		});
 		const sig = await keypair.signPersonalMessage(sessionKey.getPersonalMessage());
 		await expect(sessionKey.setPersonalMessageSignature(sig.signature)).rejects.toThrow(
@@ -431,14 +432,14 @@ describe('Integration test', () => {
 
 		// Wrong txBytes fails to verify.
 		const sessionKey2 = new SessionKey({
-			address: suiAddress,
+			address: mysAddress,
 			packageId: TESTNET_PACKAGE_ID,
 			ttlMin: 10,
 			signer: keypair,
-			suiClient: new SuiGraphQLClient({ url: 'https://sui-testnet.mystenlabs.com/graphql' }),
+			mysClient: new MysGraphQLClient({ url: 'https://testnet.mysocial.network/graphql' }),
 		});
 
-		const wrongTxBytes = await constructTxBytes(TESTNET_PACKAGE_ID, 'whitelist', suiClient, [
+		const wrongTxBytes = await constructTxBytes(TESTNET_PACKAGE_ID, 'whitelist', mysClient, [
 			'0xd9da0a7307c753e4ee4e358261bd0848f1e98e358b175e1f05ef16ae744f2e29',
 		]);
 		await expect(
@@ -453,21 +454,21 @@ describe('Integration test', () => {
 		// construct a non move call ptb, gets invalid PTB error.
 		const tx = new Transaction();
 		const objectArg = tx.object(whitelistId);
-		tx.transferObjects([objectArg], suiAddress);
-		const txBytes3 = await tx.build({ client: suiClient, onlyTransactionKind: true });
+		tx.transferObjects([objectArg], mysAddress);
+		const txBytes3 = await tx.build({ client: mysClient, onlyTransactionKind: true });
 
 		const client2 = new SealClient({
-			suiClient,
+			mysClient,
 			serverConfigs: objectIds,
 			verifyKeyServers: false,
 		});
 
 		const sessionKey3 = new SessionKey({
-			address: suiAddress,
+			address: mysAddress,
 			packageId: TESTNET_PACKAGE_ID,
 			ttlMin: 10,
 			signer: keypair,
-			suiClient: new SuiGraphQLClient({ url: 'https://sui-testnet.mystenlabs.com/graphql' }),
+			mysClient: new MysGraphQLClient({ url: 'https://testnet.mysocial.network/graphql' }),
 		});
 		await expect(
 			client2.fetchKeys({
@@ -486,10 +487,10 @@ describe('Integration test', () => {
 	it('test session key verify personal message signature', async () => {
 		const kp = Ed25519Keypair.generate();
 		const sessionKey = new SessionKey({
-			address: kp.getPublicKey().toSuiAddress(),
+			address: kp.getPublicKey().toMysAddress(),
 			packageId: TESTNET_PACKAGE_ID,
 			ttlMin: 10,
-			suiClient: new SuiGraphQLClient({ url: 'https://sui-testnet.mystenlabs.com/graphql' }),
+			mysClient: new MysGraphQLClient({ url: 'https://testnet.mysocial.network/graphql' }),
 		});
 		// Wrong signature set throws error.
 		const sig = await kp.signPersonalMessage(new TextEncoder().encode('hello'));
@@ -516,7 +517,7 @@ describe('Integration test', () => {
 			},
 		];
 		const client = new SealClient({
-			suiClient,
+			mysClient,
 			serverConfigs: objectIds,
 			verifyKeyServers: false,
 		});
@@ -531,11 +532,11 @@ describe('Integration test', () => {
 			.mockRejectedValueOnce(new Error('Other error'));
 
 		const sessionKey = new SessionKey({
-			address: suiAddress,
+			address: mysAddress,
 			packageId: TESTNET_PACKAGE_ID,
 			ttlMin: 10,
 			signer: keypair,
-			suiClient: new SuiGraphQLClient({ url: 'https://sui-testnet.mystenlabs.com/graphql' }),
+			mysClient: new MysGraphQLClient({ url: 'https://testnet.mysocial.network/graphql' }),
 		});
 
 		const whitelistId = '0xaae704d2280f2c3d24fc08972bb31f2ef1f1c968784935434c3296be5bfd9d5b';

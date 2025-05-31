@@ -1,9 +1,10 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { isValidNamedPackage, isValidNamedType } from '../../utils/move-registry.js';
-import { normalizeStructTag, parseStructTag } from '../../utils/sui-types.js';
-import type { StructTag } from '../../utils/sui-types.js';
+import { normalizeStructTag, parseStructTag } from '../../utils/mys-types.js';
+import type { StructTag } from '../../utils/mys-types.js';
 import type { TransactionDataBuilder } from '../TransactionData.js';
 
 export type NamedPackagesPluginCache = {
@@ -200,7 +201,7 @@ function getNamesFromTypeList(types: string[]) {
 
 function hasMvrName(nameOrType: string) {
 	return (
-		nameOrType.includes(NAME_SEPARATOR) || nameOrType.includes('@') || nameOrType.includes('.sui')
+		nameOrType.includes(NAME_SEPARATOR) || nameOrType.includes('@') || nameOrType.includes('.mys')
 	);
 }
 

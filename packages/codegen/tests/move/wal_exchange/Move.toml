@@ -1,11 +1,11 @@
 [package]
 name = "WAL_exchange"
 license = "Apache-2.0"
-authors = ["Mysten Labs <build@mystenlabs.com>"]
+authors = ["The Social Proof Foundation <brandon@socialproof.foundation>"]
 edition = "2024.beta"
 
 [dependencies]
-Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "testnet-v1.43.0" }
+Sui = { git = "https://github.com/The-Social-Proof-Foundation/mys-core.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "testnet-v1.43.0" }
 WAL = { local = "../wal" }
 
 # For remote import, use the `{ git = "...", subdir = "...", rev = "..." }`.

@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { Transaction } from '@mysten/sui/transactions';
+import { Transaction } from '@socialproof/mys/transactions';
 
 import { init as FeedModule } from './tests/generated/feed.js';
 import { init as ManagedObjectModule } from './tests/generated/managed.js';

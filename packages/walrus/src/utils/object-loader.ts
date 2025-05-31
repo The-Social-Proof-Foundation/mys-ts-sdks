@@ -1,27 +1,28 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { BcsType } from '@mysten/bcs';
-import { pureBcsSchemaFromTypeName } from '@mysten/sui/bcs';
-import type { PureTypeName, ShapeFromPureTypeName } from '@mysten/sui/bcs';
-import type { SuiObjectData } from '@mysten/sui/client';
+import type { BcsType } from '@socialproof/bcs';
+import { pureBcsSchemaFromTypeName } from '@socialproof/mys/bcs';
+import type { PureTypeName, ShapeFromPureTypeName } from '@socialproof/mys/bcs';
+import type { MysObjectData } from '@socialproof/mys/client';
 import type {
 	Experimental_BaseClient,
-	Experimental_SuiClientTypes,
-} from '@mysten/sui/experimental';
-import { deriveDynamicFieldID } from '@mysten/sui/utils';
+	Experimental_MysClientTypes,
+} from '@socialproof/mys/experimental';
+import { deriveDynamicFieldID } from '@socialproof/mys/utils';
 import DataLoader from 'dataloader';
 
 import { Field } from '../contracts/deps/0x0000000000000000000000000000000000000000000000000000000000000002/dynamic_field.js';
 
-export class SuiObjectDataLoader extends DataLoader<
+export class MysObjectDataLoader extends DataLoader<
 	string,
-	Experimental_SuiClientTypes.ObjectResponse
+	Experimental_MysClientTypes.ObjectResponse
 > {
-	#dynamicFieldCache = new Map<string, Map<string, Experimental_SuiClientTypes.ObjectResponse>>();
-	constructor(suiClient: Experimental_BaseClient) {
+	#dynamicFieldCache = new Map<string, Map<string, Experimental_MysClientTypes.ObjectResponse>>();
+	constructor(mysClient: Experimental_BaseClient) {
 		super(async (ids: readonly string[]) => {
-			const { objects } = await suiClient.core.getObjects({
+			const { objects } = await mysClient.core.getObjects({
 				objectIds: ids as string[],
 			});
 
@@ -29,7 +30,7 @@ export class SuiObjectDataLoader extends DataLoader<
 		});
 	}
 
-	override async load<T = SuiObjectData>(id: string, schema?: BcsType<T, any>): Promise<T> {
+	override async load<T = MysObjectData>(id: string, schema?: BcsType<T, any>): Promise<T> {
 		const data = await super.load(id);
 
 		if (schema) {
@@ -39,7 +40,7 @@ export class SuiObjectDataLoader extends DataLoader<
 		return data as T;
 	}
 
-	override async loadMany<T = SuiObjectData>(
+	override async loadMany<T = MysObjectData>(
 		ids: string[],
 		schema?: BcsType<T, any>,
 	): Promise<(T | Error)[]> {

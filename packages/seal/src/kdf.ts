@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromHex } from '@mysten/bcs';
+import { fromHex } from '@socialproof/bcs';
 import { sha3_256 } from '@noble/hashes/sha3';
 
 import { G1Element } from './bls12381.js';
@@ -11,9 +12,9 @@ import { flatten } from './utils.js';
 /**
  * The domain separation tag for the hash-to-group function.
  */
-const DST: Uint8Array = new TextEncoder().encode('SUI-SEAL-IBE-BLS12381-00');
-const KDF_DST = new TextEncoder().encode('SUI-SEAL-IBE-BLS12381-H2-00');
-const DERIVE_KEY_DST = new TextEncoder().encode('SUI-SEAL-IBE-BLS12381-H3-00');
+const DST: Uint8Array = new TextEncoder().encode('MYS-SEAL-IBE-BLS12381-00');
+const KDF_DST = new TextEncoder().encode('MYS-SEAL-IBE-BLS12381-H2-00');
+const DERIVE_KEY_DST = new TextEncoder().encode('MYS-SEAL-IBE-BLS12381-H3-00');
 
 /**
  * Hash an id to a G1Element.

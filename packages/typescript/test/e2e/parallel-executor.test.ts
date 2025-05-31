@@ -1,11 +1,12 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { afterEach } from 'node:test';
 import { afterAll, beforeAll, beforeEach, describe, expect, it, Mock, vi } from 'vitest';
 
 import { bcs } from '../../src/bcs';
-import { SuiClient } from '../../src/client';
+import { MysClient } from '../../src/client';
 import { Ed25519Keypair } from '../../src/keypairs/ed25519';
 import { ParallelTransactionExecutor, Transaction } from '../../src/transactions';
 import { setup, TestToolbox } from './utils/setup';
@@ -51,13 +52,13 @@ describe('ParallelTransactionExecutor', { retry: 3 }, () => {
 		let totalTransactions = 0;
 
 		(toolbox.client.executeTransactionBlock as Mock).mockImplementation(async function (
-			this: SuiClient,
+			this: MysClient,
 			input,
 		) {
 			totalTransactions++;
 			concurrentRequests++;
 			maxConcurrentRequests = Math.max(maxConcurrentRequests, concurrentRequests);
-			const promise = SuiClient.prototype.executeTransactionBlock.call(this, input);
+			const promise = MysClient.prototype.executeTransactionBlock.call(this, input);
 
 			return promise.finally(() => {
 				concurrentRequests--;
@@ -87,7 +88,7 @@ describe('ParallelTransactionExecutor', { retry: 3 }, () => {
 
 		const txbs = Array.from({ length: 10 }, () => {
 			const txb = new Transaction();
-			txb.transferObjects([txb.gas], receiver.toSuiAddress());
+			txb.transferObjects([txb.gas], receiver.toMysAddress());
 			return txb;
 		});
 

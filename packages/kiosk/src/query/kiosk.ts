@@ -1,14 +1,15 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type {
 	PaginatedObjectsResponse,
 	PaginationArguments,
-	SuiClient,
-	SuiObjectData,
-	SuiObjectResponse,
-} from '@mysten/sui/client';
-import { isValidSuiAddress } from '@mysten/sui/utils';
+	MysClient,
+	MysObjectData,
+	MysObjectResponse,
+} from '@socialproof/mys/client';
+import { isValidMysAddress } from '@socialproof/mys/utils';
 
 import type {
 	FetchKioskOptions,
@@ -29,7 +30,7 @@ import {
 } from '../utils.js';
 
 export async function fetchKiosk(
-	client: SuiClient,
+	client: MysClient,
 	kioskId: string,
 	pagination: PaginationArguments<string>,
 	options: FetchKioskOptions,
@@ -91,7 +92,7 @@ const DEFAULT_PAGE_SIZE = 50;
 const PERSON_KIOSK_CURSOR = 'personal';
 const OWNED_KIOSKS_CURSOR = 'owned';
 export async function getOwnedKiosks(
-	client: SuiClient,
+	client: MysClient,
 	address: string,
 	options?: {
 		pagination?: PaginationArguments<string>;
@@ -99,7 +100,7 @@ export async function getOwnedKiosks(
 	},
 ): Promise<OwnedKiosks> {
 	// TODO: this should throw an error, but I am not going to change it right now incase it breaks existing code.
-	if (!isValidSuiAddress(address)) {
+	if (!isValidMysAddress(address)) {
 		return {
 			nextCursor: null,
 			hasNextPage: false,
@@ -198,7 +199,7 @@ function formatOwnedKioskResponse(
 ): OwnedKiosks {
 	const { data, hasNextPage, nextCursor } = response;
 	// get kioskIds from the OwnerCaps.
-	const kioskIdList = data?.map((x: SuiObjectResponse) => {
+	const kioskIdList = data?.map((x: MysObjectResponse) => {
 		const fields =
 			x.data?.content?.dataType === 'moveObject'
 				? (x.data.content.fields as unknown as
@@ -216,7 +217,7 @@ function formatOwnedKioskResponse(
 
 	// clean up data that might have an error in them.
 	// only return valid objects.
-	const filteredData = data.filter((x) => 'data' in x).map((x) => x.data) as SuiObjectData[];
+	const filteredData = data.filter((x) => 'data' in x).map((x) => x.data) as MysObjectData[];
 
 	return {
 		nextCursor: nextCursor ? `${cursorType}:${nextCursor}` : nextCursor,
@@ -234,7 +235,7 @@ function formatOwnedKioskResponse(
 
 // Get a kiosk extension data for a given kioskId and extensionType.
 export async function fetchKioskExtension(
-	client: SuiClient,
+	client: MysClient,
 	kioskId: string,
 	extensionType: string,
 ): Promise<KioskExtension | null> {

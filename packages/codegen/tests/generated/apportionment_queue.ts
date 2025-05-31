@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs, type BcsType } from '@mysten/sui/bcs';
-import { type Transaction } from '@mysten/sui/transactions';
+import { bcs, type BcsType } from '@socialproof/mys/bcs';
+import { type Transaction } from '@socialproof/mys/transactions';
 import { normalizeMoveArguments, type RawTransactionArgument } from './utils/index.js';
 import * as uq64_64 from './deps/0x0000000000000000000000000000000000000000000000000000000000000001/uq64_64.js';
 export function ApportionmentQueue<T0 extends BcsType<any>>(...typeParameters: [T0]) {

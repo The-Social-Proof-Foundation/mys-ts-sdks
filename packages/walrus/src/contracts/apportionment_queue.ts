@@ -1,9 +1,10 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/sui/bcs';
-import type { BcsType } from '@mysten/sui/bcs';
-import type { Transaction } from '@mysten/sui/transactions';
+import { bcs } from '@socialproof/mys/bcs';
+import type { BcsType } from '@socialproof/mys/bcs';
+import type { Transaction } from '@socialproof/mys/transactions';
 
 import * as uq64_64 from './deps/0x0000000000000000000000000000000000000000000000000000000000000001/uq64_64.js';
 import { normalizeMoveArguments } from './utils/index.js';

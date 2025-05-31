@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { defineConfig } from 'vitest/config';
@@ -18,8 +19,8 @@ export default defineConfig({
 	},
 	resolve: {
 		alias: {
-			'@mysten/bcs': new URL('../../../bcs/src', import.meta.url).pathname,
-			'@mysten/utils': new URL('../../../utils/src', import.meta.url).pathname,
+			'@socialproof/bcs': new URL('../../../bcs/src', import.meta.url).pathname,
+			'@socialproof/utils': new URL('../../../utils/src', import.meta.url).pathname,
 		},
 	},
 });

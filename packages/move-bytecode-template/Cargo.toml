@@ -2,7 +2,7 @@
 name = "move-bytecode-template"
 description = "WASM variant of the move-binary-format which allows bytecode templates"
 version = "0.1.1"
-authors = ["Mysten Labs <build@mystenlabs.com>"]
+authors = ["The Social Proof Foundation <brandon@socialproof.foundation>"]
 edition = "2021"
 repository = "https://github.com/mystenlabs/sui.git"
 license = "Apache-2.0"
@@ -10,8 +10,8 @@ publish = false
 
 [dependencies]
 hex = "0.4.3"
-move-binary-format = { git = "https://github.com/MystenLabs/sui", features = ["wasm"] }
-move-core-types = { git = "https://github.com/MystenLabs/sui", default-features = false}
+move-binary-format = { git = "https://github.com/The-Social-Proof-Foundation/mys-core", features = ["wasm"] }
+move-core-types = { git = "https://github.com/The-Social-Proof-Foundation/mys-core", default-features = false}
 serde = { version = "1.0.124", default-features = false }
 serde-wasm-bindgen = "0.5.0"
 serde_json = "1.0.64"

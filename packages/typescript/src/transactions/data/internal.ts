@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { EnumInputShape, EnumOutputShape } from '@mysten/bcs';
+import type { EnumInputShape, EnumOutputShape } from '@socialproof/bcs';
 import type { GenericSchema, InferInput, InferOutput } from 'valibot';
 import {
 	array,
@@ -24,8 +25,8 @@ import {
 	unknown,
 } from 'valibot';
 
-import { isValidSuiAddress, normalizeSuiAddress } from '../../utils/sui-types.js';
-import type { Simplify } from '@mysten/utils';
+import { isValidMysAddress, normalizeMysAddress } from '../../utils/mys-types.js';
+import type { Simplify } from '@socialproof/utils';
 
 type EnumSchema<T extends Record<string, GenericSchema<any>>> = GenericSchema<
 	EnumInputShape<
@@ -52,12 +53,12 @@ export function safeEnum<T extends Record<string, GenericSchema<any>>>(options: 
 	) as EnumSchema<T>;
 }
 
-export const SuiAddress = pipe(
+export const MysAddress = pipe(
 	string(),
-	transform((value) => normalizeSuiAddress(value)),
-	check(isValidSuiAddress),
+	transform((value) => normalizeMysAddress(value)),
+	check(isValidMysAddress),
 );
-export const ObjectID = SuiAddress;
+export const ObjectID = MysAddress;
 export const BCSBytes = string();
 export const JsonU64 = pipe(
 	union([string(), pipe(number(), integer())]),
@@ -71,16 +72,16 @@ export const JsonU64 = pipe(
 		}
 	}, 'Invalid u64'),
 );
-// https://github.com/MystenLabs/sui/blob/df41d5fa8127634ff4285671a01ead00e519f806/crates/sui-types/src/base_types.rs#L138
+// https://github.com/The-Social-Proof-Foundation/mys-core/blob/df41d5fa8127634ff4285671a01ead00e519f806/crates/mys-types/src/base_types.rs#L138
 // Implemented as a tuple in rust
 export const ObjectRef = object({
-	objectId: SuiAddress,
+	objectId: MysAddress,
 	version: JsonU64,
 	digest: string(),
 });
 export type ObjectRef = InferOutput<typeof ObjectRef>;
 
-// https://github.com/MystenLabs/sui/blob/df41d5fa8127634ff4285671a01ead00e519f806/crates/sui-types/src/transaction.rs#L690-L702
+// https://github.com/The-Social-Proof-Foundation/mys-core/blob/df41d5fa8127634ff4285671a01ead00e519f806/crates/mys-types/src/transaction.rs#L690-L702
 export const Argument = pipe(
 	union([
 		object({ GasCoin: literal(true) }),
@@ -110,16 +111,16 @@ export const Argument = pipe(
 
 export type Argument = InferOutput<typeof Argument>;
 
-// https://github.com/MystenLabs/sui/blob/df41d5fa8127634ff4285671a01ead00e519f806/crates/sui-types/src/transaction.rs#L1387-L1392
+// https://github.com/The-Social-Proof-Foundation/mys-core/blob/df41d5fa8127634ff4285671a01ead00e519f806/crates/mys-types/src/transaction.rs#L1387-L1392
 export const GasData = object({
 	budget: nullable(JsonU64),
 	price: nullable(JsonU64),
-	owner: nullable(SuiAddress),
+	owner: nullable(MysAddress),
 	payment: nullable(array(ObjectRef)),
 });
 export type GasData = InferOutput<typeof GasData>;
 
-// https://github.com/MystenLabs/sui/blob/df41d5fa8127634ff4285671a01ead00e519f806/external-crates/move/crates/move-core-types/src/language_storage.rs#L140-L147
+// https://github.com/The-Social-Proof-Foundation/mys-core/blob/df41d5fa8127634ff4285671a01ead00e519f806/external-crates/move/crates/move-core-types/src/language_storage.rs#L140-L147
 export const StructTag = object({
 	address: string(),
 	module: string(),
@@ -129,7 +130,7 @@ export const StructTag = object({
 });
 export type StructTag = InferOutput<typeof StructTag>;
 
-// https://github.com/MystenLabs/sui/blob/cea8742e810142a8145fd83c4c142d61e561004a/crates/sui-graphql-rpc/schema/current_progress_schema.graphql#L1614-L1627
+// https://github.com/The-Social-Proof-Foundation/mys-core/blob/cea8742e810142a8145fd83c4c142d61e561004a/crates/mys-graphql-rpc/schema/current_progress_schema.graphql#L1614-L1627
 export type OpenMoveTypeSignatureBody =
 	| 'address'
 	| 'bool'
@@ -171,14 +172,14 @@ export const OpenMoveTypeSignatureBody: GenericSchema<OpenMoveTypeSignatureBody>
 	object({ typeParameter: pipe(number(), integer()) }),
 ]);
 
-// https://github.com/MystenLabs/sui/blob/cea8742e810142a8145fd83c4c142d61e561004a/crates/sui-graphql-rpc/schema/current_progress_schema.graphql#L1609-L1612
+// https://github.com/The-Social-Proof-Foundation/mys-core/blob/cea8742e810142a8145fd83c4c142d61e561004a/crates/mys-graphql-rpc/schema/current_progress_schema.graphql#L1609-L1612
 export const OpenMoveTypeSignature = object({
 	ref: nullable(union([literal('&'), literal('&mut')])),
 	body: OpenMoveTypeSignatureBody,
 });
 export type OpenMoveTypeSignature = InferOutput<typeof OpenMoveTypeSignature>;
 
-// https://github.com/MystenLabs/sui/blob/df41d5fa8127634ff4285671a01ead00e519f806/crates/sui-types/src/transaction.rs#L707-L718
+// https://github.com/The-Social-Proof-Foundation/mys-core/blob/df41d5fa8127634ff4285671a01ead00e519f806/crates/mys-types/src/transaction.rs#L707-L718
 const ProgrammableMoveCall = object({
 	package: ObjectID,
 	module: string(),
@@ -196,7 +197,7 @@ export const $Intent = object({
 	data: record(string(), unknown()),
 });
 
-// https://github.com/MystenLabs/sui/blob/df41d5fa8127634ff4285671a01ead00e519f806/crates/sui-types/src/transaction.rs#L657-L685
+// https://github.com/The-Social-Proof-Foundation/mys-core/blob/df41d5fa8127634ff4285671a01ead00e519f806/crates/mys-types/src/transaction.rs#L657-L685
 export const Command = safeEnum({
 	MoveCall: ProgrammableMoveCall,
 	TransferObjects: object({
@@ -270,7 +271,7 @@ export type Command<Arg = Argument> = EnumOutputShape<{
 	};
 }>;
 
-// https://github.com/MystenLabs/sui/blob/df41d5fa8127634ff4285671a01ead00e519f806/crates/sui-types/src/transaction.rs#L102-L114
+// https://github.com/The-Social-Proof-Foundation/mys-core/blob/df41d5fa8127634ff4285671a01ead00e519f806/crates/mys-types/src/transaction.rs#L102-L114
 export const ObjectArg = safeEnum({
 	ImmOrOwnedObject: ObjectRef,
 	SharedObject: object({
@@ -282,7 +283,7 @@ export const ObjectArg = safeEnum({
 	Receiving: ObjectRef,
 });
 
-// https://github.com/MystenLabs/sui/blob/df41d5fa8127634ff4285671a01ead00e519f806/crates/sui-types/src/transaction.rs#L75-L80
+// https://github.com/The-Social-Proof-Foundation/mys-core/blob/df41d5fa8127634ff4285671a01ead00e519f806/crates/mys-types/src/transaction.rs#L75-L80
 const CallArg = safeEnum({
 	Object: ObjectArg,
 	Pure: object({
@@ -316,7 +317,7 @@ export type TransactionExpiration = InferOutput<typeof TransactionExpiration>;
 
 export const TransactionData = object({
 	version: literal(2),
-	sender: nullish(SuiAddress),
+	sender: nullish(MysAddress),
 	expiration: nullish(TransactionExpiration),
 	gasData: GasData,
 	inputs: array(CallArg),

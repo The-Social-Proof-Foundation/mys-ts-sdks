@@ -1,14 +1,15 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { useSuiClientContext } from '@mysten/dapp-kit';
+import { useMysClientContext } from '@socialproof/dapp-kit';
 import { useEffect } from 'react';
 
 import { isEnokiNetwork } from '../src/index.js';
 import { registerEnokiWallets } from '../src/wallet/index.js';
 
 export function RegisterEnokiWallets() {
-	const { client, network } = useSuiClientContext();
+	const { client, network } = useMysClientContext();
 
 	useEffect(() => {
 		if (!isEnokiNetwork(network)) return;

@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromHex } from '@mysten/bcs';
+import { fromHex } from '@socialproof/bcs';
 
 import type { IBEEncryptions } from './bcs.js';
 import type { G1Element, GTElement } from './bls12381.js';
@@ -13,7 +14,7 @@ import { xor } from './utils.js';
 /**
  * The domain separation tag for the signing proof of possession.
  */
-export const DST_POP: Uint8Array = new TextEncoder().encode('SUI-SEAL-IBE-BLS12381-POP-00');
+export const DST_POP: Uint8Array = new TextEncoder().encode('MYS-SEAL-IBE-BLS12381-POP-00');
 
 /**
  * The interface for the key servers.

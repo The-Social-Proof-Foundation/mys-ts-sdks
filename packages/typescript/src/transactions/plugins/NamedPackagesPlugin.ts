@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { parseStructTag } from '../../utils/sui-types.js';
+import { parseStructTag } from '../../utils/mys-types.js';
 import type { BuildTransactionOptions } from '../resolve.js';
 import type { TransactionDataBuilder } from '../TransactionData.js';
 import type { NamedPackagesPluginCache } from './utils.js';
@@ -52,7 +53,7 @@ export type NamedPackagesPluginOptions = {
  *
  * To install this plugin globally in your app, use:
  * ```
- * Transaction.registerGlobalSerializationPlugin("namedPackagesPlugin", namedPackagesPlugin({ suiGraphQLClient }));
+ * Transaction.registerGlobalSerializationPlugin("namedPackagesPlugin", namedPackagesPlugin({ mysGraphQLClient }));
  * ```
  *
  * You can also define `overrides` to pre-populate name resolutions locally (removes the GraphQL request).

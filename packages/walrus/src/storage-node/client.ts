@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { BlobMetadata, BlobMetadataWithId, SliverData } from '../utils/bcs.js';
@@ -126,7 +127,7 @@ export class StorageNodeClient {
 	/**
 	 * Stores the metadata associated with a registered Walrus blob at this storage
 	 * node. This is a pre-requisite for storing the encoded slivers of the blob. The
-	 * ID of the blob must first be registered on Sui, after which storing the metadata
+	 * ID of the blob must first be registered on Mys, after which storing the metadata
 	 * becomes possible.
 	 *
 	 * This endpoint may return an error if the node has not yet received the

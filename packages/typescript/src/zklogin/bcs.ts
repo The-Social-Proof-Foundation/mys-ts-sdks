@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { InferBcsInput } from '@mysten/bcs';
-import { bcs } from '@mysten/bcs';
+import type { InferBcsInput } from '@socialproof/bcs';
+import { bcs } from '@socialproof/bcs';
 
 export const zkLoginSignature = bcs.struct('ZkLoginSignature', {
 	inputs: bcs.struct('ZkLoginSignatureInputs', {

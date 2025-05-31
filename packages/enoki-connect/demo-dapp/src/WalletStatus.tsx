@@ -1,6 +1,7 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { useCurrentAccount } from "@mysten/dapp-kit";
+import { useCurrentAccount } from "@socialproof/dapp-kit";
 import { Container, Flex, Heading, Text } from "@radix-ui/themes";
 import { OwnedObjects } from "./OwnedObjects.js";
 import { Actions } from "./Actions.js";

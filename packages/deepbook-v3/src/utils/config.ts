@@ -1,6 +1,7 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { normalizeSuiAddress } from '@mysten/sui/utils';
+import { normalizeMysAddress } from '@socialproof/mys/utils';
 
 import { BalanceManagerContract } from '../transactions/balanceManager.js';
 import type { BalanceManager, Environment } from '../types/index.js';
@@ -48,7 +49,7 @@ export class DeepBookConfig {
 		coins?: CoinMap;
 		pools?: PoolMap;
 	}) {
-		this.address = normalizeSuiAddress(address);
+		this.address = normalizeMysAddress(address);
 		this.adminCap = adminCap;
 		this.balanceManagers = balanceManagers || {};
 

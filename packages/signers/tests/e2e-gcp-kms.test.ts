@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 import { beforeAll, describe, expect, it } from 'vitest';
 
@@ -36,10 +37,10 @@ describe.runIf(E2E_GCP_KMS_TEST_ENABLE === 'true')('GCP KMS signer E2E testing',
 		});
 	});
 
-	it('should retrieve the correct sui address', async () => {
+	it('should retrieve the correct mys address', async () => {
 		const publicKey = signer.getPublicKey();
 
-		expect(publicKey.toSuiAddress()).toEqual(
+		expect(publicKey.toMysAddress()).toEqual(
 			'0x2ac50bf55beac50aa004c6ac1f46a058e21c86980303d87b8e3b3d3fa7b8d9eb',
 		);
 	});

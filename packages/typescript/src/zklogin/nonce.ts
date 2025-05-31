@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { toHex } from '@mysten/bcs';
+import { toHex } from '@socialproof/bcs';
 import { randomBytes } from '@noble/hashes/utils';
 import { base64urlnopad } from '@scure/base';
 
@@ -25,7 +26,7 @@ export function generateRandomness() {
 }
 
 export function generateNonce(publicKey: PublicKey, maxEpoch: number, randomness: bigint | string) {
-	const publicKeyBytes = toBigIntBE(publicKey.toSuiBytes());
+	const publicKeyBytes = toBigIntBE(publicKey.toMysBytes());
 	const eph_public_key_0 = publicKeyBytes / 2n ** 128n;
 	const eph_public_key_1 = publicKeyBytes % 2n ** 128n;
 	const bigNum = poseidonHash([eph_public_key_0, eph_public_key_1, maxEpoch, BigInt(randomness)]);

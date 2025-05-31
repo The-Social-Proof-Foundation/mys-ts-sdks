@@ -1,18 +1,19 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { useCurrentAccount, useSignAndExecuteTransaction } from '@mysten/dapp-kit';
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
+import { useCurrentAccount, useSignAndExecuteTransaction } from '@socialproof/dapp-kit';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 
 import { WalrusClient } from '../../src/client.js';
 
-const suiClient = new SuiClient({
+const mysClient = new MysClient({
 	url: getFullnodeUrl('testnet'),
 });
 
 const walrusClient = new WalrusClient({
 	network: 'testnet',
-	suiClient,
+	mysClient,
 	storageNodeClientOptions: {
 		timeout: 60_000,
 	},
@@ -45,7 +46,7 @@ export function FileUpload() {
 
 		const { digest } = await signAndExecuteTransaction({ transaction: registerBlobTransaction });
 
-		const { objectChanges, effects } = await suiClient.waitForTransaction({
+		const { objectChanges, effects } = await mysClient.waitForTransaction({
 			digest,
 			options: { showObjectChanges: true, showEffects: true },
 		});
@@ -84,7 +85,7 @@ export function FileUpload() {
 			transaction: certifyBlobTransaction,
 		});
 
-		const { effects: certifyEffects } = await suiClient.waitForTransaction({
+		const { effects: certifyEffects } = await mysClient.waitForTransaction({
 			digest: certifyDigest,
 			options: { showEffects: true },
 		});

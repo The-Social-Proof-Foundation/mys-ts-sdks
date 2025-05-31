@@ -1,11 +1,12 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiObjectChange } from './generated.js';
+import type { MysObjectChange } from './generated.js';
 
-export type SuiObjectChangePublished = Extract<SuiObjectChange, { type: 'published' }>;
-export type SuiObjectChangeTransferred = Extract<SuiObjectChange, { type: 'transferred' }>;
-export type SuiObjectChangeMutated = Extract<SuiObjectChange, { type: 'mutated' }>;
-export type SuiObjectChangeDeleted = Extract<SuiObjectChange, { type: 'deleted' }>;
-export type SuiObjectChangeWrapped = Extract<SuiObjectChange, { type: 'wrapped' }>;
-export type SuiObjectChangeCreated = Extract<SuiObjectChange, { type: 'created' }>;
+export type MysObjectChangePublished = Extract<MysObjectChange, { type: 'published' }>;
+export type MysObjectChangeTransferred = Extract<MysObjectChange, { type: 'transferred' }>;
+export type MysObjectChangeMutated = Extract<MysObjectChange, { type: 'mutated' }>;
+export type MysObjectChangeDeleted = Extract<MysObjectChange, { type: 'deleted' }>;
+export type MysObjectChangeWrapped = Extract<MysObjectChange, { type: 'wrapped' }>;
+export type MysObjectChangeCreated = Extract<MysObjectChange, { type: 'created' }>;

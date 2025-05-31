@@ -1,11 +1,12 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type {
 	Transaction,
 	TransactionArgument,
 	TransactionObjectArgument,
-} from '@mysten/sui/transactions';
+} from '@socialproof/mys/transactions';
 
 import * as kioskTx from '../tx/kiosk.js';
 import { convertToPersonalTx, transferPersonalCapTx } from '../tx/personal-kiosk.js';

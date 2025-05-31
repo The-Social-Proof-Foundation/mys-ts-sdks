@@ -1,11 +1,12 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { ed25519 } from '@noble/curves/ed25519';
 
 import {
-	decodeSuiPrivateKey,
-	encodeSuiPrivateKey,
+	decodeMysPrivateKey,
+	encodeMysPrivateKey,
 	Keypair,
 	PRIVATE_KEY_SIZE,
 } from '../../cryptography/keypair.js';
@@ -87,7 +88,7 @@ export class Ed25519Keypair extends Keypair {
 		options?: { skipValidation?: boolean },
 	): Ed25519Keypair {
 		if (typeof secretKey === 'string') {
-			const decoded = decodeSuiPrivateKey(secretKey);
+			const decoded = decodeMysPrivateKey(secretKey);
 
 			if (decoded.schema !== 'ED25519') {
 				throw new Error(`Expected a ED25519 keypair, got ${decoded.schema}`);
@@ -109,7 +110,7 @@ export class Ed25519Keypair extends Keypair {
 
 		if (!options || !options.skipValidation) {
 			const encoder = new TextEncoder();
-			const signData = encoder.encode('sui validation');
+			const signData = encoder.encode('mys validation');
 			const signature = ed25519.sign(signData, secretKey);
 			if (!ed25519.verify(signature, signData, keypair.publicKey)) {
 				throw new Error('provided secretKey is invalid');
@@ -129,7 +130,7 @@ export class Ed25519Keypair extends Keypair {
 	 * The Bech32 secret key string for this Ed25519 keypair
 	 */
 	getSecretKey(): string {
-		return encodeSuiPrivateKey(
+		return encodeMysPrivateKey(
 			this.keypair.secretKey.slice(0, PRIVATE_KEY_SIZE),
 			this.getKeyScheme(),
 		);

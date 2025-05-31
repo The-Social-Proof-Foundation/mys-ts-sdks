@@ -1,9 +1,9 @@
 {
-	"name": "@mysten/enoki",
+	"name": "@socialproof/enoki",
 	"version": "0.6.13",
 	"description": "TODO: Description",
 	"license": "Apache-2.0",
-	"author": "Mysten Labs <build@mystenlabs.com>",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"type": "commonjs",
 	"main": "./dist/cjs/index.js",
 	"module": "./dist/esm/index.js",
@@ -37,15 +37,15 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/mystenlabs/ts-sdks.git"
+		"url": "git+https://github.com/The-Social-Proof-Foundation/mys-ts-sdks.git"
 	},
 	"bugs": {
-		"url": "https://github.com/mystenlabs/ts-sdks/issues"
+		"url": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks/issues"
 	},
-	"homepage": "https://github.com/mystenlabs/ts-sdks#readme",
+	"homepage": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks#readme",
 	"devDependencies": {
-		"@mysten/build-scripts": "workspace:*",
-		"@mysten/dapp-kit": "workspace:*",
+		"@socialproof/build-scripts": "workspace:*",
+		"@socialproof/dapp-kit": "workspace:*",
 		"@tanstack/react-query": "^5.71.3",
 		"@types/node": "^22.13.17",
 		"@types/react": "^18.3.3",
@@ -57,9 +57,9 @@
 		"vite": "^6.2.5"
 	},
 	"dependencies": {
-		"@mysten/signers": "workspace:*",
-		"@mysten/sui": "workspace:*",
-		"@mysten/wallet-standard": "workspace:*",
+		"@socialproof/signers": "workspace:*",
+		"@socialproof/mys": "workspace:*",
+		"@socialproof/wallet-standard": "workspace:*",
 		"@nanostores/react": "^1.0.0",
 		"idb-keyval": "^6.2.1",
 		"mitt": "^3.0.1",

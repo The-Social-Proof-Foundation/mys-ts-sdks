@@ -5,7 +5,7 @@
 ### Patch Changes
 
 - Updated dependencies [ec519fc]
-  - @mysten/sui@1.30.1
+  - @socialproof/mys@1.30.1
 
 ## 0.2.9
 
@@ -17,13 +17,13 @@
 - Updated dependencies [2456052]
 - Updated dependencies [2456052]
 - Updated dependencies [2456052]
-  - @mysten/sui@1.30.0
+  - @socialproof/mys@1.30.0
 
 ## 0.2.8
 
 ### Patch Changes
 
-- @mysten/sui@1.29.1
+- @socialproof/mys@1.29.1
 
 ## 0.2.7
 
@@ -38,35 +38,35 @@
 - Updated dependencies [7d66a32]
 - Updated dependencies [eb91fba]
 - Updated dependencies [19a8045]
-  - @mysten/sui@1.29.0
+  - @socialproof/mys@1.29.0
 
 ## 0.2.5
 
 ### Patch Changes
 
 - Updated dependencies [9a94aea]
-  - @mysten/sui@1.28.2
+  - @socialproof/mys@1.28.2
 
 ## 0.2.4
 
 ### Patch Changes
 
 - Updated dependencies [3cd4e53]
-  - @mysten/sui@1.28.1
+  - @socialproof/mys@1.28.1
 
 ## 0.2.3
 
 ### Patch Changes
 
 - Updated dependencies [2705dc8]
-  - @mysten/sui@1.28.0
+  - @socialproof/mys@1.28.0
 
 ## 0.2.2
 
 ### Patch Changes
 
 - Updated dependencies [5cea435]
-  - @mysten/sui@1.27.1
+  - @socialproof/mys@1.27.1
 
 ## 0.2.1
 
@@ -74,7 +74,7 @@
 
 - Updated dependencies [4d13ef8]
 - Updated dependencies [4d13ef8]
-  - @mysten/sui@1.27.0
+  - @socialproof/mys@1.27.0
 
 ## 0.2.0
 
@@ -88,22 +88,22 @@
 - Updated dependencies [7ba32a4]
 - Updated dependencies [156ae13]
 - Updated dependencies [156ae13]
-  - @mysten/ledgerjs-hw-app-sui@0.5.0
-  - @mysten/sui@1.26.1
+  - @mysten/ledgerjs-hw-app-mys@0.5.0
+  - @socialproof/mys@1.26.1
 
 ## 0.1.17
 
 ### Patch Changes
 
 - Updated dependencies [906dd14]
-  - @mysten/sui@1.26.0
+  - @socialproof/mys@1.26.0
 
 ## 0.1.16
 
 ### Patch Changes
 
 - Updated dependencies [e8b5d04]
-  - @mysten/sui@1.25.0
+  - @socialproof/mys@1.25.0
 
 ## 0.1.15
 
@@ -130,7 +130,7 @@
 ### Patch Changes
 
 - Updated dependencies [cf3d12d]
-  - @mysten/sui@1.24.0
+  - @socialproof/mys@1.24.0
 
 ## 0.1.11
 
@@ -138,26 +138,26 @@
 
 - Updated dependencies [8baac61]
 - Updated dependencies [8baac61]
-  - @mysten/sui@1.23.0
+  - @socialproof/mys@1.23.0
 
 ## 0.1.10
 
 ### Patch Changes
 
 - Updated dependencies [03975f4]
-  - @mysten/sui@1.22.0
+  - @socialproof/mys@1.22.0
 
 ## 0.1.9
 
 ### Patch Changes
 
-- @mysten/sui@1.21.2
+- @socialproof/mys@1.21.2
 
 ## 0.1.8
 
 ### Patch Changes
 
-- @mysten/sui@1.21.1
+- @socialproof/mys@1.21.1
 
 ## 0.1.7
 
@@ -165,14 +165,14 @@
 
 - Updated dependencies [3d8a0d9]
 - Updated dependencies [20a5aaa]
-  - @mysten/sui@1.21.0
+  - @socialproof/mys@1.21.0
 
 ## 0.1.6
 
 ### Patch Changes
 
 - Updated dependencies [827a200]
-  - @mysten/sui@1.20.0
+  - @socialproof/mys@1.20.0
 
 ## 0.1.5
 
@@ -180,7 +180,7 @@
 
 - Updated dependencies [c39f32f]
 - Updated dependencies [539168a]
-  - @mysten/sui@1.19.0
+  - @socialproof/mys@1.19.0
 
 ## 0.1.4
 
@@ -188,7 +188,7 @@
 
 - 7abd243: Update repo links
 - Updated dependencies [7abd243]
-  - @mysten/sui@1.18.1
+  - @socialproof/mys@1.18.1
 
 ## 0.1.3
 
@@ -201,21 +201,21 @@
 - Updated dependencies [dc0e21e]
 - Updated dependencies [85bd9e4]
 - Updated dependencies [a872b97]
-  - @mysten/sui@1.18.0
+  - @socialproof/mys@1.18.0
 
 ## 0.1.2
 
 ### Patch Changes
 
 - Updated dependencies [20af12d]
-  - @mysten/sui@1.17.0
+  - @socialproof/mys@1.17.0
 
 ## 0.1.1
 
 ### Patch Changes
 
 - Updated dependencies [100207f]
-  - @mysten/sui@1.16.2
+  - @socialproof/mys@1.16.2
 
 ## 0.1.0
 
@@ -226,7 +226,7 @@
 
 ### Patch Changes
 
-- @mysten/sui@1.16.1
+- @socialproof/mys@1.16.1
 
 ## 0.0.10
 
@@ -234,48 +234,48 @@
 
 - Updated dependencies [ec2dc7f]
 - Updated dependencies [ec2dc7f]
-  - @mysten/sui@1.16.0
+  - @socialproof/mys@1.16.0
 
 ## 0.0.9
 
 ### Patch Changes
 
-- @mysten/sui@1.15.1
+- @socialproof/mys@1.15.1
 
 ## 0.0.8
 
 ### Patch Changes
 
 - Updated dependencies [6460e45]
-  - @mysten/sui@1.15.0
+  - @socialproof/mys@1.15.0
 
 ## 0.0.7
 
 ### Patch Changes
 
 - Updated dependencies [938fb6e]
-  - @mysten/sui@1.14.4
+  - @socialproof/mys@1.14.4
 
 ## 0.0.6
 
 ### Patch Changes
 
 - Updated dependencies [d5a23d7]
-  - @mysten/sui@1.14.3
+  - @socialproof/mys@1.14.3
 
 ## 0.0.5
 
 ### Patch Changes
 
 - Updated dependencies [e7bc63e]
-  - @mysten/sui@1.14.2
+  - @socialproof/mys@1.14.2
 
 ## 0.0.4
 
 ### Patch Changes
 
 - Updated dependencies [69ef100]
-  - @mysten/sui@1.14.1
+  - @socialproof/mys@1.14.1
 
 ## 0.0.3
 
@@ -287,6 +287,6 @@
 
 ### Patch Changes
 
-- b3f3925: Introduces @mysten/kms which initially exposes a Sui AWS KMS signer
+- b3f3925: Introduces @mysten/kms which initially exposes a Mys AWS KMS signer
 - Updated dependencies [c24814b]
-  - @mysten/sui@1.14.0
+  - @socialproof/mys@1.14.0

@@ -1,5 +1,5 @@
 ---
-'@mysten/seal': patch
+'@socialproof/seal': patch
 ---
 
-Require suiClient in SessionKey constructor
+Require mysClient in SessionKey constructor

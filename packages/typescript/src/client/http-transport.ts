@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { PACKAGE_VERSION, TARGETED_RPC_VERSION } from '../version.js';
-import { JsonRpcError, SuiHTTPStatusError } from './errors.js';
+import { JsonRpcError, MysHTTPStatusError } from './errors.js';
 import type { WebsocketClientOptions } from './rpc-websocket-client.js';
 import { WebsocketClient } from './rpc-websocket-client.js';
 
@@ -11,7 +12,7 @@ import { WebsocketClient } from './rpc-websocket-client.js';
  */
 export type HttpHeaders = { [header: string]: string };
 
-export interface SuiHTTPTransportOptions {
+export interface MysHTTPTransportOptions {
 	fetch?: typeof fetch;
 	WebSocketConstructor?: typeof WebSocket;
 	url: string;
@@ -24,7 +25,7 @@ export interface SuiHTTPTransportOptions {
 	};
 }
 
-export interface SuiTransportRequestOptions {
+export interface MysTransportRequestOptions {
 	method: string;
 	params: unknown[];
 	signal?: AbortSignal;
@@ -32,7 +33,7 @@ export interface SuiTransportRequestOptions {
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 
-export interface SuiTransportSubscribeOptions<T> {
+export interface MysTransportSubscribeOptions<T> {
 	method: string;
 	unsubscribe: string;
 	params: unknown[];
@@ -40,17 +41,17 @@ export interface SuiTransportSubscribeOptions<T> {
 	signal?: AbortSignal;
 }
 
-export interface SuiTransport {
-	request<T = unknown>(input: SuiTransportRequestOptions): Promise<T>;
-	subscribe<T = unknown>(input: SuiTransportSubscribeOptions<T>): Promise<() => Promise<boolean>>;
+export interface MysTransport {
+	request<T = unknown>(input: MysTransportRequestOptions): Promise<T>;
+	subscribe<T = unknown>(input: MysTransportSubscribeOptions<T>): Promise<() => Promise<boolean>>;
 }
 
-export class SuiHTTPTransport implements SuiTransport {
+export class MysHTTPTransport implements MysTransport {
 	#requestId = 0;
-	#options: SuiHTTPTransportOptions;
+	#options: MysHTTPTransportOptions;
 	#websocketClient?: WebsocketClient;
 
-	constructor(options: SuiHTTPTransportOptions) {
+	constructor(options: MysHTTPTransportOptions) {
 		this.#options = options;
 	}
 
@@ -59,7 +60,7 @@ export class SuiHTTPTransport implements SuiTransport {
 
 		if (!fetchFn) {
 			throw new Error(
-				'The current environment does not support fetch, you can provide a fetch implementation in the options for SuiHTTPTransport.',
+				'The current environment does not support fetch, you can provide a fetch implementation in the options for MysHTTPTransport.',
 			);
 		}
 
@@ -71,7 +72,7 @@ export class SuiHTTPTransport implements SuiTransport {
 			const WebSocketConstructor = this.#options.WebSocketConstructor ?? WebSocket;
 			if (!WebSocketConstructor) {
 				throw new Error(
-					'The current environment does not support WebSocket, you can provide a WebSocketConstructor in the options for SuiHTTPTransport.',
+					'The current environment does not support WebSocket, you can provide a WebSocketConstructor in the options for MysHTTPTransport.',
 				);
 			}
 
@@ -87,7 +88,7 @@ export class SuiHTTPTransport implements SuiTransport {
 		return this.#websocketClient;
 	}
 
-	async request<T>(input: SuiTransportRequestOptions): Promise<T> {
+	async request<T>(input: MysTransportRequestOptions): Promise<T> {
 		this.#requestId += 1;
 
 		const res = await this.fetch(this.#options.rpc?.url ?? this.#options.url, {
@@ -110,7 +111,7 @@ export class SuiHTTPTransport implements SuiTransport {
 		});
 
 		if (!res.ok) {
-			throw new SuiHTTPStatusError(
+			throw new MysHTTPStatusError(
 				`Unexpected status code: ${res.status}`,
 				res.status,
 				res.statusText,
@@ -126,7 +127,7 @@ export class SuiHTTPTransport implements SuiTransport {
 		return data.result;
 	}
 
-	async subscribe<T>(input: SuiTransportSubscribeOptions<T>): Promise<() => Promise<boolean>> {
+	async subscribe<T>(input: MysTransportSubscribeOptions<T>): Promise<() => Promise<boolean>> {
 		const unsubscribe = await this.#getWebsocketClient().subscribe(input);
 
 		if (input.signal) {

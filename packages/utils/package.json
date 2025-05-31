@@ -1,9 +1,9 @@
 {
-	"name": "@mysten/utils",
+	"name": "@socialproof/utils",
 	"version": "0.0.0",
-	"description": "Shared utilities for @mysten/* packages",
+	"description": "Shared utilities for @socialproof/* packages",
 	"license": "Apache-2.0",
-	"author": "Mysten Labs <build@mystenlabs.com>",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"sideEffects": false,
 	"type": "commonjs",
 	"main": "./dist/cjs/index.js",
@@ -34,17 +34,17 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/MystenLabs/ts-sdks.git"
+		"url": "git+https://github.com/The-Social-Proof-Foundation/mys-ts-sdks.git"
 	},
 	"keywords": [
 		"utils"
 	],
 	"bugs": {
-		"url": "https://github.com/MystenLabs/ts-sdks/issues"
+		"url": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks/issues"
 	},
-	"homepage": "https://github.com/MystenLabs/ts-sdks#readme",
+	"homepage": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks#readme",
 	"devDependencies": {
-		"@mysten/build-scripts": "workspace:*",
+		"@socialproof/build-scripts": "workspace:*",
 		"typescript": "^5.8.2",
 		"vitest": "^3.1.1"
 	},

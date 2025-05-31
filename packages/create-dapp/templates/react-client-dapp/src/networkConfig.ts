@@ -1,5 +1,5 @@
-import { getFullnodeUrl } from "@mysten/sui/client";
-import { createNetworkConfig } from "@mysten/dapp-kit";
+import { getFullnodeUrl } from "@socialproof/mys/client";
+import { createNetworkConfig } from "@socialproof/dapp-kit";
 
 const { networkConfig, useNetworkVariable, useNetworkVariables } =
   createNetworkConfig({

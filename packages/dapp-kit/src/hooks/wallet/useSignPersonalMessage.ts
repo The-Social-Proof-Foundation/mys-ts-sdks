@@ -1,10 +1,11 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type {
-	SuiSignPersonalMessageInput,
-	SuiSignPersonalMessageOutput,
-} from '@mysten/wallet-standard';
+	MysSignPersonalMessageInput,
+	MysSignPersonalMessageOutput,
+} from '@socialproof/wallet-standard';
 import type { UseMutationOptions, UseMutationResult } from '@tanstack/react-query';
 import { useMutation } from '@tanstack/react-query';
 
@@ -15,13 +16,13 @@ import {
 } from '../..//errors/walletErrors.js';
 import { walletMutationKeys } from '../../constants/walletMutationKeys.js';
 import type { PartialBy } from '../../types/utilityTypes.js';
-import { useSuiClientContext } from '../useSuiClient.js';
+import { useMysClientContext } from '../useMysClient.js';
 import { useCurrentAccount } from './useCurrentAccount.js';
 import { useCurrentWallet } from './useCurrentWallet.js';
 
-type UseSignPersonalMessageArgs = PartialBy<SuiSignPersonalMessageInput, 'account' | 'chain'>;
+type UseSignPersonalMessageArgs = PartialBy<MysSignPersonalMessageInput, 'account' | 'chain'>;
 
-type UseSignPersonalMessageResult = SuiSignPersonalMessageOutput;
+type UseSignPersonalMessageResult = MysSignPersonalMessageOutput;
 
 type UseSignPersonalMessageError =
 	| WalletFeatureNotSupportedError
@@ -52,7 +53,7 @@ export function useSignPersonalMessage({
 > {
 	const { currentWallet } = useCurrentWallet();
 	const currentAccount = useCurrentAccount();
-	const { network } = useSuiClientContext();
+	const { network } = useMysClientContext();
 
 	return useMutation({
 		mutationKey: walletMutationKeys.signPersonalMessage(mutationKey),
@@ -68,17 +69,17 @@ export function useSignPersonalMessage({
 				);
 			}
 
-			const signPersonalMessageFeature = currentWallet.features['sui:signPersonalMessage'];
+			const signPersonalMessageFeature = currentWallet.features['mys:signPersonalMessage'];
 			if (signPersonalMessageFeature) {
 				return await signPersonalMessageFeature.signPersonalMessage({
 					...signPersonalMessageArgs,
 					account: signerAccount,
-					chain: signPersonalMessageArgs.chain ?? `sui:${network}`,
+					chain: signPersonalMessageArgs.chain ?? `mys:${network}`,
 				});
 			}
 
-			// TODO: Remove this once we officially discontinue sui:signMessage in the wallet standard
-			const signMessageFeature = currentWallet.features['sui:signMessage'];
+			// TODO: Remove this once we officially discontinue mys:signMessage in the wallet standard
+			const signMessageFeature = currentWallet.features['mys:signMessage'];
 			if (signMessageFeature) {
 				console.warn(
 					"This wallet doesn't support the `signPersonalMessage` feature... falling back to `signMessage`.",

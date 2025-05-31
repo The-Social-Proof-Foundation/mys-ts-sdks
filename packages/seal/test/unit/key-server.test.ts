@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64 } from '@mysten/bcs';
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
+import { fromBase64 } from '@socialproof/bcs';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { GeneralError } from '../../src/error.js';
@@ -14,19 +15,19 @@ import {
 } from '../../src/key-server.js';
 import { Version } from '../../src/utils.js';
 
-// Data for mock response from SuiClient
+// Data for mock response from MysClient
 const pk = fromBase64(
 	'oEC1VIuwQo+6FZiVwHCAy/3HbvAbuIyiztXIWwd4LgmXCh9WhOKg3T0+Mb62y9fqAsSaN5SybG09n/3JnkmEzJgdDXLpM8KvMwkha/cBHp6Cx7aCdogvGLoOp/RadyHb',
 );
 const id = '0xb35a7228d8cf224ad1e828c0217c95a5153bafc2906d6f9c178197dce26fbcf8';
 const keyType = 0;
-const url = 'https://seal-key-server-testnet-1.mystenlabs.com';
+const url = 'https://seal-key-server-testnet-1.mysocial.network';
 const name = 'mysten-testnet-1';
 
 describe('key-server tests', () => {
 	beforeEach(() => {
-		vi.mock('@mysten/sui.js', () => ({
-			SuiClient: vi.fn(() => ({
+		vi.mock('@socialproof/mys.js', () => ({
+			MysClient: vi.fn(() => ({
 				getObject: vi.fn().mockResolvedValue({
 					data: {
 						content: {
@@ -61,7 +62,7 @@ describe('key-server tests', () => {
 	it('test retrieveKeyServers (mocked)', async () => {
 		const keyServers = await retrieveKeyServers({
 			objectIds: [id],
-			client: new SuiClient({ url: getFullnodeUrl('testnet') }),
+			client: new MysClient({ url: getFullnodeUrl('testnet') }),
 		});
 		expect(keyServers.length).toEqual(1);
 		expect(keyServers[0].objectId).toEqual(id);
@@ -75,7 +76,7 @@ describe('key-server tests', () => {
 		// Mock fetch with exact response from the real service
 		const keyServers = await retrieveKeyServers({
 			objectIds: [id],
-			client: new SuiClient({ url: getFullnodeUrl('testnet') }),
+			client: new MysClient({ url: getFullnodeUrl('testnet') }),
 		});
 		vi.clearAllMocks();
 		const headers = new Headers();

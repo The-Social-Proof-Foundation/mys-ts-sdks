@@ -1,21 +1,22 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 export {
-	type SuiTransport,
-	type SuiTransportRequestOptions,
-	type SuiTransportSubscribeOptions,
+	type MysTransport,
+	type MysTransportRequestOptions,
+	type MysTransportSubscribeOptions,
 	type HttpHeaders,
-	type SuiHTTPTransportOptions,
-	SuiHTTPTransport,
+	type MysHTTPTransportOptions,
+	MysHTTPTransport,
 } from './http-transport.js';
 export { getFullnodeUrl } from './network.js';
 export * from './types/index.js';
 export {
-	type SuiClientOptions,
+	type MysClientOptions,
 	type PaginationArguments,
 	type OrderArguments,
-	isSuiClient,
-	SuiClient,
+	isMysClient,
+	MysClient,
 } from './client.js';
-export { SuiHTTPStatusError, SuiHTTPTransportError, JsonRpcError } from './errors.js';
+export { MysHTTPStatusError, MysHTTPTransportError, JsonRpcError } from './errors.js';

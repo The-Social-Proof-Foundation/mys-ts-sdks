@@ -1,18 +1,19 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/bcs';
+import { bcs } from '@socialproof/bcs';
 import { beforeAll, describe, expect, it } from 'vitest';
 
-import { SuiTransactionBlockResponse } from '../../src/client';
+import { MysTransactionBlockResponse } from '../../src/client';
 import { Transaction } from '../../src/transactions';
 import { TransactionDataBuilder } from '../../src/transactions/TransactionData';
-import { SUI_SYSTEM_STATE_OBJECT_ID } from '../../src/utils';
+import { MYS_SYSTEM_STATE_OBJECT_ID } from '../../src/utils';
 import { publishPackage, setup, TestToolbox } from './utils/setup';
 
 let toolbox: TestToolbox;
 let packageId: string;
-let publishTxn: SuiTransactionBlockResponse;
+let publishTxn: MysTransactionBlockResponse;
 let sharedObjectId: string;
 beforeAll(async () => {
 	toolbox = await setup();
@@ -45,14 +46,14 @@ describe('Transaction bcs Serialization and deserialization', () => {
 	it('Move Shared Object Call with mutable reference', async () => {
 		const coins = await toolbox.getGasObjectsOwnedByAddress();
 
-		const [{ suiAddress: validatorAddress }] = await toolbox.getActiveValidators();
+		const [{ mysAddress: validatorAddress }] = await toolbox.getActiveValidators();
 
 		const tx = new Transaction();
 		const coin = coins.data[2];
 		tx.moveCall({
-			target: '0x3::sui_system::request_add_stake',
+			target: '0x3::mys_system::request_add_stake',
 			arguments: [
-				tx.object(SUI_SYSTEM_STATE_OBJECT_ID),
+				tx.object(MYS_SYSTEM_STATE_OBJECT_ID),
 				tx.object(coin.coinObjectId),
 				tx.pure.address(validatorAddress),
 			],
@@ -114,14 +115,14 @@ describe('TXB v2 JSON serialization', () => {
 	it('Move Shared Object Call with mutable reference', async () => {
 		const coins = await toolbox.getGasObjectsOwnedByAddress();
 
-		const [{ suiAddress: validatorAddress }] = await toolbox.getActiveValidators();
+		const [{ mysAddress: validatorAddress }] = await toolbox.getActiveValidators();
 
 		const tx = new Transaction();
 		const coin = coins.data[2];
 		tx.moveCall({
-			target: '0x3::sui_system::request_add_stake',
+			target: '0x3::mys_system::request_add_stake',
 			arguments: [
-				tx.object(SUI_SYSTEM_STATE_OBJECT_ID),
+				tx.object(MYS_SYSTEM_STATE_OBJECT_ID),
 				tx.object(coin.coinObjectId),
 				tx.pure.address(validatorAddress),
 			],
@@ -130,7 +131,7 @@ describe('TXB v2 JSON serialization', () => {
 	});
 
 	it('serialized pure inputs', async () => {
-		const [{ suiAddress: validatorAddress }] = await toolbox.getActiveValidators();
+		const [{ mysAddress: validatorAddress }] = await toolbox.getActiveValidators();
 
 		const tx = new Transaction();
 
@@ -213,14 +214,14 @@ describe('TXB v1 JSON serialization', () => {
 	it('Move Shared Object Call with mutable reference', async () => {
 		const coins = await toolbox.getGasObjectsOwnedByAddress();
 
-		const [{ suiAddress: validatorAddress }] = await toolbox.getActiveValidators();
+		const [{ mysAddress: validatorAddress }] = await toolbox.getActiveValidators();
 
 		const tx = new Transaction();
 		const coin = coins.data[2];
 		tx.moveCall({
-			target: '0x3::sui_system::request_add_stake',
+			target: '0x3::mys_system::request_add_stake',
 			arguments: [
-				tx.object(SUI_SYSTEM_STATE_OBJECT_ID),
+				tx.object(MYS_SYSTEM_STATE_OBJECT_ID),
 				tx.object(coin.coinObjectId),
 				tx.pure.address(validatorAddress),
 			],
@@ -229,7 +230,7 @@ describe('TXB v1 JSON serialization', () => {
 	});
 
 	it('serializes pure inputs', async () => {
-		const [{ suiAddress: validatorAddress }] = await toolbox.getActiveValidators();
+		const [{ mysAddress: validatorAddress }] = await toolbox.getActiveValidators();
 
 		const tx = new Transaction();
 

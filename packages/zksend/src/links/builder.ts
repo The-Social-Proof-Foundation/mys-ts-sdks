@@ -1,14 +1,15 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
-import type { CoinStruct } from '@mysten/sui/client';
-import { decodeSuiPrivateKey } from '@mysten/sui/cryptography';
-import type { Keypair, Signer } from '@mysten/sui/cryptography';
-import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';
-import type { TransactionObjectArgument, TransactionObjectInput } from '@mysten/sui/transactions';
-import { Transaction } from '@mysten/sui/transactions';
-import { normalizeStructTag, normalizeSuiAddress, SUI_TYPE_ARG, toBase64 } from '@mysten/sui/utils';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import type { CoinStruct } from '@socialproof/mys/client';
+import { decodeMysPrivateKey } from '@socialproof/mys/cryptography';
+import type { Keypair, Signer } from '@socialproof/mys/cryptography';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import type { TransactionObjectArgument, TransactionObjectInput } from '@socialproof/mys/transactions';
+import { Transaction } from '@socialproof/mys/transactions';
+import { normalizeStructTag, normalizeMysAddress, MYS_TYPE_ARG, toBase64 } from '@socialproof/mys/utils';
 
 import type { ZkBagContractOptions } from './zk-bag.js';
 import { getContractIds, ZkBag } from './zk-bag.js';
@@ -18,7 +19,7 @@ export interface ZkSendLinkBuilderOptions {
 	path?: string;
 	keypair?: Keypair;
 	network?: 'mainnet' | 'testnet';
-	client?: SuiClient;
+	client?: MysClient;
 	sender: string;
 	contract?: ZkBagContractOptions | null;
 }
@@ -29,7 +30,7 @@ const DEFAULT_ZK_SEND_LINK_OPTIONS = {
 	network: 'mainnet' as const,
 };
 
-const SUI_COIN_TYPE = normalizeStructTag(SUI_TYPE_ARG);
+const MYS_COIN_TYPE = normalizeStructTag(MYS_TYPE_ARG);
 
 export interface CreateZkSendLinkOptions {
 	transaction?: Transaction;
@@ -52,7 +53,7 @@ export class ZkSendLinkBuilder {
 	#host: string;
 	#path: string;
 	keypair: Keypair;
-	#client: SuiClient;
+	#client: MysClient;
 	#coinsByType = new Map<string, CoinStruct[]>();
 	#contract?: ZkBag<ZkBagContractOptions>;
 
@@ -61,7 +62,7 @@ export class ZkSendLinkBuilder {
 		path = DEFAULT_ZK_SEND_LINK_OPTIONS.path,
 		keypair = new Ed25519Keypair(),
 		network = DEFAULT_ZK_SEND_LINK_OPTIONS.network,
-		client = new SuiClient({ url: getFullnodeUrl(network) }),
+		client = new MysClient({ url: getFullnodeUrl(network) }),
 		sender,
 		contract = getContractIds(network),
 	}: ZkSendLinkBuilderOptions) {
@@ -69,7 +70,7 @@ export class ZkSendLinkBuilder {
 		this.#path = path;
 		this.keypair = keypair;
 		this.#client = client;
-		this.sender = normalizeSuiAddress(sender);
+		this.sender = normalizeMysAddress(sender);
 		this.network = network;
 
 		if (contract) {
@@ -78,7 +79,7 @@ export class ZkSendLinkBuilder {
 	}
 
 	addClaimableMist(amount: bigint) {
-		this.addClaimableBalance(SUI_COIN_TYPE, amount);
+		this.addClaimableBalance(MYS_COIN_TYPE, amount);
 	}
 
 	addClaimableBalance(coinType: string, amount: bigint) {
@@ -98,7 +99,7 @@ export class ZkSendLinkBuilder {
 		const link = new URL(this.#host);
 		link.pathname = this.#path;
 		link.hash = `${this.#contract ? '$' : ''}${toBase64(
-			decodeSuiPrivateKey(this.keypair.getSecretKey()).secretKey,
+			decodeMysPrivateKey(this.keypair.getSecretKey()).secretKey,
 		)}`;
 
 		if (this.network !== 'mainnet') {
@@ -196,10 +197,10 @@ export class ZkSendLinkBuilder {
 		);
 
 		for (const [coinType, amount] of this.balances) {
-			if (coinType === SUI_COIN_TYPE) {
-				const [sui] = tx.splitCoins(tx.gas, [amount]);
+			if (coinType === MYS_COIN_TYPE) {
+				const [mys] = tx.splitCoins(tx.gas, [amount]);
 				refsWithType.push({
-					ref: sui,
+					ref: mys,
 					type: `0x2::coin::Coin<${coinType}>`,
 				} as never);
 			} else {
@@ -237,7 +238,7 @@ export class ZkSendLinkBuilder {
 		// Ensure that gas amount ends in 987
 		const roundedGasAmount = gasWithBuffer - (gasWithBuffer % 1000n) - 13n;
 
-		const address = this.keypair.toSuiAddress();
+		const address = this.keypair.toMysAddress();
 		const objectsToTransfer = (await this.#objectsToTransfer(tx)).map((obj) => obj.ref);
 		const [gas] = tx.splitCoins(tx.gas, [roundedGasAmount]);
 		objectsToTransfer.push(gas);
@@ -252,7 +253,7 @@ export class ZkSendLinkBuilder {
 		const tx = new Transaction();
 		tx.setSender(this.sender);
 		tx.setGasPayment([]);
-		tx.transferObjects([tx.gas], this.keypair.toSuiAddress());
+		tx.transferObjects([tx.gas], this.keypair.toMysAddress());
 
 		const idsToTransfer = [...this.objectIds];
 
@@ -269,7 +270,7 @@ export class ZkSendLinkBuilder {
 		if (idsToTransfer.length > 0) {
 			tx.transferObjects(
 				idsToTransfer.map((id) => tx.object(id)),
-				this.keypair.toSuiAddress(),
+				this.keypair.toMysAddress(),
 			);
 		}
 
@@ -302,12 +303,12 @@ export class ZkSendLinkBuilder {
 	static async createLinks({
 		links,
 		network = 'mainnet',
-		client = new SuiClient({ url: getFullnodeUrl(network) }),
+		client = new MysClient({ url: getFullnodeUrl(network) }),
 		transaction = new Transaction(),
 		contract: contractIds = getContractIds(network),
 	}: {
 		transaction?: Transaction;
-		client?: SuiClient;
+		client?: MysClient;
 		network?: 'mainnet' | 'testnet';
 		links: ZkSendLinkBuilder[];
 		contract?: ZkBagContractOptions;
@@ -371,11 +372,11 @@ export class ZkSendLinkBuilder {
 		}
 
 		const mergedCoins = new Map<string, TransactionObjectArgument>([
-			[SUI_COIN_TYPE, transaction.gas],
+			[MYS_COIN_TYPE, transaction.gas],
 		]);
 
 		for (const [coinType, coins] of coinsByType) {
-			if (coinType === SUI_COIN_TYPE) {
+			if (coinType === MYS_COIN_TYPE) {
 				continue;
 			}
 
@@ -393,7 +394,7 @@ export class ZkSendLinkBuilder {
 		}
 
 		for (const link of links) {
-			const receiver = link.keypair.toSuiAddress();
+			const receiver = link.keypair.toMysAddress();
 			transaction.add(contract.new({ arguments: [store, receiver] }));
 
 			link.objectRefs.forEach(({ ref, type }) => {
@@ -430,7 +431,7 @@ export class ZkSendLinkBuilder {
 			for (const [i, link] of linksWithCoin.entries()) {
 				transaction.add(
 					contract.add({
-						arguments: [store, link.keypair.toSuiAddress(), splits[i]],
+						arguments: [store, link.keypair.toMysAddress(), splits[i]],
 						typeArguments: [`0x2::coin::Coin<${coinType}>`],
 					}),
 				);

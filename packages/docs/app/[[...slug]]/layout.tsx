@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
@@ -14,18 +15,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 			sidebar={{
 				tabs: [
 					{
-						title: 'Sui SDK',
-						description: 'TypeScript interfaces for Sui',
+						title: 'Mys SDK',
+						description: 'TypeScript interfaces for Mys',
 						url: '/typescript',
 					},
 					{
 						title: 'BCS',
-						description: 'Encoding and decoding Sui objects',
+						description: 'Encoding and decoding Mys objects',
 						url: '/bcs',
 					},
 					{
 						title: 'Dapp Kit',
-						description: 'Build Sui dapps in React',
+						description: 'Build Mys dapps in React',
 						url: '/dapp-kit',
 					},
 					{
@@ -40,7 +41,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 					},
 					{
 						title: 'zkSend',
-						description: 'Send Sui with a link',
+						description: 'Send Mys with a link',
 						url: '/zksend',
 					},
 					{

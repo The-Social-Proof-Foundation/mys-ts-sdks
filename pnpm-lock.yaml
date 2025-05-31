@@ -51,7 +51,7 @@ importers:
         version: 8.10.0(eslint@8.57.1)
       eslint-config-react-app:
         specifier: ^7.0.1
-        version: 7.0.1(@babel/plugin-syntax-flow@7.26.0(@babel/core@7.26.10))(@babel/plugin-transform-react-jsx@7.25.9(@babel/core@7.26.10))(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0)(eslint@8.57.1))(eslint@8.57.1)(typescript@5.8.2)
+        version: 7.0.1(@babel/plugin-syntax-flow@7.26.0(@babel/core@7.26.10))(@babel/plugin-transform-react-jsx@7.25.9(@babel/core@7.26.10))(eslint-import-resolver-typescript@3.7.0)(eslint@8.57.1)(typescript@5.8.2)
       eslint-import-resolver-typescript:
         specifier: ^3.6.1
         version: 3.7.0(eslint-plugin-import@2.31.0)(eslint@8.57.1)
@@ -97,14 +97,14 @@ importers:
 
   packages/bcs:
     dependencies:
-      '@mysten/utils':
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
       '@scure/base':
         specifier: ^1.2.4
         version: 1.2.4
     devDependencies:
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@size-limit/preset-small-lib':
@@ -148,43 +148,12 @@ importers:
         specifier: ^5.8.2
         version: 5.8.2
 
-  packages/codegen:
-    dependencies:
-      '@mysten/bcs':
-        specifier: workspace:*
-        version: link:../bcs
-      '@mysten/move-bytecode-template':
-        specifier: workspace:*
-        version: link:../move-bytecode-template
-      '@mysten/sui':
-        specifier: workspace:*
-        version: link:../typescript
-      '@stricli/auto-complete':
-        specifier: ^1.1.2
-        version: 1.1.2
-      '@stricli/core':
-        specifier: ^1.1.2
-        version: 1.1.2
-      '@types/node':
-        specifier: ^22.13.17
-        version: 22.13.17
-      typescript:
-        specifier: ^5.8.2
-        version: 5.8.2
-    devDependencies:
-      '@mysten/build-scripts':
-        specifier: workspace:*
-        version: link:../build-scripts
-      vitest:
-        specifier: ^3.1.1
-        version: 3.1.1(@types/debug@4.1.12)(@types/node@22.13.17)(happy-dom@16.3.0)(jiti@2.4.2)(jsdom@25.0.1)(lightningcss@1.29.2)(msw@2.7.3(@types/node@22.13.17)(typescript@5.8.2))(tsx@4.19.3)(yaml@2.7.1)
-
   packages/create-dapp:
     dependencies:
-      '@mysten/dapp-kit':
+      '@socialproof/dapp-kit':
         specifier: workspace:*
         version: link:../dapp-kit
-      '@mysten/sui':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
       '@types/node':
@@ -194,7 +163,7 @@ importers:
         specifier: ^2.4.1
         version: 2.4.1
     devDependencies:
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       typescript:
@@ -203,10 +172,10 @@ importers:
 
   packages/create-dapp/templates/react-client-dapp:
     dependencies:
-      '@mysten/dapp-kit':
+      '@socialproof/dapp-kit':
         specifier: workspace:*
         version: link:../../../dapp-kit
-      '@mysten/sui':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../../../typescript
       '@radix-ui/colors':
@@ -264,10 +233,10 @@ importers:
 
   packages/create-dapp/templates/react-e2e-counter:
     dependencies:
-      '@mysten/dapp-kit':
+      '@socialproof/dapp-kit':
         specifier: workspace:*
         version: link:../../../dapp-kit
-      '@mysten/sui':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../../../typescript
       '@radix-ui/colors':
@@ -328,16 +297,16 @@ importers:
 
   packages/dapp-kit:
     dependencies:
-      '@mysten/slush-wallet':
-        specifier: workspace:*
-        version: link:../slush-wallet
-      '@mysten/sui':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
-      '@mysten/utils':
+      '@socialproof/slush-wallet':
+        specifier: workspace:*
+        version: link:../slush-wallet
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
-      '@mysten/wallet-standard':
+      '@socialproof/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
       '@radix-ui/react-dialog':
@@ -365,7 +334,7 @@ importers:
         specifier: ^4.5.4
         version: 4.5.5(@types/react@18.3.18)(react@18.3.1)
     devDependencies:
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@size-limit/preset-small-lib':
@@ -428,16 +397,16 @@ importers:
       '@lit/task':
         specifier: ^1.0.2
         version: 1.0.2
-      '@mysten/sui':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
-      '@mysten/utils':
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
-      '@mysten/wallet-standard':
+      '@socialproof/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
-      '@mysten/zksend':
+      '@socialproof/zksend':
         specifier: workspace:*
         version: link:../zksend
       '@nanostores/lit':
@@ -459,7 +428,7 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
     devDependencies:
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@storybook/addon-essentials':
@@ -483,7 +452,7 @@ importers:
 
   packages/dapp-kit-next/examples/react/simple:
     dependencies:
-      '@mysten/dapp-kit-next':
+      '@socialproof/dapp-kit-next':
         specifier: workspace:*
         version: link:../../..
       '@nanostores/react':
@@ -517,11 +486,11 @@ importers:
 
   packages/deepbook:
     dependencies:
-      '@mysten/sui':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
     devDependencies:
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/node':
@@ -532,7 +501,7 @@ importers:
         version: 0.2.3
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@swc/core@1.10.4)(@types/node@22.13.17)(typescript@5.8.2)
+        version: 10.9.2(@swc/core@1.10.4(@swc/helpers@0.5.15))(@types/node@22.13.17)(typescript@5.8.2)
       ts-retry-promise:
         specifier: ^0.8.1
         version: 0.8.1
@@ -551,14 +520,14 @@ importers:
 
   packages/deepbook-v3:
     dependencies:
-      '@mysten/sui':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
     devDependencies:
       '@iarna/toml':
         specifier: ^2.2.5
         version: 2.2.5
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/node':
@@ -569,7 +538,7 @@ importers:
         version: 0.2.3
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@swc/core@1.10.4)(@types/node@22.13.17)(typescript@5.8.2)
+        version: 10.9.2(@swc/core@1.10.4(@swc/helpers@0.5.15))(@types/node@22.13.17)(typescript@5.8.2)
       ts-retry-promise:
         specifier: ^0.8.1
         version: 0.8.1
@@ -588,58 +557,58 @@ importers:
 
   packages/docs:
     dependencies:
-      '@mysten/bcs':
+      '@socialproof/bcs':
         specifier: workspace:*
         version: link:../bcs
-      '@mysten/dapp-kit':
+      '@socialproof/dapp-kit':
         specifier: workspace:*
         version: link:../dapp-kit
-      '@mysten/dapp-kit-next':
+      '@socialproof/dapp-kit-next':
         specifier: workspace:*
         version: link:../dapp-kit-next
-      '@mysten/deepbook':
+      '@socialproof/deepbook':
         specifier: workspace:*
         version: link:../deepbook
-      '@mysten/deepbook-v3':
+      '@socialproof/deepbook-v3':
         specifier: workspace:*
         version: link:../deepbook-v3
-      '@mysten/enoki':
+      '@socialproof/enoki':
         specifier: workspace:*
         version: link:../enoki
-      '@mysten/enoki-connect':
+      '@socialproof/enoki-connect':
         specifier: workspace:*
         version: link:../enoki-connect
-      '@mysten/graphql-transport':
+      '@socialproof/graphql-transport':
         specifier: workspace:*
         version: link:../graphql-transport
-      '@mysten/kiosk':
+      '@socialproof/kiosk':
         specifier: workspace:*
         version: link:../kiosk
-      '@mysten/seal':
-        specifier: workspace:*
-        version: link:../seal
-      '@mysten/signers':
-        specifier: workspace:*
-        version: link:../signers
-      '@mysten/slush-wallet':
-        specifier: workspace:*
-        version: link:../slush-wallet
-      '@mysten/sui':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
-      '@mysten/suins':
+      '@socialproof/mysns':
         specifier: workspace:*
-        version: link:../suins
-      '@mysten/utils':
+        version: link:../mysns
+      '@socialproof/seal':
+        specifier: workspace:*
+        version: link:../seal
+      '@socialproof/signers':
+        specifier: workspace:*
+        version: link:../signers
+      '@socialproof/slush-wallet':
+        specifier: workspace:*
+        version: link:../slush-wallet
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
-      '@mysten/wallet-standard':
+      '@socialproof/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
-      '@mysten/walrus':
+      '@socialproof/walrus':
         specifier: workspace:*
         version: link:../walrus
-      '@mysten/zksend':
+      '@socialproof/zksend':
         specifier: workspace:*
         version: link:../zksend
       '@tanstack/react-query':
@@ -721,13 +690,13 @@ importers:
 
   packages/enoki:
     dependencies:
-      '@mysten/signers':
-        specifier: workspace:*
-        version: link:../signers
-      '@mysten/sui':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
-      '@mysten/wallet-standard':
+      '@socialproof/signers':
+        specifier: workspace:*
+        version: link:../signers
+      '@socialproof/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
       '@nanostores/react':
@@ -743,10 +712,10 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
     devDependencies:
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
-      '@mysten/dapp-kit':
+      '@socialproof/dapp-kit':
         specifier: workspace:*
         version: link:../dapp-kit
       '@tanstack/react-query':
@@ -779,20 +748,20 @@ importers:
 
   packages/enoki-connect:
     dependencies:
-      '@mysten/sui':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
-      '@mysten/wallet-standard':
+      '@socialproof/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
-      '@mysten/window-wallet-core':
+      '@socialproof/window-wallet-core':
         specifier: workspace:^
         version: link:../window-wallet-core
       mitt:
         specifier: ^3.0.1
         version: 3.0.1
     devDependencies:
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/node':
@@ -807,13 +776,13 @@ importers:
 
   packages/enoki-connect/demo-dapp:
     dependencies:
-      '@mysten/dapp-kit':
+      '@socialproof/dapp-kit':
         specifier: workspace:*
         version: link:../../dapp-kit
-      '@mysten/enoki-connect':
+      '@socialproof/enoki-connect':
         specifier: workspace:*
         version: link:..
-      '@mysten/sui':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../../typescript
       '@radix-ui/colors':
@@ -874,10 +843,10 @@ importers:
       '@graphql-typed-document-node/core':
         specifier: ^3.2.0
         version: 3.2.0(graphql@16.10.0)
-      '@mysten/bcs':
+      '@socialproof/bcs':
         specifier: workspace:*
         version: link:../bcs
-      '@mysten/sui':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
       graphql:
@@ -902,7 +871,7 @@ importers:
       '@graphql-codegen/typescript-operations':
         specifier: ^4.6.0
         version: 4.6.0(graphql@16.10.0)
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@parcel/watcher':
@@ -926,14 +895,14 @@ importers:
 
   packages/kiosk:
     dependencies:
-      '@mysten/sui':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
-      '@mysten/utils':
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
     devDependencies:
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       cross-env:
@@ -958,7 +927,7 @@ importers:
         specifier: ^8.0.3
         version: 8.0.3
 
-  packages/ledgerjs-hw-app-sui:
+  packages/ledgerjs-hw-app-mys:
     dependencies:
       '@ledgerhq/hw-transport':
         specifier: ^6.31.0
@@ -970,7 +939,7 @@ importers:
       '@ledgerhq/hw-transport-mocker':
         specifier: ^6.29.0
         version: 6.29.4
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@size-limit/preset-small-lib':
@@ -989,27 +958,9 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1(@types/debug@4.1.12)(@types/node@22.13.17)(happy-dom@16.3.0)(jiti@2.4.2)(jsdom@25.0.1)(lightningcss@1.29.2)(msw@2.7.3(@types/node@22.13.17)(typescript@5.8.2))(tsx@4.19.3)(yaml@2.7.1)
 
-  packages/move-bytecode-template:
-    devDependencies:
-      '@mysten/bcs':
-        specifier: workspace:*
-        version: link:../bcs
-      '@mysten/build-scripts':
-        specifier: workspace:*
-        version: link:../build-scripts
-      typescript:
-        specifier: ^5.8.2
-        version: 5.8.2
-      vitest:
-        specifier: ^3.1.1
-        version: 3.1.1(@types/debug@4.1.12)(@types/node@22.13.17)(happy-dom@16.3.0)(jiti@2.4.2)(jsdom@25.0.1)(lightningcss@1.29.2)(msw@2.7.3(@types/node@22.13.17)(typescript@5.8.2))(tsx@4.19.3)(yaml@2.7.1)
-      wasm-pack:
-        specifier: ^0.13.1
-        version: 0.13.1
-
   packages/mvr-static:
     dependencies:
-      '@mysten/sui':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
       '@types/node':
@@ -1025,7 +976,7 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
     devDependencies:
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       typescript:
@@ -1035,114 +986,9 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1(@types/debug@4.1.12)(@types/node@22.13.17)(happy-dom@16.3.0)(jiti@2.4.2)(jsdom@25.0.1)(lightningcss@1.29.2)(msw@2.7.3(@types/node@22.13.17)(typescript@5.8.2))(tsx@4.19.3)(yaml@2.7.1)
 
-  packages/seal:
+  packages/mysns:
     dependencies:
-      '@mysten/bcs':
-        specifier: workspace:*
-        version: link:../bcs
-      '@mysten/sui':
-        specifier: workspace:*
-        version: link:../typescript
-      '@noble/curves':
-        specifier: ^1.8.1
-        version: 1.8.1
-      '@noble/hashes':
-        specifier: ^1.7.1
-        version: 1.7.1
-      shamir-secret-sharing:
-        specifier: 0.0.3
-        version: 0.0.3
-    devDependencies:
-      '@hey-api/openapi-ts':
-        specifier: ^0.66.1
-        version: 0.66.1(typescript@5.8.2)
-      '@mysten/build-scripts':
-        specifier: workspace:*
-        version: link:../build-scripts
-      '@types/node':
-        specifier: ^22.13.17
-        version: 22.13.17
-      typescript:
-        specifier: ^5.8.2
-        version: 5.8.2
-      vitest:
-        specifier: ^3.1.1
-        version: 3.1.1(@types/debug@4.1.12)(@types/node@22.13.17)(happy-dom@16.3.0)(jiti@2.4.2)(jsdom@25.0.1)(lightningcss@1.29.2)(msw@2.7.3(@types/node@22.13.17)(typescript@5.8.2))(tsx@4.19.3)(yaml@2.7.1)
-
-  packages/signers:
-    dependencies:
-      '@google-cloud/kms':
-        specifier: ^4.5.0
-        version: 4.5.0
-      '@mysten/ledgerjs-hw-app-sui':
-        specifier: workspace:*
-        version: link:../ledgerjs-hw-app-sui
-      '@mysten/sui':
-        specifier: workspace:*
-        version: link:../typescript
-      '@noble/curves':
-        specifier: ^1.8.1
-        version: 1.8.1
-      '@noble/hashes':
-        specifier: ^1.7.1
-        version: 1.7.1
-      asn1-ts:
-        specifier: ^8.0.2
-        version: 8.0.2
-    devDependencies:
-      '@mysten/build-scripts':
-        specifier: workspace:*
-        version: link:../build-scripts
-      '@types/node':
-        specifier: ^22.13.17
-        version: 22.13.17
-      dotenv:
-        specifier: ^16.4.5
-        version: 16.4.7
-      typescript:
-        specifier: ^5.8.2
-        version: 5.8.2
-      vitest:
-        specifier: ^3.1.1
-        version: 3.1.1(@types/debug@4.1.12)(@types/node@22.13.17)(happy-dom@16.3.0)(jiti@2.4.2)(jsdom@25.0.1)(lightningcss@1.29.2)(msw@2.7.3(@types/node@22.13.17)(typescript@5.8.2))(tsx@4.19.3)(yaml@2.7.1)
-
-  packages/slush-wallet:
-    dependencies:
-      '@mysten/sui':
-        specifier: workspace:*
-        version: link:../typescript
-      '@mysten/utils':
-        specifier: workspace:*
-        version: link:../utils
-      '@mysten/wallet-standard':
-        specifier: workspace:*
-        version: link:../wallet-standard
-      '@mysten/window-wallet-core':
-        specifier: workspace:*
-        version: link:../window-wallet-core
-      mitt:
-        specifier: ^3.0.1
-        version: 3.0.1
-      valibot:
-        specifier: ^0.36.0
-        version: 0.36.0
-    devDependencies:
-      '@mysten/build-scripts':
-        specifier: workspace:*
-        version: link:../build-scripts
-      '@types/node':
-        specifier: ^22.13.17
-        version: 22.13.17
-      typescript:
-        specifier: ^5.8.2
-        version: 5.8.2
-      vitest:
-        specifier: ^3.1.1
-        version: 3.1.1(@types/debug@4.1.12)(@types/node@22.13.17)(happy-dom@16.3.0)(jiti@2.4.2)(jsdom@25.0.1)(lightningcss@1.29.2)(msw@2.7.3(@types/node@22.13.17)(typescript@5.8.2))(tsx@4.19.3)(yaml@2.7.1)
-
-  packages/suins:
-    dependencies:
-      '@mysten/sui':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
       axios:
@@ -1152,7 +998,7 @@ importers:
         specifier: ^3.9.1
         version: 3.9.1
     devDependencies:
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/tmp':
@@ -1171,15 +1017,120 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1(@types/debug@4.1.12)(@types/node@22.13.17)(happy-dom@16.3.0)(jiti@2.4.2)(jsdom@25.0.1)(lightningcss@1.29.2)(msw@2.7.3(@types/node@22.13.17)(typescript@5.8.2))(tsx@4.19.3)(yaml@2.7.1)
 
+  packages/seal:
+    dependencies:
+      '@socialproof/bcs':
+        specifier: workspace:*
+        version: link:../bcs
+      '@socialproof/mys':
+        specifier: workspace:*
+        version: link:../typescript
+      '@noble/curves':
+        specifier: ^1.8.1
+        version: 1.8.1
+      '@noble/hashes':
+        specifier: ^1.7.1
+        version: 1.7.1
+      shamir-secret-sharing:
+        specifier: 0.0.3
+        version: 0.0.3
+    devDependencies:
+      '@hey-api/openapi-ts':
+        specifier: ^0.66.1
+        version: 0.66.1(typescript@5.8.2)
+      '@socialproof/build-scripts':
+        specifier: workspace:*
+        version: link:../build-scripts
+      '@types/node':
+        specifier: ^22.13.17
+        version: 22.13.17
+      typescript:
+        specifier: ^5.8.2
+        version: 5.8.2
+      vitest:
+        specifier: ^3.1.1
+        version: 3.1.1(@types/debug@4.1.12)(@types/node@22.13.17)(happy-dom@16.3.0)(jiti@2.4.2)(jsdom@25.0.1)(lightningcss@1.29.2)(msw@2.7.3(@types/node@22.13.17)(typescript@5.8.2))(tsx@4.19.3)(yaml@2.7.1)
+
+  packages/signers:
+    dependencies:
+      '@google-cloud/kms':
+        specifier: ^4.5.0
+        version: 4.5.0
+      '@socialproof/ledgerjs-hw-app-mys':
+        specifier: workspace:*
+        version: link:../ledgerjs-hw-app-mys
+      '@socialproof/mys':
+        specifier: workspace:*
+        version: link:../typescript
+      '@noble/curves':
+        specifier: ^1.8.1
+        version: 1.8.1
+      '@noble/hashes':
+        specifier: ^1.7.1
+        version: 1.7.1
+      asn1-ts:
+        specifier: ^8.0.2
+        version: 8.0.2
+    devDependencies:
+      '@socialproof/build-scripts':
+        specifier: workspace:*
+        version: link:../build-scripts
+      '@types/node':
+        specifier: ^22.13.17
+        version: 22.13.17
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.7
+      typescript:
+        specifier: ^5.8.2
+        version: 5.8.2
+      vitest:
+        specifier: ^3.1.1
+        version: 3.1.1(@types/debug@4.1.12)(@types/node@22.13.17)(happy-dom@16.3.0)(jiti@2.4.2)(jsdom@25.0.1)(lightningcss@1.29.2)(msw@2.7.3(@types/node@22.13.17)(typescript@5.8.2))(tsx@4.19.3)(yaml@2.7.1)
+
+  packages/slush-wallet:
+    dependencies:
+      '@socialproof/mys':
+        specifier: workspace:*
+        version: link:../typescript
+      '@socialproof/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@socialproof/wallet-standard':
+        specifier: workspace:*
+        version: link:../wallet-standard
+      '@socialproof/window-wallet-core':
+        specifier: workspace:*
+        version: link:../window-wallet-core
+      mitt:
+        specifier: ^3.0.1
+        version: 3.0.1
+      valibot:
+        specifier: ^0.36.0
+        version: 0.36.0
+    devDependencies:
+      '@socialproof/build-scripts':
+        specifier: workspace:*
+        version: link:../build-scripts
+      '@types/node':
+        specifier: ^22.13.17
+        version: 22.13.17
+      typescript:
+        specifier: ^5.8.2
+        version: 5.8.2
+      vitest:
+        specifier: ^3.1.1
+        version: 3.1.1(@types/debug@4.1.12)(@types/node@22.13.17)(happy-dom@16.3.0)(jiti@2.4.2)(jsdom@25.0.1)(lightningcss@1.29.2)(msw@2.7.3(@types/node@22.13.17)(typescript@5.8.2))(tsx@4.19.3)(yaml@2.7.1)
+
   packages/typescript:
     dependencies:
       '@graphql-typed-document-node/core':
         specifier: ^3.2.0
         version: 3.2.0(graphql@16.10.0)
-      '@mysten/bcs':
+      '@socialproof/bcs':
         specifier: workspace:*
         version: link:../bcs
-      '@mysten/utils':
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
       '@noble/curves':
@@ -1234,7 +1185,7 @@ importers:
       '@iarna/toml':
         specifier: ^2.2.5
         version: 2.2.5
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:^
         version: link:../build-scripts
       '@parcel/watcher':
@@ -1289,7 +1240,7 @@ importers:
         specifier: ^1.2.4
         version: 1.2.4
     devDependencies:
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       typescript:
@@ -1301,14 +1252,14 @@ importers:
 
   packages/wallet-standard:
     dependencies:
-      '@mysten/sui':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
       '@wallet-standard/core':
         specifier: 1.1.0
         version: 1.1.0
     devDependencies:
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       typescript:
@@ -1316,20 +1267,20 @@ importers:
         version: 5.8.2
       typescript-json-schema:
         specifier: ^0.65.1
-        version: 0.65.1(@swc/core@1.10.4)
+        version: 0.65.1(@swc/core@1.10.4(@swc/helpers@0.5.15))
 
   packages/walrus:
     dependencies:
-      '@mysten/bcs':
+      '@socialproof/bcs':
         specifier: workspace:*
         version: link:../bcs
-      '@mysten/sui':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
-      '@mysten/utils':
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
-      '@mysten/walrus-wasm':
+      '@socialproof/walrus-wasm':
         specifier: workspace:*
         version: link:../walrus-wasm
       dataloader:
@@ -1339,10 +1290,10 @@ importers:
       '@hono/node-server':
         specifier: ^1.14.0
         version: 1.14.0(hono@4.7.5)
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
-      '@mysten/dapp-kit':
+      '@socialproof/dapp-kit':
         specifier: workspace:*
         version: link:../dapp-kit
       '@types/node':
@@ -1377,7 +1328,7 @@ importers:
 
   packages/window-wallet-core:
     dependencies:
-      '@mysten/utils':
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
       jose:
@@ -1387,7 +1338,7 @@ importers:
         specifier: ^0.36.0
         version: 0.36.0
     devDependencies:
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       typescript:
@@ -1399,16 +1350,16 @@ importers:
 
   packages/zksend:
     dependencies:
-      '@mysten/sui':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
-      '@mysten/utils':
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
-      '@mysten/wallet-standard':
+      '@socialproof/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
-      '@mysten/window-wallet-core':
+      '@socialproof/window-wallet-core':
         specifier: workspace:*
         version: link:../window-wallet-core
       mitt:
@@ -1421,7 +1372,7 @@ importers:
         specifier: ^0.36.0
         version: 0.36.0
     devDependencies:
-      '@mysten/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/node':
@@ -4681,13 +4632,6 @@ packages:
       lit: ^2.0.0 || ^3.0.0
       storybook: ^8.6.12
 
-  '@stricli/auto-complete@1.1.2':
-    resolution: {integrity: sha512-sTNMh2bOvGH4meWSm4QCjbOCT1+8VSDbOkiOB6nYLaJZOr4CnWbn1s8N5h1GI6gMosUNP7waRr6FJVBhn/JfsQ==}
-    hasBin: true
-
-  '@stricli/core@1.1.2':
-    resolution: {integrity: sha512-/yWSoHUxo9mF8rgUyZkJgdrAoyIiOOhez1jo9vHTUJa8HTZYhioQUXtQU+rhi52m/hnV9Z2VGC2ap3OTH4NvUg==}
-
   '@swc/core-darwin-arm64@1.10.4':
     resolution: {integrity: sha512-sV/eurLhkjn/197y48bxKP19oqcLydSel42Qsy2zepBltqUx+/zZ8+/IS0Bi7kaWVFxerbW1IPB09uq8Zuvm3g==}
     engines: {node: '>=10'}
@@ -5522,9 +5466,6 @@ packages:
   axios-retry@3.9.1:
     resolution: {integrity: sha512-8PJDLJv7qTTMMwdnbMvrLYuvB47M81wRtxQmEdV5w4rgbTXTt+vtPkXwajOfOdSyv/wZICJOC+/UhXH4aQ/R+w==}
 
-  axios@0.30.0:
-    resolution: {integrity: sha512-Z4F3LjCgfjZz8BMYalWdMgAQUnEtKDmpwNHjh/C8pQZWde32TF64cqnSeyL3xD/aTIASRU30RHTNzRiV/NpGMg==}
-
   axios@1.8.4:
     resolution: {integrity: sha512-eBSYY4Y68NNlHbHBMdeDmKNtDgXWhQsJcGqzO3iLUM0GraQFSS9cVgPX5I9b3lbdFKyYoAEGAZF1DwhTaljNAw==}
 
@@ -5612,10 +5553,6 @@ packages:
 
   bignumber.js@9.1.2:
     resolution: {integrity: sha512-2/mKyZH9K85bzOEfhXDBFZTGd1CTs+5IHpeFQo9luiBG7hghdC851Pj2WAhb6E3R6b9tZj/XKhbg4fum+Kepug==}
-
-  binary-install@1.1.0:
-    resolution: {integrity: sha512-rkwNGW+3aQVSZoD0/o3mfPN6Yxh3Id0R/xzTVBVVpGNlVz8EGwusksxRlbk/A5iKTZt9zkMn3qIqmAt3vpfbzg==}
-    engines: {node: '>=10'}
 
   bl@4.1.0:
     resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
@@ -9673,10 +9610,6 @@ packages:
     engines: {node: '>=12.0.0'}
     hasBin: true
 
-  wasm-pack@0.13.1:
-    resolution: {integrity: sha512-P9exD4YkjpDbw68xUhF3MDm/CC/3eTmmthyG5bHJ56kalxOTewOunxTke4SyF8MTXV6jUtNjXggPgrGmMtczGg==}
-    hasBin: true
-
   wcwidth@1.0.1:
     resolution: {integrity: sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==}
 
@@ -12175,8 +12108,8 @@ snapshots:
     dependencies:
       '@ledgerhq/errors': 6.19.1
       '@ledgerhq/logs': 6.12.0
-      rxjs: 7.8.1
-      semver: 7.6.3
+      rxjs: 7.8.2
+      semver: 7.7.1
 
   '@ledgerhq/errors@6.19.1': {}
 
@@ -12184,7 +12117,7 @@ snapshots:
     dependencies:
       '@ledgerhq/hw-transport': 6.31.4
       '@ledgerhq/logs': 6.12.0
-      rxjs: 7.8.1
+      rxjs: 7.8.2
 
   '@ledgerhq/hw-transport@6.31.4':
     dependencies:
@@ -12226,7 +12159,7 @@ snapshots:
 
   '@manypkg/find-root@1.1.0':
     dependencies:
-      '@babel/runtime': 7.26.10
+      '@babel/runtime': 7.27.0
       '@types/node': 12.20.55
       find-up: 4.1.0
       fs-extra: 8.1.0
@@ -12237,7 +12170,7 @@ snapshots:
 
   '@manypkg/get-packages@1.1.3':
     dependencies:
-      '@babel/runtime': 7.26.10
+      '@babel/runtime': 7.27.0
       '@changesets/types': 4.1.0
       '@manypkg/find-root': 1.1.0
       fs-extra: 8.1.0
@@ -13541,12 +13474,6 @@ snapshots:
       tiny-invariant: 1.3.3
       ts-dedent: 2.2.0
 
-  '@stricli/auto-complete@1.1.2':
-    dependencies:
-      '@stricli/core': 1.1.2
-
-  '@stricli/core@1.1.2': {}
-
   '@swc/core-darwin-arm64@1.10.4':
     optional: true
 
@@ -14505,8 +14432,8 @@ snapshots:
       call-bind: 1.0.8
       define-properties: 1.2.1
       es-abstract: 1.23.9
-      es-object-atoms: 1.0.0
-      get-intrinsic: 1.2.7
+      es-object-atoms: 1.1.1
+      get-intrinsic: 1.3.0
       is-string: 1.1.1
 
   array-union@2.1.0: {}
@@ -14517,7 +14444,7 @@ snapshots:
       define-properties: 1.2.1
       es-abstract: 1.23.9
       es-errors: 1.3.0
-      es-object-atoms: 1.0.0
+      es-object-atoms: 1.1.1
       es-shim-unscopables: 1.0.2
 
   array.prototype.findlastindex@1.2.5:
@@ -14526,7 +14453,7 @@ snapshots:
       define-properties: 1.2.1
       es-abstract: 1.23.9
       es-errors: 1.3.0
-      es-object-atoms: 1.0.0
+      es-object-atoms: 1.1.1
       es-shim-unscopables: 1.0.2
 
   array.prototype.flat@1.3.3:
@@ -14558,7 +14485,7 @@ snapshots:
       define-properties: 1.2.1
       es-abstract: 1.23.9
       es-errors: 1.3.0
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.3.0
       is-array-buffer: 3.0.5
 
   asap@2.0.6: {}
@@ -14609,16 +14536,8 @@ snapshots:
 
   axios-retry@3.9.1:
     dependencies:
-      '@babel/runtime': 7.26.10
+      '@babel/runtime': 7.27.0
       is-retry-allowed: 2.2.0
-
-  axios@0.30.0:
-    dependencies:
-      follow-redirects: 1.15.9
-      form-data: 4.0.2
-      proxy-from-env: 1.1.0
-    transitivePeerDependencies:
-      - debug
 
   axios@1.8.4:
     dependencies:
@@ -14634,7 +14553,7 @@ snapshots:
 
   babel-plugin-macros@3.1.0:
     dependencies:
-      '@babel/runtime': 7.26.10
+      '@babel/runtime': 7.27.0
       cosmiconfig: 7.1.0
       resolve: 1.22.10
 
@@ -14731,14 +14650,6 @@ snapshots:
 
   bignumber.js@9.1.2: {}
 
-  binary-install@1.1.0:
-    dependencies:
-      axios: 0.30.0
-      rimraf: 3.0.2
-      tar: 6.2.1
-    transitivePeerDependencies:
-      - debug
-
   bl@4.1.0:
     dependencies:
       buffer: 5.7.1
@@ -14832,9 +14743,9 @@ snapshots:
 
   call-bind@1.0.8:
     dependencies:
-      call-bind-apply-helpers: 1.0.1
+      call-bind-apply-helpers: 1.0.2
       es-define-property: 1.0.1
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.3.0
       set-function-length: 1.2.2
 
   call-bound@1.0.3:
@@ -15338,11 +15249,11 @@ snapshots:
       data-view-byte-offset: 1.0.1
       es-define-property: 1.0.1
       es-errors: 1.3.0
-      es-object-atoms: 1.0.0
+      es-object-atoms: 1.1.1
       es-set-tostringtag: 2.1.0
       es-to-primitive: 1.3.0
       function.prototype.name: 1.1.8
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.3.0
       get-proto: 1.0.1
       get-symbol-description: 1.1.0
       globalthis: 1.0.4
@@ -15393,7 +15304,7 @@ snapshots:
       es-errors: 1.3.0
       es-set-tostringtag: 2.1.0
       function-bind: 1.1.2
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.3.0
       globalthis: 1.0.4
       gopd: 1.2.0
       has-property-descriptors: 1.0.2
@@ -15544,7 +15455,7 @@ snapshots:
     dependencies:
       eslint: 8.57.1
 
-  eslint-config-react-app@7.0.1(@babel/plugin-syntax-flow@7.26.0(@babel/core@7.26.10))(@babel/plugin-transform-react-jsx@7.25.9(@babel/core@7.26.10))(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0)(eslint@8.57.1))(eslint@8.57.1)(typescript@5.8.2):
+  eslint-config-react-app@7.0.1(@babel/plugin-syntax-flow@7.26.0(@babel/core@7.26.10))(@babel/plugin-transform-react-jsx@7.25.9(@babel/core@7.26.10))(eslint-import-resolver-typescript@3.7.0)(eslint@8.57.1)(typescript@5.8.2):
     dependencies:
       '@babel/core': 7.26.0
       '@babel/eslint-parser': 7.25.9(@babel/core@7.26.0)(eslint@8.57.1)
@@ -15555,7 +15466,7 @@ snapshots:
       confusing-browser-globals: 1.0.11
       eslint: 8.57.1
       eslint-plugin-flowtype: 8.0.3(@babel/plugin-syntax-flow@7.26.0(@babel/core@7.26.10))(@babel/plugin-transform-react-jsx@7.25.9(@babel/core@7.26.10))(eslint@8.57.1)
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0)(eslint@8.57.1))(eslint@8.57.1)
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-typescript@3.7.0)(eslint@8.57.1)
       eslint-plugin-jest: 25.7.0(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.2))(eslint@8.57.1)(typescript@5.8.2))(eslint@8.57.1)(typescript@5.8.2)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.57.1)
       eslint-plugin-react: 7.37.3(eslint@8.57.1)
@@ -15595,7 +15506,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0)(eslint@8.57.1))(eslint@8.57.1):
+  eslint-module-utils@2.12.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0)(eslint@8.57.1):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
@@ -15606,7 +15517,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.0(@typescript-eslint/parser@8.19.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0)(eslint@8.57.1))(eslint@8.57.1):
+  eslint-module-utils@2.12.0(@typescript-eslint/parser@8.19.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0)(eslint@8.57.1):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
@@ -15629,7 +15540,7 @@ snapshots:
     dependencies:
       eslint: 8.57.1
 
-  eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0)(eslint@8.57.1))(eslint@8.57.1):
+  eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-typescript@3.7.0)(eslint@8.57.1):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.8
@@ -15640,7 +15551,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.57.1
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0)(eslint@8.57.1))(eslint@8.57.1)
+      eslint-module-utils: 2.12.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0)(eslint@8.57.1)
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
@@ -15669,7 +15580,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.57.1
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.0(@typescript-eslint/parser@8.19.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0)(eslint@8.57.1))(eslint@8.57.1)
+      eslint-module-utils: 2.12.0(@typescript-eslint/parser@8.19.0(eslint@8.57.1)(typescript@5.8.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0)(eslint@8.57.1)
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
@@ -16326,7 +16237,7 @@ snapshots:
     dependencies:
       call-bound: 1.0.3
       es-errors: 1.3.0
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.3.0
 
   get-tsconfig@4.10.0:
     dependencies:
@@ -16756,7 +16667,7 @@ snapshots:
     dependencies:
       call-bind: 1.0.8
       call-bound: 1.0.3
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.3.0
 
   is-arrayish@0.2.1: {}
 
@@ -16792,7 +16703,7 @@ snapshots:
   is-data-view@1.0.2:
     dependencies:
       call-bound: 1.0.3
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.3.0
       is-typed-array: 1.1.15
 
   is-date-object@1.1.0:
@@ -16909,7 +16820,7 @@ snapshots:
   is-weakset@2.0.4:
     dependencies:
       call-bound: 1.0.3
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.3.0
 
   is-windows@1.0.2: {}
 
@@ -16930,8 +16841,8 @@ snapshots:
   iterator.prototype@1.1.5:
     dependencies:
       define-data-property: 1.1.4
-      es-object-atoms: 1.0.0
-      get-intrinsic: 1.2.7
+      es-object-atoms: 1.1.1
+      get-intrinsic: 1.3.0
       get-proto: 1.0.1
       has-symbols: 1.1.0
       set-function-name: 2.0.2
@@ -17910,7 +17821,7 @@ snapshots:
       call-bind: 1.0.8
       call-bound: 1.0.3
       define-properties: 1.2.1
-      es-object-atoms: 1.0.0
+      es-object-atoms: 1.1.1
       has-symbols: 1.1.0
       object-keys: 1.1.1
 
@@ -17918,14 +17829,14 @@ snapshots:
     dependencies:
       call-bind: 1.0.8
       define-properties: 1.2.1
-      es-object-atoms: 1.0.0
+      es-object-atoms: 1.1.1
 
   object.fromentries@2.0.8:
     dependencies:
       call-bind: 1.0.8
       define-properties: 1.2.1
       es-abstract: 1.23.9
-      es-object-atoms: 1.0.0
+      es-object-atoms: 1.1.1
 
   object.groupby@1.0.3:
     dependencies:
@@ -17938,7 +17849,7 @@ snapshots:
       call-bind: 1.0.8
       call-bound: 1.0.3
       define-properties: 1.2.1
-      es-object-atoms: 1.0.0
+      es-object-atoms: 1.1.1
 
   ohash@1.1.6: {}
 
@@ -17994,7 +17905,7 @@ snapshots:
 
   own-keys@1.0.1:
     dependencies:
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.3.0
       object-keys: 1.1.1
       safe-push-apply: 1.0.0
 
@@ -18488,8 +18399,8 @@ snapshots:
       define-properties: 1.2.1
       es-abstract: 1.23.9
       es-errors: 1.3.0
-      es-object-atoms: 1.0.0
-      get-intrinsic: 1.2.7
+      es-object-atoms: 1.1.1
+      get-intrinsic: 1.3.0
       get-proto: 1.0.1
       which-builtin-type: 1.2.1
 
@@ -18718,7 +18629,7 @@ snapshots:
     dependencies:
       call-bind: 1.0.8
       call-bound: 1.0.3
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.3.0
       has-symbols: 1.1.0
       isarray: 2.0.5
 
@@ -18779,7 +18690,7 @@ snapshots:
       define-data-property: 1.1.4
       es-errors: 1.3.0
       function-bind: 1.1.2
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.3.0
       gopd: 1.2.0
       has-property-descriptors: 1.0.2
 
@@ -18794,7 +18705,7 @@ snapshots:
     dependencies:
       dunder-proto: 1.0.1
       es-errors: 1.3.0
-      es-object-atoms: 1.0.0
+      es-object-atoms: 1.1.1
 
   setimmediate@1.0.5: {}
 
@@ -18855,14 +18766,14 @@ snapshots:
     dependencies:
       call-bound: 1.0.3
       es-errors: 1.3.0
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.3.0
       object-inspect: 1.13.3
 
   side-channel-weakmap@1.0.2:
     dependencies:
       call-bound: 1.0.3
       es-errors: 1.3.0
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.3.0
       object-inspect: 1.13.3
       side-channel-map: 1.0.1
 
@@ -19014,8 +18925,8 @@ snapshots:
       define-properties: 1.2.1
       es-abstract: 1.23.9
       es-errors: 1.3.0
-      es-object-atoms: 1.0.0
-      get-intrinsic: 1.2.7
+      es-object-atoms: 1.1.1
+      get-intrinsic: 1.3.0
       gopd: 1.2.0
       has-symbols: 1.1.0
       internal-slot: 1.1.0
@@ -19035,7 +18946,7 @@ snapshots:
       define-data-property: 1.1.4
       define-properties: 1.2.1
       es-abstract: 1.23.9
-      es-object-atoms: 1.0.0
+      es-object-atoms: 1.1.1
       has-property-descriptors: 1.0.2
 
   string.prototype.trimend@1.0.9:
@@ -19043,13 +18954,13 @@ snapshots:
       call-bind: 1.0.8
       call-bound: 1.0.3
       define-properties: 1.2.1
-      es-object-atoms: 1.0.0
+      es-object-atoms: 1.1.1
 
   string.prototype.trimstart@1.0.8:
     dependencies:
       call-bind: 1.0.8
       define-properties: 1.2.1
-      es-object-atoms: 1.0.0
+      es-object-atoms: 1.1.1
 
   string_decoder@1.1.1:
     dependencies:
@@ -19295,7 +19206,7 @@ snapshots:
       '@ts-morph/common': 0.26.1
       code-block-writer: 13.0.3
 
-  ts-node@10.9.2(@swc/core@1.10.4)(@types/node@18.19.86)(typescript@5.5.4):
+  ts-node@10.9.2(@swc/core@1.10.4(@swc/helpers@0.5.15))(@types/node@18.19.86)(typescript@5.5.4):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
@@ -19315,7 +19226,7 @@ snapshots:
     optionalDependencies:
       '@swc/core': 1.10.4(@swc/helpers@0.5.15)
 
-  ts-node@10.9.2(@swc/core@1.10.4)(@types/node@22.13.17)(typescript@5.8.2):
+  ts-node@10.9.2(@swc/core@1.10.4(@swc/helpers@0.5.15))(@types/node@22.13.17)(typescript@5.8.2):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
@@ -19452,14 +19363,14 @@ snapshots:
       typescript: 5.8.2
       yaml: 2.7.1
 
-  typescript-json-schema@0.65.1(@swc/core@1.10.4):
+  typescript-json-schema@0.65.1(@swc/core@1.10.4(@swc/helpers@0.5.15)):
     dependencies:
       '@types/json-schema': 7.0.15
       '@types/node': 18.19.86
       glob: 7.2.3
       path-equal: 1.2.5
       safe-stable-stringify: 2.5.0
-      ts-node: 10.9.2(@swc/core@1.10.4)(@types/node@18.19.86)(typescript@5.5.4)
+      ts-node: 10.9.2(@swc/core@1.10.4(@swc/helpers@0.5.15))(@types/node@18.19.86)(typescript@5.5.4)
       typescript: 5.5.4
       yargs: 17.7.2
     transitivePeerDependencies:
@@ -19766,12 +19677,6 @@ snapshots:
       lodash: 4.17.21
       minimist: 1.2.8
       rxjs: 7.8.2
-    transitivePeerDependencies:
-      - debug
-
-  wasm-pack@0.13.1:
-    dependencies:
-      binary-install: 1.1.0
     transitivePeerDependencies:
       - debug
 

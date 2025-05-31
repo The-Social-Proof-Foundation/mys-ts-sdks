@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiClient } from '@mysten/sui/client';
-import { fromBase64, isValidSuiAddress } from '@mysten/sui/utils';
+import type { MysClient } from '@socialproof/mys/client';
+import { fromBase64, isValidMysAddress } from '@socialproof/mys/utils';
 
 import '../bcs.js';
 
@@ -25,7 +26,7 @@ import { getAllOwnedObjects, parseTransferPolicyCapObject } from '../utils.js';
  * @param type
  */
 export async function queryTransferPolicy(
-	client: SuiClient,
+	client: MysClient,
 	type: string,
 ): Promise<TransferPolicy[]> {
 	// console.log('event type: %s', `${TRANSFER_POLICY_CREATED_EVENT}<${type}>`);
@@ -70,11 +71,11 @@ export async function queryTransferPolicy(
  * @returns TransferPolicyCap Object ID | undefined if not found.
  */
 export async function queryTransferPolicyCapsByType(
-	client: SuiClient,
+	client: MysClient,
 	address: string,
 	type: string,
 ): Promise<TransferPolicyCap[]> {
-	if (!isValidSuiAddress(address)) return [];
+	if (!isValidMysAddress(address)) return [];
 
 	const filter = {
 		MatchAll: [
@@ -104,10 +105,10 @@ export async function queryTransferPolicyCapsByType(
  * @returns TransferPolicyCap Object ID | undefined if not found.
  */
 export async function queryOwnedTransferPolicies(
-	client: SuiClient,
+	client: MysClient,
 	address: string,
 ): Promise<TransferPolicyCap[] | undefined> {
-	if (!isValidSuiAddress(address)) return;
+	if (!isValidMysAddress(address)) return;
 
 	const filter = {
 		MatchAll: [

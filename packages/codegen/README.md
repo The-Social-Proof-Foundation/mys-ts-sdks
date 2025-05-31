@@ -1,1 +1,1 @@
-# Sui typescript codegen
+# Mys typescript codegen

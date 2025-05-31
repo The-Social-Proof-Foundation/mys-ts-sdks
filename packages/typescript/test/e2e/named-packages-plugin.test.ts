@@ -1,15 +1,16 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { describe, expect, it } from 'vitest';
 
-import { getFullnodeUrl, SuiClient } from '../../src/client';
+import { getFullnodeUrl, MysClient } from '../../src/client';
 import { namedPackagesPlugin, Transaction } from '../../src/transactions';
 import { getFirstLevelNamedTypes } from '../../src/transactions/plugins/utils';
-import { normalizeSuiAddress } from '../../src/utils';
+import { normalizeMysAddress } from '../../src/utils';
 
-const MAINNET_URL = 'https://mainnet.mvr.mystenlabs.com';
-const TESTNET_URL = 'https://testnet.mvr.mystenlabs.com';
+const MAINNET_URL = 'https://mainnet.mvr.mysocial.network';
+const TESTNET_URL = 'https://testnet.mvr.mysocial.network';
 
 const mainnetPlugin = namedPackagesPlugin({
 	url: MAINNET_URL,
@@ -46,12 +47,12 @@ const localCachePlugin = namedPackagesPlugin({
 	overrides: {
 		packages: {
 			'@framework/std': '0x1',
-			'@framework/sui': '0x2',
+			'@framework/mys': '0x2',
 		},
 		types: {
-			'@framework/sui::vec_set::VecSet': '0x2::vec_set::VecSet',
+			'@framework/mys::vec_set::VecSet': '0x2::vec_set::VecSet',
 			'@framework/std::string::String': '0x1::string::String',
-			'@framework/sui::sui::SUI': '0x2::sui::SUI',
+			'@framework/mys::mys::MYS': '0x2::mys::MYS',
 		},
 	},
 });
@@ -87,9 +88,9 @@ describe.concurrent('Name Resolution Plugin', () => {
 
 		const json = JSON.parse(await transaction.toJSON());
 
-		expect(json.commands[0].MoveCall.package).toBe(normalizeSuiAddress('0x1'));
+		expect(json.commands[0].MoveCall.package).toBe(normalizeMysAddress('0x1'));
 		expect(json.commands[1].MoveCall.typeArguments[0]).toBe(`0x1::string::String`);
-		expect(json.commands[2].MoveCall.package).toBe(normalizeSuiAddress('0x1'));
+		expect(json.commands[2].MoveCall.package).toBe(normalizeMysAddress('0x1'));
 		expect(json.commands[2].MoveCall.typeArguments[0]).toBe(
 			`0x1::vector::empty<0x1::string::String>`,
 		);
@@ -122,17 +123,17 @@ describe.concurrent('Name Resolution Plugin (Local Cache)', () => {
 		transaction.addSerializationPlugin(localCachePlugin);
 
 		const zeroCoin = transaction.moveCall({
-			target: '@framework/sui::coin::zero',
-			typeArguments: ['@framework/sui::sui::SUI'],
+			target: '@framework/mys::coin::zero',
+			typeArguments: ['@framework/mys::mys::MYS'],
 		});
 
-		transaction.transferObjects([zeroCoin], normalizeSuiAddress('0x2'));
+		transaction.transferObjects([zeroCoin], normalizeMysAddress('0x2'));
 
 		// Types are composed here, without needing any API calls, even if we do not have the
 		// full type in the cache.
 		transaction.moveCall({
 			target: '@framework/std::vector::empty',
-			typeArguments: ['@framework/sui::vec_set::VecSet<@framework/std::string::String>'],
+			typeArguments: ['@framework/mys::vec_set::VecSet<@framework/std::string::String>'],
 		});
 
 		const res = await dryRun(transaction, 'testnet');
@@ -144,17 +145,17 @@ describe.concurrent('Name Resolution Plugin (Local Cache)', () => {
 		transaction.addSerializationPlugin(localCachePlugin);
 
 		const zeroCoin = transaction.moveCall({
-			target: '@framework/sui::coin::zero',
-			typeArguments: ['@framework/sui::sui::SUI'],
+			target: '@framework/mys::coin::zero',
+			typeArguments: ['@framework/mys::mys::MYS'],
 		});
 
-		transaction.transferObjects([zeroCoin], normalizeSuiAddress('0x2'));
+		transaction.transferObjects([zeroCoin], normalizeMysAddress('0x2'));
 
 		// Types are composed here, without needing any API calls, even if we do not have the
 		// full type in the cache.
 		transaction.moveCall({
 			target: '@framework/std::vector::empty',
-			typeArguments: ['@framework/sui::vec_set::VecSet<@framework/std::string::String>'],
+			typeArguments: ['@framework/mys::vec_set::VecSet<@framework/std::string::String>'],
 		});
 
 		const res = await dryRun(transaction, 'testnet');
@@ -190,7 +191,7 @@ describe.concurrent('Utility functions', () => {
 				],
 			},
 			{
-				input: ['u64', '0x2::balance::Balance<0x2::sui::SUI>'],
+				input: ['u64', '0x2::balance::Balance<0x2::mys::MYS>'],
 				output: [],
 			},
 		];
@@ -215,8 +216,8 @@ describe.concurrent('Utility functions', () => {
 			elements: [],
 		});
 
-		transaction.setSender(normalizeSuiAddress('0x2'));
-		await transaction.build({ client: new SuiClient({ url: getFullnodeUrl('mainnet') }) });
+		transaction.setSender(normalizeMysAddress('0x2'));
+		await transaction.build({ client: new MysClient({ url: getFullnodeUrl('mainnet') }) });
 
 		expect(cache.types).toStrictEqual({
 			'@pkg/qwer::mvr_a::MvrA':
@@ -241,10 +242,10 @@ describe.concurrent('Utility functions', () => {
 			elements: [],
 		});
 
-		transaction2.setSender(normalizeSuiAddress('0x2'));
+		transaction2.setSender(normalizeMysAddress('0x2'));
 
 		await transaction2.build({
-			client: new SuiClient({ url: getFullnodeUrl('mainnet') }),
+			client: new MysClient({ url: getFullnodeUrl('mainnet') }),
 		});
 	});
 
@@ -297,10 +298,10 @@ const simplePtb = async (network: 'mainnet' | 'testnet') => {
 	// a mix of addresses & names work too (in the same PTB).
 	const coin = transaction.moveCall({
 		target: '0x2::coin::zero',
-		typeArguments: ['0x2::sui::SUI'],
+		typeArguments: ['0x2::mys::MYS'],
 	});
 
-	transaction.transferObjects([coin], normalizeSuiAddress('0x2'));
+	transaction.transferObjects([coin], normalizeMysAddress('0x2'));
 
 	const res = await dryRun(transaction, network);
 	expect(res.effects.status.status).toEqual('success');
@@ -327,9 +328,9 @@ const nestedTypeArgsPtb = async (network: 'mainnet' | 'testnet') => {
 };
 
 const dryRun = async (transaction: Transaction, network: 'mainnet' | 'testnet') => {
-	const client = new SuiClient({ url: getFullnodeUrl(network) });
+	const client = new MysClient({ url: getFullnodeUrl(network) });
 
-	transaction.setSender(normalizeSuiAddress('0x2'));
+	transaction.setSender(normalizeMysAddress('0x2'));
 
 	return client.dryRunTransactionBlock({ transactionBlock: await transaction.build({ client }) });
 };

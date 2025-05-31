@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 /// <reference types="vitest" />
@@ -18,14 +19,14 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			// TODO: Figure out a better way to run tests that avoids these aliases:
-			'@mysten/wallet-standard': new URL('../wallet-standard/src', import.meta.url).pathname,
-			'@mysten/bcs': new URL('../bcs/src', import.meta.url).pathname,
-			'@mysten/utils': new URL('../utils/src', import.meta.url).pathname,
-			'@mysten/sui/keypairs/ed25519': new URL('../typescript/src/keypairs/ed25519', import.meta.url)
+			'@socialproof/wallet-standard': new URL('../wallet-standard/src', import.meta.url).pathname,
+			'@socialproof/bcs': new URL('../bcs/src', import.meta.url).pathname,
+			'@socialproof/utils': new URL('../utils/src', import.meta.url).pathname,
+			'@socialproof/sui/keypairs/ed25519': new URL('../typescript/src/keypairs/ed25519', import.meta.url)
 				.pathname,
-			'@mysten/sui/client': new URL('../typescript/src/client', import.meta.url).pathname,
-			'@mysten/sui/utils': new URL('../typescript/src/utils', import.meta.url).pathname,
-			'@mysten/sui/transactions': new URL('../typescript/src/transactions', import.meta.url)
+			'@socialproof/sui/client': new URL('../typescript/src/client', import.meta.url).pathname,
+			'@socialproof/sui/utils': new URL('../typescript/src/utils', import.meta.url).pathname,
+			'@socialproof/sui/transactions': new URL('../typescript/src/transactions', import.meta.url)
 				.pathname,
 		},
 	},

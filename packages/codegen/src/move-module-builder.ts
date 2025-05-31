@@ -1,11 +1,12 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { FileBuilder } from './file-builder.js';
 import type { DeserializedModule, TypeSignature } from './types.js';
 import { readFile } from 'node:fs/promises';
-import { deserialize } from '@mysten/move-bytecode-template';
-import { normalizeSuiAddress, SUI_FRAMEWORK_ADDRESS } from '@mysten/sui/utils';
+import { deserialize } from '@socialproof/move-bytecode-template';
+import { normalizeMysAddress, MYS_FRAMEWORK_ADDRESS } from '@socialproof/mys/utils';
 import { getSafeName, renderTypeSignature } from './render-types.js';
 import { mapToObject, parseTS } from './utils.js';
 
@@ -24,7 +25,7 @@ export class MoveModuleBuilder extends FileBuilder {
 	}
 
 	renderBCSTypes() {
-		this.addImport('@mysten/sui/bcs', 'bcs');
+		this.addImport('@socialproof/mys/bcs', 'bcs');
 		this.renderStructs();
 		this.renderEnums();
 	}
@@ -56,7 +57,7 @@ export class MoveModuleBuilder extends FileBuilder {
 					moduleDef: this.moduleDef,
 					onDependency: (address, mod) =>
 						this.addStarImport(
-							normalizeSuiAddress(address) === normalizeSuiAddress('0x0')
+							normalizeMysAddress(address) === normalizeMysAddress('0x0')
 								? `./${mod}.js`
 								: `./deps/${address}/${mod}.js`,
 							mod,
@@ -73,7 +74,7 @@ export class MoveModuleBuilder extends FileBuilder {
 					}`,
 				);
 			} else {
-				this.addImport('@mysten/sui/bcs', 'type BcsType');
+				this.addImport('@socialproof/mys/bcs', 'type BcsType');
 
 				const typeParams = `...typeParameters: [${params.map((_, i) => `T${i}`).join(', ')}]`;
 				const typeGenerics = `${params.map((_, i) => `T${i} extends BcsType<any>`).join(', ')}`;
@@ -124,7 +125,7 @@ export class MoveModuleBuilder extends FileBuilder {
 					}`,
 				);
 			} else {
-				this.addImport('@mysten/sui/bcs', 'type BcsType');
+				this.addImport('@socialproof/mys/bcs', 'type BcsType');
 
 				const typeParams = `...typeParameters: [${params.map((_, i) => `T${i}`).join(', ')}]`;
 				const typeGenerics = `${params.map((_, i) => `T${i} extends BcsType<any>`).join(', ')}`;
@@ -144,7 +145,7 @@ export class MoveModuleBuilder extends FileBuilder {
 		const names = [];
 
 		if (this.moduleDef.function_defs.length !== 0) {
-			this.addImport('@mysten/sui/transactions', 'type Transaction');
+			this.addImport('@socialproof/mys/transactions', 'type Transaction');
 		}
 
 		for (const func of this.moduleDef.function_defs) {
@@ -177,7 +178,7 @@ export class MoveModuleBuilder extends FileBuilder {
 			const typeParameters = handle.type_parameters.filter((_, i) => usedTypeParameters.has(i));
 
 			if (usedTypeParameters.size > 0) {
-				this.addImport('@mysten/sui/bcs', 'type BcsType');
+				this.addImport('@socialproof/mys/bcs', 'type BcsType');
 			}
 
 			statements.push(
@@ -247,7 +248,7 @@ export class MoveModuleBuilder extends FileBuilder {
 			const name = this.moduleDef.identifiers[handle.name];
 
 			return (
-				normalizeSuiAddress(address) === normalizeSuiAddress(SUI_FRAMEWORK_ADDRESS) &&
+				normalizeMysAddress(address) === normalizeMysAddress(MYS_FRAMEWORK_ADDRESS) &&
 				name === 'TxContext'
 			);
 		}

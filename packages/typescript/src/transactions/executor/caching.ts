@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { bcs } from '../../bcs/index.js';
-import type { ExecuteTransactionBlockParams, SuiClient } from '../../client/index.js';
+import type { ExecuteTransactionBlockParams, MysClient } from '../../client/index.js';
 import type { Signer } from '../../cryptography/keypair.js';
 import type { BuildTransactionOptions } from '../resolve.js';
 import type { ObjectCacheOptions } from '../ObjectCache.js';
@@ -11,7 +12,7 @@ import type { Transaction } from '../Transaction.js';
 import { isTransaction } from '../Transaction.js';
 
 export class CachingTransactionExecutor {
-	#client: SuiClient;
+	#client: MysClient;
 	#lastDigest: string | null = null;
 	cache: ObjectCache;
 
@@ -19,7 +20,7 @@ export class CachingTransactionExecutor {
 		client,
 		...options
 	}: ObjectCacheOptions & {
-		client: SuiClient;
+		client: MysClient;
 	}) {
 		this.#client = client;
 		this.cache = new ObjectCache(options);
@@ -85,7 +86,7 @@ export class CachingTransactionExecutor {
 
 		signer: Signer;
 	} & Omit<ExecuteTransactionBlockParams, 'transactionBlock' | 'signature'>) {
-		transaction.setSenderIfNotSet(input.signer.toSuiAddress());
+		transaction.setSenderIfNotSet(input.signer.toMysAddress());
 		const bytes = await this.buildTransaction({ transaction });
 		const { signature } = await input.signer.signTransaction(bytes);
 		const results = await this.executeTransaction({

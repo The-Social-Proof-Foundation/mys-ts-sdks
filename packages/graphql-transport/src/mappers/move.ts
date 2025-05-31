@@ -1,17 +1,18 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type {
 	MoveStruct,
 	MoveValue,
-	SuiMoveAbility,
-	SuiMoveNormalizedEnum,
-	SuiMoveNormalizedFunction,
-	SuiMoveNormalizedModule,
-	SuiMoveNormalizedStruct,
-	SuiMoveNormalizedType,
-} from '@mysten/sui/client';
-import { normalizeSuiAddress, parseStructTag } from '@mysten/sui/utils';
+	MysMoveAbility,
+	MysMoveNormalizedEnum,
+	MysMoveNormalizedFunction,
+	MysMoveNormalizedModule,
+	MysMoveNormalizedStruct,
+	MysMoveNormalizedType,
+} from '@socialproof/mys/client';
+import { normalizeMysAddress, parseStructTag } from '@socialproof/mys/utils';
 
 import type {
 	Rpc_Move_Enum_FieldsFragment,
@@ -59,7 +60,7 @@ export function mapOpenMoveType(type: { ref?: '&' | '&mut'; body: OpenMoveTypeSi
 	return body;
 }
 
-export function mapNormalizedType(type: OpenMoveTypeSignatureBody): SuiMoveNormalizedType {
+export function mapNormalizedType(type: OpenMoveTypeSignatureBody): MysMoveNormalizedType {
 	switch (type) {
 		case 'address':
 			return 'Address';
@@ -107,7 +108,7 @@ export function mapNormalizedType(type: OpenMoveTypeSignatureBody): SuiMoveNorma
 
 export function mapNormalizedMoveFunction(
 	fn: Rpc_Move_Function_FieldsFragment,
-): SuiMoveNormalizedFunction {
+): MysMoveNormalizedFunction {
 	return {
 		visibility: `${fn.visibility?.[0]}${fn.visibility?.slice(1).toLowerCase()}` as never,
 		isEntry: fn.isEntry!,
@@ -116,7 +117,7 @@ export function mapNormalizedMoveFunction(
 				abilities:
 					param.constraints?.map(
 						(constraint) =>
-							`${constraint[0]}${constraint.slice(1).toLowerCase()}` as SuiMoveAbility,
+							`${constraint[0]}${constraint.slice(1).toLowerCase()}` as MysMoveAbility,
 					) ?? [],
 			})) ?? [],
 		return: fn.return?.map((param) => mapOpenMoveType(param.signature)) ?? [],
@@ -126,12 +127,12 @@ export function mapNormalizedMoveFunction(
 
 export function mapNormalizedMoveStruct(
 	struct: Rpc_Move_Struct_FieldsFragment,
-): SuiMoveNormalizedStruct {
+): MysMoveNormalizedStruct {
 	return {
 		abilities: {
 			abilities:
 				struct.abilities?.map(
-					(ability) => `${ability[0]}${ability.slice(1).toLowerCase()}` as SuiMoveAbility,
+					(ability) => `${ability[0]}${ability.slice(1).toLowerCase()}` as MysMoveAbility,
 				) ?? [],
 		},
 		fields:
@@ -145,7 +146,7 @@ export function mapNormalizedMoveStruct(
 				constraints: {
 					abilities: param.constraints?.map(
 						(constraint) =>
-							`${constraint[0]}${constraint.slice(1).toLowerCase()}` as SuiMoveAbility,
+							`${constraint[0]}${constraint.slice(1).toLowerCase()}` as MysMoveAbility,
 					),
 				},
 			})) ?? [],
@@ -155,10 +156,10 @@ export function mapNormalizedMoveStruct(
 export function mapNormalizedMoveModule(
 	module: Rpc_Move_Module_FieldsFragment,
 	address: string,
-): SuiMoveNormalizedModule {
-	const exposedFunctions: Record<string, SuiMoveNormalizedFunction> = {};
-	const structs: Record<string, SuiMoveNormalizedStruct> = {};
-	const enums: Record<string, SuiMoveNormalizedEnum> = {};
+): MysMoveNormalizedModule {
+	const exposedFunctions: Record<string, MysMoveNormalizedFunction> = {};
+	const structs: Record<string, MysMoveNormalizedStruct> = {};
+	const enums: Record<string, MysMoveNormalizedEnum> = {};
 
 	module.functions?.nodes
 		.filter((func) => func.visibility === 'PUBLIC' || func.isEntry || func.visibility === 'FRIEND')
@@ -219,19 +220,19 @@ export type MoveTypeLayout =
 
 export function moveDataToRpcContent(data: MoveData, layout: MoveTypeLayout): MoveValue {
 	if ('Address' in data) {
-		return normalizeSuiAddress(
+		return normalizeMysAddress(
 			data.Address.map((byte) => byte.toString(16).padStart(2, '0')).join(''),
 		);
 	}
 
 	if ('UID' in data) {
 		return {
-			id: normalizeSuiAddress(data.UID.map((byte) => byte.toString(16).padStart(2, '0')).join('')),
+			id: normalizeMysAddress(data.UID.map((byte) => byte.toString(16).padStart(2, '0')).join('')),
 		};
 	}
 
 	if ('ID' in data) {
-		return normalizeSuiAddress(data.ID.map((byte) => byte.toString(16).padStart(2, '0')).join(''));
+		return normalizeMysAddress(data.ID.map((byte) => byte.toString(16).padStart(2, '0')).join(''));
 	}
 
 	if ('Bool' in data) {
@@ -273,7 +274,7 @@ export function moveDataToRpcContent(data: MoveData, layout: MoveTypeLayout): Mo
 			result[name] = moveDataToRpcContent(item.value, itemLayout);
 		});
 
-		// https://github.com/MystenLabs/sui/blob/5849f6845a3ab9fdb4c17523994adad461478a4c/crates/sui-json-rpc-types/src/sui_move.rs#L481
+		// https://github.com/The-Social-Proof-Foundation/mys-core/blob/5849f6845a3ab9fdb4c17523994adad461478a4c/crates/mys-json-rpc-types/src/mys_move.rs#L481
 		const tag = parseStructTag(layout.struct.type);
 		const structName = `${toShortTypeString(tag.address)}::${tag.module}::${tag.name}`;
 
@@ -306,12 +307,12 @@ export function moveDataToRpcContent(data: MoveData, layout: MoveTypeLayout): Mo
 
 export function mapNormalizedMoveEnum(
 	enumNode: Rpc_Move_Enum_FieldsFragment,
-): SuiMoveNormalizedEnum {
+): MysMoveNormalizedEnum {
 	return {
 		abilities: {
 			abilities:
 				enumNode.abilities?.map(
-					(ability) => `${ability[0]}${ability.slice(1).toLowerCase()}` as SuiMoveAbility,
+					(ability) => `${ability[0]}${ability.slice(1).toLowerCase()}` as MysMoveAbility,
 				) ?? [],
 		},
 		typeParameters:
@@ -321,7 +322,7 @@ export function mapNormalizedMoveEnum(
 					abilities:
 						param.constraints?.map(
 							(constraint) =>
-								`${constraint[0]}${constraint.slice(1).toLowerCase()}` as SuiMoveAbility,
+								`${constraint[0]}${constraint.slice(1).toLowerCase()}` as MysMoveAbility,
 						) ?? [],
 				},
 			})) ?? [],

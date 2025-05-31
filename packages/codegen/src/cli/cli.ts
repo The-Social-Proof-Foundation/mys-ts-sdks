@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 import { buildApplication, buildRouteMap } from '@stricli/core';
 import { buildInstallCommand, buildUninstallCommand } from '@stricli/auto-complete';
@@ -8,8 +9,8 @@ export function buildCli(version: string) {
 	const routes = buildRouteMap({
 		routes: {
 			generate: generateCommand,
-			install: buildInstallCommand('sui-ts-codegen', { bash: '__sui-ts-codegen_bash_complete' }),
-			uninstall: buildUninstallCommand('sui-ts-codegen', { bash: true }),
+			install: buildInstallCommand('mys-ts-codegen', { bash: '__mys-ts-codegen_bash_complete' }),
+			uninstall: buildUninstallCommand('mys-ts-codegen', { bash: true }),
 		},
 		docs: {
 			brief: 'Generate TypeScript bindings for your Move code',
@@ -21,7 +22,7 @@ export function buildCli(version: string) {
 	});
 
 	return buildApplication(routes, {
-		name: 'sui-ts-codegen',
+		name: 'mys-ts-codegen',
 		versionInfo: {
 			currentVersion: version,
 		},

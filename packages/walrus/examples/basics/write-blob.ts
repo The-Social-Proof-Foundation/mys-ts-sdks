@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 import { Agent, setGlobalDispatcher } from 'undici';
 
 import { WalrusClient } from '../../src/client.js';
@@ -15,7 +16,7 @@ setGlobalDispatcher(
 	}),
 );
 
-const client = new SuiClient({
+const client = new MysClient({
 	url: getFullnodeUrl('testnet'),
 	network: 'testnet',
 }).$extend(

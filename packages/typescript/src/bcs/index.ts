@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/bcs';
+import { bcs } from '@socialproof/bcs';
 
 import {
 	Address,
@@ -29,7 +30,7 @@ import {
 	SenderSignedTransaction,
 	SharedObjectRef,
 	StructTag,
-	SuiObjectRef,
+	MysObjectRef,
 	TransactionData,
 	TransactionDataV1,
 	TransactionExpiration,
@@ -41,9 +42,9 @@ import { TransactionEffects } from './effects.js';
 export type { TypeTag } from './types.js';
 
 export { TypeTagSerializer } from './type-tag-serializer.js';
-export { BcsType, type BcsTypeOptions } from '@mysten/bcs';
+export { BcsType, type BcsTypeOptions } from '@socialproof/bcs';
 
-const suiBcs = {
+const mysBcs = {
 	...bcs,
 	U8: bcs.u8(),
 	U16: bcs.u16(),
@@ -79,7 +80,7 @@ const suiBcs = {
 	SenderSignedTransaction,
 	SharedObjectRef,
 	StructTag,
-	SuiObjectRef,
+	MysObjectRef,
 	TransactionData,
 	TransactionDataV1,
 	TransactionEffects,
@@ -93,4 +94,4 @@ export {
 	type PureTypeName,
 } from './pure.js';
 
-export { suiBcs as bcs };
+export { mysBcs as bcs };

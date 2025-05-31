@@ -1,60 +1,61 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { SuiClient } from '@mysten/sui/client';
+import { MysClient } from '@socialproof/mys/client';
 import { screen } from '@testing-library/dom';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { useState } from 'react';
 
-import { SuiClientProvider } from '../../src/components/SuiClientProvider.js';
-import { useSuiClient, useSuiClientContext } from '../../src/index.js';
+import { MysClientProvider } from '../../src/components/MysClientProvider.js';
+import { useMysClient, useMysClientContext } from '../../src/index.js';
 
-describe('SuiClientProvider', () => {
+describe('MysClientProvider', () => {
 	it('renders without crashing', () => {
 		render(
-			<SuiClientProvider>
+			<MysClientProvider>
 				<div>Test</div>
-			</SuiClientProvider>,
+			</MysClientProvider>,
 		);
 		expect(screen.getByText('Test')).toBeInTheDocument();
 	});
 
-	it('provides a SuiClient instance to its children', () => {
+	it('provides a MysClient instance to its children', () => {
 		const ChildComponent = () => {
-			const client = useSuiClient();
-			expect(client).toBeInstanceOf(SuiClient);
+			const client = useMysClient();
+			expect(client).toBeInstanceOf(MysClient);
 			return <div>Test</div>;
 		};
 
 		render(
-			<SuiClientProvider>
+			<MysClientProvider>
 				<ChildComponent />
-			</SuiClientProvider>,
+			</MysClientProvider>,
 		);
 	});
 
-	it('can accept pre-configured SuiClients', () => {
-		const suiClient = new SuiClient({ url: 'http://localhost:8080' });
+	it('can accept pre-configured MysClients', () => {
+		const mysClient = new MysClient({ url: 'http://localhost:8080' });
 		const ChildComponent = () => {
-			const client = useSuiClient();
-			expect(client).toBeInstanceOf(SuiClient);
-			expect(client).toBe(suiClient);
+			const client = useMysClient();
+			expect(client).toBeInstanceOf(MysClient);
+			expect(client).toBe(mysClient);
 			return <div>Test</div>;
 		};
 
 		render(
-			<SuiClientProvider networks={{ localnet: suiClient }}>
+			<MysClientProvider networks={{ localnet: mysClient }}>
 				<ChildComponent />
-			</SuiClientProvider>,
+			</MysClientProvider>,
 		);
 
 		expect(screen.getByText('Test')).toBeInTheDocument();
 	});
 
-	test('can create sui clients with custom options', async () => {
+	test('can create mys clients with custom options', async () => {
 		function NetworkSelector() {
-			const ctx = useSuiClientContext();
+			const ctx = useMysClientContext();
 
 			return (
 				<div>
@@ -70,7 +71,7 @@ describe('SuiClientProvider', () => {
 			const [selectedNetwork, setSelectedNetwork] = useState<string>();
 
 			return (
-				<SuiClientProvider
+				<MysClientProvider
 					networks={{
 						a: {
 							url: 'http://localhost:8080',
@@ -83,12 +84,12 @@ describe('SuiClientProvider', () => {
 					}}
 					createClient={(name, { custom, ...config }) => {
 						custom(name);
-						return new SuiClient(config);
+						return new MysClient(config);
 					}}
 				>
 					<div>{`selected network: ${selectedNetwork}`}</div>
 					<NetworkSelector />
-				</SuiClientProvider>
+				</MysClientProvider>
 			);
 		}
 
@@ -105,7 +106,7 @@ describe('SuiClientProvider', () => {
 
 	test('controlled mode', async () => {
 		function NetworkSelector(props: { selectNetwork: (network: string) => void }) {
-			const ctx = useSuiClientContext();
+			const ctx = useMysClientContext();
 
 			return (
 				<div>
@@ -123,7 +124,7 @@ describe('SuiClientProvider', () => {
 			const [selectedNetwork, setSelectedNetwork] = useState<'a' | 'b'>('a');
 
 			return (
-				<SuiClientProvider
+				<MysClientProvider
 					networks={{
 						a: {
 							url: 'http://localhost:8080',
@@ -141,7 +142,7 @@ describe('SuiClientProvider', () => {
 							setSelectedNetwork(network as 'a' | 'b');
 						}}
 					/>
-				</SuiClientProvider>
+				</MysClientProvider>
 			);
 		}
 
@@ -158,7 +159,7 @@ describe('SuiClientProvider', () => {
 
 	test('onNetworkChange', async () => {
 		function NetworkSelector() {
-			const ctx = useSuiClientContext();
+			const ctx = useMysClientContext();
 
 			return (
 				<div>
@@ -176,7 +177,7 @@ describe('SuiClientProvider', () => {
 			const [selectedNetwork, setSelectedNetwork] = useState<string>('a');
 
 			return (
-				<SuiClientProvider
+				<MysClientProvider
 					networks={{
 						a: {
 							url: 'http://localhost:8080',
@@ -193,7 +194,7 @@ describe('SuiClientProvider', () => {
 					}}
 				>
 					<NetworkSelector />
-				</SuiClientProvider>
+				</MysClientProvider>
 			);
 		}
 

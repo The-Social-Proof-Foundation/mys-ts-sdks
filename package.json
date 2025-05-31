@@ -1,5 +1,5 @@
 {
-	"name": "@mysten/ts-sdks",
+	"name": "@socialproof/mys-ts-sdks",
 	"private": true,
 	"license": "Apache-2.0",
 	"scripts": {
@@ -8,7 +8,7 @@
 		"icons": "pnpm --filter ./apps/icons",
 		"wallet": "turbo --filter ./apps/wallet",
 		"bcs": "turbo --filter ./packages/bcs",
-		"changeset-version": "pnpm changeset version && pnpm --filter @mysten/* codegen:version",
+		"changeset-version": "pnpm changeset version && pnpm --filter @socialproof/* codegen:version",
 		"prettier:check": "prettier -c --ignore-unknown .",
 		"prettier:fix": "prettier -w --ignore-unknown .",
 		"prettier:fix:watch": "onchange '**' -i -f add -f change -j 5 -- prettier -w --ignore-unknown {{file}}",

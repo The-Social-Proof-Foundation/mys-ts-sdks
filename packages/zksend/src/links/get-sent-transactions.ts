@@ -1,9 +1,10 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiTransactionBlockResponseOptions } from '@mysten/sui/client';
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
-import { normalizeSuiAddress } from '@mysten/sui/utils';
+import type { MysTransactionBlockResponseOptions } from '@socialproof/mys/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import { normalizeMysAddress } from '@socialproof/mys/utils';
 
 import { ZkSendLink } from './claim.js';
 import { getContractIds } from './zk-bag.js';
@@ -15,7 +16,7 @@ export async function getSentTransactionsWithLinks({
 	limit = 10,
 	network = 'mainnet',
 	contract = getContractIds(network),
-	client = new SuiClient({ url: getFullnodeUrl(network) }),
+	client = new MysClient({ url: getFullnodeUrl(network) }),
 	loadAssets = true,
 	loadClaimedAssets = false,
 	options,
@@ -33,10 +34,10 @@ export async function getSentTransactionsWithLinks({
 	host?: string;
 	path?: string;
 	claimApi?: string;
-	client?: SuiClient;
-	options?: SuiTransactionBlockResponseOptions;
+	client?: MysClient;
+	options?: MysTransactionBlockResponseOptions;
 }) {
-	const packageId = normalizeSuiAddress(contract.packageId);
+	const packageId = normalizeMysAddress(contract.packageId);
 
 	const page = await client.queryTransactionBlocks({
 		filter: {
@@ -90,7 +91,7 @@ export async function getSentTransactionsWithLinks({
 							throw new Error('Expected Address input to be a Pure value');
 						}
 
-						const address = normalizeSuiAddress(input.value as string);
+						const address = normalizeMysAddress(input.value as string);
 
 						const link = new ZkSendLink({
 							network,
@@ -137,7 +138,7 @@ export async function getSentTransactionsWithLinks({
 							throw new Error('Expected Address input to be a Pure value');
 						}
 
-						const address = normalizeSuiAddress(input.value as string);
+						const address = normalizeMysAddress(input.value as string);
 
 						const link = new ZkSendLink({
 							network,

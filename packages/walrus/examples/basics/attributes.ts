@@ -1,18 +1,19 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 
 import { WalrusClient } from '../../src/client.js';
 import { getFundedKeypair } from '../funded-keypair.js';
 
-const suiClient = new SuiClient({
+const mysClient = new MysClient({
 	url: getFullnodeUrl('testnet'),
 });
 
 const walrusClient = new WalrusClient({
 	network: 'testnet',
-	suiClient,
+	mysClient,
 });
 
 async function uploadFile() {

@@ -1,10 +1,11 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { beforeEach, describe, expect, it } from 'vitest';
 
 import { Transaction } from '../../src/transactions';
-import { SUI_FRAMEWORK_ADDRESS } from '../../src/utils';
+import { MYS_FRAMEWORK_ADDRESS } from '../../src/utils';
 import { publishPackage, setup, TestToolbox } from './utils/setup';
 
 describe('Test Move call with a vector of objects as input', () => {
@@ -74,8 +75,8 @@ describe('Test Move call with a vector of objects as input', () => {
 			elements: [coinIDs[1], tx.object(coinIDs[2])],
 		});
 		tx.moveCall({
-			target: `${SUI_FRAMEWORK_ADDRESS}::pay::join_vec`,
-			typeArguments: ['0x2::sui::SUI'],
+			target: `${MYS_FRAMEWORK_ADDRESS}::pay::join_vec`,
+			typeArguments: ['0x2::mys::MYS'],
 			arguments: [tx.object(coinIDs[0]), vec],
 		});
 		tx.setGasPayment([{ objectId: coin.coinObjectId, digest: coin.digest, version: coin.version }]);

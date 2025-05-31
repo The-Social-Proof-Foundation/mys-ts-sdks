@@ -1,14 +1,15 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { InferBcsType } from '@mysten/bcs';
-import { bcs } from '@mysten/bcs';
-import { SuiClient } from '@mysten/sui/client';
-import type { Signer } from '@mysten/sui/cryptography';
-import type { ClientCache, ClientWithExtensions } from '@mysten/sui/experimental';
-import type { TransactionObjectArgument, TransactionResult } from '@mysten/sui/transactions';
-import { coinWithBalance, Transaction } from '@mysten/sui/transactions';
-import { normalizeStructTag, parseStructTag } from '@mysten/sui/utils';
+import type { InferBcsType } from '@socialproof/bcs';
+import { bcs } from '@socialproof/bcs';
+import { MysClient } from '@socialproof/mys/client';
+import type { Signer } from '@socialproof/mys/cryptography';
+import type { ClientCache, ClientWithExtensions } from '@socialproof/mys/experimental';
+import type { TransactionObjectArgument, TransactionResult } from '@socialproof/mys/transactions';
+import { coinWithBalance, Transaction } from '@socialproof/mys/transactions';
+import { normalizeStructTag, parseStructTag } from '@socialproof/mys/utils';
 
 import {
 	MAINNET_WALRUS_PACKAGE_CONFIG,
@@ -81,20 +82,20 @@ import {
 	toShardIndex,
 	toTypeString,
 } from './utils/index.js';
-import { SuiObjectDataLoader } from './utils/object-loader.js';
+import { MysObjectDataLoader } from './utils/object-loader.js';
 import { shuffle, weightedShuffle } from './utils/randomness.js';
 import { getWasmBindings } from './wasm.js';
-import { chunk } from '@mysten/utils';
+import { chunk } from '@socialproof/utils';
 
 export class WalrusClient {
 	#storageNodeClient: StorageNodeClient;
 	#wasmUrl: string | undefined;
 
 	#packageConfig: WalrusPackageConfig;
-	#suiClient: ClientWithExtensions<{
-		jsonRpc: SuiClient;
+	#mysClient: ClientWithExtensions<{
+		jsonRpc: MysClient;
 	}>;
-	#objectLoader: SuiObjectDataLoader;
+	#objectLoader: MysObjectDataLoader;
 
 	#blobMetadataConcurrencyLimit = 10;
 	#readCommittee?: CommitteeInfo | Promise<CommitteeInfo> | null;
@@ -120,15 +121,15 @@ export class WalrusClient {
 
 		this.#wasmUrl = config.wasmUrl;
 
-		this.#suiClient =
-			config.suiClient ??
-			new SuiClient({
-				url: config.suiRpcUrl,
+		this.#mysClient =
+			config.mysClient ??
+			new MysClient({
+				url: config.mysRpcUrl,
 			});
 
 		this.#storageNodeClient = new StorageNodeClient(config.storageNodeClientOptions);
-		this.#objectLoader = new SuiObjectDataLoader(this.#suiClient);
-		this.#cache = this.#suiClient.cache.scope('@mysten/walrus');
+		this.#objectLoader = new MysObjectDataLoader(this.#mysClient);
+		this.#cache = this.#mysClient.cache.scope('@socialproof/walrus');
 	}
 
 	static experimental_asClientExtension({
@@ -140,7 +141,7 @@ export class WalrusClient {
 			name: 'walrus' as const,
 			register: (
 				client: ClientWithExtensions<{
-					jsonRpc: SuiClient;
+					jsonRpc: MysClient;
 				}>,
 			) => {
 				const walrusNetwork = network || client.network;
@@ -153,12 +154,12 @@ export class WalrusClient {
 					packageConfig
 						? {
 								packageConfig,
-								suiClient: client,
+								mysClient: client,
 								...options,
 							}
 						: {
 								network: walrusNetwork as 'mainnet' | 'testnet',
-								suiClient: client,
+								mysClient: client,
 								...options,
 							},
 				);
@@ -168,7 +169,7 @@ export class WalrusClient {
 	/** The Move type for a WAL coin */
 	#walType() {
 		return this.#cache.read(['walType'], async () => {
-			const stakedWal = await this.#suiClient.jsonRpc.getNormalizedMoveStruct({
+			const stakedWal = await this.#mysClient.jsonRpc.getNormalizedMoveStruct({
 				package: await this.#getPackageId(),
 				module: 'staked_wal',
 				struct: 'StakedWal',
@@ -761,7 +762,7 @@ export class WalrusClient {
 	 *
 	 * @usage
 	 * ```ts
-	 * const tx = client.createStorageTransaction({ size: 1000, epochs: 3, owner: signer.toSuiAddress() });
+	 * const tx = client.createStorageTransaction({ size: 1000, epochs: 3, owner: signer.toMysAddress() });
 	 * ```
 	 */
 	createStorageTransaction({
@@ -789,7 +790,7 @@ export class WalrusClient {
 	}: StorageWithSizeOptions & { transaction?: Transaction; signer: Signer }) {
 		const transaction = this.createStorageTransaction({
 			...options,
-			owner: options.transaction?.getData().sender ?? signer.toSuiAddress(),
+			owner: options.transaction?.getData().sender ?? signer.toMysAddress(),
 		});
 		const blobType = await this.getBlobType();
 
@@ -803,15 +804,15 @@ export class WalrusClient {
 			.filter((object) => object.idOperation === 'Created')
 			.map((object) => object.id);
 
-		const createdObjects = await this.#suiClient.core.getObjects({
+		const createdObjects = await this.#mysClient.core.getObjects({
 			objectIds: createdObjectIds,
 		});
 
-		const suiBlobObject = createdObjects.objects.find(
+		const mysBlobObject = createdObjects.objects.find(
 			(object) => !(object instanceof Error) && object.type === blobType,
 		);
 
-		if (suiBlobObject instanceof Error || !suiBlobObject) {
+		if (mysBlobObject instanceof Error || !mysBlobObject) {
 			throw new WalrusClientError(
 				`Storage object not found in transaction effects for transaction (${digest})`,
 			);
@@ -819,7 +820,7 @@ export class WalrusClient {
 
 		return {
 			digest,
-			storage: Storage().parse(suiBlobObject.content),
+			storage: Storage().parse(mysBlobObject.content),
 		};
 	}
 
@@ -914,7 +915,7 @@ export class WalrusClient {
 	}> {
 		const transaction = this.registerBlobTransaction({
 			...options,
-			owner: options.owner ?? options.transaction?.getData().sender ?? signer.toSuiAddress(),
+			owner: options.owner ?? options.transaction?.getData().sender ?? signer.toMysAddress(),
 		});
 		const blobType = await this.getBlobType();
 		const { digest, effects } = await this.#executeTransaction(
@@ -927,15 +928,15 @@ export class WalrusClient {
 			.filter((object) => object.idOperation === 'Created')
 			.map((object) => object.id);
 
-		const createdObjects = await this.#suiClient.core.getObjects({
+		const createdObjects = await this.#mysClient.core.getObjects({
 			objectIds: createdObjectIds,
 		});
 
-		const suiBlobObject = createdObjects.objects.find(
+		const mysBlobObject = createdObjects.objects.find(
 			(object) => !(object instanceof Error) && object.type === blobType,
 		);
 
-		if (suiBlobObject instanceof Error || !suiBlobObject) {
+		if (mysBlobObject instanceof Error || !mysBlobObject) {
 			throw new WalrusClientError(
 				`Blob object not found in transaction effects for transaction (${digest})`,
 			);
@@ -943,7 +944,7 @@ export class WalrusClient {
 
 		return {
 			digest,
-			blob: Blob().parse(suiBlobObject.content),
+			blob: Blob().parse(mysBlobObject.content),
 		};
 	}
 
@@ -1135,7 +1136,7 @@ export class WalrusClient {
 			this.deleteBlobTransaction({
 				blobObjectId,
 				transaction,
-				owner: transaction.getData().sender ?? signer.toSuiAddress(),
+				owner: transaction.getData().sender ?? signer.toMysAddress(),
 			}),
 			signer,
 			'delete blob',
@@ -1238,7 +1239,7 @@ export class WalrusClient {
 	}: {
 		blobObjectId: string;
 	}): Promise<Record<string, string> | null> {
-		const response = await this.#suiClient.core.getDynamicField({
+		const response = await this.#mysClient.core.getDynamicField({
 			parentId: blobObjectId,
 			name: {
 				type: 'vector<u8>',
@@ -1633,18 +1634,18 @@ export class WalrusClient {
 	}: WriteBlobOptions) {
 		const { sliversByNode, blobId, metadata, rootHash } = await this.encodeBlob(blob);
 
-		const suiBlobObject = await this.executeRegisterBlobTransaction({
+		const mysBlobObject = await this.executeRegisterBlobTransaction({
 			signer,
 			size: blob.length,
 			epochs,
 			blobId,
 			rootHash,
 			deletable,
-			owner: owner ?? signer.toSuiAddress(),
+			owner: owner ?? signer.toMysAddress(),
 			attributes,
 		});
 
-		const blobObjectId = suiBlobObject.blob.id.id;
+		const blobObjectId = mysBlobObject.blob.id.id;
 
 		const confirmations = await this.writeEncodedBlobToNodes({
 			blobId,
@@ -1670,18 +1671,18 @@ export class WalrusClient {
 	}
 
 	async #executeTransaction(transaction: Transaction, signer: Signer, action: string) {
-		transaction.setSenderIfNotSet(signer.toSuiAddress());
+		transaction.setSenderIfNotSet(signer.toMysAddress());
 
 		const { digest, effects } = await signer.signAndExecuteTransaction({
 			transaction,
-			client: this.#suiClient,
+			client: this.#mysClient,
 		});
 
 		if (effects?.status.error) {
 			throw new WalrusClientError(`Failed to ${action} (${digest}): ${effects?.status.error}`);
 		}
 
-		await this.#suiClient.core.waitForTransaction({
+		await this.#mysClient.core.waitForTransaction({
 			digest,
 		});
 

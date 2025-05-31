@@ -1,8 +1,8 @@
 {
-	"name": "@mysten/dapp-kit-next",
-	"author": "Mysten Labs <build@mystenlabs.com>",
-	"description": "Framework-agnostic toolkit for building decentralized applications on Sui.",
-	"homepage": "https://sdk.mystenlabs.com/typescript",
+	"name": "@socialproof/dapp-kit-next",
+	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
+	"description": "Framework-agnostic toolkit for building decentralized applications on Mys.",
+	"homepage": "https://sdk.mysocial.network/typescript",
 	"version": "0.0.1",
 	"license": "Apache-2.0",
 	"private": true,
@@ -37,13 +37,13 @@
 		"build-storybook": "storybook build"
 	},
 	"bugs": {
-		"url": "https://github.com/MystenLabs/ts-sdks/issues/new"
+		"url": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks/issues/new"
 	},
 	"publishConfig": {
 		"access": "public"
 	},
 	"devDependencies": {
-		"@mysten/build-scripts": "workspace:*",
+		"@socialproof/build-scripts": "workspace:*",
 		"@storybook/addon-essentials": "^8.6.12",
 		"@storybook/blocks": "^8.6.12",
 		"@storybook/web-components": "^8.6.12",
@@ -54,10 +54,10 @@
 	"dependencies": {
 		"@lit-labs/scoped-registry-mixin": "^1.0.4",
 		"@lit/task": "^1.0.2",
-		"@mysten/sui": "workspace:*",
-		"@mysten/utils": "workspace:*",
-		"@mysten/wallet-standard": "workspace:*",
-		"@mysten/zksend": "workspace:*",
+		"@socialproof/mys": "workspace:*",
+		"@socialproof/utils": "workspace:*",
+		"@socialproof/wallet-standard": "workspace:*",
+		"@socialproof/zksend": "workspace:*",
 		"@nanostores/lit": "^0.2.2",
 		"@wallet-standard/ui": "^1.0.1",
 		"@wallet-standard/ui-registry": "^1.0.1",

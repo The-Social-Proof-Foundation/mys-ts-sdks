@@ -1,6 +1,6 @@
 {
 	"root": true,
 	"title": "BCS",
-	"description": "Encoding and decoding Sui objects",
+	"description": "Encoding and decoding Mys objects",
 	"pages": ["index"]
 }

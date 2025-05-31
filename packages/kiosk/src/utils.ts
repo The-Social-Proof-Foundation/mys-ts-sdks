@@ -1,30 +1,31 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type {
 	DynamicFieldInfo,
 	PaginationArguments,
-	SuiClient,
-	SuiObjectData,
-	SuiObjectDataFilter,
-	SuiObjectDataOptions,
-	SuiObjectResponse,
-} from '@mysten/sui/client';
+	MysClient,
+	MysObjectData,
+	MysObjectDataFilter,
+	MysObjectDataOptions,
+	MysObjectResponse,
+} from '@socialproof/mys/client';
 import {
 	fromBase64,
 	normalizeStructTag,
-	normalizeSuiAddress,
+	normalizeMysAddress,
 	parseStructTag,
-} from '@mysten/sui/utils';
+} from '@socialproof/mys/utils';
 
 import { KioskType } from './bcs.js';
 import type { Kiosk, KioskData, KioskListing, TransferPolicyCap } from './types/index.js';
 import { TRANSFER_POLICY_CAP_TYPE } from './types/index.js';
-import { chunk } from '@mysten/utils';
+import { chunk } from '@socialproof/utils';
 
 const DEFAULT_QUERY_LIMIT = 50;
 
-export async function getKioskObject(client: SuiClient, id: string): Promise<Kiosk> {
+export async function getKioskObject(client: MysClient, id: string): Promise<Kiosk> {
 	const queryRes = await client.getObject({ id, options: { showBcs: true } });
 
 	if (!queryRes || queryRes.error || !queryRes.data) {
@@ -89,7 +90,7 @@ export function extractKioskData(
 export function attachListingsAndPrices(
 	kioskData: KioskData,
 	listings: KioskListing[],
-	listingObjects: SuiObjectResponse[],
+	listingObjects: MysObjectResponse[],
 ) {
 	// map item listings as {item_id: KioskListing}
 	// for easier mapping on the nex
@@ -120,9 +121,9 @@ export function attachListingsAndPrices(
 /**
  * A helper that attaches the listing prices to kiosk listings.
  */
-export function attachObjects(kioskData: KioskData, objects: SuiObjectData[]) {
-	const mapping = objects.reduce<Record<string, SuiObjectData>>(
-		(acc: Record<string, SuiObjectData>, obj) => {
+export function attachObjects(kioskData: KioskData, objects: MysObjectData[]) {
+	const mapping = objects.reduce<Record<string, MysObjectData>>(
+		(acc: Record<string, MysObjectData>, obj) => {
 			acc[obj.objectId] = obj;
 			return acc;
 		},
@@ -159,7 +160,7 @@ export function attachLockedItems(kioskData: KioskData, lockedItemIds: string[])
  * RPC calls that allow filtering of Type / batch fetching of spec
  */
 export async function getAllDynamicFields(
-	client: SuiClient,
+	client: MysClient,
 	parentId: string,
 	pagination: PaginationArguments<string>,
 ) {
@@ -187,9 +188,9 @@ export async function getAllDynamicFields(
  * Requests are sent using `Promise.all`.
  */
 export async function getAllObjects(
-	client: SuiClient,
+	client: MysClient,
 	ids: string[],
-	options: SuiObjectDataOptions,
+	options: MysObjectDataOptions,
 	limit: number = DEFAULT_QUERY_LIMIT,
 ) {
 	const chunks = chunk(ids, limit);
@@ -217,15 +218,15 @@ export async function getAllOwnedObjects({
 	limit = DEFAULT_QUERY_LIMIT,
 	options = { showType: true, showContent: true },
 }: {
-	client: SuiClient;
+	client: MysClient;
 	owner: string;
-	filter?: SuiObjectDataFilter;
-	options?: SuiObjectDataOptions;
+	filter?: MysObjectDataFilter;
+	options?: MysObjectDataOptions;
 	limit?: number;
 }) {
 	let hasNextPage = true;
 	let cursor = undefined;
-	const data: SuiObjectResponse[] = [];
+	const data: MysObjectResponse[] = [];
 
 	while (hasNextPage) {
 		const result = await client.getOwnedObjects({
@@ -259,7 +260,7 @@ export function percentageToBasisPoints(percentage: number) {
  * A helper to parse a transfer policy Cap into a usable object.
  */
 export function parseTransferPolicyCapObject(
-	item: SuiObjectResponse,
+	item: MysObjectResponse,
 ): TransferPolicyCap | undefined {
 	const type = (item?.data?.content as { type: string })?.type;
 
@@ -281,6 +282,6 @@ export function parseTransferPolicyCapObject(
 // Normalizes the packageId part of a rule's type.
 export function getNormalizedRuleType(rule: string) {
 	const normalizedRuleAddress = rule.split('::');
-	normalizedRuleAddress[0] = normalizeSuiAddress(normalizedRuleAddress[0]);
+	normalizedRuleAddress[0] = normalizeMysAddress(normalizedRuleAddress[0]);
 	return normalizedRuleAddress.join('::');
 }

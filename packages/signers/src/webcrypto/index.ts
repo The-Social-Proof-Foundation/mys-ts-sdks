@@ -1,9 +1,10 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SignatureScheme } from '@mysten/sui/cryptography';
-import { Signer } from '@mysten/sui/cryptography';
-import { Secp256r1PublicKey } from '@mysten/sui/keypairs/secp256r1';
+import type { SignatureScheme } from '@socialproof/mys/cryptography';
+import { Signer } from '@socialproof/mys/cryptography';
+import { Secp256r1PublicKey } from '@socialproof/mys/keypairs/secp256r1';
 import { secp256r1 } from '@noble/curves/p256';
 
 // Convert from uncompressed (65 bytes) to compressed (33 bytes) format

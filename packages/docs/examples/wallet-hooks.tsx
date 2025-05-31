@@ -1,11 +1,12 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 'use client';
 
 import {
 	ConnectButton,
-	SuiClientProvider,
+	MysClientProvider,
 	useAccounts,
 	useAutoConnectWallet,
 	useConnectWallet,
@@ -18,14 +19,14 @@ import {
 	useSwitchAccount,
 	useWallets,
 	WalletProvider,
-} from '@mysten/dapp-kit';
-import { getFullnodeUrl } from '@mysten/sui/client';
-import { Transaction } from '@mysten/sui/transactions';
+} from '@socialproof/dapp-kit';
+import { getFullnodeUrl } from '@socialproof/mys/client';
+import { Transaction } from '@socialproof/mys/transactions';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { ComponentProps } from 'react';
 import { useState } from 'react';
 
-import '@mysten/dapp-kit/dist/index.css';
+import '@socialproof/dapp-kit/dist/index.css';
 
 export const UseWalletsExample = withProviders(() => {
 	const wallets = useWallets();
@@ -244,7 +245,7 @@ export const UseSignTransactionExample = withProviders(() => {
 								signTransaction(
 									{
 										transaction: new Transaction(),
-										chain: 'sui:devnet',
+										chain: 'mys:devnet',
 									},
 									{
 										onSuccess: (result) => {
@@ -281,7 +282,7 @@ export const UseSignAndExecuteTransactionExample = withProviders(() => {
 								signAndExecuteTransaction(
 									{
 										transaction: new Transaction(),
-										chain: 'sui:devnet',
+										chain: 'mys:devnet',
 									},
 									{
 										onSuccess: (result) => {
@@ -315,11 +316,11 @@ function withProviders(
 	return () => {
 		return (
 			<QueryClientProvider client={queryClient}>
-				<SuiClientProvider networks={networks}>
+				<MysClientProvider networks={networks}>
 					<WalletProvider {...walletProviderProps}>
 						<Component />
 					</WalletProvider>
-				</SuiClientProvider>
+				</MysClientProvider>
 			</QueryClientProvider>
 		);
 	};

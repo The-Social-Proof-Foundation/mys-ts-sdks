@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SuiClient } from '@mysten/sui/client';
-import type { TransactionObjectArgument } from '@mysten/sui/transactions';
+import type { MysClient } from '@socialproof/mys/client';
+import type { TransactionObjectArgument } from '@socialproof/mys/transactions';
 
 import type { BaseRulePackageIds } from '../constants.js';
 
@@ -29,7 +30,7 @@ export enum Network {
  * The Client Options for Both KioskClient & TransferPolicyManager.
  */
 export type KioskClientOptions = {
-	client: SuiClient;
+	client: MysClient;
 	network: Network;
 	packageIds?: BaseRulePackageIds;
 };

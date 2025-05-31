@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import type { TypedDocumentNode } from '@graphql-typed-document-node/core';
@@ -6,7 +7,7 @@ import type { TadaDocumentNode } from 'gql.tada';
 import type { DocumentNode } from 'graphql';
 import { print } from 'graphql';
 import { Experimental_BaseClient } from '../experimental/index.js';
-import type { Experimental_SuiClientTypes } from '../experimental/index.js';
+import type { Experimental_MysClientTypes } from '../experimental/index.js';
 import { GraphQLTransport } from '../experimental/transports/graphql.js';
 import type { TypedDocumentString } from './generated/queries.js';
 
@@ -46,17 +47,17 @@ export type GraphQLResponseErrors = Array<{
 	path?: (string | number)[];
 }>;
 
-export interface SuiGraphQLClientOptions<Queries extends Record<string, GraphQLDocument>> {
+export interface MysGraphQLClientOptions<Queries extends Record<string, GraphQLDocument>> {
 	url: string;
 	fetch?: typeof fetch;
 	headers?: Record<string, string>;
 	queries?: Queries;
-	network?: Experimental_SuiClientTypes.Network;
+	network?: Experimental_MysClientTypes.Network;
 }
 
-export class SuiGraphQLRequestError extends Error {}
+export class MysGraphQLRequestError extends Error {}
 
-export class SuiGraphQLClient<
+export class MysGraphQLClient<
 	// eslint-disable-next-line @typescript-eslint/ban-types
 	Queries extends Record<string, GraphQLDocument> = {},
 > extends Experimental_BaseClient {
@@ -72,7 +73,7 @@ export class SuiGraphQLClient<
 		headers = {},
 		queries = {} as Queries,
 		network = 'unknown',
-	}: SuiGraphQLClientOptions<Queries>) {
+	}: MysGraphQLClientOptions<Queries>) {
 		super({
 			network,
 		});
@@ -104,7 +105,7 @@ export class SuiGraphQLClient<
 		});
 
 		if (!res.ok) {
-			throw new SuiGraphQLRequestError(`GraphQL request failed: ${res.statusText} (${res.status})`);
+			throw new MysGraphQLRequestError(`GraphQL request failed: ${res.statusText} (${res.status})`);
 		}
 
 		return await res.json();

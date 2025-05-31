@@ -17,7 +17,7 @@ You can pass any additional `useQuery` options as the third argument. You can re
 details on the full set of options available.
 
 ```tsx
-import { useSuiClientQuery } from '@mysten/dapp-kit';
+import { useSuiClientQuery } from '@socialproof/dapp-kit';
 
 function MyComponent() {
 	const { data, isPending, isError, error, refetch } = useSuiClientQuery(
@@ -53,7 +53,7 @@ The `combine` parameter is optional. Use this parameter to combine the results o
 single value. The result is structurally shared to be as referentially stable as possible.
 
 ```tsx
-import { useSuiClientQueries } from '@mysten/dapp-kit';
+import { useSuiClientQueries } from '@socialproof/dapp-kit';
 
 function MyComponent() {
 	const { data, isPending, isError } = useSuiClientQueries({
@@ -102,7 +102,7 @@ hook. For more details check out the
 [`useInfiniteQuery` documentation](https://tanstack.com/query/latest/docs/react/guides/infinite-queries).
 
 ```tsx
-import { useSuiClientInfiniteQuery } from '@mysten/dapp-kit';
+import { useSuiClientInfiniteQuery } from '@socialproof/dapp-kit';
 
 function MyComponent() {
 	const { data, isPending, isError, error, isFetching, fetchNextPage, hasNextPage } =
@@ -129,7 +129,7 @@ with any RPC method to imperatively call the RPC method. For more details, check
 [`useMutation` documentation](https://tanstack.com/query/latest/docs/react/guides/mutations).
 
 ```tsx
-import { useSuiClientMutation } from '@mysten/dapp-kit';
+import { useSuiClientMutation } from '@socialproof/dapp-kit';
 
 function MyComponent() {
 	const { mutate } = useSuiClientMutation('dryRunTransactionBlock');
@@ -153,7 +153,7 @@ function MyComponent() {
 To get the SuiNS name for a given address, use the `useResolveSuiNSName` hook.
 
 ```tsx
-import { useResolveSuiNSName } from '@mysten/dapp-kit';
+import { useResolveSuiNSName } from '@socialproof/dapp-kit';
 
 function MyComponent() {
 	const { data, isPending } = useResolveSuiNSName('0x123');

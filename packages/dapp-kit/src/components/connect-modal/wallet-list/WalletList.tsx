@@ -1,10 +1,11 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { WalletWithRequiredFeatures } from '@mysten/wallet-standard';
+import type { WalletWithRequiredFeatures } from '@socialproof/wallet-standard';
 
 import { getWalletUniqueIdentifier } from '../../../utils/walletUtils.js';
-import { SuiIcon } from '../../icons/SuiIcon.js';
+import { MysIcon } from '../../icons/MysIcon.js';
 import * as styles from './WalletList.css.js';
 import { WalletListItem } from './WalletListItem.js';
 
@@ -35,8 +36,8 @@ export function WalletList({
 				))
 			) : (
 				<WalletListItem
-					name="Sui Wallet"
-					icon={<SuiIcon />}
+					name="Mys Wallet"
+					icon={<MysIcon />}
 					onClick={onPlaceholderClick}
 					isSelected
 				/>

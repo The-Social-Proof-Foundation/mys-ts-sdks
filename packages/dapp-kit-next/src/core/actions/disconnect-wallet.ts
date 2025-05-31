@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { StandardDisconnectFeature, StandardDisconnectMethod } from '@mysten/wallet-standard';
-import { StandardDisconnect } from '@mysten/wallet-standard';
+import type { StandardDisconnectFeature, StandardDisconnectMethod } from '@socialproof/wallet-standard';
+import { StandardDisconnect } from '@socialproof/wallet-standard';
 import type { DAppKitStores } from '../store.js';
 import { task } from 'nanostores';
 import { getWalletFeature } from '@wallet-standard/ui';

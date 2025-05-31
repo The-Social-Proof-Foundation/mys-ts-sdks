@@ -105,7 +105,7 @@ import {
 	BuildTransactionOptions,
 	Transaction,
 	TransactionDataBuilder,
-} from '@mysten/sui/transactions';
+} from '@socialproof/sui/transactions';
 
 const objectCache = new Map<string, { objectId: string; version: string; digest: string }>();
 
@@ -146,7 +146,7 @@ intent to standard commands.
 Adding an intent is similar to adding any other command to a transaction:
 
 ```typescript
-import { Commands, Transaction } from '@mysten/sui/transactions';
+import { Commands, Transaction } from '@socialproof/sui/transactions';
 
 const transaction = new Transaction();
 
@@ -165,7 +165,7 @@ wraps things up a bit. The `add` method on transactions accepts a function that 
 current transaction instance. This allows us to create a helper that automatically adds the intent:
 
 ```typescript
-import { Commands, Transaction, TransactionObjectInput } from '@mysten/sui/transactions';
+import { Commands, Transaction, TransactionObjectInput } from '@socialproof/sui/transactions';
 
 function transferToSender(objects: TransactionObjectInput[]) {
 	return (tx: Transaction) => {
@@ -191,7 +191,7 @@ commands. To do this, we'll use the `addIntentResolver` method on the `Transacti
 intent is present in the transaction.
 
 ```typescript
-import { Transaction } from '@mysten/sui/transactions';
+import { Transaction } from '@socialproof/sui/transactions';
 
 const transaction = new Transaction();
 
@@ -242,7 +242,7 @@ Manually adding intent resolvers to a transaction can be cumbersome, so we can a
 automatically when our `transferToSender` helper is called:
 
 ```typescript
-import { Commands, Transaction, TransactionObjectInput } from '@mysten/sui/transactions';
+import { Commands, Transaction, TransactionObjectInput } from '@socialproof/sui/transactions';
 
 function transferToSender(objects: TransactionObjectInput[]) {
 	return (tx: Transaction) => {

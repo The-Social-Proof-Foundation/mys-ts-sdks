@@ -1,14 +1,15 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs, TypeTagSerializer } from '@mysten/sui/bcs';
-import type { BcsType, TypeTag } from '@mysten/sui/bcs';
-import { isArgument } from '@mysten/sui/transactions';
-import type { TransactionArgument } from '@mysten/sui/transactions';
-import { normalizeSuiAddress } from '@mysten/sui/utils';
+import { bcs, TypeTagSerializer } from '@socialproof/mys/bcs';
+import type { BcsType, TypeTag } from '@socialproof/mys/bcs';
+import { isArgument } from '@socialproof/mys/transactions';
+import type { TransactionArgument } from '@socialproof/mys/transactions';
+import { normalizeMysAddress } from '@socialproof/mys/utils';
 
-const MOVE_STDLIB_ADDRESS = normalizeSuiAddress('0x1');
-const SUI_FRAMEWORK_ADDRESS = normalizeSuiAddress('0x2');
+const MOVE_STDLIB_ADDRESS = normalizeMysAddress('0x1');
+const MYS_FRAMEWORK_ADDRESS = normalizeMysAddress('0x2');
 
 export type RawTransactionArgument<T> = T | TransactionArgument;
 
@@ -36,7 +37,7 @@ export function getPureBcsSchema(typeTag: string | TypeTag): BcsType<any> | null
 		return type ? bcs.vector(type) : null;
 	} else if ('struct' in parsedTag) {
 		const structTag = parsedTag.struct;
-		const pkg = normalizeSuiAddress(parsedTag.struct.address);
+		const pkg = normalizeMysAddress(parsedTag.struct.address);
 
 		if (pkg === MOVE_STDLIB_ADDRESS) {
 			if (
@@ -52,7 +53,7 @@ export function getPureBcsSchema(typeTag: string | TypeTag): BcsType<any> | null
 			}
 		}
 
-		if (pkg === SUI_FRAMEWORK_ADDRESS && structTag.module === 'Object' && structTag.name === 'ID') {
+		if (pkg === MYS_FRAMEWORK_ADDRESS && structTag.module === 'Object' && structTag.name === 'ID') {
 			return bcs.Address;
 		}
 	}

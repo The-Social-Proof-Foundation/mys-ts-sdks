@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 /* eslint-disable */
 
@@ -29,9 +30,9 @@ export type Scalars = {
    * The contents of a Move Value, corresponding to the following recursive type:
    *
    * type MoveData =
-   *     { Address: SuiAddress }
-   *   | { UID:     SuiAddress }
-   *   | { ID:      SuiAddress }
+   *     { Address: MysAddress }
+   *   | { UID:     MysAddress }
+   *   | { ID:      MysAddress }
    *   | { Bool:    bool }
    *   | { Number:  BigInt }
    *   | { String:  string }
@@ -110,8 +111,8 @@ export type Scalars = {
    *   | { typeParameter: number }
    */
   OpenMoveTypeSignature: { input: any; output: any; }
-  /** String containing 32B hex-encoded address, with a leading "0x". Leading zeroes can be omitted on input but will always appear in outputs (SuiAddress in output is guaranteed to be 66 characters long). */
-  SuiAddress: { input: any; output: any; }
+  /** String containing 32B hex-encoded address, with a leading "0x". Leading zeroes can be omitted on input but will always appear in outputs (MysAddress in output is guaranteed to be 66 characters long). */
+  MysAddress: { input: any; output: any; }
   /**
    * An unsigned integer that can hold values up to 2^53 - 1. This can be treated similarly to `Int`,
    * but it is guaranteed to be non-negative, and it may be larger than 2^32 - 1.
@@ -127,7 +128,7 @@ export type ActiveJwk = {
   e: Scalars['String']['output'];
   /** The most recent epoch in which the JWK was validated. */
   epoch?: Maybe<Epoch>;
-  /** The string (Issuing Authority) that identifies the OIDC provider. */
+  /** The string (Ismysng Authority) that identifies the OIDC provider. */
   iss: Scalars['String']['output'];
   /** The string (Key ID) that identifies the JWK among a set of JWKs, (RFC 7517, Section 4.5). */
   kid: Scalars['String']['output'];
@@ -159,10 +160,10 @@ export type ActiveJwkEdge = {
 /** The 32-byte address that is an account address (corresponding to a public key). */
 export type Address = IOwner & {
   __typename?: 'Address';
-  address: Scalars['SuiAddress']['output'];
+  address: Scalars['MysAddress']['output'];
   /**
    * Total balance of all coins with marker type owned by this address. If type is not supplied,
-   * it defaults to `0x2::sui::SUI`.
+   * it defaults to `0x2::mys::MYS`.
    */
   balance?: Maybe<Balance>;
   /** The balances of all coin types owned by this address. */
@@ -170,20 +171,20 @@ export type Address = IOwner & {
   /**
    * The coin objects for this address.
    *
-   * `type` is a filter on the coin's type parameter, defaulting to `0x2::sui::SUI`.
+   * `type` is a filter on the coin's type parameter, defaulting to `0x2::mys::MYS`.
    */
   coins: CoinConnection;
   /** The domain explicitly configured as the default domain pointing to this address. */
-  defaultSuinsName?: Maybe<Scalars['String']['output']>;
+  defaultMysnsName?: Maybe<Scalars['String']['output']>;
   /** Objects owned by this address, optionally `filter`-ed. */
   objects: MoveObjectConnection;
-  /** The `0x3::staking_pool::StakedSui` objects owned by this address. */
-  stakedSuis: StakedSuiConnection;
+  /** The `0x3::staking_pool::StakedMys` objects owned by this address. */
+  stakedMyss: StakedMysConnection;
   /**
-   * The SuinsRegistration NFTs owned by this address. These grant the owner the capability to
+   * The MysnsRegistration NFTs owned by this address. These grant the owner the capability to
    * manage the associated domain.
    */
-  suinsRegistrations: SuinsRegistrationConnection;
+  mysnsRegistrations: MysnsRegistrationConnection;
   /**
    * Similar behavior to the `transactionBlocks` in Query but supporting the additional
    * `AddressTransactionBlockRelationship` filter, which defaults to `SENT`.
@@ -237,7 +238,7 @@ export type AddressCoinsArgs = {
 
 
 /** The 32-byte address that is an account address (corresponding to a public key). */
-export type AddressDefaultSuinsNameArgs = {
+export type AddressDefaultMysnsNameArgs = {
   format?: InputMaybe<DomainFormat>;
 };
 
@@ -253,7 +254,7 @@ export type AddressObjectsArgs = {
 
 
 /** The 32-byte address that is an account address (corresponding to a public key). */
-export type AddressStakedSuisArgs = {
+export type AddressStakedMyssArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -262,7 +263,7 @@ export type AddressStakedSuisArgs = {
 
 
 /** The 32-byte address that is an account address (corresponding to a public key). */
-export type AddressSuinsRegistrationsArgs = {
+export type AddressMysnsRegistrationsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -373,7 +374,7 @@ export type Balance = {
   __typename?: 'Balance';
   /** How many coins of this type constitute the balance */
   coinObjectCount?: Maybe<Scalars['UInt53']['output']>;
-  /** Coin type for the balance, such as 0x2::sui::SUI */
+  /** Coin type for the balance, such as 0x2::mys::MYS */
   coinType: MoveType;
   /** Total balance across all coin objects of the coin type */
   totalBalance?: Maybe<Scalars['BigInt']['output']>;
@@ -384,7 +385,7 @@ export type BalanceChange = {
   __typename?: 'BalanceChange';
   /** The signed balance change. */
   amount?: Maybe<Scalars['BigInt']['output']>;
-  /** The inner type of the coin whose balance has changed (e.g. `0x2::sui::SUI`). */
+  /** The inner type of the coin whose balance has changed (e.g. `0x2::mys::MYS`). */
   coinType?: Maybe<MoveType>;
   /** The address or object whose balance has changed. */
   owner?: Maybe<Owner>;
@@ -462,7 +463,7 @@ export type ChangeEpochTransaction = {
   startTimestamp: Scalars['DateTime']['output'];
   /** The total amount of gas charged for storage during the previous epoch (in MIST). */
   storageCharge: Scalars['BigInt']['output'];
-  /** The SUI returned to transaction senders for cleaning up objects (in MIST). */
+  /** The MYS returned to transaction senders for cleaning up objects (in MIST). */
   storageRebate: Scalars['BigInt']['output'];
   /**
    * System packages (specifically framework and move stdlib) that are written before the new
@@ -593,10 +594,10 @@ export type CheckpointId = {
 /** Some 0x2::coin::Coin Move object. */
 export type Coin = IMoveObject & IObject & IOwner & {
   __typename?: 'Coin';
-  address: Scalars['SuiAddress']['output'];
+  address: Scalars['MysAddress']['output'];
   /**
    * Total balance of all coins with marker type owned by this object. If type is not supplied,
-   * it defaults to `0x2::sui::SUI`.
+   * it defaults to `0x2::mys::MYS`.
    */
   balance?: Maybe<Balance>;
   /** The balances of all coin types owned by this object. */
@@ -608,7 +609,7 @@ export type Coin = IMoveObject & IObject & IOwner & {
   /**
    * The coin objects for this object.
    *
-   * `type` is a filter on the coin's type parameter, defaulting to `0x2::sui::SUI`.
+   * `type` is a filter on the coin's type parameter, defaulting to `0x2::mys::MYS`.
    */
   coins: CoinConnection;
   /**
@@ -618,7 +619,7 @@ export type Coin = IMoveObject & IObject & IOwner & {
    */
   contents?: Maybe<MoveValue>;
   /** The domain explicitly configured as the default domain pointing to this object. */
-  defaultSuinsName?: Maybe<Scalars['String']['output']>;
+  defaultMysnsName?: Maybe<Scalars['String']['output']>;
   /** 32-byte hash that identifies the object's contents, encoded as a Base58 string. */
   digest?: Maybe<Scalars['String']['output']>;
   /**
@@ -655,7 +656,7 @@ export type Coin = IMoveObject & IObject & IOwner & {
   dynamicObjectField?: Maybe<DynamicField>;
   /**
    * Determines whether a transaction can transfer this object, using the TransferObjects
-   * transaction command or `sui::transfer::public_transfer`, both of which require the object to
+   * transaction command or `mys::transfer::public_transfer`, both of which require the object to
    * have the `key` and `store` abilities.
    */
   hasPublicTransfer: Scalars['Boolean']['output'];
@@ -688,8 +689,8 @@ export type Coin = IMoveObject & IObject & IOwner & {
    * `afterCheckpoint` and `atCheckpoint` filters.
    */
   receivedTransactionBlocks: TransactionBlockConnection;
-  /** The `0x3::staking_pool::StakedSui` objects owned by this object. */
-  stakedSuis: StakedSuiConnection;
+  /** The `0x3::staking_pool::StakedMys` objects owned by this object. */
+  stakedMyss: StakedMysConnection;
   /**
    * The current status of the object as read from the off-chain store. The possible states are:
    * NOT_INDEXED, the object is loaded from serialized data, such as the contents of a genesis or
@@ -701,15 +702,15 @@ export type Coin = IMoveObject & IObject & IOwner & {
    */
   status: ObjectKind;
   /**
-   * The amount of SUI we would rebate if this object gets deleted or mutated. This number is
+   * The amount of MYS we would rebate if this object gets deleted or mutated. This number is
    * recalculated based on the present storage gas price.
    */
   storageRebate?: Maybe<Scalars['BigInt']['output']>;
   /**
-   * The SuinsRegistration NFTs owned by this object. These grant the owner the capability to
+   * The MysnsRegistration NFTs owned by this object. These grant the owner the capability to
    * manage the associated domain.
    */
-  suinsRegistrations: SuinsRegistrationConnection;
+  mysnsRegistrations: MysnsRegistrationConnection;
   version: Scalars['UInt53']['output'];
 };
 
@@ -740,7 +741,7 @@ export type CoinCoinsArgs = {
 
 
 /** Some 0x2::coin::Coin Move object. */
-export type CoinDefaultSuinsNameArgs = {
+export type CoinDefaultMysnsNameArgs = {
   format?: InputMaybe<DomainFormat>;
 };
 
@@ -788,7 +789,7 @@ export type CoinReceivedTransactionBlocksArgs = {
 
 
 /** Some 0x2::coin::Coin Move object. */
-export type CoinStakedSuisArgs = {
+export type CoinStakedMyssArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -797,7 +798,7 @@ export type CoinStakedSuisArgs = {
 
 
 /** Some 0x2::coin::Coin Move object. */
-export type CoinSuinsRegistrationsArgs = {
+export type CoinMysnsRegistrationsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -832,10 +833,10 @@ export type CoinEdge = {
 /** The metadata for a coin type. */
 export type CoinMetadata = IMoveObject & IObject & IOwner & {
   __typename?: 'CoinMetadata';
-  address: Scalars['SuiAddress']['output'];
+  address: Scalars['MysAddress']['output'];
   /**
    * Total balance of all coins with marker type owned by this object. If type is not supplied,
-   * it defaults to `0x2::sui::SUI`.
+   * it defaults to `0x2::mys::MYS`.
    */
   balance?: Maybe<Balance>;
   /** The balances of all coin types owned by this object. */
@@ -845,7 +846,7 @@ export type CoinMetadata = IMoveObject & IObject & IOwner & {
   /**
    * The coin objects for this object.
    *
-   * `type` is a filter on the coin's type parameter, defaulting to `0x2::sui::SUI`.
+   * `type` is a filter on the coin's type parameter, defaulting to `0x2::mys::MYS`.
    */
   coins: CoinConnection;
   /**
@@ -857,7 +858,7 @@ export type CoinMetadata = IMoveObject & IObject & IOwner & {
   /** The number of decimal places used to represent the token. */
   decimals?: Maybe<Scalars['Int']['output']>;
   /** The domain explicitly configured as the default domain pointing to this object. */
-  defaultSuinsName?: Maybe<Scalars['String']['output']>;
+  defaultMysnsName?: Maybe<Scalars['String']['output']>;
   /** Optional description of the token, provided by the creator of the token. */
   description?: Maybe<Scalars['String']['output']>;
   /** 32-byte hash that identifies the object's contents, encoded as a Base58 string. */
@@ -896,7 +897,7 @@ export type CoinMetadata = IMoveObject & IObject & IOwner & {
   dynamicObjectField?: Maybe<DynamicField>;
   /**
    * Determines whether a transaction can transfer this object, using the TransferObjects
-   * transaction command or `sui::transfer::public_transfer`, both of which require the object to
+   * transaction command or `mys::transfer::public_transfer`, both of which require the object to
    * have the `key` and `store` abilities.
    */
   hasPublicTransfer: Scalars['Boolean']['output'];
@@ -932,8 +933,8 @@ export type CoinMetadata = IMoveObject & IObject & IOwner & {
    * `afterCheckpoint` and `atCheckpoint` filters.
    */
   receivedTransactionBlocks: TransactionBlockConnection;
-  /** The `0x3::staking_pool::StakedSui` objects owned by this object. */
-  stakedSuis: StakedSuiConnection;
+  /** The `0x3::staking_pool::StakedMys` objects owned by this object. */
+  stakedMyss: StakedMysConnection;
   /**
    * The current status of the object as read from the off-chain store. The possible states are:
    * NOT_INDEXED, the object is loaded from serialized data, such as the contents of a genesis or
@@ -945,15 +946,15 @@ export type CoinMetadata = IMoveObject & IObject & IOwner & {
    */
   status: ObjectKind;
   /**
-   * The amount of SUI we would rebate if this object gets deleted or mutated. This number is
+   * The amount of MYS we would rebate if this object gets deleted or mutated. This number is
    * recalculated based on the present storage gas price.
    */
   storageRebate?: Maybe<Scalars['BigInt']['output']>;
   /**
-   * The SuinsRegistration NFTs owned by this object. These grant the owner the capability to
+   * The MysnsRegistration NFTs owned by this object. These grant the owner the capability to
    * manage the associated domain.
    */
-  suinsRegistrations: SuinsRegistrationConnection;
+  mysnsRegistrations: MysnsRegistrationConnection;
   /** The overall quantity of tokens that will be issued. */
   supply?: Maybe<Scalars['BigInt']['output']>;
   /** The token's identifying abbreviation. */
@@ -988,7 +989,7 @@ export type CoinMetadataCoinsArgs = {
 
 
 /** The metadata for a coin type. */
-export type CoinMetadataDefaultSuinsNameArgs = {
+export type CoinMetadataDefaultMysnsNameArgs = {
   format?: InputMaybe<DomainFormat>;
 };
 
@@ -1036,7 +1037,7 @@ export type CoinMetadataReceivedTransactionBlocksArgs = {
 
 
 /** The metadata for a coin type. */
-export type CoinMetadataStakedSuisArgs = {
+export type CoinMetadataStakedMyssArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -1045,7 +1046,7 @@ export type CoinMetadataStakedSuisArgs = {
 
 
 /** The metadata for a coin type. */
-export type CoinMetadataSuinsRegistrationsArgs = {
+export type CoinMetadataMysnsRegistrationsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -1163,7 +1164,7 @@ export type DryRunReturn = {
  * 1) Dynamic Fields can store any value that has the `store` ability, however an object
  * stored in this kind of field will be considered wrapped and will not be accessible
  * directly via its ID by external tools (explorers, wallets, etc) accessing storage.
- * 2) Dynamic Object Fields values must be Sui objects (have the `key` and `store`
+ * 2) Dynamic Object Fields values must be Mys objects (have the `key` and `store`
  * abilities, and id: UID as the first field), but will still be directly accessible off-chain
  * via their object ID after being attached.
  */
@@ -1260,7 +1261,7 @@ export type EndOfEpochTransactionKindEdge = {
 };
 
 /**
- * Operation of the Sui network is temporally partitioned into non-overlapping epochs,
+ * Operation of the Mys network is temporally partitioned into non-overlapping epochs,
  * and the network aims to keep epochs roughly the same duration as each other.
  * During a particular epoch the following data is fixed:
  *
@@ -1314,7 +1315,7 @@ export type Epoch = {
   /** The epoch's starting timestamp. */
   startTimestamp: Scalars['DateTime']['output'];
   /**
-   * SUI set aside to account for objects stored on-chain, at the start of the epoch.
+   * MYS set aside to account for objects stored on-chain, at the start of the epoch.
    * This is also used for storage rebates.
    */
   storageFund?: Maybe<StorageFund>;
@@ -1323,7 +1324,7 @@ export type Epoch = {
   /** Parameters related to the subsidy that supplements staking rewards */
   systemStakeSubsidy?: Maybe<StakeSubsidy>;
   /**
-   * The value of the `version` field of `0x5`, the `0x3::sui::SuiSystemState` object.  This
+   * The value of the `version` field of `0x5`, the `0x3::mys::MysSystemState` object.  This
    * version changes whenever the fields contained in the system state object (held in a dynamic
    * field attached to `0x5`) change.
    */
@@ -1365,7 +1366,7 @@ export type Epoch = {
 
 
 /**
- * Operation of the Sui network is temporally partitioned into non-overlapping epochs,
+ * Operation of the Mys network is temporally partitioned into non-overlapping epochs,
  * and the network aims to keep epochs roughly the same duration as each other.
  * During a particular epoch the following data is fixed:
  *
@@ -1382,7 +1383,7 @@ export type EpochCheckpointsArgs = {
 
 
 /**
- * Operation of the Sui network is temporally partitioned into non-overlapping epochs,
+ * Operation of the Mys network is temporally partitioned into non-overlapping epochs,
  * and the network aims to keep epochs roughly the same duration as each other.
  * During a particular epoch the following data is fixed:
  *
@@ -1482,11 +1483,11 @@ export type EventFilter = {
    *
    * Generic types can be queried by either the generic type name, e.g.
    * `0x2::coin::Coin`, or by the full type name, such as
-   * `0x2::coin::Coin<0x2::sui::SUI>`.
+   * `0x2::coin::Coin<0x2::mys::MYS>`.
    */
   eventType?: InputMaybe<Scalars['String']['input']>;
   /** Filter down to events from transactions sent by this address. */
-  sender?: InputMaybe<Scalars['SuiAddress']['input']>;
+  sender?: InputMaybe<Scalars['MysAddress']['input']>;
   /** Filter down to the events from this transaction (given by its transaction digest). */
   transactionDigest?: InputMaybe<Scalars['String']['input']>;
 };
@@ -1525,7 +1526,7 @@ export enum Feature {
   DynamicFields = 'DYNAMIC_FIELDS',
   /** Named packages service (utilizing dotmove package registry). */
   MoveRegistry = 'MOVE_REGISTRY',
-  /** SuiNS name and reverse name look-up. */
+  /** MysNS name and reverse name look-up. */
   NameService = 'NAME_SERVICE',
   /** Transaction and Event subscriptions. */
   Subscriptions = 'SUBSCRIPTIONS',
@@ -1658,7 +1659,7 @@ export type IMoveObject = {
    * Dynamic fields on wrapped objects can be accessed by using the same API under the Owner type.
    */
   dynamicObjectField?: Maybe<DynamicField>;
-  /** Determines whether a transaction can transfer this object, using the TransferObjects transaction command or `sui::transfer::public_transfer`, both of which require the object to have the `key` and `store` abilities. */
+  /** Determines whether a transaction can transfer this object, using the TransferObjects transaction command or `mys::transfer::public_transfer`, both of which require the object to have the `key` and `store` abilities. */
   hasPublicTransfer: Scalars['Boolean']['output'];
 };
 
@@ -1737,25 +1738,25 @@ export type IObjectReceivedTransactionBlocksArgs = {
  * possible to know which up-front.
  */
 export type IOwner = {
-  address: Scalars['SuiAddress']['output'];
-  /** Total balance of all coins with marker type owned by this object or address. If type is not supplied, it defaults to `0x2::sui::SUI`. */
+  address: Scalars['MysAddress']['output'];
+  /** Total balance of all coins with marker type owned by this object or address. If type is not supplied, it defaults to `0x2::mys::MYS`. */
   balance?: Maybe<Balance>;
   /** The balances of all coin types owned by this object or address. */
   balances: BalanceConnection;
   /**
    * The coin objects for this object or address.
    *
-   * `type` is a filter on the coin's type parameter, defaulting to `0x2::sui::SUI`.
+   * `type` is a filter on the coin's type parameter, defaulting to `0x2::mys::MYS`.
    */
   coins: CoinConnection;
   /** The domain explicitly configured as the default domain pointing to this object or address. */
-  defaultSuinsName?: Maybe<Scalars['String']['output']>;
+  defaultMysnsName?: Maybe<Scalars['String']['output']>;
   /** Objects owned by this object or address, optionally `filter`-ed. */
   objects: MoveObjectConnection;
-  /** The `0x3::staking_pool::StakedSui` objects owned by this object or address. */
-  stakedSuis: StakedSuiConnection;
-  /** The SuinsRegistration NFTs owned by this object or address. These grant the owner the capability to manage the associated domain. */
-  suinsRegistrations: SuinsRegistrationConnection;
+  /** The `0x3::staking_pool::StakedMys` objects owned by this object or address. */
+  stakedMyss: StakedMysConnection;
+  /** The MysnsRegistration NFTs owned by this object or address. These grant the owner the capability to manage the associated domain. */
+  mysnsRegistrations: MysnsRegistrationConnection;
 };
 
 
@@ -1805,7 +1806,7 @@ export type IOwnerCoinsArgs = {
  * object. The same address can only refer to an account or an object, never both, but it is not
  * possible to know which up-front.
  */
-export type IOwnerDefaultSuinsNameArgs = {
+export type IOwnerDefaultMysnsNameArgs = {
   format?: InputMaybe<DomainFormat>;
 };
 
@@ -1831,7 +1832,7 @@ export type IOwnerObjectsArgs = {
  * object. The same address can only refer to an account or an object, never both, but it is not
  * possible to know which up-front.
  */
-export type IOwnerStakedSuisArgs = {
+export type IOwnerStakedMyssArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -1845,7 +1846,7 @@ export type IOwnerStakedSuisArgs = {
  * object. The same address can only refer to an account or an object, never both, but it is not
  * possible to know which up-front.
  */
-export type IOwnerSuinsRegistrationsArgs = {
+export type IOwnerMysnsRegistrationsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -1872,9 +1873,9 @@ export type Input = {
 export type Linkage = {
   __typename?: 'Linkage';
   /** The ID on-chain of the first version of the dependency. */
-  originalId: Scalars['SuiAddress']['output'];
+  originalId: Scalars['MysAddress']['output'];
   /** The ID on-chain of the version of the dependency that this package depends on. */
-  upgradedId: Scalars['SuiAddress']['output'];
+  upgradedId: Scalars['MysAddress']['output'];
   /** The version of the dependency that this package depends on. */
   version: Scalars['UInt53']['output'];
 };
@@ -1897,7 +1898,7 @@ export type MergeCoinsTransaction = {
   coins: Array<TransactionArgument>;
 };
 
-/** Abilities are keywords in Sui Move that define how types behave at the compiler level. */
+/** Abilities are keywords in Mys Move that define how types behave at the compiler level. */
 export enum MoveAbility {
   /** Enables values to be copied. */
   Copy = 'COPY',
@@ -1921,7 +1922,7 @@ export type MoveCallTransaction = {
   /** The name of the module the function being called is defined in. */
   module: Scalars['String']['output'];
   /** The storage ID of the package the function being called is defined in. */
-  package: Scalars['SuiAddress']['output'];
+  package: Scalars['MysAddress']['output'];
   /** The actual type parameters passed in for this move call. */
   typeArguments: Array<MoveType>;
 };
@@ -2233,18 +2234,18 @@ export type MoveModuleEdge = {
  */
 export type MoveObject = IMoveObject & IObject & IOwner & {
   __typename?: 'MoveObject';
-  address: Scalars['SuiAddress']['output'];
+  address: Scalars['MysAddress']['output'];
   /** Attempts to convert the Move object into a `0x2::coin::Coin`. */
   asCoin?: Maybe<Coin>;
   /** Attempts to convert the Move object into a `0x2::coin::CoinMetadata`. */
   asCoinMetadata?: Maybe<CoinMetadata>;
-  /** Attempts to convert the Move object into a `0x3::staking_pool::StakedSui`. */
-  asStakedSui?: Maybe<StakedSui>;
-  /** Attempts to convert the Move object into a `SuinsRegistration` object. */
-  asSuinsRegistration?: Maybe<SuinsRegistration>;
+  /** Attempts to convert the Move object into a `0x3::staking_pool::StakedMys`. */
+  asStakedMys?: Maybe<StakedMys>;
+  /** Attempts to convert the Move object into a `MysnsRegistration` object. */
+  asMysnsRegistration?: Maybe<MysnsRegistration>;
   /**
    * Total balance of all coins with marker type owned by this object. If type is not supplied,
-   * it defaults to `0x2::sui::SUI`.
+   * it defaults to `0x2::mys::MYS`.
    */
   balance?: Maybe<Balance>;
   /** The balances of all coin types owned by this object. */
@@ -2254,7 +2255,7 @@ export type MoveObject = IMoveObject & IObject & IOwner & {
   /**
    * The coin objects for this object.
    *
-   * `type` is a filter on the coin's type parameter, defaulting to `0x2::sui::SUI`.
+   * `type` is a filter on the coin's type parameter, defaulting to `0x2::mys::MYS`.
    */
   coins: CoinConnection;
   /**
@@ -2264,7 +2265,7 @@ export type MoveObject = IMoveObject & IObject & IOwner & {
    */
   contents?: Maybe<MoveValue>;
   /** The domain explicitly configured as the default domain pointing to this object. */
-  defaultSuinsName?: Maybe<Scalars['String']['output']>;
+  defaultMysnsName?: Maybe<Scalars['String']['output']>;
   /** 32-byte hash that identifies the object's contents, encoded as a Base58 string. */
   digest?: Maybe<Scalars['String']['output']>;
   /**
@@ -2301,7 +2302,7 @@ export type MoveObject = IMoveObject & IObject & IOwner & {
   dynamicObjectField?: Maybe<DynamicField>;
   /**
    * Determines whether a transaction can transfer this object, using the TransferObjects
-   * transaction command or `sui::transfer::public_transfer`, both of which require the object to
+   * transaction command or `mys::transfer::public_transfer`, both of which require the object to
    * have the `key` and `store` abilities.
    */
   hasPublicTransfer: Scalars['Boolean']['output'];
@@ -2334,8 +2335,8 @@ export type MoveObject = IMoveObject & IObject & IOwner & {
    * `afterCheckpoint` and `atCheckpoint` filters.
    */
   receivedTransactionBlocks: TransactionBlockConnection;
-  /** The `0x3::staking_pool::StakedSui` objects owned by this object. */
-  stakedSuis: StakedSuiConnection;
+  /** The `0x3::staking_pool::StakedMys` objects owned by this object. */
+  stakedMyss: StakedMysConnection;
   /**
    * The current status of the object as read from the off-chain store. The possible states are:
    * NOT_INDEXED, the object is loaded from serialized data, such as the contents of a genesis or
@@ -2347,15 +2348,15 @@ export type MoveObject = IMoveObject & IObject & IOwner & {
    */
   status: ObjectKind;
   /**
-   * The amount of SUI we would rebate if this object gets deleted or mutated. This number is
+   * The amount of MYS we would rebate if this object gets deleted or mutated. This number is
    * recalculated based on the present storage gas price.
    */
   storageRebate?: Maybe<Scalars['BigInt']['output']>;
   /**
-   * The SuinsRegistration NFTs owned by this object. These grant the owner the capability to
+   * The MysnsRegistration NFTs owned by this object. These grant the owner the capability to
    * manage the associated domain.
    */
-  suinsRegistrations: SuinsRegistrationConnection;
+  mysnsRegistrations: MysnsRegistrationConnection;
   version: Scalars['UInt53']['output'];
 };
 
@@ -2398,7 +2399,7 @@ export type MoveObjectCoinsArgs = {
  * The representation of an object as a Move Object, which exposes additional information
  * (content, module that governs it, version, is transferrable, etc.) about this object.
  */
-export type MoveObjectDefaultSuinsNameArgs = {
+export type MoveObjectDefaultMysnsNameArgs = {
   format?: InputMaybe<DomainFormat>;
 };
 
@@ -2464,7 +2465,7 @@ export type MoveObjectReceivedTransactionBlocksArgs = {
  * The representation of an object as a Move Object, which exposes additional information
  * (content, module that governs it, version, is transferrable, etc.) about this object.
  */
-export type MoveObjectStakedSuisArgs = {
+export type MoveObjectStakedMyssArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -2476,7 +2477,7 @@ export type MoveObjectStakedSuisArgs = {
  * The representation of an object as a Move Object, which exposes additional information
  * (content, module that governs it, version, is transferrable, etc.) about this object.
  */
-export type MoveObjectSuinsRegistrationsArgs = {
+export type MoveObjectMysnsRegistrationsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -2508,10 +2509,10 @@ export type MoveObjectEdge = {
  */
 export type MovePackage = IObject & IOwner & {
   __typename?: 'MovePackage';
-  address: Scalars['SuiAddress']['output'];
+  address: Scalars['MysAddress']['output'];
   /**
    * Total balance of all coins with marker type owned by this package. If type is not supplied,
-   * it defaults to `0x2::sui::SUI`.
+   * it defaults to `0x2::mys::MYS`.
    *
    * Note that coins owned by a package are inaccessible, because packages are immutable and
    * cannot be owned by an address.
@@ -2529,14 +2530,14 @@ export type MovePackage = IObject & IOwner & {
   /**
    * The coin objects owned by this package.
    *
-   * `type` is a filter on the coin's type parameter, defaulting to `0x2::sui::SUI`.
+   * `type` is a filter on the coin's type parameter, defaulting to `0x2::mys::MYS`.
    *
    * Note that coins owned by a package are inaccessible, because packages are immutable and
    * cannot be owned by an address.
    */
   coins: CoinConnection;
   /** The domain explicitly configured as the default domain pointing to this object. */
-  defaultSuinsName?: Maybe<Scalars['String']['output']>;
+  defaultMysnsName?: Maybe<Scalars['String']['output']>;
   /** 32-byte hash that identifies the package's contents, encoded as a Base58 string. */
   digest?: Maybe<Scalars['String']['output']>;
   /**
@@ -2611,12 +2612,12 @@ export type MovePackage = IObject & IOwner & {
    */
   receivedTransactionBlocks: TransactionBlockConnection;
   /**
-   * The `0x3::staking_pool::StakedSui` objects owned by this package.
+   * The `0x3::staking_pool::StakedMys` objects owned by this package.
    *
    * Note that objects owned by a package are inaccessible, because packages are immutable and
    * cannot be owned by an address.
    */
-  stakedSuis: StakedSuiConnection;
+  stakedMyss: StakedMysConnection;
   /**
    * The current status of the object as read from the off-chain store. The possible states are:
    * NOT_INDEXED, the object is loaded from serialized data, such as the contents of a genesis or
@@ -2628,7 +2629,7 @@ export type MovePackage = IObject & IOwner & {
    */
   status: ObjectKind;
   /**
-   * The amount of SUI we would rebate if this object gets deleted or mutated. This number is
+   * The amount of MYS we would rebate if this object gets deleted or mutated. This number is
    * recalculated based on the present storage gas price.
    *
    * Note that packages cannot be deleted or mutated, so this number is provided purely for
@@ -2636,13 +2637,13 @@ export type MovePackage = IObject & IOwner & {
    */
   storageRebate?: Maybe<Scalars['BigInt']['output']>;
   /**
-   * The SuinsRegistration NFTs owned by this package. These grant the owner the capability to
+   * The MysnsRegistration NFTs owned by this package. These grant the owner the capability to
    * manage the associated domain.
    *
    * Note that objects owned by a package are inaccessible, because packages are immutable and
    * cannot be owned by an address.
    */
-  suinsRegistrations: SuinsRegistrationConnection;
+  mysnsRegistrations: MysnsRegistrationConnection;
   /** The (previous) versions of this package that introduced its types. */
   typeOrigins?: Maybe<Array<TypeOrigin>>;
   version: Scalars['UInt53']['output'];
@@ -2687,7 +2688,7 @@ export type MovePackageCoinsArgs = {
  * A MovePackage is a kind of Move object that represents code that has been published on chain.
  * It exposes information about its modules, type definitions, functions, and dependencies.
  */
-export type MovePackageDefaultSuinsNameArgs = {
+export type MovePackageDefaultMysnsNameArgs = {
   format?: InputMaybe<DomainFormat>;
 };
 
@@ -2766,7 +2767,7 @@ export type MovePackageReceivedTransactionBlocksArgs = {
  * A MovePackage is a kind of Move object that represents code that has been published on chain.
  * It exposes information about its modules, type definitions, functions, and dependencies.
  */
-export type MovePackageStakedSuisArgs = {
+export type MovePackageStakedMyssArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -2778,7 +2779,7 @@ export type MovePackageStakedSuisArgs = {
  * A MovePackage is a kind of Move object that represents code that has been published on chain.
  * It exposes information about its modules, type definitions, functions, and dependencies.
  */
-export type MovePackageSuinsRegistrationsArgs = {
+export type MovePackageMysnsRegistrationsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -2936,7 +2937,7 @@ export enum MoveVisibility {
   Public = 'PUBLIC'
 }
 
-/** Mutations are used to write to the Sui network. */
+/** Mutations are used to write to the Mys network. */
 export type Mutation = {
   __typename?: 'Mutation';
   /**
@@ -2959,27 +2960,27 @@ export type Mutation = {
 };
 
 
-/** Mutations are used to write to the Sui network. */
+/** Mutations are used to write to the Mys network. */
 export type MutationExecuteTransactionBlockArgs = {
   signatures: Array<Scalars['String']['input']>;
   txBytes: Scalars['String']['input'];
 };
 
 /**
- * An object in Sui is a package (set of Move bytecode modules) or object (typed data structure
+ * An object in Mys is a package (set of Move bytecode modules) or object (typed data structure
  * with fields) with additional metadata detailing its id, version, transaction digest, owner
  * field indicating how this object can be accessed.
  */
 export type Object = IObject & IOwner & {
   __typename?: 'Object';
-  address: Scalars['SuiAddress']['output'];
+  address: Scalars['MysAddress']['output'];
   /** Attempts to convert the object into a MoveObject */
   asMoveObject?: Maybe<MoveObject>;
   /** Attempts to convert the object into a MovePackage */
   asMovePackage?: Maybe<MovePackage>;
   /**
    * Total balance of all coins with marker type owned by this object. If type is not supplied,
-   * it defaults to `0x2::sui::SUI`.
+   * it defaults to `0x2::mys::MYS`.
    */
   balance?: Maybe<Balance>;
   /** The balances of all coin types owned by this object. */
@@ -2989,11 +2990,11 @@ export type Object = IObject & IOwner & {
   /**
    * The coin objects for this object.
    *
-   * `type` is a filter on the coin's type parameter, defaulting to `0x2::sui::SUI`.
+   * `type` is a filter on the coin's type parameter, defaulting to `0x2::mys::MYS`.
    */
   coins: CoinConnection;
   /** The domain explicitly configured as the default domain pointing to this object. */
-  defaultSuinsName?: Maybe<Scalars['String']['output']>;
+  defaultMysnsName?: Maybe<Scalars['String']['output']>;
   /** 32-byte hash that identifies the object's current contents, encoded as a Base58 string. */
   digest?: Maybe<Scalars['String']['output']>;
   /**
@@ -3060,8 +3061,8 @@ export type Object = IObject & IOwner & {
    * `afterCheckpoint` and `atCheckpoint` filters.
    */
   receivedTransactionBlocks: TransactionBlockConnection;
-  /** The `0x3::staking_pool::StakedSui` objects owned by this object. */
-  stakedSuis: StakedSuiConnection;
+  /** The `0x3::staking_pool::StakedMys` objects owned by this object. */
+  stakedMyss: StakedMysConnection;
   /**
    * The current status of the object as read from the off-chain store. The possible states are:
    * NOT_INDEXED, the object is loaded from serialized data, such as the contents of a genesis or
@@ -3073,21 +3074,21 @@ export type Object = IObject & IOwner & {
    */
   status: ObjectKind;
   /**
-   * The amount of SUI we would rebate if this object gets deleted or mutated. This number is
+   * The amount of MYS we would rebate if this object gets deleted or mutated. This number is
    * recalculated based on the present storage gas price.
    */
   storageRebate?: Maybe<Scalars['BigInt']['output']>;
   /**
-   * The SuinsRegistration NFTs owned by this object. These grant the owner the capability to
+   * The MysnsRegistration NFTs owned by this object. These grant the owner the capability to
    * manage the associated domain.
    */
-  suinsRegistrations: SuinsRegistrationConnection;
+  mysnsRegistrations: MysnsRegistrationConnection;
   version: Scalars['UInt53']['output'];
 };
 
 
 /**
- * An object in Sui is a package (set of Move bytecode modules) or object (typed data structure
+ * An object in Mys is a package (set of Move bytecode modules) or object (typed data structure
  * with fields) with additional metadata detailing its id, version, transaction digest, owner
  * field indicating how this object can be accessed.
  */
@@ -3097,7 +3098,7 @@ export type ObjectBalanceArgs = {
 
 
 /**
- * An object in Sui is a package (set of Move bytecode modules) or object (typed data structure
+ * An object in Mys is a package (set of Move bytecode modules) or object (typed data structure
  * with fields) with additional metadata detailing its id, version, transaction digest, owner
  * field indicating how this object can be accessed.
  */
@@ -3110,7 +3111,7 @@ export type ObjectBalancesArgs = {
 
 
 /**
- * An object in Sui is a package (set of Move bytecode modules) or object (typed data structure
+ * An object in Mys is a package (set of Move bytecode modules) or object (typed data structure
  * with fields) with additional metadata detailing its id, version, transaction digest, owner
  * field indicating how this object can be accessed.
  */
@@ -3124,17 +3125,17 @@ export type ObjectCoinsArgs = {
 
 
 /**
- * An object in Sui is a package (set of Move bytecode modules) or object (typed data structure
+ * An object in Mys is a package (set of Move bytecode modules) or object (typed data structure
  * with fields) with additional metadata detailing its id, version, transaction digest, owner
  * field indicating how this object can be accessed.
  */
-export type ObjectDefaultSuinsNameArgs = {
+export type ObjectDefaultMysnsNameArgs = {
   format?: InputMaybe<DomainFormat>;
 };
 
 
 /**
- * An object in Sui is a package (set of Move bytecode modules) or object (typed data structure
+ * An object in Mys is a package (set of Move bytecode modules) or object (typed data structure
  * with fields) with additional metadata detailing its id, version, transaction digest, owner
  * field indicating how this object can be accessed.
  */
@@ -3144,7 +3145,7 @@ export type ObjectDynamicFieldArgs = {
 
 
 /**
- * An object in Sui is a package (set of Move bytecode modules) or object (typed data structure
+ * An object in Mys is a package (set of Move bytecode modules) or object (typed data structure
  * with fields) with additional metadata detailing its id, version, transaction digest, owner
  * field indicating how this object can be accessed.
  */
@@ -3157,7 +3158,7 @@ export type ObjectDynamicFieldsArgs = {
 
 
 /**
- * An object in Sui is a package (set of Move bytecode modules) or object (typed data structure
+ * An object in Mys is a package (set of Move bytecode modules) or object (typed data structure
  * with fields) with additional metadata detailing its id, version, transaction digest, owner
  * field indicating how this object can be accessed.
  */
@@ -3167,7 +3168,7 @@ export type ObjectDynamicObjectFieldArgs = {
 
 
 /**
- * An object in Sui is a package (set of Move bytecode modules) or object (typed data structure
+ * An object in Mys is a package (set of Move bytecode modules) or object (typed data structure
  * with fields) with additional metadata detailing its id, version, transaction digest, owner
  * field indicating how this object can be accessed.
  */
@@ -3181,7 +3182,7 @@ export type ObjectObjectsArgs = {
 
 
 /**
- * An object in Sui is a package (set of Move bytecode modules) or object (typed data structure
+ * An object in Mys is a package (set of Move bytecode modules) or object (typed data structure
  * with fields) with additional metadata detailing its id, version, transaction digest, owner
  * field indicating how this object can be accessed.
  */
@@ -3196,11 +3197,11 @@ export type ObjectReceivedTransactionBlocksArgs = {
 
 
 /**
- * An object in Sui is a package (set of Move bytecode modules) or object (typed data structure
+ * An object in Mys is a package (set of Move bytecode modules) or object (typed data structure
  * with fields) with additional metadata detailing its id, version, transaction digest, owner
  * field indicating how this object can be accessed.
  */
-export type ObjectStakedSuisArgs = {
+export type ObjectStakedMyssArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -3209,11 +3210,11 @@ export type ObjectStakedSuisArgs = {
 
 
 /**
- * An object in Sui is a package (set of Move bytecode modules) or object (typed data structure
+ * An object in Mys is a package (set of Move bytecode modules) or object (typed data structure
  * with fields) with additional metadata detailing its id, version, transaction digest, owner
  * field indicating how this object can be accessed.
  */
-export type ObjectSuinsRegistrationsArgs = {
+export type ObjectMysnsRegistrationsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -3224,7 +3225,7 @@ export type ObjectSuinsRegistrationsArgs = {
 export type ObjectChange = {
   __typename?: 'ObjectChange';
   /** The address of the object that has changed. */
-  address: Scalars['SuiAddress']['output'];
+  address: Scalars['MysAddress']['output'];
   /** Whether the ID was created in this transaction. */
   idCreated?: Maybe<Scalars['Boolean']['output']>;
   /** Whether the ID was deleted in this transaction. */
@@ -3283,21 +3284,21 @@ export type ObjectEdge = {
  */
 export type ObjectFilter = {
   /** Filter for live objects by their IDs. */
-  objectIds?: InputMaybe<Array<Scalars['SuiAddress']['input']>>;
+  objectIds?: InputMaybe<Array<Scalars['MysAddress']['input']>>;
   /** Filter for live objects by their current owners. */
-  owner?: InputMaybe<Scalars['SuiAddress']['input']>;
+  owner?: InputMaybe<Scalars['MysAddress']['input']>;
   /**
    * Filter objects by their type's `package`, `package::module`, or their fully qualified type
    * name.
    *
    * Generic types can be queried by either the generic type name, e.g. `0x2::coin::Coin`, or by
-   * the full type name, such as `0x2::coin::Coin<0x2::sui::SUI>`.
+   * the full type name, such as `0x2::coin::Coin<0x2::mys::MYS>`.
    */
   type?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type ObjectKey = {
-  objectId: Scalars['SuiAddress']['input'];
+  objectId: Scalars['MysAddress']['input'];
   version: Scalars['UInt53']['input'];
 };
 
@@ -3316,7 +3317,7 @@ export type ObjectOwner = AddressOwner | ConsensusV2 | Immutable | Parent | Shar
 
 export type ObjectRef = {
   /** ID of the object. */
-  address: Scalars['SuiAddress']['input'];
+  address: Scalars['MysAddress']['input'];
   /** Digest of the object. */
   digest: Scalars['String']['input'];
   /** Version or sequence number of the object. */
@@ -3339,7 +3340,7 @@ export type OpenMoveType = {
 export type OwnedOrImmutable = {
   __typename?: 'OwnedOrImmutable';
   /** ID of the object being read. */
-  address: Scalars['SuiAddress']['output'];
+  address: Scalars['MysAddress']['output'];
   /**
    * 32-byte hash that identifies the object's contents at this version, encoded as a Base58
    * string.
@@ -3352,18 +3353,18 @@ export type OwnedOrImmutable = {
 };
 
 /**
- * An Owner is an entity that can own an object. Each Owner is identified by a SuiAddress which
+ * An Owner is an entity that can own an object. Each Owner is identified by a MysAddress which
  * represents either an Address (corresponding to a public key of an account) or an Object, but
  * never both (it is not known up-front whether a given Owner is an Address or an Object).
  */
 export type Owner = IOwner & {
   __typename?: 'Owner';
-  address: Scalars['SuiAddress']['output'];
+  address: Scalars['MysAddress']['output'];
   asAddress?: Maybe<Address>;
   asObject?: Maybe<Object>;
   /**
    * Total balance of all coins with marker type owned by this object or address. If type is not
-   * supplied, it defaults to `0x2::sui::SUI`.
+   * supplied, it defaults to `0x2::mys::MYS`.
    */
   balance?: Maybe<Balance>;
   /** The balances of all coin types owned by this object or address. */
@@ -3371,11 +3372,11 @@ export type Owner = IOwner & {
   /**
    * The coin objects for this object or address.
    *
-   * `type` is a filter on the coin's type parameter, defaulting to `0x2::sui::SUI`.
+   * `type` is a filter on the coin's type parameter, defaulting to `0x2::mys::MYS`.
    */
   coins: CoinConnection;
   /** The domain explicitly configured as the default domain pointing to this object or address. */
-  defaultSuinsName?: Maybe<Scalars['String']['output']>;
+  defaultMysnsName?: Maybe<Scalars['String']['output']>;
   /**
    * Access a dynamic field on an object using its name. Names are arbitrary Move values whose
    * type have `copy`, `drop`, and `store`, and are specified using their type, and their BCS
@@ -3401,18 +3402,18 @@ export type Owner = IOwner & {
   dynamicObjectField?: Maybe<DynamicField>;
   /** Objects owned by this object or address, optionally `filter`-ed. */
   objects: MoveObjectConnection;
-  /** The `0x3::staking_pool::StakedSui` objects owned by this object or address. */
-  stakedSuis: StakedSuiConnection;
+  /** The `0x3::staking_pool::StakedMys` objects owned by this object or address. */
+  stakedMyss: StakedMysConnection;
   /**
-   * The SuinsRegistration NFTs owned by this object or address. These grant the owner the
+   * The MysnsRegistration NFTs owned by this object or address. These grant the owner the
    * capability to manage the associated domain.
    */
-  suinsRegistrations: SuinsRegistrationConnection;
+  mysnsRegistrations: MysnsRegistrationConnection;
 };
 
 
 /**
- * An Owner is an entity that can own an object. Each Owner is identified by a SuiAddress which
+ * An Owner is an entity that can own an object. Each Owner is identified by a MysAddress which
  * represents either an Address (corresponding to a public key of an account) or an Object, but
  * never both (it is not known up-front whether a given Owner is an Address or an Object).
  */
@@ -3422,7 +3423,7 @@ export type OwnerBalanceArgs = {
 
 
 /**
- * An Owner is an entity that can own an object. Each Owner is identified by a SuiAddress which
+ * An Owner is an entity that can own an object. Each Owner is identified by a MysAddress which
  * represents either an Address (corresponding to a public key of an account) or an Object, but
  * never both (it is not known up-front whether a given Owner is an Address or an Object).
  */
@@ -3435,7 +3436,7 @@ export type OwnerBalancesArgs = {
 
 
 /**
- * An Owner is an entity that can own an object. Each Owner is identified by a SuiAddress which
+ * An Owner is an entity that can own an object. Each Owner is identified by a MysAddress which
  * represents either an Address (corresponding to a public key of an account) or an Object, but
  * never both (it is not known up-front whether a given Owner is an Address or an Object).
  */
@@ -3449,17 +3450,17 @@ export type OwnerCoinsArgs = {
 
 
 /**
- * An Owner is an entity that can own an object. Each Owner is identified by a SuiAddress which
+ * An Owner is an entity that can own an object. Each Owner is identified by a MysAddress which
  * represents either an Address (corresponding to a public key of an account) or an Object, but
  * never both (it is not known up-front whether a given Owner is an Address or an Object).
  */
-export type OwnerDefaultSuinsNameArgs = {
+export type OwnerDefaultMysnsNameArgs = {
   format?: InputMaybe<DomainFormat>;
 };
 
 
 /**
- * An Owner is an entity that can own an object. Each Owner is identified by a SuiAddress which
+ * An Owner is an entity that can own an object. Each Owner is identified by a MysAddress which
  * represents either an Address (corresponding to a public key of an account) or an Object, but
  * never both (it is not known up-front whether a given Owner is an Address or an Object).
  */
@@ -3469,7 +3470,7 @@ export type OwnerDynamicFieldArgs = {
 
 
 /**
- * An Owner is an entity that can own an object. Each Owner is identified by a SuiAddress which
+ * An Owner is an entity that can own an object. Each Owner is identified by a MysAddress which
  * represents either an Address (corresponding to a public key of an account) or an Object, but
  * never both (it is not known up-front whether a given Owner is an Address or an Object).
  */
@@ -3482,7 +3483,7 @@ export type OwnerDynamicFieldsArgs = {
 
 
 /**
- * An Owner is an entity that can own an object. Each Owner is identified by a SuiAddress which
+ * An Owner is an entity that can own an object. Each Owner is identified by a MysAddress which
  * represents either an Address (corresponding to a public key of an account) or an Object, but
  * never both (it is not known up-front whether a given Owner is an Address or an Object).
  */
@@ -3492,7 +3493,7 @@ export type OwnerDynamicObjectFieldArgs = {
 
 
 /**
- * An Owner is an entity that can own an object. Each Owner is identified by a SuiAddress which
+ * An Owner is an entity that can own an object. Each Owner is identified by a MysAddress which
  * represents either an Address (corresponding to a public key of an account) or an Object, but
  * never both (it is not known up-front whether a given Owner is an Address or an Object).
  */
@@ -3506,11 +3507,11 @@ export type OwnerObjectsArgs = {
 
 
 /**
- * An Owner is an entity that can own an object. Each Owner is identified by a SuiAddress which
+ * An Owner is an entity that can own an object. Each Owner is identified by a MysAddress which
  * represents either an Address (corresponding to a public key of an account) or an Object, but
  * never both (it is not known up-front whether a given Owner is an Address or an Object).
  */
-export type OwnerStakedSuisArgs = {
+export type OwnerStakedMyssArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -3519,11 +3520,11 @@ export type OwnerStakedSuisArgs = {
 
 
 /**
- * An Owner is an entity that can own an object. Each Owner is identified by a SuiAddress which
+ * An Owner is an entity that can own an object. Each Owner is identified by a MysAddress which
  * represents either an Address (corresponding to a public key of an account) or an Object, but
  * never both (it is not known up-front whether a given Owner is an Address or an Object).
  */
-export type OwnerSuinsRegistrationsArgs = {
+export type OwnerMysnsRegistrationsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -3680,7 +3681,7 @@ export type ProtocolConfigsFeatureFlagArgs = {
 export type PublishTransaction = {
   __typename?: 'PublishTransaction';
   /** IDs of the transitive dependencies of the package to be published. */
-  dependencies: Array<Scalars['SuiAddress']['output']>;
+  dependencies: Array<Scalars['MysAddress']['output']>;
   /** Bytecode for the modules to be published, BCS serialized and Base64 encoded. */
   modules: Array<Scalars['Base64']['output']>;
 };
@@ -3694,7 +3695,7 @@ export type Pure = {
 
 export type Query = {
   __typename?: 'Query';
-  /** Look-up an Account by its SuiAddress. */
+  /** Look-up an Account by its MysAddress. */
   address?: Maybe<Address>;
   /**
    * Range of checkpoints that the RPC has data available for (for data
@@ -3722,7 +3723,7 @@ export type Query = {
    * The coin objects that exist in the network.
    *
    * The type field is a string of the inner type of the coin by which to filter (e.g.
-   * `0x2::sui::SUI`). If no type is provided, it will default to `0x2::sui::SUI`.
+   * `0x2::mys::MYS`). If no type is provided, it will default to `0x2::mys::MYS`.
    */
   coins: CoinConnection;
   /**
@@ -3771,7 +3772,7 @@ export type Query = {
   /** The objects that exist in the network. */
   objects: ObjectConnection;
   /**
-   * Look up an Owner by its SuiAddress.
+   * Look up an Owner by its MysAddress.
    *
    * `rootVersion` represents the version of the root object in some nested chain of dynamic
    * fields. It allows consistent historical queries for the case of wrapped objects, which don't
@@ -3783,7 +3784,7 @@ export type Query = {
    * from above when querying `Owner.asObject`. This can be used, for example, to get the
    * contents of a dynamic object field when its parent was at `rootVersion`.
    *
-   * If `rootVersion` is omitted, dynamic fields will be from a consistent snapshot of the Sui
+   * If `rootVersion` is omitted, dynamic fields will be from a consistent snapshot of the Mys
    * state at the latest checkpoint known to the GraphQL RPC. Similarly, `Owner.asObject` will
    * return the object's version at the latest checkpoint.
    */
@@ -3822,8 +3823,8 @@ export type Query = {
    * version known to the GraphQL service).
    */
   protocolConfig: ProtocolConfigs;
-  /** Resolves a SuiNS `domain` name to an address, if it has been bound. */
-  resolveSuinsAddress?: Maybe<Address>;
+  /** Resolves a MysNS `domain` name to an address, if it has been bound. */
+  resolveMysnsAddress?: Maybe<Address>;
   /** Configuration for this RPC service */
   serviceConfig: ServiceConfig;
   /** Fetch a transaction block by its transaction digest. */
@@ -3876,7 +3877,7 @@ export type Query = {
 
 
 export type QueryAddressArgs = {
-  address: Scalars['SuiAddress']['input'];
+  address: Scalars['MysAddress']['input'];
 };
 
 
@@ -3937,7 +3938,7 @@ export type QueryEventsArgs = {
 
 
 export type QueryLatestPackageArgs = {
-  address: Scalars['SuiAddress']['input'];
+  address: Scalars['MysAddress']['input'];
 };
 
 
@@ -3947,7 +3948,7 @@ export type QueryMultiGetObjectsArgs = {
 
 
 export type QueryObjectArgs = {
-  address: Scalars['SuiAddress']['input'];
+  address: Scalars['MysAddress']['input'];
   version?: InputMaybe<Scalars['UInt53']['input']>;
 };
 
@@ -3962,13 +3963,13 @@ export type QueryObjectsArgs = {
 
 
 export type QueryOwnerArgs = {
-  address: Scalars['SuiAddress']['input'];
+  address: Scalars['MysAddress']['input'];
   rootVersion?: InputMaybe<Scalars['UInt53']['input']>;
 };
 
 
 export type QueryPackageArgs = {
-  address: Scalars['SuiAddress']['input'];
+  address: Scalars['MysAddress']['input'];
   version?: InputMaybe<Scalars['UInt53']['input']>;
 };
 
@@ -3979,7 +3980,7 @@ export type QueryPackageByNameArgs = {
 
 
 export type QueryPackageVersionsArgs = {
-  address: Scalars['SuiAddress']['input'];
+  address: Scalars['MysAddress']['input'];
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   filter?: InputMaybe<MovePackageVersionFilter>;
@@ -4002,7 +4003,7 @@ export type QueryProtocolConfigArgs = {
 };
 
 
-export type QueryResolveSuinsAddressArgs = {
+export type QueryResolveMysnsAddressArgs = {
   domain: Scalars['String']['input'];
 };
 
@@ -4033,7 +4034,7 @@ export type QueryTypeByNameArgs = {
 
 
 export type QueryVerifyZkloginSignatureArgs = {
-  author: Scalars['SuiAddress']['input'];
+  author: Scalars['MysAddress']['input'];
   bytes: Scalars['Base64']['input'];
   intentScope: ZkLoginIntentScope;
   signature: Scalars['Base64']['input'];
@@ -4062,7 +4063,7 @@ export type RandomnessStateUpdateTransaction = {
 export type Receiving = {
   __typename?: 'Receiving';
   /** ID of the object being read. */
-  address: Scalars['SuiAddress']['output'];
+  address: Scalars['MysAddress']['output'];
   /**
    * 32-byte hash that identifies the object's contents at this version, encoded as a Base58
    * string.
@@ -4170,7 +4171,7 @@ export type ServiceConfig = {
    */
   maxTypeNodes: Scalars['Int']['output'];
   /**
-   * Maximum time in milliseconds spent waiting for a response from fullnode after issuing a
+   * Maximum time in milliseconds spent waiting for a response from fullnode after ismysng a
    * a transaction to execute. Note that the transaction may still succeed even in the case of a
    * timeout. Transactions are idempotent, so a transaction that times out should be resubmitted
    * until the network returns a definite response (success or failure, not timeout).
@@ -4198,7 +4199,7 @@ export type Shared = {
 /** A Move object that's shared. */
 export type SharedInput = {
   __typename?: 'SharedInput';
-  address: Scalars['SuiAddress']['output'];
+  address: Scalars['MysAddress']['output'];
   /** The version that this this object was shared at. */
   initialSharedVersion: Scalars['UInt53']['output'];
   /**
@@ -4215,7 +4216,7 @@ export type SharedInput = {
 export type SharedObjectCancelled = {
   __typename?: 'SharedObjectCancelled';
   /** ID of the shared object. */
-  address: Scalars['SuiAddress']['output'];
+  address: Scalars['MysAddress']['output'];
   /** The assigned shared object version. It is a special version indicating transaction cancellation reason. */
   version: Scalars['UInt53']['output'];
 };
@@ -4227,7 +4228,7 @@ export type SharedObjectCancelled = {
 export type SharedObjectDelete = {
   __typename?: 'SharedObjectDelete';
   /** ID of the shared object. */
-  address: Scalars['SuiAddress']['output'];
+  address: Scalars['MysAddress']['output'];
   /**
    * Whether this transaction intended to use this shared object mutably or not. See
    * `SharedInput.mutable` for further details.
@@ -4244,7 +4245,7 @@ export type SharedObjectDelete = {
 export type SharedObjectRead = {
   __typename?: 'SharedObjectRead';
   /** ID of the object being read. */
-  address: Scalars['SuiAddress']['output'];
+  address: Scalars['MysAddress']['output'];
   /**
    * 32-byte hash that identifies the object's contents at this version, encoded as a Base58
    * string.
@@ -4282,7 +4283,7 @@ export enum StakeStatus {
 export type StakeSubsidy = {
   __typename?: 'StakeSubsidy';
   /**
-   * SUI set aside for stake subsidies -- reduces over time as stake subsidies are paid out over
+   * MYS set aside for stake subsidies -- reduces over time as stake subsidies are paid out over
    * time.
    */
   balance?: Maybe<Scalars['BigInt']['output']>;
@@ -4305,15 +4306,15 @@ export type StakeSubsidy = {
   periodLength?: Maybe<Scalars['Int']['output']>;
 };
 
-/** Represents a `0x3::staking_pool::StakedSui` Move object on-chain. */
-export type StakedSui = IMoveObject & IObject & IOwner & {
-  __typename?: 'StakedSui';
+/** Represents a `0x3::staking_pool::StakedMys` Move object on-chain. */
+export type StakedMys = IMoveObject & IObject & IOwner & {
+  __typename?: 'StakedMys';
   /** The epoch at which this stake became active. */
   activatedEpoch?: Maybe<Epoch>;
-  address: Scalars['SuiAddress']['output'];
+  address: Scalars['MysAddress']['output'];
   /**
    * Total balance of all coins with marker type owned by this object. If type is not supplied,
-   * it defaults to `0x2::sui::SUI`.
+   * it defaults to `0x2::mys::MYS`.
    */
   balance?: Maybe<Balance>;
   /** The balances of all coin types owned by this object. */
@@ -4323,7 +4324,7 @@ export type StakedSui = IMoveObject & IObject & IOwner & {
   /**
    * The coin objects for this object.
    *
-   * `type` is a filter on the coin's type parameter, defaulting to `0x2::sui::SUI`.
+   * `type` is a filter on the coin's type parameter, defaulting to `0x2::mys::MYS`.
    */
   coins: CoinConnection;
   /**
@@ -4333,7 +4334,7 @@ export type StakedSui = IMoveObject & IObject & IOwner & {
    */
   contents?: Maybe<MoveValue>;
   /** The domain explicitly configured as the default domain pointing to this object. */
-  defaultSuinsName?: Maybe<Scalars['String']['output']>;
+  defaultMysnsName?: Maybe<Scalars['String']['output']>;
   /** 32-byte hash that identifies the object's contents, encoded as a Base58 string. */
   digest?: Maybe<Scalars['String']['output']>;
   /**
@@ -4383,7 +4384,7 @@ export type StakedSui = IMoveObject & IObject & IOwner & {
   estimatedReward?: Maybe<Scalars['BigInt']['output']>;
   /**
    * Determines whether a transaction can transfer this object, using the TransferObjects
-   * transaction command or `sui::transfer::public_transfer`, both of which require the object to
+   * transaction command or `mys::transfer::public_transfer`, both of which require the object to
    * have the `key` and `store` abilities.
    */
   hasPublicTransfer: Scalars['Boolean']['output'];
@@ -4392,10 +4393,10 @@ export type StakedSui = IMoveObject & IObject & IOwner & {
   /** The owner type of this object: Immutable, Shared, Parent, Address */
   owner?: Maybe<ObjectOwner>;
   /** The object id of the validator staking pool this stake belongs to. */
-  poolId?: Maybe<Scalars['SuiAddress']['output']>;
+  poolId?: Maybe<Scalars['MysAddress']['output']>;
   /** The transaction block that created this version of the object. */
   previousTransactionBlock?: Maybe<TransactionBlock>;
-  /** The SUI that was initially staked. */
+  /** The MYS that was initially staked. */
   principal?: Maybe<Scalars['BigInt']['output']>;
   /**
    * The transaction blocks that sent objects to this object.
@@ -4424,8 +4425,8 @@ export type StakedSui = IMoveObject & IObject & IOwner & {
   requestedEpoch?: Maybe<Epoch>;
   /** A stake can be pending, active, or unstaked */
   stakeStatus: StakeStatus;
-  /** The `0x3::staking_pool::StakedSui` objects owned by this object. */
-  stakedSuis: StakedSuiConnection;
+  /** The `0x3::staking_pool::StakedMys` objects owned by this object. */
+  stakedMyss: StakedMysConnection;
   /**
    * The current status of the object as read from the off-chain store. The possible states are:
    * NOT_INDEXED, the object is loaded from serialized data, such as the contents of a genesis or
@@ -4437,27 +4438,27 @@ export type StakedSui = IMoveObject & IObject & IOwner & {
    */
   status: ObjectKind;
   /**
-   * The amount of SUI we would rebate if this object gets deleted or mutated. This number is
+   * The amount of MYS we would rebate if this object gets deleted or mutated. This number is
    * recalculated based on the present storage gas price.
    */
   storageRebate?: Maybe<Scalars['BigInt']['output']>;
   /**
-   * The SuinsRegistration NFTs owned by this object. These grant the owner the capability to
+   * The MysnsRegistration NFTs owned by this object. These grant the owner the capability to
    * manage the associated domain.
    */
-  suinsRegistrations: SuinsRegistrationConnection;
+  mysnsRegistrations: MysnsRegistrationConnection;
   version: Scalars['UInt53']['output'];
 };
 
 
-/** Represents a `0x3::staking_pool::StakedSui` Move object on-chain. */
-export type StakedSuiBalanceArgs = {
+/** Represents a `0x3::staking_pool::StakedMys` Move object on-chain. */
+export type StakedMysBalanceArgs = {
   type?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** Represents a `0x3::staking_pool::StakedSui` Move object on-chain. */
-export type StakedSuiBalancesArgs = {
+/** Represents a `0x3::staking_pool::StakedMys` Move object on-chain. */
+export type StakedMysBalancesArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -4465,8 +4466,8 @@ export type StakedSuiBalancesArgs = {
 };
 
 
-/** Represents a `0x3::staking_pool::StakedSui` Move object on-chain. */
-export type StakedSuiCoinsArgs = {
+/** Represents a `0x3::staking_pool::StakedMys` Move object on-chain. */
+export type StakedMysCoinsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -4475,20 +4476,20 @@ export type StakedSuiCoinsArgs = {
 };
 
 
-/** Represents a `0x3::staking_pool::StakedSui` Move object on-chain. */
-export type StakedSuiDefaultSuinsNameArgs = {
+/** Represents a `0x3::staking_pool::StakedMys` Move object on-chain. */
+export type StakedMysDefaultMysnsNameArgs = {
   format?: InputMaybe<DomainFormat>;
 };
 
 
-/** Represents a `0x3::staking_pool::StakedSui` Move object on-chain. */
-export type StakedSuiDynamicFieldArgs = {
+/** Represents a `0x3::staking_pool::StakedMys` Move object on-chain. */
+export type StakedMysDynamicFieldArgs = {
   name: DynamicFieldName;
 };
 
 
-/** Represents a `0x3::staking_pool::StakedSui` Move object on-chain. */
-export type StakedSuiDynamicFieldsArgs = {
+/** Represents a `0x3::staking_pool::StakedMys` Move object on-chain. */
+export type StakedMysDynamicFieldsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -4496,14 +4497,14 @@ export type StakedSuiDynamicFieldsArgs = {
 };
 
 
-/** Represents a `0x3::staking_pool::StakedSui` Move object on-chain. */
-export type StakedSuiDynamicObjectFieldArgs = {
+/** Represents a `0x3::staking_pool::StakedMys` Move object on-chain. */
+export type StakedMysDynamicObjectFieldArgs = {
   name: DynamicFieldName;
 };
 
 
-/** Represents a `0x3::staking_pool::StakedSui` Move object on-chain. */
-export type StakedSuiObjectsArgs = {
+/** Represents a `0x3::staking_pool::StakedMys` Move object on-chain. */
+export type StakedMysObjectsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   filter?: InputMaybe<ObjectFilter>;
@@ -4512,8 +4513,8 @@ export type StakedSuiObjectsArgs = {
 };
 
 
-/** Represents a `0x3::staking_pool::StakedSui` Move object on-chain. */
-export type StakedSuiReceivedTransactionBlocksArgs = {
+/** Represents a `0x3::staking_pool::StakedMys` Move object on-chain. */
+export type StakedMysReceivedTransactionBlocksArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   filter?: InputMaybe<TransactionBlockFilter>;
@@ -4523,8 +4524,8 @@ export type StakedSuiReceivedTransactionBlocksArgs = {
 };
 
 
-/** Represents a `0x3::staking_pool::StakedSui` Move object on-chain. */
-export type StakedSuiStakedSuisArgs = {
+/** Represents a `0x3::staking_pool::StakedMys` Move object on-chain. */
+export type StakedMysStakedMyssArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -4532,34 +4533,34 @@ export type StakedSuiStakedSuisArgs = {
 };
 
 
-/** Represents a `0x3::staking_pool::StakedSui` Move object on-chain. */
-export type StakedSuiSuinsRegistrationsArgs = {
+/** Represents a `0x3::staking_pool::StakedMys` Move object on-chain. */
+export type StakedMysMysnsRegistrationsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
 };
 
-export type StakedSuiConnection = {
-  __typename?: 'StakedSuiConnection';
+export type StakedMysConnection = {
+  __typename?: 'StakedMysConnection';
   /** A list of edges. */
-  edges: Array<StakedSuiEdge>;
+  edges: Array<StakedMysEdge>;
   /** A list of nodes. */
-  nodes: Array<StakedSui>;
+  nodes: Array<StakedMys>;
   /** Information to aid in pagination. */
   pageInfo: PageInfo;
 };
 
 /** An edge in a connection. */
-export type StakedSuiEdge = {
-  __typename?: 'StakedSuiEdge';
+export type StakedMysEdge = {
+  __typename?: 'StakedMysEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
-  node: StakedSui;
+  node: StakedMys;
 };
 
-/** SUI set aside to account for objects stored on-chain. */
+/** MYS set aside to account for objects stored on-chain. */
 export type StorageFund = {
   __typename?: 'StorageFund';
   /**
@@ -4580,12 +4581,12 @@ export type StoreExecutionTimeObservationsTransaction = {
   _?: Maybe<Scalars['Boolean']['output']>;
 };
 
-export type SuinsRegistration = IMoveObject & IObject & IOwner & {
-  __typename?: 'SuinsRegistration';
-  address: Scalars['SuiAddress']['output'];
+export type MysnsRegistration = IMoveObject & IObject & IOwner & {
+  __typename?: 'MysnsRegistration';
+  address: Scalars['MysAddress']['output'];
   /**
    * Total balance of all coins with marker type owned by this object. If type is not supplied,
-   * it defaults to `0x2::sui::SUI`.
+   * it defaults to `0x2::mys::MYS`.
    */
   balance?: Maybe<Balance>;
   /** The balances of all coin types owned by this object. */
@@ -4595,7 +4596,7 @@ export type SuinsRegistration = IMoveObject & IObject & IOwner & {
   /**
    * The coin objects for this object.
    *
-   * `type` is a filter on the coin's type parameter, defaulting to `0x2::sui::SUI`.
+   * `type` is a filter on the coin's type parameter, defaulting to `0x2::mys::MYS`.
    */
   coins: CoinConnection;
   /**
@@ -4605,7 +4606,7 @@ export type SuinsRegistration = IMoveObject & IObject & IOwner & {
    */
   contents?: Maybe<MoveValue>;
   /** The domain explicitly configured as the default domain pointing to this object. */
-  defaultSuinsName?: Maybe<Scalars['String']['output']>;
+  defaultMysnsName?: Maybe<Scalars['String']['output']>;
   /** 32-byte hash that identifies the object's contents, encoded as a Base58 string. */
   digest?: Maybe<Scalars['String']['output']>;
   /**
@@ -4614,7 +4615,7 @@ export type SuinsRegistration = IMoveObject & IObject & IOwner & {
    * display string per template.
    */
   display?: Maybe<Array<DisplayEntry>>;
-  /** Domain name of the SuinsRegistration object */
+  /** Domain name of the MysnsRegistration object */
   domain: Scalars['String']['output'];
   /**
    * Access a dynamic field on an object using its name. Names are arbitrary Move values whose
@@ -4644,7 +4645,7 @@ export type SuinsRegistration = IMoveObject & IObject & IOwner & {
   dynamicObjectField?: Maybe<DynamicField>;
   /**
    * Determines whether a transaction can transfer this object, using the TransferObjects
-   * transaction command or `sui::transfer::public_transfer`, both of which require the object to
+   * transaction command or `mys::transfer::public_transfer`, both of which require the object to
    * have the `key` and `store` abilities.
    */
   hasPublicTransfer: Scalars['Boolean']['output'];
@@ -4677,8 +4678,8 @@ export type SuinsRegistration = IMoveObject & IObject & IOwner & {
    * `afterCheckpoint` and `atCheckpoint` filters.
    */
   receivedTransactionBlocks: TransactionBlockConnection;
-  /** The `0x3::staking_pool::StakedSui` objects owned by this object. */
-  stakedSuis: StakedSuiConnection;
+  /** The `0x3::staking_pool::StakedMys` objects owned by this object. */
+  stakedMyss: StakedMysConnection;
   /**
    * The current status of the object as read from the off-chain store. The possible states are:
    * NOT_INDEXED, the object is loaded from serialized data, such as the contents of a genesis or
@@ -4690,25 +4691,25 @@ export type SuinsRegistration = IMoveObject & IObject & IOwner & {
    */
   status: ObjectKind;
   /**
-   * The amount of SUI we would rebate if this object gets deleted or mutated. This number is
+   * The amount of MYS we would rebate if this object gets deleted or mutated. This number is
    * recalculated based on the present storage gas price.
    */
   storageRebate?: Maybe<Scalars['BigInt']['output']>;
   /**
-   * The SuinsRegistration NFTs owned by this object. These grant the owner the capability to
+   * The MysnsRegistration NFTs owned by this object. These grant the owner the capability to
    * manage the associated domain.
    */
-  suinsRegistrations: SuinsRegistrationConnection;
+  mysnsRegistrations: MysnsRegistrationConnection;
   version: Scalars['UInt53']['output'];
 };
 
 
-export type SuinsRegistrationBalanceArgs = {
+export type MysnsRegistrationBalanceArgs = {
   type?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-export type SuinsRegistrationBalancesArgs = {
+export type MysnsRegistrationBalancesArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -4716,7 +4717,7 @@ export type SuinsRegistrationBalancesArgs = {
 };
 
 
-export type SuinsRegistrationCoinsArgs = {
+export type MysnsRegistrationCoinsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -4725,17 +4726,17 @@ export type SuinsRegistrationCoinsArgs = {
 };
 
 
-export type SuinsRegistrationDefaultSuinsNameArgs = {
+export type MysnsRegistrationDefaultMysnsNameArgs = {
   format?: InputMaybe<DomainFormat>;
 };
 
 
-export type SuinsRegistrationDynamicFieldArgs = {
+export type MysnsRegistrationDynamicFieldArgs = {
   name: DynamicFieldName;
 };
 
 
-export type SuinsRegistrationDynamicFieldsArgs = {
+export type MysnsRegistrationDynamicFieldsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -4743,12 +4744,12 @@ export type SuinsRegistrationDynamicFieldsArgs = {
 };
 
 
-export type SuinsRegistrationDynamicObjectFieldArgs = {
+export type MysnsRegistrationDynamicObjectFieldArgs = {
   name: DynamicFieldName;
 };
 
 
-export type SuinsRegistrationObjectsArgs = {
+export type MysnsRegistrationObjectsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   filter?: InputMaybe<ObjectFilter>;
@@ -4757,7 +4758,7 @@ export type SuinsRegistrationObjectsArgs = {
 };
 
 
-export type SuinsRegistrationReceivedTransactionBlocksArgs = {
+export type MysnsRegistrationReceivedTransactionBlocksArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   filter?: InputMaybe<TransactionBlockFilter>;
@@ -4767,7 +4768,7 @@ export type SuinsRegistrationReceivedTransactionBlocksArgs = {
 };
 
 
-export type SuinsRegistrationStakedSuisArgs = {
+export type MysnsRegistrationStakedMyssArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -4775,30 +4776,30 @@ export type SuinsRegistrationStakedSuisArgs = {
 };
 
 
-export type SuinsRegistrationSuinsRegistrationsArgs = {
+export type MysnsRegistrationMysnsRegistrationsArgs = {
   after?: InputMaybe<Scalars['String']['input']>;
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
 };
 
-export type SuinsRegistrationConnection = {
-  __typename?: 'SuinsRegistrationConnection';
+export type MysnsRegistrationConnection = {
+  __typename?: 'MysnsRegistrationConnection';
   /** A list of edges. */
-  edges: Array<SuinsRegistrationEdge>;
+  edges: Array<MysnsRegistrationEdge>;
   /** A list of nodes. */
-  nodes: Array<SuinsRegistration>;
+  nodes: Array<MysnsRegistration>;
   /** Information to aid in pagination. */
   pageInfo: PageInfo;
 };
 
 /** An edge in a connection. */
-export type SuinsRegistrationEdge = {
-  __typename?: 'SuinsRegistrationEdge';
+export type MysnsRegistrationEdge = {
+  __typename?: 'MysnsRegistrationEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
-  node: SuinsRegistration;
+  node: MysnsRegistration;
 };
 
 /** Details of the system that are decided during genesis. */
@@ -4988,7 +4989,7 @@ export type TransactionBlockFilter = {
    * Limit to transactions that interacted with the given address. The address could be a
    * sender, sponsor, or recipient of the transaction.
    */
-  affectedAddress?: InputMaybe<Scalars['SuiAddress']['input']>;
+  affectedAddress?: InputMaybe<Scalars['MysAddress']['input']>;
   /** Limit to transactions that occured strictly after the given checkpoint. */
   afterCheckpoint?: InputMaybe<Scalars['UInt53']['input']>;
   /** Limit to transactions in the given checkpoint. */
@@ -5002,7 +5003,7 @@ export type TransactionBlockFilter = {
    * This filter will be removed with 1.36.0 (2024-10-14), or at least one release after
    * `affectedObject` is introduced, whichever is later.
    */
-  changedObject?: InputMaybe<Scalars['SuiAddress']['input']>;
+  changedObject?: InputMaybe<Scalars['MysAddress']['input']>;
   /**
    * Filter transactions by move function called. Calls can be filtered by the `package`,
    * `package::module`, or the `package::module::name` of their function.
@@ -5015,11 +5016,11 @@ export type TransactionBlockFilter = {
    * This filter will be removed with 1.36.0 (2024-10-14), or at least one release after
    * `affectedObject` is introduced, whichever is later.
    */
-  inputObject?: InputMaybe<Scalars['SuiAddress']['input']>;
+  inputObject?: InputMaybe<Scalars['MysAddress']['input']>;
   /** An input filter selecting for either system or programmable transactions. */
   kind?: InputMaybe<TransactionBlockKindInput>;
   /** Limit to transactions that were sent by the given address. */
-  sentAddress?: InputMaybe<Scalars['SuiAddress']['input']>;
+  sentAddress?: InputMaybe<Scalars['MysAddress']['input']>;
   /** Select transactions by their digest. */
   transactionIds?: InputMaybe<Array<Scalars['String']['input']>>;
 };
@@ -5070,8 +5071,8 @@ export type TransactionMetadata = {
   gasBudget?: InputMaybe<Scalars['UInt53']['input']>;
   gasObjects?: InputMaybe<Array<ObjectRef>>;
   gasPrice?: InputMaybe<Scalars['UInt53']['input']>;
-  gasSponsor?: InputMaybe<Scalars['SuiAddress']['input']>;
-  sender?: InputMaybe<Scalars['SuiAddress']['input']>;
+  gasSponsor?: InputMaybe<Scalars['MysAddress']['input']>;
+  sender?: InputMaybe<Scalars['MysAddress']['input']>;
 };
 
 /**
@@ -5090,7 +5091,7 @@ export type TransferObjectsTransaction = {
 export type TypeOrigin = {
   __typename?: 'TypeOrigin';
   /** The storage ID of the package that first defined this type. */
-  definingId: Scalars['SuiAddress']['output'];
+  definingId: Scalars['MysAddress']['output'];
   /** Module defining the type. */
   module: Scalars['String']['output'];
   /** Name of the struct. */
@@ -5128,9 +5129,9 @@ export type UnchangedSharedObjectEdge = {
 export type UpgradeTransaction = {
   __typename?: 'UpgradeTransaction';
   /** ID of the package being upgraded. */
-  currentPackage: Scalars['SuiAddress']['output'];
+  currentPackage: Scalars['MysAddress']['output'];
   /** IDs of the transitive dependencies of the package to be published. */
-  dependencies: Array<Scalars['SuiAddress']['output']>;
+  dependencies: Array<Scalars['MysAddress']['output']>;
   /** Bytecode for the modules to be published, BCS serialized and Base64 encoded. */
   modules: Array<Scalars['Base64']['output']>;
   /** The `UpgradeTicket` authorizing the upgrade. */
@@ -5159,7 +5160,7 @@ export type Validator = {
   description?: Maybe<Scalars['String']['output']>;
   /**
    * The validator's current exchange object. The exchange rate is used to determine
-   * the amount of SUI tokens that each past SUI staker can withdraw in the future.
+   * the amount of MYS tokens that each past MYS staker can withdraw in the future.
    * @deprecated The exchange object is a wrapped object. Access its dynamic fields through the `exchangeRatesTable` query.
    */
   exchangeRates?: Maybe<MoveObject>;
@@ -5168,7 +5169,7 @@ export type Validator = {
   /**
    * A wrapped object containing the validator's exchange rates. This is a table from epoch
    * number to `PoolTokenExchangeRate` value. The exchange rate is used to determine the amount
-   * of SUI tokens that each past SUI staker can withdraw in the future.
+   * of MYS tokens that each past MYS staker can withdraw in the future.
    */
   exchangeRatesTable?: Maybe<Owner>;
   /** The reference gas price for this epoch. */
@@ -5184,7 +5185,7 @@ export type Validator = {
   /** The validator's gas price quote for the next epoch. */
   nextEpochGasPrice?: Maybe<Scalars['BigInt']['output']>;
   /**
-   * The total number of SUI tokens in this pool plus
+   * The total number of MYS tokens in this pool plus
    * the pending stake amount for this epoch.
    */
   nextEpochStake?: Maybe<Scalars['BigInt']['output']>;
@@ -5199,7 +5200,7 @@ export type Validator = {
   /** Pending stake amount for this epoch. */
   pendingStake?: Maybe<Scalars['BigInt']['output']>;
   /** Pending stake withdrawn during the current epoch, emptied at epoch boundaries. */
-  pendingTotalSuiWithdraw?: Maybe<Scalars['BigInt']['output']>;
+  pendingTotalMysWithdraw?: Maybe<Scalars['BigInt']['output']>;
   /** Total number of pool tokens issued by the pool. */
   poolTokenBalance?: Maybe<Scalars['BigInt']['output']>;
   /** Validator's homepage URL. */
@@ -5217,9 +5218,9 @@ export type Validator = {
   /** The epoch at which this pool became active. */
   stakingPoolActivationEpoch?: Maybe<Scalars['UInt53']['output']>;
   /** The ID of this validator's `0x3::staking_pool::StakingPool`. */
-  stakingPoolId: Scalars['SuiAddress']['output'];
-  /** The total number of SUI tokens in this pool. */
-  stakingPoolSuiBalance?: Maybe<Scalars['BigInt']['output']>;
+  stakingPoolId: Scalars['MysAddress']['output'];
+  /** The total number of MYS tokens in this pool. */
+  stakingPoolMysBalance?: Maybe<Scalars['BigInt']['output']>;
   /** The voting power of this validator in basis points (e.g., 100 = 1% voting power). */
   votingPower?: Maybe<Scalars['Int']['output']>;
 };
@@ -5270,11 +5271,11 @@ export type ValidatorSet = {
   /** The current set of active validators. */
   activeValidators: ValidatorConnection;
   /** Object ID of the `Table` storing the inactive staking pools. */
-  inactivePoolsId?: Maybe<Scalars['SuiAddress']['output']>;
+  inactivePoolsId?: Maybe<Scalars['MysAddress']['output']>;
   /** Size of the inactive pools `Table`. */
   inactivePoolsSize?: Maybe<Scalars['Int']['output']>;
   /** Object ID of the wrapped object `TableVec` storing the pending active validators. */
-  pendingActiveValidatorsId?: Maybe<Scalars['SuiAddress']['output']>;
+  pendingActiveValidatorsId?: Maybe<Scalars['MysAddress']['output']>;
   /** Size of the pending active validators table. */
   pendingActiveValidatorsSize?: Maybe<Scalars['Int']['output']>;
   /**
@@ -5287,13 +5288,13 @@ export type ValidatorSet = {
    * of the corresponding validators. This is needed because a validator's address
    * can potentially change but the object ID of its pool will not.
    */
-  stakingPoolMappingsId?: Maybe<Scalars['SuiAddress']['output']>;
+  stakingPoolMappingsId?: Maybe<Scalars['MysAddress']['output']>;
   /** Size of the stake pool mappings `Table`. */
   stakingPoolMappingsSize?: Maybe<Scalars['Int']['output']>;
   /** Total amount of stake for all active validators at the beginning of the epoch. */
   totalStake?: Maybe<Scalars['BigInt']['output']>;
   /** Object ID of the `Table` storing the validator candidates. */
-  validatorCandidatesId?: Maybe<Scalars['SuiAddress']['output']>;
+  validatorCandidatesId?: Maybe<Scalars['MysAddress']['output']>;
   /** Size of the validator candidates `Table`. */
   validatorCandidatesSize?: Maybe<Scalars['Int']['output']>;
 };
@@ -5328,7 +5329,7 @@ export type ZkLoginVerifyResult = {
 };
 
 export type GetAllBalancesQueryVariables = Exact<{
-  owner: Scalars['SuiAddress']['input'];
+  owner: Scalars['MysAddress']['input'];
   limit?: InputMaybe<Scalars['Int']['input']>;
   cursor?: InputMaybe<Scalars['String']['input']>;
 }>;
@@ -5337,7 +5338,7 @@ export type GetAllBalancesQueryVariables = Exact<{
 export type GetAllBalancesQuery = { __typename?: 'Query', address?: { __typename?: 'Address', balances: { __typename?: 'BalanceConnection', pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, endCursor?: string | null }, nodes: Array<{ __typename?: 'Balance', coinObjectCount?: any | null, totalBalance?: any | null, coinType: { __typename?: 'MoveType', repr: string } }> } } | null };
 
 export type GetBalanceQueryVariables = Exact<{
-  owner: Scalars['SuiAddress']['input'];
+  owner: Scalars['MysAddress']['input'];
   type?: InputMaybe<Scalars['String']['input']>;
 }>;
 
@@ -5345,7 +5346,7 @@ export type GetBalanceQueryVariables = Exact<{
 export type GetBalanceQuery = { __typename?: 'Query', address?: { __typename?: 'Address', balance?: { __typename?: 'Balance', coinObjectCount?: any | null, totalBalance?: any | null, coinType: { __typename?: 'MoveType', repr: string } } | null } | null };
 
 export type GetCoinsQueryVariables = Exact<{
-  owner: Scalars['SuiAddress']['input'];
+  owner: Scalars['MysAddress']['input'];
   first?: InputMaybe<Scalars['Int']['input']>;
   cursor?: InputMaybe<Scalars['String']['input']>;
   type?: InputMaybe<Scalars['String']['input']>;
@@ -5355,7 +5356,7 @@ export type GetCoinsQueryVariables = Exact<{
 export type GetCoinsQuery = { __typename?: 'Query', address?: { __typename?: 'Address', address: any, coins: { __typename?: 'CoinConnection', pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, endCursor?: string | null }, nodes: Array<{ __typename?: 'Coin', coinBalance?: any | null, address: any, version: any, digest?: string | null, owner?: { __typename: 'AddressOwner', owner?: { __typename?: 'Owner', asObject?: { __typename?: 'Object', address: any } | null, asAddress?: { __typename?: 'Address', address: any } | null } | null } | { __typename: 'ConsensusV2', authenticator?: { __typename?: 'Address', address: any } | null } | { __typename: 'Immutable' } | { __typename: 'Parent', parent?: { __typename?: 'Owner', address: any } | null } | { __typename: 'Shared', initialSharedVersion: any } | null, contents?: { __typename?: 'MoveValue', bcs: any, type: { __typename?: 'MoveType', repr: string } } | null }> } } | null };
 
 export type GetDynamicFieldsQueryVariables = Exact<{
-  parentId: Scalars['SuiAddress']['input'];
+  parentId: Scalars['MysAddress']['input'];
   first?: InputMaybe<Scalars['Int']['input']>;
   cursor?: InputMaybe<Scalars['String']['input']>;
 }>;
@@ -5369,7 +5370,7 @@ export type GetReferenceGasPriceQueryVariables = Exact<{ [key: string]: never; }
 export type GetReferenceGasPriceQuery = { __typename?: 'Query', epoch?: { __typename?: 'Epoch', referenceGasPrice?: any | null } | null };
 
 export type GetOwnedObjectsQueryVariables = Exact<{
-  owner: Scalars['SuiAddress']['input'];
+  owner: Scalars['MysAddress']['input'];
   limit?: InputMaybe<Scalars['Int']['input']>;
   cursor?: InputMaybe<Scalars['String']['input']>;
   filter?: InputMaybe<ObjectFilter>;
@@ -5379,7 +5380,7 @@ export type GetOwnedObjectsQueryVariables = Exact<{
 export type GetOwnedObjectsQuery = { __typename?: 'Query', address?: { __typename?: 'Address', objects: { __typename?: 'MoveObjectConnection', pageInfo: { __typename?: 'PageInfo', hasNextPage: boolean, endCursor?: string | null }, nodes: Array<{ __typename?: 'MoveObject', address: any, digest?: string | null, version: any, contents?: { __typename?: 'MoveValue', bcs: any, type: { __typename?: 'MoveType', repr: string } } | null, owner?: { __typename: 'AddressOwner', owner?: { __typename?: 'Owner', asObject?: { __typename?: 'Object', address: any } | null, asAddress?: { __typename?: 'Address', address: any } | null } | null } | { __typename: 'ConsensusV2', authenticator?: { __typename?: 'Address', address: any } | null } | { __typename: 'Immutable' } | { __typename: 'Parent', parent?: { __typename?: 'Owner', address: any } | null } | { __typename: 'Shared', initialSharedVersion: any } | null }> } } | null };
 
 export type MultiGetObjectsQueryVariables = Exact<{
-  objectIds: Array<Scalars['SuiAddress']['input']> | Scalars['SuiAddress']['input'];
+  objectIds: Array<Scalars['MysAddress']['input']> | Scalars['MysAddress']['input'];
   limit?: InputMaybe<Scalars['Int']['input']>;
   cursor?: InputMaybe<Scalars['String']['input']>;
 }>;
@@ -5431,7 +5432,7 @@ export type VerifyZkLoginSignatureQueryVariables = Exact<{
   bytes: Scalars['Base64']['input'];
   signature: Scalars['Base64']['input'];
   intentScope: ZkLoginIntentScope;
-  author: Scalars['SuiAddress']['input'];
+  author: Scalars['MysAddress']['input'];
 }>;
 
 
@@ -5630,7 +5631,7 @@ export const Transaction_FieldsFragmentDoc = new TypedDocumentString(`
 }
     `, {"fragmentName":"TRANSACTION_FIELDS"}) as unknown as TypedDocumentString<Transaction_FieldsFragment, unknown>;
 export const GetAllBalancesDocument = new TypedDocumentString(`
-    query getAllBalances($owner: SuiAddress!, $limit: Int, $cursor: String) {
+    query getAllBalances($owner: MysAddress!, $limit: Int, $cursor: String) {
   address(address: $owner) {
     balances(first: $limit, after: $cursor) {
       pageInfo {
@@ -5649,7 +5650,7 @@ export const GetAllBalancesDocument = new TypedDocumentString(`
 }
     `) as unknown as TypedDocumentString<GetAllBalancesQuery, GetAllBalancesQueryVariables>;
 export const GetBalanceDocument = new TypedDocumentString(`
-    query getBalance($owner: SuiAddress!, $type: String = "0x2::sui::SUI") {
+    query getBalance($owner: MysAddress!, $type: String = "0x2::mys::MYS") {
   address(address: $owner) {
     balance(type: $type) {
       coinType {
@@ -5662,7 +5663,7 @@ export const GetBalanceDocument = new TypedDocumentString(`
 }
     `) as unknown as TypedDocumentString<GetBalanceQuery, GetBalanceQueryVariables>;
 export const GetCoinsDocument = new TypedDocumentString(`
-    query getCoins($owner: SuiAddress!, $first: Int, $cursor: String, $type: String = "0x2::sui::SUI") {
+    query getCoins($owner: MysAddress!, $first: Int, $cursor: String, $type: String = "0x2::mys::MYS") {
   address(address: $owner) {
     address
     coins(first: $first, after: $cursor, type: $type) {
@@ -5717,7 +5718,7 @@ export const GetCoinsDocument = new TypedDocumentString(`
   }
 }`) as unknown as TypedDocumentString<GetCoinsQuery, GetCoinsQueryVariables>;
 export const GetDynamicFieldsDocument = new TypedDocumentString(`
-    query getDynamicFields($parentId: SuiAddress!, $first: Int, $cursor: String) {
+    query getDynamicFields($parentId: MysAddress!, $first: Int, $cursor: String) {
   owner(address: $parentId) {
     dynamicFields(first: $first, after: $cursor) {
       pageInfo {
@@ -5759,7 +5760,7 @@ export const GetReferenceGasPriceDocument = new TypedDocumentString(`
 }
     `) as unknown as TypedDocumentString<GetReferenceGasPriceQuery, GetReferenceGasPriceQueryVariables>;
 export const GetOwnedObjectsDocument = new TypedDocumentString(`
-    query getOwnedObjects($owner: SuiAddress!, $limit: Int, $cursor: String, $filter: ObjectFilter) {
+    query getOwnedObjects($owner: MysAddress!, $limit: Int, $cursor: String, $filter: ObjectFilter) {
   address(address: $owner) {
     objects(first: $limit, after: $cursor, filter: $filter) {
       pageInfo {
@@ -5815,7 +5816,7 @@ fragment OBJECT_OWNER_FIELDS on ObjectOwner {
   }
 }`) as unknown as TypedDocumentString<GetOwnedObjectsQuery, GetOwnedObjectsQueryVariables>;
 export const MultiGetObjectsDocument = new TypedDocumentString(`
-    query multiGetObjects($objectIds: [SuiAddress!]!, $limit: Int, $cursor: String) {
+    query multiGetObjects($objectIds: [MysAddress!]!, $limit: Int, $cursor: String) {
   objects(first: $limit, after: $cursor, filter: {objectIds: $objectIds}) {
     pageInfo {
       hasNextPage
@@ -6059,7 +6060,7 @@ export const GetTransactionBlockDocument = new TypedDocumentString(`
   }
 }`) as unknown as TypedDocumentString<GetTransactionBlockQuery, GetTransactionBlockQueryVariables>;
 export const VerifyZkLoginSignatureDocument = new TypedDocumentString(`
-    query verifyZkLoginSignature($bytes: Base64!, $signature: Base64!, $intentScope: ZkLoginIntentScope!, $author: SuiAddress!) {
+    query verifyZkLoginSignature($bytes: Base64!, $signature: Base64!, $intentScope: ZkLoginIntentScope!, $author: MysAddress!) {
   verifyZkloginSignature(
     bytes: $bytes
     signature: $signature

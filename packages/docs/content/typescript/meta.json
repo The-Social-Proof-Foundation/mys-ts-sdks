@@ -1,13 +1,13 @@
 {
 	"root": true,
-	"title": "Sui SDK",
-	"description": "TypeScript interfaces for Sui",
+	"title": "MySocial SDK",
+	"description": "TypeScript interfaces for MySocial",
 	"pages": [
 		"index",
 		"install",
-		"hello-sui",
+		"hello-mys",
 		"faucet",
-		"sui-client",
+		"mys-client",
 		"graphql",
 		"transaction-building",
 		"cryptography",

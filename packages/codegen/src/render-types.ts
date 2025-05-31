@@ -1,12 +1,13 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { normalizeSuiAddress } from '@mysten/sui/utils';
+import { normalizeMysAddress } from '@socialproof/mys/utils';
 
 import type { DeserializedModule, TypeSignature } from './types.js';
 
-const MOVE_STDLIB_ADDRESS = normalizeSuiAddress('0x1');
-const SUI_FRAMEWORK_ADDRESS = normalizeSuiAddress('0x2');
+const MOVE_STDLIB_ADDRESS = normalizeMysAddress('0x1');
+const MYS_FRAMEWORK_ADDRESS = normalizeMysAddress('0x2');
 
 type TypeSignatureFormat = 'typescriptArg' | 'bcs' | 'typeTag';
 interface RenderTypeSignatureOptions {
@@ -155,7 +156,7 @@ function isPureDataType(type: number, options: RenderTypeSignatureOptions) {
 	const typeName = options.moduleDef.identifiers[handle.name];
 
 	const moduleHandle = options.moduleDef.module_handles[handle.module];
-	const moduleAddress = normalizeSuiAddress(
+	const moduleAddress = normalizeMysAddress(
 		options.moduleDef.address_identifiers[moduleHandle.address],
 	);
 	const moduleName = options.moduleDef.identifiers[moduleHandle.name];
@@ -170,7 +171,7 @@ function isPureDataType(type: number, options: RenderTypeSignatureOptions) {
 		}
 	}
 
-	if (moduleAddress === SUI_FRAMEWORK_ADDRESS) {
+	if (moduleAddress === MYS_FRAMEWORK_ADDRESS) {
 		if (moduleName === 'object' && typeName === 'ID') {
 			return true;
 		}
@@ -188,7 +189,7 @@ function renderDataType(
 	const typeName = options.moduleDef.identifiers[handle.name];
 
 	const moduleHandle = options.moduleDef.module_handles[handle.module];
-	const moduleAddress = normalizeSuiAddress(
+	const moduleAddress = normalizeMysAddress(
 		options.moduleDef.address_identifiers[moduleHandle.address],
 	);
 	const moduleName = options.moduleDef.identifiers[moduleHandle.name];
@@ -196,11 +197,11 @@ function renderDataType(
 	if (options.format === 'typeTag') {
 		if (typeParameters.length === 0) {
 			// eslint-disable-next-line no-template-curly-in-string
-			return `${moduleAddress === normalizeSuiAddress('0x0') ? '${packageAddress}' : moduleAddress}::${moduleName}::${typeName}`;
+			return `${moduleAddress === normalizeMysAddress('0x0') ? '${packageAddress}' : moduleAddress}::${moduleName}::${typeName}`;
 		}
 
 		// eslint-disable-next-line no-template-curly-in-string
-		return `${moduleAddress === normalizeSuiAddress('0x0') ? '${packageAddress}' : moduleAddress}::${moduleName}::${typeName}<${typeParameters.map((type) => renderTypeSignature(type, options)).join(', ')}>`;
+		return `${moduleAddress === normalizeMysAddress('0x0') ? '${packageAddress}' : moduleAddress}::${moduleName}::${typeName}<${typeParameters.map((type) => renderTypeSignature(type, options)).join(', ')}>`;
 	}
 
 	if (moduleAddress === MOVE_STDLIB_ADDRESS) {
@@ -230,7 +231,7 @@ function renderDataType(
 		}
 	}
 
-	if (moduleAddress === SUI_FRAMEWORK_ADDRESS) {
+	if (moduleAddress === MYS_FRAMEWORK_ADDRESS) {
 		if (moduleName === 'object' && typeName === 'ID') {
 			switch (options.format) {
 				case 'typescriptArg':

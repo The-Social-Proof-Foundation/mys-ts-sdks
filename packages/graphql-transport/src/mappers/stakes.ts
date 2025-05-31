@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { DelegatedStake } from '@mysten/sui/client';
+import type { DelegatedStake } from '@socialproof/mys/client';
 
 import type { Rpc_Stake_FieldsFragment } from '../generated/queries.js';
 
@@ -20,7 +21,7 @@ export function mapGraphQLStakeToRpcStake(stakes: Rpc_Stake_FieldsFragment[]): D
 
 		const delegatedStake = delegatedStakes.get(pool)!;
 		delegatedStake.stakes.push({
-			stakedSuiId: stake.address,
+			stakedMysId: stake.address,
 			stakeRequestEpoch: stake.requestedEpoch?.epochId.toString()!,
 			stakeActiveEpoch: stake.activatedEpoch?.epochId.toString()!,
 			principal: stake.principal?.value,

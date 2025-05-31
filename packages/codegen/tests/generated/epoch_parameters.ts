@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysten/sui/bcs';
-import { type Transaction } from '@mysten/sui/transactions';
+import { bcs } from '@socialproof/mys/bcs';
+import { type Transaction } from '@socialproof/mys/transactions';
 import { normalizeMoveArguments, type RawTransactionArgument } from './utils/index.js';
 export function EpochParams() {
 	return bcs.struct('EpochParams', {

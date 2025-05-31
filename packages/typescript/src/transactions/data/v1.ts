@@ -1,7 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64, toBase64 } from '@mysten/bcs';
+import { fromBase64, toBase64 } from '@socialproof/bcs';
 import type { GenericSchema, InferInput, InferOutput } from 'valibot';
 import {
 	array,
@@ -98,7 +99,7 @@ export const TypeTag: GenericSchema<TypeTagType> = union([
 	object({ u256: nullable(literal(true)) }),
 ]);
 
-// https://github.com/MystenLabs/sui/blob/cea8742e810142a8145fd83c4c142d61e561004a/external-crates/move/crates/move-core-types/src/language_storage.rs#L140-L147
+// https://github.com/The-Social-Proof-Foundation/mys-core/blob/cea8742e810142a8145fd83c4c142d61e561004a/external-crates/move/crates/move-core-types/src/language_storage.rs#L140-L147
 export const StructTag: GenericSchema<StructTagType> = object({
 	address: string(),
 	module: string(),

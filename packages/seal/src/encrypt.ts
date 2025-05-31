@@ -1,8 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromHex } from '@mysten/bcs';
-import { isValidSuiObjectId } from '@mysten/sui/utils';
+import { fromHex } from '@socialproof/bcs';
+import { isValidMysObjectId } from '@socialproof/mys/utils';
 import { split as externalSplit } from 'shamir-secret-sharing';
 
 import type { IBEEncryptions } from './bcs.js';
@@ -52,7 +53,7 @@ export async function encrypt({
 		threshold === 0 ||
 		keyServers.length > MAX_U8 ||
 		threshold > MAX_U8 ||
-		!isValidSuiObjectId(packageId)
+		!isValidMysObjectId(packageId)
 	) {
 		throw new UserError(
 			`Invalid key servers or threshold ${threshold} for ${keyServers.length} key servers for package ${packageId}`,

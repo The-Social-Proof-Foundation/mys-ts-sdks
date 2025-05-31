@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { resolve } from 'path';
@@ -10,12 +11,12 @@ declare module 'vitest' {
 		localnetPort: number;
 		graphqlPort: number;
 		faucetPort: number;
-		suiToolsContainerId: string;
+		mysToolsContainerId: string;
 	}
 }
 
-const SUI_TOOLS_TAG =
-	process.env.SUI_TOOLS_TAG || process.arch === 'arm64'
+const MYS_TOOLS_TAG =
+	process.env.MYS_TOOLS_TAG || process.arch === 'arm64'
 		? '28dc33fc8fc43e50819c42c22b0d557b889c107e-arm64'
 		: '28dc33fc8fc43e50819c42c22b0d557b889c107e';
 
@@ -27,7 +28,7 @@ export default async function setup({ provide }: GlobalSetupContext) {
 		.withEnvironment({
 			POSTGRES_USER: 'postgres',
 			POSTGRES_PASSWORD: 'postgrespw',
-			POSTGRES_DB: 'sui_indexer_v2',
+			POSTGRES_DB: 'mys_indexer_v2',
 		})
 		.withCommand(['-c', 'max_connections=500'])
 
@@ -36,9 +37,9 @@ export default async function setup({ provide }: GlobalSetupContext) {
 		.withPullPolicy(PullPolicy.alwaysPull())
 		.start();
 
-	const localnet = await new GenericContainer(`mysten/sui-tools:${SUI_TOOLS_TAG}`)
+	const localnet = await new GenericContainer(`mysten/mys-tools:${MYS_TOOLS_TAG}`)
 		.withCommand([
-			'sui',
+			'mys',
 			'start',
 			'--with-faucet',
 			'--force-regenesis',
@@ -46,7 +47,7 @@ export default async function setup({ provide }: GlobalSetupContext) {
 			'--pg-port',
 			'5432',
 			'--pg-db-name',
-			'sui_indexer_v2',
+			'mys_indexer_v2',
 			'--pg-host',
 			pg.getIpAddress(network.getName()),
 			'--pg-user',
@@ -70,5 +71,5 @@ export default async function setup({ provide }: GlobalSetupContext) {
 	provide('faucetPort', localnet.getMappedPort(9123));
 	provide('localnetPort', localnet.getMappedPort(9000));
 	provide('graphqlPort', localnet.getMappedPort(9125));
-	provide('suiToolsContainerId', localnet.getId());
+	provide('mysToolsContainerId', localnet.getId());
 }

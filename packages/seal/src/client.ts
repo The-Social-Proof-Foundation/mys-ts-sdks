@@ -1,4 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
+// Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
 import { EncryptedObject } from './bcs.js';
@@ -50,11 +51,11 @@ export interface KeyServerConfig {
 }
 
 export interface SealClientOptions extends SealClientExtensionOptions {
-	suiClient: SealCompatibleClient;
+	mysClient: SealCompatibleClient;
 }
 
 export class SealClient {
-	#suiClient: SealCompatibleClient;
+	#mysClient: SealCompatibleClient;
 	#configs: Map<string, KeyServerConfig>;
 	#keyServers: Promise<Map<string, KeyServer>> | null = null;
 	#verifyKeyServers: boolean;
@@ -64,7 +65,7 @@ export class SealClient {
 	#totalWeight: number;
 
 	constructor(options: SealClientOptions) {
-		this.#suiClient = options.suiClient;
+		this.#mysClient = options.mysClient;
 
 		if (
 			new Set(options.serverConfigs.map((s) => s.objectId)).size !== options.serverConfigs.length
@@ -94,7 +95,7 @@ export class SealClient {
 			name: 'seal' as const,
 			register: (client: SealCompatibleClient) => {
 				return new SealClient({
-					suiClient: client,
+					mysClient: client,
 					...options,
 				});
 			},
@@ -241,7 +242,7 @@ export class SealClient {
 	async #loadKeyServers(): Promise<Map<string, KeyServer>> {
 		const keyServers = await retrieveKeyServers({
 			objectIds: [...this.#configs].map(([objectId]) => objectId),
-			client: this.#suiClient,
+			client: this.#mysClient,
 		});
 
 		if (keyServers.length === 0) {
