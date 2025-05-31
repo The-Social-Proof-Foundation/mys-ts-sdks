@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { MysClient } from '@mysocial/mys/client';
-import type { TransactionObjectArgument } from '@mysocial/mys/transactions';
+import type { MysClient } from '@socialproof/mys/client';
+import type { TransactionObjectArgument } from '@socialproof/mys/transactions';
 
 import type { BaseRulePackageIds } from '../constants.js';
 

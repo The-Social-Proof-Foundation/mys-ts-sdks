@@ -1,7 +1,7 @@
 // Copyright (c) Mysten Labs, Inc.
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { normalizeMysAddress } from '@mysocial/mys/utils';
+import { normalizeMysAddress } from '@socialproof/mys/utils';
 
 import { BalanceManagerContract } from '../transactions/balanceManager.js';
 import type { BalanceManager, Environment } from '../types/index.js';

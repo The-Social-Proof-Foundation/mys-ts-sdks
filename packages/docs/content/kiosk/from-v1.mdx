@@ -22,8 +22,8 @@ The following example is from the original Kiosk SDK V1 documentation.
 ### Before
 
 ```typescript
-import { placeAndList } from '@mysocial/kiosk';
-import { Transaction } from '@mysocial/sui/transactions';
+import { placeAndList } from '@socialproof/kiosk';
+import { Transaction } from '@socialproof/sui/transactions';
 
 const placeAndListToKiosk = async () => {
 	const kiosk = 'SomeKioskId';
@@ -80,8 +80,8 @@ The following example is from the original Kiosk SDK V1 documentation.
 ### Before
 
 ```typescript
-import { createKioskAndShare } from '@mysocial/kiosk';
-import { Transaction } from '@mysocial/sui/transactions';
+import { createKioskAndShare } from '@socialproof/kiosk';
+import { Transaction } from '@socialproof/sui/transactions';
 
 const createKiosk = async () => {
 	const accountAddress = '0xSomeSuiAddress';
@@ -127,8 +127,8 @@ The following example is from the original Kiosk SDK V1 documentation.
 ### Before
 
 ```typescript
-import { queryTransferPolicy, purchaseAndResolvePolicies, place, testnetEnvironment } from '@mysocial/kiosk';
-import { SuiClient } from '@mysocial/sui/client';
+import { queryTransferPolicy, purchaseAndResolvePolicies, place, testnetEnvironment } from '@socialproof/kiosk';
+import { SuiClient } from '@socialproof/sui/client';
 
 const client = new SuiClient(
   url: 'https://fullnode.testnet.sui.io:443',
@@ -246,8 +246,8 @@ import {
 	createTransferPolicy,
 	percentageToBasisPoints,
 	testnetEnvironment,
-} from '@mysocial/kiosk';
-import { Transaction } from '@mysocial/sui/transactions';
+} from '@socialproof/kiosk';
+import { Transaction } from '@socialproof/sui/transactions';
 
 // Attaches a royalty rule of 1% or 0.1 SUI (whichever is bigger)
 // as well as a kiosk lock, making the objects tradeable only from/to a kiosk.

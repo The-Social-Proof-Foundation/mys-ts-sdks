@@ -5,7 +5,7 @@
 ### Patch Changes
 
 - Updated dependencies [ec519fc]
-  - @mysocial/mys@1.30.1
+  - @socialproof/mys@1.30.1
 
 ## 0.1.0
 
@@ -23,7 +23,7 @@
 - Updated dependencies [2456052]
 - Updated dependencies [2456052]
 - Updated dependencies [2456052]
-  - @mysocial/mys@1.30.0
+  - @socialproof/mys@1.30.0
 
 ## 0.0.21
 
@@ -31,7 +31,7 @@
 
 - Updated dependencies [7e1c525]
   - @mysten/bcs@1.6.1
-  - @mysocial/mys@1.29.1
+  - @socialproof/mys@1.29.1
 
 ## 0.0.20
 
@@ -42,28 +42,28 @@
 - Updated dependencies [7d66a32]
 - Updated dependencies [eb91fba]
 - Updated dependencies [19a8045]
-  - @mysocial/mys@1.29.0
+  - @socialproof/mys@1.29.0
 
 ## 0.0.19
 
 ### Patch Changes
 
 - Updated dependencies [9a94aea]
-  - @mysocial/mys@1.28.2
+  - @socialproof/mys@1.28.2
 
 ## 0.0.18
 
 ### Patch Changes
 
 - Updated dependencies [3cd4e53]
-  - @mysocial/mys@1.28.1
+  - @socialproof/mys@1.28.1
 
 ## 0.0.17
 
 ### Patch Changes
 
 - Updated dependencies [2705dc8]
-  - @mysocial/mys@1.28.0
+  - @socialproof/mys@1.28.0
 
 ## 0.0.16
 
@@ -79,7 +79,7 @@
 
 - 986c4e3: Add onError to storageNodeClientOptions
 - Updated dependencies [5cea435]
-  - @mysocial/mys@1.27.1
+  - @socialproof/mys@1.27.1
 
 ## 0.0.14
 
@@ -88,7 +88,7 @@
 - 4d13ef8: Implement experimental client extension support
 - Updated dependencies [4d13ef8]
 - Updated dependencies [4d13ef8]
-  - @mysocial/mys@1.27.0
+  - @socialproof/mys@1.27.0
 
 ## 0.0.13
 
@@ -124,7 +124,7 @@
 - 7ba32a4: update testnet contract ids
 - Updated dependencies [7ba32a4]
 - Updated dependencies [c3a788c]
-  - @mysocial/mys@1.26.1
+  - @socialproof/mys@1.26.1
   - @mysten/bcs@1.6.0
 
 ## 0.0.8
@@ -155,7 +155,7 @@
 ### Patch Changes
 
 - Updated dependencies [906dd14]
-  - @mysocial/mys@1.26.0
+  - @socialproof/mys@1.26.0
 
 ## 0.0.4
 
@@ -169,7 +169,7 @@
 ### Patch Changes
 
 - Updated dependencies [e8b5d04]
-  - @mysocial/mys@1.25.0
+  - @socialproof/mys@1.25.0
 
 ## 0.0.2
 
@@ -184,5 +184,5 @@
 - f81d84d: initial release
 - Updated dependencies [cf3d12d]
 - Updated dependencies [f81d84d]
-  - @mysocial/mys@1.24.0
+  - @socialproof/mys@1.24.0
   - @mysten/walrus-wasm@0.0.1

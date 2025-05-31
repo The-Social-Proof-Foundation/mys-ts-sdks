@@ -1,9 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import type { PublicKey, SignatureFlag } from '@mysocial/mys/cryptography';
-import { SIGNATURE_FLAG_TO_SCHEME, Signer } from '@mysocial/mys/cryptography';
-import { fromBase64, toBase64 } from '@mysocial/mys/utils';
+import type { PublicKey, SignatureFlag } from '@socialproof/mys/cryptography';
+import { SIGNATURE_FLAG_TO_SCHEME, Signer } from '@socialproof/mys/cryptography';
+import { fromBase64, toBase64 } from '@socialproof/mys/utils';
 
 import { getConcatenatedSignature } from '../utils/utils.js';
 import type { AwsClientOptions } from './aws-client.js';

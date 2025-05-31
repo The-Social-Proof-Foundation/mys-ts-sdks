@@ -1,5 +1,5 @@
 {
-	"name": "@mysocial/signers",
+	"name": "@socialproof/signers",
 	"version": "0.2.10",
 	"description": "A collection of signers for various providers",
 	"license": "Apache-2.0",
@@ -57,7 +57,7 @@
 	},
 	"homepage": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks#readme",
 	"devDependencies": {
-		"@mysocial/build-scripts": "workspace:*",
+		"@socialproof/build-scripts": "workspace:*",
 		"@types/node": "^22.13.17",
 		"dotenv": "^16.4.5",
 		"typescript": "^5.8.2",
@@ -65,8 +65,8 @@
 	},
 	"dependencies": {
 		"@google-cloud/kms": "^4.5.0",
-		"@mysocial/ledgerjs-hw-app-mys": "workspace:*",
-		"@mysocial/mys": "workspace:*",
+		"@socialproof/ledgerjs-hw-app-mys": "workspace:*",
+		"@socialproof/mys": "workspace:*",
 		"@noble/curves": "^1.8.1",
 		"@noble/hashes": "^1.7.1",
 		"asn1-ts": "^8.0.2"

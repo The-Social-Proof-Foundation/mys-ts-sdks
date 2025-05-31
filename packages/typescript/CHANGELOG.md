@@ -1,4 +1,4 @@
-# @mysocial/mys.js
+# @socialproof/mys.js
 
 ## 1.30.1
 
@@ -151,7 +151,7 @@
 
 ### Minor Changes
 
-- 539168a: expose isArgument util from @mysocial/mys/transactions
+- 539168a: expose isArgument util from @socialproof/mys/transactions
 
 ### Patch Changes
 
@@ -207,9 +207,9 @@
 ### Minor Changes
 
 - ec2dc7f: Add legacyAddress flag to zklogin methods that generate addresses
-- ec2dc7f: All functionality from `@mysten/zklogin` has been moved to `@mysocial/mys/zklogin`
+- ec2dc7f: All functionality from `@mysten/zklogin` has been moved to `@socialproof/mys/zklogin`
 
-  For most methods, simply replace the `@mysten/zklogin` import with `@mysocial/mys/zklogin`
+  For most methods, simply replace the `@mysten/zklogin` import with `@socialproof/mys/zklogin`
 
   2 Methods require one small additional change:
 
@@ -217,8 +217,8 @@
   true for backwards compatibility:
 
   ```diff
-  - import { computeZkLoginAddress, jwtToAddress } from '@mysocial/zklogin';
-  + import { computeZkLoginAddress, jwtToAddress } from '@mysocial/mys/zklogin';
+  - import { computeZkLoginAddress, jwtToAddress } from '@socialproof/zklogin';
+  + import { computeZkLoginAddress, jwtToAddress } from '@socialproof/mys/zklogin';
 
     const address = jwtToAddress(
      jwtAsString,
@@ -475,9 +475,9 @@
 
 ### Major Changes
 
-- a92b03de42: The Typescript SDK has been renamed to `@mysocial/mys` and includes many new features
+- a92b03de42: The Typescript SDK has been renamed to `@socialproof/mys` and includes many new features
   and breaking changes. See the
-  [full migration guide](https://sdk.mystenlabs.com/typescript/migrations/mys-1.0) for details on
+  [full migration guide](https://sdk.mysocial.network/typescript/migrations/mys-1.0) for details on
   how to upgrade.
 
 ### Patch Changes
@@ -581,7 +581,7 @@
 
 ### Patch Changes
 
-- dd362ec1d6: Update docs url to sdk.mystenlabs.com
+- dd362ec1d6: Update docs url to sdk.mysocial.network
 - Updated dependencies [dd362ec1d6]
   - @mysten/bcs@0.9.1
 
@@ -610,7 +610,7 @@
   MysHTTPTransport (eg, using the `ws` package)
 
   ```typescript
-  import { getFullnodeUrl, MysClient, MysHTTPTransport } from '@mysocial/mys.js/client';
+  import { getFullnodeUrl, MysClient, MysHTTPTransport } from '@socialproof/mys.js/client';
   import { WebSocket } from 'ws';
 
   new MysClient({
@@ -729,7 +729,7 @@
 
 ### Minor Changes
 
-- fd8589806: Remove all previously deprecated exports from @mysocial/mys.js
+- fd8589806: Remove all previously deprecated exports from @socialproof/mys.js
 
 ## 0.41.2
 
@@ -748,7 +748,7 @@
 
 ### Minor Changes
 
-- ba8e3b857: Rename TransactionBlock generated type in @mysocial/mys.js/client to MysTransactionBlock
+- ba8e3b857: Rename TransactionBlock generated type in @socialproof/mys.js/client to MysTransactionBlock
   to avoid conflicting names in exports
 
 ### Patch Changes
@@ -759,7 +759,7 @@
 
 ### Minor Changes
 
-- a503cad34: Add exports to `@mysocial/mys.js/client` for rpc method params
+- a503cad34: Add exports to `@socialproof/mys.js/client` for rpc method params
 
 ### Patch Changes
 
@@ -785,15 +785,15 @@
 - cc6441f46: The Mys TS SDK has been broken up into a set of modular exports, and all exports from
   the root of the package have been deprecated. The following export paths have been added:
 
-  - `@mysocial/mys.js/client` - A client for interacting with Mys RPC nodes.
-  - `@mysocial/mys.js/bcs` - A BCS builder with pre-defined types for Mys.
-  - `@mysocial/mys.js/transaction` - Utilities for building and interacting with transactions.
-  - `@mysocial/mys.js/keypairs/*` - Modular exports for specific KeyPair implementations.
-  - `@mysocial/mys.js/verify` - Methods for verifying transactions and messages.
-  - `@mysocial/mys.js/cryptography` - Shared types and classes for cryptography.
-  - `@mysocial/mys.js/multisig` - Utilities for working with multisig signatures.
-  - `@mysocial/mys.js/utils` - Utilities for formatting and parsing various Mys types.
-  - `@mysocial/mys.js/faucet`- Methods for requesting mys from a faucet.
+  - `@socialproof/mys.js/client` - A client for interacting with Mys RPC nodes.
+  - `@socialproof/mys.js/bcs` - A BCS builder with pre-defined types for Mys.
+  - `@socialproof/mys.js/transaction` - Utilities for building and interacting with transactions.
+  - `@socialproof/mys.js/keypairs/*` - Modular exports for specific KeyPair implementations.
+  - `@socialproof/mys.js/verify` - Methods for verifying transactions and messages.
+  - `@socialproof/mys.js/cryptography` - Shared types and classes for cryptography.
+  - `@socialproof/mys.js/multisig` - Utilities for working with multisig signatures.
+  - `@socialproof/mys.js/utils` - Utilities for formatting and parsing various Mys types.
+  - `@socialproof/mys.js/faucet`- Methods for requesting mys from a faucet.
 
   As part of this refactor we are deprecating a number of existing APIs:
 
@@ -802,7 +802,7 @@
     Signing in verifying has been moved to the KeyPair classes, and the
     `signAndExecuteTransactionBlock` method has been moved to the new `MysClient`.
   - The `superstruct` type definitions for types used by JsonRPCProvider are being replaced with
-    generated types exported from `@mysocial/mys.js/client`. The new type definitions are pure
+    generated types exported from `@socialproof/mys.js/client`. The new type definitions are pure
     typescript types and can't be used for runtime validation. By generating these as types, it will
     be easier to keep them in sync with the RPC definitions and avoid discrepancies between the type
     definitions in the SDK and the data returned by RPC methods.
@@ -832,8 +832,8 @@
   provider.
 
   ```diff
-  - import { JsonRpcProvider, devnetConnection } from '@mysocial/mys.js';
-  + import { MysClient, getFullnodeUrl } from '@mysocial/mys.js/client';
+  - import { JsonRpcProvider, devnetConnection } from '@socialproof/mys.js';
+  + import { MysClient, getFullnodeUrl } from '@socialproof/mys.js/client';
 
   - const provider = new JsonRpcProvider(localnetConnection);
   + const client = new MysClient({ url: getFullnodeUrl('localnet')});
@@ -851,10 +851,10 @@
   -    RawSigner,
   -    TransactionBlock,
   -    localnetConnection,
-  - } from '@mysocial/mys.js';
-  + import { Ed25519Keypair } from '@mysocial/mys.js/keypairs/ed25519';
-  + import { MysClient, getFullnodeUrl } from '@mysocial/mys.js/client';
-  + import { TransactionBlock } from '@mysocial/mys.js/transactions';
+  - } from '@socialproof/mys.js';
+  + import { Ed25519Keypair } from '@socialproof/mys.js/keypairs/ed25519';
+  + import { MysClient, getFullnodeUrl } from '@socialproof/mys.js/client';
+  + import { TransactionBlock } from '@socialproof/mys.js/transactions';
 
     const keypair = new Ed25519Keypair()
   - const provider = new JsonRpcProvider(localnetConnection);
@@ -872,12 +872,12 @@
   #### Migrating faucet requests
 
   The ability to request Mys from a faucet was not added to `MysClient`, instead you will need to
-  use a method `@mysocial/mys.js/faucet` to make these requests
+  use a method `@socialproof/mys.js/faucet` to make these requests
 
   ```diff
-  - import { JsonRpcProvider, devnetConnection } from '@mysocial/mys.js';
+  - import { JsonRpcProvider, devnetConnection } from '@socialproof/mys.js';
   - const provider = new JsonRpcProvider(devnetConnection);
-  + import { requestMysFromFaucetV0, getFaucetHost } from '@mysocial/mys.js/faucet';
+  + import { requestMysFromFaucetV0, getFaucetHost } from '@socialproof/mys.js/faucet';
 
   - await provider.requestMysFromFaucet(
   -  '<YOUR MYS ADDRESS>'
@@ -888,7 +888,7 @@
   +});
   ```
 
-- 001148443: Introduce new `@mysocial/mys.js/faucet` export, which should be used for all faucet
+- 001148443: Introduce new `@socialproof/mys.js/faucet` export, which should be used for all faucet
   interactions. This deprecates the previous `requestMysFromFaucet` APIs that existed on the
   `JsonRpcProvider` and `Signer` classes.
 

@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { useMysClientContext } from '@mysocial/dapp-kit';
+import { useMysClientContext } from '@socialproof/dapp-kit';
 import { useEffect } from 'react';
 
 import { isEnokiNetwork } from '../src/index.js';

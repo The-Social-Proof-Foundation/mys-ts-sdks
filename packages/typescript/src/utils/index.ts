@@ -25,7 +25,7 @@ export {
 	toBase64,
 	fromBase58,
 	toBase58,
-} from '@mysocial/bcs';
+} from '@socialproof/bcs';
 export { isValidMysNSName, normalizeMysNSName } from './mysns.js';
 
 export {

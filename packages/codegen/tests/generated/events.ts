@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/mys/bcs';
-import { type Transaction } from '@mysocial/mys/transactions';
+import { bcs } from '@socialproof/mys/bcs';
+import { type Transaction } from '@socialproof/mys/transactions';
 import { normalizeMoveArguments, type RawTransactionArgument } from './utils/index.js';
 export function BlobRegistered() {
 	return bcs.struct('BlobRegistered', {

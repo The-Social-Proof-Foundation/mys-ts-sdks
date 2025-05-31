@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { createDAppKit } from '../src/core';
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 import type { Preview } from '@storybook/web-components';
 
 import '../src/components/dapp-kit-connect-button.js';

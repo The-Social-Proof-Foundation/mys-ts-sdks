@@ -5,7 +5,7 @@
 import type {
 	MysSignPersonalMessageInput,
 	MysSignPersonalMessageOutput,
-} from '@mysocial/wallet-standard';
+} from '@socialproof/wallet-standard';
 import type { UseMutationOptions, UseMutationResult } from '@tanstack/react-query';
 import { useMutation } from '@tanstack/react-query';
 

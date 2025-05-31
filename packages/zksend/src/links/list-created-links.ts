@@ -2,11 +2,11 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/mys/bcs';
-import type { MysClient } from '@mysocial/mys/client';
-import { MysGraphQLClient } from '@mysocial/mys/graphql';
-import { graphql } from '@mysocial/mys/graphql/schemas/latest';
-import { fromBase64, normalizeMysAddress } from '@mysocial/mys/utils';
+import { bcs } from '@socialproof/mys/bcs';
+import type { MysClient } from '@socialproof/mys/client';
+import { MysGraphQLClient } from '@socialproof/mys/graphql';
+import { graphql } from '@socialproof/mys/graphql/schemas/latest';
+import { fromBase64, normalizeMysAddress } from '@socialproof/mys/utils';
 
 import { ZkSendLink } from './claim.js';
 import type { ZkBagContractOptions } from './zk-bag.js';
@@ -57,8 +57,8 @@ export async function listCreatedLinks({
 	const gqlClient = new MysGraphQLClient({
 		url:
 			network === 'testnet'
-				? 'https://mys-testnet.mystenlabs.com/graphql'
-				: 'https://mys-mainnet.mystenlabs.com/graphql',
+				? 'https://testnet.mysocial.network/graphql'
+				: 'https://mainnet.mysocial.network/graphql',
 		fetch: fetchFn,
 	});
 

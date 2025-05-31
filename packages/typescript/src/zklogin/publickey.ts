@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64, toBase64, toHex } from '@mysocial/bcs';
+import { fromBase64, toBase64, toHex } from '@socialproof/bcs';
 import { blake2b } from '@noble/hashes/blake2b';
 import { bytesToHex } from '@noble/hashes/utils';
 
@@ -243,7 +243,7 @@ async function graphqlVerifyZkLoginSignature({
 	signature,
 	intentScope,
 	client = new MysGraphQLClient({
-		url: 'https://mys-mainnet.mystenlabs.com/graphql',
+		url: 'https://mainnet.mysocial.network/graphql',
 	}),
 }: {
 	address: string;

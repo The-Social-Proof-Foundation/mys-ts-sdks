@@ -2,19 +2,19 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { toBase64 } from '@mysocial/bcs';
-import { bcs } from '@mysocial/mys/bcs';
-import type { Signer } from '@mysocial/mys/cryptography';
-import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
-import { isValidMysAddress, isValidMysObjectId } from '@mysocial/mys/utils';
-import { verifyPersonalMessageSignature } from '@mysocial/mys/verify';
+import { toBase64 } from '@socialproof/bcs';
+import { bcs } from '@socialproof/mys/bcs';
+import type { Signer } from '@socialproof/mys/cryptography';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import { isValidMysAddress, isValidMysObjectId } from '@socialproof/mys/utils';
+import { verifyPersonalMessageSignature } from '@socialproof/mys/verify';
 import { generateSecretKey, toPublicKey, toVerificationKey } from './elgamal.js';
 import {
 	ExpiredSessionKeyError,
 	InvalidPersonalMessageSignatureError,
 	UserError,
 } from './error.js';
-import type { ZkLoginCompatibleClient } from '@mysocial/mys/zklogin';
+import type { ZkLoginCompatibleClient } from '@socialproof/mys/zklogin';
 
 export const RequestFormat = bcs.struct('RequestFormat', {
 	ptb: bcs.vector(bcs.U8),

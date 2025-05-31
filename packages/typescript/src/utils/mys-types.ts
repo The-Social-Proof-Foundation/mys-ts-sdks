@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase58, splitGenericParameters } from '@mysocial/bcs';
+import { fromBase58, splitGenericParameters } from '@socialproof/bcs';
 
 import { isValidNamedPackage } from './move-registry.js';
 

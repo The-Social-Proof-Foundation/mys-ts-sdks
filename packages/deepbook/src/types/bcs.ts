@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/mys/bcs';
+import { bcs } from '@socialproof/mys/bcs';
 
 export const BcsOrder = bcs.struct('Order', {
 	orderId: bcs.u64(),

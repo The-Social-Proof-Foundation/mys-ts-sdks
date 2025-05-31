@@ -4,7 +4,7 @@
 
 import { tmpdir } from 'os';
 import path from 'path';
-import { fromBase64 } from '@mysocial/bcs';
+import { fromBase64 } from '@socialproof/bcs';
 import { describe, expect, it } from 'vitest';
 
 import { decodeMysPrivateKey } from '../../src/cryptography';

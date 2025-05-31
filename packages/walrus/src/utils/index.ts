@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { InferBcsType } from '@mysocial/bcs';
-import type { MysMoveNormalizedType } from '@mysocial/mys/client';
+import type { InferBcsType } from '@socialproof/bcs';
+import type { MysMoveNormalizedType } from '@socialproof/mys/client';
 
 import type { Committee } from '../contracts/committee.js';
 import type { EncodingType } from '../types.js';

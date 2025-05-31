@@ -2,9 +2,9 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/mys/bcs';
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import { Transaction } from '@mysocial/mys/transactions';
+import { bcs } from '@socialproof/mys/bcs';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import { Transaction } from '@socialproof/mys/transactions';
 import { act, renderHook, waitFor } from '@testing-library/react';
 import { expect, type Mock } from 'vitest';
 
@@ -15,7 +15,7 @@ import {
 import { useConnectWallet, useSignAndExecuteTransaction } from '../../src/index.js';
 import { mysFeatures } from '../mocks/mockFeatures.js';
 import { createWalletProviderContextWrapper, registerMockWallet } from '../test-utils.js';
-import { toBase58 } from '@mysocial/utils';
+import { toBase58 } from '@socialproof/utils';
 
 describe('useSignAndExecuteTransaction', () => {
 	test('throws an error when trying to sign and execute a transaction without a wallet connection', async () => {

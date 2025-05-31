@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { EnumInputShape } from '@mysocial/bcs';
+import type { EnumInputShape } from '@socialproof/bcs';
 import type { GenericSchema, InferInput, InferOutput } from 'valibot';
 import {
 	array,
@@ -23,7 +23,7 @@ import {
 } from 'valibot';
 
 import { BCSBytes, JsonU64, ObjectID, ObjectRef, MysAddress } from './internal.js';
-import type { Simplify } from '@mysocial/utils';
+import type { Simplify } from '@socialproof/utils';
 
 function enumUnion<T extends Record<string, GenericSchema<any>>>(options: T) {
 	return union(

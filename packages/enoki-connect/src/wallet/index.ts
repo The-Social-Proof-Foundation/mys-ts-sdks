@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64, toBase64 } from '@mysocial/mys/utils';
+import { fromBase64, toBase64 } from '@socialproof/mys/utils';
 import type {
 	IdentifierString,
 	StandardConnectFeature,
@@ -22,17 +22,17 @@ import type {
 	MysSignTransactionMethod,
 	Wallet,
 	WalletIcon,
-} from '@mysocial/wallet-standard';
+} from '@socialproof/wallet-standard';
 import {
 	getWallets,
 	ReadonlyWalletAccount,
 	MYS_DEVNET_CHAIN,
 	MYS_MAINNET_CHAIN,
 	MYS_TESTNET_CHAIN,
-} from '@mysocial/wallet-standard';
+} from '@socialproof/wallet-standard';
 import type { Emitter } from 'mitt';
 import mitt from 'mitt';
-import { DappPostMessageChannel, decodeJwtSession } from '@mysocial/window-wallet-core';
+import { DappPostMessageChannel, decodeJwtSession } from '@socialproof/window-wallet-core';
 
 export type SupportedNetwork = 'mainnet' | 'testnet' | 'devnet';
 
@@ -343,7 +343,7 @@ export async function registerEnokiConnectWallets({
 	publicAppSlugs,
 	dappName,
 	network = 'mainnet',
-	enokiApiUrl = 'https://api.enoki.mystenlabs.com',
+	enokiApiUrl = 'https://api.enoki.mysocial.network',
 }: {
 	publicAppSlugs: string[];
 	dappName: string;

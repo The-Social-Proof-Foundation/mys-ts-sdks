@@ -2,9 +2,9 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { MysTransactionBlockResponseOptions } from '@mysocial/mys/client';
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import { normalizeMysAddress } from '@mysocial/mys/utils';
+import type { MysTransactionBlockResponseOptions } from '@socialproof/mys/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import { normalizeMysAddress } from '@socialproof/mys/utils';
 
 import { ZkSendLink } from './claim.js';
 import { getContractIds } from './zk-bag.js';

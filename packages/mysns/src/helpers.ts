@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Transaction } from '@mysocial/mys/transactions';
-import { normalizeMysNSName } from '@mysocial/mys/utils';
+import type { Transaction } from '@socialproof/mys/transactions';
+import { normalizeMysNSName } from '@socialproof/mys/utils';
 
 export function isSubName(name: string): boolean {
 	return normalizeMysNSName(name, 'dot').split('.').length > 2;

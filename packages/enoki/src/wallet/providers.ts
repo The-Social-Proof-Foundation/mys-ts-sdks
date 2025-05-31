@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Wallet } from '@mysocial/wallet-standard';
+import type { Wallet } from '@socialproof/wallet-standard';
 
 import type { AuthProvider } from '../EnokiClient/type.js';
 

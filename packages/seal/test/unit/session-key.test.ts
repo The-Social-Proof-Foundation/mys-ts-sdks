@@ -4,15 +4,15 @@
 
 import { describe, expect, it } from 'vitest';
 import { SessionKey } from '../../src/session-key';
-import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
-import { MysGraphQLClient } from '@mysocial/mys/graphql';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import { MysGraphQLClient } from '@socialproof/mys/graphql';
 import { UserError } from '../../src/error';
 
 describe('Session key tests', () => {
 	const TESTNET_PACKAGE_ID = '0x9709d4ee371488c2bc09f508e98e881bd1d5335e0805d7e6a99edd54a7027954';
 	it('import and export session key', async () => {
 		const kp = Ed25519Keypair.generate();
-		const mysClient = new MysGraphQLClient({ url: 'https://mys-testnet.mystenlabs.com/graphql' });
+		const mysClient = new MysGraphQLClient({ url: 'https://testnet.mysocial.network/graphql' });
 		const sessionKey = new SessionKey({
 			address: kp.getPublicKey().toMysAddress(),
 			packageId: TESTNET_PACKAGE_ID,

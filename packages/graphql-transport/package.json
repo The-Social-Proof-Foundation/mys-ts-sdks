@@ -1,5 +1,5 @@
 {
-	"name": "@mysocial/graphql-transport",
+	"name": "@socialproof/graphql-transport",
 	"version": "0.2.57",
 	"description": "A GraphQL transport to allow MysClient to work with RPC 2.0",
 	"license": "Apache-2.0",
@@ -47,7 +47,7 @@
 		"@graphql-codegen/typescript": "4.1.6",
 		"@graphql-codegen/typescript-document-nodes": "4.0.16",
 		"@graphql-codegen/typescript-operations": "^4.6.0",
-		"@mysocial/build-scripts": "workspace:*",
+		"@socialproof/build-scripts": "workspace:*",
 		"@parcel/watcher": "^2.5.1",
 		"@types/node": "^22.13.17",
 		"graphql-config": "^5.0.3",
@@ -57,8 +57,8 @@
 	},
 	"dependencies": {
 		"@graphql-typed-document-node/core": "^3.2.0",
-		"@mysocial/bcs": "workspace:*",
-		"@mysocial/mys": "workspace:*",
+		"@socialproof/bcs": "workspace:*",
+		"@socialproof/mys": "workspace:*",
 		"graphql": "^16.9.0"
 	}
 }

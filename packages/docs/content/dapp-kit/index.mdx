@@ -31,8 +31,8 @@ following example. The props available on the providers are covered in more deta
 respective pages.
 
 ```tsx
-import { createNetworkConfig, SuiClientProvider, WalletProvider } from '@mysocial/dapp-kit';
-import { getFullnodeUrl } from '@mysocial/sui/client';
+import { createNetworkConfig, SuiClientProvider, WalletProvider } from '@socialproof/dapp-kit';
+import { getFullnodeUrl } from '@socialproof/sui/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 // Config options for the networks you want to connect to
@@ -63,10 +63,10 @@ accounts from your dApp. The components are built on top of
 
 To use the provided UI components, import the dApp Kit CSS stylesheet into your dApp. For more
 information regarding customization options, check out the respective documentation pages for the
-components and [themes](https://sdk.mystenlabs.com/dapp-kit/themes).
+components and [themes](https://sdk.mysocial.network/dapp-kit/themes).
 
 ```tsx
-import '@mysocial/dapp-kit/dist/index.css';
+import '@socialproof/dapp-kit/dist/index.css';
 ```
 
 ## Using hooks to make RPC calls
@@ -77,7 +77,7 @@ to use these query hooks, check out the
 [react-query documentation](https://tanstack.com/query/latest/docs/react/overview).
 
 ```tsx
-import { useSuiClientQuery } from '@mysocial/dapp-kit';
+import { useSuiClientQuery } from '@socialproof/dapp-kit';
 
 function MyComponent() {
 	const { data, isPending, error, refetch } = useSuiClientQuery('getOwnedObjects', {

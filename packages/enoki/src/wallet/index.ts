@@ -2,9 +2,9 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { MysClient } from '@mysocial/mys/client';
-import { Transaction } from '@mysocial/mys/transactions';
-import { fromBase64, toBase64 } from '@mysocial/mys/utils';
+import type { MysClient } from '@socialproof/mys/client';
+import { Transaction } from '@socialproof/mys/transactions';
+import { fromBase64, toBase64 } from '@socialproof/mys/utils';
 import type {
 	IdentifierArray,
 	IdentifierString,
@@ -21,8 +21,8 @@ import type {
 	MysSignTransactionFeature,
 	MysSignTransactionMethod,
 	Wallet,
-} from '@mysocial/wallet-standard';
-import { getWallets, ReadonlyWalletAccount } from '@mysocial/wallet-standard';
+} from '@socialproof/wallet-standard';
+import { getWallets, ReadonlyWalletAccount } from '@socialproof/wallet-standard';
 import type { Emitter } from 'mitt';
 import mitt from 'mitt';
 
@@ -287,7 +287,7 @@ export class EnokiWallet implements Wallet {
 	#validateChain(chain?: IdentifierString): asserts chain is (typeof this.chains)[number] {
 		if (!chain || !this.chains.includes(chain as (typeof this.chains)[number])) {
 			throw new Error(
-				`A valid Mys chain identifier was not provided in the request. Please report this issue to the dApp developer. Examples of valid Mys chain identifiers are 'mys:testnet' and 'mys:mainnet'. Consider using the '@mysocial/dapp-kit' package, which provides this value automatically.`,
+				`A valid Mys chain identifier was not provided in the request. Please report this issue to the dApp developer. Examples of valid Mys chain identifiers are 'mys:testnet' and 'mys:mainnet'. Consider using the '@socialproof/dapp-kit' package, which provides this value automatically.`,
 			);
 		}
 	}

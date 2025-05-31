@@ -25,7 +25,7 @@ import type {
 	GetZkLoginApiResponse,
 } from './type.js';
 
-const DEFAULT_API_URL = 'https://api.enoki.mystenlabs.com';
+const DEFAULT_API_URL = 'https://api.enoki.mysocial.network';
 const ZKLOGIN_HEADER = 'zklogin-jwt';
 
 export interface EnokiClientConfig {

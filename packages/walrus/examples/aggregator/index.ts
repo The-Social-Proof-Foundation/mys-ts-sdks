@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { serve } from '@hono/node-server';
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 import { Hono } from 'hono';
 
 import { BlobBlockedError, BlobNotCertifiedError, WalrusClient } from '../../src/index.js';

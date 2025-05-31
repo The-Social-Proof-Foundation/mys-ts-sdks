@@ -1,7 +1,7 @@
 // Copyright (c) Mysten Labs, Inc.
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { fromBase64, fromHex, toHex } from '@mysocial/bcs';
+import { fromBase64, fromHex, toHex } from '@socialproof/bcs';
 import { bls12_381 } from '@noble/curves/bls12-381';
 
 import { KeyServerMove } from './bcs.js';

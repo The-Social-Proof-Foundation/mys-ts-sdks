@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 
 import { WalrusClient } from '../../src/client.js';
 

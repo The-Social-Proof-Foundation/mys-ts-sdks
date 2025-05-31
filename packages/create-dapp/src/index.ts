@@ -97,8 +97,8 @@ async function collectFiles(template: string, dAppName: string) {
 				if (entry === 'package.json') {
 					const json = JSON.parse(content.toString());
 					json.name = dAppName;
-					json.dependencies['@mysocial/mys'] = dependencies['@mysocial/mys'];
-					json.dependencies['@mysocial/dapp-kit'] = dependencies['@mysocial/dapp-kit'];
+					json.dependencies['@socialproof/mys'] = dependencies['@socialproof/mys'];
+					json.dependencies['@socialproof/dapp-kit'] = dependencies['@socialproof/dapp-kit'];
 
 					content = Buffer.from(JSON.stringify(json, null, 2));
 				}

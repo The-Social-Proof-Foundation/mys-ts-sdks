@@ -1,10 +1,10 @@
 // Copyright (c) Mysten Labs, Inc.
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { bcs } from '@mysocial/mys/bcs';
-import type { MysClient } from '@mysocial/mys/client';
-import { Transaction } from '@mysocial/mys/transactions';
-import { normalizeMysAddress } from '@mysocial/mys/utils';
+import { bcs } from '@socialproof/mys/bcs';
+import type { MysClient } from '@socialproof/mys/client';
+import { Transaction } from '@socialproof/mys/transactions';
+import { normalizeMysAddress } from '@socialproof/mys/utils';
 
 import { BalanceManagerContract } from './transactions/balanceManager.js';
 import { DeepBookContract } from './transactions/deepbook.js';

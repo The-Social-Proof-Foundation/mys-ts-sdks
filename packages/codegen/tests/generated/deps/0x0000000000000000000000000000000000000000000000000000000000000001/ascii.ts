@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/mys/bcs';
+import { bcs } from '@socialproof/mys/bcs';
 export function String() {
 	return bcs.struct('String', {
 		bytes: bcs.vector(bcs.u8()),

@@ -4,7 +4,7 @@
 
 import { mkdir, readdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { normalizeMysAddress } from '@mysocial/mys/utils';
+import { normalizeMysAddress } from '@socialproof/mys/utils';
 import { MoveModuleBuilder } from './move-module-builder.js';
 
 export async function generatePackage({

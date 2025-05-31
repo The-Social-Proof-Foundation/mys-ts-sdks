@@ -1,5 +1,5 @@
 {
-	"name": "@mysocial/enoki",
+	"name": "@socialproof/enoki",
 	"version": "0.6.13",
 	"description": "TODO: Description",
 	"license": "Apache-2.0",
@@ -44,8 +44,8 @@
 	},
 	"homepage": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks#readme",
 	"devDependencies": {
-		"@mysocial/build-scripts": "workspace:*",
-		"@mysocial/dapp-kit": "workspace:*",
+		"@socialproof/build-scripts": "workspace:*",
+		"@socialproof/dapp-kit": "workspace:*",
 		"@tanstack/react-query": "^5.71.3",
 		"@types/node": "^22.13.17",
 		"@types/react": "^18.3.3",
@@ -57,9 +57,9 @@
 		"vite": "^6.2.5"
 	},
 	"dependencies": {
-		"@mysocial/signers": "workspace:*",
-		"@mysocial/mys": "workspace:*",
-		"@mysocial/wallet-standard": "workspace:*",
+		"@socialproof/signers": "workspace:*",
+		"@socialproof/mys": "workspace:*",
+		"@socialproof/wallet-standard": "workspace:*",
 		"@nanostores/react": "^1.0.0",
 		"idb-keyval": "^6.2.1",
 		"mitt": "^3.0.1",

@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/mys/bcs';
-import { type Transaction } from '@mysocial/mys/transactions';
+import { bcs } from '@socialproof/mys/bcs';
+import { type Transaction } from '@socialproof/mys/transactions';
 import { normalizeMoveArguments, type RawTransactionArgument } from './utils/index.js';
 import * as object_table from './deps/0x0000000000000000000000000000000000000000000000000000000000000002/object_table.js';
 import * as extended_field from './extended_field.js';

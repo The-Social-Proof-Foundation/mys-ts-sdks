@@ -1,9 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import type { MysClient } from '@mysocial/mys/client';
-import type { Transaction } from '@mysocial/mys/transactions';
-import { isValidMysNSName, normalizeMysNSName } from '@mysocial/mys/utils';
+import type { MysClient } from '@socialproof/mys/client';
+import type { Transaction } from '@socialproof/mys/transactions';
+import { isValidMysNSName, normalizeMysNSName } from '@socialproof/mys/utils';
 
 import { mainPackage } from './constants.js';
 import {

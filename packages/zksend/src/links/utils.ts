@@ -2,9 +2,9 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { ObjectOwner, MysObjectChange, MysTransactionBlockResponse } from '@mysocial/mys/client';
-import type { Transaction } from '@mysocial/mys/transactions';
-import { normalizeStructTag, normalizeMysAddress, parseStructTag } from '@mysocial/mys/utils';
+import type { ObjectOwner, MysObjectChange, MysTransactionBlockResponse } from '@socialproof/mys/client';
+import type { Transaction } from '@socialproof/mys/transactions';
+import { normalizeStructTag, normalizeMysAddress, parseStructTag } from '@socialproof/mys/utils';
 
 // eslint-disable-next-line import/no-cycle
 

@@ -5,9 +5,9 @@ import { execSync } from 'child_process';
 import { mkdtemp } from 'fs/promises';
 import { tmpdir } from 'os';
 import path from 'path';
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import { FaucetRateLimitError, getFaucetHost, requestMysFromFaucetV2 } from '@mysocial/mys/faucet';
-import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import { FaucetRateLimitError, getFaucetHost, requestMysFromFaucetV2 } from '@socialproof/mys/faucet';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
 import { retry } from 'ts-retry-promise';
 
 //@ts-ignore-next-line
@@ -44,7 +44,7 @@ export function getClient(): MysClient {
 	});
 }
 
-// TODO: expose these testing utils from @mysocial/mys
+// TODO: expose these testing utils from @socialproof/mys
 export async function setupMysClient() {
 	const keypair = Ed25519Keypair.generate();
 	const address = keypair.getPublicKey().toMysAddress();

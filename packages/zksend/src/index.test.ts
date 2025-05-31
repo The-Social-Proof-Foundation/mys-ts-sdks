@@ -3,12 +3,12 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { describe } from 'node:test';
-import { getFullnodeUrl, MysClient, MysObjectChange } from '@mysocial/mys/client';
-import { decodeMysPrivateKey, Keypair } from '@mysocial/mys/cryptography';
-import { getFaucetHost, requestMysFromFaucetV2 } from '@mysocial/mys/faucet';
-import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
-import { Transaction } from '@mysocial/mys/transactions';
-import { MIST_PER_MYS, toBase64 } from '@mysocial/mys/utils';
+import { getFullnodeUrl, MysClient, MysObjectChange } from '@socialproof/mys/client';
+import { decodeMysPrivateKey, Keypair } from '@socialproof/mys/cryptography';
+import { getFaucetHost, requestMysFromFaucetV2 } from '@socialproof/mys/faucet';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import { Transaction } from '@socialproof/mys/transactions';
+import { MIST_PER_MYS, toBase64 } from '@socialproof/mys/utils';
 import { beforeAll, expect, test } from 'vitest';
 
 import {

@@ -1,11 +1,11 @@
-# @mysocial/mysns
+# @socialproof/mysns
 
 ## 0.7.17
 
 ### Patch Changes
 
 - Updated dependencies [ec519fc]
-  - @mysocial/mys@1.30.1
+  - @socialproof/mys@1.30.1
 
 ## 0.7.16
 
@@ -17,13 +17,13 @@
 - Updated dependencies [2456052]
 - Updated dependencies [2456052]
 - Updated dependencies [2456052]
-  - @mysocial/mys@1.30.0
+  - @socialproof/mys@1.30.0
 
 ## 0.7.15
 
 ### Patch Changes
 
-- @mysocial/mys@1.29.1
+- @socialproof/mys@1.29.1
 
 ## 0.7.14
 
@@ -32,35 +32,35 @@
 - Updated dependencies [7d66a32]
 - Updated dependencies [eb91fba]
 - Updated dependencies [19a8045]
-  - @mysocial/mys@1.29.0
+  - @socialproof/mys@1.29.0
 
 ## 0.7.13
 
 ### Patch Changes
 
 - Updated dependencies [9a94aea]
-  - @mysocial/mys@1.28.2
+  - @socialproof/mys@1.28.2
 
 ## 0.7.12
 
 ### Patch Changes
 
 - Updated dependencies [3cd4e53]
-  - @mysocial/mys@1.28.1
+  - @socialproof/mys@1.28.1
 
 ## 0.7.11
 
 ### Patch Changes
 
 - Updated dependencies [2705dc8]
-  - @mysocial/mys@1.28.0
+  - @socialproof/mys@1.28.0
 
 ## 0.7.10
 
 ### Patch Changes
 
 - Updated dependencies [5cea435]
-  - @mysocial/mys@1.27.1
+  - @socialproof/mys@1.27.1
 
 ## 0.7.9
 
@@ -68,7 +68,7 @@
 
 - Updated dependencies [4d13ef8]
 - Updated dependencies [4d13ef8]
-  - @mysocial/mys@1.27.0
+  - @socialproof/mys@1.27.0
 
 ## 0.7.8
 
@@ -76,28 +76,28 @@
 
 - 7ba32a4: update dependencies
 - Updated dependencies [7ba32a4]
-  - @mysocial/mys@1.26.1
+  - @socialproof/mys@1.26.1
 
 ## 0.7.7
 
 ### Patch Changes
 
 - Updated dependencies [906dd14]
-  - @mysocial/mys@1.26.0
+  - @socialproof/mys@1.26.0
 
 ## 0.7.6
 
 ### Patch Changes
 
 - Updated dependencies [e8b5d04]
-  - @mysocial/mys@1.25.0
+  - @socialproof/mys@1.25.0
 
 ## 0.7.5
 
 ### Patch Changes
 
 - Updated dependencies [cf3d12d]
-  - @mysocial/mys@1.24.0
+  - @socialproof/mys@1.24.0
 
 ## 0.7.4
 
@@ -106,14 +106,14 @@
 - f7980e8: Bump axios version
 - Updated dependencies [8baac61]
 - Updated dependencies [8baac61]
-  - @mysocial/mys@1.23.0
+  - @socialproof/mys@1.23.0
 
 ## 0.7.3
 
 ### Patch Changes
 
 - Updated dependencies [03975f4]
-  - @mysocial/mys@1.22.0
+  - @socialproof/mys@1.22.0
 
 ## 0.7.2
 
@@ -125,7 +125,7 @@
 
 ### Patch Changes
 
-- @mysocial/mys@1.21.2
+- @socialproof/mys@1.21.2
 
 ## 0.7.0
 
@@ -197,7 +197,7 @@
 
 ### Patch Changes
 
-- d684ec0: Update @mysocial/mys.js dependency
+- d684ec0: Update @socialproof/mys.js dependency
 
 ## 0.4.0
 
@@ -210,7 +210,7 @@
 
 ### Patch Changes
 
-- 5001e9c: Update @mysocial/mys dependency to 1.8.0
+- 5001e9c: Update @socialproof/mys dependency to 1.8.0
 
 ## 0.3.0
 
@@ -222,7 +222,7 @@
 
 ### Minor Changes
 
-- 537078a: Update to @mysocial/mys 1.3, accept @ format in client queries
+- 537078a: Update to @socialproof/mys 1.3, accept @ format in client queries
 
 ## 0.1.1
 
@@ -234,7 +234,7 @@
 
 ### Minor Changes
 
-- f537561: Updates to use @mysocial/mys package. Breaking update.
+- f537561: Updates to use @socialproof/mys package. Breaking update.
 
 ## 0.0.3
 

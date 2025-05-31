@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { BcsType } from '@mysocial/bcs';
+import type { BcsType } from '@socialproof/bcs';
 
 import { bcs } from '../bcs/index.js';
 import type { MysMoveNormalizedType } from '../client/index.js';

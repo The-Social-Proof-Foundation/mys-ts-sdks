@@ -3,11 +3,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { DAppKitStores } from '../store.js';
-import { MysSignPersonalMessage } from '@mysocial/wallet-standard';
+import { MysSignPersonalMessage } from '@socialproof/wallet-standard';
 import type {
 	MysSignPersonalMessageFeature,
 	MysSignPersonalMessageInput,
-} from '@mysocial/wallet-standard';
+} from '@socialproof/wallet-standard';
 import { getWalletAccountForUiWalletAccount_DO_NOT_USE_OR_YOU_WILL_BE_FIRED as getWalletAccountForUiWalletAccount } from '@wallet-standard/ui-registry';
 import { WalletNotConnectedError } from '../../utils/errors.js';
 import { getChain } from '../../utils/networks.js';

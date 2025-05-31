@@ -1,5 +1,5 @@
 {
-	"name": "@mysocial/deepbook-v3",
+	"name": "@socialproof/deepbook-v3",
 	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"description": "Mys Deepbook SDK",
 	"version": "0.14.12",
@@ -34,11 +34,11 @@
 		"lint:fix": "pnpm run eslint:fix && pnpm run prettier:fix"
 	},
 	"dependencies": {
-		"@mysocial/mys": "workspace:*"
+		"@socialproof/mys": "workspace:*"
 	},
 	"devDependencies": {
 		"@iarna/toml": "^2.2.5",
-		"@mysocial/build-scripts": "workspace:*",
+		"@socialproof/build-scripts": "workspace:*",
 		"@types/node": "^22.13.17",
 		"tmp": "^0.2.3",
 		"ts-node": "^10.9.2",

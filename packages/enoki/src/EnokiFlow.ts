@@ -2,13 +2,13 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { ExportedWebCryptoKeypair } from '@mysocial/signers/webcrypto';
-import { WebCryptoSigner } from '@mysocial/signers/webcrypto';
-import { decodeMysPrivateKey } from '@mysocial/mys/cryptography';
-import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
-import { fromBase64, toBase64 } from '@mysocial/mys/utils';
-import { decodeJwt } from '@mysocial/mys/zklogin';
-import type { ZkLoginSignatureInputs } from '@mysocial/mys/zklogin';
+import type { ExportedWebCryptoKeypair } from '@socialproof/signers/webcrypto';
+import { WebCryptoSigner } from '@socialproof/signers/webcrypto';
+import { decodeMysPrivateKey } from '@socialproof/mys/cryptography';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import { fromBase64, toBase64 } from '@socialproof/mys/utils';
+import { decodeJwt } from '@socialproof/mys/zklogin';
+import type { ZkLoginSignatureInputs } from '@socialproof/mys/zklogin';
 import type { UseStore } from 'idb-keyval';
 import { clear, createStore, get, set } from 'idb-keyval';
 import type { WritableAtom } from 'nanostores';

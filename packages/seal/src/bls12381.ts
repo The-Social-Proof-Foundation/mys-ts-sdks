@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { toHex } from '@mysocial/bcs';
+import { toHex } from '@socialproof/bcs';
 import type { Fp2, Fp12 } from '@noble/curves/abstract/tower';
 import type { ProjPointType } from '@noble/curves/abstract/weierstrass';
 import { bls12_381 } from '@noble/curves/bls12-381';

@@ -5,8 +5,8 @@
 import { FileBuilder } from './file-builder.js';
 import type { DeserializedModule, TypeSignature } from './types.js';
 import { readFile } from 'node:fs/promises';
-import { deserialize } from '@mysocial/move-bytecode-template';
-import { normalizeMysAddress, MYS_FRAMEWORK_ADDRESS } from '@mysocial/mys/utils';
+import { deserialize } from '@socialproof/move-bytecode-template';
+import { normalizeMysAddress, MYS_FRAMEWORK_ADDRESS } from '@socialproof/mys/utils';
 import { getSafeName, renderTypeSignature } from './render-types.js';
 import { mapToObject, parseTS } from './utils.js';
 
@@ -25,7 +25,7 @@ export class MoveModuleBuilder extends FileBuilder {
 	}
 
 	renderBCSTypes() {
-		this.addImport('@mysocial/mys/bcs', 'bcs');
+		this.addImport('@socialproof/mys/bcs', 'bcs');
 		this.renderStructs();
 		this.renderEnums();
 	}
@@ -74,7 +74,7 @@ export class MoveModuleBuilder extends FileBuilder {
 					}`,
 				);
 			} else {
-				this.addImport('@mysocial/mys/bcs', 'type BcsType');
+				this.addImport('@socialproof/mys/bcs', 'type BcsType');
 
 				const typeParams = `...typeParameters: [${params.map((_, i) => `T${i}`).join(', ')}]`;
 				const typeGenerics = `${params.map((_, i) => `T${i} extends BcsType<any>`).join(', ')}`;
@@ -125,7 +125,7 @@ export class MoveModuleBuilder extends FileBuilder {
 					}`,
 				);
 			} else {
-				this.addImport('@mysocial/mys/bcs', 'type BcsType');
+				this.addImport('@socialproof/mys/bcs', 'type BcsType');
 
 				const typeParams = `...typeParameters: [${params.map((_, i) => `T${i}`).join(', ')}]`;
 				const typeGenerics = `${params.map((_, i) => `T${i} extends BcsType<any>`).join(', ')}`;
@@ -145,7 +145,7 @@ export class MoveModuleBuilder extends FileBuilder {
 		const names = [];
 
 		if (this.moduleDef.function_defs.length !== 0) {
-			this.addImport('@mysocial/mys/transactions', 'type Transaction');
+			this.addImport('@socialproof/mys/transactions', 'type Transaction');
 		}
 
 		for (const func of this.moduleDef.function_defs) {
@@ -178,7 +178,7 @@ export class MoveModuleBuilder extends FileBuilder {
 			const typeParameters = handle.type_parameters.filter((_, i) => usedTypeParameters.has(i));
 
 			if (usedTypeParameters.size > 0) {
-				this.addImport('@mysocial/mys/bcs', 'type BcsType');
+				this.addImport('@socialproof/mys/bcs', 'type BcsType');
 			}
 
 			statements.push(

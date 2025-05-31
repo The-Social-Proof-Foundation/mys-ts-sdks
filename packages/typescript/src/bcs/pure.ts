@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/bcs';
-import type { BcsType } from '@mysocial/bcs';
+import { bcs } from '@socialproof/bcs';
+import type { BcsType } from '@socialproof/bcs';
 
 import { Address } from './bcs.js';
 

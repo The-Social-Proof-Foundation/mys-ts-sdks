@@ -6,7 +6,7 @@ import type {
 	Transaction,
 	TransactionArgument,
 	TransactionObjectArgument,
-} from '@mysocial/mys/transactions';
+} from '@socialproof/mys/transactions';
 
 import * as kioskTx from '../tx/kiosk.js';
 import { convertToPersonalTx, transferPersonalCapTx } from '../tx/personal-kiosk.js';

@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SerializedBcs } from '@mysocial/bcs';
-import { fromBase64, isSerializedBcs } from '@mysocial/bcs';
+import type { SerializedBcs } from '@socialproof/bcs';
+import { fromBase64, isSerializedBcs } from '@socialproof/bcs';
 import type { InferInput } from 'valibot';
 import { is, parse } from 'valibot';
 
@@ -97,7 +97,7 @@ function createTransactionResult(index: number, length = Infinity): TransactionR
 	}) as TransactionResult;
 }
 
-const TRANSACTION_BRAND = Symbol.for('@mysocial/transaction') as never;
+const TRANSACTION_BRAND = Symbol.for('@socialproof/transaction') as never;
 
 interface SignOptions extends BuildTransactionOptions {
 	signer: Signer;
@@ -121,7 +121,7 @@ const modulePluginRegistry: TransactionPluginRegistry = {
 	serializationPlugins: new Map(),
 };
 
-const TRANSACTION_REGISTRY_KEY = Symbol.for('@mysocial/transaction/registry');
+const TRANSACTION_REGISTRY_KEY = Symbol.for('@socialproof/transaction/registry');
 function getGlobalPluginRegistry() {
 	try {
 		const target = globalThis as {

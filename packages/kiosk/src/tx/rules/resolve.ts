@@ -2,10 +2,10 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/mys/bcs';
-import type { TransactionArgument } from '@mysocial/mys/transactions';
-import { Transaction } from '@mysocial/mys/transactions';
-import { normalizeMysAddress } from '@mysocial/mys/utils';
+import { bcs } from '@socialproof/mys/bcs';
+import type { TransactionArgument } from '@socialproof/mys/transactions';
+import { Transaction } from '@socialproof/mys/transactions';
+import { normalizeMysAddress } from '@socialproof/mys/utils';
 
 import type { RuleResolvingParams } from '../../types/index.js';
 import { lock } from '../kiosk.js';

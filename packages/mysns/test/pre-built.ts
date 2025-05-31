@@ -1,9 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import { Transaction } from '@mysocial/mys/transactions';
-import { MIST_PER_MYS, normalizeMysAddress } from '@mysocial/mys/utils';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import { Transaction } from '@socialproof/mys/transactions';
+import { MIST_PER_MYS, normalizeMysAddress } from '@socialproof/mys/utils';
 import { expect } from 'vitest';
 
 import { ALLOWED_METADATA, MysnsClient, MysnsTransaction } from '../src/index.js';

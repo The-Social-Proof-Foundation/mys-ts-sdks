@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { WalletWithRequiredFeatures } from '@mysocial/wallet-standard';
+import type { WalletWithRequiredFeatures } from '@socialproof/wallet-standard';
 
 import { Button } from '../../ui/Button.js';
 import { Heading } from '../../ui/Heading.js';

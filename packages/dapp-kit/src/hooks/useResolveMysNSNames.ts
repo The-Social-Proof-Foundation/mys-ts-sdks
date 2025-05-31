@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { ResolvedNameServiceNames } from '@mysocial/mys/client';
+import type { ResolvedNameServiceNames } from '@socialproof/mys/client';
 import type { UseQueryOptions, UseQueryResult } from '@tanstack/react-query';
 
 import { useMysClientQuery } from './useMysClientQuery.js';

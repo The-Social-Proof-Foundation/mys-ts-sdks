@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/mys/bcs';
+import { bcs } from '@socialproof/mys/bcs';
 import * as object from './object.js';
 export function Bag() {
 	return bcs.struct('Bag', {

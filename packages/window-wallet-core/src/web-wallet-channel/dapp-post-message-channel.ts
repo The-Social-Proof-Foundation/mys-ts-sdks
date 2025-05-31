@@ -6,7 +6,7 @@ import { safeParse } from 'valibot';
 import type { JsonData, RequestDataType, RequestType } from './requests.js';
 import type { ResponseTypes } from './responses.js';
 import { Response } from './responses.js';
-import { promiseWithResolvers } from '@mysocial/utils';
+import { promiseWithResolvers } from '@socialproof/utils';
 import { getClientMetadata } from './utils.js';
 
 type DappPostMessageChannelOptions = {

@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { EnumInputShape, EnumOutputShape } from '@mysocial/bcs';
+import type { EnumInputShape, EnumOutputShape } from '@socialproof/bcs';
 import type { GenericSchema, InferInput, InferOutput } from 'valibot';
 import {
 	array,
@@ -26,7 +26,7 @@ import {
 } from 'valibot';
 
 import { isValidMysAddress, normalizeMysAddress } from '../../utils/mys-types.js';
-import type { Simplify } from '@mysocial/utils';
+import type { Simplify } from '@socialproof/utils';
 
 type EnumSchema<T extends Record<string, GenericSchema<any>>> = GenericSchema<
 	EnumInputShape<

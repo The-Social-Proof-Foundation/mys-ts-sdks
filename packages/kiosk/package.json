@@ -1,5 +1,5 @@
 {
-	"name": "@mysocial/kiosk",
+	"name": "@socialproof/kiosk",
 	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"description": "Mys Kiosk library",
 	"version": "0.12.7",
@@ -37,11 +37,11 @@
 		"test:e2e": "vitest run e2e"
 	},
 	"dependencies": {
-		"@mysocial/mys": "workspace:*",
-		"@mysocial/utils": "workspace:*"
+		"@socialproof/mys": "workspace:*",
+		"@socialproof/utils": "workspace:*"
 	},
 	"devDependencies": {
-		"@mysocial/build-scripts": "workspace:*",
+		"@socialproof/build-scripts": "workspace:*",
 		"cross-env": "^7.0.3",
 		"tmp": "^0.2.3",
 		"ts-retry-promise": "^0.8.1",

@@ -2,10 +2,10 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SignatureWithBytes } from '@mysocial/mys/cryptography';
-import { Signer } from '@mysocial/mys/cryptography';
-import type { ZkLoginSignatureInputs } from '@mysocial/mys/zklogin';
-import { getZkLoginSignature, ZkLoginPublicIdentifier } from '@mysocial/mys/zklogin';
+import type { SignatureWithBytes } from '@socialproof/mys/cryptography';
+import { Signer } from '@socialproof/mys/cryptography';
+import type { ZkLoginSignatureInputs } from '@socialproof/mys/zklogin';
+import { getZkLoginSignature, ZkLoginPublicIdentifier } from '@socialproof/mys/zklogin';
 
 export class EnokiPublicKey extends ZkLoginPublicIdentifier {}
 

@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { StandardDisconnectFeature, StandardDisconnectMethod } from '@mysocial/wallet-standard';
-import { StandardDisconnect } from '@mysocial/wallet-standard';
+import type { StandardDisconnectFeature, StandardDisconnectMethod } from '@socialproof/wallet-standard';
+import { StandardDisconnect } from '@socialproof/wallet-standard';
 import type { DAppKitStores } from '../store.js';
 import { task } from 'nanostores';
 import { getWalletFeature } from '@wallet-standard/ui';

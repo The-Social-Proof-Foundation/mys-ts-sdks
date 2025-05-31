@@ -1,5 +1,5 @@
 {
-	"name": "@mysocial/enoki-connect",
+	"name": "@socialproof/enoki-connect",
 	"version": "0.0.7",
 	"description": "Enoki Connect Wallet-Standard implementation",
 	"license": "Apache-2.0",
@@ -39,15 +39,15 @@
 	},
 	"homepage": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks#readme",
 	"devDependencies": {
-		"@mysocial/build-scripts": "workspace:*",
+		"@socialproof/build-scripts": "workspace:*",
 		"@types/node": "^22.13.17",
 		"typescript": "^5.8.2",
 		"vitest": "^3.1.1"
 	},
 	"dependencies": {
-		"@mysocial/mys": "workspace:*",
-		"@mysocial/wallet-standard": "workspace:*",
-		"@mysocial/window-wallet-core": "workspace:^",
+		"@socialproof/mys": "workspace:*",
+		"@socialproof/wallet-standard": "workspace:*",
+		"@socialproof/window-wallet-core": "workspace:^",
 		"mitt": "^3.0.1"
 	}
 }

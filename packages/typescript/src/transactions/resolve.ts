@@ -6,7 +6,7 @@ import type { Argument } from './data/internal.js';
 
 import type { ClientWithCoreApi } from '../experimental/index.js';
 import type { TransactionDataBuilder } from './TransactionData.js';
-import type { BcsType } from '@mysocial/bcs';
+import type { BcsType } from '@socialproof/bcs';
 import { Inputs } from './Inputs.js';
 import { bcs } from '../bcs/index.js';
 

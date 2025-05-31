@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromHex, toHex } from '@mysocial/bcs';
-import { isValidMysObjectId } from '@mysocial/mys/utils';
+import { fromHex, toHex } from '@socialproof/bcs';
+import { isValidMysObjectId } from '@socialproof/mys/utils';
 
 import { UserError } from './error.js';
 

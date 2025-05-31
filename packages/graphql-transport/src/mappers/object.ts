@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { MysObjectResponse } from '@mysocial/mys/client';
+import type { MysObjectResponse } from '@socialproof/mys/client';
 
 import type {
 	MoveValue,

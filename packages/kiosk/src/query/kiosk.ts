@@ -8,8 +8,8 @@ import type {
 	MysClient,
 	MysObjectData,
 	MysObjectResponse,
-} from '@mysocial/mys/client';
-import { isValidMysAddress } from '@mysocial/mys/utils';
+} from '@socialproof/mys/client';
+import { isValidMysAddress } from '@socialproof/mys/utils';
 
 import type {
 	FetchKioskOptions,

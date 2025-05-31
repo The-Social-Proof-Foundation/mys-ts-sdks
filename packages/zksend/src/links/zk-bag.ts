@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Argument, Transaction, TransactionObjectArgument } from '@mysocial/mys/transactions';
+import type { Argument, Transaction, TransactionObjectArgument } from '@socialproof/mys/transactions';
 
 export interface ZkBagContractOptions {
 	packageId: string;

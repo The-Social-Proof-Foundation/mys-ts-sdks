@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import { Transaction } from '@mysocial/mys/transactions';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import { Transaction } from '@socialproof/mys/transactions';
 
 import { MysnsClient } from '../src/mysns-client.js';
 import { MysnsTransaction } from '../src/mysns-transaction.js';

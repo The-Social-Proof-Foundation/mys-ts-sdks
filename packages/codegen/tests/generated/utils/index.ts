@@ -1,6 +1,6 @@
-import { bcs, BcsType, TypeTag, TypeTagSerializer } from '@mysocial/mys/bcs';
-import { normalizeMysAddress } from '@mysocial/mys/utils';
-import { TransactionArgument, isArgument } from '@mysocial/mys/transactions';
+import { bcs, BcsType, TypeTag, TypeTagSerializer } from '@socialproof/mys/bcs';
+import { normalizeMysAddress } from '@socialproof/mys/utils';
+import { TransactionArgument, isArgument } from '@socialproof/mys/transactions';
 
 const MOVE_STDLIB_ADDRESS = normalizeMysAddress('0x1');
 const MYS_FRAMEWORK_ADDRESS = normalizeMysAddress('0x2');

@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { useCurrentAccount, useSignAndExecuteTransaction } from '@mysocial/dapp-kit';
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { useCurrentAccount, useSignAndExecuteTransaction } from '@socialproof/dapp-kit';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 
 import { WalrusClient } from '../../src/client.js';
 

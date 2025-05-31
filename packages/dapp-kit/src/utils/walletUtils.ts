@@ -7,8 +7,8 @@ import type {
 	Wallet,
 	WalletWithFeatures,
 	WalletWithRequiredFeatures,
-} from '@mysocial/wallet-standard';
-import { getWallets, isWalletWithRequiredFeatureSet } from '@mysocial/wallet-standard';
+} from '@socialproof/wallet-standard';
+import { getWallets, isWalletWithRequiredFeatureSet } from '@socialproof/wallet-standard';
 
 export function getRegisteredWallets<AdditionalFeatures extends Wallet['features']>(
 	preferredWallets: string[],

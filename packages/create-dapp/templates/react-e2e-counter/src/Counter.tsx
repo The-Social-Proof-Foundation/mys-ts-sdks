@@ -3,9 +3,9 @@ import {
   useSignAndExecuteTransaction,
   useMysClient,
   useMysClientQuery,
-} from "@mysocial/dapp-kit";
-import type { MysObjectData } from "@mysocial/mys/client";
-import { Transaction } from "@mysocial/mys/transactions";
+} from "@socialproof/dapp-kit";
+import type { MysObjectData } from "@socialproof/mys/client";
+import { Transaction } from "@socialproof/mys/transactions";
 import { Button, Flex, Heading, Text } from "@radix-ui/themes";
 import { useNetworkVariable } from "./networkConfig";
 import { useState } from "react";

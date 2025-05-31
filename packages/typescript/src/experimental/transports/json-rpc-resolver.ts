@@ -14,7 +14,7 @@ import {
 	normalizedTypeToMoveTypeSignature,
 } from '../../transactions/serializer.js';
 import type { TransactionDataBuilder } from '../../transactions/TransactionData.js';
-import { chunk } from '@mysocial/utils';
+import { chunk } from '@socialproof/utils';
 import type { MysClient } from '../../client/index.js';
 import type { BuildTransactionOptions } from '../../transactions/index.js';
 

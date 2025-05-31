@@ -9,8 +9,8 @@ import {
 	useSignAndExecuteTransaction,
 	useMysClientContext,
 	useWallets,
-} from '@mysocial/dapp-kit';
-import { Transaction } from '@mysocial/mys/transactions';
+} from '@socialproof/dapp-kit';
+import { Transaction } from '@socialproof/mys/transactions';
 import { useState } from 'react';
 
 import { isEnokiWallet } from '../src/wallet/index.js';

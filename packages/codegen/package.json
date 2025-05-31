@@ -1,6 +1,6 @@
 {
 	"private": true,
-	"name": "@mysocial/codegen",
+	"name": "@socialproof/codegen",
 	"version": "0.0.0",
 	"description": "typescript codegen for mys move",
 	"license": "Apache-2.0",
@@ -52,13 +52,13 @@
 	},
 	"homepage": "https://github.com/The-Social-Proof-Foundation/mys-core#readme",
 	"devDependencies": {
-		"@mysocial/build-scripts": "workspace:*",
+		"@socialproof/build-scripts": "workspace:*",
 		"vitest": "^3.1.1"
 	},
 	"dependencies": {
-		"@mysocial/bcs": "workspace:*",
-		"@mysocial/move-bytecode-template": "workspace:*",
-		"@mysocial/mys": "workspace:*",
+		"@socialproof/bcs": "workspace:*",
+		"@socialproof/move-bytecode-template": "workspace:*",
+		"@socialproof/mys": "workspace:*",
 		"@stricli/auto-complete": "^1.1.2",
 		"@stricli/core": "^1.1.2",
 		"@types/node": "^22.13.17",

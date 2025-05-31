@@ -1,5 +1,5 @@
 {
-	"name": "@mysocial/ledgerjs-hw-app-mys",
+	"name": "@socialproof/ledgerjs-hw-app-mys",
 	"version": "0.5.0",
 	"description": "Ledger Hardware Wallet Mys Application API",
 	"keywords": [
@@ -68,7 +68,7 @@
 	},
 	"devDependencies": {
 		"@ledgerhq/hw-transport-mocker": "^6.29.0",
-		"@mysocial/build-scripts": "workspace:*",
+		"@socialproof/build-scripts": "workspace:*",
 		"@size-limit/preset-small-lib": "^11.2.0",
 		"@types/node": "^22.13.17",
 		"size-limit": "^11.2.0",

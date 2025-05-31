@@ -1,6 +1,6 @@
-import { Transaction } from "@mysocial/mys/transactions";
+import { Transaction } from "@socialproof/mys/transactions";
 import { Button, Container } from "@radix-ui/themes";
-import { useSignAndExecuteTransaction, useMysClient } from "@mysocial/dapp-kit";
+import { useSignAndExecuteTransaction, useMysClient } from "@socialproof/dapp-kit";
 import { useNetworkVariable } from "./networkConfig";
 import ClipLoader from "react-spinners/ClipLoader";
 

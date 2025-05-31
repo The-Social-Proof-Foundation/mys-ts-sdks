@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/bcs';
+import { bcs } from '@socialproof/bcs';
 import { beforeAll, describe, expect, it } from 'vitest';
 
 import { MysTransactionBlockResponse } from '../../src/client';

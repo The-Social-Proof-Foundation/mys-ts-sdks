@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64, toBase58 } from '@mysocial/bcs';
-import { bcs } from '@mysocial/mys/bcs';
+import { fromBase64, toBase58 } from '@socialproof/bcs';
+import { bcs } from '@socialproof/mys/bcs';
 import type {
 	MysArgument,
 	MysCallArg,
@@ -13,8 +13,8 @@ import type {
 	MysTransactionBlockKind,
 	MysTransactionBlockResponse,
 	MysTransactionBlockResponseOptions,
-} from '@mysocial/mys/client';
-import { normalizeMysAddress } from '@mysocial/mys/utils';
+} from '@socialproof/mys/client';
+import { normalizeMysAddress } from '@socialproof/mys/utils';
 
 import type { Rpc_Transaction_FieldsFragment } from '../generated/queries.js';
 import { toShortTypeString } from './util.js';

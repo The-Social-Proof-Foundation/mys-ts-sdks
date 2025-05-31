@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { BcsType, BcsTypeOptions } from '@mysocial/bcs';
-import { bcs, fromBase58, fromBase64, fromHex, toBase58, toBase64, toHex } from '@mysocial/bcs';
+import type { BcsType, BcsTypeOptions } from '@socialproof/bcs';
+import { bcs, fromBase58, fromBase64, fromHex, toBase58, toBase64, toHex } from '@socialproof/bcs';
 
 import { isValidMysAddress, normalizeMysAddress, MYS_ADDRESS_LENGTH } from '../utils/mys-types.js';
 import { TypeTagSerializer } from './type-tag-serializer.js';

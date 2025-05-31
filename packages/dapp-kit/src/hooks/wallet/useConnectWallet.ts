@@ -7,7 +7,7 @@ import type {
 	StandardConnectOutput,
 	WalletAccount,
 	WalletWithRequiredFeatures,
-} from '@mysocial/wallet-standard';
+} from '@socialproof/wallet-standard';
 import type { UseMutationOptions, UseMutationResult } from '@tanstack/react-query';
 import { useMutation } from '@tanstack/react-query';
 

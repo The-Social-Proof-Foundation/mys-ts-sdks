@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs, type BcsType } from '@mysocial/mys/bcs';
+import { bcs, type BcsType } from '@socialproof/mys/bcs';
 export function VecMap<T0 extends BcsType<any>, T1 extends BcsType<any>>(
 	...typeParameters: [T0, T1]
 ) {

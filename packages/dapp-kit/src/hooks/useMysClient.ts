@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { MysClient } from '@mysocial/mys/client';
+import type { MysClient } from '@socialproof/mys/client';
 import { useContext } from 'react';
 
 import { MysClientContext } from '../components/MysClientProvider.js';

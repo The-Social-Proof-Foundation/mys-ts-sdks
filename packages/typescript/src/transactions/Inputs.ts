@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { toBase64 } from '@mysocial/bcs';
-import type { SerializedBcs } from '@mysocial/bcs';
+import { toBase64 } from '@socialproof/bcs';
+import type { SerializedBcs } from '@socialproof/bcs';
 
 import { normalizeMysAddress } from '../utils/mys-types.js';
 import type { CallArg, ObjectRef } from './data/internal.js';

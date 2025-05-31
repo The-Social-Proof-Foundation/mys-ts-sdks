@@ -12,12 +12,12 @@ npm install --save @mysten/graphql-transport
 ## Setup
 
 ```ts
-import { MysClientGraphQLTransport } from '@mysocial/graphql-transport';
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { MysClientGraphQLTransport } from '@socialproof/graphql-transport';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 
 const client = new MysClient({
 	transport: new MysClientGraphQLTransport({
-		url: 'https://mys-testnet.mystenlabs.com/graphql',
+		url: 'https://testnet.mysocial.network/graphql',
 		// When specified, the transport will fallback to JSON RPC for unsupported method and parameters
 		fallbackFullNodeUrl: getFullnodeUrl('testnet'),
 	}),

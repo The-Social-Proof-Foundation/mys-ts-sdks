@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/mys/bcs';
-import type { Transaction } from '@mysocial/mys/transactions';
+import { bcs } from '@socialproof/mys/bcs';
+import type { Transaction } from '@socialproof/mys/transactions';
 
 import * as bls_aggregate from './bls_aggregate.js';
 import * as event_blob from './event_blob.js';

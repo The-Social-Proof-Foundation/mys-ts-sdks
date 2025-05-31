@@ -5,7 +5,7 @@
 // This is adapted from https://github.com/alepop/ed25519-hd-key replacing create-hmac
 // with @noble/hashes to be browser compatible.
 
-import { fromHex } from '@mysocial/bcs';
+import { fromHex } from '@socialproof/bcs';
 import { hmac } from '@noble/hashes/hmac';
 import { sha512 } from '@noble/hashes/sha512';
 

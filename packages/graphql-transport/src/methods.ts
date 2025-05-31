@@ -2,16 +2,16 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64, toBase58 } from '@mysocial/bcs';
+import { fromBase64, toBase58 } from '@socialproof/bcs';
 import type {
 	MoveValue,
 	ProtocolConfigValue,
 	MysArgument,
 	MysClient,
 	MysMoveNormalizedModule,
-} from '@mysocial/mys/client';
-import { Transaction } from '@mysocial/mys/transactions';
-import { normalizeStructTag, normalizeMysAddress, parseStructTag } from '@mysocial/mys/utils';
+} from '@socialproof/mys/client';
+import { Transaction } from '@socialproof/mys/transactions';
+import { normalizeStructTag, normalizeMysAddress, parseStructTag } from '@socialproof/mys/utils';
 
 import type {
 	ObjectFilter,

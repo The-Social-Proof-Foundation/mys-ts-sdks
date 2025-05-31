@@ -2,13 +2,13 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Transaction } from '@mysocial/mys/transactions';
-import { toBase64 } from '@mysocial/mys/utils';
+import type { Transaction } from '@socialproof/mys/transactions';
+import { toBase64 } from '@socialproof/mys/utils';
 import type {
 	MysSignAndExecuteTransactionInput,
 	MysSignAndExecuteTransactionOutput,
-} from '@mysocial/wallet-standard';
-import { signTransaction } from '@mysocial/wallet-standard';
+} from '@socialproof/wallet-standard';
+import { signTransaction } from '@socialproof/wallet-standard';
 import type { UseMutationOptions, UseMutationResult } from '@tanstack/react-query';
 import { useMutation } from '@tanstack/react-query';
 

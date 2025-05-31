@@ -1,11 +1,11 @@
 // Copyright (c) Mysten Labs, Inc.
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import { decodeMysPrivateKey } from '@mysocial/mys/cryptography';
-import type { Keypair } from '@mysocial/mys/cryptography';
-import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
-import type { Transaction } from '@mysocial/mys/transactions';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import { decodeMysPrivateKey } from '@socialproof/mys/cryptography';
+import type { Keypair } from '@socialproof/mys/cryptography';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import type { Transaction } from '@socialproof/mys/transactions';
 
 import { DeepBookClient } from '../src/index.js'; // Adjust path according to new structure
 import type { BalanceManager } from '../src/types/index.js';

@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { InferBcsInput } from '@mysocial/bcs';
-import { bcs } from '@mysocial/bcs';
+import type { InferBcsInput } from '@socialproof/bcs';
+import { bcs } from '@socialproof/bcs';
 
 export const zkLoginSignature = bcs.struct('ZkLoginSignature', {
 	inputs: bcs.struct('ZkLoginSignatureInputs', {

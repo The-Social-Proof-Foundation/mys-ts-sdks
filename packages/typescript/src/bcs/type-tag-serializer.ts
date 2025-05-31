@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { splitGenericParameters } from '@mysocial/bcs';
+import { splitGenericParameters } from '@socialproof/bcs';
 
 import { normalizeMysAddress } from '../utils/mys-types.js';
 import type { TypeTag } from './types.js';

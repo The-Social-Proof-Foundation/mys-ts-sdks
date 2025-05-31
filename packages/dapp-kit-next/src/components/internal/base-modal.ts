@@ -4,7 +4,7 @@
 
 import { LitElement } from 'lit';
 import { property, query } from 'lit/decorators.js';
-import { promiseWithResolvers } from '@mysocial/utils';
+import { promiseWithResolvers } from '@socialproof/utils';
 
 export class BaseModal extends LitElement {
 	#isOpen = false;

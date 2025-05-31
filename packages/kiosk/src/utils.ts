@@ -10,18 +10,18 @@ import type {
 	MysObjectDataFilter,
 	MysObjectDataOptions,
 	MysObjectResponse,
-} from '@mysocial/mys/client';
+} from '@socialproof/mys/client';
 import {
 	fromBase64,
 	normalizeStructTag,
 	normalizeMysAddress,
 	parseStructTag,
-} from '@mysocial/mys/utils';
+} from '@socialproof/mys/utils';
 
 import { KioskType } from './bcs.js';
 import type { Kiosk, KioskData, KioskListing, TransferPolicyCap } from './types/index.js';
 import { TRANSFER_POLICY_CAP_TYPE } from './types/index.js';
-import { chunk } from '@mysocial/utils';
+import { chunk } from '@socialproof/utils';
 
 const DEFAULT_QUERY_LIMIT = 50;
 

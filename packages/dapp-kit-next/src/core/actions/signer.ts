@@ -5,8 +5,8 @@
 import type {
 	MysSignAndExecuteTransactionInput,
 	MysSignTransactionInput,
-} from '@mysocial/wallet-standard';
-import type { Transaction } from '@mysocial/mys/transactions';
+} from '@socialproof/wallet-standard';
+import type { Transaction } from '@socialproof/mys/transactions';
 
 type SignTransactionArgs = {
 	transaction: Transaction | string;

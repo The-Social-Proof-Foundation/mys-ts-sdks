@@ -97,14 +97,14 @@ importers:
 
   packages/bcs:
     dependencies:
-      '@mysocial/utils':
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
       '@scure/base':
         specifier: ^1.2.4
         version: 1.2.4
     devDependencies:
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@size-limit/preset-small-lib':
@@ -150,10 +150,10 @@ importers:
 
   packages/create-dapp:
     dependencies:
-      '@mysocial/dapp-kit':
+      '@socialproof/dapp-kit':
         specifier: workspace:*
         version: link:../dapp-kit
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
       '@types/node':
@@ -163,7 +163,7 @@ importers:
         specifier: ^2.4.1
         version: 2.4.1
     devDependencies:
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       typescript:
@@ -172,10 +172,10 @@ importers:
 
   packages/create-dapp/templates/react-client-dapp:
     dependencies:
-      '@mysocial/dapp-kit':
+      '@socialproof/dapp-kit':
         specifier: workspace:*
         version: link:../../../dapp-kit
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../../../typescript
       '@radix-ui/colors':
@@ -233,10 +233,10 @@ importers:
 
   packages/create-dapp/templates/react-e2e-counter:
     dependencies:
-      '@mysocial/dapp-kit':
+      '@socialproof/dapp-kit':
         specifier: workspace:*
         version: link:../../../dapp-kit
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../../../typescript
       '@radix-ui/colors':
@@ -297,16 +297,16 @@ importers:
 
   packages/dapp-kit:
     dependencies:
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
-      '@mysocial/slush-wallet':
+      '@socialproof/slush-wallet':
         specifier: workspace:*
         version: link:../slush-wallet
-      '@mysocial/utils':
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
-      '@mysocial/wallet-standard':
+      '@socialproof/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
       '@radix-ui/react-dialog':
@@ -334,7 +334,7 @@ importers:
         specifier: ^4.5.4
         version: 4.5.5(@types/react@18.3.18)(react@18.3.1)
     devDependencies:
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@size-limit/preset-small-lib':
@@ -397,16 +397,16 @@ importers:
       '@lit/task':
         specifier: ^1.0.2
         version: 1.0.2
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
-      '@mysocial/utils':
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
-      '@mysocial/wallet-standard':
+      '@socialproof/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
-      '@mysocial/zksend':
+      '@socialproof/zksend':
         specifier: workspace:*
         version: link:../zksend
       '@nanostores/lit':
@@ -428,7 +428,7 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
     devDependencies:
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@storybook/addon-essentials':
@@ -452,7 +452,7 @@ importers:
 
   packages/dapp-kit-next/examples/react/simple:
     dependencies:
-      '@mysocial/dapp-kit-next':
+      '@socialproof/dapp-kit-next':
         specifier: workspace:*
         version: link:../../..
       '@nanostores/react':
@@ -486,11 +486,11 @@ importers:
 
   packages/deepbook:
     dependencies:
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
     devDependencies:
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/node':
@@ -520,14 +520,14 @@ importers:
 
   packages/deepbook-v3:
     dependencies:
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
     devDependencies:
       '@iarna/toml':
         specifier: ^2.2.5
         version: 2.2.5
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/node':
@@ -557,58 +557,58 @@ importers:
 
   packages/docs:
     dependencies:
-      '@mysocial/bcs':
+      '@socialproof/bcs':
         specifier: workspace:*
         version: link:../bcs
-      '@mysocial/dapp-kit':
+      '@socialproof/dapp-kit':
         specifier: workspace:*
         version: link:../dapp-kit
-      '@mysocial/dapp-kit-next':
+      '@socialproof/dapp-kit-next':
         specifier: workspace:*
         version: link:../dapp-kit-next
-      '@mysocial/deepbook':
+      '@socialproof/deepbook':
         specifier: workspace:*
         version: link:../deepbook
-      '@mysocial/deepbook-v3':
+      '@socialproof/deepbook-v3':
         specifier: workspace:*
         version: link:../deepbook-v3
-      '@mysocial/enoki':
+      '@socialproof/enoki':
         specifier: workspace:*
         version: link:../enoki
-      '@mysocial/enoki-connect':
+      '@socialproof/enoki-connect':
         specifier: workspace:*
         version: link:../enoki-connect
-      '@mysocial/graphql-transport':
+      '@socialproof/graphql-transport':
         specifier: workspace:*
         version: link:../graphql-transport
-      '@mysocial/kiosk':
+      '@socialproof/kiosk':
         specifier: workspace:*
         version: link:../kiosk
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
-      '@mysocial/mysns':
+      '@socialproof/mysns':
         specifier: workspace:*
         version: link:../mysns
-      '@mysocial/seal':
+      '@socialproof/seal':
         specifier: workspace:*
         version: link:../seal
-      '@mysocial/signers':
+      '@socialproof/signers':
         specifier: workspace:*
         version: link:../signers
-      '@mysocial/slush-wallet':
+      '@socialproof/slush-wallet':
         specifier: workspace:*
         version: link:../slush-wallet
-      '@mysocial/utils':
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
-      '@mysocial/wallet-standard':
+      '@socialproof/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
-      '@mysocial/walrus':
+      '@socialproof/walrus':
         specifier: workspace:*
         version: link:../walrus
-      '@mysocial/zksend':
+      '@socialproof/zksend':
         specifier: workspace:*
         version: link:../zksend
       '@tanstack/react-query':
@@ -690,13 +690,13 @@ importers:
 
   packages/enoki:
     dependencies:
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
-      '@mysocial/signers':
+      '@socialproof/signers':
         specifier: workspace:*
         version: link:../signers
-      '@mysocial/wallet-standard':
+      '@socialproof/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
       '@nanostores/react':
@@ -712,10 +712,10 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
     devDependencies:
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
-      '@mysocial/dapp-kit':
+      '@socialproof/dapp-kit':
         specifier: workspace:*
         version: link:../dapp-kit
       '@tanstack/react-query':
@@ -748,20 +748,20 @@ importers:
 
   packages/enoki-connect:
     dependencies:
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
-      '@mysocial/wallet-standard':
+      '@socialproof/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
-      '@mysocial/window-wallet-core':
+      '@socialproof/window-wallet-core':
         specifier: workspace:^
         version: link:../window-wallet-core
       mitt:
         specifier: ^3.0.1
         version: 3.0.1
     devDependencies:
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/node':
@@ -776,13 +776,13 @@ importers:
 
   packages/enoki-connect/demo-dapp:
     dependencies:
-      '@mysocial/dapp-kit':
+      '@socialproof/dapp-kit':
         specifier: workspace:*
         version: link:../../dapp-kit
-      '@mysocial/enoki-connect':
+      '@socialproof/enoki-connect':
         specifier: workspace:*
         version: link:..
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../../typescript
       '@radix-ui/colors':
@@ -843,10 +843,10 @@ importers:
       '@graphql-typed-document-node/core':
         specifier: ^3.2.0
         version: 3.2.0(graphql@16.10.0)
-      '@mysocial/bcs':
+      '@socialproof/bcs':
         specifier: workspace:*
         version: link:../bcs
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
       graphql:
@@ -871,7 +871,7 @@ importers:
       '@graphql-codegen/typescript-operations':
         specifier: ^4.6.0
         version: 4.6.0(graphql@16.10.0)
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@parcel/watcher':
@@ -895,14 +895,14 @@ importers:
 
   packages/kiosk:
     dependencies:
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
-      '@mysocial/utils':
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
     devDependencies:
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       cross-env:
@@ -939,7 +939,7 @@ importers:
       '@ledgerhq/hw-transport-mocker':
         specifier: ^6.29.0
         version: 6.29.4
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@size-limit/preset-small-lib':
@@ -960,7 +960,7 @@ importers:
 
   packages/mvr-static:
     dependencies:
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
       '@types/node':
@@ -976,7 +976,7 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
     devDependencies:
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       typescript:
@@ -988,7 +988,7 @@ importers:
 
   packages/mysns:
     dependencies:
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
       axios:
@@ -998,7 +998,7 @@ importers:
         specifier: ^3.9.1
         version: 3.9.1
     devDependencies:
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/tmp':
@@ -1019,10 +1019,10 @@ importers:
 
   packages/seal:
     dependencies:
-      '@mysocial/bcs':
+      '@socialproof/bcs':
         specifier: workspace:*
         version: link:../bcs
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
       '@noble/curves':
@@ -1038,7 +1038,7 @@ importers:
       '@hey-api/openapi-ts':
         specifier: ^0.66.1
         version: 0.66.1(typescript@5.8.2)
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/node':
@@ -1056,10 +1056,10 @@ importers:
       '@google-cloud/kms':
         specifier: ^4.5.0
         version: 4.5.0
-      '@mysocial/ledgerjs-hw-app-mys':
+      '@socialproof/ledgerjs-hw-app-mys':
         specifier: workspace:*
         version: link:../ledgerjs-hw-app-mys
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
       '@noble/curves':
@@ -1072,7 +1072,7 @@ importers:
         specifier: ^8.0.2
         version: 8.0.2
     devDependencies:
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/node':
@@ -1090,16 +1090,16 @@ importers:
 
   packages/slush-wallet:
     dependencies:
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
-      '@mysocial/utils':
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
-      '@mysocial/wallet-standard':
+      '@socialproof/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
-      '@mysocial/window-wallet-core':
+      '@socialproof/window-wallet-core':
         specifier: workspace:*
         version: link:../window-wallet-core
       mitt:
@@ -1109,7 +1109,7 @@ importers:
         specifier: ^0.36.0
         version: 0.36.0
     devDependencies:
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/node':
@@ -1127,10 +1127,10 @@ importers:
       '@graphql-typed-document-node/core':
         specifier: ^3.2.0
         version: 3.2.0(graphql@16.10.0)
-      '@mysocial/bcs':
+      '@socialproof/bcs':
         specifier: workspace:*
         version: link:../bcs
-      '@mysocial/utils':
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
       '@noble/curves':
@@ -1185,7 +1185,7 @@ importers:
       '@iarna/toml':
         specifier: ^2.2.5
         version: 2.2.5
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:^
         version: link:../build-scripts
       '@parcel/watcher':
@@ -1240,7 +1240,7 @@ importers:
         specifier: ^1.2.4
         version: 1.2.4
     devDependencies:
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       typescript:
@@ -1252,14 +1252,14 @@ importers:
 
   packages/wallet-standard:
     dependencies:
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
       '@wallet-standard/core':
         specifier: 1.1.0
         version: 1.1.0
     devDependencies:
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       typescript:
@@ -1271,16 +1271,16 @@ importers:
 
   packages/walrus:
     dependencies:
-      '@mysocial/bcs':
+      '@socialproof/bcs':
         specifier: workspace:*
         version: link:../bcs
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
-      '@mysocial/utils':
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
-      '@mysocial/walrus-wasm':
+      '@socialproof/walrus-wasm':
         specifier: workspace:*
         version: link:../walrus-wasm
       dataloader:
@@ -1290,10 +1290,10 @@ importers:
       '@hono/node-server':
         specifier: ^1.14.0
         version: 1.14.0(hono@4.7.5)
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
-      '@mysocial/dapp-kit':
+      '@socialproof/dapp-kit':
         specifier: workspace:*
         version: link:../dapp-kit
       '@types/node':
@@ -1328,7 +1328,7 @@ importers:
 
   packages/window-wallet-core:
     dependencies:
-      '@mysocial/utils':
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
       jose:
@@ -1338,7 +1338,7 @@ importers:
         specifier: ^0.36.0
         version: 0.36.0
     devDependencies:
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       typescript:
@@ -1350,16 +1350,16 @@ importers:
 
   packages/zksend:
     dependencies:
-      '@mysocial/mys':
+      '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
-      '@mysocial/utils':
+      '@socialproof/utils':
         specifier: workspace:*
         version: link:../utils
-      '@mysocial/wallet-standard':
+      '@socialproof/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
-      '@mysocial/window-wallet-core':
+      '@socialproof/window-wallet-core':
         specifier: workspace:*
         version: link:../window-wallet-core
       mitt:
@@ -1372,7 +1372,7 @@ importers:
         specifier: ^0.36.0
         version: 0.36.0
     devDependencies:
-      '@mysocial/build-scripts':
+      '@socialproof/build-scripts':
         specifier: workspace:*
         version: link:../build-scripts
       '@types/node':

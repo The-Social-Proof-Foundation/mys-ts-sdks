@@ -9,7 +9,7 @@ import { useConnectWallet, useCurrentWallet } from '../../src/index.js';
 import { createMockAccount } from '../mocks/mockAccount.js';
 import { mysFeatures } from '../mocks/mockFeatures.js';
 import { createWalletProviderContextWrapper, registerMockWallet } from '../test-utils.js';
-import { promiseWithResolvers } from '@mysocial/utils';
+import { promiseWithResolvers } from '@socialproof/utils';
 
 describe('useAutoConnectWallet', () => {
 	test('returns "disabled" when the auto-connect functionality is disabled', async () => {

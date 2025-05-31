@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { formatAddress } from '@mysocial/mys/utils';
-import type { WalletAccount } from '@mysocial/wallet-standard';
+import { formatAddress } from '@socialproof/mys/utils';
+import type { WalletAccount } from '@socialproof/wallet-standard';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import clsx from 'clsx';
 

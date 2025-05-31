@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { MysWalletFeatures, WalletWithRequiredFeatures } from '@mysocial/wallet-standard';
-import { SLUSH_WALLET_NAME } from '@mysocial/slush-wallet';
+import type { MysWalletFeatures, WalletWithRequiredFeatures } from '@socialproof/wallet-standard';
+import { SLUSH_WALLET_NAME } from '@socialproof/slush-wallet';
 
 import { createInMemoryStore } from '../utils/stateStorage.js';
 

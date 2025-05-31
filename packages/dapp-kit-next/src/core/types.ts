@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Experimental_BaseClient } from '@mysocial/mys/experimental';
+import type { Experimental_BaseClient } from '@socialproof/mys/experimental';
 import type { Networks } from '../utils/networks.js';
 import type { StateStorage } from '../utils/storage.js';
 

@@ -39,7 +39,7 @@ enum HostToLedger {
  * Mys API
  *
  * @example
- * import Mys from "@mysocial/ledgerjs-hw-app-mys";
+ * import Mys from "@socialproof/ledgerjs-hw-app-mys";
  * const mys = new Mys(transport)
  */
 export default class Mys {

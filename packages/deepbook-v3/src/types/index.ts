@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { TransactionObjectArgument } from '@mysocial/mys/transactions';
+import type { TransactionObjectArgument } from '@socialproof/mys/transactions';
 
 // SPDX-License-Identifier: Apache-2.0
 export interface BalanceManager {

@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Wallet, WalletAccount, WalletWithRequiredFeatures } from '@mysocial/wallet-standard';
+import type { Wallet, WalletAccount, WalletWithRequiredFeatures } from '@socialproof/wallet-standard';
 import { createStore } from 'zustand';
 import type { StateStorage } from 'zustand/middleware';
 import { createJSONStorage, persist } from 'zustand/middleware';

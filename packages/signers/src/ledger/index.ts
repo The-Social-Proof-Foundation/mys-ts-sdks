@@ -2,16 +2,16 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type MysLedgerClient from '@mysocial/ledgerjs-hw-app-mys';
-import type { MysClient } from '@mysocial/mys/client';
-import type { SignatureWithBytes } from '@mysocial/mys/cryptography';
-import { messageWithIntent, Signer, toSerializedSignature } from '@mysocial/mys/cryptography';
-import { Ed25519PublicKey } from '@mysocial/mys/keypairs/ed25519';
-import { Transaction } from '@mysocial/mys/transactions';
-import { toBase64 } from '@mysocial/mys/utils';
+import type MysLedgerClient from '@socialproof/ledgerjs-hw-app-mys';
+import type { MysClient } from '@socialproof/mys/client';
+import type { SignatureWithBytes } from '@socialproof/mys/cryptography';
+import { messageWithIntent, Signer, toSerializedSignature } from '@socialproof/mys/cryptography';
+import { Ed25519PublicKey } from '@socialproof/mys/keypairs/ed25519';
+import { Transaction } from '@socialproof/mys/transactions';
+import { toBase64 } from '@socialproof/mys/utils';
 
 import { MysMoveObject } from './bcs.js';
-import { bcs } from '@mysocial/mys/bcs';
+import { bcs } from '@socialproof/mys/bcs';
 
 /**
  * Configuration options for initializing the LedgerSigner.

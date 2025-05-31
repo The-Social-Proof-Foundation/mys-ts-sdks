@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromHex } from '@mysocial/bcs';
-import { isValidMysObjectId } from '@mysocial/mys/utils';
+import { fromHex } from '@socialproof/bcs';
+import { isValidMysObjectId } from '@socialproof/mys/utils';
 import { split as externalSplit } from 'shamir-secret-sharing';
 
 import type { IBEEncryptions } from './bcs.js';

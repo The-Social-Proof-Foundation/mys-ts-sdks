@@ -26,7 +26,7 @@ export function useAutoConnectWallet(): 'disabled' | 'idle' | 'attempted' {
 
 	const { data, isError } = useQuery({
 		queryKey: [
-			'@mysocial/dapp-kit',
+			'@socialproof/dapp-kit',
 			'autoconnect',
 			{
 				isConnected,

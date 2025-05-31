@@ -8,11 +8,11 @@ import type {
 	MysObjectChangeCreated,
 	MysObjectChangePublished,
 	MysTransactionBlockResponse,
-} from '@mysocial/mys/client';
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import { FaucetRateLimitError, getFaucetHost, requestMysFromFaucetV2 } from '@mysocial/mys/faucet';
-import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
-import { Transaction } from '@mysocial/mys/transactions';
+} from '@socialproof/mys/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import { FaucetRateLimitError, getFaucetHost, requestMysFromFaucetV2 } from '@socialproof/mys/faucet';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import { Transaction } from '@socialproof/mys/transactions';
 import type { ContainerRuntimeClient } from 'testcontainers';
 import { getContainerRuntimeClient } from 'testcontainers';
 import { retry } from 'ts-retry-promise';
@@ -54,7 +54,7 @@ export function getClient(): MysClient {
 	});
 }
 
-// TODO: expose these testing utils from @mysocial/mys
+// TODO: expose these testing utils from @socialproof/mys
 export async function setupMysClient() {
 	const keypair = Ed25519Keypair.generate();
 	const address = keypair.getPublicKey().toMysAddress();

@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { PaginationArguments, MysClient } from '@mysocial/mys/client';
+import type { PaginationArguments, MysClient } from '@socialproof/mys/client';
 
 import {
 	FLOOR_PRICE_RULE_ADDRESS,

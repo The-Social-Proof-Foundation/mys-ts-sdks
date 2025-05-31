@@ -1,6 +1,6 @@
 # Docs site
 
-For more complete docs, visit the [Mys TypeScript SDK docs](https://sdk.mystenlabs.com/)
+For more complete docs, visit the [Mys TypeScript SDK docs](https://sdk.mysocial.network/)
 
 # Mys TypeScript SDK
 
@@ -15,26 +15,26 @@ upcoming TestNet launch.
 
 ## Working with Devnet
 
-The SDK will be published to [npm registry](https://www.npmjs.com/package/@mysocial/mys) with the same
+The SDK will be published to [npm registry](https://www.npmjs.com/package/@socialproof/mys) with the same
 bi-weekly release cycle as the Devnet validators and
 [RPC Server](https://github.com/The-Social-Proof-Foundation/mys-core/blob/main/docs/content/references/mys-api.mdx). To
 use the SDK in your project, you can do:
 
 ```bash
-$ npm install @mysocial/mys
+$ npm install @socialproof/mys
 ```
 
 You can also use your preferred npm client, such as yarn or pnpm.
 
 ## Working with local network
 
-Note that the `latest` tag for the [published SDK](https://www.npmjs.com/package/@mysocial/mys) might
+Note that the `latest` tag for the [published SDK](https://www.npmjs.com/package/@socialproof/mys) might
 go out of sync with the RPC server on the `main` branch until the next release. If you're developing
 against a local network, we recommend using the `experimental`-tagged packages, which contain the
 latest changes from `main`.
 
 ```bash
-npm install @mysocial/mys@experimental
+npm install @socialproof/mys@experimental
 ```
 
 Refer to the
@@ -61,7 +61,7 @@ $ pnpm sdk build
 ## Type Doc
 
 You can view the generated [Type Doc](https://typedoc.org/) for the
-[current release of the SDK](https://www.npmjs.com/package/@mysocial/mys) at
+[current release of the SDK](https://www.npmjs.com/package/@socialproof/mys) at
 http://typescript-sdk-docs.s3-website-us-east-1.amazonaws.com/.
 
 For the latest docs for the `main` branch, run `pnpm doc` and open the
@@ -72,16 +72,16 @@ For the latest docs for the `main` branch, run `pnpm doc` and open the
 To run unit tests
 
 ```
-pnpm --filter @mysocial/mys test:unit
+pnpm --filter @socialproof/mys test:unit
 ```
 
 To run E2E tests against local network
 
 ```
-pnpm --filter @mysocial/mys prepare:e2e
+pnpm --filter @socialproof/mys prepare:e2e
 
 // This will run all e2e tests
-pnpm --filter @mysocial/mys test:e2e
+pnpm --filter @socialproof/mys test:e2e
 
 // Alternatively you can choose to run only one test file
 npx vitest txn-builder.test.ts
@@ -100,7 +100,7 @@ https://stackoverflow.com/questions/52676244/node-version-not-updating-after-nvm
 To run E2E tests against Devnet
 
 ```
-VITE_FAUCET_URL='https://faucet.devnet.mysocial.network443/v2/gas' VITE_FULLNODE_URL='https://fullnode.devnet.mysocial.network' pnpm --filter @mysocial/mys exec vitest e2e
+VITE_FAUCET_URL='https://faucet.devnet.mysocial.network443/v2/gas' VITE_FULLNODE_URL='https://fullnode.devnet.mysocial.network' pnpm --filter @socialproof/mys exec vitest e2e
 ```
 
 ## Connecting to Mys Network
@@ -112,7 +112,7 @@ read-only operations. The default URLs to connect with the RPC server are:
 - Devnet: https://fullnode.devnet.mysocial.network
 
 ```typescript
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 
 // create a client connected to devnet
 const client = new MysClient({ url: getFullnodeUrl('devnet') });
@@ -128,7 +128,7 @@ local network with a local validator, a fullnode, and a faucet server. Refer to
 [this guide](https://docs.mysocial.network/build/mys-local-network) for more information.
 
 ```typescript
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 
 // create a client connected to devnet
 const client = new MysClient({ url: getFullnodeUrl('localnet') });
@@ -142,7 +142,7 @@ await client.getCoins({
 You can also construct your own in custom connections, with the URL for your own fullnode
 
 ```typescript
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 
 // create a client connected to devnet
 const client = new MysClient({
@@ -161,7 +161,7 @@ You can request mys from the faucet when running against devnet or localnet. For
 faucet.mysocial.network.
 
 ```typescript
-import { getFaucetHost, requestMysFromFaucetV2 } from '@mysocial/mys/faucet';
+import { getFaucetHost, requestMysFromFaucetV2 } from '@socialproof/mys/faucet';
 
 await requestMysFromFaucetV2({
 	host: getFaucetHost('devnet'),
@@ -177,9 +177,9 @@ For a primer for building transactions, refer to
 ### Transfer Object
 
 ```typescript
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
-import { Transaction } from '@mysocial/mys/transactions';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import { Transaction } from '@socialproof/mys/transactions';
 
 // Generate a new Ed25519 Keypair
 const keypair = new Ed25519Keypair();
@@ -204,9 +204,9 @@ console.log({ result });
 To transfer `1000` MIST to another address:
 
 ```typescript
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
-import { Transaction } from '@mysocial/mys/transactions';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import { Transaction } from '@socialproof/mys/transactions';
 
 // Generate a new Ed25519 Keypair
 const keypair = new Ed25519Keypair();
@@ -227,9 +227,9 @@ console.log({ result });
 ### Merge coins
 
 ```typescript
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
-import { Transaction } from '@mysocial/mys/transactions';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import { Transaction } from '@socialproof/mys/transactions';
 
 // Generate a new Ed25519 Keypair
 const keypair = new Ed25519Keypair();
@@ -251,9 +251,9 @@ console.log({ result });
 ### Move Call
 
 ```typescript
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
-import { Transaction } from '@mysocial/mys/transactions';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import { Transaction } from '@socialproof/mys/transactions';
 
 // Generate a new Ed25519 Keypair
 const keypair = new Ed25519Keypair();
@@ -278,9 +278,9 @@ console.log({ result });
 To publish a package:
 
 ```typescript
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
-import { Transaction } from '@mysocial/mys/transactions';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import { Transaction } from '@socialproof/mys/transactions';
 
 const { execSync } = require('child_process');
 // Generate a new Ed25519 Keypair
@@ -314,7 +314,7 @@ Fetch objects owned by the address
 `0xcc2bd176a478baea9a0de7a24cd927661cc6e860d5bacecb9a138ef20dbab231`
 
 ```typescript
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 
 const client = new MysClient({
 	url: getFullnodeUrl('testnet'),
@@ -330,7 +330,7 @@ Fetch object details for the object with id
 `0xe19739da1a701eadc21683c5b127e62b553e833e8a15a4f292f4f48b4afea3f2`
 
 ```typescript
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 
 const client = new MysClient({
 	url: getFullnodeUrl('testnet'),
@@ -356,7 +356,7 @@ const txns = await client.multiGetObjects({
 Fetch transaction details from transaction digests:
 
 ```typescript
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 
 const client = new MysClient({
 	url: getFullnodeUrl('testnet'),
@@ -424,7 +424,7 @@ Fetch coins of type `0x65b0553a591d7b13376e03a408e112c706dc0909a79080c810b93b06f
 owned by an address:
 
 ```typescript
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 
 const client = new MysClient({
 	url: getFullnodeUrl('testnet'),
@@ -438,7 +438,7 @@ const coins = await client.getCoins({
 Fetch all coin objects owned by an address:
 
 ```typescript
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 
 const client = new MysClient({
 	url: getFullnodeUrl('testnet'),
@@ -451,7 +451,7 @@ const allCoins = await client.getAllCoins({
 Fetch the total coin balance for one coin type, owned by an address:
 
 ```typescript
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 
 const client = new MysClient({
 	url: getFullnodeUrl('testnet'),
@@ -469,7 +469,7 @@ Querying events created by transactions sent by account
 `0xcc2bd176a478baea9a0de7a24cd927661cc6e860d5bacecb9a138ef20dbab231`
 
 ```typescript
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 
 const client = new MysClient({
 	url: getFullnodeUrl('testnet'),

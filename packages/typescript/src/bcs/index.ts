@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/bcs';
+import { bcs } from '@socialproof/bcs';
 
 import {
 	Address,
@@ -42,7 +42,7 @@ import { TransactionEffects } from './effects.js';
 export type { TypeTag } from './types.js';
 
 export { TypeTagSerializer } from './type-tag-serializer.js';
-export { BcsType, type BcsTypeOptions } from '@mysocial/bcs';
+export { BcsType, type BcsTypeOptions } from '@socialproof/bcs';
 
 const mysBcs = {
 	...bcs,

@@ -1,7 +1,7 @@
 // Copyright (c) Mysten Labs, Inc.
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { fromBase58, toBase64, toHex } from '@mysocial/bcs';
+import { fromBase58, toBase64, toHex } from '@socialproof/bcs';
 
 import type { Signer } from '../cryptography/index.js';
 import { Experimental_BaseClient } from '../experimental/client.js';
@@ -132,7 +132,7 @@ type NetworkOrTransport =
 			url?: never;
 	  };
 
-const MYS_CLIENT_BRAND = Symbol.for('@mysocial/MysClient') as never;
+const MYS_CLIENT_BRAND = Symbol.for('@socialproof/MysClient') as never;
 
 export function isMysClient(client: unknown): client is MysClient {
 	return (

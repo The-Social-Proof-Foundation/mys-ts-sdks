@@ -2,11 +2,11 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64, fromHex, toBase64 } from '@mysocial/bcs';
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
-import { MysGraphQLClient } from '@mysocial/mys/graphql';
-import { Transaction } from '@mysocial/mys/transactions';
+import { fromBase64, fromHex, toBase64 } from '@socialproof/bcs';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import { MysGraphQLClient } from '@socialproof/mys/graphql';
+import { Transaction } from '@socialproof/mys/transactions';
 import { beforeAll, describe, expect, it, vi } from 'vitest';
 
 import { SealClient } from '../../src';
@@ -423,7 +423,7 @@ describe('Integration test', () => {
 			address: wrongMysAddress,
 			packageId: TESTNET_PACKAGE_ID,
 			ttlMin: 10,
-			mysClient: new MysGraphQLClient({ url: 'https://mys-testnet.mystenlabs.com/graphql' }),
+			mysClient: new MysGraphQLClient({ url: 'https://testnet.mysocial.network/graphql' }),
 		});
 		const sig = await keypair.signPersonalMessage(sessionKey.getPersonalMessage());
 		await expect(sessionKey.setPersonalMessageSignature(sig.signature)).rejects.toThrow(
@@ -436,7 +436,7 @@ describe('Integration test', () => {
 			packageId: TESTNET_PACKAGE_ID,
 			ttlMin: 10,
 			signer: keypair,
-			mysClient: new MysGraphQLClient({ url: 'https://mys-testnet.mystenlabs.com/graphql' }),
+			mysClient: new MysGraphQLClient({ url: 'https://testnet.mysocial.network/graphql' }),
 		});
 
 		const wrongTxBytes = await constructTxBytes(TESTNET_PACKAGE_ID, 'whitelist', mysClient, [
@@ -468,7 +468,7 @@ describe('Integration test', () => {
 			packageId: TESTNET_PACKAGE_ID,
 			ttlMin: 10,
 			signer: keypair,
-			mysClient: new MysGraphQLClient({ url: 'https://mys-testnet.mystenlabs.com/graphql' }),
+			mysClient: new MysGraphQLClient({ url: 'https://testnet.mysocial.network/graphql' }),
 		});
 		await expect(
 			client2.fetchKeys({
@@ -490,7 +490,7 @@ describe('Integration test', () => {
 			address: kp.getPublicKey().toMysAddress(),
 			packageId: TESTNET_PACKAGE_ID,
 			ttlMin: 10,
-			mysClient: new MysGraphQLClient({ url: 'https://mys-testnet.mystenlabs.com/graphql' }),
+			mysClient: new MysGraphQLClient({ url: 'https://testnet.mysocial.network/graphql' }),
 		});
 		// Wrong signature set throws error.
 		const sig = await kp.signPersonalMessage(new TextEncoder().encode('hello'));
@@ -536,7 +536,7 @@ describe('Integration test', () => {
 			packageId: TESTNET_PACKAGE_ID,
 			ttlMin: 10,
 			signer: keypair,
-			mysClient: new MysGraphQLClient({ url: 'https://mys-testnet.mystenlabs.com/graphql' }),
+			mysClient: new MysGraphQLClient({ url: 'https://testnet.mysocial.network/graphql' }),
 		});
 
 		const whitelistId = '0xaae704d2280f2c3d24fc08972bb31f2ef1f1c968784935434c3296be5bfd9d5b';

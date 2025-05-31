@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { Transaction } from '@mysocial/mys/transactions';
-import { normalizeMysAddress } from '@mysocial/mys/utils';
+import { Transaction } from '@socialproof/mys/transactions';
+import { normalizeMysAddress } from '@socialproof/mys/utils';
 import { beforeAll, describe, expect, it } from 'vitest';
 
 import {

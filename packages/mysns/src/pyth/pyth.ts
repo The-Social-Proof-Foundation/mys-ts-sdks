@@ -2,11 +2,11 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/mys/bcs';
-import type { MysClient } from '@mysocial/mys/client';
-import type { Transaction } from '@mysocial/mys/transactions';
-import { coinWithBalance } from '@mysocial/mys/transactions';
-import { fromBase64, fromHex, parseStructTag } from '@mysocial/mys/utils';
+import { bcs } from '@socialproof/mys/bcs';
+import type { MysClient } from '@socialproof/mys/client';
+import type { Transaction } from '@socialproof/mys/transactions';
+import { coinWithBalance } from '@socialproof/mys/transactions';
+import { fromBase64, fromHex, parseStructTag } from '@socialproof/mys/utils';
 
 import type { HexString } from './PriceServiceConnection.js';
 import { PriceServiceConnection } from './PriceServiceConnection.js';

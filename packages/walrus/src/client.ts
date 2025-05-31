@@ -2,14 +2,14 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { InferBcsType } from '@mysocial/bcs';
-import { bcs } from '@mysocial/bcs';
-import { MysClient } from '@mysocial/mys/client';
-import type { Signer } from '@mysocial/mys/cryptography';
-import type { ClientCache, ClientWithExtensions } from '@mysocial/mys/experimental';
-import type { TransactionObjectArgument, TransactionResult } from '@mysocial/mys/transactions';
-import { coinWithBalance, Transaction } from '@mysocial/mys/transactions';
-import { normalizeStructTag, parseStructTag } from '@mysocial/mys/utils';
+import type { InferBcsType } from '@socialproof/bcs';
+import { bcs } from '@socialproof/bcs';
+import { MysClient } from '@socialproof/mys/client';
+import type { Signer } from '@socialproof/mys/cryptography';
+import type { ClientCache, ClientWithExtensions } from '@socialproof/mys/experimental';
+import type { TransactionObjectArgument, TransactionResult } from '@socialproof/mys/transactions';
+import { coinWithBalance, Transaction } from '@socialproof/mys/transactions';
+import { normalizeStructTag, parseStructTag } from '@socialproof/mys/utils';
 
 import {
 	MAINNET_WALRUS_PACKAGE_CONFIG,
@@ -85,7 +85,7 @@ import {
 import { MysObjectDataLoader } from './utils/object-loader.js';
 import { shuffle, weightedShuffle } from './utils/randomness.js';
 import { getWasmBindings } from './wasm.js';
-import { chunk } from '@mysocial/utils';
+import { chunk } from '@socialproof/utils';
 
 export class WalrusClient {
 	#storageNodeClient: StorageNodeClient;
@@ -129,7 +129,7 @@ export class WalrusClient {
 
 		this.#storageNodeClient = new StorageNodeClient(config.storageNodeClientOptions);
 		this.#objectLoader = new MysObjectDataLoader(this.#mysClient);
-		this.#cache = this.#mysClient.cache.scope('@mysocial/walrus');
+		this.#cache = this.#mysClient.cache.scope('@socialproof/walrus');
 	}
 
 	static experimental_asClientExtension({

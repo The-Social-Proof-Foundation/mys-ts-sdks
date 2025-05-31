@@ -2,11 +2,11 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs, TypeTagSerializer } from '@mysocial/mys/bcs';
-import type { BcsType, TypeTag } from '@mysocial/mys/bcs';
-import { isArgument } from '@mysocial/mys/transactions';
-import type { TransactionArgument } from '@mysocial/mys/transactions';
-import { normalizeMysAddress } from '@mysocial/mys/utils';
+import { bcs, TypeTagSerializer } from '@socialproof/mys/bcs';
+import type { BcsType, TypeTag } from '@socialproof/mys/bcs';
+import { isArgument } from '@socialproof/mys/transactions';
+import type { TransactionArgument } from '@socialproof/mys/transactions';
+import { normalizeMysAddress } from '@socialproof/mys/utils';
 
 const MOVE_STDLIB_ADDRESS = normalizeMysAddress('0x1');
 const MYS_FRAMEWORK_ADDRESS = normalizeMysAddress('0x2');

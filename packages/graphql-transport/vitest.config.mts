@@ -18,11 +18,11 @@ export default defineConfig({
 	},
 	resolve: {
 		alias: {
-			'@mysocial/bcs': new URL('../bcs/src', import.meta.url).pathname,
-			'@mysocial/utils': new URL('../utils/src', import.meta.url).pathname,
-			'@mysocial/sui/transactions': new URL('../typescript/src/transactions', import.meta.url)
+			'@socialproof/bcs': new URL('../bcs/src', import.meta.url).pathname,
+			'@socialproof/utils': new URL('../utils/src', import.meta.url).pathname,
+			'@socialproof/sui/transactions': new URL('../typescript/src/transactions', import.meta.url)
 				.pathname,
-			'@mysocial/sui': new URL('../typescript/src', import.meta.url).pathname,
+			'@socialproof/sui': new URL('../typescript/src', import.meta.url).pathname,
 		},
 	},
 });

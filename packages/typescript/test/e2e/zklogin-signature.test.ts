@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64 } from '@mysocial/bcs';
+import { fromBase64 } from '@socialproof/bcs';
 import { describe, expect, it, test } from 'vitest';
 
 import { MysGraphQLClient } from '../../src/graphql';

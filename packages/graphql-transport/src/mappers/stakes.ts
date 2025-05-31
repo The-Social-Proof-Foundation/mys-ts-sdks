@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { DelegatedStake } from '@mysocial/mys/client';
+import type { DelegatedStake } from '@socialproof/mys/client';
 
 import type { Rpc_Stake_FieldsFragment } from '../generated/queries.js';
 

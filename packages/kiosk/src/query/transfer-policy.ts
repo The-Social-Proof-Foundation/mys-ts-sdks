@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { MysClient } from '@mysocial/mys/client';
-import { fromBase64, isValidMysAddress } from '@mysocial/mys/utils';
+import type { MysClient } from '@socialproof/mys/client';
+import { fromBase64, isValidMysAddress } from '@socialproof/mys/utils';
 
 import '../bcs.js';
 

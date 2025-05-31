@@ -6,8 +6,8 @@ import type {
 	PaginatedObjectsResponse,
 	MysObjectData,
 	MysObjectDataOptions,
-} from '@mysocial/mys/client';
-import type { TransactionArgument } from '@mysocial/mys/transactions';
+} from '@socialproof/mys/client';
+import type { TransactionArgument } from '@socialproof/mys/transactions';
 
 import type { ObjectArgument } from './index.js';
 

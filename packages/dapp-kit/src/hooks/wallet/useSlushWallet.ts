@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { registerSlushWallet } from '@mysocial/slush-wallet';
+import { registerSlushWallet } from '@socialproof/slush-wallet';
 import { useLayoutEffect } from 'react';
 
 export interface SlushWalletConfig {

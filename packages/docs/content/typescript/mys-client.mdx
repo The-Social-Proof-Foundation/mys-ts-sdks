@@ -12,7 +12,7 @@ relevant URL to the `url` parameter. The following example establishes a connect
 requests SUI from that network's faucet.
 
 ```typescript
-import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { getFullnodeUrl, SuiClient } from '@socialproof/sui/client';
 
 // use getFullnodeUrl to define Devnet RPC location
 const rpcUrl = getFullnodeUrl('devnet');
@@ -48,7 +48,7 @@ methods are built into `SuiClient`, but you can use `call` to leverage any metho
 RPC.
 
 ```typescript
-import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
+import { getFullnodeUrl, SuiClient } from '@socialproof/sui/client';
 
 const client = new SuiClient({ url: getFullnodeUrl('devnet') });
 
@@ -67,7 +67,7 @@ You can construct a custom transport instance if you need to pass any custom opt
 headers or timeout values.
 
 ```typescript
-import { getFullnodeUrl, SuiClient, SuiHTTPTransport } from '@mysocial/sui/client';
+import { getFullnodeUrl, SuiClient, SuiHTTPTransport } from '@socialproof/sui/client';
 
 const client = new SuiClient({
 	transport: new SuiHTTPTransport({

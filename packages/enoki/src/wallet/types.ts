@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { MysClient } from '@mysocial/mys/client';
-import type { StandardEventsListeners } from '@mysocial/wallet-standard';
+import type { MysClient } from '@socialproof/mys/client';
+import type { StandardEventsListeners } from '@socialproof/wallet-standard';
 
 import type { EnokiClientConfig } from '../EnokiClient/index.js';
 import type { AuthProvider, EnokiNetwork } from '../EnokiClient/type.js';

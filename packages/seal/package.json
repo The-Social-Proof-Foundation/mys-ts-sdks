@@ -1,5 +1,5 @@
 {
-	"name": "@mysocial/seal",
+	"name": "@socialproof/seal",
 	"version": "0.4.5",
 	"description": "Seal SDK",
 	"license": "Apache-2.0",
@@ -45,14 +45,14 @@
 	"homepage": "https://github.com/The-Social-Proof-Foundation/mys-ts-sdks#readme",
 	"devDependencies": {
 		"@hey-api/openapi-ts": "^0.66.1",
-		"@mysocial/build-scripts": "workspace:*",
+		"@socialproof/build-scripts": "workspace:*",
 		"@types/node": "^22.13.17",
 		"typescript": "^5.8.2",
 		"vitest": "^3.1.1"
 	},
 	"dependencies": {
-		"@mysocial/bcs": "workspace:*",
-		"@mysocial/mys": "workspace:*",
+		"@socialproof/bcs": "workspace:*",
+		"@socialproof/mys": "workspace:*",
 		"@noble/curves": "^1.8.1",
 		"@noble/hashes": "^1.7.1",
 		"shamir-secret-sharing": "0.0.3"

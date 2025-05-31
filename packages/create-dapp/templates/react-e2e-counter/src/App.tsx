@@ -1,5 +1,5 @@
-import { ConnectButton, useCurrentAccount } from "@mysocial/dapp-kit";
-import { isValidMysObjectId } from "@mysocial/mys/utils";
+import { ConnectButton, useCurrentAccount } from "@socialproof/dapp-kit";
+import { isValidMysObjectId } from "@socialproof/mys/utils";
 import { Box, Container, Flex, Heading } from "@radix-ui/themes";
 import { useState } from "react";
 import { Counter } from "./Counter";

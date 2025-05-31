@@ -5,14 +5,14 @@ import {
   useCurrentAccount,
   useSignPersonalMessage,
   useSignTransaction,
-} from "@mysocial/dapp-kit";
-import { Transaction } from "@mysocial/mys/transactions";
+} from "@socialproof/dapp-kit";
+import { Transaction } from "@socialproof/mys/transactions";
 import {
   verifyPersonalMessageSignature,
   verifyTransactionSignature,
-} from "@mysocial/mys/verify";
+} from "@socialproof/mys/verify";
 import { Button, Container } from "@radix-ui/themes";
-import { fromBase64 } from "@mysocial/mys/utils";
+import { fromBase64 } from "@socialproof/mys/utils";
 
 export function Actions() {
   const account = useCurrentAccount();

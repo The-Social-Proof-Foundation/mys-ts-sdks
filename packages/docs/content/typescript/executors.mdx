@@ -33,8 +33,8 @@ transactions to finish before sending the next one.
   not specify a budget (default `50_000_000n`),
 
 ```ts
-import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
-import { SerialTransactionExecutor } from '@mysocial/sui/transactions';
+import { getFullnodeUrl, SuiClient } from '@socialproof/sui/client';
+import { SerialTransactionExecutor } from '@socialproof/sui/transactions';
 
 const client = new SuiClient({ url: getFullnodeUrl('devnet') });
 
@@ -103,8 +103,8 @@ way that avoids conflicts between transactions using the same object ids.
   each epoch boundary to ensure the gas price is up-to-date for the next epoch. (default `1000`)
 
 ```ts
-import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
-import { ParallelTransactionExecutor } from '@mysocial/sui/transactions';
+import { getFullnodeUrl, SuiClient } from '@socialproof/sui/client';
+import { ParallelTransactionExecutor } from '@socialproof/sui/transactions';
 
 const client = new SuiClient({ url: getFullnodeUrl('devnet') });
 

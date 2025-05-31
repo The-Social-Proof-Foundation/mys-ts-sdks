@@ -1,4 +1,4 @@
-import { useCurrentAccount, useMysClientQuery } from "@mysocial/dapp-kit";
+import { useCurrentAccount, useMysClientQuery } from "@socialproof/dapp-kit";
 import { Flex, Heading, Text } from "@radix-ui/themes";
 
 export function OwnedObjects() {

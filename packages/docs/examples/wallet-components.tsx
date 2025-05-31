@@ -10,12 +10,12 @@ import {
 	MysClientProvider,
 	useCurrentAccount,
 	WalletProvider,
-} from '@mysocial/dapp-kit';
-import { getFullnodeUrl } from '@mysocial/mys/client';
+} from '@socialproof/dapp-kit';
+import { getFullnodeUrl } from '@socialproof/mys/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useState } from 'react';
 
-import '@mysocial/dapp-kit/dist/index.css';
+import '@socialproof/dapp-kit/dist/index.css';
 
 export const ConnectButtonExample = withProviders(() => {
 	return <ConnectButton />;

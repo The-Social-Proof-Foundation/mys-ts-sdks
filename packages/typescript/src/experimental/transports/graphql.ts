@@ -25,7 +25,7 @@ import {
 	ZkLoginIntentScope,
 } from '../../graphql/generated/queries.js';
 import { ObjectError } from '../errors.js';
-import { fromBase64, toBase64 } from '@mysocial/utils';
+import { fromBase64, toBase64 } from '@socialproof/utils';
 import { normalizeStructTag, normalizeMysAddress } from '../../utils/mys-types.js';
 import { deriveDynamicFieldID } from '../../utils/dynamic-fields.js';
 import { parseTransactionBcs, parseTransactionEffectsBcs } from './utils.js';

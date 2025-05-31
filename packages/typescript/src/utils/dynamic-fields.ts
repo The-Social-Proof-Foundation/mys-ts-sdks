@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { toHex } from '@mysocial/bcs';
+import { toHex } from '@socialproof/bcs';
 import { blake2b } from '@noble/hashes/blake2b';
 
 import type { TypeTag } from '../bcs/bcs.js';

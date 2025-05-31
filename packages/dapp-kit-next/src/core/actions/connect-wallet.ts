@@ -5,16 +5,16 @@
 import type { DAppKitStores } from '../store.js';
 import { task } from 'nanostores';
 import type { UiWallet, UiWalletAccount } from '@wallet-standard/ui';
-import type { StandardConnectInput } from '@mysocial/wallet-standard';
-import type { StandardConnectFeature } from '@mysocial/wallet-standard';
-import { StandardConnect } from '@mysocial/wallet-standard';
+import type { StandardConnectInput } from '@socialproof/wallet-standard';
+import type { StandardConnectFeature } from '@socialproof/wallet-standard';
+import { StandardConnect } from '@socialproof/wallet-standard';
 import { getWalletFeature, uiWalletAccountBelongsToUiWallet } from '@wallet-standard/ui';
 import {
 	getOrCreateUiWalletAccountForStandardWalletAccount_DO_NOT_USE_OR_YOU_WILL_BE_FIRED as getOrCreateUiWalletAccountForStandardWalletAccount,
 	getWalletForHandle_DO_NOT_USE_OR_YOU_WILL_BE_FIRED as getWalletForHandle,
 } from '@wallet-standard/ui-registry';
 import { WalletAccountNotFoundError, WalletNoAccountsConnectedError } from '../../utils/errors.js';
-import type { Experimental_MysClientTypes } from '@mysocial/mys/experimental';
+import type { Experimental_MysClientTypes } from '@socialproof/mys/experimental';
 import { getChain } from '../../utils/networks.js';
 
 export type ConnectWalletArgs = {

@@ -11,8 +11,8 @@ import type {
 	MysMoveNormalizedModule,
 	MysMoveNormalizedStruct,
 	MysMoveNormalizedType,
-} from '@mysocial/mys/client';
-import { normalizeMysAddress, parseStructTag } from '@mysocial/mys/utils';
+} from '@socialproof/mys/client';
+import { normalizeMysAddress, parseStructTag } from '@socialproof/mys/utils';
 
 import type {
 	Rpc_Move_Enum_FieldsFragment,

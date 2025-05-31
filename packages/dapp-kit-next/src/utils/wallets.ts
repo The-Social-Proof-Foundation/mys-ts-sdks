@@ -9,8 +9,8 @@ import {
 	MysSignTransaction,
 	WALLET_STANDARD_ERROR__FEATURES__WALLET_ACCOUNT_CHAIN_UNSUPPORTED,
 	WalletStandardError,
-} from '@mysocial/wallet-standard';
-import type { Wallet } from '@mysocial/wallet-standard';
+} from '@socialproof/wallet-standard';
+import type { Wallet } from '@socialproof/wallet-standard';
 import type { UiWallet, UiWalletAccount } from '@wallet-standard/ui';
 import { getWalletAccountFeature, uiWalletAccountBelongsToUiWallet } from '@wallet-standard/ui';
 import { getWalletForHandle_DO_NOT_USE_OR_YOU_WILL_BE_FIRED as getWalletForHandle } from '@wallet-standard/ui-registry';

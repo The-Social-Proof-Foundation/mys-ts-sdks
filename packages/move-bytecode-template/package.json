@@ -1,5 +1,5 @@
 {
-	"name": "@mysocial/move-bytecode-template",
+	"name": "@socialproof/move-bytecode-template",
 	"version": "0.1.0",
 	"description": "Move Binary Format implementation in WASM",
 	"type": "module",
@@ -15,8 +15,8 @@
 	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"license": "Apache-2.0",
 	"devDependencies": {
-		"@mysocial/bcs": "workspace:*",
-		"@mysocial/build-scripts": "workspace:*",
+		"@socialproof/bcs": "workspace:*",
+		"@socialproof/build-scripts": "workspace:*",
 		"typescript": "^5.8.2",
 		"vitest": "^3.1.1",
 		"wasm-pack": "^0.13.1"

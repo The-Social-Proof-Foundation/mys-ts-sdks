@@ -12,7 +12,7 @@
  * @property {BcsReader}
  */
 
-import { toBase58, fromBase58, toBase64, fromBase64, toHex, fromHex } from '@mysocial/utils';
+import { toBase58, fromBase58, toBase64, fromBase64, toHex, fromHex } from '@socialproof/utils';
 import type { BcsTypeOptions } from './bcs-type.js';
 import { BcsType, isSerializedBcs, SerializedBcs } from './bcs-type.js';
 import { bcs } from './bcs.js';

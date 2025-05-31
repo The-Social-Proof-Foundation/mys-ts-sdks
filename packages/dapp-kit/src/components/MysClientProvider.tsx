@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { getFullnodeUrl, isMysClient, MysClient } from '@mysocial/mys/client';
-import type { MysClientOptions } from '@mysocial/mys/client';
+import { getFullnodeUrl, isMysClient, MysClient } from '@socialproof/mys/client';
+import type { MysClientOptions } from '@socialproof/mys/client';
 import { createContext, useMemo, useState } from 'react';
 
 import type { NetworkConfig } from '../hooks/networkConfig.js';

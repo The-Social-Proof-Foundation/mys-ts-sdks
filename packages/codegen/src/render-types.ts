@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { normalizeMysAddress } from '@mysocial/mys/utils';
+import { normalizeMysAddress } from '@socialproof/mys/utils';
 
 import type { DeserializedModule, TypeSignature } from './types.js';
 

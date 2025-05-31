@@ -33,7 +33,7 @@ your application's lifecycle.
     supports `mainnet` and `testnet`.
 
 ```ts
-import { registerSlushWallet } from '@mysocial/slush-wallet';
+import { registerSlushWallet } from '@socialproof/slush-wallet';
 
 registerSlushWallet('Your dApp Name');
 ```
@@ -55,8 +55,8 @@ For example, if you are using `dapp-kit`, you can use the `useCurrentWallet` hoo
 wallet, and check if it is the Slush wallet.
 
 ```ts
-import { useCurrentWallet } from '@mysocial/dapp-kit';
-import { SLUSH_WALLET_NAME } from '@mysocial/slush-wallet';
+import { useCurrentWallet } from '@socialproof/dapp-kit';
+import { SLUSH_WALLET_NAME } from '@socialproof/slush-wallet';
 
 function SlushOnly() {
 	const { currentWallet } = useCurrentWallet();
@@ -84,7 +84,7 @@ If you're using `registerStashedWallet`, switch to `registerSlushWallet`:
 **Before:**
 
 ```ts
-import { registerStashedWallet } from '@mysocial/zksend';
+import { registerStashedWallet } from '@socialproof/zksend';
 
 registerStashedWallet(...);
 ```
@@ -92,7 +92,7 @@ registerStashedWallet(...);
 **After:**
 
 ```ts
-import { registerSlushWallet } from '@mysocial/slush-wallet';
+import { registerSlushWallet } from '@socialproof/slush-wallet';
 
 registerSlushWallet(...);
 ```

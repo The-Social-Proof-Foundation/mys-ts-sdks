@@ -7,8 +7,8 @@ import { atom, computed, map } from 'nanostores';
 import { getChain } from '../utils/networks.js';
 import type { Networks } from '../utils/networks.js';
 import { getAssociatedWalletOrThrow, requiredWalletFeatures } from '../utils/wallets.js';
-import { publicKeyFromMysBytes } from '@mysocial/mys/verify';
-import type { Experimental_BaseClient } from '@mysocial/mys/experimental';
+import { publicKeyFromMysBytes } from '@socialproof/mys/verify';
+import type { Experimental_BaseClient } from '@socialproof/mys/experimental';
 
 type WalletConnection =
 	| {

@@ -1,4 +1,4 @@
-import { ConnectButton } from "@mysocial/dapp-kit";
+import { ConnectButton } from "@socialproof/dapp-kit";
 import { Box, Container, Flex, Heading } from "@radix-ui/themes";
 import { WalletStatus } from "./WalletStatus";
 

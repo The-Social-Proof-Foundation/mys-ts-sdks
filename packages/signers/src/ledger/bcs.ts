@@ -2,14 +2,14 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs, TypeTagSerializer } from '@mysocial/mys/bcs';
-import type { ObjectOwner } from '@mysocial/mys/client';
+import { bcs, TypeTagSerializer } from '@socialproof/mys/bcs';
+import type { ObjectOwner } from '@socialproof/mys/client';
 import {
 	fromBase64,
 	normalizeStructTag,
 	normalizeMysAddress,
 	parseStructTag,
-} from '@mysocial/mys/utils';
+} from '@socialproof/mys/utils';
 
 const MYS_FRAMEWORK_ADDRESS = normalizeMysAddress('0x2');
 const MYS_SYSTEM_ADDRESS = normalizeMysAddress('0x3');

@@ -31,7 +31,7 @@ The AWS KMS Signer allows you to leverage AWS's Key Management Service to sign M
 ### Usage
 
 ```typescript
-import { AwsKmsSigner } from '@mysocial/signers/aws';
+import { AwsKmsSigner } from '@socialproof/signers/aws';
 
 const prepareSigner = async () => {
 	const { AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION, AWS_KMS_KEY_ID } = process.env;
@@ -172,10 +172,10 @@ cryptographic operations.
 
 ```typescript
 import Transport from '@ledgerhq/hw-transport-node-hid';
-import MysLedgerClient from '@mysocial/ledgerjs-hw-app-mys';
-import { LedgerSigner } from '@mysocial/signers/ledger';
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import { Transaction } from '@mysocial/mys/transactions';
+import MysLedgerClient from '@socialproof/ledgerjs-hw-app-mys';
+import { LedgerSigner } from '@socialproof/signers/ledger';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import { Transaction } from '@socialproof/mys/transactions';
 
 const transport = await Transport.open(undefined);
 const ledgerClient = new MysLedgerClient(transport);

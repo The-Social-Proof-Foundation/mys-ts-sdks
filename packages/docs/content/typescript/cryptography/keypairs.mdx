@@ -21,7 +21,7 @@ example, to use the Ed25519 scheme, import the `Ed25519Keypair` class from
 `@mysten/sui/keypairs/ed25519`.
 
 ```typescript
-import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
+import { Ed25519Keypair } from '@socialproof/sui/keypairs/ed25519';
 ```
 
 To create a random key pair (which identifies a Sui address), instantiate a new `Keypair` class. To
@@ -53,7 +53,7 @@ to retrieve its associated Sui address. You can access a `Keypair` from its `Pub
 it from the bytes (as a `Uint8Array`) of the `PublicKey`, as in the following code:
 
 ```typescript
-import { Ed25519Keypair, Ed25519PublicKey } from '@mysocial/sui/keypairs/ed25519';
+import { Ed25519Keypair, Ed25519PublicKey } from '@socialproof/sui/keypairs/ed25519';
 
 const keypair = new Ed25519Keypair();
 
@@ -76,8 +76,8 @@ then verifies the message to retrieve the public key. The code then uses `toSuiA
 if the address associated with the public key matches the address that the key pair defines.
 
 ```typescript
-import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
-import { verifyPersonalMessageSignature } from '@mysocial/sui/verify';
+import { Ed25519Keypair } from '@socialproof/sui/keypairs/ed25519';
+import { verifyPersonalMessageSignature } from '@socialproof/sui/verify';
 
 const keypair = new Ed25519Keypair();
 const message = new TextEncoder().encode('hello world');
@@ -96,8 +96,8 @@ if (!publicKey.verifyAddress(keypair.getPublicKey().toSuiAddress())) {
 will throw an error if the signature is not valid for the provided address.
 
 ```typescript
-import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
-import { verifyPersonalMessageSignature } from '@mysocial/sui/verify';
+import { Ed25519Keypair } from '@socialproof/sui/keypairs/ed25519';
+import { verifyPersonalMessageSignature } from '@socialproof/sui/verify';
 
 const keypair = new Ed25519Keypair();
 const message = new TextEncoder().encode('hello world');
@@ -115,9 +115,9 @@ use `verifyTransactionSignature`:
 
 ```typescript
 // import SuiClient to create a network client and the getFullnodeUrl helper function
-import { getFullnodeUrl, SuiClient } from '@mysocial/sui/client';
-import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
-import { verifyTransactionSignature } from '@mysocial/sui/verify';
+import { getFullnodeUrl, SuiClient } from '@socialproof/sui/client';
+import { Ed25519Keypair } from '@socialproof/sui/keypairs/ed25519';
+import { verifyTransactionSignature } from '@socialproof/sui/verify';
 
 // see Network Interactions with SuiClient for more info on creating clients
 const client = new SuiClient({ url: getFullnodeUrl('testnet') });
@@ -143,12 +143,12 @@ additional configuration.
 For testnet signatures, you will need to provide a testnet GraphQL Client:
 
 ```typescript
-import { SuiGraphQLClient } from '@mysocial/sui/graphql';
-import { verifyPersonalMessageSignature } from '@mysocial/sui/verify';
+import { SuiGraphQLClient } from '@socialproof/sui/graphql';
+import { verifyPersonalMessageSignature } from '@socialproof/sui/verify';
 
 const publicKey = await verifyPersonalMessageSignature(message, zkSignature, {
 	client: new SuiGraphQLClient({
-		url: 'https://sui-testnet.mystenlabs.com/graphql',
+		url: 'https://sui-testnet.mysocial.network/graphql',
 	}),
 });
 ```
@@ -161,12 +161,12 @@ Instead, you can either pass in the expected address during verification, or use
 `publicKey.verifyAddress(address)` method:
 
 ```typescript
-import { SuiGraphQLClient } from '@mysocial/sui/graphql';
-import { verifyPersonalMessageSignature } from '@mysocial/sui/verify';
+import { SuiGraphQLClient } from '@socialproof/sui/graphql';
+import { verifyPersonalMessageSignature } from '@socialproof/sui/verify';
 
 const publicKey = await verifyPersonalMessageSignature(message, zkSignature, {
 	client: new SuiGraphQLClient({
-		url: 'https://sui-testnet.mystenlabs.com/graphql',
+		url: 'https://sui-testnet.mysocial.network/graphql',
 	}),
 	// Pass in the expected address, and the verification method will throw an error if the signature is not valid for the provided address
 	address: '0x...expectedAddress',
@@ -179,7 +179,7 @@ if (!publicKey.verifyAddress('0x...expectedAddress')) {
 ```
 
 Both of these methods will check the signature against both the standard and
-[legacy versions of the zklogin address](https://sdk.mystenlabs.com/typescript/zklogin#legacy-addresses).
+[legacy versions of the zklogin address](https://sdk.mysocial.network/typescript/zklogin#legacy-addresses).
 
 ## Deriving a key pair from a mnemonic
 
@@ -198,7 +198,7 @@ If you know the Keypair scheme for your secret key, you can use the `fromSecretK
 appropriate `Keypair` class to derive the keypair from the secret key.
 
 ```typescript
-import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
+import { Ed25519Keypair } from '@socialproof/sui/keypairs/ed25519';
 
 // Example bech32 encoded secret key (which always starts with 'suiprivkey')
 const secretKey = 'suiprivkey1qzse89atw7d3zum8ujep76d2cxmgduyuast0y9fu23xcl0mpafgkktllhyc';
@@ -211,10 +211,10 @@ keyScheme, and get the keypairs private key bytes, which can be used to instanti
 `Keypair` class.
 
 ```typescript
-import { decodeSuiPrivateKey } from '@mysocial/sui/cryptography';
-import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
-import { Secp256r1Keypair } from '@mysocial/sui/keypairs/secp256r1';
-import { Secp256k1Keypair } from '@mysocial/sui/keypairs/secp256k1';
+import { decodeSuiPrivateKey } from '@socialproof/sui/cryptography';
+import { Ed25519Keypair } from '@socialproof/sui/keypairs/ed25519';
+import { Secp256r1Keypair } from '@socialproof/sui/keypairs/secp256r1';
+import { Secp256k1Keypair } from '@socialproof/sui/keypairs/secp256k1';
 
 const { scheme, secretKey } = decodeSuiPrivateKey(encoded);
 
@@ -256,7 +256,7 @@ If you have only the raw private key bytes for your keypair, you can encode to t
 using the `encodeSuiPrivateKey` function.
 
 ```typescript
-import { encodeSuiPrivateKey } from '@mysocial/sui/cryptography';
+import { encodeSuiPrivateKey } from '@socialproof/sui/cryptography';
 
 const encoded = encodeSuiPrivateKey(
 	new Uint8Array([
@@ -274,8 +274,8 @@ converting the secret key to a `Uint8Array` and passing it to the `fromSecretKey
 `Keypair` class.
 
 ```typescript
-import { Ed25519Keypair } from '@mysocial/sui/keypairs/ed25519';
-import { fromHex } from '@mysocial/sui/utils';
+import { Ed25519Keypair } from '@socialproof/sui/keypairs/ed25519';
+import { fromHex } from '@socialproof/sui/utils';
 
 const secret = '0x...';
 const keypair = Ed25519Keypair.fromSecretKey(fromHex(secret));

@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-npm install --save @mysten/walrus @mysocial/mys
+npm install --save @mysten/walrus @socialproof/mys
 ```
 
 ## Setup
@@ -12,8 +12,8 @@ To use the walrus SDK you will need to create an instance of the MysClient from 
 and an instance of the walrus SDK.
 
 ```ts
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import { WalrusClient } from '@mysocial/walrus';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import { WalrusClient } from '@socialproof/walrus';
 
 const mysClient = new MysClient({
 	url: getFullnodeUrl('testnet'),
@@ -105,7 +105,7 @@ const { blobId } = await walrusClient.writeBlob({
 ### Full API
 
 For a complete overview of the available methods on the `WalrusClient` you can reference type
-[TypeDocs](http://sdk.mystenlabs.com/typedoc/classes/_mysten_walrus.WalrusClient.html)
+[TypeDocs](http://sdk.mysocial.network/typedoc/classes/_mysten_walrus.WalrusClient.html)
 
 ### Examples
 
@@ -124,7 +124,7 @@ that result from this situation will extend the `RetryableWalrusClientError` cla
 You can check for these errors, and reset the client before retrying:
 
 ```ts
-import { RetryableWalrusClientError } from '@mysocial/walrus';
+import { RetryableWalrusClientError } from '@socialproof/walrus';
 
 if (error instanceof RetryableWalrusClientError) {
 	walrusClient.reset();
@@ -209,7 +209,7 @@ In vite you can get the url for the wasm bindings by importing the wasm file wit
 and then passed into the walrus client:
 
 ```ts
-import walrusWasmUrl from '@mysocial/walrus-wasm/web/walrus_wasm_bg.wasm?url';
+import walrusWasmUrl from '@socialproof/walrus-wasm/web/walrus_wasm_bg.wasm?url';
 
 const walrusClient = new WalrusClient({
 	network: 'testnet',
@@ -235,7 +235,7 @@ walrus packages:
 ```ts
 // next.config.ts
 const nextConfig: NextConfig = {
-	serverExternalPackages: ['@mysocial/walrus', '@mysocial/walrus-wasm'],
+	serverExternalPackages: ['@socialproof/walrus', '@socialproof/walrus-wasm'],
 };
 ```
 

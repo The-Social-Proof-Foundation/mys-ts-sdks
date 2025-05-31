@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { toBase64 } from '@mysocial/bcs';
-import { promiseWithResolvers } from '@mysocial/utils';
+import { toBase64 } from '@socialproof/bcs';
+import { promiseWithResolvers } from '@socialproof/utils';
 import { bcs } from '../../bcs/index.js';
 import type { MysObjectRef } from '../../bcs/types.js';
 import type {

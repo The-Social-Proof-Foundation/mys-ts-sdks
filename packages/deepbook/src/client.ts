@@ -2,18 +2,18 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/mys/bcs';
-import type { OrderArguments, PaginatedEvents, PaginationArguments } from '@mysocial/mys/client';
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import type { Argument, TransactionObjectInput, TransactionResult } from '@mysocial/mys/transactions';
-import { Transaction } from '@mysocial/mys/transactions';
+import { bcs } from '@socialproof/mys/bcs';
+import type { OrderArguments, PaginatedEvents, PaginationArguments } from '@socialproof/mys/client';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import type { Argument, TransactionObjectInput, TransactionResult } from '@socialproof/mys/transactions';
+import { Transaction } from '@socialproof/mys/transactions';
 import {
 	normalizeStructTag,
 	normalizeMysAddress,
 	normalizeMysObjectId,
 	parseStructTag,
 	MYS_CLOCK_OBJECT_ID,
-} from '@mysocial/mys/utils';
+} from '@socialproof/mys/utils';
 
 import { BcsOrder } from './types/bcs.js';
 import type {

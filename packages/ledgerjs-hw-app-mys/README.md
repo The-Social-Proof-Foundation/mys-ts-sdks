@@ -13,7 +13,7 @@ Here is a sample app for Node:
 
 ```javascript
 const Transport = require('@ledgerhq/hw-transport').default;
-const Mys = require('@mysocial/ledgerjs-hw-app-mys').default;
+const Mys = require('@socialproof/ledgerjs-hw-app-mys').default;
 
 const getPublicKey = async () => {
 	const mys = new Mys(await Transport.create());

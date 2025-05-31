@@ -6,7 +6,7 @@ import type {
 	ExecuteTransactionRequestType,
 	MysTransactionBlockResponse,
 	MysTransactionBlockResponseOptions,
-} from '@mysocial/mys/client';
+} from '@socialproof/mys/client';
 
 import type { MysSignTransactionBlockInput } from './mysSignTransactionBlock.js';
 

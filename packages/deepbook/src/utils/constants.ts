@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { normalizeStructTag, MYS_TYPE_ARG } from '@mysocial/mys/utils';
+import { normalizeStructTag, MYS_TYPE_ARG } from '@socialproof/mys/utils';
 
 export const PACKAGE_ID = '0xdee9';
 

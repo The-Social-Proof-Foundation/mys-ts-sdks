@@ -9,8 +9,8 @@ import { namedPackagesPlugin, Transaction } from '../../src/transactions';
 import { getFirstLevelNamedTypes } from '../../src/transactions/plugins/utils';
 import { normalizeMysAddress } from '../../src/utils';
 
-const MAINNET_URL = 'https://mainnet.mvr.mystenlabs.com';
-const TESTNET_URL = 'https://testnet.mvr.mystenlabs.com';
+const MAINNET_URL = 'https://mainnet.mvr.mysocial.network';
+const TESTNET_URL = 'https://testnet.mvr.mysocial.network';
 
 const mainnetPlugin = namedPackagesPlugin({
 	url: MAINNET_URL,

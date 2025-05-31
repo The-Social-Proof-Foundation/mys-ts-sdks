@@ -7,8 +7,8 @@ import type {
 	MysTransport,
 	MysTransportRequestOptions,
 	MysTransportSubscribeOptions,
-} from '@mysocial/mys/client';
-import { MysHTTPTransport } from '@mysocial/mys/client';
+} from '@socialproof/mys/client';
+import { MysHTTPTransport } from '@socialproof/mys/client';
 import type { DocumentNode } from 'graphql';
 import { print } from 'graphql';
 

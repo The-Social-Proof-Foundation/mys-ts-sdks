@@ -2,13 +2,13 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/mys/bcs';
+import { bcs } from '@socialproof/mys/bcs';
 import type {
 	Transaction,
 	TransactionObjectArgument,
 	TransactionObjectInput,
-} from '@mysocial/mys/transactions';
-import { isValidMysNSName, normalizeMysNSName, MYS_CLOCK_OBJECT_ID } from '@mysocial/mys/utils';
+} from '@socialproof/mys/transactions';
+import { isValidMysNSName, normalizeMysNSName, MYS_CLOCK_OBJECT_ID } from '@socialproof/mys/utils';
 
 import { ALLOWED_METADATA, MAX_U64 } from './constants.js';
 import { isNestedSubName, isSubName, zeroCoin } from './helpers.js';

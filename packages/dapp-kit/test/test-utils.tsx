@@ -2,9 +2,9 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import type { IdentifierRecord, ReadonlyWalletAccount } from '@mysocial/wallet-standard';
-import { getWallets } from '@mysocial/wallet-standard';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import type { IdentifierRecord, ReadonlyWalletAccount } from '@socialproof/wallet-standard';
+import { getWallets } from '@socialproof/wallet-standard';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { ComponentProps } from 'react';
 

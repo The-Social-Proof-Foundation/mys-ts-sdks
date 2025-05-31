@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { toHex } from '@mysocial/bcs';
+import { toHex } from '@socialproof/bcs';
 import { randomBytes } from '@noble/hashes/utils';
 import { base64urlnopad } from '@scure/base';
 

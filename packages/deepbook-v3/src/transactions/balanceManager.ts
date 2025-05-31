@@ -1,8 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { coinWithBalance } from '@mysocial/mys/transactions';
-import type { Transaction } from '@mysocial/mys/transactions';
+import { coinWithBalance } from '@socialproof/mys/transactions';
+import type { Transaction } from '@socialproof/mys/transactions';
 
 import type { DeepBookConfig } from '../utils/config.js';
 

@@ -1,8 +1,8 @@
 // Copyright (c) Mysten Labs, Inc.
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import type { MysClient } from '@mysocial/mys/client';
-import type { TransactionObjectArgument, TransactionObjectInput } from '@mysocial/mys/transactions';
+import type { MysClient } from '@socialproof/mys/client';
+import type { TransactionObjectArgument, TransactionObjectInput } from '@socialproof/mys/transactions';
 
 // Interfaces
 // -----------------

@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { toBase64 } from '@mysocial/mys/utils';
-import type { MysReportTransactionEffectsInput } from '@mysocial/wallet-standard';
+import { toBase64 } from '@socialproof/mys/utils';
+import type { MysReportTransactionEffectsInput } from '@socialproof/wallet-standard';
 import type { UseMutationOptions, UseMutationResult } from '@tanstack/react-query';
 import { useMutation } from '@tanstack/react-query';
 

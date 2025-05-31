@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromHex } from '@mysocial/bcs';
+import { fromHex } from '@socialproof/bcs';
 
 import type { IBEEncryptions } from './bcs.js';
 import type { G1Element, GTElement } from './bls12381.js';

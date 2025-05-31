@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64, toBase64 } from '@mysocial/bcs';
+import { fromBase64, toBase64 } from '@socialproof/bcs';
 import type { GenericSchema, InferInput, InferOutput } from 'valibot';
 import {
 	array,

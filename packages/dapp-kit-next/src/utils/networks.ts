@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Experimental_MysClientTypes } from '@mysocial/mys/experimental';
-import type { IdentifierString } from '@mysocial/wallet-standard';
+import type { Experimental_MysClientTypes } from '@socialproof/mys/experimental';
+import type { IdentifierString } from '@socialproof/wallet-standard';
 
 type NonEmptyArray<T> = readonly [T, ...T[]] | readonly [...T[], T] | readonly [T, ...T[], T];
 

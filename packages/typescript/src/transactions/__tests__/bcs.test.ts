@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { toBase58 } from '@mysocial/bcs';
+import { toBase58 } from '@socialproof/bcs';
 import { expect, it } from 'vitest';
 
 import { bcs } from '../../bcs/index.js';

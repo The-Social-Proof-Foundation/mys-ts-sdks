@@ -9,8 +9,8 @@ import type {
 	StandardEventsOnMethod,
 	Wallet,
 	WalletWithRequiredFeatures,
-} from '@mysocial/wallet-standard';
-import { MYS_CHAINS } from '@mysocial/wallet-standard';
+} from '@socialproof/wallet-standard';
+import { MYS_CHAINS } from '@socialproof/wallet-standard';
 import type { Mock } from 'vitest';
 
 export class MockWallet implements Wallet {

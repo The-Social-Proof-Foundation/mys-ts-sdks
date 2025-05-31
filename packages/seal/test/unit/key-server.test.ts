@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64 } from '@mysocial/bcs';
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
+import { fromBase64 } from '@socialproof/bcs';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { GeneralError } from '../../src/error.js';
@@ -21,12 +21,12 @@ const pk = fromBase64(
 );
 const id = '0xb35a7228d8cf224ad1e828c0217c95a5153bafc2906d6f9c178197dce26fbcf8';
 const keyType = 0;
-const url = 'https://seal-key-server-testnet-1.mystenlabs.com';
+const url = 'https://seal-key-server-testnet-1.mysocial.network';
 const name = 'mysten-testnet-1';
 
 describe('key-server tests', () => {
 	beforeEach(() => {
-		vi.mock('@mysocial/mys.js', () => ({
+		vi.mock('@socialproof/mys.js', () => ({
 			MysClient: vi.fn(() => ({
 				getObject: vi.fn().mockResolvedValue({
 					data: {

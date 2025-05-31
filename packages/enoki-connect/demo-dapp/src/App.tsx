@@ -1,7 +1,7 @@
 // Copyright (c) Mysten Labs, Inc.
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { ConnectButton } from "@mysocial/dapp-kit";
+import { ConnectButton } from "@socialproof/dapp-kit";
 import { Box, Container, Flex, Heading } from "@radix-ui/themes";
 import { WalletStatus } from "./WalletStatus.js";
 

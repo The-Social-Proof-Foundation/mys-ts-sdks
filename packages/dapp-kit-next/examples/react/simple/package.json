@@ -9,7 +9,7 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"@mysocial/dapp-kit-next": "workspace:*",
+		"@socialproof/dapp-kit-next": "workspace:*",
 		"@nanostores/react": "^1.0.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1"

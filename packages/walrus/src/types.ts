@@ -2,10 +2,10 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { MysClient } from '@mysocial/mys/client';
-import type { Signer } from '@mysocial/mys/cryptography';
-import type { ClientWithExtensions } from '@mysocial/mys/experimental';
-import type { TransactionObjectArgument } from '@mysocial/mys/transactions';
+import type { MysClient } from '@socialproof/mys/client';
+import type { Signer } from '@socialproof/mys/cryptography';
+import type { ClientWithExtensions } from '@socialproof/mys/experimental';
+import type { TransactionObjectArgument } from '@socialproof/mys/transactions';
 
 import type { StorageNodeInfo } from './contracts/storage_node.js';
 import type { RequestOptions, StorageNodeClientOptions } from './storage-node/client.js';

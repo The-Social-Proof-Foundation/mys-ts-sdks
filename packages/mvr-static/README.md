@@ -2,7 +2,7 @@
 
 The mvr-static tool is a typescript CLI tool to generate a static file for Move Registry (mvr)
 resolution. This can be used to cache all MVR names for performance & security reasons, and used in
-the `NamedPackagesPlugin` (exported from `@mysocial/mys`) in your project.
+the `NamedPackagesPlugin` (exported from `@socialproof/mys`) in your project.
 
 ## Usage
 
@@ -20,9 +20,9 @@ Available options:
 - `--output <file-name>`: The output's file name (defaults to `mvr.ts`)
 - `--depth <depth>`: The depth of recursive search for MVR names (defaults to `10`)
 - `--url-mainnet <url>`: The URL to the mainnet MVR (defaults to
-  `https://mainnet.mvr.mystenlabs.com`)
+  `https://mainnet.mvr.mysocial.network`)
 - `--url-testnet <url>`: The URL to the testnet MVR (defaults to
-  `https://testnet.mvr.mystenlabs.com`)
+  `https://testnet.mvr.mysocial.network`)
 - `--include <dir_patterns>`: The directory patterns to include in the search (defaults to
   `**/*.{js,ts,jsx,tsx,mjs,cjs}`)
 - `--exclude <dir_patterns>`: The directory patterns to exclude in the search (defaults to
@@ -35,7 +35,7 @@ Once you have your static file, you can use it in your project by importing it a
 `NamedPackagesPlugin` in your project.
 
 ```ts
-import { NamedPackagesPlugin } from '@mysocial/mys/src/transactions';
+import { NamedPackagesPlugin } from '@socialproof/mys/src/transactions';
 
 import { getMvrCache } from './mvr.ts';
 

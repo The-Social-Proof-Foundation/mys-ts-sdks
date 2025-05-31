@@ -27,9 +27,9 @@
 
 ### Minor Changes
 
-- a92b03de42: The Typescript SDK has been renamed to `@mysocial/mys` and includes many new features
+- a92b03de42: The Typescript SDK has been renamed to `@socialproof/mys` and includes many new features
   and breaking changes. See the
-  [full migration guide](https://sdk.mystenlabs.com/typescript/migrations/mys-1.0) for details on
+  [full migration guide](https://sdk.mysocial.network/typescript/migrations/mys-1.0) for details on
   how to upgrade.
 
 ## 0.3.1

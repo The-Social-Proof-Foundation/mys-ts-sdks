@@ -23,7 +23,7 @@ pub fn version() -> String {
 /// The JSON object contains the ABI (Application Binary Interface) of the module.
 ///
 /// ```javascript
-/// import * as template from '@mysocial/move-binary-template';
+/// import * as template from '@socialproof/move-binary-template';
 ///
 /// const json = template.deserialize( binary );
 /// console.log( json, json.identifiers );
@@ -42,7 +42,7 @@ pub fn deserialize(binary: &[u8]) -> Result<JsValue, JsErr> {
 /// Returns the updated bytecode.
 ///
 /// ```javascript
-/// import * as template from '@mysocial/move-binary-template';
+/// import * as template from '@socialproof/move-binary-template';
 ///
 /// const updated = template.update_identifiers( binary, {
 ///     'TEMPLATE': 'NEW_VALUE',
@@ -133,8 +133,8 @@ pub fn update_identifiers(binary: &[u8], map: JsValue) -> Result<Box<[u8]>, JsEr
 /// capitalized version of the type: U8, Address, Vector(Bool), Vector(U8), etc.
 ///
 /// ```javascript
-/// import * as template from '@mysocial/move-binary-template';
-/// import { bcs } from '@mysocial/bcs';
+/// import * as template from '@socialproof/move-binary-template';
+/// import { bcs } from '@socialproof/bcs';
 ///
 /// let binary = template.update_constants(
 ///     binary, // Uint8Array
@@ -181,7 +181,7 @@ pub struct Constant {
 /// with their type and BCS value.
 ///
 /// ```javascript
-/// import * as template from '@mysocial/move-binary-template';
+/// import * as template from '@socialproof/move-binary-template';
 ///
 /// let consts = template.get_constants(binary);
 /// ```

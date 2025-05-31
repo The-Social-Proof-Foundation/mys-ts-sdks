@@ -1,9 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
-import { coinWithBalance } from '@mysocial/mys/transactions';
-import type { Transaction } from '@mysocial/mys/transactions';
-import { MYS_CLOCK_OBJECT_ID } from '@mysocial/mys/utils';
+import { coinWithBalance } from '@socialproof/mys/transactions';
+import type { Transaction } from '@socialproof/mys/transactions';
+import { MYS_CLOCK_OBJECT_ID } from '@socialproof/mys/utils';
 
 import { OrderType, SelfMatchingOptions } from '../types/index.js';
 import type {

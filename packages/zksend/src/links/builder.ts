@@ -2,14 +2,14 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import type { CoinStruct } from '@mysocial/mys/client';
-import { decodeMysPrivateKey } from '@mysocial/mys/cryptography';
-import type { Keypair, Signer } from '@mysocial/mys/cryptography';
-import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
-import type { TransactionObjectArgument, TransactionObjectInput } from '@mysocial/mys/transactions';
-import { Transaction } from '@mysocial/mys/transactions';
-import { normalizeStructTag, normalizeMysAddress, MYS_TYPE_ARG, toBase64 } from '@mysocial/mys/utils';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import type { CoinStruct } from '@socialproof/mys/client';
+import { decodeMysPrivateKey } from '@socialproof/mys/cryptography';
+import type { Keypair, Signer } from '@socialproof/mys/cryptography';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import type { TransactionObjectArgument, TransactionObjectInput } from '@socialproof/mys/transactions';
+import { Transaction } from '@socialproof/mys/transactions';
+import { normalizeStructTag, normalizeMysAddress, MYS_TYPE_ARG, toBase64 } from '@socialproof/mys/utils';
 
 import type { ZkBagContractOptions } from './zk-bag.js';
 import { getContractIds, ZkBag } from './zk-bag.js';

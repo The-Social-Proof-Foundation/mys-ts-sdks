@@ -2,11 +2,11 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 import { KeyManagementServiceClient } from '@google-cloud/kms';
-import type { PublicKey, SignatureFlag } from '@mysocial/mys/cryptography';
-import { SIGNATURE_FLAG_TO_SCHEME, Signer } from '@mysocial/mys/cryptography';
-import { Secp256k1PublicKey } from '@mysocial/mys/keypairs/secp256k1';
-import { Secp256r1PublicKey } from '@mysocial/mys/keypairs/secp256r1';
-import { fromBase64 } from '@mysocial/mys/utils';
+import type { PublicKey, SignatureFlag } from '@socialproof/mys/cryptography';
+import { SIGNATURE_FLAG_TO_SCHEME, Signer } from '@socialproof/mys/cryptography';
+import { Secp256k1PublicKey } from '@socialproof/mys/keypairs/secp256k1';
+import { Secp256r1PublicKey } from '@socialproof/mys/keypairs/secp256r1';
+import { fromBase64 } from '@socialproof/mys/utils';
 
 import { getConcatenatedSignature, publicKeyFromDER } from '../utils/utils.js';
 

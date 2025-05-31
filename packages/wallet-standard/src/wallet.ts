@@ -2,9 +2,9 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { bcs } from '@mysocial/mys/bcs';
-import { Transaction } from '@mysocial/mys/transactions';
-import { fromBase64, toBase64 } from '@mysocial/mys/utils';
+import { bcs } from '@socialproof/mys/bcs';
+import { Transaction } from '@socialproof/mys/transactions';
+import { fromBase64, toBase64 } from '@socialproof/mys/utils';
 import type { WalletWithFeatures } from '@wallet-standard/core';
 
 import type {

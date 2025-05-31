@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { IdentifierRecord, MysFeatures, MysSignMessageFeature } from '@mysocial/wallet-standard';
+import type { IdentifierRecord, MysFeatures, MysSignMessageFeature } from '@socialproof/wallet-standard';
 
 export const signMessageFeature: MysSignMessageFeature = {
 	'mys:signMessage': {

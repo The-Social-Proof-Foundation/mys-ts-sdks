@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64, toBase64, toHex } from '@mysocial/bcs';
+import { fromBase64, toBase64, toHex } from '@socialproof/bcs';
 
 import { elgamalDecrypt, toPublicKey, toVerificationKey } from './elgamal.js';
 import { SealAPIError } from './error.js';

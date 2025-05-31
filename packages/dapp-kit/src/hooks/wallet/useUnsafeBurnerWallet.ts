@@ -2,10 +2,10 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { MysClient } from '@mysocial/mys/client';
-import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
-import { Transaction } from '@mysocial/mys/transactions';
-import { toBase64 } from '@mysocial/mys/utils';
+import type { MysClient } from '@socialproof/mys/client';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import { Transaction } from '@socialproof/mys/transactions';
+import { toBase64 } from '@socialproof/mys/utils';
 import type {
 	StandardConnectFeature,
 	StandardConnectMethod,
@@ -18,8 +18,8 @@ import type {
 	MysSignTransactionBlockMethod,
 	MysSignTransactionMethod,
 	Wallet,
-} from '@mysocial/wallet-standard';
-import { getWallets, ReadonlyWalletAccount, MYS_CHAINS } from '@mysocial/wallet-standard';
+} from '@socialproof/wallet-standard';
+import { getWallets, ReadonlyWalletAccount, MYS_CHAINS } from '@socialproof/wallet-standard';
 import { useEffect } from 'react';
 
 import { useMysClient } from '../useMysClient.js';

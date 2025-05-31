@@ -2,8 +2,8 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { WalletWithRequiredFeatures } from '@mysocial/wallet-standard';
-import { getWallets } from '@mysocial/wallet-standard';
+import type { WalletWithRequiredFeatures } from '@socialproof/wallet-standard';
+import { getWallets } from '@socialproof/wallet-standard';
 import { useEffect } from 'react';
 
 import { getRegisteredWallets } from '../../utils/walletUtils.js';

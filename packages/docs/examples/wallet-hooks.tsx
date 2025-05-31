@@ -19,14 +19,14 @@ import {
 	useSwitchAccount,
 	useWallets,
 	WalletProvider,
-} from '@mysocial/dapp-kit';
-import { getFullnodeUrl } from '@mysocial/mys/client';
-import { Transaction } from '@mysocial/mys/transactions';
+} from '@socialproof/dapp-kit';
+import { getFullnodeUrl } from '@socialproof/mys/client';
+import { Transaction } from '@socialproof/mys/transactions';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { ComponentProps } from 'react';
 import { useState } from 'react';
 
-import '@mysocial/dapp-kit/dist/index.css';
+import '@socialproof/dapp-kit/dist/index.css';
 
 export const UseWalletsExample = withProviders(() => {
 	const wallets = useWallets();

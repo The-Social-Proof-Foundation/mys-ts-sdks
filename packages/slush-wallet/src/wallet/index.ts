@@ -2,7 +2,7 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { fromBase64, toBase64 } from '@mysocial/mys/utils';
+import { fromBase64, toBase64 } from '@socialproof/mys/utils';
 import type {
 	StandardConnectFeature,
 	StandardConnectMethod,
@@ -22,13 +22,13 @@ import type {
 	MysSignTransactionMethod,
 	Wallet,
 	WalletIcon,
-} from '@mysocial/wallet-standard';
-import { getWallets, ReadonlyWalletAccount, MYS_CHAINS } from '@mysocial/wallet-standard';
+} from '@socialproof/wallet-standard';
+import { getWallets, ReadonlyWalletAccount, MYS_CHAINS } from '@socialproof/wallet-standard';
 import type { Emitter } from 'mitt';
 import mitt from 'mitt';
 import type { InferOutput } from 'valibot';
 import { boolean, object, parse, string } from 'valibot';
-import { DappPostMessageChannel, decodeJwtSession } from '@mysocial/window-wallet-core';
+import { DappPostMessageChannel, decodeJwtSession } from '@socialproof/window-wallet-core';
 
 const DEFAULT_SLUSH_ORIGIN = 'https://my.slush.app';
 

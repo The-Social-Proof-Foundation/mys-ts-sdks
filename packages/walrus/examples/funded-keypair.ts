@@ -2,11 +2,11 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import { getFullnodeUrl, MysClient } from '@mysocial/mys/client';
-import { getFaucetHost, requestMysFromFaucetV2 } from '@mysocial/mys/faucet';
-import { Ed25519Keypair } from '@mysocial/mys/keypairs/ed25519';
-import { coinWithBalance, Transaction } from '@mysocial/mys/transactions';
-import { MIST_PER_MYS, parseStructTag } from '@mysocial/mys/utils';
+import { getFullnodeUrl, MysClient } from '@socialproof/mys/client';
+import { getFaucetHost, requestMysFromFaucetV2 } from '@socialproof/mys/faucet';
+import { Ed25519Keypair } from '@socialproof/mys/keypairs/ed25519';
+import { coinWithBalance, Transaction } from '@socialproof/mys/transactions';
+import { MIST_PER_MYS, parseStructTag } from '@socialproof/mys/utils';
 
 import { TESTNET_WALRUS_PACKAGE_CONFIG } from '../src/index.js';
 

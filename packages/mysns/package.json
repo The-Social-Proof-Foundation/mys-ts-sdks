@@ -1,5 +1,5 @@
 {
-	"name": "@mysocial/mysns",
+	"name": "@socialproof/mysns",
 	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"description": "MysNS SDK",
 	"version": "0.7.17",
@@ -42,12 +42,12 @@
 		"node": ">=16"
 	},
 	"dependencies": {
-		"@mysocial/mys": "workspace:*",
+		"@socialproof/mys": "workspace:*",
 		"axios": "^1.8.4",
 		"axios-retry": "^3.9.1"
 	},
 	"devDependencies": {
-		"@mysocial/build-scripts": "workspace:*",
+		"@socialproof/build-scripts": "workspace:*",
 		"@types/tmp": "^0.2.6",
 		"ts-retry-promise": "^0.8.1",
 		"typescript": "^5.8.2",

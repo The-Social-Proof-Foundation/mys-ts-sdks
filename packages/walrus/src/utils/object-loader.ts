@@ -2,15 +2,15 @@
 // Copyright (c) The Social Proof Foundation, LLC.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { BcsType } from '@mysocial/bcs';
-import { pureBcsSchemaFromTypeName } from '@mysocial/mys/bcs';
-import type { PureTypeName, ShapeFromPureTypeName } from '@mysocial/mys/bcs';
-import type { MysObjectData } from '@mysocial/mys/client';
+import type { BcsType } from '@socialproof/bcs';
+import { pureBcsSchemaFromTypeName } from '@socialproof/mys/bcs';
+import type { PureTypeName, ShapeFromPureTypeName } from '@socialproof/mys/bcs';
+import type { MysObjectData } from '@socialproof/mys/client';
 import type {
 	Experimental_BaseClient,
 	Experimental_MysClientTypes,
-} from '@mysocial/mys/experimental';
-import { deriveDynamicFieldID } from '@mysocial/mys/utils';
+} from '@socialproof/mys/experimental';
+import { deriveDynamicFieldID } from '@socialproof/mys/utils';
 import DataLoader from 'dataloader';
 
 import { Field } from '../contracts/deps/0x0000000000000000000000000000000000000000000000000000000000000002/dynamic_field.js';
