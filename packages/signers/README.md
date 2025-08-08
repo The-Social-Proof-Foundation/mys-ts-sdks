@@ -182,7 +182,7 @@ const ledgerClient = new MysLedgerClient(transport);
 const mysClient = new MysClient({ url: getFullnodeUrl('testnet') });
 
 const signer = await LedgerSigner.fromDerivationPath(
-	"m/44'/784'/0'/0'/0'",
+	"m/44'/6976'/0'/0'/0'",
 	ledgerClient,
 	mysClient,
 );

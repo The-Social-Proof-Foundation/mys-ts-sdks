@@ -17,12 +17,12 @@ const Mys = require('@socialproof/ledgerjs-hw-app-mys').default;
 
 const getPublicKey = async () => {
 	const mys = new Mys(await Transport.create());
-	return await mys.getPublicKey("44'/784'/0'/0'/0'");
+	return await mys.getPublicKey("44'/6976'/0'/0'/0'");
 };
 
 const signTransaction = async () => {
 	const mys = new Mys(await Transport.create());
-	return await mys.signTransaction("44'/784'/0'/0'/0'", '<transaction contents>');
+	return await mys.signTransaction("44'/6976'/0'/0'/0'", '<transaction contents>');
 };
 
 const getVersion = async () => {
@@ -88,7 +88,7 @@ Gets the Mys address for a given BIP-32 path.
 #### Examples
 
 ```javascript
-const publicKey = await mys.getPublicKey("44'/784'/0'/0'/0'");
+const publicKey = await mys.getPublicKey("44'/6976'/0'/0'/0'");
 ```
 
 Returns
@@ -108,7 +108,7 @@ Sign a transaction with a given BIP-32 path.
 #### Examples
 
 ```javascript
-const publicKey = await mys.signTransaction("44'/784'/0'/0'/0'", '<transaction contents>');
+const publicKey = await mys.signTransaction("44'/6976'/0'/0'/0'", '<transaction contents>');
 ```
 
 Returns

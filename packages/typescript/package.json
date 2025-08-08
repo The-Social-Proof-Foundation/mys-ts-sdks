@@ -3,7 +3,7 @@
 	"author": "The Social Proof Foundation <brandon@socialproof.foundation>",
 	"description": "MySocial TypeScript API(Work in Progress)",
 	"homepage": "https://sdk.mysocial.network",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"license": "Apache-2.0",
 	"sideEffects": false,
 	"files": [
@@ -161,8 +161,8 @@
 	},
 	"dependencies": {
 		"@graphql-typed-document-node/core": "^3.2.0",
-		"@socialproof/bcs": "workspace:*",
-		"@socialproof/utils": "workspace:*",
+		"@socialproof/bcs": "^0.0.1",
+		"@socialproof/utils": "^0.0.0",
 		"@noble/curves": "^1.8.1",
 		"@noble/hashes": "^1.7.1",
 		"@scure/base": "^1.2.4",

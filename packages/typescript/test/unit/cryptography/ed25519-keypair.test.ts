@@ -82,7 +82,7 @@ describe('ed25519-keypair', () => {
 	});
 
 	it('incorrect coin type node for ed25519 derivation path', async () => {
-		const keypair = Ed25519Keypair.deriveKeypair(TEST_CASES[0][0], `m/44'/784'/0'/0'/0'`);
+		const keypair = Ed25519Keypair.deriveKeypair(TEST_CASES[0][0], `m/44'/6976'/0'/0'/0'`);
 
 		const signData = new TextEncoder().encode('hello world');
 		const signature = await keypair.sign(signData);
@@ -98,7 +98,7 @@ describe('ed25519-keypair', () => {
 
 	it('incorrect purpose node for ed25519 derivation path', () => {
 		expect(() => {
-			Ed25519Keypair.deriveKeypair(TEST_CASES[0][0], `m/54'/784'/0'/0'/0'`);
+			Ed25519Keypair.deriveKeypair(TEST_CASES[0][0], `m/54'/6976'/0'/0'/0'`);
 		}).toThrow('Invalid derivation path');
 	});
 
