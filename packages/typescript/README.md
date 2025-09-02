@@ -103,7 +103,7 @@ To run E2E tests against Devnet
 VITE_FAUCET_URL='https://faucet.devnet.mysocial.network443/v2/gas' VITE_FULLNODE_URL='https://fullnode.devnet.mysocial.network' pnpm --filter @socialproof/mys exec vitest e2e
 ```
 
-## Connecting to Mys Network
+## Connecting to MySo Network
 
 The `MysClient` class provides a connection to the JSON-RPC Server and should be used for all
 read-only operations. The default URLs to connect with the RPC server are:

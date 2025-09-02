@@ -7,7 +7,7 @@
 [Ledger Hardware Wallet](https://www.ledger.com/) JavaScript bindings for [Mys](https://mysocial.network/),
 based on [LedgerJS](https://github.com/LedgerHQ/ledgerjs).
 
-## Using LedgerJS for Mys
+## Using LedgerJS for MySo
 
 Here is a sample app for Node:
 
