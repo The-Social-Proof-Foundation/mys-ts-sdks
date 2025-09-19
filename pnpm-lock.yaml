@@ -97,19 +97,19 @@ importers:
 
   packages/bcs:
     dependencies:
-      '@socialproof/utils':
-        specifier: workspace:*
-        version: link:../utils
       '@scure/base':
         specifier: ^1.2.4
         version: 1.2.4
-    devDependencies:
-      '@socialproof/build-scripts':
+      '@socialproof/utils':
         specifier: workspace:*
-        version: link:../build-scripts
+        version: link:../utils
+    devDependencies:
       '@size-limit/preset-small-lib':
         specifier: ^11.2.0
         version: 11.2.0(size-limit@11.2.0)
+      '@socialproof/build-scripts':
+        specifier: workspace:*
+        version: link:../build-scripts
       size-limit:
         specifier: ^11.2.0
         version: 11.2.0
@@ -172,12 +172,6 @@ importers:
 
   packages/create-dapp/templates/react-client-dapp:
     dependencies:
-      '@socialproof/dapp-kit':
-        specifier: workspace:*
-        version: link:../../../dapp-kit
-      '@socialproof/mys':
-        specifier: workspace:*
-        version: link:../../../typescript
       '@radix-ui/colors':
         specifier: ^3.0.0
         version: 3.0.0
@@ -187,6 +181,12 @@ importers:
       '@radix-ui/themes':
         specifier: ^3.2.1
         version: 3.2.1(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@socialproof/dapp-kit':
+        specifier: workspace:*
+        version: link:../../../dapp-kit
+      '@socialproof/mys':
+        specifier: workspace:*
+        version: link:../../../typescript
       '@tanstack/react-query':
         specifier: ^5.71.3
         version: 5.71.3(react@18.3.1)
@@ -233,12 +233,6 @@ importers:
 
   packages/create-dapp/templates/react-e2e-counter:
     dependencies:
-      '@socialproof/dapp-kit':
-        specifier: workspace:*
-        version: link:../../../dapp-kit
-      '@socialproof/mys':
-        specifier: workspace:*
-        version: link:../../../typescript
       '@radix-ui/colors':
         specifier: ^3.0.0
         version: 3.0.0
@@ -248,6 +242,12 @@ importers:
       '@radix-ui/themes':
         specifier: ^3.2.1
         version: 3.2.1(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@socialproof/dapp-kit':
+        specifier: workspace:*
+        version: link:../../../dapp-kit
+      '@socialproof/mys':
+        specifier: workspace:*
+        version: link:../../../typescript
       '@tanstack/react-query':
         specifier: ^5.71.3
         version: 5.71.3(react@18.3.1)
@@ -297,6 +297,15 @@ importers:
 
   packages/dapp-kit:
     dependencies:
+      '@radix-ui/react-dialog':
+        specifier: ^1.1.6
+        version: 1.1.6(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-dropdown-menu':
+        specifier: ^2.1.6
+        version: 2.1.6(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-slot':
+        specifier: ^1.1.2
+        version: 1.1.2(@types/react@18.3.18)(react@18.3.1)
       '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
@@ -309,15 +318,6 @@ importers:
       '@socialproof/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
-      '@radix-ui/react-dialog':
-        specifier: ^1.1.6
-        version: 1.1.6(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@radix-ui/react-dropdown-menu':
-        specifier: ^2.1.6
-        version: 2.1.6(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@radix-ui/react-slot':
-        specifier: ^1.1.2
-        version: 1.1.2(@types/react@18.3.18)(react@18.3.1)
       '@vanilla-extract/css':
         specifier: ^1.17.1
         version: 1.17.1(babel-plugin-macros@3.1.0)
@@ -334,12 +334,12 @@ importers:
         specifier: ^4.5.4
         version: 4.5.5(@types/react@18.3.18)(react@18.3.1)
     devDependencies:
-      '@socialproof/build-scripts':
-        specifier: workspace:*
-        version: link:../build-scripts
       '@size-limit/preset-small-lib':
         specifier: ^11.2.0
         version: 11.2.0(size-limit@11.2.0)
+      '@socialproof/build-scripts':
+        specifier: workspace:*
+        version: link:../build-scripts
       '@tanstack/react-query':
         specifier: ^5.71.3
         version: 5.71.3(react@18.3.1)
@@ -397,6 +397,9 @@ importers:
       '@lit/task':
         specifier: ^1.0.2
         version: 1.0.2
+      '@nanostores/lit':
+        specifier: ^0.2.2
+        version: 0.2.2(lit@3.3.0)(nanostores@1.0.1)
       '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
@@ -409,9 +412,6 @@ importers:
       '@socialproof/zksend':
         specifier: workspace:*
         version: link:../zksend
-      '@nanostores/lit':
-        specifier: ^0.2.2
-        version: 0.2.2(lit@3.3.0)(nanostores@1.0.1)
       '@wallet-standard/ui':
         specifier: ^1.0.1
         version: 1.0.1
@@ -452,12 +452,12 @@ importers:
 
   packages/dapp-kit-next/examples/react/simple:
     dependencies:
-      '@socialproof/dapp-kit-next':
-        specifier: workspace:*
-        version: link:../../..
       '@nanostores/react':
         specifier: ^1.0.0
         version: 1.0.0(nanostores@1.0.1)(react@18.3.1)
+      '@socialproof/dapp-kit-next':
+        specifier: workspace:*
+        version: link:../../..
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -690,6 +690,9 @@ importers:
 
   packages/enoki:
     dependencies:
+      '@nanostores/react':
+        specifier: ^1.0.0
+        version: 1.0.0(nanostores@1.0.1)(react@18.3.1)
       '@socialproof/mys':
         specifier: workspace:*
         version: link:../typescript
@@ -699,9 +702,6 @@ importers:
       '@socialproof/wallet-standard':
         specifier: workspace:*
         version: link:../wallet-standard
-      '@nanostores/react':
-        specifier: ^1.0.0
-        version: 1.0.0(nanostores@1.0.1)(react@18.3.1)
       idb-keyval:
         specifier: ^6.2.1
         version: 6.2.1
@@ -776,15 +776,6 @@ importers:
 
   packages/enoki-connect/demo-dapp:
     dependencies:
-      '@socialproof/dapp-kit':
-        specifier: workspace:*
-        version: link:../../dapp-kit
-      '@socialproof/enoki-connect':
-        specifier: workspace:*
-        version: link:..
-      '@socialproof/mys':
-        specifier: workspace:*
-        version: link:../../typescript
       '@radix-ui/colors':
         specifier: ^3.0.0
         version: 3.0.0
@@ -794,6 +785,15 @@ importers:
       '@radix-ui/themes':
         specifier: ^3.1.1
         version: 3.2.1(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@socialproof/dapp-kit':
+        specifier: workspace:*
+        version: link:../../dapp-kit
+      '@socialproof/enoki-connect':
+        specifier: workspace:*
+        version: link:..
+      '@socialproof/mys':
+        specifier: workspace:*
+        version: link:../../typescript
       '@tanstack/react-query':
         specifier: ^5.71.3
         version: 5.71.3(react@18.3.1)
@@ -871,12 +871,12 @@ importers:
       '@graphql-codegen/typescript-operations':
         specifier: ^4.6.0
         version: 4.6.0(graphql@16.10.0)
-      '@socialproof/build-scripts':
-        specifier: workspace:*
-        version: link:../build-scripts
       '@parcel/watcher':
         specifier: ^2.5.1
         version: 2.5.1
+      '@socialproof/build-scripts':
+        specifier: workspace:*
+        version: link:../build-scripts
       '@types/node':
         specifier: ^22.13.17
         version: 22.13.17
@@ -939,12 +939,12 @@ importers:
       '@ledgerhq/hw-transport-mocker':
         specifier: ^6.29.0
         version: 6.29.4
-      '@socialproof/build-scripts':
-        specifier: workspace:*
-        version: link:../build-scripts
       '@size-limit/preset-small-lib':
         specifier: ^11.2.0
         version: 11.2.0(size-limit@11.2.0)
+      '@socialproof/build-scripts':
+        specifier: workspace:*
+        version: link:../build-scripts
       '@types/node':
         specifier: ^22.13.17
         version: 22.13.17
@@ -1019,18 +1019,18 @@ importers:
 
   packages/seal:
     dependencies:
-      '@socialproof/bcs':
-        specifier: workspace:*
-        version: link:../bcs
-      '@socialproof/mys':
-        specifier: workspace:*
-        version: link:../typescript
       '@noble/curves':
         specifier: ^1.8.1
         version: 1.8.1
       '@noble/hashes':
         specifier: ^1.7.1
         version: 1.7.1
+      '@socialproof/bcs':
+        specifier: workspace:*
+        version: link:../bcs
+      '@socialproof/mys':
+        specifier: workspace:*
+        version: link:../typescript
       shamir-secret-sharing:
         specifier: 0.0.3
         version: 0.0.3
@@ -1056,18 +1056,18 @@ importers:
       '@google-cloud/kms':
         specifier: ^4.5.0
         version: 4.5.0
-      '@socialproof/ledgerjs-hw-app-mys':
-        specifier: workspace:*
-        version: link:../ledgerjs-hw-app-mys
-      '@socialproof/mys':
-        specifier: workspace:*
-        version: link:../typescript
       '@noble/curves':
         specifier: ^1.8.1
         version: 1.8.1
       '@noble/hashes':
         specifier: ^1.7.1
         version: 1.7.1
+      '@socialproof/ledgerjs-hw-app-mys':
+        specifier: workspace:*
+        version: link:../ledgerjs-hw-app-mys
+      '@socialproof/mys':
+        specifier: workspace:*
+        version: link:../typescript
       asn1-ts:
         specifier: ^8.0.2
         version: 8.0.2
@@ -1127,12 +1127,6 @@ importers:
       '@graphql-typed-document-node/core':
         specifier: ^3.2.0
         version: 3.2.0(graphql@16.10.0)
-      '@socialproof/bcs':
-        specifier: workspace:*
-        version: link:../bcs
-      '@socialproof/utils':
-        specifier: workspace:*
-        version: link:../utils
       '@noble/curves':
         specifier: ^1.8.1
         version: 1.8.1
@@ -1148,6 +1142,12 @@ importers:
       '@scure/bip39':
         specifier: ^1.5.4
         version: 1.5.4
+      '@socialproof/bcs':
+        specifier: ^0.0.1
+        version: 0.0.1
+      '@socialproof/utils':
+        specifier: ^0.0.0
+        version: 0.0.0
       gql.tada:
         specifier: ^1.8.2
         version: 1.8.10(graphql@16.10.0)(typescript@5.8.2)
@@ -1185,12 +1185,12 @@ importers:
       '@iarna/toml':
         specifier: ^2.2.5
         version: 2.2.5
-      '@socialproof/build-scripts':
-        specifier: workspace:^
-        version: link:../build-scripts
       '@parcel/watcher':
         specifier: ^2.5.1
         version: 2.5.1
+      '@socialproof/build-scripts':
+        specifier: workspace:^
+        version: link:../build-scripts
       '@types/node':
         specifier: ^22.13.17
         version: 22.13.17
@@ -4497,6 +4497,12 @@ packages:
     resolution: {integrity: sha512-RFbbIVfv8/QDgTPyXzjo5NKO6CYyK5Uq5xtNLHLbw5RgSKrgo8WpiB/fNivZuNd/5Wk0s91PtaJ9ThNcnFuI3g==}
     peerDependencies:
       size-limit: 11.2.0
+
+  '@socialproof/bcs@0.0.1':
+    resolution: {integrity: sha512-B+Lh+bsNR8S2kyeiHxv68bc4n2ebeA8774jRb8O0x4tHVbIb4rYEt6vehiCtkTHtec5iA06Q0VrePlUOS48fvw==}
+
+  '@socialproof/utils@0.0.0':
+    resolution: {integrity: sha512-ZCGpfvLs1EwP2smcXOutWDaClYaI0qfwHzgL0omdpVCMj0irnvdmNu6DddIwrxNFoM495+dljdcb6rPrS4omvQ==}
 
   '@standard-schema/spec@1.0.0':
     resolution: {integrity: sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==}
@@ -13299,6 +13305,15 @@ snapshots:
       '@size-limit/esbuild': 11.2.0(size-limit@11.2.0)
       '@size-limit/file': 11.2.0(size-limit@11.2.0)
       size-limit: 11.2.0
+
+  '@socialproof/bcs@0.0.1':
+    dependencies:
+      '@scure/base': 1.2.4
+      '@socialproof/utils': 0.0.0
+
+  '@socialproof/utils@0.0.0':
+    dependencies:
+      '@scure/base': 1.2.4
 
   '@standard-schema/spec@1.0.0': {}
 
