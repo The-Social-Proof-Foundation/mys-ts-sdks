@@ -5,11 +5,11 @@
 export function getFullnodeUrl(network: 'mainnet' | 'testnet' | 'devnet' | 'localnet') {
 	switch (network) {
 		case 'mainnet':
-			return 'https://fullnode.mainnet.mysocial.network443';
+			return 'https://fullnode.mainnet.mysocial.network:443';
 		case 'testnet':
-			return 'https://fullnode.testnet.mysocial.network443';
+			return 'http://fullnode.testnet.mysocial.network:8082';
 		case 'devnet':
-			return 'https://fullnode.devnet.mysocial.network443';
+			return 'https://fullnode.devnet.mysocial.network:443';
 		case 'localnet':
 			return 'http://127.0.0.1:9000';
 		default:

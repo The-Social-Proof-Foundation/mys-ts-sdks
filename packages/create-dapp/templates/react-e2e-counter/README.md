@@ -27,7 +27,7 @@ This template uses `testnet` by default, so we'll need to set up a testnet
 environment in the CLI:
 
 ```bash
-mys client new-env --alias testnet --rpc https://fullnode.testnet.mysocial.network443
+mys client new-env --alias testnet --rpc http://fullnode.testnet.mysocial.network:8082
 mys client switch --env testnet
 ```
 
